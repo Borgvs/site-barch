@@ -42,12 +42,20 @@ const config: Config = {
           "sans-serif",
         ],
         display: [
+          "var(--font-display)",
+          "Inter Tight",
           "var(--font-inter)",
-          "Inter Display",
           "Inter",
           "SF Pro Display",
           "Helvetica Neue",
           "sans-serif",
+        ],
+        mono: [
+          "ui-monospace",
+          "SF Mono",
+          "Menlo",
+          "Consolas",
+          "monospace",
         ],
       },
       fontSize: {

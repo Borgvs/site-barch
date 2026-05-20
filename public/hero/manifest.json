@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-05-20T21:42:00Z",
+  "pipeline": "fal-ai · flux-pro-1.1-ultra",
+  "images": [
+    { "slug": "hero-blue-hour", "file": "hero-blue-hour.webp", "aspect": "16:9", "use": "hero principal · crepúsculo cinematic" },
+    { "slug": "hero-golden-hour", "file": "hero-golden-hour.webp", "aspect": "16:9", "use": "hero alternativa · golden hour" },
+    { "slug": "interior-living", "file": "interior-living.webp", "aspect": "16:9", "use": "pé-direito duplo · materialidade revelada" },
+    { "slug": "detalhe-concreto", "file": "detalhe-concreto.webp", "aspect": "3:2", "use": "close-up tátil materiais" },
+    { "slug": "aerial-context", "file": "aerial-context.webp", "aspect": "16:9", "use": "vista aérea · green roof + mata atlântica" },
+    { "slug": "bimarch-modelo", "file": "bimarch-modelo.webp", "aspect": "16:9", "use": "Bimarch · modelo BIM federado" }
+  ]
+}

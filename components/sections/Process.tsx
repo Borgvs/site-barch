@@ -1,12 +1,24 @@
 "use client";
 
+/**
+ * Process — Quatro tempos do método Barch.
+ *
+ * Refinements Apple-tier:
+ *  - Timeline visual implícita: número grande, linha horizontal que cresce no hover
+ *  - Cards minimalistas, sem shadow agressiva — só rule sutil
+ *  - Eyebrow chip refinado
+ *  - Tags com hover state subtle
+ */
+
 import { motion } from "framer-motion";
+import { EASE, DURATION } from "@/lib/motion";
+import { Tilt } from "@/components/system/Tilt";
 
 interface Step {
   num: string;
   title: string;
   body: string;
-  icon: React.ReactNode;
+  signal: string;
 }
 
 const steps: Step[] = [
@@ -14,118 +26,169 @@ const steps: Step[] = [
     num: "01",
     title: "Escuta antes da forma",
     body: "Diagnóstico do terreno, do cotidiano e do que o cliente ainda não conseguiu pôr em palavras. O projeto real nasce desse mapeamento — não do que se diz na primeira reunião.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3.5" />
-        <path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.5 5.5l2 2M16.5 16.5l2 2M5.5 18.5l2-2M16.5 7.5l2-2" />
-      </svg>
-    ),
+    signal: "Diagnóstico SAPP · 2-4 semanas",
   },
   {
     num: "02",
     title: "Projeto que conversa entre si",
-    body: "Arquitetura, estrutura, instalações e custo cabem no mesmo modelo. Conflito que aparece na tela custa horas; conflito no canteiro custa semanas e contratos.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="18" height="18" rx="2.5" />
-        <path d="M3 9h18M9 3v18M9 9h6v6" />
-      </svg>
-    ),
+    body: "Arquitetura, estrutura, instalações e custo cabem no mesmo modelo. Conflito que aparece na tela custa horas. Conflito no canteiro custa semanas e contratos.",
+    signal: "BIM coordenado · ISO 19650",
   },
   {
     num: "03",
     title: "Obra acompanhada ao vivo",
     body: "Cronograma, decisões em aberto, medições e vistorias 360° no mesmo painel. O cliente vê o que está sob controle e o que ainda não está — sem maquiagem.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 21l18-18M9 21V9h12M3 9h6M3 15h3" />
-      </svg>
-    ),
+    signal: "Painel de acompanhamento",
   },
   {
     num: "04",
     title: "Entrega que continua",
     body: "Handover formal, manual de uso, acompanhamento técnico nos doze meses seguintes. A relação não termina na chave — começa nela.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z" />
-      </svg>
-    ),
+    signal: "Pós-obra 12 meses",
   },
 ];
 
 const tags = [
-  { label: "Diário de obra digital" },
-  { label: "Vistorias 360°" },
-  { label: "Curva S ao vivo" },
-  { label: "Decisões com critério" },
-  { label: "Painel do cliente" },
+  "Diário de obra digital",
+  "Vistorias 360°",
+  "Curva S ao vivo",
+  "Decisões com critério",
+  "Painel do cliente",
 ];
 
 export function Process() {
   return (
-    <section id="processo" className="relative py-section sm:py-sectionLg">
+    <section
+      id="processo"
+      className="relative py-section sm:py-sectionLg bg-paper"
+    >
       <div className="container-page">
-        <div className="text-center mb-20">
-          <div className="flex justify-center mb-6">
-            <span className="eyebrow-chip">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" className="text-charcoal">
-                <path d="M3 12l4-4 4 4 6-6 4 4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" />
-              </svg>
-              MÉTODO
-            </span>
-          </div>
-          <h2 className="font-display text-display-xl sm:text-display-2xl text-ink mb-5 leading-[0.98] tracking-tight">
-            Quatro tempos. Uma única coerência.
-          </h2>
-          <p className="text-body text-charcoal max-w-xl mx-auto leading-relaxed">
+        {/* Header */}
+        <div className="text-center mb-24 max-w-3xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: DURATION.base, ease: EASE.out }}
+            className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-6"
+          >
+            Método
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{
+              duration: DURATION.base,
+              ease: EASE.out,
+              delay: 0.08,
+            }}
+            className="font-display text-display-xl sm:text-display-2xl text-ink mb-6 leading-[0.96] tracking-[-0.025em]"
+          >
+            Quatro tempos.
+            <br />
+            <span className="text-muted2">Uma única coerência.</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{
+              duration: DURATION.base,
+              ease: EASE.out,
+              delay: 0.16,
+            }}
+            className="text-body-lg text-charcoal max-w-xl mx-auto leading-relaxed"
+          >
             Da escuta ao pós-entrega, o método é o que torna o resultado
             impossível de reproduzir.
-          </p>
+          </motion.p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 mb-12 max-w-4xl mx-auto">
-          {steps.map((step, i) => (
-            <motion.article
-              key={step.num}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.7, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="card-base card-hover p-8 relative group"
-            >
-              <div className="w-11 h-11 rounded-cardSm bg-ink flex items-center justify-center text-paperPure mb-6 transition-transform duration-400 ease-apple group-hover:scale-105">
-                {step.icon}
-              </div>
-              <div className="flex items-baseline gap-3 mb-3">
-                <span className="text-eyebrow uppercase tracking-wider text-muted2 font-medium tnum">
-                  {step.num}
-                </span>
-                <h3 className="font-display text-display-sm text-ink leading-tight">
-                  {step.title}
-                </h3>
-              </div>
-              <p className="text-body-sm text-charcoal leading-relaxed">
-                {step.body}
-              </p>
-            </motion.article>
-          ))}
+        {/* Steps grid · glass cards com 3D tilt */}
+        <div className="max-w-5xl mx-auto mb-20">
+          <div className="grid sm:grid-cols-2 gap-5">
+            {steps.map((step, i) => (
+              <motion.div
+                key={step.num}
+                initial={{ opacity: 0, y: 22, scale: 0.98 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{
+                  duration: DURATION.slow,
+                  delay: i * 0.08,
+                  ease: EASE.out,
+                }}
+              >
+                <Tilt max={6} scale={1.012}>
+                  <article className="glass-card group relative p-9 sm:p-10 lg:p-12 h-full overflow-hidden">
+                    {/* Número grande tipográfico com gradient */}
+                    <div className="flex items-baseline justify-between mb-8">
+                      <span
+                        className="font-display text-[68px] sm:text-[80px] leading-none tnum tracking-[-0.05em] transition-all duration-500"
+                        style={{
+                          fontWeight: 900,
+                          background:
+                            "linear-gradient(180deg, rgba(10,10,10,0.10) 0%, rgba(10,10,10,0.32) 100%)",
+                          WebkitBackgroundClip: "text",
+                          backgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                        }}
+                        aria-hidden
+                      >
+                        {step.num}
+                      </span>
+                      <div
+                        className="h-px w-12 bg-ink/20 transition-all duration-500 group-hover:w-24 group-hover:bg-ink"
+                        aria-hidden
+                      />
+                    </div>
+
+                    <h3
+                      className="font-display text-display-sm sm:text-[26px] leading-[1.16] tracking-[-0.02em] mb-4 text-gradient-ink"
+                      style={{ fontWeight: 700 }}
+                    >
+                      {step.title}
+                    </h3>
+                    <p className="text-body-sm text-charcoal leading-[1.65] mb-6">
+                      {step.body}
+                    </p>
+                    <p className="text-[10.5px] tracking-[0.28em] uppercase text-muted2 font-medium">
+                      {step.signal}
+                    </p>
+                  </article>
+                </Tilt>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-2.5">
-          {tags.map((t, i) => (
+        {/* Tags */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: DURATION.base, ease: EASE.out }}
+          className="flex flex-wrap items-center justify-center gap-2.5"
+        >
+          {tags.map((label, i) => (
             <motion.span
-              key={t.label}
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              key={label}
+              initial={{ opacity: 0, y: 6 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="pill-tag"
+              transition={{
+                duration: DURATION.fast,
+                delay: i * 0.05,
+                ease: EASE.out,
+              }}
+              className="glass-pill cursor-default"
+              style={{ fontSize: 11.5 }}
             >
-              {t.label}
+              {label}
             </motion.span>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

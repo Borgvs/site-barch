@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ============================================================
-   BASE · OrbAI-coded minimal
+   BASE
    ============================================================ */
 @layer base {
   html {
@@ -20,8 +20,8 @@
   }
 
   ::selection {
-    background: rgba(10, 10, 10, 0.12);
-    color: #0a0a0a;
+    background: rgba(10, 10, 10, 0.92);
+    color: #fcfbf7;
   }
 
   .tnum {
@@ -32,11 +32,11 @@
   ::-webkit-scrollbar { width: 8px; height: 8px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb {
-    background: rgba(10, 10, 10, 0.1);
+    background: rgba(10, 10, 10, 0.12);
     border-radius: 8px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(10, 10, 10, 0.2);
+    background: rgba(10, 10, 10, 0.25);
   }
 }
 
@@ -49,7 +49,248 @@
   .container-tight { @apply max-w-[920px] mx-auto px-6 sm:px-10; }
   .container-prose { @apply max-w-[640px] mx-auto px-6 sm:px-10; }
 
-  /* ===== Cards · off-white sólido, sem glass ===== */
+  /* ===========================================================
+     GLASS SYSTEM · material design realista
+     Vidro real: bg semi-transparente + backdrop-blur + borda clara
+     + sombra inferior + spec highlight superior + inner glow
+     =========================================================== */
+  .glass-card {
+    position: relative;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(252, 251, 247, 0.30) 100%
+    );
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 20px;
+    box-shadow:
+      0 1px 0 0 rgba(255, 255, 255, 0.85) inset,
+      0 -1px 0 0 rgba(10, 10, 10, 0.04) inset,
+      0 2px 6px rgba(10, 10, 10, 0.04),
+      0 12px 32px -8px rgba(10, 10, 10, 0.08),
+      0 24px 48px -16px rgba(10, 10, 10, 0.10);
+  }
+
+  /* Glass card sobre fundo dark — spec highlight invertido */
+  .glass-card-dark {
+    position: relative;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.07) 0%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    box-shadow:
+      0 1px 0 0 rgba(255, 255, 255, 0.15) inset,
+      0 -1px 0 0 rgba(0, 0, 0, 0.20) inset,
+      0 8px 32px -8px rgba(0, 0, 0, 0.35),
+      0 24px 64px -16px rgba(0, 0, 0, 0.45);
+  }
+
+  /* Glass pill — pequeno, tipo botão */
+  .glass-pill {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: rgba(10, 10, 10, 0.85);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.70) 0%,
+      rgba(252, 251, 247, 0.45) 100%
+    );
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    box-shadow:
+      0 1px 0 0 rgba(255, 255, 255, 0.95) inset,
+      0 -1px 0 0 rgba(10, 10, 10, 0.05) inset,
+      0 1px 2px rgba(10, 10, 10, 0.04),
+      0 4px 12px -2px rgba(10, 10, 10, 0.08);
+    transition: all 250ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .glass-pill:hover {
+    transform: translateY(-1px);
+    box-shadow:
+      0 1px 0 0 rgba(255, 255, 255, 0.95) inset,
+      0 -1px 0 0 rgba(10, 10, 10, 0.05) inset,
+      0 2px 4px rgba(10, 10, 10, 0.06),
+      0 8px 20px -2px rgba(10, 10, 10, 0.12);
+  }
+
+  /* Glass pill no dark */
+  .glass-pill-dark {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: rgba(252, 251, 247, 0.92);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.10) 0%,
+      rgba(255, 255, 255, 0.03) 100%
+    );
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow:
+      0 1px 0 0 rgba(255, 255, 255, 0.18) inset,
+      0 -1px 0 0 rgba(0, 0, 0, 0.30) inset,
+      0 4px 12px -2px rgba(0, 0, 0, 0.20);
+    transition: all 250ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .glass-pill-dark:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.30);
+  }
+
+  /* Glass badge — pequenino para eyebrows com dot */
+  .glass-badge {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 9999px;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.65) 0%,
+      rgba(252, 251, 247, 0.40) 100%
+    );
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.70);
+    color: rgba(54, 69, 79, 0.95);
+    box-shadow:
+      0 1px 0 0 rgba(255, 255, 255, 0.95) inset,
+      0 1px 2px rgba(10, 10, 10, 0.03),
+      0 4px 10px -2px rgba(10, 10, 10, 0.06);
+  }
+  .glass-badge-dark {
+    color: rgba(252, 251, 247, 0.78);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.10) 0%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    box-shadow:
+      0 1px 0 0 rgba(255, 255, 255, 0.20) inset,
+      0 4px 10px -2px rgba(0, 0, 0, 0.20);
+  }
+
+  /* Glass CTA button — material premium */
+  .glass-cta {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 9999px;
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fcfbf7;
+    background: linear-gradient(
+      180deg,
+      #1a1a1a 0%,
+      #0a0a0a 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 1px 0 0 rgba(255, 255, 255, 0.18) inset,
+      0 -1px 0 0 rgba(0, 0, 0, 0.40) inset,
+      0 1px 2px rgba(10, 10, 10, 0.20),
+      0 6px 16px -2px rgba(10, 10, 10, 0.30),
+      0 12px 32px -8px rgba(10, 10, 10, 0.20);
+    transition: all 300ms cubic-bezier(0.32, 0.72, 0, 1);
+    overflow: hidden;
+  }
+  .glass-cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.10) 50%,
+      transparent 100%
+    );
+    transition: left 800ms ease;
+  }
+  .glass-cta:hover::before {
+    left: 100%;
+  }
+  .glass-cta:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 1px 0 0 rgba(255, 255, 255, 0.22) inset,
+      0 -1px 0 0 rgba(0, 0, 0, 0.40) inset,
+      0 2px 4px rgba(10, 10, 10, 0.25),
+      0 12px 24px -4px rgba(10, 10, 10, 0.35),
+      0 20px 48px -12px rgba(10, 10, 10, 0.25);
+  }
+
+  /* Glass ghost CTA — borda translúcida para sobre fundo dark */
+  .glass-cta-ghost {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 9999px;
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(252, 251, 247, 0.92);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.10) 0%,
+      rgba(255, 255, 255, 0.03) 100%
+    );
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    box-shadow:
+      0 1px 0 0 rgba(255, 255, 255, 0.18) inset,
+      0 4px 12px -2px rgba(0, 0, 0, 0.20);
+    transition: all 300ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .glass-cta-ghost:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.40);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.16) 0%,
+      rgba(255, 255, 255, 0.06) 100%
+    );
+  }
+
+  /* Cards · off-white sólido legados (mantém para retrocompatibilidade) */
   .card-base {
     @apply bg-paperPure rounded-card shadow-card transition-all duration-400 ease-apple;
   }
@@ -61,7 +302,6 @@
     box-shadow: 0 0 0 1px rgba(228, 225, 216, 0.7);
   }
 
-  /* ===== Eyebrow chip · pill cinza muito sutil ===== */
   .eyebrow-chip {
     @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-pill text-eyebrow uppercase font-medium;
     background: rgba(252, 251, 247, 0.95);
@@ -74,7 +314,7 @@
     @apply text-eyebrow uppercase text-muted font-medium;
   }
 
-  /* ===== Buttons · OrbAI-style ===== */
+  /* Buttons legados */
   .btn-ink {
     @apply inline-flex items-center justify-center gap-2 h-11 px-5 rounded-pill bg-ink text-paperPure text-[14px] font-medium transition-all duration-250 ease-apple;
     @apply hover:scale-[1.02] active:scale-[0.98];
@@ -83,12 +323,6 @@
       0 4px 12px rgba(10, 10, 10, 0.18),
       inset 0 1px 0 rgba(255, 255, 255, 0.12);
   }
-  .btn-ink:hover {
-    box-shadow:
-      0 2px 4px rgba(10, 10, 10, 0.3),
-      0 8px 20px rgba(10, 10, 10, 0.22),
-      inset 0 1px 0 rgba(255, 255, 255, 0.16);
-  }
 
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 h-11 px-5 rounded-pill border bg-paperPure text-ink text-[14px] font-medium transition-all duration-250 ease-apple;
@@ -96,12 +330,6 @@
     @apply hover:border-ink/20 hover:bg-softer active:scale-[0.98];
   }
 
-  .btn-link {
-    @apply inline-flex items-center gap-1.5 text-body-sm font-medium text-ink transition-all duration-250 ease-apple;
-    @apply hover:gap-2;
-  }
-
-  /* ===== Pill tag (Faster Innovation, Cost Effective style) ===== */
   .pill-tag {
     @apply inline-flex items-center gap-2 px-4 py-2 rounded-pill text-[13px] font-medium text-charcoal;
     background: rgba(252, 251, 247, 0.95);
@@ -109,12 +337,10 @@
     box-shadow: 0 1px 2px rgba(10, 10, 10, 0.03);
   }
 
-  /* ===== Focus ring ===== */
   .focus-ring {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/30 focus-visible:ring-offset-2 focus-visible:ring-offset-paper;
   }
 
-  /* ===== Divider ===== */
   .divider {
     height: 1px;
     background: linear-gradient(to right, transparent, rgba(228, 225, 216, 0.9) 20%, rgba(228, 225, 216, 0.9) 80%, transparent);
@@ -125,14 +351,66 @@
    UTILITIES
    ============================================================ */
 @layer utilities {
-  /* ===== Radial rings background · sutilíssimo (assinatura OrbAI) ===== */
+  /* ===========================================================
+     TIPOGRAFIA · gradient text + BLACK headings
+     =========================================================== */
+  .text-gradient-ink {
+    background: linear-gradient(180deg, #0a0a0a 0%, #36454F 65%, #6B6B66 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .text-gradient-paper {
+    background: linear-gradient(
+      180deg,
+      #fcfbf7 0%,
+      rgba(252, 251, 247, 0.78) 60%,
+      rgba(252, 251, 247, 0.42) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Gradient com movimento sutil para hero */
+  .text-gradient-moving {
+    background: linear-gradient(
+      120deg,
+      #fcfbf7 0%,
+      rgba(252, 251, 247, 1) 30%,
+      rgba(252, 251, 247, 0.55) 65%,
+      rgba(252, 251, 247, 0.85) 100%
+    );
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: gradientShift 12s ease-in-out infinite;
+  }
+
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Bold display · BLACK weight */
+  .font-display-black {
+    font-family: var(--font-display, "Inter Tight"), "Inter", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+  }
+
+  /* Radial rings background · sutilíssimo */
   .bg-radial-rings {
     background-image:
       radial-gradient(circle 320px at 50% 50%, transparent 318px, rgba(228, 225, 216, 0.45) 319px, transparent 322px),
       radial-gradient(circle 480px at 50% 50%, transparent 478px, rgba(228, 225, 216, 0.35) 479px, transparent 482px),
       radial-gradient(circle 660px at 50% 50%, transparent 658px, rgba(228, 225, 216, 0.28) 659px, transparent 662px),
-      radial-gradient(circle 880px at 50% 50%, transparent 878px, rgba(228, 225, 216, 0.2) 879px, transparent 882px),
-      radial-gradient(circle 1140px at 50% 50%, transparent 1138px, rgba(228, 225, 216, 0.14) 1139px, transparent 1142px);
+      radial-gradient(circle 880px at 50% 50%, transparent 878px, rgba(228, 225, 216, 0.2) 879px, transparent 882px);
   }
 
   .bg-radial-fade {
@@ -140,7 +418,7 @@
       radial-gradient(ellipse 100% 60% at 50% 0%, rgba(228, 225, 216, 0.4), transparent 70%);
   }
 
-  /* Text reveal · usado em pull-quote (a opacidade muda por scroll/posição) */
+  /* Text reveal helpers */
   .text-reveal-on { color: rgba(10, 10, 10, 1); }
   .text-reveal-off { color: rgba(154, 154, 147, 0.4); filter: blur(1px); }
 
@@ -156,5 +434,11 @@
     opacity: 0.02;
     mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Perspective wrapper para 3D tilt */
+  .perspective-card {
+    transform-style: preserve-3d;
+    perspective: 1200px;
   }
 }

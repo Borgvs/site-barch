@@ -1,0 +1,259 @@
+"use client";
+
+/**
+ * HeroConstruction — Orchestrator do hero scroll-driven (dual-mode).
+ *
+ * Responsabilidades:
+ *  1. Container 500vh com pin via GSAP ScrollTrigger
+ *  2. Detectar manifest.json:
+ *       - Existe → FRAME SEQUENCE (Kling 3.0, fotorealista)
+ *       - Não existe → THREE.JS PROCEDURAL (estética CAD/maquete)
+ *  3. Atualizar progressRef sem re-render React
+ *  4. Overlay UI (PhaseLabel, MaterialAnnotations, ProgressBar, etc.)
+ *  5. Fallback estático para reduced-motion / mobile / GPU fraca
+ *  6. Cleanup robusto de ScrollTrigger no unmount
+ */
+
+import {
+  useEffect,
+  useRef,
+  useState,
+  useCallback,
+} from "react";
+import dynamic from "next/dynamic";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SCROLL_CONFIG } from "@/lib/construction-config";
+import { loadManifest, type FramesManifest } from "@/lib/frames-manifest";
+import { PhaseLabel } from "./PhaseLabel";
+import { MaterialAnnotations } from "./MaterialAnnotations";
+import { ProgressBar } from "./ProgressBar";
+import { ScrollHint } from "./ScrollHint";
+import { FinalCTA } from "./FinalCTA";
+import { HeroFallback } from "./HeroFallback";
+import { HeroFrameSequence } from "./HeroFrameSequence";
+
+// R3F é pesado (~150 kB) — dynamic com ssr:false garante chunk separado
+const ConstructionScene = dynamic(
+  () =>
+    import("./ConstructionScene").then((m) => ({
+      default: m.ConstructionScene,
+    })),
+  {
+    ssr: false,
+    loading: () => <HeroFallback initial />,
+  },
+);
+
+gsap.registerPlugin(ScrollTrigger);
+
+/* -----------------------------------------------------------------------
+ * Capabilities + frames detection
+ * ---------------------------------------------------------------------- */
+
+type RenderMode = "frames" | "procedural" | "fallback" | "loading";
+
+function useHeroState() {
+  const [state, setState] = useState<{
+    mode: RenderMode;
+    manifest: FramesManifest | null;
+  }>({ mode: "loading", manifest: null });
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    let canceled = false;
+
+    const decide = async () => {
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      const isWideEnough =
+        window.innerWidth >= SCROLL_CONFIG.desktopBreakpointPx;
+      // WebGL probe — usado apenas se vamos cair no Three.js procedural
+      const hasGoodGPU = (() => {
+        try {
+          const c = document.createElement("canvas");
+          const gl =
+            c.getContext("webgl2") ||
+            (c.getContext("webgl") as WebGLRenderingContext | null);
+          if (!gl) return false;
+          const dbg = gl.getExtension("WEBGL_debug_renderer_info");
+          if (!dbg) return true;
+          const renderer = (gl.getParameter(
+            dbg.UNMASKED_RENDERER_WEBGL,
+          ) as string).toLowerCase();
+          return !/swiftshader|llvmpipe|software/.test(renderer);
+        } catch {
+          return false;
+        }
+      })();
+
+      if (prefersReducedMotion || !isWideEnough) {
+        if (!canceled) setState({ mode: "fallback", manifest: null });
+        return;
+      }
+
+      const manifest = await loadManifest();
+      if (canceled) return;
+
+      if (manifest) {
+        setState({ mode: "frames", manifest });
+      } else if (hasGoodGPU) {
+        setState({ mode: "procedural", manifest: null });
+      } else {
+        setState({ mode: "fallback", manifest: null });
+      }
+    };
+
+    decide();
+    return () => {
+      canceled = true;
+    };
+  }, []);
+
+  return state;
+}
+
+/* -----------------------------------------------------------------------
+ * HeroConstruction
+ * ---------------------------------------------------------------------- */
+
+export function HeroConstruction() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
+  const progressRef = useRef<number>(0);
+
+  const [progress, setProgress] = useState(0);
+  const lastEmittedRef = useRef(0);
+
+  const { mode, manifest } = useHeroState();
+  const usesScrollDriver = mode === "frames" || mode === "procedural";
+
+  /* -- GSAP ScrollTrigger setup -- */
+  useEffect(() => {
+    if (!usesScrollDriver) return;
+    if (!containerRef.current || !stickyRef.current) return;
+
+    const animState = { p: 0 };
+
+    const ctx = gsap.context(() => {
+      gsap.to(animState, {
+        p: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: SCROLL_CONFIG.scrub,
+          pin: stickyRef.current,
+          pinSpacing: false,
+          invalidateOnRefresh: true,
+          onUpdate: (st) => {
+            progressRef.current = st.progress;
+            const delta = Math.abs(st.progress - lastEmittedRef.current);
+            if (delta > 0.005 || st.progress === 0 || st.progress >= 0.999) {
+              lastEmittedRef.current = st.progress;
+              setProgress(st.progress);
+            }
+          },
+        },
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, [usesScrollDriver]);
+
+  /* -- Refresh on resize -- */
+  useEffect(() => {
+    if (!usesScrollDriver) return;
+    const handle = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", handle);
+    return () => window.removeEventListener("resize", handle);
+  }, [usesScrollDriver]);
+
+  /* -- Skip-link handler -- */
+  const onSkip = useCallback(() => {
+    const target = document.getElementById("conteudo");
+    if (!target) return;
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
+
+  /* -- Render -- */
+  if (mode === "loading") return <HeroFallback initial />;
+  if (mode === "fallback") return <HeroFallback />;
+
+  return (
+    <section
+      ref={containerRef}
+      style={{ height: `${SCROLL_CONFIG.containerHeightVh}vh` }}
+      className="relative w-full bg-ink text-paper"
+      aria-label="Experiência de construção da residência"
+    >
+      {/* Sticky viewport — pinado pelo GSAP */}
+      <div
+        ref={stickyRef}
+        className="absolute top-0 left-0 h-screen w-full overflow-hidden bg-ink"
+      >
+        {/* Driver: frame sequence (Kling) ou Three.js procedural */}
+        {mode === "frames" && manifest ? (
+          <HeroFrameSequence
+            manifest={manifest}
+            progressRef={progressRef}
+          />
+        ) : (
+          <ConstructionScene progressRef={progressRef} />
+        )}
+
+        {/* Gradient overlay dark — legibilidade dos overlays */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-black/65"
+        />
+
+        {/* Vignette generosa */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.55) 100%)",
+          }}
+        />
+
+        {/* Grain overlay 6% */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-overlay"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E\")",
+          }}
+        />
+
+        {/* Overlay UI */}
+        <div className="pointer-events-none absolute inset-0 z-10">
+          <PhaseLabel progress={progress} />
+          <MaterialAnnotations progress={progress} />
+          <ProgressBar progress={progress} />
+          <ScrollHint progress={progress} />
+          <FinalCTA progress={progress} />
+
+          {/* Skip-link como glass-pill-dark */}
+          <button
+            type="button"
+            onClick={onSkip}
+            className="glass-pill-dark pointer-events-auto absolute right-6 top-28 z-20 cursor-pointer"
+            style={{
+              fontSize: 10.5,
+              letterSpacing: "0.28em",
+              textTransform: "uppercase",
+            }}
+            aria-label="Ir direto para o conteúdo do site"
+          >
+            Ir para conteúdo ↓
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}

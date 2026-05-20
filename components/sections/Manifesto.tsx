@@ -1,6 +1,16 @@
 "use client";
 
+/**
+ * Manifesto — Quatro princípios + cláusula interna de autocrítica.
+ *
+ * Refinements Apple-tier:
+ *  - Pillars com letra inicial gigante como elemento tipográfico
+ *  - Linhas horizontais separadoras minimalistas
+ *  - Cláusula final com peso tipográfico de fechamento
+ */
+
 import { motion } from "framer-motion";
+import { EASE, DURATION } from "@/lib/motion";
 
 const pillars = [
   {
@@ -25,56 +35,114 @@ export function Manifesto() {
   return (
     <section className="relative py-section sm:py-sectionLg bg-softer">
       <div className="container-page">
-        <div className="text-center mb-16">
-          <div className="flex justify-center mb-6">
-            <span className="eyebrow-chip">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-charcoal">
-                <circle cx="12" cy="12" r="3" />
-                <circle cx="12" cy="12" r="9" />
-              </svg>
-              MANIFESTO
-            </span>
-          </div>
-          <h2 className="font-display text-display-xl sm:text-display-2xl text-ink mb-5 leading-[0.98] tracking-tight">
+        {/* Header */}
+        <div className="text-center mb-20 max-w-3xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: DURATION.base, ease: EASE.out }}
+            className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-6"
+          >
+            Manifesto
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{
+              duration: DURATION.base,
+              ease: EASE.out,
+              delay: 0.08,
+            }}
+            className="font-display text-display-xl sm:text-display-2xl text-ink mb-6 leading-[0.96] tracking-[-0.025em]"
+          >
             Quatro princípios.
-          </h2>
-          <p className="text-body text-charcoal max-w-xl mx-auto leading-relaxed">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{
+              duration: DURATION.base,
+              ease: EASE.out,
+              delay: 0.16,
+            }}
+            className="text-body-lg text-charcoal max-w-xl mx-auto leading-relaxed"
+          >
             Nada que entregamos passa sem o crivo destes quatro.
-          </p>
+          </motion.p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 max-w-3xl mx-auto mb-20">
-          {pillars.map((p, i) => (
-            <motion.div
-              key={p.word}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.7, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-              className="card-base card-hover p-8"
-            >
-              <p className="font-display text-display-md text-ink mb-2 leading-tight tracking-tight">
-                {p.word}.
-              </p>
-              <p className="text-body-sm text-charcoal leading-relaxed">{p.body}</p>
-            </motion.div>
-          ))}
+        {/* Pillars com letra inicial tipográfica */}
+        <div className="max-w-4xl mx-auto mb-24">
+          <div className="space-y-px bg-rule">
+            {pillars.map((p, i) => (
+              <motion.article
+                key={p.word}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{
+                  duration: DURATION.base,
+                  delay: i * 0.07,
+                  ease: EASE.out,
+                }}
+                className="group relative bg-softer hover:bg-paper transition-colors duration-500 p-7 sm:p-10"
+              >
+                <div className="grid grid-cols-[auto_1fr] gap-6 sm:gap-10 items-start">
+                  <div className="flex flex-col items-center gap-2 pt-1">
+                    <span className="font-display text-[40px] sm:text-[52px] leading-none text-ink/15 tracking-[-0.04em] transition-colors duration-500 group-hover:text-ink font-medium">
+                      {p.word[0]}
+                    </span>
+                    <span className="font-mono text-[9.5px] text-muted2 tracking-wider tnum">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div className="pt-2">
+                    <h3 className="font-display text-display-md sm:text-[32px] text-ink mb-3 leading-[1.08] tracking-[-0.025em]">
+                      {p.word}.
+                    </h3>
+                    <p className="text-body text-charcoal leading-[1.65] max-w-2xl">
+                      {p.body}
+                    </p>
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </div>
         </div>
 
+        {/* Cláusula final de autocrítica */}
         <motion.blockquote
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.9, delay: 0.2 }}
-          className="text-center max-w-2xl mx-auto"
+          transition={{
+            duration: DURATION.slow,
+            ease: EASE.out,
+            delay: 0.2,
+          }}
+          className="text-center max-w-3xl mx-auto"
         >
-          <p className="font-display text-display-md sm:text-display-lg text-ink leading-[1.18] tracking-tight">
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: DURATION.contemplative,
+              ease: EASE.out,
+              delay: 0.3,
+            }}
+            className="h-px w-16 bg-ink mx-auto mb-10 origin-center"
+          />
+          <p className="font-display text-display-md sm:text-display-lg text-ink leading-[1.16] tracking-[-0.022em]">
             Se trocar Barch por outra empresa e a frase ainda fizer sentido,
             <br />
-            <span className="text-muted">a frase está vazia.</span>
+            <span className="text-muted2">a frase está vazia.</span>
           </p>
-          <p className="text-caption text-muted2 uppercase tracking-wider mt-6">
-            Cláusula interna de autocrítica
+          <p className="text-[10.5px] tracking-[0.32em] uppercase text-muted2 mt-8 font-medium">
+            Cláusula interna · autocrítica permanente
           </p>
         </motion.blockquote>
       </div>

@@ -36,19 +36,18 @@ export default function SobrePage() {
     <>
       <Nav />
       <main className="pt-36 sm:pt-44 pb-section">
-        <section className="container-tight mb-24 text-center">
-          <div className="flex justify-center mb-7">
-            <span className="eyebrow-chip">
-              <span className="w-1.5 h-1.5 rounded-full bg-warn" />
-              MANIFESTO
-            </span>
-          </div>
-          <h1 className="font-display text-display-xl sm:text-display-2xl text-ink mb-7 leading-[0.98] tracking-tight">
-            Não somos um escritório.
+        <section className="container-tight mb-32 text-center">
+          <p className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-7">
+            Manifesto
+          </p>
+          <h1 className="font-display text-display-xl sm:text-display-2xl lg:text-display-3xl text-ink mb-8 leading-[0.94] tracking-[-0.03em]">
+            Não somos
             <br />
-            <span className="text-muted">Somos um sistema.</span>
+            um escritório.
+            <br />
+            <span className="text-muted2">Somos um sistema.</span>
           </h1>
-          <p className="text-body-lg text-charcoal leading-relaxed max-w-2xl mx-auto">
+          <p className="text-body-lg text-charcoal leading-[1.55] max-w-2xl mx-auto">
             A separação entre quem concebe, quem financia e quem executa é o que
             produz a mediocridade que toma conta do ambiente construído. A Barch
             existe porque essa fragmentação precisa acabar.

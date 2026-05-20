@@ -5,3 +5,6 @@
 .DS_Store
 *.tsbuildinfo
 next-env.d.ts
+
+# Pipeline temp files (Fal.ai / Kling)
+/tmp
