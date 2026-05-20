@@ -14,7 +14,6 @@ export function Contact() {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="relative overflow-hidden text-center bg-ink rounded-glass p-12 sm:p-20"
         >
-          {/* Radial rings sutis no escuro */}
           <div className="absolute inset-0 pointer-events-none opacity-30" aria-hidden>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
               <div className="w-[500px] h-[500px] rounded-full border border-paperPure/10" />
@@ -26,18 +25,20 @@ export function Contact() {
           <div className="relative z-10">
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-pill text-eyebrow uppercase font-medium text-paperPure/70 border border-paperPure/15 bg-paperPure/5 mb-7">
               <span className="w-1.5 h-1.5 rounded-full bg-warn animate-pulse" />
-              VAMOS COMEÇAR
+              CONVERSA INICIAL
             </span>
             <h2 className="font-display text-display-xl sm:text-display-2xl text-paperPure mb-6 leading-[0.98] tracking-tight max-w-2xl mx-auto">
-              Seu próximo projeto não vai ser genérico.
+              Se você quer construir sem ruído,
+              <br />
+              <span className="text-paperPure/60">vamos conversar.</span>
             </h2>
             <p className="text-body-lg text-paperPure/70 max-w-xl mx-auto leading-relaxed mb-10">
-              Conversa inicial sem custo. 45 minutos para entender se faz sentido seguir.
+              45 minutos. Sem custo. Saímos da conversa sabendo se faz sentido seguir.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
-                href="mailto:contato@barch.com.br?subject=Conversa%20inicial%20Barch"
+                href="mailto:contato@barch.com.br?subject=Conversa%20inicial"
                 className="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-pill bg-paperPure text-ink text-[14px] font-medium transition-all duration-250 ease-apple hover:scale-[1.02] active:scale-[0.98]"
               >
                 Agendar conversa

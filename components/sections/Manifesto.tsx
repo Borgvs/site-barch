@@ -3,10 +3,22 @@
 import { motion } from "framer-motion";
 
 const pillars = [
-  { word: "Autêntica", body: "Recusa o mimetismo. Cada projeto é resposta, não reprodução." },
-  { word: "Visionária", body: "Lê o futuro nas restrições do presente. Antecipa erro." },
-  { word: "Sofisticada", body: "Sofisticação é restrição escolhida. Não excesso — síntese." },
-  { word: "Inovadora", body: "Técnica como redução de ruído. BIM e IA como meio." },
+  {
+    word: "Autêntica",
+    body: "Cada projeto responde ao lugar, ao programa e à gente que o vai habitar. Reprodução não cabe.",
+  },
+  {
+    word: "Visionária",
+    body: "A restrição não é obstáculo: é dado de entrada. É nela que mora a diferença entre repetir e construir.",
+  },
+  {
+    word: "Sofisticada",
+    body: "Sofisticação aqui é restrição escolhida. Menos elementos, mais decisão por trás de cada um.",
+  },
+  {
+    word: "Inovadora",
+    body: "Tecnologia entra para reduzir ruído e antecipar erro. Quando aparece como espetáculo, recusamos.",
+  },
 ];
 
 export function Manifesto() {
@@ -27,11 +39,10 @@ export function Manifesto() {
             Quatro princípios.
           </h2>
           <p className="text-body text-charcoal max-w-xl mx-auto leading-relaxed">
-            Não negociamos esses quatro. Tudo o que entregamos passa por eles antes.
+            Nada que entregamos passa sem o crivo destes quatro.
           </p>
         </div>
 
-        {/* 4 pilares · grid 2x2 com cards off-white */}
         <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 max-w-3xl mx-auto mb-20">
           {pillars.map((p, i) => (
             <motion.div
@@ -50,7 +61,6 @@ export function Manifesto() {
           ))}
         </div>
 
-        {/* Cláusula final · pull quote menor */}
         <motion.blockquote
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,12 +69,12 @@ export function Manifesto() {
           className="text-center max-w-2xl mx-auto"
         >
           <p className="font-display text-display-md sm:text-display-lg text-ink leading-[1.18] tracking-tight">
-            Se trocar Barch por qualquer empresa, ainda faz sentido?
+            Se trocar Barch por outra empresa e a frase ainda fizer sentido,
             <br />
-            <span className="text-muted">Se sim, refazemos.</span>
+            <span className="text-muted">a frase está vazia.</span>
           </p>
           <p className="text-caption text-muted2 uppercase tracking-wider mt-6">
-            Cláusula de autocrítica · MAN-001
+            Cláusula interna de autocrítica
           </p>
         </motion.blockquote>
       </div>

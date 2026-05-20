@@ -12,18 +12,16 @@ const cols: { title: string; links: FooterLink[] }[] = [
     title: "Barch",
     links: [
       { label: "Manifesto", href: "/sobre" },
-      { label: "Processo", href: "/#processo" },
-      { label: "Projetos", href: "/projetos" },
+      { label: "Método", href: "/#processo" },
+      { label: "BIM em obra", href: "/#bim" },
       { label: "Contato", href: "/#contato" },
     ],
   },
   {
-    title: "Plataforma",
+    title: "Cliente",
     links: [
-      { label: "Painel da obra", href: "https://painel.barch.com.br", external: true },
-      { label: "Barch.OS", href: "/#stack" },
-      { label: "SAPP · Diagnóstico", href: "/sobre#sapp" },
-      { label: "LOCVS", href: "/sobre#locvs" },
+      { label: "Acessar painel", href: "https://painel.barch.com.br", external: true },
+      { label: "Como acompanhamos a obra", href: "/#portal" },
     ],
   },
   {
@@ -41,7 +39,6 @@ export function Footer() {
     <footer className="border-t border-rule/60 bg-paper">
       <div className="container-page py-16 sm:py-20">
         <div className="grid lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-12 lg:gap-8 mb-16">
-          {/* Brand column */}
           <div>
             <Link href="/" className="inline-flex items-center gap-2 mb-6 focus-ring rounded-md">
               <Logo variant="symbol" tone="dark" size="sm" />
@@ -50,8 +47,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-body-sm text-charcoal max-w-sm leading-relaxed mb-5">
-              Venture builder arquitetônica e urbana. Projeta, constrói e opera
-              empreendimentos como ecossistemas integrados.
+              Articulamos arquitetura, obra e operação como um sistema único —
+              não como serviços separados que se contradizem em cada etapa.
             </p>
             <div className="text-caption text-muted2 leading-relaxed">
               CNPJ 55.060.650/0001-01<br />
@@ -83,13 +80,12 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Bottom strip */}
         <div className="pt-8 border-t border-rule/60 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <p className="text-caption text-muted2">
-            A liberdade de criar. A ousadia de transformar.
+            Forma sem significado é cenário. Aqui forma é resposta.
           </p>
           <p className="text-caption text-muted2 tnum">
-            © {new Date().getFullYear()} Barch · Todos os direitos reservados
+            © {new Date().getFullYear()} Barch
           </p>
         </div>
       </div>

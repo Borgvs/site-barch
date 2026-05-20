@@ -4,13 +4,13 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 
 /**
- * PullQuote · text reveal progressivo conforme scroll
- * Palavras vão ganhando opacidade/clareza enquanto a seção entra.
- * Inspirado na assinatura OrbAI · "We harness your data..."
+ * PullQuote · controlling idea com chave de leitura.
+ * Texto reveladio progressivo conforme scroll.
+ * Concreto > abstrato: começa com observação, fecha com tese.
  */
 
 const PHRASE =
-  "Arquitetura é força cultural. Espaços moldam comportamento, economia e cidade. Cada projeto Barch responde ao seu lugar, sua gente, sua restrição.";
+  "Quase tudo que se constrói hoje sobrevive como forma e perde como sentido. A Barch existe para inverter essa equação: cada projeto é a articulação de um ecossistema — não a embalagem de um produto imobiliário.";
 
 export function PullQuote() {
   const ref = useRef<HTMLElement>(null);
@@ -39,7 +39,6 @@ export function PullQuote() {
           ))}
         </p>
 
-        {/* Founder attribution · padrão OrbAI */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +53,7 @@ export function PullQuote() {
             <p className="text-body-sm font-medium text-ink leading-tight">
               Gustavo Alonso Borges
             </p>
-            <p className="text-caption text-muted">Fundador · Barch</p>
+            <p className="text-caption text-muted">Fundador · Arquiteto Urbanista</p>
           </div>
         </motion.div>
       </div>

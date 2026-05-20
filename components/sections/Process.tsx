@@ -12,9 +12,8 @@ interface Step {
 const steps: Step[] = [
   {
     num: "01",
-    title: "Escuta Estratégica",
-    body:
-      "Diagnóstico SAPP psicoarquitetônico, leitura do terreno, mapeamento de restrições e desejos. O briefing real emerge de escuta deliberada.",
+    title: "Escuta antes da forma",
+    body: "Diagnóstico do terreno, do cotidiano e do que o cliente ainda não conseguiu pôr em palavras. O projeto real nasce desse mapeamento — não do que se diz na primeira reunião.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="3.5" />
@@ -24,9 +23,8 @@ const steps: Step[] = [
   },
   {
     num: "02",
-    title: "Projeto Integrado",
-    body:
-      "BIM coordenado (ISO 19650), análises ambientais Autodesk Forma, otimização paramétrica Finch 3D. Técnica reduz ruído.",
+    title: "Projeto que conversa entre si",
+    body: "Arquitetura, estrutura, instalações e custo cabem no mesmo modelo. Conflito que aparece na tela custa horas; conflito no canteiro custa semanas e contratos.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2.5" />
@@ -36,9 +34,8 @@ const steps: Step[] = [
   },
   {
     num: "03",
-    title: "Execução com Clareza",
-    body:
-      "Canteiro Barch com protocolos vivos, diário digital, vistorias 360°, curva S em tempo real. Cliente acompanha tudo pelo painel.",
+    title: "Obra acompanhada ao vivo",
+    body: "Cronograma, decisões em aberto, medições e vistorias 360° no mesmo painel. O cliente vê o que está sob controle e o que ainda não está — sem maquiagem.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 21l18-18M9 21V9h12M3 9h6M3 15h3" />
@@ -47,9 +44,8 @@ const steps: Step[] = [
   },
   {
     num: "04",
-    title: "Operação e Legado",
-    body:
-      "Handover com Dossiê de Entrega, walk-through interpretativo, APO em 30/90/180/365 dias. Cliente vira referência.",
+    title: "Entrega que continua",
+    body: "Handover formal, manual de uso, acompanhamento técnico nos doze meses seguintes. A relação não termina na chave — começa nela.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z" />
@@ -58,57 +54,36 @@ const steps: Step[] = [
   },
 ];
 
-interface Tag {
-  label: string;
-  icon: React.ReactNode;
-}
-
-const tags: Tag[] = [
-  {
-    label: "BIM Coordenado",
-    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /></svg>,
-  },
-  {
-    label: "Diário Digital",
-    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 2h6l2 4H7zM5 6h14v15a1 1 0 01-1 1H6a1 1 0 01-1-1z" /></svg>,
-  },
-  {
-    label: "Vistorias 360°",
-    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9" /><path d="M3 12c4 4 14 4 18 0M3 12c4-4 14-4 18 0M12 3v18" /></svg>,
-  },
-  {
-    label: "Curva S Ao Vivo",
-    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 17c4-2 7-12 18-12" /></svg>,
-  },
-  {
-    label: "SAPP Diagnóstico",
-    icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="3" /><circle cx="12" cy="12" r="9" /></svg>,
-  },
+const tags = [
+  { label: "Diário de obra digital" },
+  { label: "Vistorias 360°" },
+  { label: "Curva S ao vivo" },
+  { label: "Decisões com critério" },
+  { label: "Painel do cliente" },
 ];
 
 export function Process() {
   return (
     <section id="processo" className="relative py-section sm:py-sectionLg">
       <div className="container-page">
-        {/* Header */}
         <div className="text-center mb-20">
           <div className="flex justify-center mb-6">
             <span className="eyebrow-chip">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" className="text-charcoal">
                 <path d="M3 12l4-4 4 4 6-6 4 4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" />
               </svg>
-              PROCESSO
+              MÉTODO
             </span>
           </div>
           <h2 className="font-display text-display-xl sm:text-display-2xl text-ink mb-5 leading-[0.98] tracking-tight">
-            Simples & Escalável
+            Quatro tempos. Uma única coerência.
           </h2>
           <p className="text-body text-charcoal max-w-xl mx-auto leading-relaxed">
-            Quatro núcleos, uma única coerência. Da escuta ao legado.
+            Da escuta ao pós-entrega, o método é o que torna o resultado
+            impossível de reproduzir.
           </p>
         </div>
 
-        {/* 4 cards · 2x2 em desktop */}
         <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 mb-12 max-w-4xl mx-auto">
           {steps.map((step, i) => (
             <motion.article
@@ -119,7 +94,6 @@ export function Process() {
               transition={{ duration: 0.7, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="card-base card-hover p-8 relative group"
             >
-              {/* Ícone bloco preto */}
               <div className="w-11 h-11 rounded-cardSm bg-ink flex items-center justify-center text-paperPure mb-6 transition-transform duration-400 ease-apple group-hover:scale-105">
                 {step.icon}
               </div>
@@ -138,7 +112,6 @@ export function Process() {
           ))}
         </div>
 
-        {/* Tags · pills sutis */}
         <div className="flex flex-wrap items-center justify-center gap-2.5">
           {tags.map((t, i) => (
             <motion.span
@@ -149,7 +122,6 @@ export function Process() {
               transition={{ duration: 0.5, delay: i * 0.05 }}
               className="pill-tag"
             >
-              <span className="text-muted">{t.icon}</span>
               {t.label}
             </motion.span>
           ))}

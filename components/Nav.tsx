@@ -10,19 +10,15 @@ interface NavItem {
   href: string;
 }
 
+// Itens institucionais — low profile sobre projetos
 const items: NavItem[] = [
   { label: "Manifesto", href: "/sobre" },
-  { label: "Projetos", href: "/projetos" },
-  { label: "Processo", href: "/#processo" },
-  { label: "Stack", href: "/#stack" },
+  { label: "Método", href: "/#processo" },
+  { label: "BIM em obra", href: "/#bim" },
+  { label: "Portal", href: "/#portal" },
   { label: "Contato", href: "/#contato" },
 ];
 
-/**
- * Nav · OrbAI-coded
- * Logo esquerda · items centrais · CTA pill preto direita
- * Fundo translúcido leve no scroll, sem pill flutuante
- */
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -43,18 +39,16 @@ export function Nav() {
       )}
     >
       <div className="container-page py-5 flex items-center justify-between gap-4">
-        {/* Logo + nome */}
         <Link
           href="/"
           className="flex items-center gap-2 focus-ring rounded-md hover:opacity-70 transition-opacity duration-250"
         >
           <Logo variant="symbol" tone="dark" size="sm" />
-          <span className="text-[17px] font-semibold tracking-tight text-ink hidden xs:block sm:block">
+          <span className="text-[17px] font-semibold tracking-tight text-ink hidden sm:block">
             Barch
           </span>
         </Link>
 
-        {/* Items centrais */}
         <nav className="hidden md:flex items-center gap-1" aria-label="Principal">
           {items.map((item) => (
             <Link
@@ -67,16 +61,17 @@ export function Nav() {
           ))}
         </nav>
 
-        {/* CTA direita */}
-        <Link
-          href="/#contato"
+        <a
+          href="https://painel.barch.com.br"
+          target="_blank"
+          rel="noopener noreferrer"
           className="btn-ink !h-10 !px-4 !text-[13px]"
         >
-          Agendar conversa
+          Acessar painel
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
             <path d="M7 17L17 7M9 7h8v8" />
           </svg>
-        </Link>
+        </a>
       </div>
     </header>
   );
