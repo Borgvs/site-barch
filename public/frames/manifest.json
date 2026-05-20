@@ -1,0 +1,12 @@
+{
+  "count": 240,
+  "prefix": "/frames/frame_",
+  "extension": ".webp",
+  "pad": 4,
+  "width": 1920,
+  "height": 1080,
+  "version": "1779318510",
+  "pipeline": "fal-ai · kling-1.6-pro · flux-pro-1.1-ultra",
+  "generatedAt": "2026-05-20T23:08:30Z",
+  "totalBytes": 36825350
+}
