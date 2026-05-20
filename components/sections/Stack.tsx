@@ -3,213 +3,188 @@
 import { motion } from "framer-motion";
 
 /**
- * Stack · bento grid LanderOS adaptado para Barch.OS + BIM Bimarch.
- * Foco: tecnologia que reduz ruído, não que gera espetáculo (FWK-IA-001).
+ * Stack · OrbAI-coded bento
+ * "Why Choose Us" 3 cards com mockup interno cada
+ * Off-white sólido, rounded XL, mockup visual no topo, título embaixo
  */
 export function Stack() {
   return (
-    <section id="stack" className="relative py-section">
+    <section id="stack" className="relative py-section sm:py-sectionLg">
       <div className="container-page">
         {/* Header */}
-        <div className="mb-14">
-          <span className="eyebrow-chip mb-5">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-warn">
-              <rect x="3" y="3" width="7" height="7" rx="1" />
-              <rect x="14" y="3" width="7" height="7" rx="1" />
-              <rect x="3" y="14" width="7" height="7" rx="1" />
-              <rect x="14" y="14" width="7" height="7" rx="1" />
-            </svg>
-            BARCH.OS
-          </span>
-          <h2 className="font-display text-display-lg sm:text-display-xl text-ink leading-[1.05] max-w-3xl mb-5">
-            Tecnologia como{" "}
-            <span className="italic text-gradient-warn">redução de ruído</span>.
+        <div className="text-center mb-16">
+          <div className="flex justify-center mb-6">
+            <span className="eyebrow-chip">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" className="text-charcoal">
+                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z" />
+              </svg>
+              BENEFÍCIOS
+            </span>
+          </div>
+          <h2 className="font-display text-display-xl sm:text-display-2xl text-ink mb-5 leading-[0.98] tracking-tight">
+            Por que Barch
           </h2>
-          <p className="text-body-lg text-charcoal max-w-2xl leading-relaxed">
-            BIM coordenado, IA orquestrada, gemeo digital evolutivo e canteiro
-            digitalizado. Nada pelo espetáculo — tudo para antecipar erro e gerar
-            clareza ao cliente.
+          <p className="text-body text-charcoal max-w-xl mx-auto leading-relaxed">
+            Plataforma própria + ofício humano: a única combinação que entrega clareza
+            sem perder alma.
           </p>
         </div>
 
-        {/* Bento grid */}
-        <div className="grid lg:grid-cols-3 gap-5">
-          {/* Card 1 · BIM Coordenado · 2 colunas */}
-          <motion.article
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="glass rounded-glass p-8 lg:p-10 lg:col-span-2 relative overflow-hidden hover-lift"
-          >
-            <div className="grid sm:grid-cols-2 gap-8 items-center">
-              <div>
-                <p className="eyebrow text-warn mb-3">BIM · BIMARCH</p>
-                <h3 className="font-display text-display-md text-ink mb-3 leading-tight">
-                  Coordenação Total
-                </h3>
-                <p className="text-body text-charcoal leading-relaxed mb-5">
-                  Revit + Autodesk Docs + Solibri + ConstructIN. ISO 19650,
-                  70+ rulesets de validação, sincronização modelo-campo-custo
-                  em tempo real.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["Revit", "Autodesk Forma", "Solibri", "Finch 3D"].map((t) => (
-                    <span key={t} className="tag-pill !text-[12px] !py-1">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              {/* Visual abstrato BIM orbital */}
-              <div className="relative aspect-square max-w-[280px] mx-auto">
-                <BIMOrbital />
-              </div>
-            </div>
-          </motion.article>
+        {/* 3 cards bento */}
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-5 mb-12">
+          {/* Card 1 · Curva S real-time */}
+          <BentoCard
+            mockup={<CurvaSMockup />}
+            title="Curva S ao Vivo"
+            body="Cliente acompanha físico × planejado em tempo real pelo painel."
+            delay={0}
+          />
 
-          {/* Card 2 · IA Embarcada */}
-          <motion.article
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="glass rounded-glass p-8 hover-lift relative overflow-hidden"
-          >
-            <p className="eyebrow text-warn mb-3">IA · 7 AGENTES</p>
-            <h3 className="font-display text-display-sm text-ink mb-3 leading-tight">
-              Barch.OS Cognitive
-            </h3>
-            <p className="text-body-sm text-charcoal leading-relaxed mb-6">
-              Wesley-Bot · Olho-de-Obra · Compliance-Bot · Curva-S Watchdog ·
-              Contábil-Bot · Cliente-Bot · Contratual-Bot.
-            </p>
-            {/* Mockup mini · chat IA */}
-            <div className="glass-deep rounded-card p-3 text-[11px] font-mono">
-              <div className="flex items-center gap-2 mb-2 text-muted2">
-                <span className="w-2 h-2 rounded-full bg-ok animate-pulse" />
-                wesley-bot · processando
-              </div>
-              <div className="text-charcoal/80">
-                <span className="text-warn">$</span> diário de hoje gerado a partir de áudio + 6 fotos
-              </div>
-              <div className="text-muted2 mt-1.5">
-                ✓ Conformidade PBK-001 validada
-              </div>
-            </div>
-          </motion.article>
+          {/* Card 2 · BIM + IA */}
+          <BentoCard
+            mockup={<BIMOrbitalMockup />}
+            title="BIM × IA Integrados"
+            body="Coordenação Revit + Forma + Solibri + 7 agentes Barch.OS."
+            delay={0.08}
+          />
 
-          {/* Card 3 · Painel Cliente */}
-          <motion.article
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="glass rounded-glass p-8 hover-lift relative overflow-hidden"
-          >
-            <p className="eyebrow text-warn mb-3">PAINEL CLIENTE</p>
-            <h3 className="font-display text-display-sm text-ink mb-3 leading-tight">
-              Transparência Proativa
-            </h3>
-            <p className="text-body-sm text-charcoal leading-relaxed mb-6">
-              Cliente acessa curva S ao vivo, vistorias 360°, decisões e
-              cronograma. Reports semanais WhatsApp.
-            </p>
-            {/* Mini-chart */}
-            <div className="glass-deep rounded-card p-3">
-              <div className="flex justify-between text-[10px] text-muted2 mb-2 uppercase tracking-wider">
-                <span>Físico</span>
-                <span className="text-warn tnum">25%</span>
-              </div>
-              <div className="h-1.5 rounded-pill bg-soft overflow-hidden">
-                <div className="h-full w-1/4 rounded-pill bg-ink" />
-              </div>
-              <div className="flex justify-between mt-3 text-[10px] text-muted2 uppercase tracking-wider">
-                <span>Mês 5/18</span>
-                <span className="tnum text-charcoal">27%</span>
-              </div>
-            </div>
-          </motion.article>
+          {/* Card 3 · Vistorias 360° */}
+          <BentoCard
+            mockup={<Tour360Mockup />}
+            title="Canteiro Imersivo"
+            body="Vistorias 360° Insta360 X5 navegáveis pelo cliente."
+            delay={0.16}
+          />
+        </div>
 
-          {/* Card 4 · Vistorias 360° · 2 colunas */}
-          <motion.article
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="glass rounded-glass p-8 lg:p-10 lg:col-span-2 hover-lift relative overflow-hidden"
-          >
-            <div className="grid sm:grid-cols-[1.2fr_1fr] gap-8 items-center">
-              <div>
-                <p className="eyebrow text-warn mb-3">VISTORIAS 360°</p>
-                <h3 className="font-display text-display-md text-ink mb-3 leading-tight">
-                  Canteiro Imersivo
-                </h3>
-                <p className="text-body text-charcoal leading-relaxed mb-5">
-                  Insta360 X5 captura o estado real do canteiro. Cliente navega
-                  por dentro da obra pelo painel, mesmo de outra cidade.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["Insta360 X5", "Pannellum", "Equirectangular", "Hotspots"].map(
-                    (t) => (
-                      <span key={t} className="tag-pill !text-[12px] !py-1">
-                        {t}
-                      </span>
-                    )
-                  )}
-                </div>
-              </div>
-              {/* Visual 360° symbol */}
-              <div className="relative aspect-square max-w-[220px] mx-auto">
-                <Tour360Visual />
-              </div>
-            </div>
-          </motion.article>
+        {/* Tag pills · padrões cobertos */}
+        <div className="flex flex-wrap items-center justify-center gap-2.5">
+          {[
+            "Revit + Forma",
+            "Solibri 70+ rules",
+            "Finch 3D",
+            "Pannellum 360°",
+            "pgvector RAG",
+            "Z-API WhatsApp",
+          ].map((t) => (
+            <span key={t} className="pill-tag">
+              {t}
+            </span>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-function BIMOrbital() {
-  const orbits = [
-    { r: 38, items: 3 },
-    { r: 65, items: 5 },
-    { r: 92, items: 7 },
-  ];
+function BentoCard({
+  mockup,
+  title,
+  body,
+  delay = 0,
+}: {
+  mockup: React.ReactNode;
+  title: string;
+  body: string;
+  delay?: number;
+}) {
   return (
-    <div className="absolute inset-0 flex items-center justify-center">
-      {/* Hub central */}
-      <div className="absolute w-14 h-14 rounded-full bg-ink flex items-center justify-center text-paperPure font-display text-display-sm font-bold z-10">
+    <motion.article
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+      className="card-base card-hover overflow-hidden"
+    >
+      <div className="aspect-[5/4] bg-softer border-b border-rule/40 flex items-center justify-center p-8 relative overflow-hidden">
+        {mockup}
+      </div>
+      <div className="p-7">
+        <h3 className="font-display text-display-sm text-ink mb-2 leading-tight">
+          {title}
+        </h3>
+        <p className="text-body-sm text-charcoal leading-relaxed">{body}</p>
+      </div>
+    </motion.article>
+  );
+}
+
+function CurvaSMockup() {
+  return (
+    <svg viewBox="0 0 240 160" className="w-full h-full max-w-[280px]">
+      {/* Grid leve */}
+      <defs>
+        <pattern id="grid-curva" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M20 0H0V20" stroke="#e4e1d8" strokeWidth="0.5" fill="none" />
+        </pattern>
+      </defs>
+      <rect width="240" height="160" fill="url(#grid-curva)" opacity="0.5" />
+      {/* Eixos */}
+      <line x1="20" y1="140" x2="220" y2="140" stroke="#bdbdb6" strokeWidth="1" />
+      <line x1="20" y1="20" x2="20" y2="140" stroke="#bdbdb6" strokeWidth="1" />
+      {/* Curva planejada */}
+      <path
+        d="M20 130 Q60 125 90 110 T160 50 T220 30"
+        stroke="#9a9a93"
+        strokeWidth="1.5"
+        fill="none"
+        strokeDasharray="3 3"
+      />
+      {/* Curva real */}
+      <path
+        d="M20 130 Q55 128 85 118 T140 80 T200 60"
+        stroke="#0a0a0a"
+        strokeWidth="2"
+        fill="none"
+      />
+      {/* Pontos medições CAIXA */}
+      {[60, 100, 140, 180].map((x, i) => (
+        <circle
+          key={x}
+          cx={x}
+          cy={[125, 110, 80, 65][i]}
+          r="3"
+          fill="#A23A1F"
+        />
+      ))}
+      {/* Label sutil */}
+      <text x="120" y="155" textAnchor="middle" fontSize="9" fill="#9a9a93" fontFamily="Inter, sans-serif">
+        físico × planejado
+      </text>
+    </svg>
+  );
+}
+
+function BIMOrbitalMockup() {
+  return (
+    <div className="relative w-full max-w-[200px] aspect-square flex items-center justify-center">
+      {/* Hub central · símbolo Barch */}
+      <div className="absolute w-12 h-12 rounded-full bg-ink flex items-center justify-center text-paperPure font-display text-[18px] font-semibold z-10">
         b
       </div>
-      {/* Órbitas concentric */}
-      {orbits.map((orbit, oi) => (
+      {/* Órbitas */}
+      {[44, 70, 96].map((r, oi) => (
         <div
-          key={oi}
-          className="absolute rounded-full border border-rule/40"
+          key={r}
+          className="absolute rounded-full border border-rule/70"
           style={{
-            width: orbit.r * 2,
-            height: orbit.r * 2,
-            animation: `spin-slow ${20 + oi * 8}s linear infinite ${
-              oi % 2 ? "reverse" : "normal"
-            }`,
+            width: r * 2,
+            height: r * 2,
+            animation: `spin-slow ${24 + oi * 6}s linear infinite ${oi % 2 ? "reverse" : "normal"}`,
           }}
         >
-          {Array.from({ length: orbit.items }).map((_, i) => {
-            const angle = (i / orbit.items) * Math.PI * 2;
-            const x = Math.cos(angle) * orbit.r;
-            const y = Math.sin(angle) * orbit.r;
-            const isHi = i === Math.floor(orbit.items / 2);
+          {/* Dots na órbita */}
+          {Array.from({ length: 3 + oi * 2 }).map((_, i, arr) => {
+            const angle = (i / arr.length) * Math.PI * 2;
+            const x = Math.cos(angle) * r;
+            const y = Math.sin(angle) * r;
             return (
               <div
                 key={i}
-                className="absolute w-2 h-2 rounded-full"
+                className="absolute w-1.5 h-1.5 rounded-full bg-charcoal/60"
                 style={{
-                  left: `calc(50% + ${x}px - 4px)`,
-                  top: `calc(50% + ${y}px - 4px)`,
-                  background: isHi ? "#A23A1F" : "rgba(54, 69, 79, 0.5)",
-                  boxShadow: isHi ? "0 0 12px rgba(162,58,31,0.5)" : "none",
+                  left: `calc(50% + ${x}px - 3px)`,
+                  top: `calc(50% + ${y}px - 3px)`,
                 }}
               />
             );
@@ -220,42 +195,38 @@ function BIMOrbital() {
   );
 }
 
-function Tour360Visual() {
+function Tour360Mockup() {
   return (
-    <div className="absolute inset-0 flex items-center justify-center">
-      <svg viewBox="0 0 200 200" className="w-full h-full">
-        {/* Sphere wireframe */}
-        <defs>
-          <radialGradient id="sphere-grad" cx="40%" cy="40%">
-            <stop offset="0%" stopColor="#FCFBF7" />
-            <stop offset="100%" stopColor="#36454F" />
-          </radialGradient>
-        </defs>
-        <circle cx="100" cy="100" r="80" fill="url(#sphere-grad)" opacity="0.9" />
-        {/* Meridians */}
-        {[15, 45, 75, 105, 135, 165].map((deg) => (
-          <ellipse
-            key={deg}
-            cx="100"
-            cy="100"
-            rx="80"
-            ry="20"
-            fill="none"
-            stroke="#FCFBF7"
-            strokeWidth="0.6"
-            opacity="0.5"
-            transform={`rotate(${deg} 100 100)`}
-          />
-        ))}
-        {/* Equator */}
-        <ellipse cx="100" cy="100" rx="80" ry="80" fill="none" stroke="#FCFBF7" strokeWidth="0.8" opacity="0.7" />
-        {/* Pulsing hotspot */}
-        <circle cx="130" cy="80" r="5" fill="#A23A1F">
-          <animate attributeName="r" values="4;7;4" dur="2.4s" repeatCount="indefinite" />
-          <animate attributeName="opacity" values="1;0.5;1" dur="2.4s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="70" cy="115" r="3" fill="#A23A1F" opacity="0.7" />
-      </svg>
-    </div>
+    <svg viewBox="0 0 200 160" className="w-full h-full max-w-[240px]">
+      <defs>
+        <radialGradient id="sphere360" cx="42%" cy="38%">
+          <stop offset="0%" stopColor="#FCFBF7" />
+          <stop offset="100%" stopColor="#3a3a3a" />
+        </radialGradient>
+      </defs>
+      {/* Sphere */}
+      <circle cx="100" cy="80" r="56" fill="url(#sphere360)" />
+      {/* Meridianos */}
+      {[25, 65, 105, 145].map((deg) => (
+        <ellipse
+          key={deg}
+          cx="100"
+          cy="80"
+          rx="56"
+          ry="16"
+          fill="none"
+          stroke="#FCFBF7"
+          strokeWidth="0.6"
+          opacity="0.45"
+          transform={`rotate(${deg} 100 80)`}
+        />
+      ))}
+      <ellipse cx="100" cy="80" rx="56" ry="56" fill="none" stroke="#FCFBF7" strokeWidth="0.7" opacity="0.55" />
+      {/* Hotspot terracotta */}
+      <circle cx="124" cy="68" r="4" fill="#A23A1F">
+        <animate attributeName="r" values="3.5;5;3.5" dur="2.4s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="78" cy="92" r="2.5" fill="#A23A1F" opacity="0.6" />
+    </svg>
   );
 }

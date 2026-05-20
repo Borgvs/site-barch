@@ -21,10 +21,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) return {};
-  return {
-    title: project.name,
-    description: project.scopeShort,
-  };
+  return { title: project.name, description: project.scopeShort };
 }
 
 export default async function ProjetoDetalhePage({
@@ -36,37 +33,35 @@ export default async function ProjetoDetalhePage({
   const project = getProjectBySlug(slug);
   if (!project) notFound();
 
-  // Próximo projeto (para nav inferior)
   const idx = projects.findIndex((p) => p.slug === project.slug);
   const next = projects[(idx + 1) % projects.length];
 
   return (
     <>
       <Nav />
-      <main className="pt-32 sm:pt-40 pb-section">
+      <main className="pt-28 sm:pt-36 pb-section">
         {/* Breadcrumb */}
         <div className="container-page mb-10">
           <Link
             href="/projetos"
-            className="inline-flex items-center gap-2 text-body-sm text-muted hover:text-warn transition-colors duration-250 focus-ring rounded-md"
+            className="inline-flex items-center gap-2 text-body-sm text-muted hover:text-ink transition-colors duration-250 focus-ring rounded-md"
           >
             ← Repertório
           </Link>
         </div>
 
         {/* Hero do projeto */}
-        <section className="container-tight mb-20">
+        <section className="container-tight mb-16">
           <div className="flex items-center flex-wrap gap-2 mb-7">
-            <span className="eyebrow text-warn">{project.typology}</span>
+            <span className="eyebrow text-muted">{project.typology}</span>
             <span className="text-rule">·</span>
             <span className="eyebrow text-muted2 tnum">{project.year}</span>
             <span className="text-rule">·</span>
             <span
               className={
-                "px-3 py-1 rounded-pill text-[11px] font-semibold uppercase tracking-[0.08em] " +
-                (project.status === "em-andamento"
-                  ? "bg-warn/10 text-warn border border-warn/20"
-                  : "bg-charcoal/5 text-charcoal border border-charcoal/15")
+                project.status === "em-andamento"
+                  ? "px-3 py-1 rounded-pill text-[11px] font-semibold uppercase tracking-[0.08em] bg-warn/10 text-warn border border-warn/20"
+                  : "px-3 py-1 rounded-pill text-[11px] font-semibold uppercase tracking-[0.08em] bg-charcoal/5 text-charcoal border border-charcoal/15"
               }
             >
               {STATUS_LABELS[project.status]}
@@ -74,9 +69,7 @@ export default async function ProjetoDetalhePage({
             {project.isConfidential && (
               <>
                 <span className="text-rule">·</span>
-                <span className="text-eyebrow uppercase tracking-wider text-muted">
-                  sob NDA
-                </span>
+                <span className="text-eyebrow uppercase tracking-wider text-muted2">NDA</span>
               </>
             )}
           </div>
@@ -88,35 +81,18 @@ export default async function ProjetoDetalhePage({
           </p>
         </section>
 
-        {/* Imagem hero placeholder · gradient arquitetônico */}
+        {/* Hero visual · gradient escuro com grid */}
         <section className="container-page mb-20">
           <div
             className="rounded-glass aspect-[16/8] sm:aspect-[16/7] relative overflow-hidden shadow-elev-4"
             style={{
-              background:
-                "linear-gradient(135deg, #36454F 0%, #1a1a1a 60%, #0e0e0e 100%)",
+              background: "linear-gradient(135deg, #36454F 0%, #1a1a1a 60%, #0a0a0a 100%)",
             }}
           >
-            <svg
-              viewBox="0 0 800 400"
-              className="absolute inset-0 w-full h-full opacity-25"
-              preserveAspectRatio="xMidYMid slice"
-            >
+            <svg viewBox="0 0 800 400" className="absolute inset-0 w-full h-full opacity-25" preserveAspectRatio="xMidYMid slice">
               <defs>
-                <pattern
-                  id={`grid-${project.slug}`}
-                  x="0"
-                  y="0"
-                  width="40"
-                  height="40"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <path
-                    d="M40 0H0V40"
-                    stroke="#FCFBF7"
-                    strokeWidth="0.5"
-                    fill="none"
-                  />
+                <pattern id={`grid-${project.slug}`} x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M40 0H0V40" stroke="#FCFBF7" strokeWidth="0.5" fill="none" />
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill={`url(#grid-${project.slug})`} />
@@ -125,24 +101,13 @@ export default async function ProjetoDetalhePage({
                 stroke="#A23A1F"
                 strokeWidth="2"
                 fill="none"
-                opacity="0.7"
-              />
-              <path
-                d="M0 360L80 330L160 340L240 280L320 300L400 240L480 270L560 250L640 285L720 270L800 290"
-                stroke="#FCFBF7"
-                strokeWidth="1"
-                strokeDasharray="4 4"
-                fill="none"
-                opacity="0.5"
+                opacity="0.75"
               />
             </svg>
             <div className="absolute inset-0 flex items-end p-8 sm:p-12">
-              <div className="font-display text-display-2xl sm:text-display-3xl text-paperPure/15 font-bold leading-none">
+              <div className="font-display text-display-2xl sm:text-[160px] text-paperPure/15 font-semibold leading-none tracking-tighter">
                 b
               </div>
-            </div>
-            <div className="absolute top-6 right-6 chip-status chip-glass">
-              {STATUS_LABELS[project.status]}
             </div>
           </div>
         </section>
@@ -150,17 +115,13 @@ export default async function ProjetoDetalhePage({
         {/* Facts + Métricas */}
         <section className="container-page mb-20">
           <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16">
-            {/* Facts box */}
-            <div className="glass rounded-glass p-8">
+            <div className="card-base p-8">
               <p className="eyebrow mb-6">Ficha</p>
               <dl className="space-y-4">
                 {project.facts.map((f) => (
-                  <div
-                    key={f.label}
-                    className="flex items-baseline justify-between gap-4 pb-3 border-b border-rule/40 last:border-0 last:pb-0"
-                  >
+                  <div key={f.label} className="flex items-baseline justify-between gap-4 pb-3 border-b border-rule/60 last:border-0 last:pb-0">
                     <dt className="text-body-sm text-muted">{f.label}</dt>
-                    <dd className="text-body font-semibold text-ink text-right tnum">
+                    <dd className="text-body font-medium text-ink text-right tnum">
                       {f.value}
                     </dd>
                   </div>
@@ -168,17 +129,13 @@ export default async function ProjetoDetalhePage({
               </dl>
             </div>
 
-            {/* Métricas · grid */}
             <div>
               <p className="eyebrow mb-6">Estado atual</p>
               <div className="grid sm:grid-cols-2 gap-4">
                 {project.metrics.map((m) => (
-                  <div
-                    key={m.label}
-                    className="glass-deep rounded-card p-6"
-                  >
+                  <div key={m.label} className="card-base p-6">
                     <p className="eyebrow text-muted2 mb-2.5">{m.label}</p>
-                    <p className="font-display text-display-lg text-gradient-warn tnum leading-none">
+                    <p className="font-display text-display-lg text-ink tnum leading-none tracking-tight">
                       {m.value}
                     </p>
                   </div>
@@ -188,16 +145,16 @@ export default async function ProjetoDetalhePage({
           </div>
         </section>
 
-        {/* Chapters · narrativa do projeto */}
+        {/* Chapters */}
         <section className="container-tight mb-20">
           <p className="eyebrow mb-3">Camadas do projeto</p>
-          <h2 className="font-display text-display-lg text-ink mb-12 max-w-2xl leading-[1.05]">
+          <h2 className="font-display text-display-lg text-ink mb-12 max-w-2xl leading-[1.05] tracking-tight">
             Por dentro do que importa.
           </h2>
           <div className="space-y-12">
             {project.chapters.map((c, i) => (
               <article key={c.title} className="grid sm:grid-cols-[80px_1fr] gap-6 sm:gap-10">
-                <span className="font-display text-display-md text-gradient-warn tnum leading-none">
+                <span className="font-display text-display-md text-muted2 tnum leading-none tracking-tight">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
@@ -213,59 +170,53 @@ export default async function ProjetoDetalhePage({
           </div>
         </section>
 
-        {/* CTA + link painel se em andamento */}
+        {/* Painel link */}
         {project.status === "em-andamento" && project.slug === "silva" && (
           <section className="container-page mb-20">
-            <div className="glass-deep rounded-glass p-10 sm:p-14 text-center relative overflow-hidden">
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    "radial-gradient(ellipse 60% 50% at 50% 100%, rgba(162, 58, 31, 0.08), transparent 70%)",
-                }}
-              />
-              <div className="relative z-10">
-                <span className="eyebrow-chip eyebrow-chip-warn mb-5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-warn animate-pulse" />
-                  ACOMPANHAMENTO AO VIVO
-                </span>
-                <h3 className="font-display text-display-lg text-ink mb-4 leading-tight">
-                  Esta obra tem painel próprio.
-                </h3>
-                <p className="text-body text-charcoal max-w-xl mx-auto mb-7 leading-relaxed">
-                  Curva S em tempo real, fotos do canteiro, decisões em aberto,
-                  medições CAIXA. Acesso via login do cliente.
-                </p>
-                <a
-                  href="https://painel.barch.com.br/obra/silva"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary"
-                >
-                  Abrir painel.barch.com.br ↗
-                </a>
-              </div>
+            <div className="card-base p-10 sm:p-14 text-center">
+              <span className="eyebrow-chip mb-5">
+                <span className="w-1.5 h-1.5 rounded-full bg-warn animate-pulse" />
+                ACOMPANHAMENTO AO VIVO
+              </span>
+              <h3 className="font-display text-display-lg text-ink mb-4 leading-tight tracking-tight">
+                Esta obra tem painel próprio.
+              </h3>
+              <p className="text-body text-charcoal max-w-xl mx-auto mb-7 leading-relaxed">
+                Curva S em tempo real, fotos do canteiro, decisões em aberto,
+                medições CAIXA. Acesso via login do cliente.
+              </p>
+              <a
+                href="https://painel.barch.com.br/obra/silva"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ink"
+              >
+                Abrir painel.barch.com.br
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+                  <path d="M7 17L17 7M9 7h8v8" />
+                </svg>
+              </a>
             </div>
           </section>
         )}
 
-        {/* Nav inferior · próximo projeto */}
+        {/* Nav próximo */}
         <section className="container-page">
           <Link
             href={`/projetos/${next.slug}`}
-            className="block group glass rounded-glass p-8 hover-lift focus-ring"
+            className="block group card-base card-hover p-8 focus-ring"
           >
             <div className="flex items-center justify-between gap-6">
               <div>
                 <p className="eyebrow text-muted2 mb-2">Próximo projeto</p>
-                <h3 className="font-display text-display-sm sm:text-display-md text-ink leading-tight group-hover:text-warn transition-colors duration-250">
+                <h3 className="font-display text-display-sm sm:text-display-md text-ink leading-tight tracking-tight group-hover:text-warn transition-colors duration-250">
                   {next.name}
                 </h3>
-                <p className="text-body-sm text-charcoal/70 mt-1">
+                <p className="text-body-sm text-muted mt-1">
                   {next.typology} · {next.year}
                 </p>
               </div>
-              <span className="text-display-md text-warn opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">
+              <span className="text-display-md text-ink opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">
                 →
               </span>
             </div>
@@ -273,21 +224,6 @@ export default async function ProjetoDetalhePage({
         </section>
       </main>
       <Footer />
-
-      <style>{`
-        .chip-status {
-          display: inline-flex; align-items: center; gap: 6px;
-          padding: 6px 12px; border-radius: 9999px;
-          font-size: 11px; font-weight: 600;
-          text-transform: uppercase; letter-spacing: 0.08em;
-        }
-        .chip-glass {
-          background: rgba(252, 251, 247, 0.85);
-          backdrop-filter: blur(8px);
-          color: #0e0e0e;
-          border: 1px solid rgba(255, 255, 255, 0.5);
-        }
-      `}</style>
     </>
   );
 }

@@ -19,8 +19,9 @@ const items: NavItem[] = [
 ];
 
 /**
- * Nav · pill flutuante glass · padrão LanderOS adaptado Barch.
- * Aparece ancorado no topo, encolhe levemente após scroll.
+ * Nav · OrbAI-coded
+ * Logo esquerda · items centrais · CTA pill preto direita
+ * Fundo translúcido leve no scroll, sem pill flutuante
  */
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,44 +36,48 @@ export function Nav() {
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 flex justify-center transition-all duration-400 ease-apple",
-        scrolled ? "pt-3" : "pt-6"
+        "fixed top-0 inset-x-0 z-50 transition-all duration-400 ease-apple",
+        scrolled
+          ? "bg-paper/85 backdrop-blur-xl border-b border-rule/60"
+          : "bg-transparent"
       )}
     >
-      <nav
-        className={cn(
-          "glass-nav rounded-pill flex items-center gap-1 transition-all duration-400 ease-apple",
-          scrolled ? "px-3 py-2 scale-95" : "px-4 py-2.5"
-        )}
-        aria-label="Principal"
-      >
+      <div className="container-page py-5 flex items-center justify-between gap-4">
+        {/* Logo + nome */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 pr-3 pl-1 py-1 rounded-pill focus-ring hover:opacity-70 transition-opacity duration-250"
+          className="flex items-center gap-2 focus-ring rounded-md hover:opacity-70 transition-opacity duration-250"
         >
-          <Logo variant="symbol" tone="dark" size="xs" />
-          <span className="text-body-sm font-semibold text-ink hidden sm:block">
+          <Logo variant="symbol" tone="dark" size="sm" />
+          <span className="text-[17px] font-semibold tracking-tight text-ink hidden xs:block sm:block">
             Barch
           </span>
         </Link>
-        <div className="hidden md:flex items-center gap-1 border-l border-rule/60 pl-2">
+
+        {/* Items centrais */}
+        <nav className="hidden md:flex items-center gap-1" aria-label="Principal">
           {items.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="px-3 py-1.5 text-body-sm text-charcoal hover:text-ink rounded-pill hover:bg-ink/5 transition-all duration-250 focus-ring"
+              className="px-3.5 py-2 text-[14px] text-charcoal hover:text-ink rounded-pill transition-colors duration-250 focus-ring"
             >
               {item.label}
             </Link>
           ))}
-        </div>
+        </nav>
+
+        {/* CTA direita */}
         <Link
           href="/#contato"
-          className="ml-1.5 btn-primary !h-9 !px-4 !text-[13px]"
+          className="btn-ink !h-10 !px-4 !text-[13px]"
         >
           Agendar conversa
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+            <path d="M7 17L17 7M9 7h8v8" />
+          </svg>
         </Link>
-      </nav>
+      </div>
     </header>
   );
 }
