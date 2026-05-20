@@ -1,55 +1,24 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { projects } from "@/lib/projects";
 
-interface Project {
-  slug: string;
-  name: string;
-  year: string;
-  typology: string;
-  description: string;
-  image?: string;
-  isFeatured?: boolean;
-}
-
-const projects: Project[] = [
-  {
-    slug: "silva",
-    name: "Residência Família Silva",
-    year: "2026",
-    typology: "Residencial Alto Padrão",
-    description:
-      "Casa unifamiliar com piscina, climatização VRF, elevador interno e financiamento CAIXA. Painel cliente em tempo real, BIM coordenado, vistorias 360° pela Insta360 X5.",
-    isFeatured: true,
-  },
-  {
-    slug: "airport-template",
-    name: "Aeroporto · Estudo Conceitual",
-    year: "2024",
-    typology: "Infraestrutura Aeroportuária",
-    description: "Projeto conceitual de terminal de passageiros.",
-  },
-  {
-    slug: "music-uni",
-    name: "Universidade de Música",
-    year: "2022",
-    typology: "Institucional · Cultural",
-    description: "Estudo acústico e modulação espacial.",
-  },
-  {
-    slug: "corp-hq",
-    name: "Sede Corporativa Industrial",
-    year: "2021",
-    typology: "Corporativo · Industrial",
-    description: "Galpão administrativo + plataforma fabril.",
-  },
-];
+// Mapeia os projetos compartilhados para o shape leve da home
+const items = projects.map((p) => ({
+  slug: p.slug,
+  name: p.name,
+  year: p.year,
+  typology: p.typology,
+  description: p.scopeShort,
+  isFeatured: p.isFeatured,
+}));
 
 export function Projects() {
-  const [activeSlug, setActiveSlug] = useState(projects[0].slug);
-  const active = projects.find((p) => p.slug === activeSlug) ?? projects[0];
+  const [activeSlug, setActiveSlug] = useState(items[0].slug);
+  const active = items.find((p) => p.slug === activeSlug) ?? items[0];
 
   return (
     <section id="projetos" className="relative py-section">
@@ -76,7 +45,7 @@ export function Projects() {
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-6 lg:gap-10 items-start">
           {/* Lista */}
           <div className="flex flex-col gap-2">
-            {projects.map((p, i) => (
+            {items.map((p, i) => (
               <motion.button
                 key={p.slug}
                 initial={{ opacity: 0, x: -16 }}
@@ -171,11 +140,24 @@ export function Projects() {
               <h3 className="font-display text-display-md text-ink mb-3 leading-tight">
                 {active.name}
               </h3>
-              <p className="text-body text-charcoal leading-relaxed">
+              <p className="text-body text-charcoal leading-relaxed mb-5">
                 {active.description}
               </p>
+              <Link
+                href={`/projetos/${active.slug}`}
+                className="inline-flex items-center gap-2 text-body-sm font-semibold text-warn hover:text-warn2 transition-colors duration-250 focus-ring rounded-md"
+              >
+                Ver projeto completo →
+              </Link>
             </div>
           </motion.div>
+        </div>
+
+        {/* CTA · ver todos */}
+        <div className="flex justify-center mt-12">
+          <Link href="/projetos" className="btn-secondary">
+            Ver repertório completo →
+          </Link>
         </div>
       </div>
     </section>

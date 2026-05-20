@@ -12,8 +12,8 @@ interface NavItem {
 
 const items: NavItem[] = [
   { label: "Manifesto", href: "/sobre" },
+  { label: "Projetos", href: "/projetos" },
   { label: "Processo", href: "/#processo" },
-  { label: "Projetos", href: "/#projetos" },
   { label: "Stack", href: "/#stack" },
   { label: "Contato", href: "/#contato" },
 ];
