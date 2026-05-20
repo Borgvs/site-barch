@@ -10,10 +10,21 @@
  *  - Eyebrow refinado, sem chip pesado
  */
 
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { EASE, DURATION } from "@/lib/motion";
 import { Tilt } from "@/components/system/Tilt";
+
+// Three.js model — lazy load para não pesar o bundle inicial
+const BimModel3D = dynamic(
+  () => import("./BimModel3D").then((m) => ({ default: m.BimModel3D })),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="absolute inset-0 bg-ink animate-pulse" aria-hidden />
+    ),
+  },
+);
 
 const tools = [
   {
@@ -112,7 +123,7 @@ export function Bimarch() {
           </motion.p>
         </div>
 
-        {/* Visual hero da seção · imagem do modelo federado */}
+        {/* Visual hero da seção · modelo 3D BIM interativo (Three.js) */}
         <motion.figure
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -125,32 +136,15 @@ export function Bimarch() {
           className="relative mb-24 rounded-cardSm overflow-hidden bg-ink"
         >
           <div className="aspect-[16/8] relative">
-            <Image
-              src="/hero/bimarch-modelo.webp"
-              alt="Modelo BIM federado · disciplinas coordenadas"
-              fill
-              quality={88}
-              sizes="(min-width: 1024px) 1024px, 100vw"
-              className="object-cover"
-            />
-            {/* Vignette discreta */}
-            <div
-              aria-hidden
-              className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent"
-            />
-            {/* Legenda canto inferior */}
-            <div className="absolute bottom-5 left-6 right-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 text-paper">
-              <div>
-                <p className="text-[10.5px] tracking-[0.32em] uppercase text-paper/65 font-medium mb-1">
-                  Modelo federado · corte
-                </p>
-                <p className="text-[15px] text-paper/95 leading-tight font-medium">
-                  Arquitetura · estrutural · hidráulica · elétrica em uma única
-                  fonte
-                </p>
-              </div>
-              <p className="text-[10.5px] tracking-[0.28em] uppercase text-paper/55 font-mono tnum">
-                01 · obra silva · rev. 02
+            <BimModel3D className="absolute inset-0" />
+            {/* Titulo overlay no topo */}
+            <div className="absolute top-5 left-6 z-10 pointer-events-none">
+              <p className="text-[10.5px] tracking-[0.32em] uppercase text-paper/65 font-medium mb-1">
+                Modelo federado · corte axonométrico
+              </p>
+              <p className="text-[15px] text-paper/95 leading-tight font-medium max-w-md">
+                Arquitetura, estrutural, hidráulica e elétrica em uma única
+                fonte
               </p>
             </div>
           </div>

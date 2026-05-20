@@ -1,16 +1,16 @@
 "use client";
 
 /**
- * Nav — Header fixo com wordmark "barch." adaptativo (full → line on scroll).
+ * Nav — Header fixo com logo real adaptativo + scroll detection robusto.
  *
- * - Sobre o hero (dark): wordmark light, links light, CTA glass-pill-dark
- * - Scrolled (após hero): wordmark line dark, links charcoal, CTA glass-cta
- * - Backdrop blur ativa só após scroll
+ * - Sobre o hero (dark): wordmark light + texto paper + glass-pill-dark CTA
+ * - Após hero (light): wordmark dark + texto charcoal + glass-pill CTA
+ * - scrollY > vh * 4.7 (94% de 500vh hero) → out of hero
  */
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Wordmark } from "./Wordmark";
+import { Logo } from "./Logo";
 import { cn } from "@/lib/utils";
 
 interface NavProps {
@@ -33,10 +33,6 @@ export function Nav({ transparentOver = null }: NavProps) {
     const onScroll = () => {
       const y = window.scrollY;
       setScrolled(y > 16);
-
-      // Detecta "ainda sobre o hero" comparando scrollY com altura do hero.
-      // HeroConstruction tem 500vh; consideramos "sobre hero" enquanto y
-      // está abaixo de 470vh (94% — antes do final, mantém UX coerente).
       if (transparentOver === "hero") {
         const vh = window.innerHeight;
         setOverHero(y < vh * 4.7);
@@ -66,17 +62,35 @@ export function Nav({ transparentOver = null }: NavProps) {
       style={{ transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)" }}
     >
       <div className="container-page py-4 sm:py-5 flex items-center justify-between gap-4">
-        {/* Wordmark — full quando topo, line quando rolado */}
+        {/* Logo real — wordmark Barch · adapta tone ao fundo */}
         <Link
           href="/"
           className="group inline-flex items-center focus-ring rounded-md transition-opacity duration-300 hover:opacity-75"
-          aria-label="barch · página inicial"
+          aria-label="Barch · página inicial"
         >
-          <Wordmark
-            scrolled={scrolled}
-            tone={onDark ? "light" : "dark"}
-            size="md"
-          />
+          {/* Cross-fade entre 2 variantes: wordmark sólido em paper, line stroke em scroll
+              No topo: variant 'wordmark' tone='light'/'dark'
+              Após scroll: variant 'line' (símbolo apenas) — mais compacto */}
+          <span
+            className="block transition-opacity duration-500 ease-out-expo"
+            style={{
+              opacity: scrolled ? 0 : 1,
+              position: scrolled ? "absolute" : "relative",
+              pointerEvents: scrolled ? "none" : "auto",
+            }}
+          >
+            <Logo variant="wordmark" tone={onDark ? "light" : "dark"} size="sm" />
+          </span>
+          <span
+            className="block transition-opacity duration-500 ease-out-expo"
+            style={{
+              opacity: scrolled ? 1 : 0,
+              position: scrolled ? "relative" : "absolute",
+              pointerEvents: scrolled ? "auto" : "none",
+            }}
+          >
+            <Logo variant="line" tone={onDark ? "light" : "dark"} size="sm" />
+          </span>
         </Link>
 
         <nav
@@ -90,7 +104,7 @@ export function Nav({ transparentOver = null }: NavProps) {
               className={cn(
                 "group relative px-3.5 py-2 text-[13px] rounded-pill transition-colors duration-500 focus:outline-none focus-visible:ring-1 focus-visible:ring-offset-2",
                 onDark
-                  ? "text-paper/80 hover:text-paper focus-visible:ring-paper focus-visible:ring-offset-ink"
+                  ? "text-paper/85 hover:text-paper focus-visible:ring-paper focus-visible:ring-offset-ink"
                   : "text-charcoal hover:text-ink focus-visible:ring-ink focus-visible:ring-offset-paper",
               )}
             >
