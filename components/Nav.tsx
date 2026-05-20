@@ -30,24 +30,25 @@ export function Nav({ transparentOver = null }: NavProps) {
   const [overHero, setOverHero] = useState(transparentOver === "hero");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 16);
+
+      // Detecta "ainda sobre o hero" comparando scrollY com altura do hero.
+      // HeroConstruction tem 500vh; consideramos "sobre hero" enquanto y
+      // está abaixo de 470vh (94% — antes do final, mantém UX coerente).
+      if (transparentOver === "hero") {
+        const vh = window.innerHeight;
+        setOverHero(y < vh * 4.7);
+      }
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    if (transparentOver !== "hero") return;
-    const heroEl =
-      document.querySelector("main > section:first-of-type") ||
-      document.querySelector('[aria-label*="Hero"]');
-    if (!heroEl) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setOverHero(entry.intersectionRatio > 0.05),
-      { threshold: [0, 0.05, 0.5, 1] },
-    );
-    observer.observe(heroEl);
-    return () => observer.disconnect();
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, [transparentOver]);
 
   const onDark = overHero;
