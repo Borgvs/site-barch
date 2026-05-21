@@ -1,0 +1,13 @@
+{
+  "count": 240,
+  "prefix": "/frames/frame_",
+  "extension": ".webp",
+  "pad": 4,
+  "width": 1920,
+  "height": 1080,
+  "version": "1779322891",
+  "pipeline": "fal-ai · 7-phase FLUX Pro Ultra + 6-chain Kling 1.6 Pro (parallel)",
+  "generatedAt": "2026-05-21T00:21:31Z",
+  "totalBytes": 41893126,
+  "phases": ["Terreno", "Fundações", "Estrutura", "Vedação", "Vidro", "Materialidade", "Habitar"]
+}

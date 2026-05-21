@@ -12,7 +12,9 @@
     "gerar-hero:resume": "node scripts/fal-pipeline.mjs --resume",
     "gerar-hero:skip-images": "node scripts/fal-pipeline.mjs --skip-images",
     "gerar-frames": "node scripts/fal-kling-frames.mjs",
-    "gerar-frames:resume": "node scripts/fal-kling-frames.mjs --resume"
+    "gerar-frames:resume": "node scripts/fal-kling-frames.mjs --resume",
+    "gerar-fases": "node scripts/fal-construction-pipeline.mjs",
+    "gerar-fases:resume": "node scripts/fal-construction-pipeline.mjs --resume"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
