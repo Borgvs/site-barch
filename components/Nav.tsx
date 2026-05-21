@@ -26,10 +26,16 @@ const items = [
 ];
 
 export function Nav({ transparentOver = null }: NavProps) {
+  // mounted flag evita React #418 hydration mismatch: o servidor não tem
+  // acesso a window.scrollY / window.innerHeight, então renderizamos um
+  // estado inicial determinístico (scrolled=false, overHero baseado em prop)
+  // até o mount. Só depois lemos o scroll real.
+  const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [overHero, setOverHero] = useState(transparentOver === "hero");
 
   useEffect(() => {
+    setMounted(true);
     const onScroll = () => {
       const y = window.scrollY;
       setScrolled(y > 16);
@@ -47,16 +53,18 @@ export function Nav({ transparentOver = null }: NavProps) {
     };
   }, [transparentOver]);
 
-  const onDark = overHero;
+  // Antes do mount, força estado SSR-estável independente de window
+  const onDark = mounted ? overHero : transparentOver === "hero";
+  const isScrolled = mounted ? scrolled : false;
 
   return (
     <header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-all duration-700",
-        scrolled && !onDark
-          ? "bg-paper/70 backdrop-blur-2xl border-b border-rule/40"
-          : scrolled && onDark
-            ? "bg-ink/30 backdrop-blur-md border-b border-paper/[0.06]"
+        "fixed top-0 inset-x-0 z-[60] transition-all duration-700",
+        isScrolled && !onDark
+          ? "bg-paper/85 backdrop-blur-2xl border-b border-rule/40"
+          : isScrolled && onDark
+            ? "bg-ink/35 backdrop-blur-md border-b border-paper/[0.06]"
             : "bg-transparent border-b border-transparent",
       )}
       style={{ transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)" }}
@@ -74,9 +82,9 @@ export function Nav({ transparentOver = null }: NavProps) {
           <span
             className="block transition-opacity duration-500 ease-out-expo"
             style={{
-              opacity: scrolled ? 0 : 1,
-              position: scrolled ? "absolute" : "relative",
-              pointerEvents: scrolled ? "none" : "auto",
+              opacity: isScrolled ? 0 : 1,
+              position: isScrolled ? "absolute" : "relative",
+              pointerEvents: isScrolled ? "none" : "auto",
             }}
           >
             <Logo variant="wordmark" tone={onDark ? "light" : "dark"} size="sm" />
@@ -84,9 +92,9 @@ export function Nav({ transparentOver = null }: NavProps) {
           <span
             className="block transition-opacity duration-500 ease-out-expo"
             style={{
-              opacity: scrolled ? 1 : 0,
-              position: scrolled ? "relative" : "absolute",
-              pointerEvents: scrolled ? "auto" : "none",
+              opacity: isScrolled ? 1 : 0,
+              position: isScrolled ? "relative" : "absolute",
+              pointerEvents: isScrolled ? "auto" : "none",
             }}
           >
             <Logo variant="line" tone={onDark ? "light" : "dark"} size="sm" />

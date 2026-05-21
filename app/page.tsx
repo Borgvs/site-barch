@@ -1,6 +1,6 @@
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { HeroConstruction } from "@/components/hero/HeroConstruction";
+import { HeroConstructionLoader } from "@/components/hero/HeroConstructionLoader";
 import { PullQuote } from "@/components/sections/PullQuote";
 import { Visao } from "@/components/sections/Visao";
 import { Process } from "@/components/sections/Process";
@@ -19,7 +19,7 @@ export default function HomePage() {
             → Luz → Habitar. Container 500vh com pin GSAP ScrollTrigger.
             Dual-mode: Three.js procedural (default) ou frame sequence
             Kling se /public/frames/manifest.json existir. */}
-        <HeroConstruction />
+        <HeroConstructionLoader />
 
         <div id="conteudo">
           <PullQuote />
