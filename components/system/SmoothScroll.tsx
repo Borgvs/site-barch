@@ -1,14 +1,17 @@
 "use client";
 
 /**
- * SmoothScroll — Lenis provider integrado com GSAP ScrollTrigger.
+ * SmoothScroll — Lenis + GSAP ScrollTrigger com SINGLE LOOP (padrão oficial).
  *
- * Estratégia:
- *  - Lenis controla o scroll nativo via wheel hijack
- *  - GSAP ScrollTrigger é atualizado a cada tick do Lenis para sincronizar
- *  - prefers-reduced-motion → desliga o smooth, scroll volta a ser nativo
+ * Fix BUG 4 da auditoria: Lenis e GSAP devem rodar no MESMO RAF loop, não
+ * em dois loops independentes (que dessincronizam e quebram o progress
+ * do ScrollTrigger, causando fases fora de ordem).
  *
- * Wrapper deve envolver toda a página (em app/layout.tsx).
+ * Padrão oficial Lenis + GSAP:
+ *   1. lenis.on("scroll", ScrollTrigger.update) — sincroniza scroll → ST
+ *   2. gsap.ticker.add(time => lenis.raf(time * 1000)) — GSAP ticker
+ *      controla o RAF do Lenis (sem requestAnimationFrame separado)
+ *   3. gsap.ticker.lagSmoothing(0) — desliga lag smoothing do GSAP
  */
 
 import { useEffect, type ReactNode } from "react";
@@ -34,21 +37,18 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
       smoothWheel: true,
     });
 
-    // Sincroniza Lenis ↔ ScrollTrigger
+    // 1. Sincroniza Lenis → ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update);
 
-    let raf = 0;
-    const tick = (time: number) => {
-      lenis.raf(time);
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
+    // 2. GSAP ticker controla o RAF do Lenis — SINGLE LOOP
+    const lenisRaf = (time: number) => lenis.raf(time * 1000);
+    gsap.ticker.add(lenisRaf);
 
-    // GSAP usa requestAnimationFrame interno em sincronia
+    // 3. Desliga lag smoothing (Lenis já é smooth)
     gsap.ticker.lagSmoothing(0);
 
     return () => {
-      cancelAnimationFrame(raf);
+      gsap.ticker.remove(lenisRaf);
       lenis.destroy();
     };
   }, []);

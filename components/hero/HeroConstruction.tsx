@@ -147,6 +147,7 @@ export function HeroConstruction() {
           scrub: SCROLL_CONFIG.scrub,
           pin: stickyRef.current,
           pinSpacing: false,
+          anticipatePin: 1, // evita flash do Safari ao entrar no pin
           invalidateOnRefresh: true,
           onUpdate: (st) => {
             progressRef.current = st.progress;
@@ -189,10 +190,11 @@ export function HeroConstruction() {
       className="relative w-full bg-ink text-paper"
       aria-label="Experiência de construção da residência"
     >
-      {/* Sticky viewport — pinado pelo GSAP */}
+      {/* Sticky viewport — pinado pelo GSAP · will-change para GPU compositing */}
       <div
         ref={stickyRef}
         className="absolute top-0 left-0 h-screen w-full overflow-hidden bg-ink"
+        style={{ willChange: "transform" }}
       >
         {/* Driver: frame sequence (Kling) ou Three.js procedural */}
         {mode === "frames" && manifest ? (

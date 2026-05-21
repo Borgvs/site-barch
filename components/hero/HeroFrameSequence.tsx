@@ -17,6 +17,7 @@
  */
 
 import { useEffect, useRef, useState, type MutableRefObject } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   buildFramePath,
   type FramesManifest,
@@ -92,6 +93,11 @@ export function HeroFrameSequence({
         }
       });
       await Promise.all(workers);
+      // BUG 6 fix: ScrollTrigger.refresh() após frames carregarem
+      // (layout pode ter mudado quando o loader desaparece)
+      if (!canceled && typeof ScrollTrigger !== "undefined") {
+        ScrollTrigger.refresh();
+      }
     });
 
     imagesRef.current = images;
@@ -166,7 +172,7 @@ export function HeroFrameSequence({
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
-        style={{ background: "#FCFBF7" }}
+        style={{ background: "#0A0A0A" }}
       />
       {percent < 12 && (
         <div
