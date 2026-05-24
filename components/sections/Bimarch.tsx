@@ -26,45 +26,45 @@ const BimModel3D = dynamic(
   },
 );
 
-const tools = [
+const problemas = [
   {
-    name: "Autodesk Docs",
-    role: "Ambiente único",
+    name: "Decisão única",
+    role: "Acesso compartilhado",
     detail:
-      "Toda decisão técnica versionada e acessível ao GP, ao engenheiro residente e ao cliente — pelo mesmo endereço, ao mesmo tempo.",
+      "Toda decisão técnica versionada e acessível a quem decide, projeta e executa — pelo mesmo endereço, ao mesmo tempo. Nenhuma versão paralela rodando em paralelo.",
   },
   {
-    name: "ConstructIN",
-    role: "Modelo no canteiro",
+    name: "Detalhe no bolso",
+    role: "Quem executa, vê",
     detail:
-      "O detalhe técnico aprovado chega ao mestre de obras pelo celular. O canteiro deixa de ser ilha; vira ponto vivo do modelo.",
+      "O detalhe aprovado chega ao mestre de obras pelo celular. O canteiro deixa de ser ilha e vira ponto vivo do projeto. Erro de leitura cai a zero.",
   },
   {
-    name: "Solibri",
-    role: "Validação automática",
+    name: "Erro antecipado",
+    role: "Antes da concretagem",
     detail:
-      "Centenas de verificações automáticas a cada entrega. Conflito que aparece no modelo custa horas. No canteiro, custa contratos.",
+      "Centenas de verificações automáticas a cada entrega. Conflito que aparece no projeto custa horas. Conflito no canteiro custa contratos.",
   },
   {
-    name: "eCustos + Prevision",
-    role: "Quantitativo e prazo",
+    name: "Orçamento amarrado",
+    role: "Ao avanço real",
     detail:
-      "Quantitativos extraídos diretamente do modelo. Cronograma físico-financeiro acoplado ao avanço real da obra.",
+      "Quantitativos extraídos direto do projeto. Cronograma físico-financeiro acoplado ao que está sendo executado — não ao que foi prometido.",
   },
 ];
 
 const principles = [
   {
-    title: "BIM é forma de pensar.",
-    body: "O cliente não escolhe Barch por causa do software que usamos. Escolhe porque o método elimina retrabalho antes da execução começar.",
+    title: "Tecnologia como antídoto, não como espetáculo.",
+    body: "O cliente não escolhe Barch pelas ferramentas que usamos. Escolhe porque o método elimina retrabalho antes da execução começar — e o resultado aparece no prazo, no custo e no cuidado.",
   },
   {
     title: "Coordenação antes da concretagem.",
-    body: "Cada disciplina conversa com a outra no modelo federado. Quando a estrutura sobe, a hidráulica e a elétrica já se conhecem.",
+    body: "Cada disciplina conversa com a outra no projeto único. Quando a estrutura sobe, a hidráulica e a elétrica já se conhecem. Quando o acabamento entra, ninguém quebra o que está pronto.",
   },
   {
     title: "Transparência sem vitrine.",
-    body: "O cliente acompanha o que está sob controle e o que ainda não está. Sem maquiagem de relatório, sem surpresa de canteiro.",
+    body: "O cliente acompanha o que está sob controle e o que ainda não está. Sem maquiagem de relatório, sem surpresa de canteiro, sem a indústria milenar do esconder.",
   },
 ];
 
@@ -84,7 +84,7 @@ export function Bimarch() {
             transition={{ duration: DURATION.base, ease: EASE.out }}
             className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-6"
           >
-            BIM em obra · Bimarch
+            Obra em tempo real
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 12 }}
@@ -95,13 +95,14 @@ export function Bimarch() {
               ease: EASE.out,
               delay: 0.08,
             }}
-            className="font-display text-display-xl sm:text-display-2xl text-ink leading-[0.96] tracking-[-0.025em] mb-7"
+            className="font-display text-display-xl sm:text-display-2xl text-ink leading-[0.94] tracking-[-0.028em] mb-7"
+            style={{ fontWeight: 900 }}
           >
-            O modelo vive
+            A obra
             <br />
-            no canteiro —
+            que não esconde
             <br />
-            <span className="text-muted2">não fica no escritório.</span>
+            <span className="text-muted2">nada.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 8 }}
@@ -114,12 +115,12 @@ export function Bimarch() {
             }}
             className="text-body-lg text-charcoal leading-[1.55] max-w-2xl"
           >
-            Bimarch é o braço técnico da Barch. O que para a maior parte do
-            mercado é entregável de projeto, para nós é{" "}
-            <span className="text-ink font-medium">
-              instrumento vivo de coordenação
-            </span>
-            : do primeiro estudo de massas ao último relatório de pós-ocupação.
+            Quem contrata obra sabe a regra do silêncio: o cliente descobre o
+            problema tarde, o cronograma vira ficção, e o custo escala. A Barch
+            inverteu o jogo: cada disciplina, cada decisão e cada medição vive
+            num projeto único — visível,{" "}
+            <span className="text-ink font-medium">verificado antes da concretagem</span>{" "}
+            e acoplado ao que de fato está sendo executado.
           </motion.p>
         </div>
 
@@ -140,11 +141,11 @@ export function Bimarch() {
             {/* Titulo overlay no topo */}
             <div className="absolute top-5 left-6 z-10 pointer-events-none">
               <p className="text-[10.5px] tracking-[0.32em] uppercase text-paper/65 font-medium mb-1">
-                Modelo federado · corte axonométrico
+                Projeto único · todas as disciplinas
               </p>
               <p className="text-[15px] text-paper/95 leading-tight font-medium max-w-md">
-                Arquitetura, estrutural, hidráulica e elétrica em uma única
-                fonte
+                Arquitetura, estrutura, instalações e custo conversando antes
+                da execução começar
               </p>
             </div>
           </div>
@@ -159,11 +160,11 @@ export function Bimarch() {
             transition={{ duration: DURATION.base, ease: EASE.out }}
             className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-8"
           >
-            Stack operacional
+            Quatro problemas resolvidos
           </motion.p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
-            {tools.map((t, i) => (
+            {problemas.map((t, i) => (
               <motion.div
                 key={t.name}
                 initial={{ opacity: 0, y: 22, scale: 0.96 }}
@@ -221,9 +222,12 @@ export function Bimarch() {
             transition={{ duration: DURATION.base, ease: EASE.out }}
           >
             <p className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-6">
-              Como BIM aterrissa
+              Decisões aparentemente técnicas
             </p>
-            <h3 className="font-display text-display-lg text-ink leading-[1.02] tracking-[-0.025em]">
+            <h3
+              className="font-display text-display-lg text-ink leading-[0.98] tracking-[-0.028em]"
+              style={{ fontWeight: 900 }}
+            >
               Três decisões
               <br />
               que parecem técnicas.

@@ -83,11 +83,12 @@ export function Process() {
               ease: EASE.out,
               delay: 0.08,
             }}
-            className="font-display text-display-xl sm:text-display-2xl text-ink mb-6 leading-[0.96] tracking-[-0.025em]"
+            className="font-display text-display-xl sm:text-display-2xl text-ink mb-6 leading-[0.94] tracking-[-0.028em]"
+            style={{ fontWeight: 900 }}
           >
-            Quatro tempos.
+            Quatro problemas.
             <br />
-            <span className="text-muted2">Uma única coerência.</span>
+            <span className="text-muted2">Uma única lógica.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 8 }}
@@ -100,6 +101,7 @@ export function Process() {
             }}
             className="text-body-lg text-charcoal max-w-xl mx-auto leading-relaxed"
           >
+            Cada fase nasce de um problema que o mercado prefere não nomear.
             Da escuta ao pós-entrega, o método é o que torna o resultado
             impossível de reproduzir.
           </motion.p>

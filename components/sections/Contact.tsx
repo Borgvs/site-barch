@@ -85,7 +85,8 @@ export function Contact() {
                 ease: EASE.out,
                 delay: 0.22,
               }}
-              className="font-display text-display-xl sm:text-[80px] lg:text-[96px] text-paperPure mb-7 leading-[0.94] tracking-[-0.03em] max-w-3xl mx-auto"
+              className="font-display text-display-xl sm:text-[80px] lg:text-[96px] text-paperPure mb-7 leading-[0.92] tracking-[-0.034em] max-w-3xl mx-auto"
+              style={{ fontWeight: 900 }}
             >
               Construir
               <br />

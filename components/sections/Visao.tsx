@@ -141,7 +141,7 @@ export function Visao() {
         </div>
       </div>
 
-      {/* Créditos no canto inferior direito */}
+      {/* Crédito no canto inferior direito · institucional, sem identificar cliente */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -150,10 +150,10 @@ export function Visao() {
         className="absolute bottom-8 right-8 z-10 text-right"
       >
         <p className="text-[10px] tracking-[0.32em] uppercase text-paper/40 font-medium font-mono">
-          Residência Silva · RL13A
+          Projeto-tese · em execução
         </p>
         <p className="text-[10px] text-paper/30 font-mono tnum mt-1">
-          25°27&apos;S · 49°16&apos;W · Curitiba
+          Sul do Brasil · 2026
         </p>
       </motion.div>
     </section>

@@ -62,7 +62,8 @@ export function Portal() {
                 ease: EASE.out,
                 delay: 0.08,
               }}
-              className="font-display text-display-xl sm:text-display-2xl text-ink leading-[0.96] tracking-[-0.025em] mb-7"
+              className="font-display text-display-xl sm:text-display-2xl text-ink leading-[0.94] tracking-[-0.028em] mb-7"
+              style={{ fontWeight: 900 }}
             >
               Cada obra
               <br />
@@ -82,7 +83,7 @@ export function Portal() {
             >
               Cliente, gestor de projeto e equipe de campo acessam o mesmo dado,
               ao mesmo tempo. Sem versão para impressionar — só o que importa
-              para decidir.
+              para decidir, com critério e cronograma visível.
             </motion.p>
 
             <motion.div

@@ -55,7 +55,8 @@ export function Manifesto() {
               ease: EASE.out,
               delay: 0.08,
             }}
-            className="font-display text-display-xl sm:text-display-2xl text-ink mb-6 leading-[0.96] tracking-[-0.025em]"
+            className="font-display text-display-xl sm:text-display-2xl text-ink mb-6 leading-[0.94] tracking-[-0.028em]"
+            style={{ fontWeight: 900 }}
           >
             Quatro princípios.
           </motion.h2>
@@ -70,7 +71,8 @@ export function Manifesto() {
             }}
             className="text-body-lg text-charcoal max-w-xl mx-auto leading-relaxed"
           >
-            Nada que entregamos passa sem o crivo destes quatro.
+            Nada que entregamos passa sem o crivo destes quatro. Quando algum
+            falha, o entregável volta — independente do prazo.
           </motion.p>
         </div>
 
@@ -100,7 +102,10 @@ export function Manifesto() {
                     </span>
                   </div>
                   <div className="pt-2">
-                    <h3 className="font-display text-display-md sm:text-[32px] text-ink mb-3 leading-[1.08] tracking-[-0.025em]">
+                    <h3
+                      className="font-display text-display-md sm:text-[32px] text-ink mb-3 leading-[1.04] tracking-[-0.028em]"
+                      style={{ fontWeight: 900 }}
+                    >
                       {p.word}.
                     </h3>
                     <p className="text-body text-charcoal leading-[1.65] max-w-2xl">
@@ -136,7 +141,10 @@ export function Manifesto() {
             }}
             className="h-px w-16 bg-ink mx-auto mb-10 origin-center"
           />
-          <p className="font-display text-display-md sm:text-display-lg text-ink leading-[1.16] tracking-[-0.022em]">
+          <p
+            className="font-display text-display-md sm:text-display-lg text-ink leading-[1.08] tracking-[-0.028em]"
+            style={{ fontWeight: 900 }}
+          >
             Se trocar Barch por outra empresa e a frase ainda fizer sentido,
             <br />
             <span className="text-muted2">a frase está vazia.</span>
