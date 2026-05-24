@@ -1,6 +1,7 @@
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { HeroConstructionLoader } from "@/components/hero/HeroConstructionLoader";
+import { Problema } from "@/components/sections/Problema";
 import { PullQuote } from "@/components/sections/PullQuote";
 import { Visao } from "@/components/sections/Visao";
 import { Process } from "@/components/sections/Process";
@@ -22,10 +23,15 @@ export default function HomePage() {
         <HeroConstructionLoader />
 
         <div id="conteudo">
+          {/* Problema · diagnóstico editorial.
+              Ponte conceitual entre o hero (casa nascendo) e a tese (manifesto).
+              Nomeia 6 problemas estruturais do mercado de construção de
+              alto padrão. Sem nomear o problema, a Barch ficaria sem motivo. */}
+          <Problema />
+
           <PullQuote />
 
-          {/* Visão · pausa editorial cinematográfica antes do método.
-              Imagem fotorealista AI + tipografia BLACK gradient. */}
+          {/* Visão · pausa editorial cinematográfica antes do método. */}
           <Visao />
 
           <Process />

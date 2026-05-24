@@ -206,19 +206,20 @@ export function HeroConstruction() {
           <ConstructionScene progressRef={progressRef} />
         )}
 
-        {/* Gradient overlay dark — legibilidade dos overlays */}
+        {/* Gradient overlay sutil — só onde os overlays UI precisam de legibilidade
+            (topo para label + nav, base para CTA). Meio limpo. */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-black/65"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/55"
         />
 
-        {/* Vignette generosa */}
+        {/* Vignette discreta — não obscurece o conteúdo central */}
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.55) 100%)",
+              "radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.40) 100%)",
           }}
         />
 

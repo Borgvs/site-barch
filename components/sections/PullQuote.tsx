@@ -90,7 +90,10 @@ export function PullQuote() {
         </motion.p>
 
         <blockquote className="relative">
-          <p className="font-display text-display-md sm:text-display-lg leading-[1.16] tracking-[-0.02em] text-ink text-center max-w-3xl mx-auto">
+          <p
+            className="font-display text-display-md sm:text-display-lg leading-[1.10] tracking-[-0.028em] text-ink text-center max-w-3xl mx-auto"
+            style={{ fontWeight: 900 }}
+          >
             <span
               aria-hidden
               className="inline-block mr-1 text-muted2/40 align-top translate-y-[0.05em]"
