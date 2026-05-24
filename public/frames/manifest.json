@@ -5,8 +5,13 @@
   "pad": 4,
   "width": 1600,
   "height": 900,
-  "version": "8.1",
-  "pipeline": "FGAA v1.0 \u00b7 Veo 3.1 first-last + 6 anchors derivativas FLUX.1 Kontext Max",
+  "version": "8.2",
+  "pipeline": "FGAA v1.0 · Veo 3.1 first-last + 6 anchors derivativas FLUX.1 Kontext Max · I4/I2 v2 refined",
   "duration_s": 36,
-  "fps": 6.667
+  "fps": 6.667,
+  "refinements_v82": [
+    "I4 v2: jardineira (hanging vegetation) preservada integralmente",
+    "I2 v2: pilares-stub de 1-1.5m emergindo da laje (efeito Stonehenge construtivo)",
+    "C2/C3/C4/C5 vídeos Veo 3.1 regenerados com anchors refinadas"
+  ]
 }

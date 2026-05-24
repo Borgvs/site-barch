@@ -86,7 +86,8 @@ const problemas: Problema[] = [
 export function Problema() {
   return (
     <section
-      className="relative bg-paper py-section sm:py-sectionLg overflow-hidden"
+      id="diagnostico"
+      className="relative bg-paper py-section sm:py-sectionLg overflow-hidden scroll-mt-24"
       aria-label="Diagnóstico · o que o mercado produz"
     >
       <div className="container-page">
@@ -110,8 +111,11 @@ export function Problema() {
               ease: EASE.out,
               delay: 0.08,
             }}
-            className="font-display text-display-xl sm:text-display-2xl text-ink mb-6 leading-[0.92] tracking-[-0.034em]"
-            style={{ fontWeight: 900 }}
+            className="font-display text-ink mb-6 leading-[0.92] tracking-[-0.034em]"
+            style={{
+              fontWeight: 900,
+              fontSize: "clamp(42px, 9vw, 84px)",
+            }}
           >
             Seis problemas
             <br />
@@ -152,10 +156,11 @@ export function Problema() {
                 }}
                 className="group relative"
               >
-                {/* Linha horizontal superior (gesto editorial) */}
+                {/* Linha horizontal superior (gesto editorial)
+                    + número que escurece no hover */}
                 <div className="flex items-baseline justify-between mb-6 sm:mb-8">
                   <span
-                    className="font-display text-[44px] sm:text-[56px] leading-none tnum tracking-[-0.04em]"
+                    className="font-display text-[44px] sm:text-[56px] leading-none tnum tracking-[-0.04em] transition-all duration-700"
                     style={{
                       fontWeight: 900,
                       background:
@@ -169,26 +174,33 @@ export function Problema() {
                     {p.num}
                   </span>
                   <div
-                    className="h-px w-14 bg-ink/25 transition-all duration-500 group-hover:w-32 group-hover:bg-ink"
+                    className="h-px w-14 bg-ink/25 transition-all duration-700 ease-out-expo group-hover:w-32 group-hover:bg-ink"
                     aria-hidden
                   />
                 </div>
 
-                <p className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-4">
+                <p className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-4 transition-colors duration-500 group-hover:text-ink">
                   {p.eyebrow}
                 </p>
 
+                {/* Heading com underline animado na primeira frase relevante */}
                 <h3
-                  className="font-display text-[28px] sm:text-[34px] lg:text-[38px] text-ink leading-[1.02] tracking-[-0.028em] mb-5"
+                  className="relative font-display text-[28px] sm:text-[34px] lg:text-[38px] text-ink leading-[1.02] tracking-[-0.028em] mb-5"
                   style={{ fontWeight: 900 }}
                 >
-                  {p.heading}
+                  <span className="relative inline-block">
+                    {p.heading}
+                    <span
+                      aria-hidden
+                      className="absolute left-0 bottom-[-0.08em] h-[2px] w-0 bg-ink transition-[width] duration-[800ms] ease-out-expo group-hover:w-full"
+                    />
+                  </span>
                 </h3>
 
-                <p className="text-body text-charcoal leading-[1.65] mb-3">
+                <p className="text-body text-charcoal leading-[1.65] mb-3 transition-colors duration-500 group-hover:text-ink">
                   {p.bodyA}
                 </p>
-                <p className="text-body text-charcoal/85 leading-[1.65] italic">
+                <p className="text-body text-charcoal/85 leading-[1.65] italic transition-colors duration-500 group-hover:text-charcoal">
                   {p.bodyB}
                 </p>
               </motion.article>

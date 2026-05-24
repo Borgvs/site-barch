@@ -62,8 +62,11 @@ export function Portal() {
                 ease: EASE.out,
                 delay: 0.08,
               }}
-              className="font-display text-display-xl sm:text-display-2xl text-ink leading-[0.94] tracking-[-0.028em] mb-7"
-              style={{ fontWeight: 900 }}
+              className="font-display text-ink leading-[0.94] tracking-[-0.028em] mb-7"
+              style={{
+                fontWeight: 900,
+                fontSize: "clamp(42px, 9vw, 84px)",
+              }}
             >
               Cada obra
               <br />

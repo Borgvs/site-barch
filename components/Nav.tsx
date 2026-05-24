@@ -18,10 +18,11 @@ interface NavProps {
 }
 
 const items = [
-  { label: "Manifesto", href: "/sobre" },
+  { label: "Diagnóstico", href: "/#diagnostico" },
   { label: "Método", href: "/#processo" },
-  { label: "BIM em obra", href: "/#bim" },
+  { label: "Obra", href: "/#bim" },
   { label: "Portal", href: "/#portal" },
+  { label: "Manifesto", href: "/sobre" },
   { label: "Contato", href: "/#contato" },
 ];
 

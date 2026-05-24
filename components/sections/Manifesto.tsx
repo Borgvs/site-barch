@@ -55,8 +55,11 @@ export function Manifesto() {
               ease: EASE.out,
               delay: 0.08,
             }}
-            className="font-display text-display-xl sm:text-display-2xl text-ink mb-6 leading-[0.94] tracking-[-0.028em]"
-            style={{ fontWeight: 900 }}
+            className="font-display text-ink mb-6 leading-[0.94] tracking-[-0.028em]"
+            style={{
+              fontWeight: 900,
+              fontSize: "clamp(42px, 9vw, 84px)",
+            }}
           >
             Quatro princípios.
           </motion.h2>
