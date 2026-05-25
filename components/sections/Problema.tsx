@@ -103,7 +103,7 @@ export function Problema() {
   return (
     <section
       id="diagnostico"
-      className="relative section-enter-from-ink py-section sm:py-sectionLg overflow-hidden scroll-mt-24"
+      className="relative py-section sm:py-sectionLg overflow-hidden scroll-mt-24"
       aria-label="Diagnóstico · o que o mercado produz"
     >
       <div className="container-page">

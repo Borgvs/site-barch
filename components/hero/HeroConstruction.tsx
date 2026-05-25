@@ -233,6 +233,18 @@ export function HeroConstruction() {
           }}
         />
 
+        {/* Fade interno · base do hero canvas funde com anthra do body.
+            Overlay sobre a animação (não faixa entre seções) · efeito de
+            mesclagem na base · entrega sensação de continuidade. */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-[18vh]"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(15,17,20,0.45) 35%, rgba(25,27,30,0.85) 70%, rgba(37,39,42,1) 100%)",
+          }}
+        />
+
         {/* Overlay UI */}
         <div className="pointer-events-none absolute inset-0 z-10">
           <PhaseLabel progress={progress} />

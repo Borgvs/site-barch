@@ -75,6 +75,85 @@ const principles = [
 ];
 
 /* -----------------------------------------------------------------------
+ * Timeline B0 → B5 · prepara o usuário visualmente para o scroll-driven
+ * ---------------------------------------------------------------------- */
+
+const BIM_PHASES = [
+  { code: "B0", label: "Terreno marcado" },
+  { code: "B1", label: "Fundação" },
+  { code: "B2", label: "Estrutura" },
+  { code: "B3", label: "Instalações" },
+  { code: "B4", label: "Vedações" },
+  { code: "B5", label: "Entrega" },
+];
+
+function BimPhasesTimeline() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: DURATION.slow, ease: EASE.out, delay: 0.24 }}
+      className="mb-12 max-w-5xl"
+      aria-label="Timeline das 6 fases construtivas BIM"
+    >
+      <p className="text-[10.5px] tracking-[0.32em] uppercase text-paper/45 font-medium mb-6">
+        Cada fase abaixo · documentada em tempo real
+      </p>
+      <div className="relative">
+        {/* Linha base · toda a largura */}
+        <div
+          className="absolute top-[14px] left-0 right-0 h-px bg-paper/12"
+          aria-hidden
+        />
+        {/* Linha clay · 100% (todas as fases entregues no estudo de caso) */}
+        <motion.div
+          aria-hidden
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 1.4, ease: [0.32, 0.72, 0, 1], delay: 0.4 }}
+          className="absolute top-[14px] left-0 right-0 h-px bg-accent origin-left"
+        />
+
+        {/* 6 nós · code + label */}
+        <div className="relative grid grid-cols-6 gap-2 sm:gap-4">
+          {BIM_PHASES.map((phase, i) => (
+            <motion.div
+              key={phase.code}
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{
+                duration: 0.45,
+                ease: [0.32, 0.72, 0, 1],
+                delay: 0.5 + i * 0.08,
+              }}
+              className="flex flex-col items-start"
+            >
+              <span
+                className="block h-[7px] w-[7px] rounded-full bg-accent mb-3 mt-[10px]"
+                aria-hidden
+                style={{ boxShadow: "0 0 0 3px rgba(156, 114, 89, 0.18)" }}
+              />
+              <span
+                className="font-mono text-[10px] tracking-[0.18em] text-paper/45 tnum mb-1"
+                style={{ fontWeight: 500 }}
+              >
+                {phase.code}
+              </span>
+              <span className="text-[11px] sm:text-[12px] text-paper/85 leading-tight font-medium">
+                {phase.label}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+/* -----------------------------------------------------------------------
  * Scroll-driven canvas section
  * ---------------------------------------------------------------------- */
 
@@ -143,6 +222,18 @@ function BimScrollCanvas({ manifest }: { manifest: BimFramesManifest }) {
 
         {/* Overlay técnico documental */}
         <BimLayerAnnotations progressRef={progressRef} />
+
+        {/* Fade interno · base do canvas BIM funde com anthra do body.
+            Não é faixa horizontal entre seções · é overlay sobre a animação
+            que cria sensação de mesclagem com o fundo. */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-[18vh]"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(15,17,20,0.45) 35%, rgba(25,27,30,0.85) 70%, rgba(37,39,42,1) 100%)",
+          }}
+        />
       </div>
     </div>
   );
@@ -400,7 +491,7 @@ export function Bimarch() {
             transition={{ duration: DURATION.base, ease: EASE.out }}
             className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-6"
           >
-            Obra em tempo real
+            Processo BIM · obra em tempo real
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 12 }}
@@ -417,11 +508,11 @@ export function Bimarch() {
               fontSize: "clamp(42px, 9vw, 84px)",
             }}
           >
-            A obra
+            O BIM é
             <br />
-            que não esconde
+            <span className="text-paper/55">o sistema operacional</span>
             <br />
-            <span className="text-paper/55">nada.</span>
+            do empreendimento.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 8 }}
@@ -434,24 +525,26 @@ export function Bimarch() {
             }}
             className="text-body-lg text-paper/85 leading-[1.55] max-w-2xl"
           >
-            Role e veja a mesma obra do hero documentada por drone: terreno
-            marcado, fundação, estrutura, instalações, vedações, entrega.{" "}
+            Cada decisão técnica nasce no modelo, vive no canteiro e termina no
+            ativo digital do imóvel.{" "}
             <span className="text-paper font-medium">
-              Cada fase com a verificação técnica que o cliente recebe pelo
-              painel
+              Seis fases construtivas — do terreno marcado à entrega — todas com
+              a mesma verificação técnica que o cliente acompanha pelo painel.
             </span>{" "}
-            — sem maquiagem, sem versão paralela, sem o silêncio que esse mercado
+            Sem maquiagem, sem versão paralela, sem o silêncio que esse mercado
             vende.
           </motion.p>
         </div>
+
+        {/* Timeline B0 → B5 · prepara o usuário para o scroll-driven abaixo */}
+        <BimPhasesTimeline />
       </div>
 
       {/* Scroll-driven canvas — 400vh com pin */}
       <BimVisual />
 
-      {/* Editorial reforço — 4 problemas resolvidos + 3 princípios
-          section-recover-from-ink · fade suave do canvas BIM (ink) para anthra */}
-      <div className="container-page py-section sm:py-sectionLg section-recover-from-ink">
+      {/* Editorial reforço — 4 problemas resolvidos + 3 princípios */}
+      <div className="container-page py-section sm:py-sectionLg">
         <div className="mb-24">
           <motion.p
             initial={{ opacity: 0 }}
