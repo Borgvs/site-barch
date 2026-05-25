@@ -52,18 +52,14 @@ export function Nav({ hideUntilHabitar = false }: NavProps) {
       const vh = window.innerHeight;
       setScrolled(y > 16);
 
-      // Visibility: se hideUntilHabitar, mostra apenas após cruzar 92% do hero
-      // Hero é 500vh com pin. Fase Habitar começa em 92% → scrollY ≈ vh * 4.6
-      if (hideUntilHabitar) {
-        setVisible(y >= vh * 4.6);
-      } else {
-        setVisible(true);
-      }
+      // Visibility: nav sempre visível desde o início (textos flutuando sobre
+      // o hero · sem background até o hero terminar)
+      setVisible(true);
 
-      // OverHeroCanvas: nav aparece SOBRE o canvas do hero (fase Habitar, ainda
-      // dentro do hero 500vh). Sem background, texto/logo/CTA flutuando sobre
-      // o hero. Após o pin do hero soltar (scrollY > vh * 5), nav ganha bg.
-      setOverHeroCanvas(y >= vh * 4.6 && y < vh * 5);
+      // OverHeroCanvas: nav fica em modo "texto flutuante" (sem bg, sem border)
+      // durante TODO o hero 500vh. Após o pin do hero soltar (y > vh * 5),
+      // nav ganha background semi-transparente com backdrop-blur.
+      setOverHeroCanvas(y < vh * 5);
 
       // Tone detection: any [data-nav-dark="true"] overlapping nav band
       // Como o site é dark global, default é dark; só vira light em ilhas
@@ -108,6 +104,15 @@ export function Nav({ hideUntilHabitar = false }: NavProps) {
         ? "bg-paper/85 backdrop-blur-2xl border-b border-ruleLight"
         : "bg-transparent border-b border-transparent";
 
+  // Drop-shadow nos textos quando sobre o canvas do hero (sem bg, alguns frames
+  // têm céu claro · garante legibilidade do wordmark/items/CTA)
+  const textShadowStyle = overHero
+    ? { textShadow: "0 1px 4px rgba(0,0,0,0.55), 0 2px 12px rgba(0,0,0,0.40)" }
+    : undefined;
+  const logoFilterStyle = overHero
+    ? { filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.55)) drop-shadow(0 1px 2px rgba(0,0,0,0.40))" }
+    : undefined;
+
   return (
     <header
       className={cn(
@@ -122,11 +127,12 @@ export function Nav({ hideUntilHabitar = false }: NavProps) {
       aria-hidden={!isVisible}
     >
       <div className="container-page py-4 sm:py-5 flex items-center justify-between gap-6">
-        {/* Wordmark barch · permanente */}
+        {/* Wordmark barch · permanente (drop-shadow sobre hero canvas) */}
         <Link
           href="/"
           className="group inline-flex items-center focus-ring rounded-md transition-opacity duration-300 hover:opacity-75"
           aria-label="Barch · venture builder arquitetônica · página inicial"
+          style={logoFilterStyle}
         >
           <Logo variant="wordmark" tone={dark ? "light" : "dark"} size="sm" />
         </Link>
@@ -147,6 +153,7 @@ export function Nav({ hideUntilHabitar = false }: NavProps) {
                   ? "text-paper/85 hover:text-paper focus-visible:ring-paper focus-visible:ring-offset-anthra"
                   : "text-dark hover:text-anthraDeep focus-visible:ring-anthra focus-visible:ring-offset-paper",
               )}
+              style={textShadowStyle}
             >
               <span>{item.label}</span>
               <span
@@ -166,7 +173,11 @@ export function Nav({ hideUntilHabitar = false }: NavProps) {
           target="_blank"
           rel="noopener noreferrer"
           className={dark ? "glass-pill-dark group" : "glass-pill group"}
-          style={{ paddingTop: 10, paddingBottom: 10 }}
+          style={{
+            paddingTop: 10,
+            paddingBottom: 10,
+            ...(overHero ? { boxShadow: "0 2px 12px rgba(0,0,0,0.45), 0 1px 4px rgba(0,0,0,0.35)" } : {}),
+          }}
         >
           <span>Acessar painel</span>
           <svg
