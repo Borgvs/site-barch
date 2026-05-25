@@ -12,22 +12,24 @@
 import { motion } from "framer-motion";
 import { EASE, DURATION } from "@/lib/motion";
 
+// Manifesto Build Beyond · cap. 10 do Playbook Barch
+// Quatro recusas que materializam a tese venture builder.
 const pillars = [
   {
-    word: "Autêntica",
-    body: "Cada projeto responde ao lugar, ao programa e à gente que o vai habitar. Reprodução não cabe.",
+    word: "Recusa ao genérico",
+    body: "Recusa a aceitar que o destino da arquitetura seja servir de embalagem para commodities imobiliárias. Cada projeto responde ao lugar, ao programa e ao habitante real.",
   },
   {
-    word: "Visionária",
-    body: "A restrição não é obstáculo: é dado de entrada. É nela que mora a diferença entre repetir e construir.",
+    word: "Recusa à fragmentação",
+    body: "Recusa a separar o ato de projetar do ato de construir, financiar e habitar. O ecossistema BARCH existe para fechar o ciclo que ninguém no mercado fecha.",
   },
   {
-    word: "Sofisticada",
-    body: "Sofisticação aqui é restrição escolhida. Menos elementos, mais decisão por trás de cada um.",
+    word: "Recusa à opacidade",
+    body: "Transparência como produto, não como promessa. Investidor vê obra em tempo real. Habitante recebe ativo digital. Construtor opera com critério auditável.",
   },
   {
-    word: "Inovadora",
-    body: "Tecnologia entra para reduzir ruído e antecipar erro. Quando aparece como espetáculo, recusamos.",
+    word: "Recusa ao espetáculo",
+    body: "Tecnologia entra para reduzir ruído e antecipar erro — nunca para virar buzzword de pitch deck. O projeto é alpha. O resto, viabilizador.",
   },
 ];
 
@@ -48,7 +50,7 @@ export function Manifesto() {
             transition={{ duration: DURATION.base, ease: EASE.out }}
             className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-6"
           >
-            Manifesto
+            Manifesto · Build Beyond
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 12 }}
@@ -65,7 +67,11 @@ export function Manifesto() {
               fontSize: "clamp(42px, 9vw, 84px)",
             }}
           >
-            Quatro princípios.
+            Build Beyond
+            <br />
+            <span className="text-muted2">não é slogan.</span>
+            <br />
+            <span style={{ color: "#C45911" }}>É mandato.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 8 }}
@@ -76,10 +82,14 @@ export function Manifesto() {
               ease: EASE.out,
               delay: 0.16,
             }}
-            className="text-body-lg text-charcoal max-w-xl mx-auto leading-relaxed"
+            className="text-body-lg text-charcoal max-w-2xl mx-auto leading-relaxed"
           >
-            Nada que entregamos passa sem o crivo destes quatro. Quando algum
-            falha, o entregável volta — independente do prazo.
+            Construir além do que o mercado aceita como suficiente.{" "}
+            <span className="text-ink font-medium">
+              Além do genérico. Além da fragmentação. Além do que se vende sem
+              pensar.
+            </span>{" "}
+            A BARCH nasceu de 22 anos de prática e de quatro recusas.
           </motion.p>
         </div>
 
@@ -152,12 +162,12 @@ export function Manifesto() {
             className="font-display text-display-md sm:text-display-lg text-ink leading-[1.08] tracking-[-0.028em]"
             style={{ fontWeight: 900 }}
           >
-            Se trocar Barch por outra empresa e a frase ainda fizer sentido,
+            Build Beyond — porque o que existe
             <br />
-            <span className="text-muted2">a frase está vazia.</span>
+            <span className="text-muted2">não é suficiente.</span>
           </p>
           <p className="text-[10.5px] tracking-[0.32em] uppercase text-muted2 mt-8 font-medium">
-            Cláusula interna · autocrítica permanente
+            E nós sabemos construir o que falta.
           </p>
         </motion.blockquote>
       </div>
