@@ -11,13 +11,13 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     /* scroll-behavior: smooth removido — conflita com Lenis (BUG 3 auditoria) */
-    background: #0F2238; /* navyDeep · evita flash branco no boot */
+    background: #1A1B1E; /* anthraDeep · evita flash branco no boot */
   }
 
   body {
-    /* v9.4 dark-first · navy como background root, paper como texto default */
+    /* v9.5 dark-first · anthracite como background root, paper como texto default */
     @apply font-sans;
-    background: #1B3A5C; /* navy */
+    background: #25272A; /* anthra */
     color: rgba(242, 242, 242, 0.92); /* paper/92 default text */
     font-feature-settings: "cv11" 1, "ss01" 1, "ss02" 1, "cv02" 1;
     min-height: 100vh;
@@ -352,85 +352,210 @@
   }
 
   /* ===========================================================
-     V9.4 DARK-FIRST · classes dedicadas paleta Barch oficial
+     V9.5 DARK-FIRST · ANTHRACITE · glass macOS-jateado
      =========================================================== */
 
   /* Section backgrounds canônicos */
-  .bg-navy { background-color: #1B3A5C; }
-  .bg-navy-deep { background-color: #0F2238; }
-  .bg-navy-muted { background-color: #2D4A6E; }
+  .bg-anthra { background-color: #25272A; }
+  .bg-anthra-deep { background-color: #1A1B1E; }
+  .bg-anthra-muted { background-color: #34373C; }
+  .bg-anthra-soft { background-color: #3F4248; }
 
-  /* Gradient bridges · suavizam transições entre canvas dark, image, e paper */
-  .bridge-navy-to-paper {
-    height: 12vh;
-    background: linear-gradient(180deg, #1B3A5C 0%, #1B3A5C 20%, rgba(242, 242, 242, 0.92) 100%);
+  /* Gradient bridges suaves · curva ease-in-out longa, 24-32vh
+     Transições nunca cortam — sempre embaladas em gradient extenso */
+  .bridge-anthra-to-paper {
+    height: 28vh;
+    background: linear-gradient(
+      180deg,
+      #25272A 0%,
+      #25272A 15%,
+      rgba(54, 58, 64, 0.95) 35%,
+      rgba(128, 130, 134, 0.65) 55%,
+      rgba(200, 200, 200, 0.85) 75%,
+      rgba(242, 242, 242, 0.95) 92%,
+      #F2F2F2 100%
+    );
   }
-  .bridge-paper-to-navy {
-    height: 12vh;
-    background: linear-gradient(180deg, rgba(242, 242, 242, 0.92) 0%, rgba(242, 242, 242, 0.6) 30%, #1B3A5C 100%);
+  .bridge-paper-to-anthra {
+    height: 28vh;
+    background: linear-gradient(
+      180deg,
+      #F2F2F2 0%,
+      rgba(242, 242, 242, 0.92) 12%,
+      rgba(200, 200, 200, 0.78) 28%,
+      rgba(128, 130, 134, 0.55) 48%,
+      rgba(60, 64, 70, 0.85) 70%,
+      #25272A 88%,
+      #25272A 100%
+    );
   }
-  .bridge-navy-to-deep {
-    height: 8vh;
-    background: linear-gradient(180deg, #1B3A5C 0%, #0F2238 100%);
+  .bridge-anthra-to-deep {
+    height: 24vh;
+    background: linear-gradient(
+      180deg,
+      #25272A 0%,
+      #20222530 30%,
+      rgba(26, 27, 30, 0.90) 70%,
+      #1A1B1E 100%
+    );
   }
-  .bridge-deep-to-navy {
-    height: 8vh;
-    background: linear-gradient(180deg, #0F2238 0%, #1B3A5C 100%);
+  .bridge-deep-to-anthra {
+    height: 24vh;
+    background: linear-gradient(
+      180deg,
+      #1A1B1E 0%,
+      rgba(26, 27, 30, 0.90) 30%,
+      #20222530 70%,
+      #25272A 100%
+    );
   }
-  .bridge-navy-to-image {
-    height: 6vh;
-    background: linear-gradient(180deg, #1B3A5C 0%, transparent 100%);
-    margin-bottom: -6vh;
+  /* Bridge para entrar/sair de imagem ou canvas escuro (hero, BIM) */
+  .bridge-anthra-to-image {
+    height: 14vh;
+    background: linear-gradient(180deg, #25272A 0%, rgba(10, 10, 10, 0.65) 60%, transparent 100%);
+    margin-bottom: -14vh;
     position: relative;
     z-index: 5;
     pointer-events: none;
   }
-  .bridge-image-to-navy {
-    height: 6vh;
-    background: linear-gradient(180deg, transparent 0%, #1B3A5C 100%);
-    margin-top: -6vh;
+  .bridge-image-to-anthra {
+    height: 14vh;
+    background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 10, 0.65) 40%, #25272A 100%);
+    margin-top: -14vh;
     position: relative;
     z-index: 5;
     pointer-events: none;
   }
 
-  /* Glass card sobre navy · usa accent como subtle warmth */
-  .glass-card-navy {
+  /* ===========================================================
+     GLASS MACOS · efeito jateado (frosted / Sequoia Liquid Glass)
+     - Backdrop blur generoso + saturate alto
+     - Bordas finas com inner highlight no topo
+     - Background semi-transparente com noise sutil
+     - Shadow profunda mas suave
+     =========================================================== */
+  .glass-card-anthra {
     position: relative;
     background: linear-gradient(
       180deg,
-      rgba(45, 74, 110, 0.40) 0%,
-      rgba(15, 34, 56, 0.55) 100%
+      rgba(82, 86, 92, 0.18) 0%,
+      rgba(52, 55, 60, 0.32) 100%
     );
-    backdrop-filter: blur(20px) saturate(140%);
-    -webkit-backdrop-filter: blur(20px) saturate(140%);
-    border: 1px solid rgba(242, 242, 242, 0.08);
+    backdrop-filter: blur(36px) saturate(180%) brightness(105%);
+    -webkit-backdrop-filter: blur(36px) saturate(180%) brightness(105%);
+    border: 1px solid rgba(242, 242, 242, 0.10);
     border-radius: 20px;
     box-shadow:
-      0 1px 0 0 rgba(242, 242, 242, 0.06) inset,
-      0 -1px 0 0 rgba(0, 0, 0, 0.20) inset,
-      0 2px 8px rgba(0, 0, 0, 0.18),
-      0 16px 48px -12px rgba(0, 0, 0, 0.35);
+      /* inner highlight superior · simula spec brilhante no vidro */
+      0 1px 0 0 rgba(242, 242, 242, 0.12) inset,
+      /* inner shadow inferior · base do vidro */
+      0 -1px 0 0 rgba(0, 0, 0, 0.25) inset,
+      /* glow interno · backdrop frost */
+      0 0 40px rgba(242, 242, 242, 0.03) inset,
+      /* sombra do card · projeção sutil */
+      0 2px 10px rgba(0, 0, 0, 0.22),
+      0 12px 40px -8px rgba(0, 0, 0, 0.32),
+      0 28px 80px -16px rgba(0, 0, 0, 0.40);
+    transition: all 500ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .glass-card-anthra:hover {
+    background: linear-gradient(
+      180deg,
+      rgba(82, 86, 92, 0.28) 0%,
+      rgba(52, 55, 60, 0.42) 100%
+    );
+    border-color: rgba(242, 242, 242, 0.16);
+    box-shadow:
+      0 1px 0 0 rgba(242, 242, 242, 0.16) inset,
+      0 -1px 0 0 rgba(0, 0, 0, 0.30) inset,
+      0 0 60px rgba(242, 242, 242, 0.04) inset,
+      0 4px 16px rgba(0, 0, 0, 0.26),
+      0 20px 60px -12px rgba(0, 0, 0, 0.40),
+      0 40px 100px -20px rgba(0, 0, 0, 0.48);
   }
 
-  .glass-pill-navy {
+  /* Glass pill jateado · pequeno · pra eyebrows, tags, badges */
+  .glass-pill-anthra {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 8px 14px;
     border-radius: 9999px;
-    background: rgba(242, 242, 242, 0.06);
-    border: 1px solid rgba(242, 242, 242, 0.12);
-    backdrop-filter: blur(12px) saturate(140%);
+    background: rgba(82, 86, 92, 0.20);
+    border: 1px solid rgba(242, 242, 242, 0.10);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow:
+      0 1px 0 0 rgba(242, 242, 242, 0.10) inset,
+      0 1px 4px rgba(0, 0, 0, 0.18);
     color: rgba(242, 242, 242, 0.95);
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.04em;
     transition: all 350ms cubic-bezier(0.32, 0.72, 0, 1);
   }
-  .glass-pill-navy:hover {
-    background: rgba(242, 242, 242, 0.10);
-    border-color: rgba(242, 242, 242, 0.20);
+  .glass-pill-anthra:hover {
+    background: rgba(82, 86, 92, 0.32);
+    border-color: rgba(242, 242, 242, 0.18);
+  }
+
+  /* Aliases legacy · código antigo referencia *-navy · estilos espelhados de *-anthra */
+  .glass-card-navy {
+    position: relative;
+    background: linear-gradient(180deg, rgba(82, 86, 92, 0.18) 0%, rgba(52, 55, 60, 0.32) 100%);
+    backdrop-filter: blur(36px) saturate(180%) brightness(105%);
+    -webkit-backdrop-filter: blur(36px) saturate(180%) brightness(105%);
+    border: 1px solid rgba(242, 242, 242, 0.10);
+    border-radius: 20px;
+    box-shadow:
+      0 1px 0 0 rgba(242, 242, 242, 0.12) inset,
+      0 -1px 0 0 rgba(0, 0, 0, 0.25) inset,
+      0 0 40px rgba(242, 242, 242, 0.03) inset,
+      0 2px 10px rgba(0, 0, 0, 0.22),
+      0 12px 40px -8px rgba(0, 0, 0, 0.32),
+      0 28px 80px -16px rgba(0, 0, 0, 0.40);
+    transition: all 500ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .glass-pill-navy {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 9999px;
+    background: rgba(82, 86, 92, 0.20);
+    border: 1px solid rgba(242, 242, 242, 0.10);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: 0 1px 0 0 rgba(242, 242, 242, 0.10) inset, 0 1px 4px rgba(0, 0, 0, 0.18);
+    color: rgba(242, 242, 242, 0.95);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    transition: all 350ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .bridge-navy-to-paper {
+    height: 28vh;
+    background: linear-gradient(180deg, #25272A 0%, #25272A 15%, rgba(54, 58, 64, 0.95) 35%, rgba(128, 130, 134, 0.65) 55%, rgba(200, 200, 200, 0.85) 75%, rgba(242, 242, 242, 0.95) 92%, #F2F2F2 100%);
+  }
+  .bridge-paper-to-navy {
+    height: 28vh;
+    background: linear-gradient(180deg, #F2F2F2 0%, rgba(242, 242, 242, 0.92) 12%, rgba(200, 200, 200, 0.78) 28%, rgba(128, 130, 134, 0.55) 48%, rgba(60, 64, 70, 0.85) 70%, #25272A 88%, #25272A 100%);
+  }
+  .bridge-navy-to-image {
+    height: 14vh;
+    background: linear-gradient(180deg, #25272A 0%, rgba(10, 10, 10, 0.65) 60%, transparent 100%);
+    margin-bottom: -14vh;
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .bridge-image-to-navy {
+    height: 14vh;
+    background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 10, 0.65) 40%, #25272A 100%);
+    margin-top: -14vh;
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
   }
 
   /* CTA Build Beyond — accent orange · CTA primária venture builder */

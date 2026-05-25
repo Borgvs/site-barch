@@ -33,7 +33,11 @@ const pillars = [
 
 export function Manifesto() {
   return (
-    <section className="relative py-section sm:py-sectionLg bg-softer">
+    <section
+      className="relative py-section sm:py-sectionLg"
+      style={{ backgroundColor: "#F2F2F2" }}
+      data-nav-light="true"
+    >
       <div className="container-page">
         {/* Header */}
         <div className="text-center mb-20 max-w-3xl mx-auto">

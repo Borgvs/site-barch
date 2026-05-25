@@ -10,12 +10,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // ===== Paleta Barch v9.4 · oficial Brand & Communication Playbook =====
-        // PRIMÁRIA · navy = identidade institucional dark-first
-        navy: "#1B3A5C",          // primary · backgrounds dark, headings sobre paper
-        navyDeep: "#0F2238",      // canvas root, áreas mais profundas
-        navyMuted: "#2D4A6E",     // hover state, surface elevation +1
-        navySoft: "#3A597E",      // tier 2 surface
+        // ===== Paleta Barch v9.5 · ANTHRACITE dark-first =====
+        // PRIMÁRIA · anthracite = cinza grafite neutro · sem azul · premium / Apple-tier
+        anthra: "#25272A",        // primary · backgrounds dark default
+        anthraDeep: "#1A1B1E",    // canvas root, áreas mais profundas
+        anthraMuted: "#34373C",   // hover state, surface elevation +1 (cards)
+        anthraSoft: "#3F4248",    // tier 2 surface, glass card hover
+        anthraHi: "#52565C",      // borders sutis, dividers ativos
+
+        // ===== Aliases legacy navy → anthra (cobre código que ainda usa nomes navy) =====
+        navy: "#25272A",
+        navyDeep: "#1A1B1E",
+        navyMuted: "#34373C",
+        navySoft: "#3F4248",
         // SECUNDÁRIA · blue = navegação, links, subtitles
         blue: "#2E75B6",
         blueDeep: "#1F5A91",

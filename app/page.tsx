@@ -13,7 +13,7 @@ import { Contact } from "@/components/sections/Contact";
 export default function HomePage() {
   return (
     <>
-      <Nav transparentOver="hero" />
+      <Nav hideUntilHabitar />
       <main>
         {/* HERO 3D IMERSIVO scroll-driven — diretriz original Barch.
             6 fases narrativas: Terreno → Estrutura → Volume → Materialidade
