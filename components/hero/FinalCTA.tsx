@@ -28,14 +28,14 @@ export function FinalCTA({ progress }: { progress: number }) {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.7, ease: EASE, delay: 0.2 }}
-              className="font-display text-paper text-[20px] sm:text-[24px] leading-[1.15] tracking-[-0.025em] text-right max-w-[300px]"
-              style={{ fontWeight: 700 }}
+              transition={{ duration: 0.9, ease: EASE, delay: 0.25 }}
+              className="font-display text-paper text-[20px] sm:text-[26px] leading-[1.12] tracking-[-0.025em] text-right max-w-[320px]"
+              style={{ fontWeight: 800 }}
             >
-              <span className="text-gradient-moving">A casa termina aqui.</span>
+              <span className="text-gradient-moving">A obra termina.</span>
               <br />
-              <span className="text-paper/55 italic font-light">
-                A conversa começa agora.
+              <span className="text-paper/60 italic font-light">
+                A relação começa.
               </span>
             </motion.p>
             <Link

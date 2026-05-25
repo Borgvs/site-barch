@@ -28,6 +28,7 @@ import {
   loadBimManifest,
   type BimFramesManifest,
 } from "@/lib/bim-frames-manifest";
+import { BIM_LAYERS } from "@/lib/bim-layers-config";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -115,6 +116,7 @@ function BimScrollCanvas({ manifest }: { manifest: BimFramesManifest }) {
       className="relative w-full bg-ink text-paper"
       style={{ height: "400vh" }}
       aria-label="Obra em tempo real · vista drone das fases construtivas"
+      data-nav-dark="true"
     >
       <div
         ref={stickyRef}
@@ -147,7 +149,152 @@ function BimScrollCanvas({ manifest }: { manifest: BimFramesManifest }) {
 }
 
 /* -----------------------------------------------------------------------
- * Fallback estático: imagem B5 quando não tem manifest ou mobile/reduced.
+ * Fallback mobile: carrossel horizontal das 6 anchors (B0..B5).
+ *
+ * Usado em <768px e reduced-motion. Preserva a narrativa construtiva
+ * que o scroll-driven canvas entrega no desktop. Cada slide tem:
+ *  - frame de anchor (frame index correspondente)
+ *  - eyebrow + label + metric + client copy
+ *  - paginação inferior (dots + label)
+ *
+ * Swipe nativo via scroll-snap horizontal — sem JS de gesture.
+ * ---------------------------------------------------------------------- */
+
+// Frame index aproximado de cada anchor B0..B5 sobre 200 frames totais.
+// Início de cada range em bim-layers-config × 200, ajustado para o "meio" da fase.
+const ANCHOR_FRAMES = [
+  { code: "B0", frame: 1 },     // 0 → ~0.005
+  { code: "B1", frame: 50 },    // 0.25
+  { code: "B2", frame: 90 },    // 0.45
+  { code: "B3", frame: 125 },   // 0.625
+  { code: "B4", frame: 160 },   // 0.80
+  { code: "B5", frame: 200 },   // 1.0
+];
+
+function BimMobileCarousel() {
+  const [active, setActive] = useState(0);
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
+  // Detecta slide ativo via scroll position
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const onScroll = () => {
+      const w = el.clientWidth;
+      const idx = Math.round(el.scrollLeft / w);
+      setActive(Math.max(0, Math.min(BIM_LAYERS.length - 1, idx)));
+    };
+    el.addEventListener("scroll", onScroll, { passive: true });
+    return () => el.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const goTo = (i: number) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    el.scrollTo({ left: i * el.clientWidth, behavior: "smooth" });
+  };
+
+  return (
+    <div className="relative w-full bg-ink text-paper">
+      {/* Scroller horizontal com scroll-snap */}
+      <div
+        ref={scrollerRef}
+        className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide"
+        style={{
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          WebkitOverflowScrolling: "touch",
+        }}
+      >
+        {BIM_LAYERS.map((layer, i) => {
+          const anchor = ANCHOR_FRAMES[i];
+          const padded = String(anchor.frame).padStart(4, "0");
+          return (
+            <article
+              key={layer.code}
+              className="snap-center shrink-0 w-full relative"
+            >
+              <div className="aspect-[4/3] relative overflow-hidden bg-ink">
+                <img
+                  src={`/bim-frames/frame_${padded}.webp?v=1.0`}
+                  alt={`${layer.code} · ${layer.label}`}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading={i === 0 ? "eager" : "lazy"}
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/65" />
+                <div className="absolute top-5 left-5 right-5 flex items-start justify-between">
+                  <div>
+                    <p className="text-[9px] tracking-[0.32em] uppercase text-paper/65 font-medium font-mono mb-1">
+                      Vista canteiro
+                    </p>
+                    <p
+                      className="font-display text-[24px] text-paper leading-none tracking-[-0.02em]"
+                      style={{ fontWeight: 900 }}
+                    >
+                      {layer.code}
+                    </p>
+                  </div>
+                  <p className="font-mono text-[14px] text-paper leading-none tnum mt-1">
+                    {String(i + 1).padStart(2, "0")}/{String(BIM_LAYERS.length).padStart(2, "0")}
+                  </p>
+                </div>
+              </div>
+              {/* Texto editorial abaixo do frame (mobile-friendly) */}
+              <div className="px-5 py-6 bg-ink">
+                <p className="text-[10px] tracking-[0.32em] uppercase text-paper/65 font-medium mb-3">
+                  {layer.eyebrow}
+                </p>
+                <h3
+                  className="font-display text-paper leading-[0.98] tracking-[-0.028em] mb-4"
+                  style={{ fontWeight: 900, fontSize: "clamp(24px, 7vw, 36px)" }}
+                >
+                  {layer.label}
+                </h3>
+                <p className="text-[12px] text-paper/85 font-mono leading-relaxed mb-3">
+                  {layer.metric}
+                </p>
+                <p className="text-[14px] text-paper/80 leading-[1.55] italic">
+                  {layer.client}
+                </p>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      {/* Paginação · dots clicáveis */}
+      <div className="bg-ink pb-8 pt-2 flex items-center justify-center gap-3">
+        {BIM_LAYERS.map((layer, i) => (
+          <button
+            key={layer.code}
+            onClick={() => goTo(i)}
+            aria-label={`Ir para fase ${layer.code} · ${layer.label}`}
+            className="group flex flex-col items-center gap-1.5 p-1"
+          >
+            <span
+              className={`h-1 transition-all duration-500 ${
+                active === i
+                  ? "w-8 bg-paper"
+                  : "w-4 bg-paper/25 group-hover:bg-paper/50"
+              }`}
+            />
+            <span
+              className={`font-mono text-[9px] tracking-wider transition-colors ${
+                active === i ? "text-paper" : "text-paper/45"
+              }`}
+            >
+              {layer.code}
+            </span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* -----------------------------------------------------------------------
+ * Fallback estático original (kept as final fallback if both scroll &
+ * carousel fail — e.g. reduced-motion AND no JS).
  * ---------------------------------------------------------------------- */
 
 function BimStaticFallback() {
@@ -194,7 +341,9 @@ function BimStaticFallback() {
 
 function BimVisual() {
   const [manifest, setManifest] = useState<BimFramesManifest | null>(null);
-  const [mode, setMode] = useState<"loading" | "scroll" | "fallback">("loading");
+  const [mode, setMode] = useState<
+    "loading" | "scroll" | "carousel" | "fallback"
+  >("loading");
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -209,7 +358,15 @@ function BimVisual() {
         return;
       }
       setManifest(m);
-      setMode(prefersReducedMotion || !isWideEnough ? "fallback" : "scroll");
+      // Decision tree:
+      //   Wide + motion OK → scroll-driven canvas
+      //   Narrow OR reduced-motion → mobile carousel (6 anchors swipeable)
+      //   No JS / no manifest → static B5
+      if (!isWideEnough || prefersReducedMotion) {
+        setMode("carousel");
+      } else {
+        setMode("scroll");
+      }
     });
   }, []);
 
@@ -222,6 +379,7 @@ function BimVisual() {
     );
   }
   if (mode === "fallback" || !manifest) return <BimStaticFallback />;
+  if (mode === "carousel") return <BimMobileCarousel />;
   return <BimScrollCanvas manifest={manifest} />;
 }
 

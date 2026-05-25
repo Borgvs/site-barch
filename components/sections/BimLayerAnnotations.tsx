@@ -48,8 +48,8 @@ export function BimLayerAnnotations({ progressRef }: Props) {
 
   return (
     <div className="absolute inset-0 z-20 pointer-events-none">
-      {/* Code chip · top-left */}
-      <div className="absolute top-6 left-6 sm:top-10 sm:left-10">
+      {/* Code chip · top-left (push below nav: top-20 sm:top-24) */}
+      <div className="absolute top-20 left-6 sm:top-24 sm:left-10">
         <p className="text-[10px] tracking-[0.32em] uppercase text-paper/65 font-medium font-mono mb-1">
           Mesma obra · vista canteiro
         </p>
@@ -61,8 +61,8 @@ export function BimLayerAnnotations({ progressRef }: Props) {
         </p>
       </div>
 
-      {/* Phase index · top-right */}
-      <div className="absolute top-6 right-6 sm:top-10 sm:right-10 text-right">
+      {/* Phase index · top-right (push below nav CTA) */}
+      <div className="absolute top-20 right-6 sm:top-24 sm:right-10 text-right">
         <p className="text-[10px] tracking-[0.32em] uppercase text-paper/65 font-medium font-mono mb-1">
           Fase
         </p>

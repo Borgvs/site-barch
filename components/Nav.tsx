@@ -40,10 +40,28 @@ export function Nav({ transparentOver = null }: NavProps) {
     const onScroll = () => {
       const y = window.scrollY;
       setScrolled(y > 16);
+      let dark = false;
+      // Compat: hero detection via prop (scrollY threshold)
       if (transparentOver === "hero") {
         const vh = window.innerHeight;
-        setOverHero(y < vh * 4.7);
+        dark = y < vh * 4.7;
       }
+      // Extension: any section marked data-nav-dark="true" overlapping nav band
+      // (top 70px) makes the nav switch to dark tone. Lets sections opt-in
+      // without prop drilling (used by BIM scroll-driven canvas).
+      if (!dark) {
+        const darkEls = document.querySelectorAll<HTMLElement>(
+          '[data-nav-dark="true"]',
+        );
+        for (const el of Array.from(darkEls)) {
+          const r = el.getBoundingClientRect();
+          if (r.top < 70 && r.bottom > 70) {
+            dark = true;
+            break;
+          }
+        }
+      }
+      setOverHero(dark);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
