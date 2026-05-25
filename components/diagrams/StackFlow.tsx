@@ -1,9 +1,13 @@
 "use client";
 
 /**
- * StackFlow v2 — diagrama compacto Data → Intelligence → Architecture → Platform.
+ * StackFlow v3 — diagrama compacto Data → Intelligence → Architecture → Platform.
  *
- * v2 melhoramentos:
+ * v3 (v10.5.1): dual layout responsivo.
+ *  - ≥640px: SVG horizontal (4 nodes lado-a-lado com conectores clay)
+ *  - <640px: lista vertical legível (ícone + label + sublabel + conector vertical)
+ *
+ * v2 base:
  *  - Spacing reduzido (era 800x200, agora 720x180)
  *  - Nós maiores (r 32→42) com label integrada DENTRO do círculo
  *  - Conector mais espesso (1→1.5px) e setas maiores · cor clay
@@ -46,6 +50,25 @@ const PAPER_55 = "rgba(242, 242, 242, 0.55)";
 const PAPER_30 = "rgba(242, 242, 242, 0.30)";
 
 export function StackFlow() {
+  return (
+    <>
+      {/* Desktop · SVG horizontal flow (≥640px) */}
+      <div className="hidden sm:block">
+        <StackFlowSVG />
+      </div>
+      {/* Mobile · lista vertical legível (<640px) */}
+      <div className="block sm:hidden">
+        <StackFlowMobile />
+      </div>
+    </>
+  );
+}
+
+/* -----------------------------------------------------------------------
+ * Desktop · SVG horizontal flow
+ * ---------------------------------------------------------------------- */
+
+function StackFlowSVG() {
   return (
     <motion.svg
       viewBox="0 0 720 220"
@@ -192,5 +215,115 @@ export function StackFlow() {
         );
       })}
     </motion.svg>
+  );
+}
+
+/* -----------------------------------------------------------------------
+ * Mobile · lista vertical com 4 nodes empilhados
+ *
+ * Cada node tem ícone vetorial (mesmas formas do SVG desktop: circle,
+ * hexagon, diamond, ring), número clay, label + sublabel — separados
+ * por linha vertical conectora clay/50 que cresce na entrada.
+ * ---------------------------------------------------------------------- */
+
+function StackFlowMobile() {
+  return (
+    <ul
+      className="relative mx-auto max-w-md space-y-5 pl-1"
+      aria-label="Stack operacional Barch · Data → Intelligence → Architecture → Platform"
+    >
+      {/* Linha vertical conectora — cresce do topo */}
+      <motion.div
+        aria-hidden
+        className="absolute left-[27px] top-2 bottom-2 w-px bg-accent/40 origin-top"
+        initial={{ scaleY: 0 }}
+        whileInView={{ scaleY: 1 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 1, ease: [0.32, 0.72, 0, 1], delay: 0.2 }}
+      />
+      {nodes.map((node, i) => (
+        <motion.li
+          key={node.id}
+          initial={{ opacity: 0, x: -8 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{
+            duration: 0.5,
+            delay: 0.1 + i * 0.12,
+            ease: [0.32, 0.72, 0, 1],
+          }}
+          className="relative flex items-start gap-4"
+        >
+          {/* Node icon · 56×56 anel paper + ícone central */}
+          <div className="relative shrink-0 flex h-14 w-14 items-center justify-center">
+            <span
+              aria-hidden
+              className="absolute inset-0 rounded-full border border-paper/30"
+            />
+            <span
+              aria-hidden
+              className="absolute inset-2 rounded-full border border-paper/85"
+              style={{ background: "rgba(60, 64, 70, 0.45)" }}
+            />
+            {/* Ícone central */}
+            <svg
+              width={20}
+              height={20}
+              viewBox="0 0 24 24"
+              className="relative z-10"
+              aria-hidden
+            >
+              {node.icon === "circle" && (
+                <circle cx={12} cy={12} r={4.5} fill="rgba(242,242,242,0.85)" />
+              )}
+              {node.icon === "hexagon" && (
+                <polygon
+                  points="12,5 18,8.5 18,15.5 12,19 6,15.5 6,8.5"
+                  fill="rgba(242,242,242,0.85)"
+                />
+              )}
+              {node.icon === "diamond" && (
+                <polygon
+                  points="12,4 19,12 12,20 5,12"
+                  fill="rgba(242,242,242,0.85)"
+                />
+              )}
+              {node.icon === "ring" && (
+                <>
+                  <circle
+                    cx={12}
+                    cy={12}
+                    r={5.5}
+                    fill="none"
+                    stroke="rgba(242,242,242,0.85)"
+                    strokeWidth={1.6}
+                  />
+                  <circle cx={12} cy={12} r={2} fill={CLAY} />
+                </>
+              )}
+            </svg>
+          </div>
+
+          {/* Texto */}
+          <div className="flex-1 pt-1">
+            <p
+              className="font-mono text-[10px] tracking-[0.18em] text-accent mb-1"
+              style={{ fontWeight: 500 }}
+            >
+              {String(i + 1).padStart(2, "0")}
+            </p>
+            <p
+              className="text-[14px] leading-tight text-paper/90"
+              style={{ fontWeight: 700, letterSpacing: 0.2 }}
+            >
+              {node.label}
+            </p>
+            <p className="text-[12px] text-paper/55 leading-snug mt-0.5">
+              {node.sublabel}
+            </p>
+          </div>
+        </motion.li>
+      ))}
+    </ul>
   );
 }
