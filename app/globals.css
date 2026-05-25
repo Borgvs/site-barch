@@ -496,7 +496,17 @@
   /* ===========================================================
      TIPOGRAFIA · gradient text + BLACK headings
      =========================================================== */
+  /* v9.4 dark-first · text-gradient-ink agora opera sobre navy
+     (gradient de paper sólido → paper/65) — preserva visual sobre dark */
   .text-gradient-ink {
+    background: linear-gradient(180deg, #F2F2F2 0%, rgba(242, 242, 242, 0.85) 65%, rgba(242, 242, 242, 0.55) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  /* Variant legacy preservada para uso sobre paper (manifesto, contato) */
+  .text-gradient-dark {
     background: linear-gradient(180deg, #0a0a0a 0%, #36454F 65%, #6B6B66 100%);
     -webkit-background-clip: text;
     background-clip: text;

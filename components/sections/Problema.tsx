@@ -164,7 +164,7 @@ export function Problema() {
                     style={{
                       fontWeight: 900,
                       background:
-                        "linear-gradient(180deg, rgba(10,10,10,0.10) 0%, rgba(10,10,10,0.32) 100%)",
+                        "linear-gradient(180deg, rgba(242,242,242,0.10) 0%, rgba(242,242,242,0.32) 100%)",
                       WebkitBackgroundClip: "text",
                       backgroundClip: "text",
                       WebkitTextFillColor: "transparent",
@@ -174,7 +174,7 @@ export function Problema() {
                     {p.num}
                   </span>
                   <div
-                    className="h-px w-14 bg-ink/25 transition-all duration-700 ease-out-expo group-hover:w-32 group-hover:bg-ink"
+                    className="h-px w-14 bg-paper/25 transition-all duration-700 ease-out-expo group-hover:w-32 group-hover:bg-paper"
                     aria-hidden
                   />
                 </div>
@@ -192,7 +192,7 @@ export function Problema() {
                     {p.heading}
                     <span
                       aria-hidden
-                      className="absolute left-0 bottom-[-0.08em] h-[2px] w-0 bg-ink transition-[width] duration-[800ms] ease-out-expo group-hover:w-full"
+                      className="absolute left-0 bottom-[-0.08em] h-[2px] w-0 bg-paper transition-[width] duration-[800ms] ease-out-expo group-hover:w-full"
                     />
                   </span>
                 </h3>
@@ -220,7 +220,7 @@ export function Problema() {
           }}
           className="mt-24 sm:mt-32 max-w-3xl mx-auto text-center"
         >
-          <div className="h-px w-16 bg-ink/40 mx-auto mb-8" aria-hidden />
+          <div className="h-px w-16 bg-paper/40 mx-auto mb-8" aria-hidden />
           <p
             className="font-display text-display-md sm:text-display-lg text-paper leading-[1.08] tracking-[-0.028em]"
             style={{ fontWeight: 900 }}

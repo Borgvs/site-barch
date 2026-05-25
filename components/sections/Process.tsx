@@ -134,7 +134,7 @@ export function Process() {
                         style={{
                           fontWeight: 900,
                           background:
-                            "linear-gradient(180deg, rgba(10,10,10,0.10) 0%, rgba(10,10,10,0.32) 100%)",
+                            "linear-gradient(180deg, rgba(242,242,242,0.10) 0%, rgba(242,242,242,0.32) 100%)",
                           WebkitBackgroundClip: "text",
                           backgroundClip: "text",
                           WebkitTextFillColor: "transparent",
@@ -144,7 +144,7 @@ export function Process() {
                         {step.num}
                       </span>
                       <div
-                        className="h-px w-12 bg-ink/20 transition-all duration-500 group-hover:w-24 group-hover:bg-ink"
+                        className="h-px w-12 bg-paper/20 transition-all duration-500 group-hover:w-24 group-hover:bg-paper"
                         aria-hidden
                       />
                     </div>

@@ -483,7 +483,7 @@ export function Bimarch() {
                         style={{
                           fontWeight: 900,
                           background:
-                            "linear-gradient(180deg, rgba(10,10,10,0.12) 0%, rgba(10,10,10,0.38) 100%)",
+                            "linear-gradient(180deg, rgba(242,242,242,0.12) 0%, rgba(242,242,242,0.38) 100%)",
                           WebkitBackgroundClip: "text",
                           backgroundClip: "text",
                           WebkitTextFillColor: "transparent",
@@ -491,7 +491,7 @@ export function Bimarch() {
                       >
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <div className="h-px w-6 bg-ink/20 transition-all duration-500 group-hover:w-12 group-hover:bg-ink" />
+                      <div className="h-px w-6 bg-paper/20 transition-all duration-500 group-hover:w-12 group-hover:bg-paper" />
                     </div>
                     <h3
                       className="font-display text-[18px] sm:text-[20px] leading-tight mb-1.5 tracking-[-0.02em] text-gradient-ink"
@@ -551,7 +551,7 @@ export function Bimarch() {
               >
                 <div
                   aria-hidden
-                  className="absolute left-0 top-0 h-0 w-px bg-ink transition-all duration-700 group-hover:h-full"
+                  className="absolute left-0 top-0 h-0 w-px bg-paper transition-all duration-700 group-hover:h-full"
                 />
                 <h4 className="font-display text-[22px] sm:text-[26px] text-paper leading-[1.18] tracking-[-0.018em] mb-3">
                   {p.title}
