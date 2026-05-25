@@ -60,7 +60,7 @@ export function Process() {
   return (
     <section
       id="processo"
-      className="relative py-section sm:py-sectionLg bg-paper"
+      className="relative py-section sm:py-sectionLg bg-navy"
     >
       <div className="container-page">
         {/* Header */}
@@ -70,7 +70,7 @@ export function Process() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: DURATION.base, ease: EASE.out }}
-            className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-6"
+            className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-6"
           >
             Método
           </motion.p>
@@ -83,7 +83,7 @@ export function Process() {
               ease: EASE.out,
               delay: 0.08,
             }}
-            className="font-display text-ink mb-6 leading-[0.94] tracking-[-0.028em]"
+            className="font-display text-paper mb-6 leading-[0.94] tracking-[-0.028em]"
             style={{
               fontWeight: 900,
               fontSize: "clamp(42px, 9vw, 84px)",
@@ -91,7 +91,7 @@ export function Process() {
           >
             Quatro problemas.
             <br />
-            <span className="text-muted2">Uma única lógica.</span>
+            <span className="text-paper/55">Uma única lógica.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 8 }}
@@ -102,7 +102,7 @@ export function Process() {
               ease: EASE.out,
               delay: 0.16,
             }}
-            className="text-body-lg text-charcoal max-w-xl mx-auto leading-relaxed"
+            className="text-body-lg text-paper/85 max-w-xl mx-auto leading-relaxed"
           >
             Cada fase nasce de um problema que o mercado prefere não nomear.
             Da escuta ao pós-entrega, o método é o que torna o resultado
@@ -155,10 +155,10 @@ export function Process() {
                     >
                       {step.title}
                     </h3>
-                    <p className="text-body-sm text-charcoal leading-[1.65] mb-6">
+                    <p className="text-body-sm text-paper/85 leading-[1.65] mb-6">
                       {step.body}
                     </p>
-                    <p className="text-[10.5px] tracking-[0.28em] uppercase text-muted2 font-medium">
+                    <p className="text-[10.5px] tracking-[0.28em] uppercase text-paper/55 font-medium">
                       {step.signal}
                     </p>
                   </article>

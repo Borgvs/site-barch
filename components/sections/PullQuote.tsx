@@ -45,7 +45,7 @@ export function PullQuote() {
   return (
     <section
       ref={ref}
-      className="relative bg-softer py-section sm:py-sectionLg overflow-hidden"
+      className="relative bg-navyDeep py-section sm:py-sectionLg overflow-hidden"
       aria-label="Tese fundadora"
     >
       {/* Background sutil: interior em parallax · opacity baixa */}
@@ -62,7 +62,7 @@ export function PullQuote() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-softer/40" />
+        <div className="absolute inset-0 bg-navyDeep/40" />
       </motion.div>
 
       <div className="container-tight relative">
@@ -84,19 +84,19 @@ export function PullQuote() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: DURATION.base, ease: EASE.out }}
-          className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium text-center mb-10"
+          className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium text-center mb-10"
         >
           Tese
         </motion.p>
 
         <blockquote className="relative">
           <p
-            className="font-display text-display-md sm:text-display-lg leading-[1.10] tracking-[-0.028em] text-ink text-center max-w-3xl mx-auto"
+            className="font-display text-display-md sm:text-display-lg leading-[1.10] tracking-[-0.028em] text-paper text-center max-w-3xl mx-auto"
             style={{ fontWeight: 900 }}
           >
             <span
               aria-hidden
-              className="inline-block mr-1 text-muted2/40 align-top translate-y-[0.05em]"
+              className="inline-block mr-1 text-paper/55/40 align-top translate-y-[0.05em]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               “
@@ -112,7 +112,7 @@ export function PullQuote() {
             ))}
             <span
               aria-hidden
-              className="inline text-muted2/40 align-top translate-y-[0.05em]"
+              className="inline text-paper/55/40 align-top translate-y-[0.05em]"
             >
               ”
             </span>
@@ -142,10 +142,10 @@ export function PullQuote() {
             }}
             className="h-px w-10 bg-ink/40 origin-center"
           />
-          <p className="text-[13px] font-medium text-ink tracking-tight">
+          <p className="text-[13px] font-medium text-paper tracking-tight">
             Gustavo Alonso Borges
           </p>
-          <p className="text-[11px] tracking-[0.28em] uppercase text-muted2 font-medium">
+          <p className="text-[11px] tracking-[0.28em] uppercase text-paper/55 font-medium">
             Fundador · Arquiteto Urbanista
           </p>
         </motion.div>

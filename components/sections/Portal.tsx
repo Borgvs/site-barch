@@ -37,7 +37,7 @@ export function Portal() {
   return (
     <section
       id="portal"
-      className="relative py-section sm:py-sectionLg bg-paper"
+      className="relative py-section sm:py-sectionLg bg-navy"
     >
       <div className="container-page">
         <div className="grid lg:grid-cols-[1.15fr_1fr] gap-14 lg:gap-24 items-start">
@@ -48,7 +48,7 @@ export function Portal() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: DURATION.base, ease: EASE.out }}
-              className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-6"
+              className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-6"
             >
               Portal do cliente
             </motion.p>
@@ -62,7 +62,7 @@ export function Portal() {
                 ease: EASE.out,
                 delay: 0.08,
               }}
-              className="font-display text-ink leading-[0.94] tracking-[-0.028em] mb-7"
+              className="font-display text-paper leading-[0.94] tracking-[-0.028em] mb-7"
               style={{
                 fontWeight: 900,
                 fontSize: "clamp(42px, 9vw, 84px)",
@@ -82,7 +82,7 @@ export function Portal() {
                 ease: EASE.out,
                 delay: 0.16,
               }}
-              className="text-body-lg text-charcoal leading-[1.55] mb-10 max-w-xl"
+              className="text-body-lg text-paper/85 leading-[1.55] mb-10 max-w-xl"
             >
               Cliente, gestor de projeto e equipe de campo acessam o mesmo dado,
               ao mesmo tempo. Sem versão para impressionar — só o que importa
@@ -156,7 +156,7 @@ export function Portal() {
                 <Tilt max={6} scale={1.02}>
                   <article className="glass-card group p-6 lg:p-7 h-full">
                     <div className="flex items-center justify-between mb-4">
-                      <span className="font-mono text-[10px] text-muted2 tnum tracking-wider">
+                      <span className="font-mono text-[10px] text-paper/55 tnum tracking-wider">
                         /{String(i + 1).padStart(2, "0")}
                       </span>
                       <span className="relative flex h-1.5 w-1.5">
@@ -170,7 +170,7 @@ export function Portal() {
                     >
                       {c.title}
                     </h3>
-                    <p className="text-[12.5px] text-charcoal leading-[1.55]">
+                    <p className="text-[12.5px] text-paper/85 leading-[1.55]">
                       {c.body}
                     </p>
                   </article>

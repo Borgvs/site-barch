@@ -11,17 +11,21 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     /* scroll-behavior: smooth removido — conflita com Lenis (BUG 3 auditoria) */
+    background: #0F2238; /* navyDeep · evita flash branco no boot */
   }
 
   body {
-    @apply text-ink font-sans bg-paper;
+    /* v9.4 dark-first · navy como background root, paper como texto default */
+    @apply font-sans;
+    background: #1B3A5C; /* navy */
+    color: rgba(242, 242, 242, 0.92); /* paper/92 default text */
     font-feature-settings: "cv11" 1, "ss01" 1, "ss02" 1, "cv02" 1;
     min-height: 100vh;
   }
 
   ::selection {
-    background: rgba(10, 10, 10, 0.92);
-    color: #fcfbf7;
+    background: #C45911; /* accent orange */
+    color: #ffffff;
   }
 
   .tnum {
@@ -29,14 +33,15 @@
     font-feature-settings: "tnum" 1, "cv11" 1;
   }
 
+  /* Scrollbar adaptada para dark-first */
   ::-webkit-scrollbar { width: 8px; height: 8px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb {
-    background: rgba(10, 10, 10, 0.12);
+    background: rgba(242, 242, 242, 0.15);
     border-radius: 8px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(10, 10, 10, 0.25);
+    background: rgba(242, 242, 242, 0.30);
   }
 }
 
@@ -344,6 +349,143 @@
   .divider {
     height: 1px;
     background: linear-gradient(to right, transparent, rgba(228, 225, 216, 0.9) 20%, rgba(228, 225, 216, 0.9) 80%, transparent);
+  }
+
+  /* ===========================================================
+     V9.4 DARK-FIRST · classes dedicadas paleta Barch oficial
+     =========================================================== */
+
+  /* Section backgrounds canônicos */
+  .bg-navy { background-color: #1B3A5C; }
+  .bg-navy-deep { background-color: #0F2238; }
+  .bg-navy-muted { background-color: #2D4A6E; }
+
+  /* Gradient bridges · suavizam transições entre canvas dark, image, e paper */
+  .bridge-navy-to-paper {
+    height: 12vh;
+    background: linear-gradient(180deg, #1B3A5C 0%, #1B3A5C 20%, rgba(242, 242, 242, 0.92) 100%);
+  }
+  .bridge-paper-to-navy {
+    height: 12vh;
+    background: linear-gradient(180deg, rgba(242, 242, 242, 0.92) 0%, rgba(242, 242, 242, 0.6) 30%, #1B3A5C 100%);
+  }
+  .bridge-navy-to-deep {
+    height: 8vh;
+    background: linear-gradient(180deg, #1B3A5C 0%, #0F2238 100%);
+  }
+  .bridge-deep-to-navy {
+    height: 8vh;
+    background: linear-gradient(180deg, #0F2238 0%, #1B3A5C 100%);
+  }
+  .bridge-navy-to-image {
+    height: 6vh;
+    background: linear-gradient(180deg, #1B3A5C 0%, transparent 100%);
+    margin-bottom: -6vh;
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .bridge-image-to-navy {
+    height: 6vh;
+    background: linear-gradient(180deg, transparent 0%, #1B3A5C 100%);
+    margin-top: -6vh;
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  /* Glass card sobre navy · usa accent como subtle warmth */
+  .glass-card-navy {
+    position: relative;
+    background: linear-gradient(
+      180deg,
+      rgba(45, 74, 110, 0.40) 0%,
+      rgba(15, 34, 56, 0.55) 100%
+    );
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgba(242, 242, 242, 0.08);
+    border-radius: 20px;
+    box-shadow:
+      0 1px 0 0 rgba(242, 242, 242, 0.06) inset,
+      0 -1px 0 0 rgba(0, 0, 0, 0.20) inset,
+      0 2px 8px rgba(0, 0, 0, 0.18),
+      0 16px 48px -12px rgba(0, 0, 0, 0.35);
+  }
+
+  .glass-pill-navy {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 9999px;
+    background: rgba(242, 242, 242, 0.06);
+    border: 1px solid rgba(242, 242, 242, 0.12);
+    backdrop-filter: blur(12px) saturate(140%);
+    color: rgba(242, 242, 242, 0.95);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    transition: all 350ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .glass-pill-navy:hover {
+    background: rgba(242, 242, 242, 0.10);
+    border-color: rgba(242, 242, 242, 0.20);
+  }
+
+  /* CTA Build Beyond — accent orange · CTA primária venture builder */
+  .cta-build-beyond {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 26px;
+    border-radius: 9999px;
+    background: #C45911;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+      0 2px 8px rgba(196, 89, 17, 0.32),
+      0 8px 24px rgba(196, 89, 17, 0.20),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    transition: all 400ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .cta-build-beyond:hover {
+    background: #E07A2F;
+    transform: translateY(-1px);
+    box-shadow:
+      0 4px 12px rgba(196, 89, 17, 0.40),
+      0 12px 32px rgba(196, 89, 17, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  }
+
+  /* Ghost CTA escuro · navy outline para ações secundárias */
+  .cta-ghost-navy {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 9999px;
+    background: transparent;
+    color: rgba(242, 242, 242, 0.95);
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid rgba(242, 242, 242, 0.20);
+    backdrop-filter: blur(8px);
+    transition: all 400ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .cta-ghost-navy:hover {
+    background: rgba(242, 242, 242, 0.05);
+    border-color: rgba(242, 242, 242, 0.35);
+  }
+
+  /* Focus ring adaptado dark */
+  .focus-ring-dark {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+    --tw-ring-color: rgba(196, 89, 17, 0.6);
+    --tw-ring-offset-color: #1B3A5C;
   }
 }
 

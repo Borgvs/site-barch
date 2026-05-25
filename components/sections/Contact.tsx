@@ -18,7 +18,7 @@ export function Contact() {
   return (
     <section
       id="contato"
-      className="relative py-section sm:py-sectionLg bg-paper"
+      className="relative py-section sm:py-sectionLg bg-navy"
     >
       <div className="container-page">
         <motion.div
@@ -121,7 +121,7 @@ export function Contact() {
             >
               <MagneticLink
                 href="mailto:contato@barch.com.br?subject=Conversa%20inicial"
-                className="group inline-flex items-center gap-3 h-12 px-7 rounded-full bg-paperPure text-ink text-[13px] tracking-[0.04em] font-medium transition-all duration-300 hover:bg-soft hover:-translate-y-0.5 hover:shadow-[0_12px_32px_-8px_rgba(252,251,247,0.4)] focus:outline-none focus-visible:ring-2 focus-visible:ring-paperPure focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
+                className="group inline-flex items-center gap-3 h-12 px-7 rounded-full bg-paperPure text-paper text-[13px] tracking-[0.04em] font-medium transition-all duration-300 hover:bg-navyMuted/40 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_-8px_rgba(252,251,247,0.4)] focus:outline-none focus-visible:ring-2 focus-visible:ring-paperPure focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
                 ariaLabel="Agendar conversa inicial por e-mail"
                 strength={0.28}
                 radius={90}

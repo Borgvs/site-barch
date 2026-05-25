@@ -87,7 +87,7 @@ export function Problema() {
   return (
     <section
       id="diagnostico"
-      className="relative bg-paper py-section sm:py-sectionLg overflow-hidden scroll-mt-24"
+      className="relative bg-navy py-section sm:py-sectionLg overflow-hidden scroll-mt-24"
       aria-label="Diagnóstico · o que o mercado produz"
     >
       <div className="container-page">
@@ -98,7 +98,7 @@ export function Problema() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: DURATION.base, ease: EASE.out }}
-            className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-6"
+            className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-6"
           >
             Diagnóstico
           </motion.p>
@@ -111,7 +111,7 @@ export function Problema() {
               ease: EASE.out,
               delay: 0.08,
             }}
-            className="font-display text-ink mb-6 leading-[0.92] tracking-[-0.034em]"
+            className="font-display text-paper mb-6 leading-[0.92] tracking-[-0.034em]"
             style={{
               fontWeight: 900,
               fontSize: "clamp(42px, 9vw, 84px)",
@@ -121,7 +121,7 @@ export function Problema() {
             <br />
             que o mercado
             <br />
-            <span className="text-muted2">prefere não nomear.</span>
+            <span className="text-paper/55">prefere não nomear.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 8 }}
@@ -132,7 +132,7 @@ export function Problema() {
               ease: EASE.out,
               delay: 0.16,
             }}
-            className="text-body-lg text-charcoal max-w-xl mx-auto leading-relaxed"
+            className="text-body-lg text-paper/85 max-w-xl mx-auto leading-relaxed"
           >
             A Barch não foi fundada para ser mais um agente da cadeia. Foi
             fundada para corrigir, de saída, o que essa cadeia produz quando
@@ -179,13 +179,13 @@ export function Problema() {
                   />
                 </div>
 
-                <p className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-4 transition-colors duration-500 group-hover:text-ink">
+                <p className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-4 transition-colors duration-500 group-hover:text-paper">
                   {p.eyebrow}
                 </p>
 
                 {/* Heading com underline animado na primeira frase relevante */}
                 <h3
-                  className="relative font-display text-[28px] sm:text-[34px] lg:text-[38px] text-ink leading-[1.02] tracking-[-0.028em] mb-5"
+                  className="relative font-display text-[28px] sm:text-[34px] lg:text-[38px] text-paper leading-[1.02] tracking-[-0.028em] mb-5"
                   style={{ fontWeight: 900 }}
                 >
                   <span className="relative inline-block">
@@ -197,10 +197,10 @@ export function Problema() {
                   </span>
                 </h3>
 
-                <p className="text-body text-charcoal leading-[1.65] mb-3 transition-colors duration-500 group-hover:text-ink">
+                <p className="text-body text-paper/85 leading-[1.65] mb-3 transition-colors duration-500 group-hover:text-paper">
                   {p.bodyA}
                 </p>
-                <p className="text-body text-charcoal/85 leading-[1.65] italic transition-colors duration-500 group-hover:text-charcoal">
+                <p className="text-body text-paper/85/85 leading-[1.65] italic transition-colors duration-500 group-hover:text-paper/85">
                   {p.bodyB}
                 </p>
               </motion.article>
@@ -222,14 +222,14 @@ export function Problema() {
         >
           <div className="h-px w-16 bg-ink/40 mx-auto mb-8" aria-hidden />
           <p
-            className="font-display text-display-md sm:text-display-lg text-ink leading-[1.08] tracking-[-0.028em]"
+            className="font-display text-display-md sm:text-display-lg text-paper leading-[1.08] tracking-[-0.028em]"
             style={{ fontWeight: 900 }}
           >
             Nenhum desses problemas é técnico.
             <br />
-            <span className="text-muted2">Todos são culturais.</span>
+            <span className="text-paper/55">Todos são culturais.</span>
           </p>
-          <p className="text-[11px] tracking-[0.32em] uppercase text-muted2 mt-8 font-medium">
+          <p className="text-[11px] tracking-[0.32em] uppercase text-paper/55 mt-8 font-medium">
             É por isso que a resposta não é uma ferramenta. É um método.
           </p>
         </motion.div>

@@ -274,8 +274,8 @@ function BimMobileCarousel() {
             <span
               className={`h-1 transition-all duration-500 ${
                 active === i
-                  ? "w-8 bg-paper"
-                  : "w-4 bg-paper/25 group-hover:bg-paper/50"
+                  ? "w-8 bg-navy"
+                  : "w-4 bg-navy/25 group-hover:bg-navy/50"
               }`}
             />
             <span
@@ -389,7 +389,7 @@ function BimVisual() {
 
 export function Bimarch() {
   return (
-    <section id="bim" className="relative bg-softer">
+    <section id="bim" className="relative bg-navyDeep">
       {/* Header editorial — antes do scroll canvas */}
       <div className="container-page py-section sm:py-sectionLg">
         <div className="mb-16 max-w-3xl">
@@ -398,7 +398,7 @@ export function Bimarch() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: DURATION.base, ease: EASE.out }}
-            className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-6"
+            className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-6"
           >
             Obra em tempo real
           </motion.p>
@@ -411,7 +411,7 @@ export function Bimarch() {
               ease: EASE.out,
               delay: 0.08,
             }}
-            className="font-display text-ink leading-[0.94] tracking-[-0.028em] mb-7"
+            className="font-display text-paper leading-[0.94] tracking-[-0.028em] mb-7"
             style={{
               fontWeight: 900,
               fontSize: "clamp(42px, 9vw, 84px)",
@@ -421,7 +421,7 @@ export function Bimarch() {
             <br />
             que não esconde
             <br />
-            <span className="text-muted2">nada.</span>
+            <span className="text-paper/55">nada.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 8 }}
@@ -432,11 +432,11 @@ export function Bimarch() {
               ease: EASE.out,
               delay: 0.16,
             }}
-            className="text-body-lg text-charcoal leading-[1.55] max-w-2xl"
+            className="text-body-lg text-paper/85 leading-[1.55] max-w-2xl"
           >
             Role e veja a mesma obra do hero documentada por drone: terreno
             marcado, fundação, estrutura, instalações, vedações, entrega.{" "}
-            <span className="text-ink font-medium">
+            <span className="text-paper font-medium">
               Cada fase com a verificação técnica que o cliente recebe pelo
               painel
             </span>{" "}
@@ -457,7 +457,7 @@ export function Bimarch() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: DURATION.base, ease: EASE.out }}
-            className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-8"
+            className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-8"
           >
             Quatro problemas resolvidos
           </motion.p>
@@ -499,10 +499,10 @@ export function Bimarch() {
                     >
                       {t.name}
                     </h3>
-                    <p className="text-[10.5px] tracking-[0.28em] uppercase text-muted2 font-medium mb-4">
+                    <p className="text-[10.5px] tracking-[0.28em] uppercase text-paper/55 font-medium mb-4">
                       {t.role}
                     </p>
-                    <p className="text-body-sm text-charcoal leading-[1.65]">
+                    <p className="text-body-sm text-paper/85 leading-[1.65]">
                       {t.detail}
                     </p>
                   </article>
@@ -520,18 +520,18 @@ export function Bimarch() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: DURATION.base, ease: EASE.out }}
           >
-            <p className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-6">
+            <p className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-6">
               Decisões aparentemente técnicas
             </p>
             <h3
-              className="font-display text-display-lg text-ink leading-[0.98] tracking-[-0.028em]"
+              className="font-display text-display-lg text-paper leading-[0.98] tracking-[-0.028em]"
               style={{ fontWeight: 900 }}
             >
               Três decisões
               <br />
               que parecem técnicas.
               <br />
-              <span className="text-muted2">São culturais.</span>
+              <span className="text-paper/55">São culturais.</span>
             </h3>
           </motion.div>
 
@@ -547,16 +547,16 @@ export function Bimarch() {
                   delay: i * 0.08,
                   ease: EASE.out,
                 }}
-                className="group relative pl-8 border-l border-rule transition-colors duration-500 hover:border-ink/50"
+                className="group relative pl-8 border-l border-ruleDark transition-colors duration-500 hover:border-ink/50"
               >
                 <div
                   aria-hidden
                   className="absolute left-0 top-0 h-0 w-px bg-ink transition-all duration-700 group-hover:h-full"
                 />
-                <h4 className="font-display text-[22px] sm:text-[26px] text-ink leading-[1.18] tracking-[-0.018em] mb-3">
+                <h4 className="font-display text-[22px] sm:text-[26px] text-paper leading-[1.18] tracking-[-0.018em] mb-3">
                   {p.title}
                 </h4>
-                <p className="text-body text-charcoal leading-[1.65]">
+                <p className="text-body text-paper/85 leading-[1.65]">
                   {p.body}
                 </p>
               </motion.article>

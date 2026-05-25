@@ -10,7 +10,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // ===== Paleta Barch R02 · OrbAI-coded minimal =====
+        // ===== Paleta Barch v9.4 · oficial Brand & Communication Playbook =====
+        // PRIMÁRIA · navy = identidade institucional dark-first
+        navy: "#1B3A5C",          // primary · backgrounds dark, headings sobre paper
+        navyDeep: "#0F2238",      // canvas root, áreas mais profundas
+        navyMuted: "#2D4A6E",     // hover state, surface elevation +1
+        navySoft: "#3A597E",      // tier 2 surface
+        // SECUNDÁRIA · blue = navegação, links, subtitles
+        blue: "#2E75B6",
+        blueDeep: "#1F5A91",
+        // ACENTO · burnt orange = CTA "Build Beyond", elementos de energia
+        accent: "#C45911",
+        accentSoft: "#E07A2F",
+        accentDark: "#9A4309",
+        accentTint: "#3A1F0F",    // versão sobre fundo dark, low-saturation
+        // NEUTROS · sobre navy / sobre paper
+        paper: "#F2F2F2",         // background light (uso restrito · manifesto, contato)
+        paperPure: "#FFFFFF",
+        dark: "#333333",          // texto sobre paper
+        ruleDark: "rgba(255, 255, 255, 0.10)",   // linhas sobre navy
+        ruleLight: "rgba(10, 25, 45, 0.12)",     // linhas sobre paper
+
+        // ===== LEGACY (mantido para coexistência durante migração) =====
         ink: "#0a0a0a",
         ink2: "#1a1a1a",
         ink3: "#2a2a2a",
@@ -23,9 +44,7 @@ const config: Config = {
         ruleSoft: "#ece9df",
         soft: "#f0ede5",
         softer: "#f7f5ee",
-        paper: "#FCFBF7",
-        paperPure: "#FFFFFF",
-        // Acento Barch · discreto neste design (não dominante)
+        // Acento legado (terracotta) · será deprecado em favor de accent
         warn: "#A23A1F",
         warn2: "#C24A2A",
         warnSoft: "#F4D8CF",

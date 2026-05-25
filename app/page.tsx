@@ -23,10 +23,13 @@ export default function HomePage() {
         <HeroConstructionLoader />
 
         <div id="conteudo">
+          {/* Hero (ink canvas) → Problema (navy) · bridge image-to-navy */}
+          <div aria-hidden className="bridge-image-to-navy" />
+
           {/* Problema · diagnóstico editorial.
               Ponte conceitual entre o hero (casa nascendo) e a tese (manifesto).
-              Nomeia 6 problemas estruturais do mercado de construção de
-              alto padrão. Sem nomear o problema, a Barch ficaria sem motivo. */}
+              Nomeia 6 problemas estruturais que abrem espaço para a tese
+              venture builder. Sem nomear o problema, a Barch ficaria sem motivo. */}
           <Problema />
 
           <PullQuote />
@@ -35,9 +38,18 @@ export default function HomePage() {
           <Visao />
 
           <Process />
+
+          {/* Process (navy) → Bimarch wrap (softer) · ambos dark, sem bridge */}
           <Bimarch />
+
           <Portal />
+
+          {/* Portal (navy) → Manifesto (paper · ilha de descanso) · bridge navy-to-paper */}
+          <div aria-hidden className="bridge-navy-to-paper" />
           <Manifesto />
+          {/* Manifesto (paper) → Contact (navy) · bridge paper-to-navy */}
+          <div aria-hidden className="bridge-paper-to-navy" />
+
           <Contact />
         </div>
       </main>
