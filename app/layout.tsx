@@ -90,7 +90,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className="min-h-screen text-ink antialiased bg-paper selection:bg-ink selection:text-paper"
+        className="min-h-screen antialiased bg-anthra text-paper/90 selection:bg-accent selection:text-paperPure"
         style={{ fontFeatureSettings: '"ss01", "cv11", "cv02"' }}
       >
         <StructuredData />

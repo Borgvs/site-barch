@@ -47,12 +47,15 @@ export function PhaseLabel({ progress }: { progress: number }) {
             </span>
           </div>
 
-          {/* Headline BLACK com paper sólido (sem gradient animado para evitar borra) */}
+          {/* Headline BLACK com paper sólido · drop-shadow agressivo para legibilidade
+              sobre frames com céu claro (ex: frame 0 terreno) */}
           <h2
-            className="font-display text-paper leading-[0.92] tracking-[-0.04em] drop-shadow-[0_4px_24px_rgba(0,0,0,0.55)]"
+            className="font-display text-paper leading-[0.92] tracking-[-0.04em]"
             style={{
               fontSize: "clamp(48px, 9vw, 120px)",
               fontWeight: 900,
+              textShadow:
+                "0 2px 8px rgba(0,0,0,0.55), 0 8px 32px rgba(0,0,0,0.40), 0 1px 0 rgba(0,0,0,0.30)",
             }}
           >
             {phase.label}

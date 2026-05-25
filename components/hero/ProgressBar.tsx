@@ -52,7 +52,7 @@ export function ProgressBar({ progress }: { progress: number }) {
               );
             })}
           </div>
-          {/* Phase labels coluna · só a ativa em destaque, demais em paper/30 */}
+          {/* Phase labels coluna · só a ativa em destaque, demais em paper/45 */}
           <div className="relative h-28">
             {PHASES.map((phase) => {
               const pct = phase.range[0] * 100;
@@ -60,14 +60,15 @@ export function ProgressBar({ progress }: { progress: number }) {
               return (
                 <span
                   key={phase.id}
-                  className="absolute left-0 font-mono text-[9px] uppercase tracking-[0.28em] transition-all duration-500 whitespace-nowrap"
+                  className="absolute left-0 font-mono text-[10px] uppercase tracking-[0.24em] transition-all duration-500 whitespace-nowrap"
                   style={{
-                    bottom: `calc(${pct}% - 4px)`,
+                    bottom: `calc(${pct}% - 5px)`,
                     color: active
-                      ? "rgba(252, 251, 247, 0.95)"
-                      : "rgba(252, 251, 247, 0.32)",
+                      ? "rgba(252, 251, 247, 0.98)"
+                      : "rgba(252, 251, 247, 0.45)",
                     transform: active ? "translateX(0)" : "translateX(-2px)",
                     fontWeight: active ? 600 : 400,
+                    textShadow: "0 1px 4px rgba(0,0,0,0.55)",
                   }}
                 >
                   {phase.label}

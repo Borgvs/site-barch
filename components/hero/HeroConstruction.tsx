@@ -241,17 +241,21 @@ export function HeroConstruction() {
           <ScrollHint progress={progress} />
           <FinalCTA progress={progress} />
 
-          {/* Skip-link como glass-pill-dark */}
+          {/* Skip-link como glass-pill-dark · só visível nos primeiros 30% do hero
+              (ajuda de navegação inicial · some quando o usuário já engajou) */}
           <button
             type="button"
             onClick={onSkip}
-            className="glass-pill-dark pointer-events-auto absolute right-6 top-28 z-20 cursor-pointer"
+            className="glass-pill-dark pointer-events-auto absolute right-6 top-28 z-20 cursor-pointer transition-opacity duration-700 ease-out"
             style={{
               fontSize: 10.5,
               letterSpacing: "0.28em",
               textTransform: "uppercase",
+              opacity: progress < 0.3 ? 1 : 0,
+              pointerEvents: progress < 0.3 ? "auto" : "none",
             }}
             aria-label="Ir direto para o conteúdo do site"
+            aria-hidden={progress >= 0.3}
           >
             Ir para conteúdo ↓
           </button>
