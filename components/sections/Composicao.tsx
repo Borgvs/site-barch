@@ -118,9 +118,9 @@ export function Composicao() {
               transition={{ duration: DURATION.base, ease: EASE.out, delay: 0.26 }}
               className="text-body-lg text-paper/85 max-w-2xl mx-auto leading-relaxed"
             >
-              Não são marcas paralelas competindo pelo holofote. São{" "}
+              Não são três marcas disputando a mesma vitrine. São{" "}
               <span className="text-paper font-medium">
-                uma tese em três instâncias operacionais
+                uma tese em três frentes
               </span>
               . LOCVS é o porquê. BIMARCH é o como. BARCH é o que se entrega.
             </motion.p>

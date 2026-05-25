@@ -43,9 +43,9 @@ const problemas: Problema[] = [
     eyebrow: "Fragmentação",
     heading: "Cinco agendas. Uma só obra.",
     bodyA:
-      "Arquiteto, construtora, engenheiro residente, paisagista e interiores costumam estar contratados como ilhas — cada um com cronograma, ferramenta e prestação de contas próprios.",
+      "Arquiteto, construtora, engenheiro residente, paisagista e interiores quase sempre entram como ilhas — cada um com cronograma, ferramenta e prestação de contas próprios.",
     bodyB:
-      "O conflito que mora entre essas agendas é o que o cliente paga em retrabalho, aditivo e tempo.",
+      "O conflito entre essas agendas vira retrabalho, aditivo e tempo perdido. Quem paga a conta é o cliente.",
   },
   {
     num: "02",
@@ -53,9 +53,9 @@ const problemas: Problema[] = [
     eyebrow: "Opacidade",
     heading: "A obra que ninguém vê.",
     bodyA:
-      "A regra clássica do canteiro é informar quando o problema vira fato. O cliente descobre o atraso quando ele já aconteceu, o custo extra quando já foi gasto, a mudança de escopo quando já não há volta.",
+      "O hábito do canteiro é avisar quando o problema já virou fato. Atraso descoberto depois que aconteceu. Custo extra depois de gasto. Mudança de escopo sem volta.",
     bodyB:
-      "A confiança erodida nesse silêncio é um custo invisível — e o maior.",
+      "A confiança que se perde nesse silêncio é o custo mais caro — e o mais invisível.",
   },
   {
     num: "03",
@@ -63,19 +63,19 @@ const problemas: Problema[] = [
     eyebrow: "Adjetivos vazios",
     heading: "Premium é só uma palavra.",
     bodyA:
-      "Premium, exclusivo, inovador, sofisticado — o vocabulário do alto padrão se gastou ao ponto de não dizer nada. Quando todo mundo promete o mesmo, o critério desaparece.",
+      "Premium, exclusivo, inovador, sofisticado — o vocabulário do alto padrão se gastou. Quando todo mundo promete o mesmo, ninguém entrega nada específico.",
     bodyB:
-      "Sem critério declarado, decisão técnica vira aposta e o cliente fica refém do gosto de quem está no controle.",
+      "Sem critério declarado, decisão técnica vira gosto pessoal — e o cliente fica refém de quem está no controle.",
   },
   {
     num: "04",
     icon: "casa-produto",
     eyebrow: "Casa-produto",
-    heading: "Embalagem onde devia haver organismo.",
+    heading: "Catálogo não é projeto.",
     bodyA:
-      "A maior parte do mercado projeta a casa como embalagem do produto imobiliário: planta repetida, fachada que vende, ornamento que distrai do que importa.",
+      "Boa parte do mercado projeta a casa como se fosse produto de prateleira: planta repetida, fachada que vende, ornamento que distrai do que importa.",
     bodyB:
-      "A casa-como-organismo responde ao lugar, ao programa real e à passagem do tempo. Reprodução não cabe.",
+      "Casa boa responde ao lugar, ao programa real e à passagem do tempo. Não cabe em catálogo.",
   },
   {
     num: "05",
@@ -85,17 +85,17 @@ const problemas: Problema[] = [
     bodyA:
       "Cronograma vendido na assinatura raramente sobrevive ao terceiro mês de obra. Atraso na estrutura empurra o acabamento, que empurra a entrega, que empurra a vida do cliente.",
     bodyB:
-      "Quando o erro é descoberto no canteiro, custa contratos. Quando é descoberto antes da concretagem, custa horas.",
+      "Erro descoberto no canteiro custa contrato. Descoberto antes da concretagem, custa horas.",
   },
   {
     num: "06",
     icon: "legado",
     eyebrow: "Ausência de legado",
-    heading: "Manchete não é referencial.",
+    heading: "Foto bonita não é referência.",
     bodyA:
-      "Projeto que existe para virar reportagem morre quando a reportagem se apaga. Falta densidade conceitual para o que se constrói durar como referência.",
+      "Projeto desenhado para virar post some quando o feed esquece. Falta densidade para o que se constrói durar como referência.",
     bodyB:
-      "Construir referencial cultural — não só metragem entregue — é uma decisão tomada antes do primeiro traço, não depois da última inauguração.",
+      "Construir referência — e não só metro quadrado entregue — é decisão tomada antes do primeiro traço, não depois da inauguração.",
   },
 ];
 
@@ -150,9 +150,9 @@ export function Problema() {
             }}
             className="text-body-lg text-paper/85 max-w-xl mx-auto leading-relaxed"
           >
-            A Barch não foi fundada para ser mais um agente da cadeia. Foi
-            fundada para corrigir, de saída, o que essa cadeia produz quando
-            cada agente opera isolado.
+            A Barch não nasceu para ser mais um agente da cadeia. Nasceu para
+            corrigir, de saída, o que essa cadeia produz quando cada um opera
+            isolado.
           </motion.p>
         </div>
 

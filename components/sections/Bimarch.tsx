@@ -62,16 +62,16 @@ const problemas = [
 
 const principles = [
   {
-    title: "Tecnologia como antídoto, não como espetáculo.",
-    body: "O cliente não escolhe Barch pelas ferramentas que usamos. Escolhe porque o método elimina retrabalho antes da execução começar — e o resultado aparece no prazo, no custo e no cuidado.",
+    title: "Tecnologia como antídoto, não como vitrine.",
+    body: "Você não escolhe Barch pelas ferramentas que usamos. Escolhe porque o método elimina retrabalho antes da execução começar — e o resultado aparece no prazo, no custo e no cuidado.",
   },
   {
     title: "Coordenação antes da concretagem.",
     body: "Cada disciplina conversa com a outra no projeto único. Quando a estrutura sobe, a hidráulica e a elétrica já se conhecem. Quando o acabamento entra, ninguém quebra o que está pronto.",
   },
   {
-    title: "Transparência sem vitrine.",
-    body: "O cliente acompanha o que está sob controle e o que ainda não está. Sem maquiagem de relatório, sem surpresa de canteiro, sem a indústria milenar do esconder.",
+    title: "Transparência sem maquiagem.",
+    body: "Você acompanha o que está sob controle e o que ainda não está. Sem relatório enfeitado, sem surpresa de canteiro, sem a velha tradição de esconder o problema até virar fato.",
   },
 ];
 

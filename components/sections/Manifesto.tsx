@@ -21,22 +21,22 @@ const pillars: { word: string; body: string; kind: RefusalKind }[] = [
   {
     word: "Recusa ao genérico",
     kind: "generico",
-    body: "Recusa a aceitar que o destino da arquitetura seja servir de embalagem para commodities imobiliárias. Cada projeto responde ao lugar, ao programa e à pessoa real.",
+    body: "Recusa a tratar arquitetura como embalagem de produto imobiliário. Cada projeto responde ao lugar, ao programa e à pessoa real.",
   },
   {
     word: "Recusa à fragmentação",
     kind: "fragmentacao",
-    body: "Recusa a separar o ato de projetar do ato de construir, financiar e habitar. A Barch existe para fechar o ciclo que ninguém no mercado fecha.",
+    body: "Recusa a separar projeto, obra, financiamento e morar como agendas distintas. A Barch existe para fechar o ciclo que ninguém fecha.",
   },
   {
     word: "Recusa à opacidade",
     kind: "opacidade",
-    body: "Transparência como produto, não como promessa. Investidor vê obra em tempo real. Habitante recebe ativo digital. Construtor opera com critério auditável.",
+    body: "Transparência como produto, não como promessa. Investidor vê a obra em tempo real. Cliente recebe ativo digital. Construtor opera com critério auditável.",
   },
   {
     word: "Recusa ao espetáculo",
     kind: "espetaculo",
-    body: "Tecnologia entra para reduzir ruído e antecipar erro — nunca para virar buzzword de pitch deck. O projeto é alpha. O resto, viabilizador.",
+    body: "Tecnologia entra para reduzir ruído e antecipar erro — não para virar palavra-chave de apresentação. O projeto é o que importa. O resto, viabilizador.",
   },
 ];
 
@@ -110,7 +110,7 @@ export function Manifesto() {
             Construir além do que o mercado aceita como suficiente.{" "}
             <span className="text-ink font-medium">
               Além do genérico. Além da fragmentação. Além do que se vende sem
-              pensar.
+              critério.
             </span>{" "}
             A BARCH nasceu de prática arquitetônica consolidada e de quatro recusas.
           </motion.p>
