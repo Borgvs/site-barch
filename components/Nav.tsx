@@ -14,7 +14,7 @@
  * Por quê:
  *  - Hero 500vh é gesto cinematográfico — nav competiria com narrativa
  *  - Habitar (fase 6/6) é o ponto onde o usuário "chegou em casa" — nav
- *    aparece para conduzir o resto da jornada (Ecossistema → Plataforma →
+ *    aparece para conduzir o resto da jornada (Composição → Plataforma →
  *    Obra → Manifesto → Contato)
  */
 
@@ -29,7 +29,7 @@ interface NavProps {
 }
 
 const items = [
-  { label: "Ecossistema", href: "/#ecossistema" },
+  { label: "Composição", href: "/#composicao" },
   { label: "Plataforma", href: "/#plataforma" },
   { label: "Obra", href: "/#bim" },
   { label: "Manifesto", href: "/sobre" },

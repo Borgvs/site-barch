@@ -3,10 +3,12 @@
 /**
  * BimLayerAnnotations — overlay técnico documental que muda conforme a
  * camada BIM ativa no scroll. Mostra:
- *  - código + nome da fase (canto superior esquerdo)
  *  - eyebrow + label monumental (centro-esquerda)
  *  - metric técnica + frase cliente (canto inferior esquerdo)
- *  - índice de fase (1/6, 2/6...) e barra de progresso (lateral direita)
+ *
+ * v10.5: code chip top-left, phase index top-right e progress bar
+ * bottom-right migraram para BimTopOverlay, integrados à timeline
+ * B0..B5 no topo do canvas.
  *
  * Transições suaves via opacidade quando muda de camada.
  */
@@ -24,7 +26,6 @@ interface Props {
 
 export function BimLayerAnnotations({ progressRef }: Props) {
   const [layer, setLayer] = useState<BimLayer>(BIM_LAYERS[0]);
-  const [progressDisplay, setProgressDisplay] = useState(0);
 
   useEffect(() => {
     let raf = 0;
@@ -36,48 +37,18 @@ export function BimLayerAnnotations({ progressRef }: Props) {
         setLayer(next);
         lastCode = next.code;
       }
-      setProgressDisplay(p);
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
   }, [progressRef]);
 
-  const idx = BIM_LAYERS.findIndex((l) => l.code === layer.code);
-  const totalLayers = BIM_LAYERS.length;
-
   return (
     <div className="absolute inset-0 z-20 pointer-events-none">
-      {/* Code chip · top-left (push below nav: top-20 sm:top-24) */}
-      <div className="absolute top-20 left-6 sm:top-24 sm:left-10">
-        <p className="text-[10px] tracking-[0.32em] uppercase text-paper/65 font-medium font-mono mb-1">
-          Mesma obra · vista canteiro
-        </p>
-        <p
-          className="font-display text-[28px] sm:text-[36px] text-paper leading-none tracking-[-0.02em]"
-          style={{ fontWeight: 900 }}
-        >
-          {layer.code}
-        </p>
-      </div>
-
-      {/* Phase index · top-right (push below nav CTA) */}
-      <div className="absolute top-20 right-6 sm:top-24 sm:right-10 text-right">
-        <p className="text-[10px] tracking-[0.32em] uppercase text-paper/65 font-medium font-mono mb-1">
-          Fase
-        </p>
-        <p
-          className="font-mono text-[18px] text-paper leading-none tnum"
-          style={{ fontWeight: 600 }}
-        >
-          {String(idx + 1).padStart(2, "0")}/{String(totalLayers).padStart(2, "0")}
-        </p>
-      </div>
-
-      {/* Heading central-left · grande, BLACK */}
+      {/* Heading central-left · grande, BLACK (mais baixo agora · timeline no topo) */}
       <div
         className="absolute left-6 sm:left-10 right-6 sm:right-auto sm:max-w-[640px]"
-        style={{ top: "42%", transform: "translateY(-50%)" }}
+        style={{ top: "52%", transform: "translateY(-50%)" }}
         key={layer.code}
       >
         <p className="text-[11px] tracking-[0.32em] uppercase text-paper/70 font-medium mb-4 fade-in-soft">
@@ -96,7 +67,7 @@ export function BimLayerAnnotations({ progressRef }: Props) {
 
       {/* Metric + client copy · bottom-left */}
       <div
-        className="absolute bottom-12 left-6 sm:bottom-16 sm:left-10 max-w-md"
+        className="absolute bottom-12 left-6 sm:bottom-16 sm:left-10 right-6 sm:right-auto sm:max-w-md"
         key={`bottom-${layer.code}`}
       >
         <div className="h-px w-12 bg-paper/45 mb-4 fade-in-soft" />
@@ -106,19 +77,6 @@ export function BimLayerAnnotations({ progressRef }: Props) {
         <p className="text-[14px] sm:text-[15px] text-paper/85 leading-[1.55] italic fade-in-soft">
           {layer.client}
         </p>
-      </div>
-
-      {/* Progress bar · lateral direita */}
-      <div className="absolute bottom-12 right-6 sm:bottom-16 sm:right-10 flex flex-col items-end gap-2">
-        <p className="text-[10px] tracking-[0.32em] uppercase text-paper/55 font-medium font-mono">
-          Progresso BIM
-        </p>
-        <div className="h-px w-32 bg-paper/20 overflow-hidden">
-          <div
-            className="h-px bg-paper transition-[width] duration-150 ease-out"
-            style={{ width: `${progressDisplay * 100}%` }}
-          />
-        </div>
       </div>
 
       {/* CSS local de fade-in para text key change */}

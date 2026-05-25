@@ -2,7 +2,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { HeroConstructionLoader } from "@/components/hero/HeroConstructionLoader";
 import { Problema } from "@/components/sections/Problema";
-import { Ecossistema } from "@/components/sections/Ecossistema";
+import { Composicao } from "@/components/sections/Composicao";
 import { Plataforma } from "@/components/sections/Plataforma";
 import { Bimarch } from "@/components/sections/Bimarch";
 import { Manifesto } from "@/components/sections/Manifesto";
@@ -18,7 +18,7 @@ import { Contact } from "@/components/sections/Contact";
  *   2. Diagnóstico (Problema) — 6 problemas do mercado · abre venture builder
  *
  * Ato II — Confronto (a tese opera):
- *   3. Ecossistema (Sinek WHY/HOW/WHAT) — LOCVS · BIMARCH · BARCH · stack diagram
+ *   3. Composição (Sinek WHY/HOW/WHAT) — LOCVS · BIMARCH · BARCH · stack diagram
  *   4. Plataforma (4 camadas) — Canteiro · Gestão · Investidor · Asset · XP-style
  *   5. BIM scroll-driven (Bimarch) — Vertical Obras em operação ao vivo
  *
@@ -45,8 +45,8 @@ export default function HomePage() {
           {/* Ato I.2 · DIAGNÓSTICO */}
           <Problema />
 
-          {/* Ato II.1 · ECOSSISTEMA — WHY/HOW/WHAT + stack diagram animado */}
-          <Ecossistema />
+          {/* Ato II.1 · COMPOSIÇÃO — WHY/HOW/WHAT + stack diagram animado · palco macOS */}
+          <Composicao />
 
           {/* Ato II.2 · PLATAFORMA — 4 camadas com ícones vetoriais */}
           <Plataforma />

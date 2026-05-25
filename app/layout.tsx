@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s · Barch",
   },
   description:
-    "Barch projeta, constrói e opera empreendimentos como ecossistemas integrados — concepção, obra e gestão sob a mesma lógica. Construir sem ruído.",
+    "Barch projeta, constrói e opera empreendimentos como uma única tese — concepção, obra e gestão sob a mesma stack. Construir sem ruído.",
   applicationName: "Barch",
   authors: [{ name: "Gustavo Alonso Borges", url: SITE_URL }],
   creator: "Barch Engenharia e Arquitetura",

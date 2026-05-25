@@ -576,6 +576,37 @@
       0 40px 100px -20px rgba(0, 0, 0, 0.48);
   }
 
+  /* ===========================================================
+     GLASS STAGE · envelope macOS para destacar seção inteira
+     Quase no limite do frame · rim light superior · sombra profunda
+     - Border-radius generoso (32px) · backdrop-blur 48px · saturate 180%
+     - 3 camadas de shadow (recessed inner, ambient mid, dramatic outer)
+     - Apple Sequoia-style: vidro real, não pintura
+     =========================================================== */
+  .glass-stage {
+    position: relative;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.048) 0%,
+      rgba(255, 255, 255, 0.018) 100%
+    );
+    backdrop-filter: blur(48px) saturate(180%) brightness(102%);
+    -webkit-backdrop-filter: blur(48px) saturate(180%) brightness(102%);
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    border-radius: 32px;
+    box-shadow:
+      /* rim light topo · Apple Sequoia signature */
+      0 1px 0 0 rgba(255, 255, 255, 0.11) inset,
+      /* recess inferior · cria volumetria */
+      0 -1px 0 0 rgba(0, 0, 0, 0.22) inset,
+      /* glow ambient interno · luz capturada */
+      0 0 80px rgba(242, 242, 242, 0.025) inset,
+      /* sombras externas em 3 camadas · profundidade dramática */
+      0 4px 16px rgba(0, 0, 0, 0.28),
+      0 24px 64px -16px rgba(0, 0, 0, 0.42),
+      0 56px 140px -32px rgba(0, 0, 0, 0.55);
+  }
+
   /* Glass pill jateado · pequeno · pra eyebrows, tags, badges */
   .glass-pill-anthra {
     display: inline-flex;

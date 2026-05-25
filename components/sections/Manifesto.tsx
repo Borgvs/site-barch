@@ -26,7 +26,7 @@ const pillars: { word: string; body: string; kind: RefusalKind }[] = [
   {
     word: "Recusa à fragmentação",
     kind: "fragmentacao",
-    body: "Recusa a separar o ato de projetar do ato de construir, financiar e habitar. O ecossistema BARCH existe para fechar o ciclo que ninguém no mercado fecha.",
+    body: "Recusa a separar o ato de projetar do ato de construir, financiar e habitar. A Barch existe para fechar o ciclo que ninguém no mercado fecha.",
   },
   {
     word: "Recusa à opacidade",

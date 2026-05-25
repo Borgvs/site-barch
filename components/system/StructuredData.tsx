@@ -12,7 +12,7 @@ export function StructuredData() {
     url: "https://barch.com.br",
     logo: "https://barch.com.br/apple-icon",
     description:
-      "Venture builder arquitetônica. Projeta, constrói e opera empreendimentos como ecossistemas integrados.",
+      "Venture builder arquitetônica. Projeta, constrói e opera empreendimentos como uma stack integrada — do diagnóstico ao asset pós-entrega.",
     foundingDate: "2024",
     founder: {
       "@type": "Person",

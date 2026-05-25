@@ -71,11 +71,11 @@ const problemas: Problema[] = [
     num: "04",
     icon: "casa-produto",
     eyebrow: "Casa-produto",
-    heading: "Embalagem onde devia haver ecossistema.",
+    heading: "Embalagem onde devia haver organismo.",
     bodyA:
       "A maior parte do mercado projeta a casa como embalagem do produto imobiliário: planta repetida, fachada que vende, ornamento que distrai do que importa.",
     bodyB:
-      "A casa-como-ecossistema responde ao lugar, ao programa real e à passagem do tempo. Reprodução não cabe.",
+      "A casa-como-organismo responde ao lugar, ao programa real e à passagem do tempo. Reprodução não cabe.",
   },
   {
     num: "05",

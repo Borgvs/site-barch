@@ -24,6 +24,7 @@ import { EASE, DURATION } from "@/lib/motion";
 import { Tilt } from "@/components/system/Tilt";
 import { BimFrameSequence } from "./BimFrameSequence";
 import { BimLayerAnnotations } from "./BimLayerAnnotations";
+import { BimTopOverlay } from "./BimTopOverlay";
 import {
   loadBimManifest,
   type BimFramesManifest,
@@ -75,86 +76,12 @@ const principles = [
 ];
 
 /* -----------------------------------------------------------------------
- * Timeline B0 → B5 · prepara o usuário visualmente para o scroll-driven
- * ---------------------------------------------------------------------- */
-
-const BIM_PHASES = [
-  { code: "B0", label: "Terreno marcado" },
-  { code: "B1", label: "Fundação" },
-  { code: "B2", label: "Estrutura" },
-  { code: "B3", label: "Instalações" },
-  { code: "B4", label: "Vedações" },
-  { code: "B5", label: "Entrega" },
-];
-
-function BimPhasesTimeline() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: DURATION.slow, ease: EASE.out, delay: 0.24 }}
-      className="mb-12 max-w-5xl"
-      aria-label="Timeline das 6 fases construtivas BIM"
-    >
-      <p className="text-[10.5px] tracking-[0.32em] uppercase text-paper/45 font-medium mb-6">
-        Cada fase abaixo · documentada em tempo real
-      </p>
-      <div className="relative">
-        {/* Linha base · toda a largura */}
-        <div
-          className="absolute top-[14px] left-0 right-0 h-px bg-paper/12"
-          aria-hidden
-        />
-        {/* Linha clay · 100% (todas as fases entregues no estudo de caso) */}
-        <motion.div
-          aria-hidden
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 1.4, ease: [0.32, 0.72, 0, 1], delay: 0.4 }}
-          className="absolute top-[14px] left-0 right-0 h-px bg-accent origin-left"
-        />
-
-        {/* 6 nós · code + label */}
-        <div className="relative grid grid-cols-6 gap-2 sm:gap-4">
-          {BIM_PHASES.map((phase, i) => (
-            <motion.div
-              key={phase.code}
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{
-                duration: 0.45,
-                ease: [0.32, 0.72, 0, 1],
-                delay: 0.5 + i * 0.08,
-              }}
-              className="flex flex-col items-start"
-            >
-              <span
-                className="block h-[7px] w-[7px] rounded-full bg-accent mb-3 mt-[10px]"
-                aria-hidden
-                style={{ boxShadow: "0 0 0 3px rgba(156, 114, 89, 0.18)" }}
-              />
-              <span
-                className="font-mono text-[10px] tracking-[0.18em] text-paper/45 tnum mb-1"
-                style={{ fontWeight: 500 }}
-              >
-                {phase.code}
-              </span>
-              <span className="text-[11px] sm:text-[12px] text-paper/85 leading-tight font-medium">
-                {phase.label}
-              </span>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
-/* -----------------------------------------------------------------------
  * Scroll-driven canvas section
+ *
+ * v10.5: timeline B0..B5 e status "Progresso BIM" agora vivem DENTRO do
+ * canvas (via BimTopOverlay), no topo da animação · sincronizados com
+ * progressRef do scroll. Antes a timeline ficava antes do canvas como
+ * bloco estático separado — desconectada da animação real.
  * ---------------------------------------------------------------------- */
 
 function BimScrollCanvas({ manifest }: { manifest: BimFramesManifest }) {
@@ -203,6 +130,9 @@ function BimScrollCanvas({ manifest }: { manifest: BimFramesManifest }) {
         style={{ willChange: "transform" }}
       >
         <BimFrameSequence manifest={manifest} progressRef={progressRef} />
+
+        {/* Timeline B0..B5 integrada ao topo do canvas · sincroniza com scroll */}
+        <BimTopOverlay progressRef={progressRef} />
 
         {/* Gradient overlay topo e base para legibilidade do overlay técnico */}
         <div
@@ -535,9 +465,8 @@ export function Bimarch() {
             vende.
           </motion.p>
         </div>
-
-        {/* Timeline B0 → B5 · prepara o usuário para o scroll-driven abaixo */}
-        <BimPhasesTimeline />
+        {/* v10.5 · Timeline B0..B5 migrou para o topo do canvas (BimTopOverlay),
+            sincronizada com o scroll real da animação. */}
       </div>
 
       {/* Scroll-driven canvas — 400vh com pin */}
@@ -556,7 +485,10 @@ export function Bimarch() {
             Quatro problemas resolvidos
           </motion.p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+          {/* v10.5 · auto-rows-fr no grid + h-full em cada nível garante alinhamento
+              perfeito de todos os cards · alturas idênticas independente do
+              tamanho do parágrafo `detail`. */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 items-stretch sm:auto-rows-fr">
             {problemas.map((t, i) => (
               <motion.div
                 key={t.name}
@@ -568,9 +500,10 @@ export function Bimarch() {
                   delay: i * 0.07,
                   ease: EASE.out,
                 }}
+                className="h-full"
               >
-                <Tilt max={8} scale={1.02}>
-                  <article className="glass-card group relative p-7 lg:p-8 h-full">
+                <Tilt max={8} scale={1.02} className="h-full">
+                  <article className="glass-card group relative p-7 lg:p-8 h-full flex flex-col">
                     <div className="flex items-baseline justify-between mb-6">
                       <span
                         className="font-display text-[36px] leading-none tnum tracking-[-0.04em]"
@@ -593,10 +526,10 @@ export function Bimarch() {
                     >
                       {t.name}
                     </h3>
-                    <p className="text-[10.5px] tracking-[0.28em] uppercase text-paper/55 font-medium mb-4">
+                    <p className="text-[10.5px] tracking-[0.28em] uppercase text-paper/55 font-medium mb-4 min-h-[2em]">
                       {t.role}
                     </p>
-                    <p className="text-body-sm text-paper/85 leading-[1.65]">
+                    <p className="text-body-sm text-paper/85 leading-[1.65] flex-1">
                       {t.detail}
                     </p>
                   </article>

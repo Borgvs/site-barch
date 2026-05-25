@@ -21,7 +21,7 @@ import {
 import { EASE, DURATION } from "@/lib/motion";
 
 const PHRASE =
-  "Quase tudo que se constrói hoje sobrevive como forma e perde como sentido. A Barch existe para inverter essa equação — cada projeto é a articulação de um ecossistema, não a embalagem de um produto imobiliário.";
+  "Quase tudo que se constrói hoje sobrevive como forma e perde como sentido. A Barch existe para inverter essa equação — cada projeto é a articulação de uma tese, não a embalagem de um produto imobiliário.";
 
 export function PullQuote() {
   const ref = useRef<HTMLElement>(null);
