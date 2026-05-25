@@ -741,6 +741,51 @@
     color: transparent;
   }
 
+  /* ============================================================
+     GLASS-FILL · gradiente metálico que emula vidro polido
+     Para headlines monumentais que pedem profundidade premium.
+     2 variantes: light (sobre dark bg) e dark (sobre paper bg).
+     ============================================================ */
+
+  /* Glass-fill light · headline sobre fundo dark (Contact, etc) */
+  .text-glass-light {
+    background:
+      linear-gradient(
+        180deg,
+        #FFFFFF 0%,
+        #F2F2F2 18%,
+        rgba(220, 222, 226, 0.95) 38%,
+        rgba(178, 182, 188, 0.85) 58%,
+        rgba(132, 137, 144, 0.75) 78%,
+        rgba(156, 114, 89, 0.85) 100%
+      );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    /* Subtle highlight superior · simula reflexo no vidro */
+    filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.12));
+  }
+
+  /* Glass-fill dark · headline sobre fundo paper (Manifesto) */
+  .text-glass-dark {
+    background:
+      linear-gradient(
+        180deg,
+        #0A0B0E 0%,
+        #1F2226 22%,
+        rgba(34, 36, 41, 0.92) 45%,
+        rgba(60, 64, 70, 0.85) 65%,
+        rgba(100, 104, 110, 0.78) 82%,
+        rgba(156, 114, 89, 0.88) 100%
+      );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.4));
+  }
+
   .text-gradient-paper {
     background: linear-gradient(
       180deg,

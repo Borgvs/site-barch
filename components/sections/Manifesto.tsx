@@ -11,24 +11,31 @@
 
 import { motion } from "framer-motion";
 import { EASE, DURATION } from "@/lib/motion";
+import { RefusalIcon } from "@/components/diagrams/RefusalIcon";
 
 // Manifesto Build Beyond · cap. 10 do Playbook Barch
 // Quatro recusas que materializam a tese venture builder.
-const pillars = [
+type RefusalKind = "generico" | "fragmentacao" | "opacidade" | "espetaculo";
+
+const pillars: { word: string; body: string; kind: RefusalKind }[] = [
   {
     word: "Recusa ao genérico",
-    body: "Recusa a aceitar que o destino da arquitetura seja servir de embalagem para commodities imobiliárias. Cada projeto responde ao lugar, ao programa e ao habitante real.",
+    kind: "generico",
+    body: "Recusa a aceitar que o destino da arquitetura seja servir de embalagem para commodities imobiliárias. Cada projeto responde ao lugar, ao programa e à pessoa real.",
   },
   {
     word: "Recusa à fragmentação",
+    kind: "fragmentacao",
     body: "Recusa a separar o ato de projetar do ato de construir, financiar e habitar. O ecossistema BARCH existe para fechar o ciclo que ninguém no mercado fecha.",
   },
   {
     word: "Recusa à opacidade",
+    kind: "opacidade",
     body: "Transparência como produto, não como promessa. Investidor vê obra em tempo real. Habitante recebe ativo digital. Construtor opera com critério auditável.",
   },
   {
     word: "Recusa ao espetáculo",
+    kind: "espetaculo",
     body: "Tecnologia entra para reduzir ruído e antecipar erro — nunca para virar buzzword de pitch deck. O projeto é alpha. O resto, viabilizador.",
   },
 ];
@@ -60,13 +67,13 @@ export function Manifesto() {
               ease: EASE.out,
               delay: 0.08,
             }}
-            className="font-display text-ink mb-6 leading-[0.94] tracking-[-0.028em]"
+            className="font-display mb-6 leading-[0.94] tracking-[-0.028em]"
             style={{
               fontWeight: 900,
               fontSize: "clamp(42px, 9vw, 84px)",
             }}
           >
-            Build Beyond
+            <span className="text-glass-dark">Build Beyond</span>
             <br />
             <span className="text-muted2">não é slogan.</span>
             <br />
@@ -109,10 +116,12 @@ export function Manifesto() {
                 className="group relative bg-softer hover:bg-paper transition-colors duration-500 p-7 sm:p-10"
               >
                 <div className="grid grid-cols-[auto_1fr] gap-6 sm:gap-10 items-start">
-                  <div className="flex flex-col items-center gap-2 pt-1">
-                    <span className="font-display text-[40px] sm:text-[52px] leading-none text-ink/15 tracking-[-0.04em] transition-colors duration-500 group-hover:text-ink font-medium">
-                      {p.word[0]}
-                    </span>
+                  <div className="flex flex-col items-center gap-3 pt-1 min-w-[60px]">
+                    <RefusalIcon
+                      kind={p.kind}
+                      size={56}
+                      className="opacity-85 transition-opacity duration-500 group-hover:opacity-100"
+                    />
                     <span className="font-mono text-[9.5px] text-muted2 tracking-wider tnum">
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -155,19 +164,43 @@ export function Manifesto() {
               ease: EASE.out,
               delay: 0.3,
             }}
-            className="h-px w-16 bg-ink mx-auto mb-10 origin-center"
+            className="h-px w-16 bg-ink mx-auto mb-12 origin-center"
           />
-          <p
-            className="font-display text-display-md sm:text-display-lg text-ink leading-[1.08] tracking-[-0.028em]"
-            style={{ fontWeight: 900 }}
+          {/* Headline final · "Build Beyond" em glass-dark + duas linhas estruturadas
+              com hierarquia tipográfica clara · clay no destaque-chave */}
+          <h3
+            className="font-display leading-[0.96] tracking-[-0.028em] mb-2"
+            style={{
+              fontWeight: 900,
+              fontSize: "clamp(40px, 7vw, 88px)",
+            }}
           >
-            Build Beyond — porque o que existe
-            <br />
+            <span className="text-glass-dark">Build Beyond.</span>
+          </h3>
+          <p
+            className="font-display leading-[1.05] tracking-[-0.022em] mt-6"
+            style={{
+              fontWeight: 800,
+              fontSize: "clamp(22px, 3.2vw, 40px)",
+            }}
+          >
+            <span className="text-ink/85">O que existe</span>{" "}
             <span className="text-muted2">não é suficiente.</span>
           </p>
-          <p className="text-[10.5px] tracking-[0.32em] uppercase text-muted2 mt-8 font-medium">
-            E nós sabemos construir o que falta.
-          </p>
+          {/* Fechamento operativo · método, não promessa */}
+          <div className="mt-14 inline-flex flex-col items-center gap-3">
+            <span className="h-px w-10 bg-ink/30" aria-hidden />
+            <p
+              className="font-display text-ink leading-tight tracking-[-0.018em]"
+              style={{ fontWeight: 700, fontSize: "clamp(18px, 2.2vw, 28px)" }}
+            >
+              <span style={{ color: "#9C7259" }}>O método</span>{" "}
+              <span className="text-ink">é a resposta.</span>
+            </p>
+            <p className="text-[10.5px] tracking-[0.32em] uppercase text-muted2 mt-2 font-medium">
+              Não a promessa
+            </p>
+          </div>
         </motion.blockquote>
       </div>
     </section>

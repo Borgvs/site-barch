@@ -48,13 +48,13 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: DURATION.slow, ease: EASE.out, delay: 0.16 }}
-          className="font-display text-paper mb-8 leading-[0.92] tracking-[-0.034em]"
+          className="font-display mb-8 leading-[0.92] tracking-[-0.034em]"
           style={{
             fontWeight: 900,
             fontSize: "clamp(56px, 11vw, 140px)",
           }}
         >
-          Construir
+          <span className="text-glass-light">Construir</span>
           <br />
           <span className="text-paper/55">sem ruído.</span>
         </motion.h2>
