@@ -99,8 +99,8 @@ const config: Config = {
         "eyebrow": ["11px", { lineHeight: "1", letterSpacing: "1.6px", fontWeight: "500" }],
       },
       spacing: {
-        section: "140px",
-        sectionLg: "200px",
+        section: "88px",
+        sectionLg: "128px",
         gutter: "32px",
       },
       borderRadius: {
