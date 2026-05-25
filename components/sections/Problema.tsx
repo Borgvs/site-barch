@@ -17,6 +17,15 @@
 
 import { motion } from "framer-motion";
 import { EASE, DURATION } from "@/lib/motion";
+import { ProblemIcon } from "@/components/diagrams/ProblemIcon";
+
+type ProblemIconKind =
+  | "fragmentacao"
+  | "opacidade"
+  | "adjetivos"
+  | "casa-produto"
+  | "cronograma"
+  | "legado";
 
 interface Problema {
   num: string;
@@ -24,11 +33,13 @@ interface Problema {
   heading: string;
   bodyA: string;
   bodyB: string;
+  icon: ProblemIconKind;
 }
 
 const problemas: Problema[] = [
   {
     num: "01",
+    icon: "fragmentacao",
     eyebrow: "Fragmentação",
     heading: "Cinco agendas. Uma só obra.",
     bodyA:
@@ -38,6 +49,7 @@ const problemas: Problema[] = [
   },
   {
     num: "02",
+    icon: "opacidade",
     eyebrow: "Opacidade",
     heading: "A obra que ninguém vê.",
     bodyA:
@@ -47,6 +59,7 @@ const problemas: Problema[] = [
   },
   {
     num: "03",
+    icon: "adjetivos",
     eyebrow: "Adjetivos vazios",
     heading: "Premium é só uma palavra.",
     bodyA:
@@ -56,6 +69,7 @@ const problemas: Problema[] = [
   },
   {
     num: "04",
+    icon: "casa-produto",
     eyebrow: "Casa-produto",
     heading: "Embalagem onde devia haver ecossistema.",
     bodyA:
@@ -65,6 +79,7 @@ const problemas: Problema[] = [
   },
   {
     num: "05",
+    icon: "cronograma",
     eyebrow: "Cronograma de ficção",
     heading: "Promessa não é prazo.",
     bodyA:
@@ -74,6 +89,7 @@ const problemas: Problema[] = [
   },
   {
     num: "06",
+    icon: "legado",
     eyebrow: "Ausência de legado",
     heading: "Manchete não é referencial.",
     bodyA:
@@ -156,23 +172,30 @@ export function Problema() {
                 }}
                 className="group relative"
               >
-                {/* Linha horizontal superior (gesto editorial)
-                    + número que escurece no hover */}
-                <div className="flex items-baseline justify-between mb-6 sm:mb-8">
-                  <span
-                    className="font-display text-[44px] sm:text-[56px] leading-none tnum tracking-[-0.04em] transition-all duration-700"
-                    style={{
-                      fontWeight: 900,
-                      background:
-                        "linear-gradient(180deg, rgba(242,242,242,0.10) 0%, rgba(242,242,242,0.32) 100%)",
-                      WebkitBackgroundClip: "text",
-                      backgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                    }}
-                    aria-hidden
-                  >
-                    {p.num}
-                  </span>
+                {/* Ícone vetorial animado · número + linha horizontal
+                    Cada problema tem ilustração SVG que materializa o conceito */}
+                <div className="flex items-center justify-between mb-6 sm:mb-8">
+                  <div className="flex items-center gap-5">
+                    <ProblemIcon
+                      kind={p.icon}
+                      size={48}
+                      className="shrink-0 opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                    />
+                    <span
+                      className="font-display text-[44px] sm:text-[56px] leading-none tnum tracking-[-0.04em] transition-all duration-700"
+                      style={{
+                        fontWeight: 900,
+                        background:
+                          "linear-gradient(180deg, rgba(242,242,242,0.10) 0%, rgba(242,242,242,0.32) 100%)",
+                        WebkitBackgroundClip: "text",
+                        backgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                      }}
+                      aria-hidden
+                    >
+                      {p.num}
+                    </span>
+                  </div>
                   <div
                     className="h-px w-14 bg-paper/25 transition-all duration-700 ease-out-expo group-hover:w-32 group-hover:bg-paper"
                     aria-hidden

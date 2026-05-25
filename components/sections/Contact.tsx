@@ -43,26 +43,6 @@ export function Contact() {
       />
 
       <div className="container-page relative z-10 text-center">
-        {/* Status chip */}
-        <motion.span
-          initial={{ opacity: 0, y: 8 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: DURATION.base, ease: EASE.out, delay: 0.1 }}
-          className="glass-pill-anthra mb-10 sm:mb-12"
-          style={{
-            fontSize: 11,
-            letterSpacing: "0.28em",
-            textTransform: "uppercase",
-          }}
-        >
-          <span className="relative flex h-1.5 w-1.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
-          </span>
-          Aceitamos projeto · 2026
-        </motion.span>
-
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

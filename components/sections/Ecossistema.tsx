@@ -37,11 +37,11 @@ const verticals: Vertical[] = [
   {
     code: "WHY",
     name: "Locvs",
-    tagline: "Spatial Intelligence for inhabitants.",
+    tagline: "Human-Centered Spatial Intelligence.",
     description:
-      "O instrumento que mede a quarta camada do real estate: o match entre o espaço e a pessoa que vive nele. Diagnóstico psico-espacial em 3 eixos. 6 perfis arquetípicos. Match com propriedades e arquitetos certificados.",
+      "O instrumento que mede a quarta camada do real estate: o match entre espaço e pessoa. Diagnóstico psico-espacial em 3 eixos. 6 perfis arquetípicos. Match com propriedades e arquitetos certificados.",
     metric: { value: "88%", label: "assertividade · 500+ testes Prolific" },
-    status: "Pré-Seed · validação Chatterjee (Penn) + Pallasmaa",
+    status: "Choose by how you live, not by what you see",
     cta: { label: "Descubra seu perfil", href: "/locvs" },
   },
   {
@@ -60,17 +60,10 @@ const verticals: Vertical[] = [
     tagline: "Build Beyond.",
     description:
       "Venture builder arquitetônica. Design & Build Solutions integrado — projeto e obra na mesma stack. A prática arquitetônica continua como laboratório vivo · gera novos verticals quando a tese justifica.",
-    metric: { value: "22 anos", label: "de canteiro, projeto e operação" },
+    metric: { value: "End-to-end", label: "do diagnóstico ao asset pós-entrega" },
     status: "Holding-mãe institucional · ecossistema integrado",
     cta: { label: "Conheça a plataforma", href: "#plataforma" },
   },
-];
-
-const stackLayers = [
-  { label: "Data", op: "LOCVS coleta o sinal espacial real" },
-  { label: "Intelligence", op: "LOCVS processa · classifica · gera brief" },
-  { label: "Architecture", op: "BARCH entrega projeto · BIMARCH garante viabilidade" },
-  { label: "Platform", op: "Integra obra, asset, investidor em tempo real" },
 ];
 
 export function Ecossistema() {
@@ -218,25 +211,15 @@ export function Ecossistema() {
           transition={{ duration: DURATION.slow, ease: EASE.out, delay: 0.2 }}
           className="max-w-6xl mx-auto"
         >
-          <p className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium text-center mb-12">
+          <p className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium text-center mb-8">
             Stack operacional · ciclo completo
           </p>
-          {/* Diagrama vetorial animado · Data → Intelligence → Architecture → Platform */}
+          {/* Diagrama vetorial animado com labels integradas
+              Data → Intelligence → Architecture → Platform */}
           <StackFlow />
-          {/* Sub-textos · operação por camada */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-4 max-w-4xl mx-auto mt-10">
-            {stackLayers.map((layer) => (
-              <p
-                key={layer.label}
-                className="text-[12px] text-paper/65 leading-relaxed text-center"
-              >
-                {layer.op}
-              </p>
-            ))}
-          </div>
-          <p className="text-[12px] sm:text-[13px] text-paper/55 italic text-center mt-12 max-w-3xl mx-auto">
-            Quatro camadas, um único organismo. O sinal que sai do habitante
-            chega à decisão construtiva.{" "}
+          <p className="text-[12px] sm:text-[13px] text-paper/55 italic text-center mt-8 max-w-3xl mx-auto">
+            Quatro camadas, um único organismo. O sinal que sai da pessoa chega
+            à decisão construtiva.{" "}
             <span className="text-paper/85">
               A Barch fecha o ciclo do real estate de ponta a ponta.
             </span>

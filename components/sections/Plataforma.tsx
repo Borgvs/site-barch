@@ -135,7 +135,7 @@ export function Plataforma() {
             className="text-body-lg text-paper/85 leading-[1.55] max-w-2xl"
           >
             A plataforma proprietária Barch é sistema nativo, construído de
-            dentro de 22 anos de prática. Quatro camadas integradas — uma por
+            dentro da prática arquitetônica real. Quatro camadas integradas — uma por
             audiência —{" "}
             <span className="text-paper font-medium">
               cada disciplina conversando, cada decisão versionada, cada

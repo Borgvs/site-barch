@@ -88,7 +88,7 @@ export function Manifesto() {
               Além do genérico. Além da fragmentação. Além do que se vende sem
               pensar.
             </span>{" "}
-            A BARCH nasceu de 22 anos de prática e de quatro recusas.
+            A BARCH nasceu de prática arquitetônica consolidada e de quatro recusas.
           </motion.p>
         </div>
 
