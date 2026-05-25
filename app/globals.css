@@ -452,16 +452,16 @@
     position: relative;
     background: linear-gradient(
       180deg,
-      rgba(82, 86, 92, 0.18) 0%,
-      rgba(52, 55, 60, 0.32) 100%
+      rgba(82, 86, 92, 0.32) 0%,
+      rgba(52, 55, 60, 0.55) 100%
     );
     backdrop-filter: blur(36px) saturate(180%) brightness(105%);
     -webkit-backdrop-filter: blur(36px) saturate(180%) brightness(105%);
-    border: 1px solid rgba(242, 242, 242, 0.10);
+    border: 1px solid rgba(242, 242, 242, 0.14);
     border-radius: 20px;
     box-shadow:
       /* inner highlight superior · simula spec brilhante no vidro */
-      0 1px 0 0 rgba(242, 242, 242, 0.12) inset,
+      0 1px 0 0 rgba(242, 242, 242, 0.18) inset,
       /* inner shadow inferior · base do vidro */
       0 -1px 0 0 rgba(0, 0, 0, 0.25) inset,
       /* glow interno · backdrop frost */
@@ -475,8 +475,8 @@
   .glass-card-anthra:hover {
     background: linear-gradient(
       180deg,
-      rgba(82, 86, 92, 0.28) 0%,
-      rgba(52, 55, 60, 0.42) 100%
+      rgba(82, 86, 92, 0.42) 0%,
+      rgba(52, 55, 60, 0.65) 100%
     );
     border-color: rgba(242, 242, 242, 0.16);
     box-shadow:
