@@ -26,11 +26,12 @@ const config: Config = {
         // SECUNDÁRIA · blue = navegação, links, subtitles
         blue: "#2E75B6",
         blueDeep: "#1F5A91",
-        // ACENTO · burnt orange = CTA "Build Beyond", elementos de energia
-        accent: "#C45911",
-        accentSoft: "#E07A2F",
-        accentDark: "#9A4309",
-        accentTint: "#3A1F0F",    // versão sobre fundo dark, low-saturation
+        // ACENTO · clay sóbrio = CTA "Build Beyond", elementos de energia
+        // Tom terra madura · menos vibrante que burnt orange · sóbrio professional
+        accent: "#9C7259",        // clay base
+        accentSoft: "#B5896E",    // clay light · hover
+        accentDark: "#7A5740",    // clay deep · pressed
+        accentTint: "#2D2118",    // sobre fundo dark, low-saturation
         // NEUTROS · sobre navy / sobre paper
         paper: "#F2F2F2",         // background light (uso restrito · manifesto, contato)
         paperPure: "#FFFFFF",

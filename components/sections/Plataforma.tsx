@@ -258,7 +258,7 @@ export function Plataforma() {
             Construir
             <br />
             <span className="text-paper/55">sem ruído</span>
-            <span style={{ color: "#C45911" }}>.</span>
+            <span style={{ color: "#9C7259" }}>.</span>
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 12 }}

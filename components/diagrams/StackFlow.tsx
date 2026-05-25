@@ -66,7 +66,7 @@ export function StackFlow() {
             key={`arrow-${i}`}
             d={`M ${x - 4} 96 L ${x + 4} 100 L ${x - 4} 104`}
             fill="none"
-            stroke="#C45911"
+            stroke="#9C7259"
             strokeWidth={1.2}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -121,7 +121,7 @@ export function StackFlow() {
             {node.icon === "ring" && (
               <>
                 <circle cx={cx} cy={100} r={10} fill="none" stroke="rgba(242, 242, 242, 0.85)" strokeWidth={2.5} />
-                <circle cx={cx} cy={100} r={3} fill="#C45911" />
+                <circle cx={cx} cy={100} r={3} fill="#9C7259" />
               </>
             )}
             {/* Label */}

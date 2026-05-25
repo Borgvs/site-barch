@@ -24,7 +24,7 @@
   }
 
   ::selection {
-    background: #C45911; /* accent orange */
+    background: #9C7259; /* accent orange */
     color: #ffffff;
   }
 
@@ -369,31 +369,119 @@
      no rodapé). Transição contínua, integrada, sem cortes.
      =========================================================== */
 
-  /* Seção paper como ilha · self-fading entrance/exit */
+  /* Seção paper como ilha · self-fading entrance/exit
+     v10: curva ease-in-out mais elegante · menos dissipado · paper consolida
+     rápido no centro, fade apenas nas bordas (8vh cada lado) */
   .section-paper-island {
     background: #F2F2F2;
     position: relative;
-    padding-top: 20vh;
-    padding-bottom: 20vh;
-    /* Mask cria fade transparente nas extremidades · paper emerge naturalmente do anthra do body */
+    padding-top: 16vh;
+    padding-bottom: 16vh;
     -webkit-mask-image: linear-gradient(
       180deg,
       transparent 0%,
-      rgba(0, 0, 0, 0.4) 8%,
-      #000 18%,
-      #000 82%,
-      rgba(0, 0, 0, 0.4) 92%,
+      rgba(0, 0, 0, 0.08) 2%,
+      rgba(0, 0, 0, 0.30) 5%,
+      rgba(0, 0, 0, 0.70) 8%,
+      rgba(0, 0, 0, 0.92) 10%,
+      #000 12%,
+      #000 88%,
+      rgba(0, 0, 0, 0.92) 90%,
+      rgba(0, 0, 0, 0.70) 92%,
+      rgba(0, 0, 0, 0.30) 95%,
+      rgba(0, 0, 0, 0.08) 98%,
       transparent 100%
     );
     mask-image: linear-gradient(
       180deg,
       transparent 0%,
-      rgba(0, 0, 0, 0.4) 8%,
-      #000 18%,
-      #000 82%,
-      rgba(0, 0, 0, 0.4) 92%,
+      rgba(0, 0, 0, 0.08) 2%,
+      rgba(0, 0, 0, 0.30) 5%,
+      rgba(0, 0, 0, 0.70) 8%,
+      rgba(0, 0, 0, 0.92) 10%,
+      #000 12%,
+      #000 88%,
+      rgba(0, 0, 0, 0.92) 90%,
+      rgba(0, 0, 0, 0.70) 92%,
+      rgba(0, 0, 0, 0.30) 95%,
+      rgba(0, 0, 0, 0.08) 98%,
       transparent 100%
     );
+  }
+
+  /* Entrance fade · ink (hero canvas) → anthra (body)
+     Aplicar em seção que vem logo após o hero (Problema)
+     Gradient pseudo-elemento no topo da seção: 16vh ink → anthra
+     Curva ease-out longa · sem corte visível · invisível em frame final habitar */
+  .section-enter-from-ink {
+    position: relative;
+  }
+  .section-enter-from-ink::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 16vh;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 1) 0%,
+      rgba(15, 17, 20, 0.95) 12%,
+      rgba(22, 24, 27, 0.85) 28%,
+      rgba(30, 32, 35, 0.65) 50%,
+      rgba(37, 39, 42, 0.35) 75%,
+      rgba(37, 39, 42, 0) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Exit fade · anthra → ink (BIM canvas)
+     Aplicar no rodapé de seção que vai entrar em canvas escuro */
+  .section-exit-to-ink {
+    position: relative;
+  }
+  .section-exit-to-ink::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 12vh;
+    background: linear-gradient(
+      180deg,
+      rgba(37, 39, 42, 0) 0%,
+      rgba(30, 32, 35, 0.40) 35%,
+      rgba(22, 24, 27, 0.75) 65%,
+      rgba(15, 17, 20, 0.92) 85%,
+      rgba(10, 10, 10, 1) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Recovery fade · ink (BIM canvas) → anthra (editorial wrapper)
+     Aplicar no topo da seção editorial dentro do Bimarch depois do canvas */
+  .section-recover-from-ink {
+    position: relative;
+  }
+  .section-recover-from-ink::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 14vh;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 1) 0%,
+      rgba(18, 20, 22, 0.85) 25%,
+      rgba(30, 32, 35, 0.50) 55%,
+      rgba(37, 39, 42, 0.20) 80%,
+      rgba(37, 39, 42, 0) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
   }
 
   /* Hero canvas (ink puro) emerge do anthra via fade subtle nas bordas */
@@ -579,24 +667,24 @@
     gap: 10px;
     padding: 14px 26px;
     border-radius: 9999px;
-    background: #C45911;
+    background: #9C7259;
     color: #FFFFFF;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.02em;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow:
-      0 2px 8px rgba(196, 89, 17, 0.32),
-      0 8px 24px rgba(196, 89, 17, 0.20),
+      0 2px 8px rgba(156, 114, 89, 0.32),
+      0 8px 24px rgba(156, 114, 89, 0.20),
       inset 0 1px 0 rgba(255, 255, 255, 0.18);
     transition: all 400ms cubic-bezier(0.32, 0.72, 0, 1);
   }
   .cta-build-beyond:hover {
-    background: #E07A2F;
+    background: #B5896E;
     transform: translateY(-1px);
     box-shadow:
-      0 4px 12px rgba(196, 89, 17, 0.40),
-      0 12px 32px rgba(196, 89, 17, 0.28),
+      0 4px 12px rgba(156, 114, 89, 0.40),
+      0 12px 32px rgba(156, 114, 89, 0.28),
       inset 0 1px 0 rgba(255, 255, 255, 0.22);
   }
 
@@ -623,7 +711,7 @@
   /* Focus ring adaptado dark */
   .focus-ring-dark {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
-    --tw-ring-color: rgba(196, 89, 17, 0.6);
+    --tw-ring-color: rgba(156, 114, 89, 0.6);
     --tw-ring-offset-color: #1B3A5C;
   }
 }

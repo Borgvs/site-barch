@@ -70,7 +70,7 @@ export function Manifesto() {
             <br />
             <span className="text-muted2">não é slogan.</span>
             <br />
-            <span style={{ color: "#C45911" }}>É mandato.</span>
+            <span style={{ color: "#9C7259" }}>É mandato.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 8 }}

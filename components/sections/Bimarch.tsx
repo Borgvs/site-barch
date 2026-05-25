@@ -449,8 +449,9 @@ export function Bimarch() {
       {/* Scroll-driven canvas — 400vh com pin */}
       <BimVisual />
 
-      {/* Editorial reforço — 4 problemas resolvidos + 3 princípios */}
-      <div className="container-page py-section sm:py-sectionLg">
+      {/* Editorial reforço — 4 problemas resolvidos + 3 princípios
+          section-recover-from-ink · fade suave do canvas BIM (ink) para anthra */}
+      <div className="container-page py-section sm:py-sectionLg section-recover-from-ink">
         <div className="mb-24">
           <motion.p
             initial={{ opacity: 0 }}

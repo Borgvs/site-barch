@@ -25,7 +25,7 @@ interface Props {
 
 export function LayerIcon({ kind, size = 56, className = "" }: Props) {
   const stroke = "rgba(242, 242, 242, 0.85)";
-  const accent = "#C45911";
+  const accent = "#9C7259";
 
   return (
     <motion.svg
