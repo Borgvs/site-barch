@@ -78,7 +78,7 @@ export function Footer() {
             <div className="text-[11px] font-mono text-muted2 tnum leading-relaxed tracking-wider">
               CNPJ 55.060.650/0001-01
               <br />
-              CAU A68944-0
+              CREA/SP 2857205
             </div>
           </div>
 
