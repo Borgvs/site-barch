@@ -20,6 +20,7 @@
 
 import { motion } from "framer-motion";
 import { EASE, DURATION } from "@/lib/motion";
+import { LayerIcon } from "@/components/diagrams/LayerIcon";
 
 interface Layer {
   num: string;
@@ -29,12 +30,14 @@ interface Layer {
   body: string;
   bullets: string[];
   metric: { value: string; label: string };
+  icon: "canteiro" | "gestao" | "investidor" | "asset";
 }
 
 const layers: Layer[] = [
   {
     num: "01",
     name: "Canteiro",
+    icon: "canteiro",
     audience: "Builder · equipe em campo",
     headline: "O canteiro deixa de ser caixa-preta.",
     body:
@@ -49,6 +52,7 @@ const layers: Layer[] = [
   {
     num: "02",
     name: "Gestão",
+    icon: "gestao",
     audience: "BARCH como GP · ops",
     headline: "Cronograma, custo e risco em sistema único.",
     body:
@@ -63,10 +67,11 @@ const layers: Layer[] = [
   {
     num: "03",
     name: "Investidor",
+    icon: "investidor",
     audience: "UHNW · LP · family office",
-    headline: "Transparência com a confiança da XP.",
+    headline: "Transparência sem promessa, com prova.",
     body:
-      "O investidor UHNW que aporta US$1M vê a obra pelo celular, de qualquer lugar do mundo. Milestones contratuais com base auditável. Assistente IA gera relatórios sob demanda.",
+      "O investidor que aporta vê a obra pelo celular, de qualquer lugar do mundo. Milestones contratuais com base auditável. Assistente IA gera relatórios sob demanda.",
     bullets: [
       "Drone semanal · walkthrough BIM · status capital calls",
       "Milestones contratuais auditáveis em tempo real",
@@ -77,6 +82,7 @@ const layers: Layer[] = [
   {
     num: "04",
     name: "Asset",
+    icon: "asset",
     audience: "Morador · facility · síndico",
     headline: "O ativo continua vivo depois da chave.",
     body:
@@ -94,7 +100,7 @@ export function Plataforma() {
   return (
     <section
       id="plataforma"
-      className="relative bg-anthraDeep py-section sm:py-sectionLg overflow-hidden scroll-mt-24"
+      className="relative surface-anthra-cool py-section sm:py-sectionLg overflow-hidden scroll-mt-24"
       aria-label="Plataforma · 4 camadas da plataforma proprietária Barch"
     >
       <div className="container-page">
@@ -117,9 +123,9 @@ export function Plataforma() {
             className="font-display text-paper mb-8 leading-[0.92] tracking-[-0.034em]"
             style={{ fontWeight: 900, fontSize: "clamp(42px, 9vw, 84px)" }}
           >
-            A XP do
+            Cada tijolo,
             <br />
-            real estate.
+            <span className="text-paper/55">auditável.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 8 }}
@@ -128,12 +134,12 @@ export function Plataforma() {
             transition={{ duration: DURATION.base, ease: EASE.out, delay: 0.16 }}
             className="text-body-lg text-paper/85 leading-[1.55] max-w-2xl"
           >
-            A plataforma proprietária Barch não é software adaptado. É sistema
-            nativo, construído de dentro de 22 anos de obra. Quatro camadas
-            integradas — uma por audiência —{" "}
+            A plataforma proprietária Barch é sistema nativo, construído de
+            dentro de 22 anos de prática. Quatro camadas integradas — uma por
+            audiência —{" "}
             <span className="text-paper font-medium">
-              cada tijolo auditável, cada disciplina conversando, cada decisão
-              versionada
+              cada disciplina conversando, cada decisão versionada, cada
+              entrega rastreável
             </span>
             .
           </motion.p>
@@ -155,17 +161,20 @@ export function Plataforma() {
               className="glass-card-anthra group relative p-8 sm:p-10 lg:p-12"
             >
               <div className="grid lg:grid-cols-[auto_1fr_auto] gap-6 lg:gap-10 items-start">
-                {/* Esquerda: número + nome */}
-                <div className="flex flex-col gap-2 lg:min-w-[180px]">
-                  <span
-                    className="font-display text-paper/30 leading-none tnum tracking-[-0.04em] transition-colors duration-500 group-hover:text-accent"
-                    style={{
-                      fontWeight: 900,
-                      fontSize: "clamp(40px, 5.5vw, 64px)",
-                    }}
-                  >
-                    {layer.num}
-                  </span>
+                {/* Esquerda: ícone vetorial + número + nome */}
+                <div className="flex flex-col gap-3 lg:min-w-[200px]">
+                  <div className="flex items-center gap-4">
+                    <LayerIcon kind={layer.icon} size={48} className="shrink-0" />
+                    <span
+                      className="font-display text-paper/30 leading-none tnum tracking-[-0.04em] transition-colors duration-500 group-hover:text-accent"
+                      style={{
+                        fontWeight: 900,
+                        fontSize: "clamp(40px, 5vw, 56px)",
+                      }}
+                    >
+                      {layer.num}
+                    </span>
+                  </div>
                   <h3
                     className="font-display text-paper leading-tight tracking-[-0.02em]"
                     style={{
@@ -175,7 +184,7 @@ export function Plataforma() {
                   >
                     {layer.name}
                   </h3>
-                  <p className="text-[10.5px] tracking-[0.18em] uppercase text-paper/45 font-medium mt-1">
+                  <p className="text-[10.5px] tracking-[0.18em] uppercase text-paper/45 font-medium">
                     {layer.audience}
                   </p>
                 </div>
@@ -227,48 +236,69 @@ export function Plataforma() {
           ))}
         </div>
 
-        {/* Decision Trigger CTA — copy do playbook cap. 5.1 */}
+        {/* Fechamento editorial · full section · sem card · integrado ao fluxo */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: DURATION.slow, ease: EASE.out, delay: 0.2 }}
-          className="mt-24 max-w-4xl mx-auto text-center"
+          transition={{ duration: DURATION.contemplative, ease: EASE.out }}
+          className="mt-32 sm:mt-40"
         >
-          <div className="h-px w-16 bg-paper/30 mx-auto mb-10" aria-hidden />
-          <p
-            className="font-display text-paper leading-[1.12] tracking-[-0.028em] mb-10"
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: DURATION.slow, ease: EASE.out, delay: 0.1 }}
+            className="font-display text-paper leading-[0.96] tracking-[-0.034em] max-w-5xl"
             style={{
-              fontWeight: 800,
-              fontSize: "clamp(24px, 3.5vw, 40px)",
+              fontWeight: 900,
+              fontSize: "clamp(40px, 7vw, 96px)",
             }}
           >
-            Se você está investindo em imóveis sem ver o canteiro em tempo real,
+            Construir
             <br />
-            <span className="text-accent">
-              conhecer a plataforma é a decisão certa.
-            </span>
-          </p>
-          <a
-            href="https://painel.barch.com.br"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-build-beyond inline-flex"
+            <span className="text-paper/55">sem ruído</span>
+            <span style={{ color: "#C45911" }}>.</span>
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: DURATION.base, ease: EASE.out, delay: 0.25 }}
+            className="text-body-lg text-paper/75 leading-[1.55] mt-10 max-w-2xl"
           >
-            <span>Solicitar demo da plataforma</span>
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              aria-hidden
+            A plataforma é onde projeto, obra, capital e habitante se
+            reencontram — em tempo real, com critério auditável, sem versão
+            paralela rodando em paralelo.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: DURATION.base, ease: EASE.out, delay: 0.35 }}
+            className="mt-12"
+          >
+            <a
+              href="https://painel.barch.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-build-beyond inline-flex"
             >
-              <path d="M5 12h14M13 5l7 7-7 7" />
-            </svg>
-          </a>
+              <span>Acessar a plataforma</span>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                aria-hidden
+              >
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </a>
+          </motion.div>
         </motion.div>
       </div>
     </section>

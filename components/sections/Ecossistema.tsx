@@ -21,6 +21,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { EASE, DURATION } from "@/lib/motion";
+import { StackFlow } from "@/components/diagrams/StackFlow";
 
 interface Vertical {
   code: "WHY" | "HOW" | "WHAT";
@@ -58,10 +59,10 @@ const verticals: Vertical[] = [
     name: "Barch",
     tagline: "Build Beyond.",
     description:
-      "Venture builder arquitetônica. Holding-mãe que detém propriedade intelectual e cap table dos verticals. Design & Build Solutions integrado (projeto + obra na mesma stack). A prática arquitetônica como R&D vivo.",
+      "Venture builder arquitetônica. Design & Build Solutions integrado — projeto e obra na mesma stack. A prática arquitetônica continua como laboratório vivo · gera novos verticals quando a tese justifica.",
     metric: { value: "22 anos", label: "de canteiro, projeto e operação" },
-    status: "Sole founder · 100% Gustavo Alonso Borges",
-    cta: { label: "Conheça o ecossistema", href: "#plataforma" },
+    status: "Holding-mãe institucional · ecossistema integrado",
+    cta: { label: "Conheça a plataforma", href: "#plataforma" },
   },
 ];
 
@@ -76,7 +77,7 @@ export function Ecossistema() {
   return (
     <section
       id="ecossistema"
-      className="relative bg-anthra py-section sm:py-sectionLg overflow-hidden scroll-mt-24"
+      className="relative py-section sm:py-sectionLg overflow-hidden scroll-mt-24"
       aria-label="Ecossistema · LOCVS · BIMARCH · BARCH"
     >
       <div className="container-page">
@@ -217,34 +218,28 @@ export function Ecossistema() {
           transition={{ duration: DURATION.slow, ease: EASE.out, delay: 0.2 }}
           className="max-w-6xl mx-auto"
         >
-          <p className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium text-center mb-10">
+          <p className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium text-center mb-12">
             Stack operacional · ciclo completo
           </p>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-paper/10 rounded-cardSm overflow-hidden">
-            {stackLayers.map((layer, i) => (
-              <div
+          {/* Diagrama vetorial animado · Data → Intelligence → Architecture → Platform */}
+          <StackFlow />
+          {/* Sub-textos · operação por camada */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-4 max-w-4xl mx-auto mt-10">
+            {stackLayers.map((layer) => (
+              <p
                 key={layer.label}
-                className="bg-anthra hover:bg-anthraMuted transition-colors duration-500 p-6 sm:p-7 flex flex-col"
+                className="text-[12px] text-paper/65 leading-relaxed text-center"
               >
-                <span className="font-mono text-[10px] tracking-wider tnum text-accent mb-3">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h4
-                  className="font-display text-paper text-[20px] sm:text-[22px] leading-tight tracking-[-0.02em] mb-3"
-                  style={{ fontWeight: 700 }}
-                >
-                  {layer.label}
-                </h4>
-                <p className="text-[12px] text-paper/65 leading-relaxed">
-                  {layer.op}
-                </p>
-              </div>
+                {layer.op}
+              </p>
             ))}
           </div>
-          <p className="text-[12px] sm:text-[13px] text-paper/55 italic text-center mt-8 max-w-3xl mx-auto">
-            Cotality e CoStar têm dados. Fei-Fei Li e World Labs têm intelligence
-            para máquinas. Nenhum competidor entrega arquitetura no mesmo stack.
-            <span className="text-paper/85"> A Barch fecha o ciclo.</span>
+          <p className="text-[12px] sm:text-[13px] text-paper/55 italic text-center mt-12 max-w-3xl mx-auto">
+            Quatro camadas, um único organismo. O sinal que sai do habitante
+            chega à decisão construtiva.{" "}
+            <span className="text-paper/85">
+              A Barch fecha o ciclo do real estate de ponta a ponta.
+            </span>
           </p>
         </motion.div>
       </div>

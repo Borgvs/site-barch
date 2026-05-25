@@ -361,70 +361,84 @@
   .bg-anthra-muted { background-color: #34373C; }
   .bg-anthra-soft { background-color: #3F4248; }
 
-  /* Gradient bridges suaves · curva ease-in-out longa, 24-32vh
-     Transições nunca cortam — sempre embaladas em gradient extenso */
-  .bridge-anthra-to-paper {
-    height: 28vh;
-    background: linear-gradient(
-      180deg,
-      #25272A 0%,
-      #25272A 15%,
-      rgba(54, 58, 64, 0.95) 35%,
-      rgba(128, 130, 134, 0.65) 55%,
-      rgba(200, 200, 200, 0.85) 75%,
-      rgba(242, 242, 242, 0.95) 92%,
-      #F2F2F2 100%
-    );
-  }
-  .bridge-paper-to-anthra {
-    height: 28vh;
-    background: linear-gradient(
-      180deg,
-      #F2F2F2 0%,
-      rgba(242, 242, 242, 0.92) 12%,
-      rgba(200, 200, 200, 0.78) 28%,
-      rgba(128, 130, 134, 0.55) 48%,
-      rgba(60, 64, 70, 0.85) 70%,
-      #25272A 88%,
-      #25272A 100%
-    );
-  }
-  .bridge-anthra-to-deep {
-    height: 24vh;
-    background: linear-gradient(
-      180deg,
-      #25272A 0%,
-      #20222530 30%,
-      rgba(26, 27, 30, 0.90) 70%,
-      #1A1B1E 100%
-    );
-  }
-  .bridge-deep-to-anthra {
-    height: 24vh;
-    background: linear-gradient(
-      180deg,
-      #1A1B1E 0%,
-      rgba(26, 27, 30, 0.90) 30%,
-      #20222530 70%,
-      #25272A 100%
-    );
-  }
-  /* Bridge para entrar/sair de imagem ou canvas escuro (hero, BIM) */
-  .bridge-anthra-to-image {
-    height: 14vh;
-    background: linear-gradient(180deg, #25272A 0%, rgba(10, 10, 10, 0.65) 60%, transparent 100%);
-    margin-bottom: -14vh;
+  /* ===========================================================
+     V9.6 TRANSIÇÕES APPLE-TIER · sem faixas separadas
+     Estratégia: body bg permanente (anthra). Seções dark NÃO redeclaram
+     bg-color (deixam fluir). Manifesto (paper) é uma ILHA que se emerge
+     via self-fade interno (gradient transparent→paper no topo, inverso
+     no rodapé). Transição contínua, integrada, sem cortes.
+     =========================================================== */
+
+  /* Seção paper como ilha · self-fading entrance/exit */
+  .section-paper-island {
+    background: #F2F2F2;
     position: relative;
-    z-index: 5;
-    pointer-events: none;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+    /* Mask cria fade transparente nas extremidades · paper emerge naturalmente do anthra do body */
+    -webkit-mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.4) 8%,
+      #000 18%,
+      #000 82%,
+      rgba(0, 0, 0, 0.4) 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.4) 8%,
+      #000 18%,
+      #000 82%,
+      rgba(0, 0, 0, 0.4) 92%,
+      transparent 100%
+    );
   }
-  .bridge-image-to-anthra {
-    height: 14vh;
-    background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 10, 0.65) 40%, #25272A 100%);
-    margin-top: -14vh;
+
+  /* Hero canvas (ink puro) emerge do anthra via fade subtle nas bordas */
+  .section-canvas-island {
     position: relative;
-    z-index: 5;
+  }
+  .section-canvas-island::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
     pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      rgba(37, 39, 42, 0.6) 0%,
+      transparent 8vh,
+      transparent calc(100% - 8vh),
+      rgba(37, 39, 42, 0.6) 100%
+    );
+  }
+
+  /* Seções dark consecutivas · sutil mudança de tom via gradient interno
+     ao invés de bg sólido diferente · evita corte */
+  .surface-anthra-warm {
+    background: linear-gradient(180deg, #25272A 0%, #2A2C30 100%);
+  }
+  .surface-anthra-cool {
+    background: linear-gradient(180deg, #25272A 0%, #1F2124 100%);
+  }
+  .surface-anthra-deep {
+    background: linear-gradient(180deg, #1F2124 0%, #1A1B1E 100%);
+  }
+
+  /* Legacy bridges · viram no-op (não criam mais "faixas") */
+  .bridge-anthra-to-paper,
+  .bridge-paper-to-anthra,
+  .bridge-anthra-to-deep,
+  .bridge-deep-to-anthra,
+  .bridge-anthra-to-image,
+  .bridge-image-to-anthra,
+  .bridge-navy-to-paper,
+  .bridge-paper-to-navy,
+  .bridge-navy-to-image,
+  .bridge-image-to-navy {
+    display: none; /* substituídos por self-fade nas próprias seções */
   }
 
   /* ===========================================================

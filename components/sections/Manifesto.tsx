@@ -36,8 +36,7 @@ const pillars = [
 export function Manifesto() {
   return (
     <section
-      className="relative py-section sm:py-sectionLg"
-      style={{ backgroundColor: "#F2F2F2" }}
+      className="relative section-paper-island"
       data-nav-light="true"
     >
       <div className="container-page">

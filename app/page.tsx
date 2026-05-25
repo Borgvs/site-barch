@@ -39,45 +39,25 @@ export default function HomePage() {
         <HeroConstructionLoader />
 
         <div id="conteudo">
-          {/* Bridge suave hero → diagnóstico */}
-          <div aria-hidden className="bridge-image-to-anthra" />
+          {/* Body bg permanente é anthra · seções fluem sem cortes.
+              Manifesto é ILHA paper com self-fade interno (section-paper-island). */}
 
-          {/* Ato I.2 · DIAGNÓSTICO
-              6 problemas estruturais que abrem espaço para a tese venture
-              builder. Sem nomear o problema, a Barch ficaria sem motivo. */}
+          {/* Ato I.2 · DIAGNÓSTICO */}
           <Problema />
 
-          {/* Bridge sutil anthra → anthraDeep (mudança de tom) */}
-          <div aria-hidden className="bridge-anthra-to-deep" />
-
-          {/* Ato II.1 · ECOSSISTEMA — Sinek WHY/HOW/WHAT
-              LOCVS (WHY) · BIMARCH (HOW) · BARCH (WHAT)
-              Same stack, same thesis. Stack diagram Data → Intelligence →
-              Architecture → Platform. */}
+          {/* Ato II.1 · ECOSSISTEMA — WHY/HOW/WHAT + stack diagram animado */}
           <Ecossistema />
 
-          {/* Ato II.2 · PLATAFORMA — 4 camadas
-              Canteiro · Gestão · Investidor · Asset. A XP do real estate.
-              Decision Trigger CTA ao final. */}
+          {/* Ato II.2 · PLATAFORMA — 4 camadas com ícones vetoriais */}
           <Plataforma />
 
-          {/* Ato II.3 · BIM SCROLL-DRIVEN
-              Vertical Obras · BIMARCH em operação ao vivo (estudo de caso).
-              400vh pin · 6 fases construtivas vista drone B0→B5. */}
+          {/* Ato II.3 · BIM SCROLL-DRIVEN — vertical Obras em operação */}
           <Bimarch />
 
-          {/* Bridge anthra → paper · entrada na ilha de descanso editorial */}
-          <div aria-hidden className="bridge-anthra-to-paper" />
-
-          {/* Ato III.1 · MANIFESTO BUILD BEYOND
-              Ilha de descanso paper. 4 recusas que materializam a tese
-              venture builder. Não é slogan. É mandato. */}
+          {/* Ato III.1 · MANIFESTO BUILD BEYOND — ilha paper self-fade */}
           <Manifesto />
 
-          {/* Bridge paper → anthra · saída da ilha */}
-          <div aria-hidden className="bridge-paper-to-anthra" />
-
-          {/* Ato III.2 · CONTATO — Decision Trigger final */}
+          {/* Ato III.2 · CONTATO */}
           <Contact />
         </div>
       </main>

@@ -40,8 +40,10 @@ export function Nav({ hideUntilHabitar = false }: NavProps) {
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [onDark, setOnDark] = useState(true);
-  // visible: nav slide-in/out
+  // visible: nav slide-in/out (em Habitar)
   const [visible, setVisible] = useState(!hideUntilHabitar);
+  // overHeroCanvas: nav está sobre o hero canvas? → sem background, só texto
+  const [overHeroCanvas, setOverHeroCanvas] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -57,6 +59,11 @@ export function Nav({ hideUntilHabitar = false }: NavProps) {
       } else {
         setVisible(true);
       }
+
+      // OverHeroCanvas: nav aparece SOBRE o canvas do hero (fase Habitar, ainda
+      // dentro do hero 500vh). Sem background, texto/logo/CTA flutuando sobre
+      // o hero. Após o pin do hero soltar (scrollY > vh * 5), nav ganha bg.
+      setOverHeroCanvas(y >= vh * 4.6 && y < vh * 5);
 
       // Tone detection: any [data-nav-dark="true"] overlapping nav band
       // Como o site é dark global, default é dark; só vira light em ilhas
@@ -87,6 +94,19 @@ export function Nav({ hideUntilHabitar = false }: NavProps) {
   const isVisible = mounted ? visible : !hideUntilHabitar;
   const isScrolled = mounted ? scrolled : false;
   const dark = mounted ? onDark : true;
+  const overHero = mounted ? overHeroCanvas : false;
+
+  // Background rules:
+  //   - Sobre o hero canvas (Habitar in-pin): SEM bg · só texto flutuando
+  //   - Após hero, em seção dark: bg-anthra/65 backdrop-blur
+  //   - Após hero, em seção light: bg-paper/85 backdrop-blur
+  const bgClass = overHero
+    ? "bg-transparent border-b border-transparent"
+    : isScrolled && dark
+      ? "bg-anthra/65 backdrop-blur-2xl border-b border-paper/[0.06]"
+      : isScrolled && !dark
+        ? "bg-paper/85 backdrop-blur-2xl border-b border-ruleLight"
+        : "bg-transparent border-b border-transparent";
 
   return (
     <header
@@ -96,11 +116,7 @@ export function Nav({ hideUntilHabitar = false }: NavProps) {
         isVisible
           ? "translate-y-0 opacity-100 pointer-events-auto"
           : "-translate-y-full opacity-0 pointer-events-none",
-        isVisible && isScrolled && dark
-          ? "bg-anthra/65 backdrop-blur-2xl border-b border-paper/[0.06]"
-          : isVisible && isScrolled && !dark
-            ? "bg-paper/85 backdrop-blur-2xl border-b border-ruleLight"
-            : "bg-transparent border-b border-transparent",
+        bgClass,
       )}
       style={{ transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)" }}
       aria-hidden={!isVisible}
