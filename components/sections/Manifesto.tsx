@@ -47,14 +47,16 @@ export function Manifesto() {
       data-nav-light="true"
     >
       <div className="container-page">
-        {/* Header */}
-        <div className="text-center mb-20 max-w-3xl mx-auto">
+        {/* Header · v10.5.2 · headline redesenhada com hierarquia tipográfica
+            visível em 3 níveis (100% / 78% / 105%) · max-w aumentado para
+            ocupar o frame · espaço entre linhas controlado por margin individual */}
+        <div className="text-center mb-20 sm:mb-24 max-w-5xl mx-auto">
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: DURATION.base, ease: EASE.out }}
-            className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-6"
+            className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-8"
           >
             Manifesto · Build Beyond
           </motion.p>
@@ -67,17 +69,32 @@ export function Manifesto() {
               ease: EASE.out,
               delay: 0.08,
             }}
-            className="font-display mb-6 leading-[0.94] tracking-[-0.028em]"
+            className="font-display mb-10 leading-[0.92] tracking-[-0.032em]"
             style={{
               fontWeight: 900,
-              fontSize: "clamp(42px, 9vw, 84px)",
+              fontSize: "clamp(54px, 11vw, 112px)",
             }}
           >
-            <span className="text-glass-dark">Build Beyond</span>
-            <br />
-            <span className="text-muted2">não é slogan.</span>
-            <br />
-            <span style={{ color: "#9C7259" }}>É mandato.</span>
+            {/* Linha 1 · "Build Beyond" 100% · glass-fill dark monumental */}
+            <span className="block text-glass-dark">Build Beyond</span>
+            {/* Linha 2 · "não é slogan." 78% · muted2 · respira do título principal */}
+            <span
+              className="block text-muted2 mt-2 sm:mt-3"
+              style={{ fontSize: "0.78em", fontWeight: 800, letterSpacing: "-0.022em" }}
+            >
+              não é slogan.
+            </span>
+            {/* Linha 3 · "É mandato." 105% · clay · ponto final assertivo */}
+            <span
+              className="block mt-1 sm:mt-2"
+              style={{
+                color: "#9C7259",
+                fontSize: "1.05em",
+                letterSpacing: "-0.034em",
+              }}
+            >
+              É mandato.
+            </span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 8 }}

@@ -61,7 +61,10 @@ export function BimTopOverlay({ progressRef }: Props) {
       // Tabulado abaixo do nav (top-20 mobile, top-24 desktop · ~80-96px)
       style={{ paddingTop: "clamp(96px, 12vh, 128px)" }}
     >
-      <div className="px-6 sm:px-10 max-w-6xl mx-auto">
+      {/* v10.5.2 · Timeline ocupa toda a horizontalidade do canvas (px-6/sm:10),
+          alinhada com os outros overlays (left-6/sm:10 ... right-6/sm:10).
+          Não mais limitada a max-w-6xl — usa o frame inteiro da animação. */}
+      <div className="px-6 sm:px-10">
         {/* Header row · code + label da fase + phase index */}
         <div className="flex items-end justify-between gap-6 mb-5">
           <div>

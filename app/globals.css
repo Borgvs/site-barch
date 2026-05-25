@@ -778,43 +778,58 @@
      2 variantes: light (sobre dark bg) e dark (sobre paper bg).
      ============================================================ */
 
-  /* Glass-fill light · headline sobre fundo dark (Contact, etc) */
+  /* Glass-fill light · headline sobre fundo dark (Contact, etc)
+     v10.5.2 · curva refinada · 9 stops com transição suave para clay
+     no fim · drop-shadow duplo (highlight + sombra de profundidade) */
   .text-glass-light {
     background:
       linear-gradient(
         180deg,
         #FFFFFF 0%,
-        #F2F2F2 18%,
-        rgba(220, 222, 226, 0.95) 38%,
-        rgba(178, 182, 188, 0.85) 58%,
-        rgba(132, 137, 144, 0.75) 78%,
-        rgba(156, 114, 89, 0.85) 100%
+        #F4F4F2 10%,
+        #E4E5E2 22%,
+        #CFD0CD 36%,
+        #B6B8B5 50%,
+        #989B98 64%,
+        #797D7B 78%,
+        #6B6862 90%,
+        rgba(156, 114, 89, 0.78) 100%
       );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    /* Subtle highlight superior · simula reflexo no vidro */
-    filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.12));
+    /* Highlight superior + sombra inferior · profundidade Apple-tier */
+    filter:
+      drop-shadow(0 1px 0 rgba(255, 255, 255, 0.18))
+      drop-shadow(0 3px 8px rgba(0, 0, 0, 0.25));
   }
 
-  /* Glass-fill dark · headline sobre fundo paper (Manifesto) */
+  /* Glass-fill dark · headline sobre fundo paper (Manifesto)
+     v10.5.2 · curva refinada · 9 stops · clay no fim mais sutil
+     (não dominante na cor final) · highlight + sombra duplos */
   .text-glass-dark {
     background:
       linear-gradient(
         180deg,
         #0A0B0E 0%,
-        #1F2226 22%,
-        rgba(34, 36, 41, 0.92) 45%,
-        rgba(60, 64, 70, 0.85) 65%,
-        rgba(100, 104, 110, 0.78) 82%,
-        rgba(156, 114, 89, 0.88) 100%
+        #14161B 12%,
+        #1E2127 24%,
+        #2A2D33 38%,
+        #3A3E45 52%,
+        #4E525A 64%,
+        #696C73 76%,
+        #897F71 88%,
+        rgba(156, 114, 89, 0.72) 100%
       );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.4));
+    /* Highlight branco superior + sombra leve · profundidade gravada */
+    filter:
+      drop-shadow(0 1px 0 rgba(255, 255, 255, 0.45))
+      drop-shadow(0 2px 6px rgba(10, 11, 14, 0.08));
   }
 
   .text-gradient-paper {
