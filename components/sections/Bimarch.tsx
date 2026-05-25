@@ -1,30 +1,35 @@
 "use client";
 
 /**
- * Bimarch — BIM em obra · linguagem institucional sem códigos de manual.
+ * Bimarch — Obra em tempo real.
  *
- * Refinements Apple-tier:
- *  - Headline em três tempos com pause tipográfica
- *  - Cards de ferramentas: número index + nome + role + detail, linha que cresce no hover
- *  - Princípios em colunas com linha vertical conectora
- *  - Eyebrow refinado, sem chip pesado
+ * Estrutura (post-FGAA-BIM v1.0):
+ *  1. Scroll-driven canvas pinado (400vh) mostrando a obra crescendo do
+ *     terreno marcado (B0) até a casa pronta vista de drone (B5).
+ *     Overlay técnico documental muda por camada.
+ *  2. Editorial content abaixo: 4 problemas resolvidos + 3 decisões
+ *     culturais (mantido da versão v9.2).
+ *
+ * O scroll-driven canvas usa o mesmo padrão arquitetural do hero:
+ *  - GSAP ScrollTrigger.pin
+ *  - Canvas-based frame sequence (200 frames webp)
+ *  - progressRef compartilhado entre canvas e annotations overlay
  */
 
-import dynamic from "next/dynamic";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { EASE, DURATION } from "@/lib/motion";
 import { Tilt } from "@/components/system/Tilt";
+import { BimFrameSequence } from "./BimFrameSequence";
+import { BimLayerAnnotations } from "./BimLayerAnnotations";
+import {
+  loadBimManifest,
+  type BimFramesManifest,
+} from "@/lib/bim-frames-manifest";
 
-// Three.js model — lazy load para não pesar o bundle inicial
-const BimModel3D = dynamic(
-  () => import("./BimModel3D").then((m) => ({ default: m.BimModel3D })),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="absolute inset-0 bg-ink animate-pulse" aria-hidden />
-    ),
-  },
-);
+gsap.registerPlugin(ScrollTrigger);
 
 const problemas = [
   {
@@ -68,15 +73,168 @@ const principles = [
   },
 ];
 
+/* -----------------------------------------------------------------------
+ * Scroll-driven canvas section
+ * ---------------------------------------------------------------------- */
+
+function BimScrollCanvas({ manifest }: { manifest: BimFramesManifest }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
+  const progressRef = useRef<number>(0);
+
+  useEffect(() => {
+    if (!containerRef.current || !stickyRef.current) return;
+    const ctx = gsap.context(() => {
+      gsap.to(
+        { p: 0 },
+        {
+          p: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 0.5,
+            pin: stickyRef.current,
+            pinSpacing: false,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+            onUpdate: (st) => {
+              progressRef.current = st.progress;
+            },
+          },
+        },
+      );
+    }, containerRef);
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      className="relative w-full bg-ink text-paper"
+      style={{ height: "400vh" }}
+      aria-label="Obra em tempo real · vista drone das fases construtivas"
+    >
+      <div
+        ref={stickyRef}
+        className="absolute top-0 left-0 h-screen w-full overflow-hidden bg-ink"
+        style={{ willChange: "transform" }}
+      >
+        <BimFrameSequence manifest={manifest} progressRef={progressRef} />
+
+        {/* Gradient overlay topo e base para legibilidade do overlay técnico */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55"
+        />
+
+        {/* Vignette discreta */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.38) 100%)",
+          }}
+        />
+
+        {/* Overlay técnico documental */}
+        <BimLayerAnnotations progressRef={progressRef} />
+      </div>
+    </div>
+  );
+}
+
+/* -----------------------------------------------------------------------
+ * Fallback estático: imagem B5 quando não tem manifest ou mobile/reduced.
+ * ---------------------------------------------------------------------- */
+
+function BimStaticFallback() {
+  return (
+    <div className="relative w-full bg-ink text-paper overflow-hidden">
+      <div className="aspect-[16/9] relative">
+        <img
+          src="/bim-frames/frame_0200.webp"
+          alt="Obra em tempo real · vista drone da casa pronta · projeto-tese Barch"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/55" />
+        <div className="absolute top-6 left-6 sm:top-10 sm:left-10">
+          <p className="text-[10px] tracking-[0.32em] uppercase text-paper/65 font-medium font-mono mb-1">
+            Mesma obra · vista canteiro
+          </p>
+          <p
+            className="font-display text-[28px] sm:text-[36px] text-paper leading-none tracking-[-0.02em]"
+            style={{ fontWeight: 900 }}
+          >
+            B5
+          </p>
+        </div>
+        <div className="absolute left-6 sm:left-10 right-6 sm:right-auto sm:max-w-[640px] bottom-12">
+          <p className="text-[11px] tracking-[0.32em] uppercase text-paper/70 font-medium mb-3">
+            Federado · entrega documentada
+          </p>
+          <h3
+            className="font-display text-paper leading-[0.96] tracking-[-0.028em]"
+            style={{ fontWeight: 900, fontSize: "clamp(28px, 5.5vw, 56px)" }}
+          >
+            A obra entregue continua viva no modelo.
+          </h3>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* -----------------------------------------------------------------------
+ * Wrapper · decide scroll-driven vs fallback
+ * ---------------------------------------------------------------------- */
+
+function BimVisual() {
+  const [manifest, setManifest] = useState<BimFramesManifest | null>(null);
+  const [mode, setMode] = useState<"loading" | "scroll" | "fallback">("loading");
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const isWideEnough = window.innerWidth >= 768;
+
+    loadBimManifest().then((m) => {
+      if (!m) {
+        setMode("fallback");
+        return;
+      }
+      setManifest(m);
+      setMode(prefersReducedMotion || !isWideEnough ? "fallback" : "scroll");
+    });
+  }, []);
+
+  if (mode === "loading") {
+    return (
+      <div
+        className="relative w-full aspect-[16/9] bg-ink animate-pulse"
+        aria-hidden
+      />
+    );
+  }
+  if (mode === "fallback" || !manifest) return <BimStaticFallback />;
+  return <BimScrollCanvas manifest={manifest} />;
+}
+
+/* -----------------------------------------------------------------------
+ * Bimarch (main export)
+ * ---------------------------------------------------------------------- */
+
 export function Bimarch() {
   return (
-    <section
-      id="bim"
-      className="relative py-section sm:py-sectionLg bg-softer"
-    >
-      <div className="container-page">
-        {/* Header */}
-        <div className="mb-20 max-w-3xl">
+    <section id="bim" className="relative bg-softer">
+      {/* Header editorial — antes do scroll canvas */}
+      <div className="container-page py-section sm:py-sectionLg">
+        <div className="mb-16 max-w-3xl">
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -118,43 +276,23 @@ export function Bimarch() {
             }}
             className="text-body-lg text-charcoal leading-[1.55] max-w-2xl"
           >
-            Quem contrata obra sabe a regra do silêncio: o cliente descobre o
-            problema tarde, o cronograma vira ficção, e o custo escala. A Barch
-            inverteu o jogo: cada disciplina, cada decisão e cada medição vive
-            num projeto único — visível,{" "}
-            <span className="text-ink font-medium">verificado antes da concretagem</span>{" "}
-            e acoplado ao que de fato está sendo executado.
+            Role e veja a mesma obra do hero documentada por drone: terreno
+            marcado, fundação, estrutura, instalações, vedações, entrega.{" "}
+            <span className="text-ink font-medium">
+              Cada fase com a verificação técnica que o cliente recebe pelo
+              painel
+            </span>{" "}
+            — sem maquiagem, sem versão paralela, sem o silêncio que esse mercado
+            vende.
           </motion.p>
         </div>
+      </div>
 
-        {/* Visual hero da seção · modelo 3D BIM interativo (Three.js) */}
-        <motion.figure
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{
-            duration: DURATION.slow,
-            ease: EASE.out,
-            delay: 0.1,
-          }}
-          className="relative mb-24 rounded-cardSm overflow-hidden bg-ink"
-        >
-          <div className="aspect-[16/8] relative">
-            <BimModel3D className="absolute inset-0" />
-            {/* Titulo overlay no topo */}
-            <div className="absolute top-5 left-6 z-10 pointer-events-none">
-              <p className="text-[10.5px] tracking-[0.32em] uppercase text-paper/65 font-medium mb-1">
-                Projeto único · todas as disciplinas
-              </p>
-              <p className="text-[15px] text-paper/95 leading-tight font-medium max-w-md">
-                Arquitetura, estrutura, instalações e custo conversando antes
-                da execução começar
-              </p>
-            </div>
-          </div>
-        </motion.figure>
+      {/* Scroll-driven canvas — 400vh com pin */}
+      <BimVisual />
 
-        {/* Ferramentas — grid 1px gap (revelando paper como divisor) */}
+      {/* Editorial reforço — 4 problemas resolvidos + 3 princípios */}
+      <div className="container-page py-section sm:py-sectionLg">
         <div className="mb-24">
           <motion.p
             initial={{ opacity: 0 }}
@@ -216,7 +354,7 @@ export function Bimarch() {
           </div>
         </div>
 
-        {/* Princípios — duas colunas com linhas verticais */}
+        {/* Princípios — três decisões culturais */}
         <div className="grid lg:grid-cols-[1fr_1.45fr] gap-12 lg:gap-20">
           <motion.div
             initial={{ opacity: 0, y: 12 }}

@@ -1,0 +1,21 @@
+{
+  "count": 200,
+  "prefix": "/bim-frames/frame_",
+  "extension": ".webp",
+  "pad": 4,
+  "width": 1600,
+  "height": 900,
+  "version": "1.0",
+  "pipeline": "FGAA-BIM v1.0 · FLUX.2 Max master + FLUX.1 Kontext Max anchors + Veo 3.1 first-last",
+  "duration_s": 30,
+  "fps": 6.667,
+  "narrative": "B0 terreno marcado → B1 fundação → B2 estrutura nua → B3 estrutura + MEP → B4 vedações → B5 casa pronta vista de drone",
+  "anchors": {
+    "B0": { "label": "Terreno marcado", "scroll_start": 0.00 },
+    "B1": { "label": "Fundação", "scroll_start": 0.18 },
+    "B2": { "label": "Estrutura nua", "scroll_start": 0.36 },
+    "B3": { "label": "Estrutura + MEP", "scroll_start": 0.54 },
+    "B4": { "label": "Vedações", "scroll_start": 0.72 },
+    "B5": { "label": "Casa pronta · drone", "scroll_start": 0.88 }
+  }
+}
