@@ -67,7 +67,8 @@ export function HeroSobre() {
         <div className="max-w-5xl">
           <motion.p
             initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px" }}
             transition={{ duration: DURATION.base, ease: EASE.out, delay: 0.1 }}
             className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-8"
           >
@@ -76,7 +77,8 @@ export function HeroSobre() {
 
           <motion.h1
             initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px" }}
             transition={{
               duration: DURATION.slow,
               ease: EASE.out,
@@ -113,7 +115,8 @@ export function HeroSobre() {
 
           <motion.p
             initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px" }}
             transition={{
               duration: DURATION.base,
               ease: EASE.out,
@@ -131,7 +134,8 @@ export function HeroSobre() {
           {/* Linha de fechamento do hero · scaleX animado */}
           <motion.div
             initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, margin: "0px" }}
             transition={{
               duration: DURATION.contemplative,
               ease: EASE.out,
