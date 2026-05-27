@@ -12,8 +12,7 @@
  *  - Eyebrow tracking expandido (matching home grammar)
  */
 
-import { motion } from "framer-motion";
-import { EASE, DURATION, useParallax } from "@/lib/motion";
+import { useParallax } from "@/lib/motion";
 
 export function HeroSobre() {
   const orbARef = useParallax<HTMLDivElement>(0.35);
@@ -65,29 +64,16 @@ export function HeroSobre() {
 
       <div className="container-page">
         <div className="max-w-5xl">
-          <motion.p
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "0px" }}
-            transition={{ duration: DURATION.base, ease: EASE.out, delay: 0.1 }}
-            className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-8"
-          >
+          <p className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-8 animate-fade-in-up">
             Manifesto · O que orienta
-          </motion.p>
+          </p>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "0px" }}
-            transition={{
-              duration: DURATION.slow,
-              ease: EASE.out,
-              delay: 0.18,
-            }}
-            className="font-display leading-[0.92] tracking-[-0.032em] mb-10"
+          <h1
+            className="font-display leading-[0.92] tracking-[-0.032em] mb-10 animate-fade-in-up"
             style={{
               fontWeight: 900,
               fontSize: "clamp(48px, 9vw, 112px)",
+              animationDelay: "0.08s",
             }}
           >
             <span className="block text-glass-light">Não somos</span>
@@ -111,37 +97,23 @@ export function HeroSobre() {
             >
               Somos um sistema.
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "0px" }}
-            transition={{
-              duration: DURATION.base,
-              ease: EASE.out,
-              delay: 0.32,
-            }}
-            className="text-body-lg text-paper/70 leading-[1.6] max-w-2xl"
+          <p
+            className="text-body-lg text-paper/70 leading-[1.6] max-w-2xl animate-fade-in-up"
+            style={{ animationDelay: "0.18s" }}
           >
             A separação entre quem concebe, quem financia e quem executa é o que
             produz a mediocridade que toma conta do ambiente construído.{" "}
             <span className="text-paper/95 font-medium">
               A Barch existe porque essa fragmentação precisa acabar.
             </span>
-          </motion.p>
+          </p>
 
-          {/* Linha de fechamento do hero · scaleX animado */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true, margin: "0px" }}
-            transition={{
-              duration: DURATION.contemplative,
-              ease: EASE.out,
-              delay: 0.5,
-            }}
-            className="mt-16 h-px w-24 origin-left bg-paper/30"
+          {/* Linha de fechamento do hero */}
+          <div
+            className="mt-16 h-px w-24 bg-paper/30 animate-fade-in-up"
+            style={{ animationDelay: "0.32s" }}
             aria-hidden
           />
         </div>
