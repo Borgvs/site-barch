@@ -64,16 +64,15 @@ export function HeroSobre() {
 
       <div className="container-page">
         <div className="max-w-5xl">
-          <p className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-8 animate-fade-in-up">
+          <p className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-8">
             Manifesto · O que orienta
           </p>
 
           <h1
-            className="font-display leading-[0.92] tracking-[-0.032em] mb-10 animate-fade-in-up"
+            className="font-display leading-[0.92] tracking-[-0.032em] mb-10"
             style={{
               fontWeight: 900,
               fontSize: "clamp(48px, 9vw, 112px)",
-              animationDelay: "0.08s",
             }}
           >
             <span className="block text-glass-light">Não somos</span>
@@ -99,10 +98,7 @@ export function HeroSobre() {
             </span>
           </h1>
 
-          <p
-            className="text-body-lg text-paper/70 leading-[1.6] max-w-2xl animate-fade-in-up"
-            style={{ animationDelay: "0.18s" }}
-          >
+          <p className="text-body-lg text-paper/70 leading-[1.6] max-w-2xl">
             A separação entre quem concebe, quem financia e quem executa é o que
             produz a mediocridade que toma conta do ambiente construído.{" "}
             <span className="text-paper/95 font-medium">
@@ -112,8 +108,7 @@ export function HeroSobre() {
 
           {/* Linha de fechamento do hero */}
           <div
-            className="mt-16 h-px w-24 bg-paper/30 animate-fade-in-up"
-            style={{ animationDelay: "0.32s" }}
+            className="mt-16 h-px w-24 bg-paper/30"
             aria-hidden
           />
         </div>
