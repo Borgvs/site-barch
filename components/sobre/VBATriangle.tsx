@@ -69,7 +69,7 @@ export function VBATriangle() {
         >
           {/* Header */}
           <div className="text-center mb-14 sm:mb-16 max-w-2xl mx-auto">
-            <p className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-6">
+            <p className="text-[11px] tracking-[0.32em] uppercase text-paper/70 font-medium mb-6">
               Protocolo · operacional
             </p>
             <h2
@@ -306,7 +306,7 @@ export function VBATriangle() {
                     className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-[11.5px] transition-colors ${
                       active === l.letter
                         ? "bg-[#9C7259]/[0.20] text-paper border-[#9C7259]/50"
-                        : "bg-paper/[0.04] text-paper/55 border-paper/[0.10] hover:border-paper/25"
+                        : "bg-paper/[0.04] text-paper/70 border-paper/[0.10] hover:border-paper/25"
                     }`}
                     aria-pressed={active === l.letter}
                   >

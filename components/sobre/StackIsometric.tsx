@@ -300,7 +300,7 @@ export function StackIsometric() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: DURATION.base, ease: EASE.out }}
-              className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-6"
+              className="text-[11px] tracking-[0.32em] uppercase text-paper/70 font-medium mb-6"
             >
               A stack · composição
             </motion.p>
@@ -380,7 +380,7 @@ export function StackIsometric() {
                   >
                     {l.name}
                   </span>
-                  <span className="text-[12.5px] text-paper/55 leading-tight">
+                  <span className="text-[12.5px] text-paper/70 leading-tight">
                     · {l.tagline}
                   </span>
                 </li>

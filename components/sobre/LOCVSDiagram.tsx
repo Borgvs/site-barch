@@ -52,7 +52,7 @@ export function LOCVSDiagram() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: DURATION.base, ease: EASE.out }}
-              className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-6"
+              className="text-[11px] tracking-[0.32em] uppercase text-paper/70 font-medium mb-6"
             >
               Diagnóstico · psico-espacial
             </motion.p>
@@ -329,7 +329,7 @@ function Metric({ value, label }: { value: string; label: string }) {
       >
         {value}
       </p>
-      <p className="text-[10.5px] tracking-[0.22em] uppercase text-paper/55 font-medium mt-2">
+      <p className="text-[10.5px] tracking-[0.22em] uppercase text-paper/70 font-medium mt-2">
         {label}
       </p>
     </div>

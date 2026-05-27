@@ -13,6 +13,7 @@
  */
 
 import { useParallax } from "@/lib/motion";
+import { FadeIn } from "@/components/system/FadeIn";
 
 export function HeroSobre() {
   const orbARef = useParallax<HTMLDivElement>(0.35);
@@ -64,11 +65,21 @@ export function HeroSobre() {
 
       <div className="container-page">
         <div className="max-w-5xl">
-          <p className="text-[11px] tracking-[0.32em] uppercase text-paper/55 font-medium mb-8">
+          <FadeIn
+            as="p"
+            immediate
+            delay={80}
+            className="text-[11px] tracking-[0.32em] uppercase text-paper/70 font-medium mb-8"
+          >
             Manifesto · O que orienta
-          </p>
+          </FadeIn>
 
-          <h1
+          <FadeIn
+            as="h1"
+            immediate
+            delay={160}
+            duration={1000}
+            distance={16}
             className="font-display leading-[0.92] tracking-[-0.032em] mb-10"
             style={{
               fontWeight: 900,
@@ -96,21 +107,31 @@ export function HeroSobre() {
             >
               Somos um sistema.
             </span>
-          </h1>
+          </FadeIn>
 
-          <p className="text-body-lg text-paper/70 leading-[1.6] max-w-2xl">
+          <FadeIn
+            as="p"
+            immediate
+            delay={320}
+            className="text-body-lg text-paper/70 leading-[1.6] max-w-2xl"
+          >
             A separação entre quem concebe, quem financia e quem executa é o que
             produz a mediocridade que toma conta do ambiente construído.{" "}
             <span className="text-paper/95 font-medium">
               A Barch existe porque essa fragmentação precisa acabar.
             </span>
-          </p>
+          </FadeIn>
 
           {/* Linha de fechamento do hero */}
-          <div
+          <FadeIn
+            immediate
+            delay={480}
+            duration={1200}
+            distance={0}
             className="mt-16 h-px w-24 bg-paper/30"
-            aria-hidden
-          />
+          >
+            <span className="sr-only">·</span>
+          </FadeIn>
         </div>
       </div>
     </section>
