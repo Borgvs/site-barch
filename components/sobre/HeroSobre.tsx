@@ -88,7 +88,7 @@ export function HeroSobre() {
               fontSize: "clamp(48px, 9vw, 112px)",
             }}
           >
-            <span className="block text-glass-dark">Não somos</span>
+            <span className="block text-glass-light">Não somos</span>
             <span
               className="block text-muted2 mt-2 sm:mt-3"
               style={{

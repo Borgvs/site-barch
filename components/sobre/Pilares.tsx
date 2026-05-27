@@ -81,7 +81,7 @@ export function Pilares() {
               fontSize: "clamp(40px, 6.5vw, 80px)",
             }}
           >
-            <span className="text-glass-dark">O que orienta</span>{" "}
+            <span className="text-glass-light">O que orienta</span>{" "}
             <span style={{ color: "#9C7259" }}>toda decisão.</span>
           </motion.h2>
         </div>

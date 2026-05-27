@@ -48,7 +48,7 @@ export function ClausulaFinal() {
             fontSize: "clamp(40px, 7vw, 88px)",
           }}
         >
-          <span className="text-glass-dark">Build Beyond.</span>
+          <span className="text-glass-light">Build Beyond.</span>
         </motion.h2>
 
         <motion.p

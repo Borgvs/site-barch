@@ -319,7 +319,7 @@ export function StackIsometric() {
                 fontSize: "clamp(36px, 5.6vw, 68px)",
               }}
             >
-              <span className="text-glass-dark">Arquitetura</span>{" "}
+              <span className="text-glass-light">Arquitetura</span>{" "}
               <span className="block mt-1" style={{ color: "#9C7259" }}>
                 como sistema vivo.
               </span>

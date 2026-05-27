@@ -71,7 +71,7 @@ export function LOCVSDiagram() {
                 fontSize: "clamp(36px, 5.6vw, 68px)",
               }}
             >
-              <span className="text-glass-dark">LOCVS.</span>{" "}
+              <span className="text-glass-light">LOCVS.</span>{" "}
               <span
                 className="block mt-2"
                 style={{

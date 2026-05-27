@@ -79,7 +79,7 @@ export function VBATriangle() {
                 fontSize: "clamp(34px, 5.2vw, 64px)",
               }}
             >
-              <span className="text-glass-dark">Verdade · Beleza · Ato.</span>
+              <span className="text-glass-light">Verdade · Beleza · Ato.</span>
             </h2>
             <p className="text-body text-paper/65 leading-[1.6]">
               Toda comunicação relevante carrega três camadas. Nem uma a menos.
