@@ -66,7 +66,15 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
-  // icons: gerados automaticamente por app/icon.tsx e app/apple-icon.tsx
+  // Favicons · espelha o setup do painel.barch.com.br para identidade visual unificada
+  icons: {
+    icon: [
+      { url: "/logos/barch-symbol-full-dark-bgoff.svg", media: "(prefers-color-scheme: light)" },
+      { url: "/logos/barch-symbol-full-light-bgoff.svg", media: "(prefers-color-scheme: dark)" },
+    ],
+    apple: "/icons/apple-touch-icon.png",
+    shortcut: "/icons/icon-192.png",
+  },
   // manifest: gerado automaticamente por app/manifest.ts
   category: "Architecture",
 };
