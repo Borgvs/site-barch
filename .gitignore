@@ -8,3 +8,11 @@ next-env.d.ts
 
 # Pipeline temp files (Fal.ai / Kling)
 /tmp
+
+# FGAA v2.0 · não commitar backups e clips pesados (mantém só frames extraídos)
+public/frames_v1_backup/
+public/anchors/v2/clips/
+public/anchors/v2/_discarded/
+public/anchors/v2/A2_pilares.png
+public/anchors/v2/A5_estrutura.png
+
