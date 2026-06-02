@@ -1,12 +1,10 @@
 {
-  "count": 282,
+  "count": 240,
   "prefix": "/frames/frame_",
   "extension": ".webp",
   "pad": 4,
   "width": 1600,
   "height": 900,
-  "version": "2.0",
-  "pipeline": "FGAA v2.0 Higgsfield Edition · Nano Banana 2K anchors + Cinematic Studio 3.0 first-last-frame",
-  "duration_s": 35,
-  "fps": 8
+  "version": "1.0-restored",
+  "pipeline": "FGAA v1.0 · FLUX.2 Max anchors + Veo 3.1 first-last (restaurado pós-v2 failed)"
 }
