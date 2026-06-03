@@ -1,10 +1,10 @@
 {
-  "count": 288,
+  "count": 290,
   "prefix": "/frames/frame_",
   "extension": ".webp",
   "pad": 4,
   "width": 1600,
   "height": 900,
-  "version": "3.1",
-  "pipeline": "FGAA v3.1 · 7 anchors curados (A0 terreno LOTE 03 + A1 baldrame + A2 infra + A3 supra + A4 estrutura + A5 F1 + A6 F2 orbital) + 6 clips Veo 3.1 Fast (Higgsfield) @ 8s cada + concat 48s + 6fps frame extraction · LOT 03 ALL Resort Porto Belo Golf Club Residence"
+  "version": "3.2",
+  "pipeline": "FGAA v3.2 · 6 clips Cinema Studio 3.0 first-last frame (Higgsfield) · cada clip 5s morpha entre anchors curados pelo Gustavo · A0 terreno LOTE 03 → A1 baldrame → A2 infra → A3 supra → A4 estrutura → A5 F1 fachada finalizada → A6 F2 vista frontal · concat 30s · 290 frames webp @ 9.6fps · camera locked com micro-parallax · cada frame conecta ao próximo (fluidez timelapse construção)"
 }
