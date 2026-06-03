@@ -1,10 +1,10 @@
 {
-  "count": 240,
+  "count": 288,
   "prefix": "/frames/frame_",
   "extension": ".webp",
   "pad": 4,
   "width": 1600,
   "height": 900,
-  "version": "1.0-restored",
-  "pipeline": "FGAA v1.0 · FLUX.2 Max anchors + Veo 3.1 first-last (restaurado pós-v2 failed)"
+  "version": "3.1",
+  "pipeline": "FGAA v3.1 · 7 anchors curados (A0 terreno LOTE 03 + A1 baldrame + A2 infra + A3 supra + A4 estrutura + A5 F1 + A6 F2 orbital) + 6 clips Veo 3.1 Fast (Higgsfield) @ 8s cada + concat 48s + 6fps frame extraction · LOT 03 ALL Resort Porto Belo Golf Club Residence"
 }
