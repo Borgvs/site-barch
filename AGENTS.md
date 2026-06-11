@@ -31,6 +31,8 @@ Requires `.env.local` with Supabase credentials before the dev server can serve 
 
 Without these, `npm run dev` starts but all routes return HTTP 500 from middleware. `npm run build` and `npm run types` work without env vars.
 
+**Cursor secrets → `.env.local`:** When secrets are injected as environment variables, write them into `painel-barch/.env.local` (gitignored) and restart the dev server. Values must be **real API keys from the Supabase and Resend dashboards**, not placeholder text or the env-var names themselves. The Supabase URL must start with `https://` and include `.supabase.co`; keys are typically JWTs (`eyJ...`) or publishable keys (`sb_...`); Resend keys start with `re_`. Placeholder values cause middleware error: `Invalid supabaseUrl`.
+
 ```bash
 cd /agent/repos/painel-barch && npm run dev   # http://localhost:3000
 ```
