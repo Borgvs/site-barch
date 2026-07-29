@@ -25,7 +25,6 @@ import process from "node:process";
 const FAL_KEY = process.env.FAL_KEY;
 if (!FAL_KEY) { console.error("FAL_KEY ausente"); process.exit(1); }
 
-const ANCHORS_DIR = path.resolve("tmp/hero-v8/anchors");
 const TMP_DIR = path.resolve("tmp/hero-v8");
 
 /* --------------------------------------------------------------------

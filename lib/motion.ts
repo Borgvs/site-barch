@@ -72,7 +72,12 @@ export function usePrefersReducedMotion(): boolean {
 export function useInView<T extends HTMLElement>(
   options: IntersectionObserverInit & { once?: boolean } = {},
 ): [RefObject<T | null>, boolean] {
-  const { once = true, ...obsOpts } = options;
+  const {
+    once = true,
+    root = null,
+    rootMargin = "0px 0px -80px 0px",
+    threshold = 0.15,
+  } = options;
   const ref = useRef<T>(null);
   const [inView, setInView] = useState(false);
 
@@ -88,11 +93,11 @@ export function useInView<T extends HTMLElement>(
           setInView(false);
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -80px 0px", ...obsOpts },
+      { root, rootMargin, threshold },
     );
     obs.observe(el);
     return () => obs.disconnect();
-  }, [once]);
+  }, [once, root, rootMargin, threshold]);
 
   return [ref, inView];
 }

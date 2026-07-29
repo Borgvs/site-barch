@@ -8,7 +8,7 @@
  * Renderizá-lo no servidor produz markup que NUNCA bate com o cliente —
  * gerando React #418 hydration mismatch que degrada a página inteira.
  *
- * Solução padrão Next.js 15 App Router: dynamic({ssr:false}) só é permitido
+ * Solução padrão Next.js 16 App Router: dynamic({ssr:false}) só é permitido
  * em Client Components. Este wrapper é o "use client" boundary que isola o
  * import dinâmico, mantendo app/page.tsx como Server Component.
  *

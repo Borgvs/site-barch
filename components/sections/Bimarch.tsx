@@ -17,6 +17,7 @@
  */
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -236,11 +237,13 @@ function BimMobileCarousel() {
               className="snap-center shrink-0 w-full relative"
             >
               <div className="aspect-[4/3] relative overflow-hidden bg-ink">
-                <img
+                <Image
                   src={`/bim-frames/frame_${padded}.webp?v=1.0`}
                   alt={`${layer.code} · ${layer.label}`}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  loading={i === 0 ? "eager" : "lazy"}
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                  priority={i === 0}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/65" />
                 <div className="absolute top-5 left-5 right-5 flex items-start justify-between">
@@ -322,11 +325,12 @@ function BimStaticFallback() {
   return (
     <div className="relative w-full bg-ink text-paper overflow-hidden">
       <div className="aspect-[16/9] relative">
-        <img
+        <Image
           src="/bim-frames/frame_0200.webp"
           alt="Obra em tempo real · vista drone da casa pronta · projeto-tese Barch"
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
+          fill
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/55" />
         <div className="absolute top-6 left-6 sm:top-10 sm:left-10">

@@ -68,11 +68,6 @@ const COMMON_SHOT =
   "Wide horizontal composition 16:9, photorealistic, architectural " +
   "magazine quality (Dezeen, ArchDaily, Domus editorial).";
 
-const NEG_PROMPT =
-  "people, cars, signage, text, logo, watermark, blurry, low quality, " +
-  "oversaturated, neon, gradient sky, render-looking, plastic, cartoon, " +
-  "vibrant colors, pastel, kitsch, generic stock photo";
-
 const IMAGES = [
   {
     slug: "hero-blue-hour",

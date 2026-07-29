@@ -333,7 +333,7 @@ Continuous photorealistic build progression of the residence.`,
   console.log("\n✅ 6 clips Kling prontos\n");
 }
 
-async function concatAndExtract(state) {
+async function concatAndExtract() {
   console.log("\n▸ STEP 3 · Concatenando + extraindo frames\n");
 
   // Cria concat list
@@ -428,7 +428,7 @@ async function main() {
 
   await generatePhaseImages(state);
   await generateChainVideos(state);
-  await concatAndExtract(state);
+  await concatAndExtract();
 
   console.log("▸ Próximo: git add public/frames && git commit && git push\n");
 }

@@ -3,7 +3,7 @@
 Site público da Barch em `barch.com.br`. Linguagem visual inspirada em LanderOS (Framer) adequada à identidade Barch (tokens R01, paleta creme + ink + terracotta, glass design).
 
 ## Stack
-- **Next.js 15.5.18** (App Router, TypeScript strict)
+- **Next.js 16.2.12** (App Router, TypeScript strict)
 - **Tailwind CSS 3** com tokens R01 (mesmos do `painel-barch`)
 - **Framer Motion** para animações sutis (scroll reveal, hero entrada, hover)
 - **Inter + Fraunces** (sans + serif display)
@@ -21,7 +21,7 @@ npm run dev   # http://localhost:3001
 app/
 ├── layout.tsx          # Root layout com fontes + meta
 ├── page.tsx            # Home: Hero · Process · Projects · Stack · Manifesto · Contact
-├── sobre/page.tsx      # Manifesto detalhado · pilares · VBA · SAPP · LOCVS
+├── sobre/page.tsx      # Manifesto detalhado · pilares · VBA · escuta · LOCVS
 └── globals.css         # Tokens R01 + componentes
 
 components/

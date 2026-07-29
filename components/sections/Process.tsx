@@ -26,7 +26,7 @@ const steps: Step[] = [
     num: "01",
     title: "Escuta antes da forma",
     body: "Diagnóstico do terreno, do cotidiano e do que o cliente ainda não conseguiu pôr em palavras. O projeto real nasce desse mapeamento — não do que se diz na primeira reunião.",
-    signal: "Diagnóstico SAPP · 2-4 semanas",
+    signal: "Escuta estruturada · 2-4 semanas",
   },
   {
     num: "02",
