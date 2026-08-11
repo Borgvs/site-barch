@@ -238,7 +238,7 @@ function BimMobileCarousel() {
             >
               <div className="aspect-[4/3] relative overflow-hidden bg-ink">
                 <Image
-                  src={`/bim-frames/frame_${padded}.webp?v=1.0`}
+                  src={`/bim-frames/frame_${padded}.webp`}
                   alt={`${layer.code} · ${layer.label}`}
                   fill
                   sizes="100vw"
@@ -298,8 +298,8 @@ function BimMobileCarousel() {
             <span
               className={`h-1 transition-all duration-500 ${
                 active === i
-                  ? "w-8 bg-navy"
-                  : "w-4 bg-navy/25 group-hover:bg-navy/50"
+                  ? "w-8 bg-paper"
+                  : "w-4 bg-paper/25 group-hover:bg-paper/50"
               }`}
             />
             <span
@@ -414,7 +414,7 @@ function BimVisual() {
 
 export function Bimarch() {
   return (
-    <section id="bim" className="relative bg-navyDeep">
+    <section id="bim" className="relative bg-navyDeep scroll-mt-24">
       {/* Header editorial — antes do scroll canvas */}
       <div className="container-page py-section sm:py-sectionLg">
         <div className="mb-16 max-w-3xl">

@@ -16,7 +16,7 @@ export function Contact() {
   return (
     <section
       id="contato"
-      className="relative overflow-hidden py-section sm:py-sectionLg"
+      className="relative overflow-hidden py-section sm:py-sectionLg scroll-mt-24"
     >
       {/* Radial rings full-bleed · ornamento ambiente · não confinados a card */}
       <div
@@ -101,7 +101,7 @@ export function Contact() {
           </MagneticLink>
 
           <MagneticLink
-            href="https://wa.me/5500000000000"
+            href="https://wa.me/5519992665775"
             external
             className="glass-cta-ghost group"
             strength={0.25}

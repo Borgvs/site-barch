@@ -4,11 +4,14 @@ import { SmoothScroll } from "@/components/system/SmoothScroll";
 import { StructuredData } from "@/components/system/StructuredData";
 import "./globals.css";
 
+// Fontes VARIÁVEIS (sem array de weight = eixo completo 100–900) + itálico real.
+// Antes: instâncias estáticas até 700 e sem italic — todo fontWeight 800/900 do
+// display e todo `italic` do site eram sintetizados pelo navegador (faux bold/oblique).
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
   preload: true,
 });
 
@@ -16,7 +19,7 @@ const interTight = Inter_Tight({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   preload: true,
 });
 
@@ -30,6 +33,9 @@ export const metadata: Metadata = {
   },
   description:
     "Barch projeta, constrói e opera empreendimentos como uma única tese — concepção, obra e gestão sob a mesma stack. Construir sem ruído.",
+  // Canonical relativo: cada rota aponta para si mesma no domínio apex
+  // (www.barch.com.br serve 200 sem redirect — sem canonical vira conteúdo duplicado)
+  alternates: { canonical: "./" },
   applicationName: "Barch",
   authors: [{ name: "Gustavo Alonso Borges", url: SITE_URL }],
   creator: "Barch Engenharia e Arquitetura",
@@ -37,12 +43,11 @@ export const metadata: Metadata = {
     "arquitetura",
     "venture builder arquitetônica",
     "BIM",
-    "obra",
-    "residências",
+    "gerenciamento de obras",
+    "residências de alto padrão",
     "Barch",
-    "Curitiba",
-    "Bernardes",
-    "Kogan",
+    "Piracicaba",
+    "São Paulo",
     "arquitetura contemporânea brasileira",
   ],
   openGraph: {
@@ -80,7 +85,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FCFBF7",
+  // anthraDeep — o chrome do navegador deve casar com o fundo dark-first do site
+  themeColor: "#1A1B1E",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,

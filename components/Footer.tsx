@@ -22,7 +22,8 @@ const cols: { title: string; links: FooterLink[] }[] = [
     title: "Barch",
     links: [
       { label: "Manifesto", href: "/sobre" },
-      { label: "Método", href: "/#processo" },
+      // /#processo e /#portal eram âncoras de seções que a home não renderiza
+      { label: "Método", href: "/#composicao" },
       { label: "BIM em obra", href: "/#bim" },
       { label: "Contato", href: "/#contato" },
     ],
@@ -35,7 +36,7 @@ const cols: { title: string; links: FooterLink[] }[] = [
         href: "https://painel.barch.com.br",
         external: true,
       },
-      { label: "Como acompanhamos", href: "/#portal" },
+      { label: "Como acompanhamos", href: "/#plataforma" },
     ],
   },
   {
@@ -43,7 +44,7 @@ const cols: { title: string; links: FooterLink[] }[] = [
     links: [
       {
         label: "LinkedIn",
-        href: "https://linkedin.com/company/barch",
+        href: "https://www.linkedin.com/company/barchco/",
         external: true,
       },
       {
@@ -75,8 +76,8 @@ export function Footer() {
               Articulamos arquitetura, obra e operação como um sistema único —
               não como serviços separados que se contradizem em cada etapa.
             </p>
-            <div className="text-[11px] font-mono text-muted2 tnum leading-relaxed tracking-wider">
-              CNPJ 55.060.650/0001-01
+            <div className="text-[11px] font-mono text-muted tnum leading-relaxed tracking-wider">
+              CNPJ 55.060.950/0001-01
               <br />
               CREA/SP 2857205
             </div>
@@ -84,7 +85,7 @@ export function Footer() {
 
           {cols.map((col) => (
             <div key={col.title}>
-              <p className="text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-5">
+              <p className="text-[11px] tracking-[0.32em] uppercase text-muted font-medium mb-5">
                 {col.title}
               </p>
               <ul className="space-y-3.5">
@@ -112,7 +113,7 @@ export function Footer() {
                           stroke="currentColor"
                           strokeWidth="2.2"
                           strokeLinecap="round"
-                          className="text-muted2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                          className="text-muted transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                           aria-hidden
                         >
                           <path d="M7 17L17 7M9 7h8v8" />
@@ -127,10 +128,10 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-rule/60 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5">
-          <p className="text-[12px] tracking-[0.04em] text-muted2 italic">
+          <p className="text-[12px] tracking-[0.04em] text-muted italic">
             Forma sem significado é cenário. Aqui forma é resposta.
           </p>
-          <p className="text-[10.5px] tracking-[0.28em] uppercase text-muted2 font-mono tnum">
+          <p className="text-[10.5px] tracking-[0.28em] uppercase text-muted font-mono tnum">
             © {new Date().getFullYear()} Barch
           </p>
         </div>

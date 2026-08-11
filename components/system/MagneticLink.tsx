@@ -36,7 +36,9 @@ export function MagneticLink({
 
   const linkContent = (
     <span ref={ref} className="inline-block">
-      <span className="inline-flex items-center">{children}</span>
+      {/* gap-3 replica o gap dos CTAs (.glass-cta-ghost usa 0.75rem) — o wrapper
+          engolia o gap do <a> externo e o ícone colava no rótulo */}
+      <span className="inline-flex items-center gap-3">{children}</span>
     </span>
   );
 

@@ -47,7 +47,8 @@ const verticals: Vertical[] = [
       "O instrumento que mede a quarta camada do real estate: o match entre espaço e pessoa. Diagnóstico psico-espacial em 3 eixos. 6 perfis arquetípicos. Match com propriedades e arquitetos certificados.",
     metric: { value: "88%", label: "assertividade · 500+ testes Prolific" },
     status: "Choose by how you live, not by what you see",
-    cta: { label: "Descubra seu perfil", href: "/locvs" },
+    // /locvs ainda não existe — até a landing nascer, o CTA leva à conversa
+    cta: { label: "Descubra seu perfil", href: "/#contato" },
   },
   {
     code: "HOW",
@@ -56,8 +57,9 @@ const verticals: Vertical[] = [
     description:
       "Plataforma de coordenação BIM + digital twin + IA aplicada à construção. Reconciliação entre projeto e canteiro. Cinco dimensões integradas: geometria · tempo · custo · análise · operação.",
     metric: { value: "3D → 7D", label: "framework MARK internacional" },
-    status: "6 anos · portfolio multinacional · ISO 19650",
-    cta: { label: "Veja como funciona", href: "/bimarch" },
+    status: "6 anos · portfólio multinacional · ISO 19650",
+    // /bimarch ainda não existe — idem
+    cta: { label: "Veja como funciona", href: "/#contato" },
   },
   {
     code: "WHAT",

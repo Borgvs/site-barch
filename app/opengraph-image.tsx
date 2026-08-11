@@ -1,8 +1,10 @@
 /**
- * opengraph-image.tsx — OG dinâmico cinematográfico.
+ * opengraph-image.tsx — cartão editorial tipográfico.
  *
- * Background: residência blue-hour (FLUX AI) + dark overlay.
- * Tipografia editorial sobreposta — Inter weight 500.
+ * DETERMINÍSTICO por decisão: a versão anterior buscava o hero .webp em runtime
+ * e o embutia como background no satori — que não rasteriza webp — e o stream
+ * abortava DEPOIS do 200: produção servia image/png com corpo de 0 bytes e todo
+ * compartilhamento (WhatsApp/LinkedIn) saía sem card. Sem fetch, sem falha.
  */
 
 import { ImageResponse } from "next/og";
@@ -13,22 +15,6 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function OG() {
-  // Carrega imagem do hero como base64 a partir do public
-  const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://barch.com.br";
-  let bgDataUrl = "";
-  try {
-    const res = await fetch(`${baseUrl}/hero/hero-blue-hour.webp`);
-    if (res.ok) {
-      const buf = await res.arrayBuffer();
-      const b64 = Buffer.from(buf).toString("base64");
-      bgDataUrl = `data:image/webp;base64,${b64}`;
-    }
-  } catch {
-    bgDataUrl = "";
-  }
-
   return new ImageResponse(
     (
       <div
@@ -39,58 +25,34 @@ export default async function OG() {
           width: "100%",
           height: "100%",
           padding: "64px 80px",
-          background: "#0A0A0A",
+          background:
+            "radial-gradient(ellipse 120% 90% at 50% -10%, #2B2D31 0%, #1A1B1E 55%, #101114 100%)",
           fontFamily: "Inter, system-ui, sans-serif",
-          position: "relative",
           color: "#FCFBF7",
-          ...(bgDataUrl
-            ? {
-                backgroundImage: `url(${bgDataUrl})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }
-            : {}),
         }}
       >
-        {/* Dark overlay */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(to bottom, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.35) 50%, rgba(10,10,10,0.80) 100%)",
-          }}
-        />
-
-        {/* Header */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 12,
-            zIndex: 10,
-          }}
-        >
+        {/* Header · marca */}
+        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
           <div
             style={{
-              width: 28,
-              height: 28,
+              width: 30,
+              height: 30,
               background: "#FCFBF7",
-              borderRadius: 4,
+              borderRadius: 9999,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#0A0A0A",
-              fontSize: 16,
+              color: "#101114",
+              fontSize: 18,
               fontWeight: 700,
               letterSpacing: "-0.02em",
             }}
           >
-            B
+            b
           </div>
           <div
             style={{
-              fontSize: 18,
+              fontSize: 19,
               fontWeight: 600,
               letterSpacing: "-0.01em",
               color: "#FCFBF7",
@@ -101,46 +63,42 @@ export default async function OG() {
         </div>
 
         {/* Centro · headline editorial */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 22,
-            zIndex: 10,
-          }}
-        >
+        <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           <div
             style={{
-              fontSize: 13,
-              letterSpacing: "0.4em",
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              fontSize: 14,
+              letterSpacing: "0.38em",
               textTransform: "uppercase",
-              color: "rgba(252,251,247,0.70)",
+              color: "rgba(252,251,247,0.72)",
               fontWeight: 500,
             }}
           >
+            <div
+              style={{
+                width: 7,
+                height: 7,
+                borderRadius: 9999,
+                background: "#9C7259",
+              }}
+            />
             Venture builder arquitetônica
           </div>
           <div
             style={{
-              fontSize: 124,
-              lineHeight: 0.92,
-              letterSpacing: "-0.04em",
-              fontWeight: 500,
+              fontSize: 126,
+              lineHeight: 0.94,
+              letterSpacing: "-0.045em",
+              fontWeight: 600,
               color: "#FCFBF7",
               display: "flex",
               flexDirection: "column",
             }}
           >
             <span>Construir</span>
-            <span
-              style={{
-                color: "rgba(252,251,247,0.65)",
-                fontStyle: "italic",
-                fontWeight: 300,
-              }}
-            >
-              sem ruído.
-            </span>
+            <span style={{ color: "rgba(252,251,247,0.55)" }}>sem ruído.</span>
           </div>
         </div>
 
@@ -150,13 +108,14 @@ export default async function OG() {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            zIndex: 10,
+            borderTop: "1px solid rgba(252,251,247,0.14)",
+            paddingTop: 28,
           }}
         >
           <div
             style={{
-              fontSize: 14,
-              color: "rgba(252,251,247,0.70)",
+              fontSize: 15,
+              color: "rgba(252,251,247,0.72)",
               letterSpacing: "0.04em",
             }}
           >
@@ -164,10 +123,10 @@ export default async function OG() {
           </div>
           <div
             style={{
-              fontSize: 11,
+              fontSize: 12,
               letterSpacing: "0.32em",
               textTransform: "uppercase",
-              color: "rgba(252,251,247,0.50)",
+              color: "rgba(252,251,247,0.52)",
               fontWeight: 500,
             }}
           >

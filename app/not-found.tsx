@@ -10,7 +10,11 @@ export default function NotFound() {
   return (
     <>
       <Nav />
-      <main className="min-h-screen flex items-center justify-center bg-paper px-6 pt-32 pb-section">
+      {/* data-nav-light: sem isto a Nav fica em modo dark (texto paper) sobre o bg-paper — ilegível */}
+      <main
+        data-nav-light="true"
+        className="min-h-screen flex items-center justify-center bg-paper px-6 pt-32 pb-section"
+      >
         <div className="text-center max-w-2xl mx-auto">
           <p className="font-mono text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-8 tnum">
             Erro 404

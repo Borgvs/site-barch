@@ -11,6 +11,14 @@ export const metadata = {
   title: "Manifesto",
   description:
     "O que a Barch é, o que recusa, o método que sustenta cada decisão. Cinco princípios inegociáveis, o protocolo Verdade-Beleza-Ato, e a stack venture builder.",
+  // Sem este override a página herda og:title/og:url da HOME — compartilhar
+  // o Manifesto atribuía o card à homepage
+  openGraph: {
+    title: "Manifesto · Barch",
+    description:
+      "O que a Barch é, o que recusa, o método que sustenta cada decisão.",
+    url: "/sobre",
+  },
 };
 
 /**

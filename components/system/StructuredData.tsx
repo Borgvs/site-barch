@@ -10,7 +10,8 @@ export function StructuredData() {
     name: "Barch",
     legalName: "Barch Engenharia e Arquitetura",
     url: "https://barch.com.br",
-    logo: "https://barch.com.br/apple-icon",
+    // /apple-icon era rota inexistente (404) — o Google descartava o logo
+    logo: "https://barch.com.br/icons/icon-512.png",
     description:
       "Venture builder arquitetônica. Projeta, constrói e opera empreendimentos como uma stack integrada — do diagnóstico ao asset pós-entrega.",
     foundingDate: "2024",
@@ -18,12 +19,15 @@ export function StructuredData() {
       "@type": "Person",
       name: "Gustavo Alonso Borges",
     },
+    taxID: "55.060.950/0001-01",
     address: {
       "@type": "PostalAddress",
+      addressLocality: "Piracicaba",
+      addressRegion: "SP",
       addressCountry: "BR",
     },
     sameAs: [
-      "https://linkedin.com/company/barch",
+      "https://www.linkedin.com/company/barchco/",
       "https://instagram.com/barch.arq",
     ],
     contactPoint: {

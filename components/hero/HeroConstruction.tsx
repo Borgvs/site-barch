@@ -190,6 +190,11 @@ export function HeroConstruction() {
       className="relative w-full bg-ink text-paper"
       aria-label="Experiência de construção da residência"
     >
+      {/* No modo frames/procedural o HeroFallback (que carrega o h1 visível)
+          nunca renderiza — sem este h1 a home ficava sem h1 no desktop */}
+      <h1 className="sr-only">
+        Construir sem ruído — Barch, venture builder arquitetônica
+      </h1>
       {/* Sticky viewport — pinado pelo GSAP · will-change para GPU compositing */}
       <div
         ref={stickyRef}
@@ -268,6 +273,7 @@ export function HeroConstruction() {
             }}
             aria-label="Ir direto para o conteúdo do site"
             aria-hidden={progress >= 0.3}
+            tabIndex={progress >= 0.3 ? -1 : 0}
           >
             Ir para conteúdo ↓
           </button>

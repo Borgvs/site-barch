@@ -223,7 +223,7 @@ export function Problema() {
                 <p className="text-body text-paper/85 leading-[1.65] mb-3 transition-colors duration-500 group-hover:text-paper">
                   {p.bodyA}
                 </p>
-                <p className="text-body text-paper/85/85 leading-[1.65] italic transition-colors duration-500 group-hover:text-paper/85">
+                <p className="text-body text-paper/70 leading-[1.65] italic transition-colors duration-500 group-hover:text-paper/85">
                   {p.bodyB}
                 </p>
               </motion.article>
