@@ -15,7 +15,8 @@
  *  - Mais compacto · visualmente entendível em 1 leitura
  */
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const nodes = [
   {
@@ -69,13 +70,20 @@ export function StackFlow() {
  * ---------------------------------------------------------------------- */
 
 function StackFlowSVG() {
+  // WebKit/Safari NÃO dispara IntersectionObserver para elementos INTERNOS de
+  // SVG (motion.line/motion.g com whileInView ficavam em opacity 0 para
+  // sempre — diagrama invisível). O observer vive no <svg> raiz (caixa CSS,
+  // IO confiável) e os filhos animam via `animate` explícito.
+  const ref = useRef<SVGSVGElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+
   return (
     <motion.svg
+      ref={ref}
       viewBox="0 0 720 220"
       className="w-full h-auto max-w-4xl mx-auto"
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, margin: "-80px" }}
+      animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
       aria-label="Stack operacional Barch · Data → Intelligence → Architecture → Platform"
     >
@@ -94,8 +102,7 @@ function StackFlowSVG() {
             strokeOpacity={0.5}
             strokeWidth={1.5}
             initial={{ pathLength: 0, opacity: 0 }}
-            whileInView={{ pathLength: 1, opacity: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
+            animate={inView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
             transition={{
               pathLength: { duration: 0.9, ease: "easeInOut", delay: 0.25 + i * 0.16 },
               opacity: { duration: 0.4, delay: 0.25 + i * 0.16 },
@@ -117,8 +124,7 @@ function StackFlowSVG() {
             strokeLinecap="round"
             strokeLinejoin="round"
             initial={{ opacity: 0, x: -4 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -4 }}
             transition={{ duration: 0.5, delay: 0.5 + i * 0.16 }}
           />
         );
@@ -131,8 +137,7 @@ function StackFlowSVG() {
           <motion.g
             key={node.id}
             initial={{ opacity: 0, scale: 0.7 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
+            animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.7 }}
             transition={{
               duration: 0.55,
               ease: [0.32, 0.72, 0, 1],

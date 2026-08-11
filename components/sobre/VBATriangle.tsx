@@ -11,8 +11,8 @@
  *  - Wrapper em glass-stage (palco macOS)
  */
 
-import { useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { EASE, DURATION } from "@/lib/motion";
 
 type Vertex = "V" | "B" | "A";
@@ -51,6 +51,10 @@ const VERTEX: Record<Vertex, { x: number; y: number }> = {
 export function VBATriangle() {
   const [active, setActive] = useState<Vertex>("V");
   const reduce = useReducedMotion();
+  // WebKit não dispara IO em filhos de SVG (arestas/círculos ficavam
+  // invisíveis no Safari) — observer no <svg> raiz, filhos via animate
+  const svgRef = useRef<SVGSVGElement>(null);
+  const inView = useInView(svgRef, { once: true, margin: "-80px" });
 
   const activeLayer = layers.find((l) => l.letter === active) ?? layers[0];
 
@@ -92,6 +96,7 @@ export function VBATriangle() {
             {/* Triângulo SVG */}
             <div className="relative aspect-square max-w-[480px] mx-auto w-full">
               <svg
+                ref={svgRef}
                 viewBox="0 0 400 360"
                 className="w-full h-full"
                 aria-label="Diagrama do protocolo Verdade-Beleza-Ato"
@@ -130,12 +135,15 @@ export function VBATriangle() {
                           ? { opacity: 0 }
                           : { pathLength: 0, opacity: 0 }
                       }
-                      whileInView={
-                        reduce
-                          ? { opacity: 1 }
-                          : { pathLength: 1, opacity: 1 }
+                      animate={
+                        inView
+                          ? reduce
+                            ? { opacity: 1 }
+                            : { pathLength: 1, opacity: 1 }
+                          : reduce
+                            ? { opacity: 0 }
+                            : { pathLength: 0, opacity: 0 }
                       }
-                      viewport={{ once: true, margin: "-80px" }}
                       transition={{
                         duration: DURATION.contemplative,
                         ease: EASE.out,
@@ -152,8 +160,7 @@ export function VBATriangle() {
                   r="64"
                   fill="url(#vbaCenterGlow)"
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
+                  animate={inView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{
                     duration: DURATION.slow,
                     ease: EASE.out,
@@ -177,8 +184,7 @@ export function VBATriangle() {
                   r="4"
                   fill="#9C7259"
                   initial={{ scale: 0, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
+                  animate={inView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
                   transition={{
                     duration: DURATION.fast,
                     ease: EASE.spring,

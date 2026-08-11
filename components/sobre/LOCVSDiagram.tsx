@@ -13,7 +13,8 @@
  * Side-by-side editorial com texto.
  */
 
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { EASE, DURATION, useParallax } from "@/lib/motion";
 
 interface Archetype {
@@ -36,6 +37,10 @@ const archetypes: Archetype[] = [
 export function LOCVSDiagram() {
   const diagramRef = useParallax<HTMLDivElement>(0.18);
   const reduce = useReducedMotion();
+  // WebKit não dispara IO em filhos de SVG (anéis/órbita ficavam invisíveis
+  // no Safari) — observer no <svg> raiz, filhos via animate
+  const svgRef = useRef<SVGSVGElement>(null);
+  const inView = useInView(svgRef, { once: true, margin: "-80px" });
 
   return (
     <section
@@ -143,6 +148,7 @@ export function LOCVSDiagram() {
             className="relative aspect-square max-w-[520px] mx-auto w-full"
           >
             <svg
+              ref={svgRef}
               viewBox="0 0 240 240"
               className="w-full h-full"
               aria-hidden
@@ -171,11 +177,11 @@ export function LOCVSDiagram() {
                   strokeWidth={i === 0 ? "1" : "0.6"}
                   strokeDasharray={i === 0 ? "none" : "2 4"}
                   initial={{ opacity: 0, scale: 0.92 }}
-                  whileInView={{
-                    opacity: 1 - i * 0.12,
-                    scale: 1,
-                  }}
-                  viewport={{ once: true, margin: "-80px" }}
+                  animate={
+                    inView
+                      ? { opacity: 1 - i * 0.12, scale: 1 }
+                      : { opacity: 0, scale: 0.92 }
+                  }
                   transition={{
                     duration: DURATION.slow,
                     ease: EASE.out,
@@ -211,8 +217,15 @@ export function LOCVSDiagram() {
                     strokeWidth="0.6"
                     strokeDasharray="1.5 2"
                     initial={reduce ? { opacity: 0 } : { pathLength: 0 }}
-                    whileInView={reduce ? { opacity: 1 } : { pathLength: 1 }}
-                    viewport={{ once: true, margin: "-80px" }}
+                    animate={
+                      inView
+                        ? reduce
+                          ? { opacity: 1 }
+                          : { pathLength: 1 }
+                        : reduce
+                          ? { opacity: 0 }
+                          : { pathLength: 0 }
+                    }
                     transition={{
                       duration: DURATION.contemplative,
                       ease: EASE.out,
@@ -244,8 +257,7 @@ export function LOCVSDiagram() {
                       <motion.g
                         key={i}
                         initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
+                        animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                         transition={{
                           duration: DURATION.base,
                           ease: EASE.spring,
@@ -275,8 +287,7 @@ export function LOCVSDiagram() {
               {/* Núcleo · "eu" */}
               <motion.g
                 initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
+                animate={inView ? { scale: 1 } : { scale: 0 }}
                 transition={{
                   duration: DURATION.base,
                   ease: EASE.spring,

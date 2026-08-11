@@ -13,7 +13,8 @@
  * Ícone X usa paper sobre paper (contexto: Manifesto = paper bg).
  */
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 type RefusalKind = "generico" | "fragmentacao" | "opacidade" | "espetaculo";
 
@@ -28,16 +29,21 @@ const INK_DIM = "rgba(10, 11, 14, 0.32)";
 const CLAY = "#9C7259";
 
 export function RefusalIcon({ kind, size = 56, className = "" }: Props) {
+  // WebKit não dispara IO em filhos de SVG — observer no raiz, filhos via
+  // `animate` gated pelo inView (mesma cura do StackFlow).
+  const ref = useRef<SVGSVGElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+
   return (
     <motion.svg
+      ref={ref}
       width={size}
       height={size}
       viewBox="0 0 64 64"
       fill="none"
       className={className}
       initial={{ opacity: 0, scale: 0.85 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, margin: "-60px" }}
+      animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
       transition={{ duration: 0.55, ease: [0.32, 0.72, 0, 1] }}
       aria-hidden
     >
@@ -58,8 +64,7 @@ export function RefusalIcon({ kind, size = 56, className = "" }: Props) {
             strokeWidth={2}
             fill="rgba(156, 114, 89, 0.08)"
             initial={{ pathLength: 0 }}
-            whileInView={{ pathLength: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
+            animate={inView ? { pathLength: 1 } : { pathLength: 0 }}
             transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
           />
           <circle cx={20} cy={49} r={1.8} fill={CLAY} />
@@ -75,8 +80,7 @@ export function RefusalIcon({ kind, size = 56, className = "" }: Props) {
           {/* Top */}
           <motion.g
             initial={{ y: -4, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
+            animate={inView ? { y: 0, opacity: 1 } : { y: -4, opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <rect x={26} y={6} width={12} height={6} rx={1} stroke={INK} strokeWidth={1.4} />
@@ -85,8 +89,7 @@ export function RefusalIcon({ kind, size = 56, className = "" }: Props) {
           {/* Right */}
           <motion.g
             initial={{ x: 4, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
+            animate={inView ? { x: 0, opacity: 1 } : { x: 4, opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.28 }}
           >
             <rect x={50} y={26} width={6} height={12} rx={1} stroke={INK} strokeWidth={1.4} />
@@ -95,8 +98,7 @@ export function RefusalIcon({ kind, size = 56, className = "" }: Props) {
           {/* Bottom */}
           <motion.g
             initial={{ y: 4, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
+            animate={inView ? { y: 0, opacity: 1 } : { y: 4, opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.36 }}
           >
             <rect x={26} y={52} width={12} height={6} rx={1} stroke={INK} strokeWidth={1.4} />
@@ -105,8 +107,7 @@ export function RefusalIcon({ kind, size = 56, className = "" }: Props) {
           {/* Left */}
           <motion.g
             initial={{ x: -4, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
+            animate={inView ? { x: 0, opacity: 1 } : { x: -4, opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.44 }}
           >
             <rect x={8} y={26} width={6} height={12} rx={1} stroke={INK} strokeWidth={1.4} />
@@ -125,8 +126,7 @@ export function RefusalIcon({ kind, size = 56, className = "" }: Props) {
             strokeWidth={1.4}
             fill="rgba(10, 11, 14, 0.05)"
             initial={{ x: 4 }}
-            whileInView={{ x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
+            animate={inView ? { x: 0 } : { x: 4 }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           />
           {/* Metade direita */}
@@ -136,15 +136,13 @@ export function RefusalIcon({ kind, size = 56, className = "" }: Props) {
             strokeWidth={1.4}
             fill="rgba(10, 11, 14, 0.05)"
             initial={{ x: -4 }}
-            whileInView={{ x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
+            animate={inView ? { x: 0 } : { x: -4 }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           />
           {/* Olho revelado no centro · forma de amêndoa */}
           <motion.g
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
+            animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.55 }}
           >
             <path
@@ -168,8 +166,7 @@ export function RefusalIcon({ kind, size = 56, className = "" }: Props) {
             strokeWidth={1.4}
             fill="rgba(10, 11, 14, 0.04)"
             initial={{ opacity: 0, scale: 0.92 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
+            animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.92 }}
             transition={{ duration: 0.6, delay: 0.15 }}
           />
           {/* Fonte (lâmpada) · pequeno círculo no topo */}
@@ -184,8 +181,7 @@ export function RefusalIcon({ kind, size = 56, className = "" }: Props) {
             strokeWidth={2.2}
             strokeLinecap="round"
             initial={{ pathLength: 0 }}
-            whileInView={{ pathLength: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
+            animate={inView ? { pathLength: 1 } : { pathLength: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           />
         </>

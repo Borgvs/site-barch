@@ -16,8 +16,8 @@
  * Reverse side-by-side com texto editorial à direita.
  */
 
-import { useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { EASE, DURATION } from "@/lib/motion";
 
 interface Layer {
@@ -66,6 +66,10 @@ function prism(cx: number, cy: number, w: number, h: number, depth: number) {
 export function StackIsometric() {
   const [active, setActive] = useState<Layer["code"] | null>(null);
   const reduce = useReducedMotion();
+  // WebKit não dispara IO em filhos de SVG (os prismas ficavam invisíveis
+  // no Safari) — observer no <svg> raiz, filhos via animate
+  const svgRef = useRef<SVGSVGElement>(null);
+  const inView = useInView(svgRef, { once: true, margin: "-80px" });
 
   return (
     <section
@@ -77,6 +81,7 @@ export function StackIsometric() {
           {/* Diagrama · esquerda */}
           <div className="relative order-2 lg:order-1">
             <svg
+              ref={svgRef}
               viewBox="0 0 320 280"
               className="w-full h-full max-w-[480px] mx-auto"
               role="img"
@@ -124,12 +129,15 @@ export function StackIsometric() {
                         ? { opacity: 0 }
                         : { opacity: 0, y: 24, scale: 0.96 }
                     }
-                    whileInView={
-                      reduce
-                        ? { opacity: 1 }
-                        : { opacity: 1, y: 0, scale: 1 }
+                    animate={
+                      inView
+                        ? reduce
+                          ? { opacity: 1 }
+                          : { opacity: 1, y: 0, scale: 1 }
+                        : reduce
+                          ? { opacity: 0 }
+                          : { opacity: 0, y: 24, scale: 0.96 }
                     }
-                    viewport={{ once: true, margin: "-80px" }}
                     transition={{
                       duration: DURATION.slow,
                       ease: EASE.out,
@@ -244,8 +252,15 @@ export function StackIsometric() {
                   strokeWidth="0.6"
                   strokeDasharray="2 3"
                   initial={reduce ? { opacity: 0 } : { pathLength: 0 }}
-                  whileInView={reduce ? { opacity: 1 } : { pathLength: 1 }}
-                  viewport={{ once: true }}
+                  animate={
+                    inView
+                      ? reduce
+                        ? { opacity: 1 }
+                        : { pathLength: 1 }
+                      : reduce
+                        ? { opacity: 0 }
+                        : { pathLength: 0 }
+                  }
                   transition={{
                     duration: DURATION.slow,
                     delay: 0.7 + i * 0.15,
