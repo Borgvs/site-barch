@@ -7,7 +7,22 @@
  * compartilhamento (WhatsApp/LinkedIn) saía sem card. Sem fetch, sem falha.
  */
 
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
 import { ImageResponse } from "next/og";
+
+/**
+ * O SÍMBOLO OFICIAL, não o fallback (MAN-014).
+ * Este cartão desenhava um "b" dentro de um círculo — o fallback que a casa aposentou.
+ * É a superfície mais pública que existe: é ela que aparece no WhatsApp e no LinkedIn
+ * toda vez que alguém compartilha o site. Lido do disco e embutido como data URI, o que
+ * só é possível fora do Edge Runtime. Variante `light` porque o fundo é escuro — o mesmo
+ * pareamento que o favicon já faz em app/layout.tsx. Sem recolorir.
+ */
+const SIMBOLO = `data:image/png;base64,${readFileSync(
+  join(process.cwd(), "public", "logos", "barch-symbol-full-light-bgoff.png"),
+).toString("base64")}`;
 
 /**
  * [10/09/2026] SAIU DO EDGE. O Next 16.3 passou a avisar que o Edge Runtime está
@@ -41,23 +56,8 @@ export default async function OG() {
       >
         {/* Header · marca */}
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-          <div
-            style={{
-              width: 30,
-              height: 30,
-              background: "#FCFBF7",
-              borderRadius: 9999,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#101114",
-              fontSize: 18,
-              fontWeight: 700,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            b
-          </div>
+          {/* satori só entende <img>; e este cartão nunca passa pelo otimizador do Next */}
+          <img src={SIMBOLO} alt="" width={32} height={32} />
           <div
             style={{
               fontSize: 19,
