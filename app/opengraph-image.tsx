@@ -9,7 +9,15 @@
 
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
+/**
+ * [10/09/2026] SAIU DO EDGE. O Next 16.3 passou a avisar que o Edge Runtime está
+ * depreciado, e no build ele custava o pré-render: "using edge runtime on a page
+ * currently disables static generation" — a rota vinha marcada `ƒ` (server-rendered
+ * on demand) e este cartão era recalculado a cada compartilhamento, embora seja
+ * DETERMINÍSTICO (nenhum fetch, nenhuma variável — ver o cabeçalho acima). No runtime
+ * nodejs ele volta a ser gerado uma vez, no build.
+ */
+export const runtime = "nodejs";
 export const alt = "Barch · Construir sem ruído";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
