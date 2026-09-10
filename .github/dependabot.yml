@@ -1,0 +1,47 @@
+# POR QUE ESTE ARQUIVO EXISTE (10/09/2026).
+#
+# O Dependabot já estava ligado — alertas E correções automáticas — e mesmo assim 33
+# alertas se acumularam no painel, 4 deles críticos, até o GitHub passar a estampar o
+# aviso em todo `git push`. A causa não era falta de PR: era PR DEMAIS. Um por pacote,
+# cada um com o gate inteiro (~2 min de suíte), nenhum com tamanho que convidasse a
+# mesclar. Nove ficaram abertos e envelheceram — enquanto o alerta seguia lá.
+#
+# A cura é AGRUPAR: uma correção de segurança por semana, num PR só, com o gate rodando
+# uma vez. É o formato que se lê em cinco minutos e se mescla — e PR que se mescla é a
+# única espécie que protege alguma coisa.
+#
+# Major fica de fora do agendamento (salto de major é decisão, não rotina), mas NÃO fica
+# de fora da segurança: `version-update:semver-major` só vale para atualização de versão;
+# se um dia a correção de um crítico exigir major, o PR de segurança vem assim mesmo.
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "America/Sao_Paulo"
+    open-pull-requests-limit: 4
+    groups:
+      seguranca:
+        applies-to: security-updates
+        patterns:
+          - "*"
+      manutencao:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+          - "minor"
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-major"
+    commit-message:
+      prefix: "seguranca(deps)"
+      prefix-development: "chore(deps-dev)"
+    labels:
+      - "dependencias"
