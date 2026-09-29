@@ -1,7 +1,7 @@
 {
-  "estudo": "Talma de Oliveira50, lote0003",
+  "estudo": "Estudo 1 · Talma de Oliveira, 50 · lote 0003",
+  "data_estudo": "2026-09-28",
   "data_base_pesquisa": "2026-09-28",
-  "revisao_visual": "2026-09-29",
   "scope_sql": "062.096.0003-4",
   "geo_crs": "EPSG:31983 / GIS exportEPSG:4326",
   "map": "GeoSampa ORTO_RGB_2020",
@@ -13,11 +13,6 @@
     "https://secovi.com.br/wp-content/uploads/2026/08/202606-pmi.pdf",
     "https://secovi.com.br/pesquisa-mensal-de-valores-de-locacao-residencial-da-cidade-de-sao-paulo-julho-2024/"
   ],
-  "libraries": {
-    "three": "0.186.0",
-    "maplibre": "6.8.0",
-    "apexcharts": "3.54.1"
-  },
   "geometry": {
     "area_fiscal_m2": 7338,
     "area_cartografica_m2": 8664.906240864,
