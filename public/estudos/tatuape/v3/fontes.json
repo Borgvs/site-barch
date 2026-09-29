@@ -9,7 +9,9 @@
     "https://geosampa.prefeitura.sp.gov.br/PaginasPublicas/_SBC.aspx",
     "https://prefeitura.sp.gov.br/fazenda/w/acesso_a_informacao/31501",
     "https://legislacao.prefeitura.sp.gov.br/lei-16402-de-22-de-marco-de-2016/consolidado",
-    "https://legislacao.prefeitura.sp.gov.br/decreto-63728-de-10-de-setembro-de-2024"
+    "https://legislacao.prefeitura.sp.gov.br/decreto-63728-de-10-de-setembro-de-2024",
+    "https://secovi.com.br/wp-content/uploads/2026/08/202606-pmi.pdf",
+    "https://secovi.com.br/pesquisa-mensal-de-valores-de-locacao-residencial-da-cidade-de-sao-paulo-julho-2024/"
   ],
   "libraries": {
     "three": "0.186.0",
