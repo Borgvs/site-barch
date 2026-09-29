@@ -6,7 +6,7 @@ const nextConfig = {
     return [{ source: "/tatuape", destination: "/estudos/tatuape/v3/index.html" }];
   },
   async redirects() {
-    return [{ source: "/tatuapé", destination: "/tatuape", permanent: true }];
+    return [{ source: "/tatuap%C3%A9", destination: "/tatuape", permanent: true }];
   },
   async headers() {
     return [
