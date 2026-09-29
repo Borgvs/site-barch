@@ -1,0 +1,27 @@
+{
+  "estudo": "Talma de Oliveira50, lote0003",
+  "data_base_pesquisa": "2026-09-28",
+  "revisao_visual": "2026-09-29",
+  "scope_sql": "062.096.0003-4",
+  "geo_crs": "EPSG:31983 / GIS exportEPSG:4326",
+  "map": "GeoSampa ORTO_RGB_2020",
+  "sources": [
+    "https://geosampa.prefeitura.sp.gov.br/PaginasPublicas/_SBC.aspx",
+    "https://prefeitura.sp.gov.br/fazenda/w/acesso_a_informacao/31501",
+    "https://legislacao.prefeitura.sp.gov.br/lei-16402-de-22-de-marco-de-2016/consolidado",
+    "https://legislacao.prefeitura.sp.gov.br/decreto-63728-de-10-de-setembro-de-2024"
+  ],
+  "libraries": {
+    "three": "0.186.0",
+    "maplibre": "6.8.0",
+    "apexcharts": "3.54.1"
+  },
+  "geometry": {
+    "area_fiscal_m2": 7338,
+    "area_cartografica_m2": 8664.906240864,
+    "envelope_5_3_m2": 6978.843556327,
+    "envelope_5_m2": 6682.548342268,
+    "height_reference_m": 28
+  },
+  "note": "Somente dados agregados e geometrias do lote estudado. Aquisição, custos, receitas e unidades são hipóteses conforme memorial."
+}
