@@ -320,7 +320,7 @@ export function initGeometryScene(root = document) {
     if (geometryInitialized && nextLevels === levels && nextEnvelopeId === envelopeId) return;
     levels = nextLevels; envelopeId = nextEnvelopeId; geometryInitialized = true;
     addEnvelope(); addMasses(); addDimensions(); updateLayers();
-    setStatus(`Lote 0003 · envelope prismático 28 m · ${levels} pavimentos × 3 m = ${levels * FLOOR_HEIGHT_M} m · datum relativo ±0,00, sem altimetria. Exploração geométrica; capacidade construtiva depende das premissas do estudo.`);
+    setStatus(`Lote 0003 · ${levels} níveis × 3 m = ${levels * FLOOR_HEIGHT_M} m · envelope limite 28 m.`);
     host.dataset.levels = String(levels);
     host.dataset.envelope = envelopeId;
     host.dispatchEvent(new CustomEvent('talma:geometry-change', { bubbles: true, detail: { levels, heightM: levels * FLOOR_HEIGHT_M, envelopeId, setbackMode: envelopeId === 'envelope_5_todas' ? 'all5' : 'mixed' } }));
