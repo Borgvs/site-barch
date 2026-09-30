@@ -7,8 +7,10 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 15;
 const root = path.join(process.cwd(), '.barch-terreno');
-let snapshotPromise, enginePromise, currencyPromise, economicsPromise, investorPromise, investorDispatchPromise;
+let snapshotPromise, enginePromise, currencyPromise, economicsPromise, publicationPromise;
 const snapshot = () => snapshotPromise ??= readFile(path.join(root, 'snapshot.json'), 'utf8').then(JSON.parse);
+// Recibo servido da publicação: o SHA do snapshot no ar, sem a lista de documentos excluídos.
+const publication = () => publicationPromise ??= readFile(path.join(root, 'publication-manifest.json'), 'utf8').then(JSON.parse).then(m => ({schemaVersion:m.schemaVersion, mode:m.mode, generatedAt:m.generatedAt, defaultSlug:m.defaultSlug, clientVersion:m.clientVersion, snapshotSha256:m.snapshotSha256 ?? null, studies:(m.studies ?? []).map(({slug, publicDocuments, presets, gisFiles}) => ({slug, publicDocuments, presets, gisFiles})), publicFiles:(m.files ?? []).length}));
 const json = (data, status = 200) => Response.json(data, {status, headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Robots-Tag':'noindex, nofollow'}});
 const problem = (error, status) => json({error},status);
 const economics=()=>economicsPromise??=import(/* webpackIgnore: true */ pathToFileURL(path.join(root,'acquisition-economics.mjs')).href);
@@ -18,7 +20,7 @@ async function currentProjection(value){
  const currency=await (currencyPromise??=import(/* webpackIgnore: true */ pathToFileURL(path.join(root,'receipt-currency.mjs')).href));
  const refreshed=currency.refreshPublicReceiptCurrency(value);
  if(!refreshed.landEconomics||refreshed.assessment?.state==='screening_current'&&refreshed.verification?.freshness?.status==='current')return refreshed;
- const result=structuredClone(refreshed),engine=await economics(),land=result.landEconomics;if(land.investorBaseline)land.investorBaseline={...land.investorBaseline,status:'reverification_required',request:null,conditionalOffer:null};
+ const result=structuredClone(refreshed),engine=await economics(),land=result.landEconomics;delete land.investorBaseline;
  land.value={...land.value,status:'reverification_required',candidateBand:null,adoptedMarketValueBrl:null,currentMarketValueBrl:null};
  land.territorial={...land.territorial,state:'reconciliation_required',envelopeMode:'unavailable',currency:'not_current',capabilities:Object.fromEntries(Object.keys(land.territorial.capabilities??{}).map(key=>[key,false]))};
  land.matrix=engine.buildOpportunityMatrix({study:{assessment:result.assessment},value:null,territorial:null});
@@ -37,6 +39,7 @@ export async function GET(request, context) {
     }
     const redirect=data.downloads[key];
     if(redirect) return Response.redirect(new URL(redirect,request.url),307);
+    if(key==='publication')return json(await publication());
     if(key==='sources'){
       const normalize=v=>String(v).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
       const q=normalize(new URL(request.url).searchParams.get('q')?.slice(0,200)||'');
@@ -66,11 +69,12 @@ export async function POST(request, context) {
     let size=0;const chunks=[];
     for(;;){const {done,value}=await reader.read();if(done)break;size+=value.byteLength;if(size>16000){await reader.cancel();return problem('Parâmetros excedem o limite.',413);}chunks.push(value);}
     let body;try{body=JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{return problem('JSON inválido.',400);}
+    if(economicCalculation&&body&&typeof body==='object'&&Object.hasOwn(body,'investorMode'))return problem('A posição de negociação não é pública.',405);
     const data=await snapshot();
     if(!Object.hasOwn(data.routes,'studies/'+parts[1]))return problem('Estudo não encontrado.',404);
     if(economicCalculation){
       const engine=await economics(),study=await currentProjection(data.routes['studies/'+parts[1]]);let result;
-      if(body?.investorMode===true){const investor=await(investorPromise??=import(/* webpackIgnore: true */ pathToFileURL(path.join(root,'investor-acquisition.mjs')).href)),dispatcher=await(investorDispatchPromise??=import(/* webpackIgnore: true */ pathToFileURL(path.join(root,'investor-dispatch.mjs')).href));const sourceBundle=await investor.loadInvestorSourceBundle();result=dispatcher.dispatchAcquisition(body,{sourceBundle,study,baseline:study.landEconomics?.investorBaseline});}else result=engine.evaluateAcquisition(body);
+      result=engine.evaluateAcquisition(body);
       return json({...result,assessmentContext:{studySlug:parts[1],state:study.assessment?.state??'unverifiable',verificationState:study.verification?.freshness?.status??'unverifiable',scope:'Cálculo de hipótese declarada, sem persistência, validação de fontes ou aprovação.'}},result.status==='invalid'?422:200);
     }
     if(!body||typeof body!=='object'||Array.isArray(body)||typeof body.presetId!=='string'||!body.changes||typeof body.changes!=='object'||Array.isArray(body.changes))return problem('Cenário inválido.',400);

@@ -1,4 +1,4 @@
-import {renderInvestorBase,renderInvestorControls,renderInvestorResult,bindInvestorInputs,bindInvestorCharts} from './investor-ui.js?v=da862e1a1703';
+import {renderInvestorBase,renderInvestorControls,renderInvestorResult,bindInvestorInputs,bindInvestorCharts} from './investor-ui.js?v=531af8205cc5';
 /** Land first. This panel never writes a product or adopts an appraisal. */
 const finite=v=>typeof v==='number'&&Number.isFinite(v);
 const safeUrl=v=>{try{const u=new URL(v);return /^https:$/.test(u.protocol)?u.href:null;}catch{return null;}};
