@@ -44,3 +44,10 @@ A versão pública reúne conclusões materiais, fontes acessíveis e documentos
 A qualificação integrada apresenta oito frentes: identidade e perímetro; zoneamento e regime temporal; interferências públicas; água, ambiente e passivos; relevo e geotecnia; regime rural e transição; licenciamento e execução; infraestrutura. O estado de cada frente expressa cobertura e admissibilidade da evidência, sem gerar uma nota sintética de investimento.
 
 As consultas conservam a diferença entre indisponibilidade, acesso restrito, falta de cobertura e ausência de ocorrência no recorte. Falhas temporárias admitem retomada limitada; a atualização editorial exige bases reconciliadas e conferência recente dos insumos. A verificação da edição e a vigência jurídica de cada documento são avaliações distintas.
+
+
+## APP e comparação da implantação
+
+A análise identifica a origem da indicação de APP, confronta cadastro e produtos hidrográficos e pesquisa a redação dos atos aplicáveis. Curso natural, vala, vegetação, nascente e inundação são hipóteses distintas. A interseção municipal é preservada e quantificada no ensaio, com qualificação da borda do leito, largura e regime. As buscas públicas antecedem as medições e manifestações específicas que exigem responsabilidade técnica.
+
+As alternativas de ocupação comparam área coberta, apoio descoberto, acesso e reserva em uma mesma poligonal. O balanço divide o solo em categorias exclusivas; sobreposições de vegetação e APP e o corredor são contados uma única vez. Sensibilidades junto às linhas de água mostram quais partes da implantação mudariam se outras faixas fossem confirmadas. O programa definitivo resulta da compatibilização de demanda, licenças, operação e custo integral.

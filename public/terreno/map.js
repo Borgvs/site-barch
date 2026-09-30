@@ -1,5 +1,5 @@
 /* Local territorial viewer. No cadastral adoption, measurements or legal decisions. */
-import {exploratorySummary,exploratoryProposalMetadata,assertExploratoryStudy} from './exploratory-proposal.js?v=abaadbc3bdce';
+import {exploratorySummary,exploratoryProposalMetadata,assertExploratoryStudy,assertLandUseStudy} from './exploratory-proposal.js?v=798c66b51f93';
 const DEM = 'https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png';
 const OSM = '<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a>';
 const finitePosition = p => Array.isArray(p) && Number.isFinite(p[0]) && Number.isFinite(p[1]) && Math.abs(p[0]) <= 180 && Math.abs(p[1]) <= 85.051129;
@@ -23,6 +23,17 @@ function colorExpression(config,fallback) {
   const get=['get',c.property];const step=['step',['number',get,0],c.colors[0]];
   c.breaks.forEach((n,i)=>step.push(n,c.colors[i+1]));
   return ['case',['all',['==',['typeof',get],'number'],['>=',['number',get,-1],0]],step,c.missingColor];
+}
+
+export function categoricalColor(config,value){
+ if(!config)return null;
+ if(typeof config.property!=='string'||!config.property||!config.colors||Array.isArray(config.colors)||Object.keys(config.colors).length>16||!Object.keys(config.colors).length||!Object.entries(config.colors).every(([key,color])=>/^[a-z0-9_-]{1,50}$/.test(key)&&/^#[a-f0-9]{6}$/i.test(color))||!/^#[a-f0-9]{6}$/i.test(config.missingColor??''))throw Error('Categorias territoriais inválidas.');
+ return Object.hasOwn(config.colors,value)?config.colors[value]:config.missingColor;
+}
+function categoricalExpression(config,fallback){
+ if(!config)return fallback;
+ categoricalColor(config,null);
+ return ['match',['get',config.property],...Object.entries(config.colors).flat(),config.missingColor];
 }
 
 function visitCoordinates(geometry, visit) {
@@ -153,7 +164,7 @@ export async function mountMap(container, study, options = {}) {
   function install(entry) {
     if (!map || !ready || !entry.data || destroyed) return;
     const {spec,key,data}=entry, color=typeof spec.color==='string'?spec.color:'#967d61';
-    const thematicColor=colorExpression(spec.choropleth,color);
+    const thematicColor=spec.categorical?categoricalExpression(spec.categorical,color):colorExpression(spec.choropleth,color);
     map.addSource(key,{type:'geojson',data});
     if (spec.type!=='line') {
       const fill=`${key}-fill`;
@@ -207,7 +218,7 @@ export async function mountMap(container, study, options = {}) {
       const draw=(geometry,entry,properties={})=>{
         if (!geometry) return;
         if (geometry.type==='GeometryCollection') return geometry.geometries.forEach(g=>draw(g,entry,properties));
-        const fillColor=entry.spec.choropleth?choroplethColor(entry.spec.choropleth,properties[entry.spec.choropleth.property]):entry.spec.color||'#967d61';
+        const fillColor=entry.spec.categorical?categoricalColor(entry.spec.categorical,properties[entry.spec.categorical.property]):entry.spec.choropleth?choroplethColor(entry.spec.choropleth,properties[entry.spec.choropleth.property]):entry.spec.color||'#967d61';
         const polygons=geometry.type==='Polygon'?[geometry.coordinates]:geometry.type==='MultiPolygon'?geometry.coordinates:[];
         const lines=geometry.type==='LineString'?[geometry.coordinates]:geometry.type==='MultiLineString'?geometry.coordinates:[];
         for(const rings of polygons)fallbackScene.append(make('path',{d:pathFor(rings),fill:entry.spec.type!=='line'?fillColor:'none','fill-opacity':entry.opacity,'fill-rule':'evenodd',stroke:entry.spec.color||'#967d61','stroke-width':entry.spec.id==='__parcel'?3:1.2,'vector-effect':'non-scaling-stroke'}));
@@ -241,13 +252,13 @@ export async function mountMap(container, study, options = {}) {
   showStatus();
   const fetches=[...layers].map(async([id,entry])=>{
     if (entry.spec.status!=='available'||!entry.spec.url) {errors.set(id,entry.spec.note||'Indisponível; ausência não verificada.');return;}
-    try {if(entry.spec.choropleth)validateChoropleth(entry.spec.choropleth);entry.data=await getGeoJSON(entry.spec.url,aborts);assertExploratoryStudy(entry.data,study);}catch(e){entry.data=null;errors.set(id,e.name==='AbortError'?'Consulta expirou; não interpretada como ausência.':`Falha de leitura (${e.message}).`);}
+    try {if(entry.spec.choropleth)validateChoropleth(entry.spec.choropleth);entry.data=await getGeoJSON(entry.spec.url,aborts);if(entry.spec.id==='ocupacao-solo')assertLandUseStudy(entry.data,study);else assertExploratoryStudy(entry.data,study,{required:entry.spec.id==='volumes'&&!!study.geography?.exploratoryProposal?.variantId});}catch(e){entry.data=null;errors.set(id,e.name==='AbortError'?'Consulta expirou; não interpretada como ausência.':`Falha de leitura (${e.message}).`);}
     if(!destroyed&&!map&&ready)fallback(fallbackReason);
   });
   try {
     if (!center) throw new Error('Localização geográfica não confirmada.');
     if (!document.querySelector('link[data-area-map-css]')) {const css=document.createElement('link');css.rel='stylesheet';css.href=new URL('./assets/vendor/maplibre-gl.css',import.meta.url).href;css.dataset.areaMapCss='true';document.head.append(css);}
-    const gl=await import('./assets/vendor/maplibre-gl.mjs?v=abaadbc3bdce');
+    const gl=await import('./assets/vendor/maplibre-gl.mjs?v=798c66b51f93');
     gl.setWorkerUrl(new URL('./assets/vendor/maplibre-gl-worker.mjs',import.meta.url).href);gl.setWorkerCount(2);
     const sources = {'osm-context':{type:'raster',tiles:['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],tileSize:256,maxzoom:19,attribution:OSM}};
     const baseLayers = [{id:'paper',type:'background',paint:{'background-color':'#F0EDE5'}},{id:'osm-context',type:'raster',source:'osm-context',paint:{'raster-saturation':-.92,'raster-opacity':.86,'raster-contrast':.08}}];

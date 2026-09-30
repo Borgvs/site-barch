@@ -2,7 +2,7 @@
  * X=east, Y=relative height, Z=-north. No area adoption, parcel scaling or capacity inference.
  * Exact metric scenes preserve their CRS/origin. Geographic fallback is visual-only.
  */
-import {exploratorySummary,exploratoryProposalMetadata,assertExploratoryStudy} from './exploratory-proposal.js?v=abaadbc3bdce';
+import {exploratorySummary,exploratoryProposalMetadata,assertExploratoryStudy,assertLandUseStudy,assertOccupationPair} from './exploratory-proposal.js?v=798c66b51f93';
 const FLOOR_HEIGHT_M = 3;
 const COLORS = { background:'#f2f3ef', lot:'#dddcd0', clay:'#905e4b', mass:'#b5826b', alternate:'#aa7660', envelope:'#b48770', line:'#835640', white:'#fbfbf6', ink:'#343d36', grid:'#d5d9ce' };
 const fmt = n => new Intl.NumberFormat('pt-BR',{maximumFractionDigits:1}).format(n);
@@ -38,7 +38,8 @@ export function volumeSummary(data,floors=8) {
 }
 
 const fsOf=data=>data?.type==='FeatureCollection'?data.features:data?.type==='Feature'?[data]:data?.type?[{geometry:data,properties:{}}]:[];
-export function geographicVolumeData(study,parcel,envelope,volumes) {
+export function geographicVolumeData(study,parcel,envelope,volumes,landUse=null) {
+  assertOccupationPair(volumes,landUse,study);
   const origin=study.geography?.center;
   if(!finite(origin))throw new Error('Origem geográfica não confirmada.');
   const features={};const cos=Math.cos(origin[1]*Math.PI/180);
@@ -47,6 +48,8 @@ export function geographicVolumeData(study,parcel,envelope,volumes) {
   const parcels=fsOf(parcel);if(parcels.length!==1)throw new Error('Defina um único perímetro para a cena.');add('lote_principal',parcels[0]);
   fsOf(envelope).forEach((f,i)=>add(i?'envelope_'+i:'envelope',f));
   fsOf(volumes).forEach((f,i)=>add('volume_'+i,f));
+  assertLandUseStudy(landUse,study);
+  fsOf(landUse).forEach((f,i)=>{add('uso_'+i,f);features['uso_'+i].color=f.properties.color;features['uso_'+i].useRole=f.properties.useRole;});
   const proposal=exploratoryProposalMetadata(volumes);assertExploratoryStudy(volumes,study);
   return {metadata:{...(proposal?{...volumes.metadata}:{}),units:'m',measurementCRS:null,origin:{longitude:origin[0],latitude:origin[1]},localCoordinates:{verticalDatum:'arbitrary_display_zero_not_surveyed_altitude'},provenance:'Projeção local aproximada apenas para visualização. Áreas permanecem as declaradas na fonte.'},parameters:{heightReferenceM:proposal?null:study.regulatory?.maxHeightM??null},featuresById:features};
 }
@@ -80,6 +83,7 @@ export async function mountVolume(host,study,options={}) {
     const span=Math.max(maxX-minX,maxY-minY,20),step=span>600?100:span>200?25:10;
     for(let i=-Math.ceil(span/step);i<=Math.ceil(span/step);i++){for(const line of [[[cx+i*step,cn-span],[cx+i*step,cn+span]],[[cx-span,cn+i*step],[cx+span,cn+i*step]]]){const [a,b]=line.map(p=>project(p));svg.append(make('line',{x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:'#dfe2d7','stroke-width':.7}));}}
     features.lote_principal.polygons.forEach(p=>svg.append(make('path',{d:path(p),fill:COLORS.lot,stroke:COLORS.clay,'stroke-width':1.6,'fill-rule':'evenodd'})));
+    for(const [id,f]of Object.entries(features))if(id.startsWith('uso_'))for(const p of f.polygons)svg.append(make('path',{d:path(p,.045),fill:f.color,'fill-opacity':.7,stroke:f.color,'stroke-width':.4,'fill-rule':'evenodd'}));
     if(envelopeId)features[envelopeId].polygons.forEach(p=>svg.append(make('path',{d:path(p,.08),fill:'#d0b5a3','fill-opacity':.25,stroke:COLORS.clay,'stroke-width':1,'stroke-dasharray':'5 4','fill-rule':'evenodd'})));
     const volumes=massIds.flatMap((id,index)=>features[id].polygons.map(p=>({id,index,p,depth:openMetricRing(p.outer).reduce((s,p)=>s+raw(p)[1],0)/openMetricRing(p.outer).length}))).sort((a,b)=>a.depth-b.depth);
     for(const {id,index,p}of volumes){const ring=openMetricRing(p.outer),faces=[];if(view!=='top')for(let i=0;i<ring.length;i++){const a=ring[i],b=ring[(i+1)%ring.length];faces.push({a,b,depth:(raw(a)[1]+raw(b)[1])/2});}faces.sort((a,b)=>a.depth-b.depth).forEach(({a,b},i)=>{svg.append(make('polygon',{points:[project(a),project(b),project(b,floors*3),project(a,floors*3)].map(p=>p.join(',')).join(' '),fill:i%2?COLORS.alternate:COLORS.mass,stroke:COLORS.line,'stroke-width':.6}));for(let f=1;f<=floors;f++){const [p1,p2]=[project(a,f*3),project(b,f*3)];svg.append(make('line',{x1:p1[0],y1:p1[1],x2:p2[0],y2:p2[1],stroke:COLORS.white,'stroke-width':1.4}));}});svg.append(make('path',{d:path(p,floors*3),fill:'#dfc4b0',stroke:COLORS.line,'stroke-width':1,'fill-rule':'evenodd'}));const avg=ring.reduce((s,p)=>[s[0]+p[0]/ring.length,s[1]+p[1]/ring.length],[0,0]);const xy=project(avg,floors*3);const label=make('text',{x:xy[0],y:xy[1]-8,fill:COLORS.ink,'font-size':12,'font-weight':600,'text-anchor':'middle','paint-order':'stroke',stroke:'#f2f3ef','stroke-width':4});label.textContent=`${String.fromCharCode(65+index)} · ${floors} pav.`;svg.append(label);}
@@ -90,7 +94,7 @@ export async function mountVolume(host,study,options={}) {
     svg.addEventListener('pointerdown',e=>{dragStart={x:e.clientX,yaw};root.setPointerCapture?.(e.pointerId);});svg.addEventListener('keydown',e=>{if(e.key==='+'||e.key==='='){zoom=Math.min(2.5,zoom*1.15);e.preventDefault();svgRender();}else if(e.key==='-'){zoom=Math.max(.5,zoom/1.15);e.preventDefault();svgRender();}else if(e.key==='ArrowLeft'||e.key==='ArrowRight'){yaw+=(e.key==='ArrowLeft'?-1:1)*.15;e.preventDefault();svgRender();}});stage.append(svg);if(hadFocus)svg.focus?.({preventScroll:true});describe();
   }
   async function initThree(){
-    const THREE=await import('./assets/vendor/three.module.js?v=abaadbc3bdce');const {OrbitControls}=await import('./assets/vendor/OrbitControls.js?v=abaadbc3bdce');if(destroyed)return;
+    const THREE=await import('./assets/vendor/three.module.js?v=798c66b51f93');const {OrbitControls}=await import('./assets/vendor/OrbitControls.js?v=798c66b51f93');if(destroyed)return;
     const canvas=document.createElement('canvas');canvas.setAttribute('role','img');canvas.setAttribute('aria-label','Modelo 3D do terreno. Arraste para girar; roda para aproximar.');canvas.tabIndex=0;canvas.style.cssText='display:block;width:100%;height:100%;touch-action:none';
     renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'low-power'});renderer.setPixelRatio(Math.min(globalThis.devicePixelRatio||1,2));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.08;
     scene=new THREE.Scene();scene.background=new THREE.Color(COLORS.background);camera=new THREE.OrthographicCamera(-100,100,100,-100,.1,50000);controls=new OrbitControls(camera,canvas);controls.enableDamping=false;controls.screenSpacePanning=true;controls.minZoom=.35;controls.maxZoom=8;controls.maxPolarAngle=Math.PI/2-.012;controls.rotateSpeed=.62;
@@ -102,6 +106,7 @@ export async function mountVolume(host,study,options={}) {
     const render=()=>{if(destroyed||!renderer||frame)return;frame=requestAnimationFrame(()=>{frame=0;if(renderer&&!destroyed)renderer.render(scene,camera);});};
     groups={lot:new THREE.Group(),envelope:new THREE.Group(),masses:new THREE.Group()};Object.values(groups).forEach(g=>scene.add(g));scene.add(new THREE.HemisphereLight('#ffffff','#c6c9bb',2.7));const sun=new THREE.DirectionalLight('#fff8ed',2.4);sun.position.set(center.x+span,span*1.8,center.z+span*.5);scene.add(sun);const grid=new THREE.GridHelper(span*2.4,24,COLORS.grid,'#e0e3d9');grid.position.set(center.x,-.08,center.z);scene.add(grid);
     for(const p of features.lote_principal.polygons){const mesh=new THREE.Mesh(extrude(p,.035),new THREE.MeshStandardMaterial({color:COLORS.lot,roughness:.94}));mesh.position.y=-.04;groups.lot.add(mesh,outline(p,.04,COLORS.clay));}
+    for(const [id,f]of Object.entries(features))if(id.startsWith('uso_'))for(const p of f.polygons){const mesh=new THREE.Mesh(extrude(p,.045),new THREE.MeshStandardMaterial({color:f.color,roughness:1,transparent:true,opacity:.78}));mesh.position.y=.04;groups.lot.add(mesh);}
     const ref=data.parameters?.heightReferenceM;if(envelopeId)for(const p of features[envelopeId].polygons){groups.envelope.add(outline(p,.08,COLORS.clay,.7));if(Number.isFinite(ref)&&ref>0){const g=extrude(p,ref);groups.envelope.add(new THREE.Mesh(g,new THREE.MeshBasicMaterial({color:COLORS.envelope,opacity:.06,transparent:true,side:THREE.DoubleSide,depthWrite:false})),new THREE.LineSegments(new THREE.EdgesGeometry(g,15),new THREE.LineBasicMaterial({color:COLORS.clay,opacity:.55,transparent:true})));}}
     function updateMasses(){disposeTree(groups.masses);massIds.forEach((id,index)=>features[id].polygons.forEach(p=>{groups.masses.add(new THREE.Mesh(extrude(p,floors*3),new THREE.MeshStandardMaterial({color:index===1?COLORS.alternate:COLORS.mass,roughness:.78,metalness:.025})),outline(p,floors*3+.01,COLORS.line,.8));const points=openMetricRing(p.outer),avg=points.reduce((s,p)=>[s[0]+p[0]/points.length,s[1]+p[1]/points.length],[0,0]);const caption=label(`${String.fromCharCode(65+index)} · ${floors} pav. / ${floors*3} m`,Math.max(3,span*.042));if(caption){caption.position.set(avg[0],floors*3+5,-avg[1]);groups.masses.add(caption);}for(let f=1;f<=floors;f++){const band=new THREE.Mesh(extrude(p,.1),new THREE.MeshStandardMaterial({color:COLORS.white,roughness:.9}));band.position.y=f*3-.1;groups.masses.add(band);}}));render();}
     function resize(){if(!renderer||destroyed)return;const w=Math.max(1,host.clientWidth),h=Math.max(1,host.clientHeight||440);renderer.setSize(w,h,false);const aspect=w/h;camera.updateMatrixWorld(true);let ex=0,ey=0;for(const p of points)for(const z of[0,Math.max(floors*3,ref||0)]){const q=new THREE.Vector3(p[0],z,-p[1]).applyMatrix4(camera.matrixWorldInverse);ex=Math.max(ex,Math.abs(q.x));ey=Math.max(ey,Math.abs(q.y));}const half=Math.max(12,ey*1.3,ex*1.3/aspect);camera.left=-half*aspect;camera.right=half*aspect;camera.top=half;camera.bottom=-half;camera.updateProjectionMatrix();render();}
@@ -116,7 +121,7 @@ export async function mountVolume(host,study,options={}) {
   try{
     const geometryUrl=options.geometryUrl||study.geography?.geometrySceneUrl;
     if(geometryUrl)data=await read(geometryUrl);
-    else{const g=study.geography||{};if(!g.parcelUrl)throw new Error('Confirme o perímetro georreferenciado e a implantação para explorar o produto em 3D.');const find=id=>g.layers?.find(x=>x.id===id&&x.status==='available')?.url;const [parcel,envelope,volumes]=await Promise.all([read(g.parcelUrl),find('envelope')?read(find('envelope')):null,find('volumes')?read(find('volumes')):null]);data=geographicVolumeData(study,parcel,envelope,volumes);}
+    else{const g=study.geography||{};if(!g.parcelUrl)throw new Error('Confirme o perímetro georreferenciado e a implantação para explorar o produto em 3D.');const find=id=>g.layers?.find(x=>x.id===id&&x.status==='available')?.url;const [parcel,envelope,volumes,landUse]=await Promise.all([read(g.parcelUrl),find('envelope')?read(find('envelope')):null,find('volumes')?read(find('volumes')):null,g.exploratoryProposal?.useUrl?read(g.exploratoryProposal.useUrl):null]);data=geographicVolumeData(study,parcel,envelope,volumes,landUse);}
     if(destroyed)return;
     const scope=data.metadata?.scopeSQL,actual=study.parcel?.replace(/\D/g,'');if(scope&&actual&&scope!==actual)throw new Error('A cena não corresponde ao cadastro deste terreno.');validated=validateVolumeData(data);volumeSummary(data,floors);svgRender();
     if(options.renderer!=='svg')try{await initThree();}catch{cleanRenderer();if(!destroyed)svgRender();}

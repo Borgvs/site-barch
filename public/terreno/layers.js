@@ -3,6 +3,8 @@ export function baseLayers(study){
  const layers=study.geography?.layers||[];
  const groups=[
   ['envelope','Projeto e recuos',['envelope','implantacao-planta'],'Envelope de referência; limites do ensaio.'],
+  ['occupation','Ocupação e acesso',['ocupacao-solo'],'Distribuição do ensaio: volumes, acesso, apoio e reservas.'],
+  ['app','APP municipal',['app-municipal'],'Incidência cartografada pela Prefeitura, com origem e diagnóstico no estudo.'],
   ['flood','Inundação',['inundacao','inundacao2011','cheia-1983','cheia-1984','cheia-2008','cheia-2011','suscetibilidade-inundacao'],'Evento ou cenário indicado na fonte; não é cota de projeto.'],
   ['roads','Melhoramento viário',['viario','vias-estruturantes'],'Planos e interferências cartográficas; conferir vigência.'],
   ['relief','Relevo',['curvas-nivel'],'Relevo regional e curvas, quando disponíveis; não substituem levantamento.'],
