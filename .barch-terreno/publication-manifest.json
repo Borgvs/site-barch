@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "mode": "public-readonly",
-  "generatedAt": "2026-09-30T18:41:44.618Z",
+  "generatedAt": "2026-09-30T19:00:03.483Z",
   "defaultSlug": "salseiros-itajai-matricula-77931",
   "studies": [
     {
@@ -422,7 +422,7 @@
     {
       "path": "/terreno/app.js",
       "bytes": 104151,
-      "sha256": "d5ca0e0a95fde665105a3f4dd22ad10357807e71167a6de3ec8e0714aa23385d"
+      "sha256": "c5bbf6bf870bb990d7092a2802d0701bb9700e9d379a55fc94ae37d0cc2a87c1"
     },
     {
       "path": "/terreno/assessment.js",
@@ -532,12 +532,12 @@
     {
       "path": "/terreno/google-scene.js",
       "bytes": 17351,
-      "sha256": "c68062bae89c622b447399977dc87d8a64b6fa69ca2bb2ffe9e219c2b9411a98"
+      "sha256": "df7ade0128cd1da4793a9b2263ca876a4d2ae7b4aac444bde52b8d2786cef78b"
     },
     {
       "path": "/terreno/index.html",
       "bytes": 1315,
-      "sha256": "12e3bf8ae1073b5c9d159e73348e7ccb77b8444fb9d86fbebcfbdfe971d52f65"
+      "sha256": "4497150bd2a0307dfa62e06bf9d279b29118af9be95f60a067fa026ab3a50194"
     },
     {
       "path": "/terreno/land-review.js",
@@ -552,7 +552,7 @@
     {
       "path": "/terreno/map.js",
       "bytes": 32593,
-      "sha256": "577d930a89097c2e0bdd9bedcd290c6d0a3a15f13242dfbf22d98ef0530f974b"
+      "sha256": "c0c8e5835e6cd07a7dafa18b8ffbb56f9fd1ee51b9c07c10034f1160558444f2"
     },
     {
       "path": "/terreno/market.css",
@@ -567,12 +567,12 @@
     {
       "path": "/terreno/panorama.js",
       "bytes": 2873,
-      "sha256": "12243a1af2a5cc1b599cbec69c048e649cb4a47a6fae9c6da18ebc806e0fd23a"
+      "sha256": "555681aa56ec662abe5df7dabf1c5fc0294cc606ef98bbe93828131ea54758a3"
     },
     {
       "path": "/terreno/qualification.js",
       "bytes": 18552,
-      "sha256": "7b33c65381ce4e1df727f7f5648315bad65aa8b52d285c58283e1c0f54e0d5aa"
+      "sha256": "5938cecf061ed610be62488075eae40575c8941fd8e30e4114b06ab780ef1f2f"
     },
     {
       "path": "/terreno/site-potential.css",
@@ -581,8 +581,8 @@
     },
     {
       "path": "/terreno/site-potential.js",
-      "bytes": 8658,
-      "sha256": "916b8779210cecd7be82ebb67a4df19412a26db8a4e508284399507b7e8f64ed"
+      "bytes": 8873,
+      "sha256": "b246bb536f7ee33807a9b5926e5c7ddb86173904a249fc69a66f1f7c5c3872cc"
     },
     {
       "path": "/terreno/site-review.css",
@@ -602,7 +602,7 @@
     {
       "path": "/terreno/streetview.js",
       "bytes": 20773,
-      "sha256": "8352a6b5b6d78a0227fcca730b072a8f8b50d184ad51e0910a35727f5c1c0d26"
+      "sha256": "1ee7124ae5fdb640c2d4472c4562ef577debead7700fdbe1259c1af46c3c8aca"
     },
     {
       "path": "/terreno/style.css",
@@ -627,7 +627,7 @@
     {
       "path": "/terreno/surroundings-summary.js",
       "bytes": 2652,
-      "sha256": "b1ffe1b9f063ba3056136bee249a6fe2955082f620a59423e7150a08f43463f4"
+      "sha256": "efbedc484bb0a190d6059566955bd5aed196dff58586d1c805bee24105228f57"
     },
     {
       "path": "/terreno/surroundings.css",
@@ -637,7 +637,7 @@
     {
       "path": "/terreno/surroundings.js",
       "bytes": 27449,
-      "sha256": "2122c6b92f4079bcc8e05afe48e2b57de7869ef41c4554016d10543f18fb28dd"
+      "sha256": "731eb289c974bee4c64f40cff2ec36bc469fb98c940b19c8cde19a7164af70f1"
     },
     {
       "path": "/terreno/terrain-anchor.js",
@@ -647,7 +647,7 @@
     {
       "path": "/terreno/volume.js",
       "bytes": 23904,
-      "sha256": "4cf2007aca3283b609474b67c104194407e0803cd401f1c758f9161db31d06d8"
+      "sha256": "ad6a95dd3d1f56c92bbbffd45f9b2009041e88c2a7cb333bfa84ee7a1bd8c29b"
     },
     {
       "path": "/terreno/method/metodologia-avaliacao.md",
@@ -817,5 +817,5 @@
       "reason": "not-public-approved"
     }
   ],
-  "clientVersion": "798c66b51f93"
+  "clientVersion": "e29e532336c3"
 }

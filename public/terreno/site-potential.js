@@ -27,6 +27,12 @@ export function bindSitePotential(study,{chart,onSelect,onTerritory}){
  document.querySelectorAll('[data-potential-territory]').forEach(b=>b.onclick=()=>onTerritory?.());
  const o=study.sitePotential?.occupation,active=currentOccupation(study);if(!o||!active)return;
  chart('occupation-comparison-chart',{chart:{type:'bar',stacked:true,height:310},colors:['#b5826b','#a3b3ba','#b8ad92'],series:[{name:'Projeção coberta',data:o.variants.map(v=>v.footprintM2)},{name:'Apoio / pátio',data:o.variants.map(v=>v.operationalAreaM2)},{name:'Corredor',data:o.variants.map(v=>v.accessCorridorM2)}],plotOptions:{bar:{horizontal:true,barHeight:'48%',borderRadius:3}},xaxis:{categories:o.variants.map(v=>v.shortLabel??v.label),labels:{formatter:v=>num(Number(v))+' m²'}},tooltip:{y:{formatter:v=>num(v,1)+' m²'}}});
- const slices=(active.allocation??[]).filter(x=>Number.isFinite(x.areaM2)&&x.areaM2>0);
+ const grouped=new Map();
+ for(const row of active.allocation??[]){
+  if(!Number.isFinite(row.areaM2)||row.areaM2<=0)continue;
+  const key=row.useRole??row.label,previous=grouped.get(key);
+  if(previous)previous.areaM2+=row.areaM2;else grouped.set(key,{...row});
+ }
+ const slices=[...grouped.values()];
  if(slices.length)chart('occupation-allocation-chart',{chart:{type:'donut',height:310},series:slices.map(x=>x.areaM2),labels:slices.map(x=>x.label),colors:slices.map(x=>x.color??'#9eac96'),stroke:{width:2,colors:['#fff']},plotOptions:{pie:{donut:{size:'70%',labels:{show:true,total:{show:true,label:'Área GIS',formatter:()=>num(o.parcelAreaM2)+' m²'}}}}}});
 }
