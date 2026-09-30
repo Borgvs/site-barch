@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "mode": "public-readonly",
-  "generatedAt": "2026-09-30T00:38:29.176Z",
+  "generatedAt": "2026-09-30T02:02:05.646Z",
   "defaultSlug": "salseiros-itajai-matricula-77931",
   "studies": [
     {
@@ -15,6 +15,12 @@
       "publicDocuments": 0,
       "presets": 3,
       "gisFiles": 9
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "publicDocuments": 11,
+      "presets": 0,
+      "gisFiles": 17
     }
   ],
   "files": [
@@ -199,9 +205,154 @@
       "sha256": "829767d477310a9dc888b461dd1a1f0fd09b5482c34f9306e1cdb2e0c8c765aa"
     },
     {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-dec157-2023-pedra-historica-c7042903.pdf",
+      "bytes": 235799,
+      "sha256": "c70429036af9fb78c52026dd66560a0f1ec15e8d53dcfabdee7f861ed7555161"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-dec170-2024-pedra-historica-1038af01.pdf",
+      "bytes": 221440,
+      "sha256": "1038af014837c9070a5f127d7cf353409b52efc9664d2e9d7b874acdbd725508"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-lc128-00-69dfd7ff.pdf",
+      "bytes": 1157029,
+      "sha256": "69dfd7ff2d1e0604f31966adc83a9699052f7fef0ca769f32568621586aa453a"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-lc133-00-8d63ce13.pdf",
+      "bytes": 10699465,
+      "sha256": "8d63ce134fea27819df5a49882c5b9d7a03e22aeff5a109d4700ab5a1757616a"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-lc130-2023-146481e2.pdf",
+      "bytes": 137662,
+      "sha256": "146481e2e45e5db6b202250724f39fb315c0c2c443fa30aebaf899105c312b5f"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-lc134-2024-8f1aa8a3.pdf",
+      "bytes": 531681,
+      "sha256": "8f1aa8a325f0cdb7a66845fa40bc6204725babd9b51be2ab7e274c70ab370302"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-lc135-2024-7625553d.pdf",
+      "bytes": 231665,
+      "sha256": "7625553dd45af8877d827d691d574d4de78f61bc7803d541b5de52c8db6645c8"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-dec182-2024-e3b486f0.pdf",
+      "bytes": 142190,
+      "sha256": "e3b486f05037257fb19240640467eb9247ce478a437c6bd2d0ba4404f33b5abe"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-lc128-10-51dbc5a0.pdf",
+      "bytes": 9270364,
+      "sha256": "51dbc5a0b6a0d3290bdb3e9c44c7c191da3ef8b324d048f9340dd6d6d29de3c8"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-mapa-zoneamento-palhano-p14-0054c720.pdf",
+      "bytes": 836169,
+      "sha256": "0054c720ec477e4044f86e13be5c4df68b43d477578f8d4a0974133eb8889ae2"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-sgb-brumadinho-2023-ba2da632.pdf",
+      "bytes": 54119984,
+      "sha256": "ba2da632bb1b26b660eb4c6455f9cf6242fc905bd3f8fa763b30bf74177d1a40"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/zoneamento.geojson",
+      "bytes": 29086,
+      "sha256": "0645bd8db79932f55ca4e695a67ef7eb7ba5225b38c3f46b358358605ef446c0"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/viario.geojson",
+      "bytes": 519070,
+      "sha256": "1f36b1594021af63793a28be9d7f1bc9b2b91d1f385e42853bdef3dafdaff6cf"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/perimetro-urbano.geojson",
+      "bytes": 41848,
+      "sha256": "c4b945d11e532d0e5bee4cfec0dccba832370aa517c5da8b1426aa702950e7c5"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/macrozoneamento.geojson",
+      "bytes": 566334,
+      "sha256": "b00bcd8da209a70eaac492cfb53a7da4b6b3e4846bd7cd5c51e1837237f04895"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/suscetibilidade-inundacao.geojson",
+      "bytes": 17465,
+      "sha256": "0f8d690d27c3569e0b0a2b2e4862d626ec913fe2d5681c9c6ca160dad7e36545"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/geotecnia.geojson",
+      "bytes": 318218,
+      "sha256": "ba3207986977de526e4a1cafbdc68b9452abdf4cfe410302afd3a44f37f20016"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/curvas-nivel.geojson",
+      "bytes": 27745,
+      "sha256": "eead8af5d59722f7c907e4439eafadc4d8809cce6929b90fdf721724462aa68b"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/drenagem.geojson",
+      "bytes": 23348,
+      "sha256": "1d46e871b18d8e0ac7e04a338a315065aae0b94a799fdd51a62776ee18a87904"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/ambiente.geojson",
+      "bytes": 61675,
+      "sha256": "0a4949d2768bd6dd19434480b54e596fc2212f5beaa293a9299af2fd74c643dc"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/vegetacao.geojson",
+      "bytes": 330815,
+      "sha256": "cf5e68a3fa49c493d527d775782875f006e15d20b600771aa6b491d5b438eb88"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/unidades-conservacao.geojson",
+      "bytes": 7118,
+      "sha256": "8271d2d5c04793c8140a8f7dd70aa4f4ab83dc517d51dcc5e3ca591a93307bfd"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/mineracao.geojson",
+      "bytes": 7369,
+      "sha256": "4c0513253ebaabc492d46d3b30a4e27384ec18631481a27392c29cd840cca2dc"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/geologia.geojson",
+      "bytes": 7579,
+      "sha256": "13fd9c78681f0b7c645abb8d5b613f1f88d85f8ad555616c1bbd9c05edf6b606"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/patrimonio.geojson",
+      "bytes": 3497,
+      "sha256": "a420d8235f36e827a482bc9a9314c490a99f648f6abbeff7200bc72460514a01"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/implantacao-planta.geojson",
+      "bytes": 1863534,
+      "sha256": "0355f8ee6695682f5ce36564274546e0826ab6c3e89bdba6cdbf1037a0f37d80"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/censo2022.geojson",
+      "bytes": 213818,
+      "sha256": "c1ae5b89def3ad351795dd0506f6d29e01275234c7d48d09d7ee7593fc1e51ae"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/parcel.geojson",
+      "bytes": 10993,
+      "sha256": "97f641d8775f9cacf0acefe9a44ce6668437360ce918e9464fa5d7487ab0dafc"
+    },
+    {
+      "path": "/terreno/analysis-basis.js",
+      "bytes": 3374,
+      "sha256": "22c55aedbbdaa75e7d4505cabae19dacf692228b69ebe8ebe090fd875257dc47"
+    },
+    {
       "path": "/terreno/app.js",
-      "bytes": 98831,
-      "sha256": "c5b940a220a25ada69c732baf80953f6033dedf1b9ff415ed52f9c1e8f8a4042"
+      "bytes": 99252,
+      "sha256": "7d6192da4b6d6e605b79c834d5e0d999024b3c5042bebb53a81e80b2c1915307"
     },
     {
       "path": "/terreno/assets/barch.svg",
@@ -285,18 +436,18 @@
     },
     {
       "path": "/terreno/context.js",
-      "bytes": 480,
-      "sha256": "c4aab48b3e8481d79510e7d04d2e7fd14ee18e44e7afe414781fd0e492dff31a"
+      "bytes": 914,
+      "sha256": "0c1e0e5a58763b58246593b8149a4169ab7533931cdcbba323f081f0c3107e9a"
     },
     {
       "path": "/terreno/google-scene.js",
-      "bytes": 16291,
-      "sha256": "f331268ff308e8f4213120544ee3fb3f7a0e7641bb58087f114162908eca28d9"
+      "bytes": 16420,
+      "sha256": "fa2bc7ce64a03c33a1156122ec38b1af812c5a4ec5045460fbb39587a67e6822"
     },
     {
       "path": "/terreno/index.html",
-      "bytes": 1022,
-      "sha256": "f7a86c3f1fbfcf45872874536e02bb6bd3d9fba24a1c38e1c34149f5a3e300ea"
+      "bytes": 1084,
+      "sha256": "a1cb6bcddde4f43b439dac31aff89a1f2b89e64f98ff258d5856585732ce64bf"
     },
     {
       "path": "/terreno/land-review.js",
@@ -305,8 +456,8 @@
     },
     {
       "path": "/terreno/layers.js",
-      "bytes": 2248,
-      "sha256": "0789307063ef40952efc270fb179fa50bd009957454a79e9a76022c111286920"
+      "bytes": 2352,
+      "sha256": "f63f6075ebc76f1ec1896b8c7e185ef8d26b1a0d24994dbb1af3f6bb13f9bd37"
     },
     {
       "path": "/terreno/map.js",
@@ -347,6 +498,16 @@
       "path": "/terreno/style.css",
       "bytes": 27331,
       "sha256": "127dee3b70e1bac8dfb6738e605cca5a965cf800e263f727df2b754388b66e09"
+    },
+    {
+      "path": "/terreno/subdivision-review.css",
+      "bytes": 3503,
+      "sha256": "bb6a80f18a02bf521e6465bec828739eedb1646e190b09ce0bc0725f6b9b3fb4"
+    },
+    {
+      "path": "/terreno/subdivision-review.js",
+      "bytes": 17128,
+      "sha256": "50ceee6480119d75406259166cab39c0cf173ae4ea86f4c08c62546412014a2a"
     },
     {
       "path": "/terreno/surroundings-schema.js",
@@ -428,6 +589,106 @@
     {
       "slug": "talma-tatuape-lote-0003",
       "id": "doc-bbd798f0ff96",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-2fd54fc0519a",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-66bcd2ac1fdd",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-0c7260942fea",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-36703c4672d6",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-2cf50ba31d0a",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-1cf3dfc8a49a",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-bf08d11d4672",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-b9c0904f7739",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-fe447dd36aed",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-f8acdcee9ac2",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-8c7616e5167a",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-99f1d2a5932b",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-8c51c44fbd93",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-301ea516ca74",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-3d84d4df1d72",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-72e259081dbe",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-3f7374f831f4",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-9a29a364de67",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-4109e469eb00",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-1c655741608d",
       "reason": "not-public-approved"
     }
   ]
