@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "mode": "public-readonly",
-  "generatedAt": "2026-09-30T00:29:48.788Z",
+  "generatedAt": "2026-09-30T00:38:29.176Z",
   "defaultSlug": "salseiros-itajai-matricula-77931",
   "studies": [
     {
@@ -200,8 +200,8 @@
     },
     {
       "path": "/terreno/app.js",
-      "bytes": 98738,
-      "sha256": "197aea5267c0a3a23d8d3134c460ada41031eff504f653b5479b6037122dd064"
+      "bytes": 98831,
+      "sha256": "c5b940a220a25ada69c732baf80953f6033dedf1b9ff415ed52f9c1e8f8a4042"
     },
     {
       "path": "/terreno/assets/barch.svg",
