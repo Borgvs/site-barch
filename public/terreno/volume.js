@@ -2,6 +2,7 @@
  * X=east, Y=relative height, Z=-north. No area adoption, parcel scaling or capacity inference.
  * Exact metric scenes preserve their CRS/origin. Geographic fallback is visual-only.
  */
+import {exploratorySummary,exploratoryProposalMetadata,assertExploratoryStudy} from './exploratory-proposal.js?v=3c6cd0a43693';
 const FLOOR_HEIGHT_M = 3;
 const COLORS = { background:'#f2f3ef', lot:'#dddcd0', clay:'#905e4b', mass:'#b5826b', alternate:'#aa7660', envelope:'#b48770', line:'#835640', white:'#fbfbf6', ink:'#343d36', grid:'#d5d9ce' };
 const fmt = n => new Intl.NumberFormat('pt-BR',{maximumFractionDigits:1}).format(n);
@@ -17,6 +18,7 @@ export function openMetricRing(ring) {
   return points;
 }
 export function validateVolumeData(data) {
+  exploratoryProposalMetadata(data);
   if(data?.metadata?.units!=='m')throw new Error('A cena exige coordenadas métricas declaradas.');
   const features=data.featuresById;
   if(!features?.lote_principal?.polygons?.length)throw new Error('Perímetro cartográfico ainda não disponível.');
@@ -32,7 +34,7 @@ export function volumeSummary(data,floors=8) {
   const areas=massIds.map(id=>features[id].areaM2);
   const footprintM2=areas.length&&areas.every(a=>Number.isFinite(a)&&a>0)?areas.reduce((a,b)=>a+b,0):null;
   const referenceHeightM=data.parameters?.heightReferenceM??null;
-  return {floors,floorHeightM:FLOOR_HEIGHT_M,heightM:floors*FLOOR_HEIGHT_M,volumeCount:massIds.length,footprintM2,grossAreaM2:footprintM2===null?null:footprintM2*floors,referenceHeightM,exceedsReference:Number.isFinite(referenceHeightM)&&floors*FLOOR_HEIGHT_M>referenceHeightM,envelopeId,status:'working_assumption',unitsProven:false};
+  return {floors,floorHeightM:FLOOR_HEIGHT_M,heightM:floors*FLOOR_HEIGHT_M,volumeCount:massIds.length,footprintM2,grossAreaM2:footprintM2===null?null:footprintM2*floors,referenceHeightM,exceedsReference:Number.isFinite(referenceHeightM)&&floors*FLOOR_HEIGHT_M>referenceHeightM,envelopeId,status:'working_assumption',unitsProven:false,...exploratorySummary(data)};
 }
 
 const fsOf=data=>data?.type==='FeatureCollection'?data.features:data?.type==='Feature'?[data]:data?.type?[{geometry:data,properties:{}}]:[];
@@ -45,7 +47,8 @@ export function geographicVolumeData(study,parcel,envelope,volumes) {
   const parcels=fsOf(parcel);if(parcels.length!==1)throw new Error('Defina um único perímetro para a cena.');add('lote_principal',parcels[0]);
   fsOf(envelope).forEach((f,i)=>add(i?'envelope_'+i:'envelope',f));
   fsOf(volumes).forEach((f,i)=>add('volume_'+i,f));
-  return {metadata:{units:'m',measurementCRS:null,origin:{longitude:origin[0],latitude:origin[1]},localCoordinates:{verticalDatum:'arbitrary_display_zero_not_surveyed_altitude'},provenance:'Projeção local aproximada apenas para visualização. Áreas permanecem as declaradas na fonte.'},parameters:{heightReferenceM:study.regulatory?.maxHeightM??null},featuresById:features};
+  const proposal=exploratoryProposalMetadata(volumes);assertExploratoryStudy(volumes,study);
+  return {metadata:{...(proposal?{...volumes.metadata}:{}),units:'m',measurementCRS:null,origin:{longitude:origin[0],latitude:origin[1]},localCoordinates:{verticalDatum:'arbitrary_display_zero_not_surveyed_altitude'},provenance:'Projeção local aproximada apenas para visualização. Áreas permanecem as declaradas na fonte.'},parameters:{heightReferenceM:proposal?null:study.regulatory?.maxHeightM??null},featuresById:features};
 }
 
 export async function mountVolume(host,study,options={}) {
@@ -87,7 +90,7 @@ export async function mountVolume(host,study,options={}) {
     svg.addEventListener('pointerdown',e=>{dragStart={x:e.clientX,yaw};root.setPointerCapture?.(e.pointerId);});svg.addEventListener('keydown',e=>{if(e.key==='+'||e.key==='='){zoom=Math.min(2.5,zoom*1.15);e.preventDefault();svgRender();}else if(e.key==='-'){zoom=Math.max(.5,zoom/1.15);e.preventDefault();svgRender();}else if(e.key==='ArrowLeft'||e.key==='ArrowRight'){yaw+=(e.key==='ArrowLeft'?-1:1)*.15;e.preventDefault();svgRender();}});stage.append(svg);if(hadFocus)svg.focus?.({preventScroll:true});describe();
   }
   async function initThree(){
-    const THREE=await import('./assets/vendor/three.module.js?v=0be0a117ff1c');const {OrbitControls}=await import('./assets/vendor/OrbitControls.js?v=0be0a117ff1c');if(destroyed)return;
+    const THREE=await import('./assets/vendor/three.module.js?v=3c6cd0a43693');const {OrbitControls}=await import('./assets/vendor/OrbitControls.js?v=3c6cd0a43693');if(destroyed)return;
     const canvas=document.createElement('canvas');canvas.setAttribute('role','img');canvas.setAttribute('aria-label','Modelo 3D do terreno. Arraste para girar; roda para aproximar.');canvas.tabIndex=0;canvas.style.cssText='display:block;width:100%;height:100%;touch-action:none';
     renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'low-power'});renderer.setPixelRatio(Math.min(globalThis.devicePixelRatio||1,2));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.08;
     scene=new THREE.Scene();scene.background=new THREE.Color(COLORS.background);camera=new THREE.OrthographicCamera(-100,100,100,-100,.1,50000);controls=new OrbitControls(camera,canvas);controls.enableDamping=false;controls.screenSpacePanning=true;controls.minZoom=.35;controls.maxZoom=8;controls.maxPolarAngle=Math.PI/2-.012;controls.rotateSpeed=.62;

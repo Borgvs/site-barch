@@ -1,4 +1,5 @@
 /* Local territorial viewer. No cadastral adoption, measurements or legal decisions. */
+import {exploratorySummary,exploratoryProposalMetadata,assertExploratoryStudy} from './exploratory-proposal.js?v=3c6cd0a43693';
 const DEM = 'https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png';
 const OSM = '<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a>';
 const finitePosition = p => Array.isArray(p) && Number.isFinite(p[0]) && Number.isFinite(p[1]) && Math.abs(p[0]) <= 180 && Math.abs(p[1]) <= 85.051129;
@@ -47,6 +48,7 @@ function boundsOf(data) {
 function validateGeoJSON(data) {
   if (!data || data.error || !['FeatureCollection', 'Feature', 'Polygon', 'MultiPolygon', 'LineString', 'MultiLineString', 'Point', 'MultiPoint', 'GeometryCollection'].includes(data.type)) throw new Error('Resposta sem GeoJSON válido.');
   boundsOf(data);
+  exploratoryProposalMetadata(data);
   return data;
 }
 async function getGeoJSON(url, aborts) {
@@ -67,7 +69,7 @@ export async function mountMap(container, study, options = {}) {
   const center = finitePosition(geography.center) ? geography.center : null;
   const zoom = Number.isFinite(geography.zoom) ? clamp(geography.zoom, 1, 20) : 14;
   let map, resizeObserver, frame, destroyed = false, ready = false, view3d = false, terrain = false, marker;
-  let scenarioFloors = 8, scenarioFloorHeight = 3, fallbackReason = null, initializationRejected = null;
+  let scenarioFloors = study.principalProduct?.floors??8, scenarioFloorHeight = 3, fallbackReason = null, initializationRejected = null;
   const fallbackView = {zoom:1,x:0,y:0};
   let fallbackScene, fallbackDrag;
   const aborts = new Set(), layers = new Map(), errors = new Map();
@@ -239,13 +241,13 @@ export async function mountMap(container, study, options = {}) {
   showStatus();
   const fetches=[...layers].map(async([id,entry])=>{
     if (entry.spec.status!=='available'||!entry.spec.url) {errors.set(id,entry.spec.note||'Indisponível; ausência não verificada.');return;}
-    try {if(entry.spec.choropleth)validateChoropleth(entry.spec.choropleth);entry.data=await getGeoJSON(entry.spec.url,aborts);}catch(e){errors.set(id,e.name==='AbortError'?'Consulta expirou; não interpretada como ausência.':`Falha de leitura (${e.message}).`);}
+    try {if(entry.spec.choropleth)validateChoropleth(entry.spec.choropleth);entry.data=await getGeoJSON(entry.spec.url,aborts);assertExploratoryStudy(entry.data,study);}catch(e){entry.data=null;errors.set(id,e.name==='AbortError'?'Consulta expirou; não interpretada como ausência.':`Falha de leitura (${e.message}).`);}
     if(!destroyed&&!map&&ready)fallback(fallbackReason);
   });
   try {
     if (!center) throw new Error('Localização geográfica não confirmada.');
     if (!document.querySelector('link[data-area-map-css]')) {const css=document.createElement('link');css.rel='stylesheet';css.href=new URL('./assets/vendor/maplibre-gl.css',import.meta.url).href;css.dataset.areaMapCss='true';document.head.append(css);}
-    const gl=await import('./assets/vendor/maplibre-gl.mjs?v=0be0a117ff1c');
+    const gl=await import('./assets/vendor/maplibre-gl.mjs?v=3c6cd0a43693');
     gl.setWorkerUrl(new URL('./assets/vendor/maplibre-gl-worker.mjs',import.meta.url).href);gl.setWorkerCount(2);
     const sources = {'osm-context':{type:'raster',tiles:['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],tileSize:256,maxzoom:19,attribution:OSM}};
     const baseLayers = [{id:'paper',type:'background',paint:{'background-color':'#F0EDE5'}},{id:'osm-context',type:'raster',source:'osm-context',paint:{'raster-saturation':-.92,'raster-opacity':.86,'raster-contrast':.08}}];
@@ -310,7 +312,8 @@ export async function mountMap(container, study, options = {}) {
       if(map&&ready){layers.forEach(syncLayer);map.easeTo({pitch:view3d?52:0,bearing:view3d?-18:0,duration:500});}
       else if(ready){fallback(errors.get('Mapa interativo')||'WebGL indisponível.');}
       showStatus();
-      return {floors:scenarioFloors,floorHeightM:scenarioFloorHeight,heightM:scenarioFloors*scenarioFloorHeight,volumeCount,footprintM2,grossAreaM2:footprintM2*scenarioFloors,status:'working_assumption',unitsProven:false};
+      const proposal=[...layers.values()].find(entry=>entry.data?.metadata?.role==='exploratory_product_sketch')?.data;
+      return {floors:scenarioFloors,floorHeightM:scenarioFloorHeight,heightM:scenarioFloors*scenarioFloorHeight,volumeCount,footprintM2,grossAreaM2:footprintM2*scenarioFloors,status:'working_assumption',unitsProven:false,...exploratorySummary(proposal)};
     },
   };
 }
