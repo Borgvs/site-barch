@@ -7,7 +7,7 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 15;
 const root = path.join(process.cwd(), '.barch-terreno');
-let snapshotPromise, enginePromise;
+let snapshotPromise, enginePromise, currencyPromise;
 const snapshot = () => snapshotPromise ??= readFile(path.join(root, 'snapshot.json'), 'utf8').then(JSON.parse);
 const json = (data, status = 200) => Response.json(data, {status, headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Robots-Tag':'noindex, nofollow'}});
 const problem = (error, status) => json({error},status);
@@ -26,6 +26,10 @@ export async function GET(request, context) {
       return json({...data.routes.sources,items:rows.slice(0,100),total:rows.length});
     }
     if(!Object.hasOwn(data.routes,key)) return problem('Recurso não encontrado.',404);
+    if(key.startsWith('studies/')&&(data.routes[key]?.verification||data.routes[key]?.latest)){
+      const currency=await (currencyPromise??=import(/* webpackIgnore: true */ pathToFileURL(path.join(root,'receipt-currency.mjs')).href));
+      return json(currency.refreshPublicReceiptCurrency(data.routes[key]));
+    }
     return json(data.routes[key]);
   } catch { return problem('Não foi possível abrir este recurso.',500); }
 }

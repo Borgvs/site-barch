@@ -19,7 +19,7 @@ export function renderVerificationFreshness(verification){
  if(!verification)return '';
  const state=verification.freshness?.status;
  if(state==='current')return '<p class="tiny muted">Recibo vinculado à versão atual dos insumos conferidos. A vigência de cada fonte conserva seu próprio prazo.</p>';
- if(state==='stale')return '<div class="note neutral">Verificação histórica: os insumos mudaram após esta execução. Atualizar as consultas antes de tratar os resultados como atuais.</div>';
+ if(state==='stale')return `<div class="note neutral">Verificação histórica: ${esc(verification.freshness?.reason||'os insumos mudaram após esta execução.')} Atualizar as consultas antes de tratar os resultados como atuais.</div>`;
  if(state==='unverifiable')return '<div class="note neutral">Não foi possível conferir todas as bases desta versão. O recibo anterior permanece como histórico; recuperar as evidências antes de validar a atualização.</div>';
  return '<div class="note neutral">Verificação histórica sem vínculo completo com a versão atual das bases. O recibo conserva a data e o alcance da execução original.</div>';
 }

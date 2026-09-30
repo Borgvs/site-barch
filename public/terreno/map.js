@@ -245,7 +245,7 @@ export async function mountMap(container, study, options = {}) {
   try {
     if (!center) throw new Error('Localização geográfica não confirmada.');
     if (!document.querySelector('link[data-area-map-css]')) {const css=document.createElement('link');css.rel='stylesheet';css.href=new URL('./assets/vendor/maplibre-gl.css',import.meta.url).href;css.dataset.areaMapCss='true';document.head.append(css);}
-    const gl=await import('./assets/vendor/maplibre-gl.mjs?v=3c18f98d9127');
+    const gl=await import('./assets/vendor/maplibre-gl.mjs?v=0be0a117ff1c');
     gl.setWorkerUrl(new URL('./assets/vendor/maplibre-gl-worker.mjs',import.meta.url).href);gl.setWorkerCount(2);
     const sources = {'osm-context':{type:'raster',tiles:['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],tileSize:256,maxzoom:19,attribution:OSM}};
     const baseLayers = [{id:'paper',type:'background',paint:{'background-color':'#F0EDE5'}},{id:'osm-context',type:'raster',source:'osm-context',paint:{'raster-saturation':-.92,'raster-opacity':.86,'raster-contrast':.08}}];

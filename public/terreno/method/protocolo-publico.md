@@ -1,6 +1,6 @@
 # Protocolo de verificação e decisão
 
-Barch · Referência metodológica · 29/09/2026
+Barch · Referência metodológica · revisão de 30/09/2026
 
 O protocolo pesquisa, confronta e qualifica evidências antes de encaminhar pendências. A apresentação conserva a data da fonte, o território coberto e a consequência de cada achado. Uma consulta bem-sucedida comprova o que a fonte informou dentro de seu alcance; a decisão de investimento depende da combinação dessas evidências.
 
@@ -25,6 +25,8 @@ Em caso de conflito, a análise considera competência do órgão, finalidade do
 
 ## Imóveis urbanos e rurais
 
+O enquadramento ambiental também verifica a [Lei Geral do Licenciamento Ambiental, em texto consolidado](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15190.htm), a competência prevista na [Lei Complementar 140](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp140.htm), normas estaduais e municipais e o regime temporal aplicável. O prazo de uma licença histórica é conferido no certificado, nos atos e nas condicionantes correspondentes; não se presume atualização pelo prazo de um diploma posterior.
+
 Direitos e ônus são examinados à luz dos documentos registrais atuais e da [Lei de Registros Públicos](https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm). Para ambiente, o [Código Florestal](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12651compilado.htm) integra o enquadramento de APPs e, quando aplicável, Reserva Legal e CAR. O cadastro ambiental não substitui título ou licença.
 
 Nos imóveis rurais, a análise acrescenta certificação geográfica, cadastro rural, acessos, água e destinação. O [INCRA descreve a certificação do georreferenciamento](https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/certificacao-imoveis) como verificação técnica de limites e sobreposições no âmbito próprio. O efeito registral e a situação de domínio são conciliados com a documentação competente; cada cadastro mantém sua finalidade.
@@ -38,3 +40,7 @@ Vistoria registra data, autoria, posição, condições observadas e documentos 
 ## Apresentação e atualização
 
 A versão pública reúne conclusões materiais, fontes acessíveis e documentos selecionados para divulgação. Dados pessoais e peças privadas permanecem no acervo autorizado. Mudança de perímetro, programa, legislação, mercado ou evidência determinante exige revisar os resultados dependentes e registrar a nova data. A decisão final identifica condições de avanço e de interrupção; aprovação cadastral, aprovação de projeto e viabilidade econômica conservam alcances distintos.
+
+A qualificação integrada apresenta oito frentes: identidade e perímetro; zoneamento e regime temporal; interferências públicas; água, ambiente e passivos; relevo e geotecnia; regime rural e transição; licenciamento e execução; infraestrutura. O estado de cada frente expressa cobertura e admissibilidade da evidência, sem gerar uma nota sintética de investimento.
+
+As consultas conservam a diferença entre indisponibilidade, acesso restrito, falta de cobertura e ausência de ocorrência no recorte. Falhas temporárias admitem retomada limitada; a atualização editorial exige bases reconciliadas e conferência recente dos insumos. A verificação da edição e a vigência jurídica de cada documento são avaliações distintas.
