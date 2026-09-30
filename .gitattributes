@@ -1,0 +1,3 @@
+# Preserve source documents and upstream libraries byte for byte.
+*.pdf binary
+public/terreno/assets/vendor/** -whitespace
