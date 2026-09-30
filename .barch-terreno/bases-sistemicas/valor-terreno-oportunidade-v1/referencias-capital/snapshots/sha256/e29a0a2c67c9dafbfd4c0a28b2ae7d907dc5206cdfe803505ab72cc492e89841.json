@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "protocolVersion": "barch-capital-references-1.0.0",
+  "source": {
+    "id": "bcb-sgs-433",
+    "seriesId": "433",
+    "issuer": "Banco Central do Brasil / IBGE",
+    "label": "IPCA · variação percentual mensal",
+    "dataUrl": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados/ultimos/12?formato=json",
+    "metadataUrl": "https://www3.bcb.gov.br/sgspub/consultarvalores/consultarValoresSeries.do?method=consultarSeries&series=433",
+    "unit": "percent_change_per_month",
+    "observationFrequency": "monthly",
+    "ratePeriod": "monthly",
+    "role": "observed_inflation_context",
+    "maxObservationAgeDays": 75,
+    "license": "public_source_rights_require_attribution",
+    "restriction": "Inflação mensal observada; não é inflação prospectiva, anual ou taxa de desconto."
+  },
+  "state": "unverifiable",
+  "referenceOnly": true,
+  "adoptionAllowed": false,
+  "tmaAvailable": false,
+  "tma": null,
+  "checkedAt": "2026-09-30T16:37:15.752Z",
+  "fetchedAt": "2026-09-30T16:37:15.750Z",
+  "effectiveDate": null,
+  "points": [],
+  "latest": null,
+  "metadataVerification": null,
+  "issue": "Consulta pública não concluída: metadata:falha-rede, data:falha-rede",
+  "resources": [
+    {
+      "role": "metadata",
+      "url": "https://www3.bcb.gov.br/sgspub/consultarvalores/consultarValoresSeries.do?method=consultarSeries&series=433",
+      "fetchedAt": "2026-09-30T16:37:15.750Z",
+      "status": "falha-rede",
+      "httpStatus": null,
+      "rawPath": null,
+      "sha256": null,
+      "bytes": null,
+      "receiptPath": "bases-sistemicas/valor-terreno-oportunidade-v1/referencias-capital/receipts/sha256/e60fbdd65a859a2b90c642f426eda07e31ee753b27e7c0490f14baf17d69795e.json",
+      "receiptSha256": "e60fbdd65a859a2b90c642f426eda07e31ee753b27e7c0490f14baf17d69795e"
+    },
+    {
+      "role": "data",
+      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados/ultimos/12?formato=json",
+      "fetchedAt": "2026-09-30T16:37:15.748Z",
+      "status": "falha-rede",
+      "httpStatus": null,
+      "rawPath": null,
+      "sha256": null,
+      "bytes": null,
+      "receiptPath": "bases-sistemicas/valor-terreno-oportunidade-v1/referencias-capital/receipts/sha256/2c9d140768b5fea98c695285620b7bce6ff6989c6405e0fc9493b28374ac7792.json",
+      "receiptSha256": "2c9d140768b5fea98c695285620b7bce6ff6989c6405e0fc9493b28374ac7792"
+    }
+  ],
+  "cacheCheck": {
+    "valid": false,
+    "reason": "not-in-barch-cache",
+    "checkedAt": "2026-09-30T16:37:15.492Z"
+  },
+  "priorSnapshot": null
+}

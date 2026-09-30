@@ -7,7 +7,7 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 15;
 const root = path.join(process.cwd(), '.barch-terreno');
-let snapshotPromise, enginePromise, currencyPromise, economicsPromise;
+let snapshotPromise, enginePromise, currencyPromise, economicsPromise, investorPromise, investorDispatchPromise;
 const snapshot = () => snapshotPromise ??= readFile(path.join(root, 'snapshot.json'), 'utf8').then(JSON.parse);
 const json = (data, status = 200) => Response.json(data, {status, headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Robots-Tag':'noindex, nofollow'}});
 const problem = (error, status) => json({error},status);
@@ -18,7 +18,7 @@ async function currentProjection(value){
  const currency=await (currencyPromise??=import(/* webpackIgnore: true */ pathToFileURL(path.join(root,'receipt-currency.mjs')).href));
  const refreshed=currency.refreshPublicReceiptCurrency(value);
  if(!refreshed.landEconomics||refreshed.assessment?.state==='screening_current'&&refreshed.verification?.freshness?.status==='current')return refreshed;
- const result=structuredClone(refreshed),engine=await economics(),land=result.landEconomics;
+ const result=structuredClone(refreshed),engine=await economics(),land=result.landEconomics;if(land.investorBaseline)land.investorBaseline={...land.investorBaseline,status:'reverification_required',request:null,conditionalOffer:null};
  land.value={...land.value,status:'reverification_required',candidateBand:null,adoptedMarketValueBrl:null,currentMarketValueBrl:null};
  land.territorial={...land.territorial,state:'reconciliation_required',envelopeMode:'unavailable',currency:'not_current',capabilities:Object.fromEntries(Object.keys(land.territorial.capabilities??{}).map(key=>[key,false]))};
  land.matrix=engine.buildOpportunityMatrix({study:{assessment:result.assessment},value:null,territorial:null});
@@ -69,8 +69,8 @@ export async function POST(request, context) {
     const data=await snapshot();
     if(!Object.hasOwn(data.routes,'studies/'+parts[1]))return problem('Estudo não encontrado.',404);
     if(economicCalculation){
-      const engine=await economics(),result=engine.evaluateAcquisition(body);
-      const study=await currentProjection(data.routes['studies/'+parts[1]]);
+      const engine=await economics(),study=await currentProjection(data.routes['studies/'+parts[1]]);let result;
+      if(body?.investorMode===true){const investor=await(investorPromise??=import(/* webpackIgnore: true */ pathToFileURL(path.join(root,'investor-acquisition.mjs')).href)),dispatcher=await(investorDispatchPromise??=import(/* webpackIgnore: true */ pathToFileURL(path.join(root,'investor-dispatch.mjs')).href));const sourceBundle=await investor.loadInvestorSourceBundle();result=dispatcher.dispatchAcquisition(body,{sourceBundle,study,baseline:study.landEconomics?.investorBaseline});}else result=engine.evaluateAcquisition(body);
       return json({...result,assessmentContext:{studySlug:parts[1],state:study.assessment?.state??'unverifiable',verificationState:study.verification?.freshness?.status??'unverifiable',scope:'Cálculo de hipótese declarada, sem persistência, validação de fontes ou aprovação.'}},result.status==='invalid'?422:200);
     }
     if(!body||typeof body!=='object'||Array.isArray(body)||typeof body.presetId!=='string'||!body.changes||typeof body.changes!=='object'||Array.isArray(body.changes))return problem('Cenário inválido.',400);

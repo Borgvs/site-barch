@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "protocolVersion": "barch-capital-references-1.1.0",
+  "sourceId": "bcb-sgs-433",
+  "role": "metadata",
+  "authority": "public-source-capture-reference-only",
+  "adoptionAllowed": false,
+  "http": {
+    "url": "https://www3.bcb.gov.br/sgspub/consultarvalores/consultarValoresSeries.do?method=consultarSeries&series=433",
+    "retrievedAt": "2026-09-30T16:51:47.171Z",
+    "status": "ok",
+    "httpStatus": 200,
+    "attempts": 1,
+    "history": [
+      {
+        "attempt": 1,
+        "at": "2026-09-30T16:51:47.171Z",
+        "status": "ok",
+        "httpStatus": 200,
+        "elapsedMs": 226
+      }
+    ],
+    "elapsedMs": 226,
+    "sha256": "9bc93b44661a1011dadc769035a27d24dbc0e3e4c6d943131d6932967a2f17e7",
+    "bytes": 186964
+  }
+}

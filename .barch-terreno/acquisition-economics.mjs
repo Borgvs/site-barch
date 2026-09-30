@@ -80,7 +80,7 @@ export function normalizeAcquisitionRequest(body){
  if(rates.components.method==='capm_extension_candidate'&&Math.abs(rates.components.kd-request.debtAnnualPct)>1e-9&&request.debtPct>0)fail('Custo da dívida diverge entre WACC e fluxo.');
  return {...request,rates};
 }
-function ledger(request){
+export function acquisitionLedger(request){
  const n=request.exitMonth,debt=request.acquisitionPriceBrl*request.debtPct/100;
  const monthly=(1+request.debtAnnualPct/100)**(1/12)-1;
  const rows=Array.from({length:n+1},(_,month)=>{
@@ -100,7 +100,7 @@ const sum=(rows,key)=>rows.reduce((s,r)=>s+r[key],0);
 function valueOnly(request,key='projectBrl',rate=request.rates.waccAnnualPct){
  // NPV is evaluated by the pinned primitive; the wrapper also computes IRR,
  // so a sensitivity grid is deliberately small and bounded.
- const rows=ledger(request);return evaluateMonthlyLedger({cashflow:rows.map(r=>r[key]),discountRateAnnualPct:rate}).npvBrl;
+ const rows=acquisitionLedger(request);return evaluateMonthlyLedger({cashflow:rows.map(r=>r[key]),discountRateAnnualPct:rate}).npvBrl;
 }
 function acquisitionCeiling(request,key,rate){
  const zero={...request,acquisitionPriceBrl:0},initial=valueOnly(zero,key,rate);
@@ -116,9 +116,9 @@ function acquisitionCeiling(request,key,rate){
  return {status:Math.abs(check)<=Math.max(0.01,request.exitGrossBrl*1e-10)?'solved':'not_converged',priceBrl:candidate,npvAtCeilingBrl:check,
   scope:'Preço teto da aquisição/manutenção/saída declarada; não é valor de mercado e não é residual de incorporação.'};
 }
-export function evaluateAcquisition(body,{sensitivity=true}={}){
+export function evaluateAcquisition(body,{sensitivity=true,ceilings=true}={}){
  try{
-  const r=normalizeAcquisitionRequest(body),rows=ledger(r);
+  const r=normalizeAcquisitionRequest(body),rows=acquisitionLedger(r);
   const project=evaluateMonthlyLedger({cashflow:rows.map(x=>x.projectBrl),discountRateAnnualPct:r.rates.waccAnnualPct});
   const equity=evaluateMonthlyLedger({cashflow:rows.map(x=>x.equityBrl),discountRateAnnualPct:r.rates.keAnnualPct});
   const contributionsBrl=sum(rows,'contributionsBrl'),distributionsBrl=sum(rows,'distributionsBrl');
@@ -143,7 +143,7 @@ export function evaluateAcquisition(body,{sensitivity=true}={}){
   const grid=sensitivity?[-.1,0,.1].map(exitChange=>({label:`Saída ${exitChange>=0?'+':''}${Math.round(exitChange*100)}%`,points:[0,6,12].map(delay=>({delayMonths:Math.min(delay,240-r.exitMonth),requestedDelayMonths:delay,actualExitMonth:Math.min(240,r.exitMonth+delay),npvBrl:valueOnly({...r,exitGrossBrl:r.exitGrossBrl*(1+exitChange),exitMonth:Math.min(240,r.exitMonth+delay)})}))})):[];
   return {schemaVersion:1,version:ACQUISITION_VERSION,status:'exploratory',authority:'working_assumption',adoptedMarketValueBrl:null,investmentApproved:false,
    input:r,inputSha256:hash(r),engine:{version:project.engineVersion,financialArtifactSha256:project.primitiveArtifactSha256},rows,metrics,costs,
-   ceilings:{project:acquisitionCeiling(r,'projectBrl',r.rates.waccAnnualPct),equity:acquisitionCeiling(r,'equityBrl',r.rates.keAnnualPct)},sensitivity:tests,grid,
+   ceilings:ceilings?{project:acquisitionCeiling(r,'projectBrl',r.rates.waccAnnualPct),equity:acquisitionCeiling(r,'equityBrl',r.rates.keAnnualPct)}:null,sensitivity:tests,grid,
    rateConstruction:r.rates,diagnostics:[{code:'DECLARED_ACQUISITION_SCENARIO',message:'Aquisição, carregamento e saída da terra; não dimensiona um produto nem aprova preço, financiamento ou investimento.'},
     {code:'TAX_COSTS_DECLARED',message:'Custos tributários são valores declarados nos períodos de entrada/saída. Não aplica RET, IBS/CBS ou benefício fiscal por padrão.'},
     ...(r.debtPct>0?[{code:'BALLOON_DEBT_APPROXIMATION',message:'Dívida de ensaio: saque na compra, juros mensais pagos e principal integral na saída, sem benefício fiscal. WACC usa estrutura alvo declarada, aproximada quando dívida muda de peso.'}]:[]),

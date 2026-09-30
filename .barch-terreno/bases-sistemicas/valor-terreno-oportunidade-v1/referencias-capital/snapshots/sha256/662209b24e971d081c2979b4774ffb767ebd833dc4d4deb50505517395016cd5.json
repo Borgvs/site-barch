@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "protocolVersion": "barch-capital-references-1.0.0",
+  "source": {
+    "id": "bcb-sgs-433",
+    "seriesId": "433",
+    "issuer": "Banco Central do Brasil / IBGE",
+    "label": "IPCA · variação percentual mensal",
+    "dataUrl": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados/ultimos/12?formato=json",
+    "metadataUrl": "https://www3.bcb.gov.br/sgspub/consultarvalores/consultarValoresSeries.do?method=consultarSeries&series=433",
+    "unit": "percent_change_per_month",
+    "observationFrequency": "monthly",
+    "ratePeriod": "monthly",
+    "role": "observed_inflation_context",
+    "maxObservationAgeDays": 75,
+    "license": "public_source_rights_require_attribution",
+    "restriction": "Inflação mensal observada; não é inflação prospectiva, anual ou taxa de desconto."
+  },
+  "state": "reference-only",
+  "referenceOnly": true,
+  "adoptionAllowed": false,
+  "tmaAvailable": false,
+  "tma": null,
+  "checkedAt": "2026-09-30T16:37:34.160Z",
+  "fetchedAt": "2026-09-30T16:37:33.736Z",
+  "effectiveDate": "2026-08-31",
+  "points": [
+    {
+      "rawDate": "01/09/2025",
+      "rawValue": "0.48",
+      "referenceDate": "2025-09-01",
+      "referencePeriod": "2025-09",
+      "effectiveDate": "2025-09-30",
+      "valuePercent": 0.48,
+      "unit": "percent_change_per_month",
+      "ratePeriod": "monthly",
+      "percentScaling": "one_unit_is_one_percentage_point"
+    },
+    {
+      "rawDate": "01/10/2025",
+      "rawValue": "0.09",
+      "referenceDate": "2025-10-01",
+      "referencePeriod": "2025-10",
+      "effectiveDate": "2025-10-31",
+      "valuePercent": 0.09,
+      "unit": "percent_change_per_month",
+      "ratePeriod": "monthly",
+      "percentScaling": "one_unit_is_one_percentage_point"
+    },
+    {
+      "rawDate": "01/11/2025",
+      "rawValue": "0.18",
+      "referenceDate": "2025-11-01",
+      "referencePeriod": "2025-11",
+      "effectiveDate": "2025-11-30",
+      "valuePercent": 0.18,
+      "unit": "percent_change_per_month",
+      "ratePeriod": "monthly",
+      "percentScaling": "one_unit_is_one_percentage_point"
+    },
+    {
+      "rawDate": "01/12/2025",
+      "rawValue": "0.33",
+      "referenceDate": "2025-12-01",
+      "referencePeriod": "2025-12",
+      "effectiveDate": "2025-12-31",
+      "valuePercent": 0.33,
+      "unit": "percent_change_per_month",
+      "ratePeriod": "monthly",
+      "percentScaling": "one_unit_is_one_percentage_point"
+    },
+    {
+      "rawDate": "01/01/2026",
+      "rawValue": "0.33",
+      "referenceDate": "2026-01-01",
+      "referencePeriod": "2026-01",
+      "effectiveDate": "2026-01-31",
+      "valuePercent": 0.33,
+      "unit": "percent_change_per_month",
+      "ratePeriod": "monthly",
+      "percentScaling": "one_unit_is_one_percentage_point"
+    },
+    {
+      "rawDate": "01/02/2026",
+      "rawValue": "0.70",
+      "referenceDate": "2026-02-01",
+      "referencePeriod": "2026-02",
+      "effectiveDate": "2026-02-28",
+      "valuePercent": 0.7,
+      "unit": "percent_change_per_month",
+      "ratePeriod": "monthly",
+      "percentScaling": "one_unit_is_one_percentage_point"
+    },
+    {
+      "rawDate": "01/03/2026",
+      "rawValue": "0.88",
+      "referenceDate": "2026-03-01",
+      "referencePeriod": "2026-03",
+      "effectiveDate": "2026-03-31",
+      "valuePercent": 0.88,
+      "unit": "percent_change_per_month",
+      "ratePeriod": "monthly",
+      "percentScaling": "one_unit_is_one_percentage_point"
+    },
+    {
+      "rawDate": "01/04/2026",
+      "rawValue": "0.67",
+      "referenceDate": "2026-04-01",
+      "referencePeriod": "2026-04",
+      "effectiveDate": "2026-04-30",
+      "valuePercent": 0.67,
+      "unit": "percent_change_per_month",
+      "ratePeriod": "monthly",
+      "percentScaling": "one_unit_is_one_percentage_point"
+    },
+    {
+      "rawDate": "01/05/2026",
+      "rawValue": "0.58",
+      "referenceDate": "2026-05-01",
+      "referencePeriod": "2026-05",
+      "effectiveDate": "2026-05-31",
+      "valuePercent": 0.58,
+      "unit": "percent_change_per_month",
+      "ratePeriod": "monthly",
+      "percentScaling": "one_unit_is_one_percentage_point"
+    },
+    {
+      "rawDate": "01/06/2026",
+      "rawValue": "0.16",
+      "referenceDate": "2026-06-01",
+      "referencePeriod": "2026-06",
+      "effectiveDate": "2026-06-30",
+      "valuePercent": 0.16,
+      "unit": "percent_change_per_month",
+      "ratePeriod": "monthly",
+      "percentScaling": "one_unit_is_one_percentage_point"
+    },
+    {
+      "rawDate": "01/07/2026",
+      "rawValue": "0.07",
+      "referenceDate": "2026-07-01",
+      "referencePeriod": "2026-07",
+      "effectiveDate": "2026-07-31",
+      "valuePercent": 0.07,
+      "unit": "percent_change_per_month",
+      "ratePeriod": "monthly",
+      "percentScaling": "one_unit_is_one_percentage_point"
+    },
+    {
+      "rawDate": "01/08/2026",
+      "rawValue": "-0.32",
+      "referenceDate": "2026-08-01",
+      "referencePeriod": "2026-08",
+      "effectiveDate": "2026-08-31",
+      "valuePercent": -0.32,
+      "unit": "percent_change_per_month",
+      "ratePeriod": "monthly",
+      "percentScaling": "one_unit_is_one_percentage_point"
+    }
+  ],
+  "latest": {
+    "rawDate": "01/08/2026",
+    "rawValue": "-0.32",
+    "referenceDate": "2026-08-01",
+    "referencePeriod": "2026-08",
+    "effectiveDate": "2026-08-31",
+    "valuePercent": -0.32,
+    "unit": "percent_change_per_month",
+    "ratePeriod": "monthly",
+    "percentScaling": "one_unit_is_one_percentage_point"
+  },
+  "metadataVerification": {
+    "identityVerified": true,
+    "unitVerified": true,
+    "method": "fixed-official-page-content",
+    "automaticallyAdoptedAsDiscountRate": false
+  },
+  "issue": null,
+  "resources": [
+    {
+      "role": "metadata",
+      "url": "https://www3.bcb.gov.br/sgspub/consultarvalores/consultarValoresSeries.do?method=consultarSeries&series=433",
+      "fetchedAt": "2026-09-30T16:37:33.736Z",
+      "status": "ok",
+      "httpStatus": 200,
+      "rawPath": "bases-sistemicas/valor-terreno-oportunidade-v1/referencias-capital/cas/sha256/efdc0614b23fa8e560c4e5df1072c485bbe85316bcb78b2904f726e135159989.html",
+      "sha256": "efdc0614b23fa8e560c4e5df1072c485bbe85316bcb78b2904f726e135159989",
+      "bytes": 186964,
+      "receiptPath": "bases-sistemicas/valor-terreno-oportunidade-v1/referencias-capital/receipts/sha256/5d997ff78fdad151f836090dbd12fafdf3c2ac9c8395fb1f25017e4dcbba9dbd.json",
+      "receiptSha256": "5d997ff78fdad151f836090dbd12fafdf3c2ac9c8395fb1f25017e4dcbba9dbd"
+    },
+    {
+      "role": "data",
+      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados/ultimos/12?formato=json",
+      "fetchedAt": "2026-09-30T16:37:33.736Z",
+      "status": "ok",
+      "httpStatus": 200,
+      "rawPath": "bases-sistemicas/valor-terreno-oportunidade-v1/referencias-capital/cas/sha256/7418362823a55fa0fea01b282558720f33132f2d1d62da9e75e484b1806255ca.json",
+      "sha256": "7418362823a55fa0fea01b282558720f33132f2d1d62da9e75e484b1806255ca",
+      "bytes": 446,
+      "receiptPath": "bases-sistemicas/valor-terreno-oportunidade-v1/referencias-capital/receipts/sha256/49cc8e12773839408cfd56efa609b19396d82586f612369620ae95d2c901bf9f.json",
+      "receiptSha256": "49cc8e12773839408cfd56efa609b19396d82586f612369620ae95d2c901bf9f"
+    }
+  ],
+  "cacheCheck": {
+    "valid": false,
+    "reason": "Contrato do snapshot divergente.",
+    "checkedAt": "2026-09-30T16:37:33.734Z"
+  },
+  "priorSnapshot": {
+    "snapshotPath": "bases-sistemicas/valor-terreno-oportunidade-v1/referencias-capital/snapshots/sha256/e29a0a2c67c9dafbfd4c0a28b2ae7d907dc5206cdfe803505ab72cc492e89841.json",
+    "snapshotSha256": "e29a0a2c67c9dafbfd4c0a28b2ae7d907dc5206cdfe803505ab72cc492e89841"
+  }
+}

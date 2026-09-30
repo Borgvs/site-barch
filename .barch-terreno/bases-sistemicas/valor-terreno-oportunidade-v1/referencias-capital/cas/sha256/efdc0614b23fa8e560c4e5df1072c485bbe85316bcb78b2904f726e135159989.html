@@ -1,0 +1,9410 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html locale="true" lang="pt-br">
+ <script language="JavaScript">
+
+	var nomeContexto="sgspub"
+	var vFormatoData="dd/MM/yyyy"
+	var vFormatoNumerico="B"
+
+	var msgSelecioneSerie="Selecione uma série."
+	var msgSelecioneSerie="Selecione uma série."
+	var msgSelecioneApenasUmaSerie="Selecione apenas uma série."
+	var msgDigiteDataInicio="Digite uma data início válida."
+	var msgDigiteDataFim="Digite uma data fim válida."
+	var msgDataInicioPostDatafim="A data início não pode ser posterior à data fim."
+	var msgShiftDesabilitado="Shift-click desabilitado."
+	var msgBotaoDireitoDesabilitado="Shift-click desabilitado."
+	var msgDigiteDescricaoFiltro="Digite uma descrição para a lista."
+	var msgDigiteNomeFiltro="Digite um nome para a lista."
+	var msgSelecioneFiltro="Selecione uma lista."
+	var msgConfirmaExclusaoFiltro="Confirma a exclusão da(s) lista(s) selecionada(s)?"
+	var msgCaracteresRestantes="Caracteres restantes:&nbsp;"
+	var msgMaxQtdSeriesSelecao="Foram selecionadas mais de 1000 séries. Favor restringir a quantidade de séries a serem consultadas."
+
+	var msgJaneiro="janeiro"
+	var msgFevereiro="fevereiro"
+	var msgMarco="março"
+	var msgAbril="abril"
+	var msgMaio="maio"
+	var msgJunho="junho"
+	var msgJulho="julho"
+	var msgAgosto="agosto"
+	var msgSetembro="setembro"
+	var msgOutubro="outubro"
+	var msgNovembro="novembro"
+	var msgDezembro="dezembro"
+	var msgHoje="Hoje"
+	var msgISegunda="S"
+	var msgITerca="T"
+	var msgIQuarta="Q"
+	var msgIQuinta="Q"
+	var msgISexta="S"
+	var msgISabado="S"
+	var msgIDomingo="D"
+	var msgSegunda="Segunda"
+	var msgTerca="Terça"
+	var msgQuarta="Quarta"
+	var msgQuinta="Quinta"
+	var msgSexta="Sexta"
+	var msgSabado="Sábado"
+	var msgDomingo="Domingo"
+ </script>
+<head>
+  
+  <title>SGS - Sistema Gerenciador de S&eacute;ries Temporais</title>
+  <link rel="stylesheet" type="text/css" href="/css/sistema.css">
+  
+  
+
+
+
+
+<script type="text/javascript"><!--
+
+var isFrame=false;
+//-->
+</script>
+<script type="text/javascript" src="/sgspub/js/menu2base.js"></script>
+<script type="text/javascript" src="/sgspub/js/basico.js"></script>
+<script type="text/javascript" src="/sgspub/js/validadata.js"></script>
+<script type="text/javascript" src="/sgspub/js/sgs.js"></script>
+<script type='text/javascript' defer>
+//<!--
+//---Menu---
+function retAm(it){
+  // Informe o nome do array correspondente ao identificador
+  var wIt=it+""
+  switch (wIt){
+
+    case '1':return aM1
+    case '2':return aM2
+    case '3':return aM3
+    case '4':return aM4
+
+    case '1_1':return aM1_1
+    
+
+
+    case '5':return null
+
+
+
+
+    case '5_1':return null
+
+
+    default:return false
+
+  }
+}
+
+function abrirAjudaSistema(){
+	top.newWin = window.open("/sgspub/JSP/sgsgeral/sgsAjuda.jsp","Ajuda", "resizable=yes,dependent=yes,scrollbars=yes,toolbar=0,height=400");
+}
+
+function abrirFaleConosco(){
+	top.newWin = window.open("https://www.bcb.gov.br/acessoinformacao/faleconosco","Ajuda", "menubar=yes,location=yes,status=yes,resizable=yes,dependent=yes,scrollbars=yes,toolbar=yes,height=400");
+}
+
+if (isMenu) {
+
+aM1 = new Array(155,0,0,"black","#0066ff","#eeeeee","white","#0066ff","#d0d0d0"
+	,"Séries","/sgspub/consultarvalores/telaCvsSelecionarSeries.paint",0,0
+	,"Metadados","/sgspub/consultarmetadados/telaCmsSelecionarSeries.paint",0,0
+	,"Estatísticas econômico- financeiras","#",1,1
+)
+
+aM1_1 = new Array(
+		"Taxas de Juros","/sgspub/pefi300/telaCtjSelecao.paint",0,0
+		,"Caderneta de Poupança","/sgspub/pefi300/telaCadernetaPoupanca.paint",0,0
+		,"Dólar/Ouro","/sgspub/pefi300/telaCdoSelecao.paint",0,0
+		,"Aplicações Financeiras","/sgspub/pefi300/telaAplicacoesFinanceiras.paint",0,0
+	)
+
+aM2 = new Array(155,0,0,"black","#0066ff","#eeeeee","white","#0066ff","#d0d0d0"
+	,"Criar","/sgspub/manterfiltros/telaMfsCriarFiltro.paint",0,0
+	,"Editar","/sgspub/manterfiltros/listarFiltrosUsuario.do?method=listarFiltrosAlterar",0,0
+	,"Excluir","/sgspub/manterfiltros/listarFiltrosUsuario.do?method=listarFiltrosExcluir",0,0
+	,"Visualizar","/sgspub/manterfiltros/listarFiltrosUsuario.do?method=listarFiltrosUsuario",0,0
+)
+
+aM3 = new Array(155,0,0,"black","#0066ff","#eeeeee","white","#0066ff","#d0d0d0"
+	,"Ambiente","/sgspub/configurarambiente/telaCamConfiguracoes.paint",0,0
+)
+aM4 = new Array(155,0,0,"black","#0066ff","#eeeeee","white","#0066ff","#d0d0d0"
+	,"Ajuda do sistema","javascript:abrirAjudaSistema();",0,0
+	,"Fale conosco","javascript:abrirFaleConosco();",0,0
+)
+aM5 = new Array(155,0,0,"black","#0066ff","#eeeeee","white","#0066ff","#d0d0d0"
+
+)
+
+
+
+// iniciando o menu
+iniciaMenu();
+}
+//-->
+</script>
+
+</head>
+<body class="menu">
+  
+
+
+
+
+
+<script type="text/javascript" src="/sgspub/js/sgs.js"></script>
+<script language="Javascript">
+function getDt(){
+	dt=new Date();
+	hrs=dt.getHours();
+	min=dt.getMinutes();
+	sec=dt.getSeconds();
+	Tm=" "+((hrs<10)?"0":"") +hrs+":";
+	Tm+=((min<10)?"0":"")+min+":";
+	Tm+=((sec<10)?"0":"")+sec+" ";
+	document.frmHora.txCabecalhoHora.value=Tm;
+}
+</script>
+
+<a name="Top"></a>
+<table cellpadding="4" cellspacing="0" border='0' bordercolor="#FFFFFF" width='100%'>
+    <tr>
+    <td class="cab">
+      <a href="/sgspub/">
+      <img style="margin-left:3px;margin-top:3px" src="/img/logoSistemas.gif">
+      </a>
+    </td>
+    <td  class="cab" width="80%" align="left">
+      <div class="txN">SGS - Sistema Gerenciador de S&eacute;ries Temporais - v2.1</div>
+      <div class="tx">M&oacute;dulo público</div>
+    </td>
+    <td class="cab" nowrap="true" align="right">
+      <div class="tx" style="margin-right:3px">Usuário público</div>
+      <div class="txP" style="margin-right:3px">
+	30/09/2026 13:37
+      </div>
+      <a href=javascript:alterarIdioma('I'); title='Alterar o idioma para inglês'>
+      	<div class="fundoPadraoAClaro3" align="center" style="margin-right:3px margin-left:3px;margin-top:3px">
+		<span class='textoPequeno' style='color:#003366'>
+		English
+		</span>
+      	</div>
+      </a>
+    </td>
+    </tr>
+</table>
+  
+
+
+
+
+
+<table cellspacing=0 cellpadding=0 class="semBorda" width='100%'>
+    <tr class=transp>
+        <td colspan=3 align=left class=fuM>
+        <span id=omenu>
+          	<span class=lkM><a href="javascript:void(0)" onmouseout="popDown('eM1')" onmouseover="popUp('eM1',event)">Consultar</a></span>|
+          	<span class=lkM><a href="javascript:void(0)" onmouseout="popDown('eM2')" onmouseover="popUp('eM2',event)">Minhas listas de séries</a></span>|
+			<span class=lkM><a href="javascript:void(0)" onmouseout="popDown('eM3')" onmouseover="popUp('eM3',event)">Configurações</a></span>|
+			<span class=lkM><a href="javascript:void(0)" onmouseout="popDown('eM4')" onmouseover="popUp('eM4',event)">Ajuda</a></span>|
+        </span>
+        </td>
+    </tr>
+</table>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+<script language="JavaScript" src="../js/cviConsultarValores.js"></script>
+<div>
+	<span class='trilhaNav' style="float:left">
+		<a href="/sgspub/" target="_top">In&iacute;cio</a>
+		<img src='/img/seta.gif' border='0'>
+		<a href="/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" target="_top">Consultar s&eacute;ries</a>
+                <img src='/img/seta.gif' border='0'>
+		Resultado da consulta de valores
+    </span>
+    <span style="float:right">
+     	<span class="codTela">[SGSFW2302]&nbsp;&nbsp;</span>
+		<span class="fundoPadraoAEscuro3">&nbsp;
+			<a href="#" onclick="top.newWin = window.open('/sgspub/JSP/sgsgeral/sgsAjuda.jsp#PV','Ajuda', 'resizable=yes,dependent=yes,scrollbars=yes,toolbar=0,height=400')">
+		  		<img title="Exibir ajuda sobre o sistema" alt="Exibir ajuda sobre o sistema" src="/img/fundoclaro/glos2.gif">
+			</a>&nbsp;
+		</span>&nbsp;&nbsp;
+    </span>
+</div>&nbsp;
+<form name="consultarValoresSeriesForm" method="post" action="/sgspub/consultarvalores/consultarValoresSeries.paint" enctype="multipart/form-data" style="margin:0px">
+<span class="titulo1">Resultado da consulta de valores</span>
+<span class="textoPequeno">
+	<table class="tabela" width="60%"><tr><td align="left">
+		<p align="justify">
+		O Banco Central do Brasil não assume nenhuma responsabilidade por defasagem, erro ou outra deficiência em informações prestadas em série temporal cujas fontes sejam externas a esta instituição, bem como por quaisquer perdas ou danos decorrentes de seu uso.
+		</p>
+	</td></tr></table>
+</span>
+
+
+<div class="msgErro"><bc:errors/></div>
+
+<table summary="Esta tabela contém os parâmetros informados para a consulta de valores" cellspacing='1' id='seriesSelecionadas' width='90%' class='tabela' >
+    <tr>
+	<td align="left">
+		<div id="divAguardar">
+        		<img src="../imagens/azul.gif">
+        	</div>
+    	</td>
+	<td align="right">
+    		
+    	</td>
+    </tr>
+    <tr class='fundoPadraoAEscuro3'>
+	<td colspan='2' align="center"><b>Parâmetros informados</b></td>
+    </tr>
+    <tr class='fundoPadraoAClaro1'>
+	<td colspan='2'><div class="tiNIE">
+		Séries selecionadas
+	</div></td>
+    </tr>
+
+       <tr class='fundoPadraoAClaro3' onMouseOver="javascript:linhaValoresOnMouseOver(this);" onMouseOut="javascript:linhaValoresOnMouseOut(this);">
+       <td colspan='2' align="left"><span class="textoPequeno">
+       433 - 
+Índice nacional de preços ao consumidor-amplo (IPCA)
+       </span></td>
+       </tr>
+       
+
+    <tr class='fundoPadraoAClaro1'>
+		<td width="50%"><div class="tiNIE">
+			Período&nbsp;
+		</div></td>
+		<td width="50%"><div class="tiNIE">
+			Fun&ccedil;&atilde;o
+		</div></td>
+    </tr>
+    <tr class='fundoPadraoAClaro3' onMouseOver="javascript:linhaValoresOnMouseOver(this);" onMouseOut="javascript:linhaValoresOnMouseOut(this);">
+		<td><span class="textoPequeno">
+		01/01/1980 a 30/09/2026
+	        </span>
+		</td>
+		<td><span class="textoPequeno">
+			Linear
+	        </span>
+		</td>
+    </tr>
+</table>
+
+<br>
+
+
+<table summary="Esta tabela contém a lista de valores" cellspacing='1' id='valoresSeries' width='90%' class='tabela'>
+    <tr>
+	<td align="left" colspan="
+	2
+	">
+	<span align="left">
+		<span class="textoPequeno">
+     			Registros encontrados por série:&nbsp;
+     			<b>560</b>
+		</span>
+
+	</span>
+	</td>
+    </tr>
+    <tr align="center" class="fundoPadraoAEscuro3">
+	<td align="center" colspan="
+	2
+	">
+		<b>Lista de valores</b><span class="textoPequeno">
+	&nbsp;(Formato numérico: Europeu - 123.456.789,00)
+	</span></td>
+    </tr>
+    <tr class="fundoPadraoAClaro1">
+       <td width='15%'><div class="tiNIE" Align="Center">
+		<span class="textoPequeno">Data
+<br>mês/AAAA
+
+
+		</span>
+       </div></td>
+
+       <td width='85%'><div class="tiNIE" align="Center">
+	<span class="textoPequeno">
+		433<br>
+		Var. % mensal
+	</span>
+      </div></td>
+
+    </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1980
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+6,62
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1980
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+4,62
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1980
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+6,04
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1980
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,29
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1980
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,70
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1980
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,31
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1980
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,55
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1980
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+4,95
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1980
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+4,23
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1980
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+9,48
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1980
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+6,67
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1980
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+6,61
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1981
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+6,84
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1981
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+6,40
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1981
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+4,97
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1981
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+6,46
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1981
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,56
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1981
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,52
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1981
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+6,26
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1981
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,50
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1981
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,26
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1981
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,08
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1981
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,27
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1981
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,93
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1982
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+6,97
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1982
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+6,64
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1982
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,71
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1982
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,89
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1982
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+6,66
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1982
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+7,10
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1982
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+6,36
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1982
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,97
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1982
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,08
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1982
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+4,44
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1982
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,29
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1982
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+7,81
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1983
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+8,64
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1983
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+7,86
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1983
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+7,34
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1983
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+6,58
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1983
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+6,48
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1983
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+9,88
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1983
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+10,08
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1983
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+9,11
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1983
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+10,30
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1983
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+8,87
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1983
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+7,38
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1983
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+8,68
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1984
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+9,67
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1984
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+9,50
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1984
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+8,94
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1984
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+9,54
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1984
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+9,05
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1984
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+10,08
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1984
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+9,72
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1984
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+9,35
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1984
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+11,75
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1984
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+10,44
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1984
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+10,53
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1984
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+11,98
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1985
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+11,76
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1985
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+10,87
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1985
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+10,16
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1985
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+8,20
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1985
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+7,20
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1985
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+8,49
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1985
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+10,31
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1985
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+12,05
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1985
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+11,12
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1985
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+10,62
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1985
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+13,97
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1985
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+15,07
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1986
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+14,37
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1986
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+12,72
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1986
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+4,77
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1986
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,78
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1986
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,40
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1986
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,27
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1986
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,71
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1986
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+3,55
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1986
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,72
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1986
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,90
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1986
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+5,45
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1986
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+11,65
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1987
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+13,21
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1987
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+12,64
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1987
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+16,37
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1987
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+19,10
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1987
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+21,45
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1987
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+19,71
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1987
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+9,21
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1987
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+4,87
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1987
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+7,78
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1987
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+11,22
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1987
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+15,08
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1987
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+14,15
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1988
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+18,89
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1988
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+15,70
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1988
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+17,60
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1988
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+19,29
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1988
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+17,42
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1988
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+22,00
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1988
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+21,91
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1988
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+21,59
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1988
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+27,45
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1988
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+25,62
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1988
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+27,94
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1988
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+28,70
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1989
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+37,49
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1989
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+16,78
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1989
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+6,82
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1989
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+8,33
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1989
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+17,92
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1989
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+28,65
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1989
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+27,74
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1989
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+33,71
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1989
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+37,56
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1989
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+39,77
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1989
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+47,82
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1989
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+51,50
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1990
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+67,55
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1990
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+75,73
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1990
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+82,39
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1990
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+15,52
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1990
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+7,59
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1990
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+11,75
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1990
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+12,92
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1990
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+12,88
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1990
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+14,41
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1990
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+14,36
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1990
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+16,81
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1990
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+18,44
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1991
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+20,75
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1991
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+20,72
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1991
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+11,92
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1991
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+4,99
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1991
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+7,43
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1991
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+11,19
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1991
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+12,41
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1991
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+15,63
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1991
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+15,63
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1991
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+20,23
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1991
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+25,21
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1991
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+23,71
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1992
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+25,94
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1992
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+24,32
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1992
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+21,40
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1992
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+19,93
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1992
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+24,86
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1992
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+20,21
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1992
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+21,83
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1992
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+22,14
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1992
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+24,63
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1992
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+25,24
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1992
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+22,49
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1992
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+25,24
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1993
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+30,35
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1993
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+24,98
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1993
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+27,26
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1993
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+27,75
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1993
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+27,69
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1993
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+30,07
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1993
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+30,72
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1993
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+32,96
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1993
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+35,69
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1993
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+33,92
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1993
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+35,56
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1993
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+36,84
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1994
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+41,31
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1994
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+40,27
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1994
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+42,75
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1994
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+42,68
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1994
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+44,03
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1994
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+47,43
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1994
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+6,84
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1994
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,86
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1994
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,53
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1994
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+2,62
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1994
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+2,81
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1994
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,71
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1995
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,70
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1995
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,02
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1995
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,55
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1995
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+2,43
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1995
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+2,67
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1995
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+2,26
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1995
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+2,36
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1995
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,99
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1995
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,99
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1995
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,41
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1995
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,47
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1995
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,56
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1996
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,34
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1996
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,03
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1996
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,35
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1996
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,26
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1996
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,22
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1996
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,19
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1996
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,11
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1996
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,44
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1996
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,15
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1996
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,30
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1996
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,32
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1996
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,47
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1997
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,18
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1997
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,50
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1997
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,51
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1997
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,88
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1997
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,41
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1997
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,54
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1997
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,22
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1997
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,02
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1997
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,06
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1997
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,23
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1997
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,17
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1997
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,43
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1998
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,71
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1998
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,46
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1998
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,34
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1998
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,24
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1998
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,50
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1998
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,02
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1998
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,12
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1998
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,51
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1998
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,22
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1998
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,02
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1998
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,12
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1998
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,33
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/1999
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,70
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/1999
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,05
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/1999
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,10
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/1999
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,56
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/1999
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,30
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/1999
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,19
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/1999
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,09
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/1999
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,56
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/1999
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,31
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/1999
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,19
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/1999
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,95
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/1999
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,60
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2000
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,62
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2000
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,13
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2000
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,22
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2000
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,42
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2000
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,01
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2000
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,23
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2000
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,61
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2000
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,31
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2000
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,23
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2000
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,14
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2000
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,32
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2000
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,59
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2001
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,57
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2001
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,46
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2001
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,38
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2001
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,58
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2001
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,41
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2001
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,52
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2001
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,33
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2001
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,70
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2001
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,28
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2001
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,83
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2001
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,71
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2001
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,65
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2002
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,52
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2002
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,36
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2002
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,60
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2002
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,80
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2002
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,21
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2002
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,42
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2002
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,19
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2002
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,65
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2002
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,72
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2002
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,31
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2002
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+3,02
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2002
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+2,10
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2003
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+2,25
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2003
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,57
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2003
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,23
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2003
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,97
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2003
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,61
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2003
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,15
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2003
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,20
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2003
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,34
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2003
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,78
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2003
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,29
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2003
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,34
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2003
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,52
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2004
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,76
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2004
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,61
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2004
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,47
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2004
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,37
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2004
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,51
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2004
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,71
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2004
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,91
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2004
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,69
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2004
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,33
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2004
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,44
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2004
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,69
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2004
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,86
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2005
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,58
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2005
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,59
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2005
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,61
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2005
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,87
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2005
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,49
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2005
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,02
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2005
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,25
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2005
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,17
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2005
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,35
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2005
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,75
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2005
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,55
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2005
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,36
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2006
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,59
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2006
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,41
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2006
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,43
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2006
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,21
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2006
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,10
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2006
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,21
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2006
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,19
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2006
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,05
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2006
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,21
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2006
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,33
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2006
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,31
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2006
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,48
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2007
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,44
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2007
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,44
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2007
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,37
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2007
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,25
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2007
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,28
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2007
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,28
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2007
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,24
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2007
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,47
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2007
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,18
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2007
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,30
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2007
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,38
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2007
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,74
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2008
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,54
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2008
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,49
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2008
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,48
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2008
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,55
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2008
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,79
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2008
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,74
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2008
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,53
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2008
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,28
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2008
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,26
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2008
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,45
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2008
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,36
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2008
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,28
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2009
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,48
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2009
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,55
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2009
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,20
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2009
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,48
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2009
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,47
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2009
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,36
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2009
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,24
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2009
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,15
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2009
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,24
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2009
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,28
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2009
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,41
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2009
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,37
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2010
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,75
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2010
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,78
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2010
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,52
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2010
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,57
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2010
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,43
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2010
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,00
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2010
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,01
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2010
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,04
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2010
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,45
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2010
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,75
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2010
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,83
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2010
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,63
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2011
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,83
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2011
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,80
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2011
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,79
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2011
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,77
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2011
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,47
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2011
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,15
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2011
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,16
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2011
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,37
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2011
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,53
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2011
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,43
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2011
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,52
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2011
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,50
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2012
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,56
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2012
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,45
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2012
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,21
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2012
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,64
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2012
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,36
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2012
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,08
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2012
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,43
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2012
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,41
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2012
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,57
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2012
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,59
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2012
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,60
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2012
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,79
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2013
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,86
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2013
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,60
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2013
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,47
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2013
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,55
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2013
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,37
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2013
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,26
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2013
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,03
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2013
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,24
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2013
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,35
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2013
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,57
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2013
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,54
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2013
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,92
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2014
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,55
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2014
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,69
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2014
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,92
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2014
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,67
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2014
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,46
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2014
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,40
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2014
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,01
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2014
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,25
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2014
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,57
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2014
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,42
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2014
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,51
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2014
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,78
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2015
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,24
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2015
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,22
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2015
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,32
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2015
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,71
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2015
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,74
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2015
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,79
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2015
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,62
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2015
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,22
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2015
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,54
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2015
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,82
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2015
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,01
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2015
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,96
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2016
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,27
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2016
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,90
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2016
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,43
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2016
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,61
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2016
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,78
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2016
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,35
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2016
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,52
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2016
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,44
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2016
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,08
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2016
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,26
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2016
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,18
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2016
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,30
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2017
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,38
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2017
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,33
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2017
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,25
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2017
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,14
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2017
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,31
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2017
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,23
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2017
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,24
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2017
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,19
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2017
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,16
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2017
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,42
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2017
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,28
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2017
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,44
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2018
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,29
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2018
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,32
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2018
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,09
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2018
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,22
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2018
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,40
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2018
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,26
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2018
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,33
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2018
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,09
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2018
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,48
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2018
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,45
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2018
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,21
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2018
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,15
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2019
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,32
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2019
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,43
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2019
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,75
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2019
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,57
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2019
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,13
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2019
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,01
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2019
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,19
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2019
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,11
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2019
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,04
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2019
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,10
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2019
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,51
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2019
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,15
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2020
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,21
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2020
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,25
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2020
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,07
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2020
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,31
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2020
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,38
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2020
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,26
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2020
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,36
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2020
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,24
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2020
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,64
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2020
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,86
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2020
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,89
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2020
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,35
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2021
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,25
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2021
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,86
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2021
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,93
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2021
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,31
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2021
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,83
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2021
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,53
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2021
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,96
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2021
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,87
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2021
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,16
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2021
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,25
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2021
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,95
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2021
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,73
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2022
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,54
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2022
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,01
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2022
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,62
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2022
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,06
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2022
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,47
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2022
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,67
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2022
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,68
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2022
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,36
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2022
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,29
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2022
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,59
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2022
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,41
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2022
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,62
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2023
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,53
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2023
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,84
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2023
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,71
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2023
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,61
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2023
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,23
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2023
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,08
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2023
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,12
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2023
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,23
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2023
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,26
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2023
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,24
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2023
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,28
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2023
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,56
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2024
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,42
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2024
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,83
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2024
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,16
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2024
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,38
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2024
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,46
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2024
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,21
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2024
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,38
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2024
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,02
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2024
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,44
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2024
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,56
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2024
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,39
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2024
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,52
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2025
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,16
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2025
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+1,31
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2025
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,56
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2025
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,43
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2025
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,26
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2025
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,24
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2025
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,26
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2025
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,11
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            set/2025
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,48
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            out/2025
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,09
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            nov/2025
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,18
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            dez/2025
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,33
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jan/2026
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,33
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            fev/2026
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,70
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mar/2026
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,88
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            abr/2026
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,67
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            mai/2026
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,58
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jun/2026
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,16
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro3"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            jul/2026
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+0,07
+
+             </span></div></td>
+
+         </tr>
+
+         <tr class=
+ 		
+			"fundoPadraoAClaro2"
+                
+		>
+            <td width='15%'><div Align="Center"><span class="textoPequeno">
+            ago/2026
+</span></div></td>
+
+			<td><div Align="Center"><span class="textoPequeno">
+-0,32
+
+             </span></div></td>
+
+         </tr>
+
+    <tr class="fundoPadraoAClaro1">
+
+       <td width='15%'><div class="tiNIE" Align="Center">Fonte</div></td>
+
+       <td><div class="tiNIE" align="Center">IBGE</div></td>
+
+    </tr>
+    <tr>
+	<td align="left" colspan="
+	2
+	">
+
+	</td>
+    </tr>
+    </table>
+    
+<input name="hdNumPagina" type="hidden">
+<input name="bilServico" type="hidden" value="[SGSFW2302]" size="9">
+<input type="hidden" name="hdOidSeriesSelecionadas" value="433">
+
+<div class="cen">
+    <input class="botao" type="button" value="Visualizar gr&aacute;fico" title="Visualizar gr&aacute;fico" onclick="javascript:visualizarGrafico(document.forms[0]);">
+</div>
+<br>
+<br>
+<br>
+<br>
+</form></center>
+<script language="javascript">
+	var ie4 = (document.all) ? 1 : 0;
+	var divAguardar = ie4 ? document.all["divAguardar"] : document.getElementById("divAguardar");
+	divAguardar.innerHTML = "";
+</script>
+  <!--
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<p align="center"><span class="titulo1">Sistema em manutenção. Previsão de retorno: 26/02/2007 às 7:00 hs.</span></p>-->
+  
+
+
+
+
+<DIV class='naoimprime' id=toolBar style='width:70;POSITION:absolute;left:-200;font-size:1;'>
+     <span id="navLargura" style="white-space:nowrap;padding-top:1;height:20;">
+	<a href="#"><img valign='middle' src="/img/home/navtopo.gif" title='Ir para o topo da página' alt='Ir para o topo da página' style="border:solid 1 white"></a>
+	<a href="#Bot"><img valign='middle' src="/img/home/navbase.gif" title='Ir para a base da página' alt='Ir para a base da página' style="border:solid 1 white"></a>
+        <a href="javascript:history.back();"><img valign="middle" src="/img/home/navvolta.gif" title='Ir para página anterior' alt='Ir para página anterior' style="border:solid 1 white"></a>
+        <a href="/sgspub/" target="_top"><img valign="middle" src="/img/home/navinicial.gif" title='Ir para página inicial' alt='Ir para página inicial' style="border:solid 1 white"></a>
+        <a href="javascript:window.print();"><img valign="middle" src="/img/home/navimprimir.gif" title='Imprimir página' alt='Imprimir página' style="border:solid 1 white"></a>
+     </span>
+</DIV>
+
+<a name="Bot"/>
+
+<script>
+  javascript:inicial();
+</script>
+  <input name="bilQtde" type="hidden" value="1" size="1">
+</body>
+</html>

@@ -1,0 +1,321 @@
+{
+  "schemaVersion": 1,
+  "year": 2026,
+  "effectiveFrom": "2026-01-01",
+  "effectiveTo": "2026-12-31",
+  "sourceId": "sc-emolumentos-2026",
+  "sourceSha256": "05a84167429107da3c3e2376551fb01ca74a2f8b6c3518138a1a2a14d2e00918",
+  "tables": {
+    "escritura": [
+      {
+        "code": "2.1",
+        "minBrl": 0.01,
+        "maxBrl": 13786.58,
+        "emolumentsBrl": 170.95,
+        "frjBrl": 38.85
+      },
+      {
+        "code": "2.2",
+        "minBrl": 13786.59,
+        "maxBrl": 20679.87,
+        "emolumentsBrl": 197.13,
+        "frjBrl": 44.8
+      },
+      {
+        "code": "2.3",
+        "minBrl": 20679.88,
+        "maxBrl": 28951.83,
+        "emolumentsBrl": 279.86,
+        "frjBrl": 63.61
+      },
+      {
+        "code": "2.4",
+        "minBrl": 28951.84,
+        "maxBrl": 35845.12,
+        "emolumentsBrl": 365.33,
+        "frjBrl": 83.03
+      },
+      {
+        "code": "2.5",
+        "minBrl": 35845.13,
+        "maxBrl": 44117.08,
+        "emolumentsBrl": 456.32,
+        "frjBrl": 103.72
+      },
+      {
+        "code": "2.6",
+        "minBrl": 44117.09,
+        "maxBrl": 53767.69,
+        "emolumentsBrl": 550.08,
+        "frjBrl": 125.03
+      },
+      {
+        "code": "2.7",
+        "minBrl": 53767.7,
+        "maxBrl": 62039.64,
+        "emolumentsBrl": 647.96,
+        "frjBrl": 147.28
+      },
+      {
+        "code": "2.8",
+        "minBrl": 62039.65,
+        "maxBrl": 71690.25,
+        "emolumentsBrl": 748.59,
+        "frjBrl": 170.15
+      },
+      {
+        "code": "2.9",
+        "minBrl": 71690.26,
+        "maxBrl": 79962.21,
+        "emolumentsBrl": 853.38,
+        "frjBrl": 193.97
+      },
+      {
+        "code": "2.10",
+        "minBrl": 79962.22,
+        "maxBrl": 90991.48,
+        "emolumentsBrl": 962.3,
+        "frjBrl": 218.73
+      },
+      {
+        "code": "2.11",
+        "minBrl": 90991.49,
+        "maxBrl": 100642.09,
+        "emolumentsBrl": 1076.74,
+        "frjBrl": 244.74
+      },
+      {
+        "code": "2.12",
+        "minBrl": 100642.1,
+        "maxBrl": 111671.36,
+        "emolumentsBrl": 1193.9,
+        "frjBrl": 271.37
+      },
+      {
+        "code": "2.13",
+        "minBrl": 111671.37,
+        "maxBrl": 122700.64,
+        "emolumentsBrl": 1316.61,
+        "frjBrl": 299.26
+      },
+      {
+        "code": "2.14",
+        "minBrl": 122700.65,
+        "maxBrl": 133729.9,
+        "emolumentsBrl": 1443.44,
+        "frjBrl": 328.09
+      },
+      {
+        "code": "2.15",
+        "minBrl": 133729.91,
+        "maxBrl": 146137.83,
+        "emolumentsBrl": 1574.42,
+        "frjBrl": 357.86
+      },
+      {
+        "code": "2.16",
+        "minBrl": 146137.84,
+        "maxBrl": 158545.76,
+        "emolumentsBrl": 1672.3,
+        "frjBrl": 380.11
+      },
+      {
+        "code": "2.17",
+        "minBrl": 158545.77,
+        "maxBrl": 170953.69,
+        "emolumentsBrl": 1770.19,
+        "frjBrl": 402.36
+      },
+      {
+        "code": "2.18",
+        "minBrl": 170953.7,
+        "maxBrl": 184740.27,
+        "emolumentsBrl": 1865.32,
+        "frjBrl": 423.98
+      },
+      {
+        "code": "2.19",
+        "minBrl": 184740.28,
+        "maxBrl": 198526.88,
+        "emolumentsBrl": 1959.07,
+        "frjBrl": 445.29
+      },
+      {
+        "code": "2.20",
+        "minBrl": 198526.89,
+        "maxBrl": 212313.47,
+        "emolumentsBrl": 2051.42,
+        "frjBrl": 466.28
+      },
+      {
+        "code": "2.21",
+        "minBrl": 212313.48,
+        "maxBrl": 226100.05,
+        "emolumentsBrl": 2142.42,
+        "frjBrl": 486.97
+      }
+    ],
+    "registro": [
+      {
+        "code": "2.2.1",
+        "minBrl": 0.01,
+        "maxBrl": 13786.59,
+        "emolumentsBrl": 162.65,
+        "frjBrl": 36.97
+      },
+      {
+        "code": "2.2.2",
+        "minBrl": 13786.6,
+        "maxBrl": 20679.87,
+        "emolumentsBrl": 184.73,
+        "frjBrl": 41.98
+      },
+      {
+        "code": "2.2.3",
+        "minBrl": 20679.88,
+        "maxBrl": 28951.83,
+        "emolumentsBrl": 263.31,
+        "frjBrl": 59.85
+      },
+      {
+        "code": "2.2.4",
+        "minBrl": 28951.84,
+        "maxBrl": 35845.12,
+        "emolumentsBrl": 343.27,
+        "frjBrl": 78.02
+      },
+      {
+        "code": "2.2.5",
+        "minBrl": 35845.13,
+        "maxBrl": 44117.08,
+        "emolumentsBrl": 428.76,
+        "frjBrl": 97.45
+      },
+      {
+        "code": "2.2.6",
+        "minBrl": 44117.09,
+        "maxBrl": 53767.69,
+        "emolumentsBrl": 516.98,
+        "frjBrl": 117.5
+      },
+      {
+        "code": "2.2.7",
+        "minBrl": 53767.7,
+        "maxBrl": 62039.64,
+        "emolumentsBrl": 607.98,
+        "frjBrl": 138.19
+      },
+      {
+        "code": "2.2.8",
+        "minBrl": 62039.65,
+        "maxBrl": 71690.25,
+        "emolumentsBrl": 703.11,
+        "frjBrl": 159.81
+      },
+      {
+        "code": "2.2.9",
+        "minBrl": 71690.26,
+        "maxBrl": 79962.21,
+        "emolumentsBrl": 802.37,
+        "frjBrl": 182.37
+      },
+      {
+        "code": "2.2.10",
+        "minBrl": 79962.22,
+        "maxBrl": 90991.48,
+        "emolumentsBrl": 904.39,
+        "frjBrl": 205.56
+      },
+      {
+        "code": "2.2.11",
+        "minBrl": 90991.49,
+        "maxBrl": 100642.09,
+        "emolumentsBrl": 1010.55,
+        "frjBrl": 229.69
+      },
+      {
+        "code": "2.2.12",
+        "minBrl": 100642.1,
+        "maxBrl": 111671.36,
+        "emolumentsBrl": 1122.22,
+        "frjBrl": 255.08
+      },
+      {
+        "code": "2.2.13",
+        "minBrl": 111671.37,
+        "maxBrl": 122700.64,
+        "emolumentsBrl": 1222.85,
+        "frjBrl": 277.95
+      },
+      {
+        "code": "2.2.14",
+        "minBrl": 122700.65,
+        "maxBrl": 133729.9,
+        "emolumentsBrl": 1324.88,
+        "frjBrl": 301.14
+      },
+      {
+        "code": "2.2.15",
+        "minBrl": 133729.91,
+        "maxBrl": 146137.83,
+        "emolumentsBrl": 1429.66,
+        "frjBrl": 324.96
+      },
+      {
+        "code": "2.2.16",
+        "minBrl": 146137.84,
+        "maxBrl": 158545.76,
+        "emolumentsBrl": 1535.82,
+        "frjBrl": 349.09
+      },
+      {
+        "code": "2.2.17",
+        "minBrl": 158545.77,
+        "maxBrl": 170953.69,
+        "emolumentsBrl": 1643.35,
+        "frjBrl": 373.53
+      },
+      {
+        "code": "2.2.18",
+        "minBrl": 170953.7,
+        "maxBrl": 184740.27,
+        "emolumentsBrl": 1752.26,
+        "frjBrl": 398.28
+      },
+      {
+        "code": "2.2.19",
+        "minBrl": 184740.28,
+        "maxBrl": 198526.88,
+        "emolumentsBrl": 1863.93,
+        "frjBrl": 423.67
+      },
+      {
+        "code": "2.2.20",
+        "minBrl": 198526.89,
+        "maxBrl": 212313.47,
+        "emolumentsBrl": 1976.99,
+        "frjBrl": 449.36
+      },
+      {
+        "code": "2.2.21",
+        "minBrl": 212313.48,
+        "maxBrl": 226100.05,
+        "emolumentsBrl": 2091.41,
+        "frjBrl": 475.37
+      }
+    ]
+  },
+  "tail": {
+    "stepBrl": 50000,
+    "stepFeeBrl": 50,
+    "maxReferenceBrl": 226100.05,
+    "capPctOfTsj": 80,
+    "tsjMaximumBrl": 7080.89,
+    "tsjSourceId": "sc-teto-2026",
+    "frjPct": 22.73
+  },
+  "seals": {
+    "escritura": 19.3,
+    "registro": 3.86
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "protocolVersion": "barch-capital-references-1.0.0",
+  "sourceId": "bcb-sgs-433",
+  "role": "data",
+  "authority": "public-source-capture-reference-only",
+  "adoptionAllowed": false,
+  "http": {
+    "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados/ultimos/12?formato=json",
+    "retrievedAt": "2026-09-30T16:37:15.748Z",
+    "status": "falha-rede",
+    "httpStatus": null,
+    "attempts": 2,
+    "history": [
+      {
+        "attempt": 1,
+        "at": "2026-09-30T16:37:15.493Z",
+        "status": "falha-rede",
+        "httpStatus": null,
+        "elapsedMs": 43,
+        "retryDelayMs": 211
+      },
+      {
+        "attempt": 2,
+        "at": "2026-09-30T16:37:15.748Z",
+        "status": "falha-rede",
+        "httpStatus": null,
+        "elapsedMs": 1
+      }
+    ],
+    "elapsedMs": 256
+  }
+}

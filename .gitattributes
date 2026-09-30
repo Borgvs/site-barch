@@ -1,3 +1,6 @@
 # Preserve source documents and upstream libraries byte for byte.
 *.pdf binary
 public/terreno/assets/vendor/** -whitespace
+# Evidence captures retain their original hashes and line endings.
+.barch-terreno/bases-sistemicas/economia-investidor-v1/fontes/** binary
+.barch-terreno/bases-sistemicas/valor-terreno-oportunidade-v1/referencias-capital/cas/** binary
