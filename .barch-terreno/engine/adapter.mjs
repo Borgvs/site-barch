@@ -19,6 +19,7 @@ for (const module of manifest.modules) {
 const require = createRequire(import.meta.url);
 const { calcular } = require('./dist/canonical/viab/motor.js');
 const { hashEstavel } = require('./dist/canonical/viab/financeiro.js');
+const canonicalFinance = require('./dist/canonical/viab/financeiro.js');
 const { ENGINE_VERSION } = require('./dist/canonical/viab/tipos.js');
 const { aplicarAlavanca, resolverDecisionLab, DECISION_LAB_VERSION } = require('./dist/canonical/viab/decisao.js');
 const { calculateLandMarketValuation } = require('./dist/canonical/wizard-2-0/terrain-feasibility/market-valuation.js');
@@ -245,4 +246,17 @@ export function evaluateComparableMarket(input) {
     return {schema_version:1,authority:'missing',investor_ready:false,result:null,
       error:{code:'MARKET_INPUT_INVALID',message:error.message}};
   }
+}
+
+/** Monthly ledger only: reuse the pinned financial primitives, never the legacy
+ * equity aggregation. Caller owns the explicit unlevered/equity cashflow. */
+export function evaluateMonthlyLedger({cashflow,discountRateAnnualPct}) {
+  if(!Array.isArray(cashflow)||cashflow.length<2||cashflow.length>241||!cashflow.every(finite))
+    fail('INVALID_LEDGER','Fluxo mensal finito de 2–241 posições obrigatório.');
+  number(discountRateAnnualPct,'discountRateAnnualPct',0,1000);
+  const irr=canonicalFinance.tir(cashflow);
+  return {npvBrl:canonicalFinance.vpl(cashflow,discountRateAnnualPct),irrAnnualPct:irr.aa,
+    irrReason:irr.motivo??null,paybackMonth:canonicalFinance.payback(cashflow),
+    discountMonthly:canonicalFinance.taxaMensal(discountRateAnnualPct),
+    engineVersion:ENGINE_VERSION,primitiveArtifactSha256:manifest.modules.find(m=>m.artifact==='dist/canonical/viab/financeiro.js')?.artifact_sha256};
 }

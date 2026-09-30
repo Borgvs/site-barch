@@ -3,8 +3,9 @@ export const analysisSteps = [
  ['Identidade e escopo','Vincular registro, cadastro, localização, jurisdição, finalidade e data de referência.'],
  ['Curadoria das bases','Consultar primeiro a base Barch; completar lacunas na fonte competente, preservando versão, cobertura e integridade.'],
  ['Território e condicionantes','Confrontar perímetro, legislação, relevo, ambiente, infraestrutura e acessos sem somar restrições sobrepostas.'],
- ['Programa e mercado','Qualificar o produto principal, terrenos substitutos e comparáveis; separar preço pedido, transação e hipótese.'],
- ['Viabilidade cruzada','Conciliar áreas, escopo de custos, preço, prazo, absorção e capital na mesma versão do cenário.'],
+ ['Valor da terra','Qualificar terrenos substitutos e comparáveis, separar ofertas e transações, conciliar área, ajustes e faixa de valor.'],
+ ['Economia da aquisição','Confrontar valor de mercado, preço e teto de compra com fluxos, prazo, risco, TMA, VPL e capacidade de aporte.'],
+ ['Possibilidades de uso','Explorar compatibilidades e envelope de forma preliminar; aprofundar programa e viabilidade do produto no Wizard.'],
  ['Revisão adversarial','Testar conflitos de fonte, unidades, atualidade, condições de perda e dependências ainda não verificadas.'],
  ['Decisão e atualização','Registrar condições para avançar, reformular ou interromper; mudanças nas bases exigem nova conferência.'],
 ];
