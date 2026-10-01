@@ -421,8 +421,8 @@
     },
     {
       "path": "/terreno/app.js",
-      "bytes": 105118,
-      "sha256": "7eb0ed18c0ca4ba95ea76c9ecfb439767c341031ac6b74b86ccb48971a1c42f8"
+      "bytes": 105277,
+      "sha256": "3c4210a737fccbc97c08bed4c7a9d5fc69b4ed951af2902ad926c8ca5b585b25"
     },
     {
       "path": "/terreno/assessment.js",
@@ -566,8 +566,8 @@
     },
     {
       "path": "/terreno/index.html",
-      "bytes": 1379,
-      "sha256": "d8960c0e7fc5d222abfafc67b2cc52a7e58536089a99349dd1dcc4f9c66f8313"
+      "bytes": 1403,
+      "sha256": "66a44c58c5e72d55d7831802b7444a0fbc8414d0445eb14e1f8a500ad15d5599"
     },
     {
       "path": "/terreno/investor-ui.js",
@@ -852,6 +852,13 @@
       "reason": "not-public-approved"
     }
   ],
-  "clientVersion": "cfd4bbc9ea1d",
-  "snapshotSha256": "ec29eb7ccbcf68f8425c9e035ed97331a30743106673e4848c24f83dcee07c5d"
+  "clientVersion": "3c4210a737fc",
+  "snapshotSha256": "ec29eb7ccbcf68f8425c9e035ed97331a30743106673e4848c24f83dcee07c5d",
+  "clientUpdatedAt": "2026-10-01T19:09:32.974935+00:00",
+  "concept": {
+    "label": "Concept · uso e testes",
+    "independentOfPanel": true,
+    "baseCommit": "9153e13",
+    "studyDataReexported": false
+  }
 }
