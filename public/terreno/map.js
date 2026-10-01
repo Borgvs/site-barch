@@ -1,5 +1,5 @@
 /* Local territorial viewer. No cadastral adoption, measurements or legal decisions. */
-import {exploratorySummary,exploratoryProposalMetadata,assertExploratoryStudy,assertLandUseStudy} from './exploratory-proposal.js?v=531af8205cc5';
+import {exploratorySummary,exploratoryProposalMetadata,assertExploratoryStudy,assertLandUseStudy} from './exploratory-proposal.js?v=cfd4bbc9ea1d';
 const DEM = 'https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png';
 const OSM = '<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a>';
 const finitePosition = p => Array.isArray(p) && Number.isFinite(p[0]) && Number.isFinite(p[1]) && Math.abs(p[0]) <= 180 && Math.abs(p[1]) <= 85.051129;
@@ -258,7 +258,7 @@ export async function mountMap(container, study, options = {}) {
   try {
     if (!center) throw new Error('Localização geográfica não confirmada.');
     if (!document.querySelector('link[data-area-map-css]')) {const css=document.createElement('link');css.rel='stylesheet';css.href=new URL('./assets/vendor/maplibre-gl.css',import.meta.url).href;css.dataset.areaMapCss='true';document.head.append(css);}
-    const gl=await import('./assets/vendor/maplibre-gl.mjs?v=531af8205cc5');
+    const gl=await import('./assets/vendor/maplibre-gl.mjs?v=cfd4bbc9ea1d');
     gl.setWorkerUrl(new URL('./assets/vendor/maplibre-gl-worker.mjs',import.meta.url).href);gl.setWorkerCount(2);
     const sources = {'osm-context':{type:'raster',tiles:['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],tileSize:256,maxzoom:19,attribution:OSM}};
     const baseLayers = [{id:'paper',type:'background',paint:{'background-color':'#F0EDE5'}},{id:'osm-context',type:'raster',source:'osm-context',paint:{'raster-saturation':-.92,'raster-opacity':.86,'raster-contrast':.08}}];
