@@ -7,13 +7,14 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 15;
 const root = path.join(process.cwd(), '.barch-terreno');
-let snapshotPromise, enginePromise, currencyPromise, economicsPromise, publicationPromise;
+let snapshotPromise, enginePromise, currencyPromise, economicsPromise, preliminaryPromise, publicationPromise;
 const snapshot = () => snapshotPromise ??= readFile(path.join(root, 'snapshot.json'), 'utf8').then(JSON.parse);
 // Recibo servido da publicação: o SHA do snapshot no ar, sem a lista de documentos excluídos.
 const publication = () => publicationPromise ??= readFile(path.join(root, 'publication-manifest.json'), 'utf8').then(JSON.parse).then(m => ({schemaVersion:m.schemaVersion, mode:m.mode, generatedAt:m.generatedAt, defaultSlug:m.defaultSlug, clientVersion:m.clientVersion, snapshotSha256:m.snapshotSha256 ?? null, studies:(m.studies ?? []).map(({slug, publicDocuments, presets, gisFiles}) => ({slug, publicDocuments, presets, gisFiles})), publicFiles:(m.files ?? []).length}));
 const json = (data, status = 200) => Response.json(data, {status, headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Robots-Tag':'noindex, nofollow'}});
 const problem = (error, status) => json({error},status);
 const economics=()=>economicsPromise??=import(/* webpackIgnore: true */ pathToFileURL(path.join(root,'acquisition-economics.mjs')).href);
+const preliminary=()=>preliminaryPromise??=import(/* webpackIgnore: true */ pathToFileURL(path.join(root,'preliminary-advisory.mjs')).href);
 async function currentProjection(value){
  if(value?.study?.verification)return {...value,study:await currentProjection(value.study)};
  if(!value?.verification&&!value?.latest)return value;
@@ -74,8 +75,11 @@ export async function POST(request, context) {
     if(!Object.hasOwn(data.routes,'studies/'+parts[1]))return problem('Estudo não encontrado.',404);
     if(economicCalculation){
       const engine=await economics(),study=await currentProjection(data.routes['studies/'+parts[1]]);let result;
-      result=engine.evaluateAcquisition(body);
-      return json({...result,assessmentContext:{studySlug:parts[1],state:study.assessment?.state??'unverifiable',verificationState:study.verification?.freshness?.status??'unverifiable',scope:'Cálculo de hipótese declarada, sem persistência, validação de fontes ou aprovação.'}},result.status==='invalid'?422:200);
+      if(body?.preliminaryMode===true){
+        if(Object.keys(body).some(k=>!['preliminaryMode','assumptions'].includes(k)))return problem('Parâmetros preliminares não permitidos.',400);
+        const advisory=await preliminary();result=advisory.evaluatePreliminaryAdvisory(study,body.assumptions??{});
+      }else result=engine.evaluateAcquisition(body);
+      return json({...result,assessmentContext:{studySlug:parts[1],state:study.assessment?.state??'unverifiable',verificationState:study.verification?.freshness?.status??'unverifiable',scope:body?.preliminaryMode===true?'Leitura preliminar de referências públicas e premissas editáveis, sem adoção formal de valor ou aprovação.':'Cálculo de hipótese declarada, sem persistência, validação de fontes ou aprovação.'}},result.status==='invalid'?422:200);
     }
     if(!body||typeof body!=='object'||Array.isArray(body)||typeof body.presetId!=='string'||!body.changes||typeof body.changes!=='object'||Array.isArray(body.changes))return problem('Cenário inválido.',400);
     if(Object.keys(body).some(k=>!['presetId','changes'].includes(k))||Object.keys(body.changes).length>40||Object.entries(body.changes).some(([k,v])=>!/^[a-z][a-z0-9_]{0,79}$/.test(k)||(k==='scenario_capital_confirmed'?typeof v!=='boolean':typeof v!=='number'||!Number.isFinite(v))))return problem('Parâmetros não permitidos.',400);

@@ -1,0 +1,573 @@
+{
+  "schemaVersion": 1,
+  "version": "preliminary-advisory-policy-1.0.0",
+  "checkedAt": "2026-10-01T19:45:03.130Z",
+  "scope": "Pré-avaliação pública do imóvel e capacidade de aquisição; não contém propostas privadas, preço negociado, aprovação de investimento ou valor de mercado adotado.",
+  "methodSource": {
+    "title": "SPU · Manual de avaliação de imóveis",
+    "url": "https://www.gov.br/gestao/pt-br/assuntos/patrimonio-da-uniao/publicacoes/publicacoes-sobre-patrimonio-da-uniao/arquivos/2018/manual-de-avaliacao-de-imoveis-2018-versao-impressa.pdf",
+    "role": "Referência metodológica: identificar objeto, finalidade, contexto e dados; o ensaio não declara laudo NBR."
+  },
+  "capital": {
+    "id": "bcb-sgs-432",
+    "label": "Meta Selic · referência de oportunidade",
+    "valueAnnualPct": 13.75,
+    "effectiveDate": "2026-10-01",
+    "checkedAt": "2026-10-01T19:31:28.592Z",
+    "snapshotSha256": "286ba2f49086730f003581541745eaf0d5d629dbd3b91c0d899a8fe03cc6190f",
+    "sourceUrl": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&dataInicial=20%2F09%2F2026&dataFinal=01%2F10%2F2026",
+    "metadataUrl": "https://dadosabertos.bcb.gov.br/dataset/432-taxa-de-juros---meta-selic-definida-pelo-copom",
+    "maxAgeDays": 7,
+    "role": "short_term_opportunity_benchmark",
+    "restriction": "Meta de política monetária, não yield de prazo casado, CAPM calibrado, taxa livre de risco pura ou TMA automaticamente adotada."
+  },
+  "evidence": {
+    "maxAreaRatio": 4,
+    "maxOfferAgeDays": 180,
+    "singleRowRangePct": 25,
+    "minimumRangePct": 15,
+    "publisherWeightCap": true,
+    "authority": "asking_reference_proxy_not_bare_land_appraisal",
+    "rules": [
+      "Excluir preço do próprio sujeito, ofertas excluídas, réplicas, produto pronto/lotes de varejo e transferências sem conciliação.",
+      "Compatibilidade de porte filtra a amostra; não ajusta preço pelo tamanho.",
+      "Central é mediana ponderada descritiva; extremos e margem mínima são faixa de ensaio, não intervalo de confiança.",
+      "Benfeitorias, posição, liquidez e direitos divergentes permanecem condições materiais; não há coeficiente ambiental nacional."
+    ]
+  },
+  "defaults": {
+    "exitMonth": 36,
+    "growthAnnualPct": 0,
+    "safetyMarginPct": 10,
+    "riskPremiumPp": 8,
+    "riskComponents": [
+      {
+        "label": "Iliquidez da terra",
+        "pct": 3
+      },
+      {
+        "label": "Condição física e diligência",
+        "pct": 2
+      },
+      {
+        "label": "Execução e saída",
+        "pct": 3
+      }
+    ],
+    "itbiFallbackBudgetPct": 2,
+    "notaryFallbackBudgetBrl": 35000,
+    "diligenceBudgetBrl": 60000,
+    "preparationReservePct": 3,
+    "preparationUnitBudgetBrl": 150,
+    "carryingReserveAnnualPct": 0.25,
+    "maintenanceMonthlyBrl": 1000,
+    "commissionPct": 5,
+    "taxReservePct": 20,
+    "debtSpreadPp": 6,
+    "debtPct": 0,
+    "deedCount": 1,
+    "registrationCount": 1,
+    "issBudgetPct": 2
+  },
+  "policyNature": "Orçamentos e prêmios internos editáveis, não cotações de obra/crédito, alíquotas de IPTU/ITR ou regime fiscal homologado. Sem valorização nominal automática; saída se ancora em ofertas externas.",
+  "municipalities": {
+    "Itajaí/SC": {
+      "itbiPct": 2,
+      "sourceId": "itajai-itbi",
+      "status": "captured_candidate",
+      "notaryMode": "sc_2026",
+      "notaryBudgetBrl": null
+    },
+    "São Paulo/SP": {
+      "itbiPct": 3,
+      "sourceId": "sp-itbi",
+      "status": "captured_candidate",
+      "notaryMode": "editable_budget",
+      "notaryBudgetBrl": 25000
+    },
+    "Brumadinho/MG": {
+      "itbiPct": 2,
+      "sourceId": "brumadinho-itbi",
+      "status": "historical_rule_current_consolidation_pending",
+      "notaryMode": "editable_budget",
+      "notaryBudgetBrl": 35000
+    }
+  },
+  "scNotaryTable": {
+    "schemaVersion": 1,
+    "year": 2026,
+    "effectiveFrom": "2026-01-01",
+    "effectiveTo": "2026-12-31",
+    "sourceId": "sc-emolumentos-2026",
+    "sourceSha256": "05a84167429107da3c3e2376551fb01ca74a2f8b6c3518138a1a2a14d2e00918",
+    "tables": {
+      "escritura": [
+        {
+          "code": "2.1",
+          "minBrl": 0.01,
+          "maxBrl": 13786.58,
+          "emolumentsBrl": 170.95,
+          "frjBrl": 38.85
+        },
+        {
+          "code": "2.2",
+          "minBrl": 13786.59,
+          "maxBrl": 20679.87,
+          "emolumentsBrl": 197.13,
+          "frjBrl": 44.8
+        },
+        {
+          "code": "2.3",
+          "minBrl": 20679.88,
+          "maxBrl": 28951.83,
+          "emolumentsBrl": 279.86,
+          "frjBrl": 63.61
+        },
+        {
+          "code": "2.4",
+          "minBrl": 28951.84,
+          "maxBrl": 35845.12,
+          "emolumentsBrl": 365.33,
+          "frjBrl": 83.03
+        },
+        {
+          "code": "2.5",
+          "minBrl": 35845.13,
+          "maxBrl": 44117.08,
+          "emolumentsBrl": 456.32,
+          "frjBrl": 103.72
+        },
+        {
+          "code": "2.6",
+          "minBrl": 44117.09,
+          "maxBrl": 53767.69,
+          "emolumentsBrl": 550.08,
+          "frjBrl": 125.03
+        },
+        {
+          "code": "2.7",
+          "minBrl": 53767.7,
+          "maxBrl": 62039.64,
+          "emolumentsBrl": 647.96,
+          "frjBrl": 147.28
+        },
+        {
+          "code": "2.8",
+          "minBrl": 62039.65,
+          "maxBrl": 71690.25,
+          "emolumentsBrl": 748.59,
+          "frjBrl": 170.15
+        },
+        {
+          "code": "2.9",
+          "minBrl": 71690.26,
+          "maxBrl": 79962.21,
+          "emolumentsBrl": 853.38,
+          "frjBrl": 193.97
+        },
+        {
+          "code": "2.10",
+          "minBrl": 79962.22,
+          "maxBrl": 90991.48,
+          "emolumentsBrl": 962.3,
+          "frjBrl": 218.73
+        },
+        {
+          "code": "2.11",
+          "minBrl": 90991.49,
+          "maxBrl": 100642.09,
+          "emolumentsBrl": 1076.74,
+          "frjBrl": 244.74
+        },
+        {
+          "code": "2.12",
+          "minBrl": 100642.1,
+          "maxBrl": 111671.36,
+          "emolumentsBrl": 1193.9,
+          "frjBrl": 271.37
+        },
+        {
+          "code": "2.13",
+          "minBrl": 111671.37,
+          "maxBrl": 122700.64,
+          "emolumentsBrl": 1316.61,
+          "frjBrl": 299.26
+        },
+        {
+          "code": "2.14",
+          "minBrl": 122700.65,
+          "maxBrl": 133729.9,
+          "emolumentsBrl": 1443.44,
+          "frjBrl": 328.09
+        },
+        {
+          "code": "2.15",
+          "minBrl": 133729.91,
+          "maxBrl": 146137.83,
+          "emolumentsBrl": 1574.42,
+          "frjBrl": 357.86
+        },
+        {
+          "code": "2.16",
+          "minBrl": 146137.84,
+          "maxBrl": 158545.76,
+          "emolumentsBrl": 1672.3,
+          "frjBrl": 380.11
+        },
+        {
+          "code": "2.17",
+          "minBrl": 158545.77,
+          "maxBrl": 170953.69,
+          "emolumentsBrl": 1770.19,
+          "frjBrl": 402.36
+        },
+        {
+          "code": "2.18",
+          "minBrl": 170953.7,
+          "maxBrl": 184740.27,
+          "emolumentsBrl": 1865.32,
+          "frjBrl": 423.98
+        },
+        {
+          "code": "2.19",
+          "minBrl": 184740.28,
+          "maxBrl": 198526.88,
+          "emolumentsBrl": 1959.07,
+          "frjBrl": 445.29
+        },
+        {
+          "code": "2.20",
+          "minBrl": 198526.89,
+          "maxBrl": 212313.47,
+          "emolumentsBrl": 2051.42,
+          "frjBrl": 466.28
+        },
+        {
+          "code": "2.21",
+          "minBrl": 212313.48,
+          "maxBrl": 226100.05,
+          "emolumentsBrl": 2142.42,
+          "frjBrl": 486.97
+        }
+      ],
+      "registro": [
+        {
+          "code": "2.2.1",
+          "minBrl": 0.01,
+          "maxBrl": 13786.59,
+          "emolumentsBrl": 162.65,
+          "frjBrl": 36.97
+        },
+        {
+          "code": "2.2.2",
+          "minBrl": 13786.6,
+          "maxBrl": 20679.87,
+          "emolumentsBrl": 184.73,
+          "frjBrl": 41.98
+        },
+        {
+          "code": "2.2.3",
+          "minBrl": 20679.88,
+          "maxBrl": 28951.83,
+          "emolumentsBrl": 263.31,
+          "frjBrl": 59.85
+        },
+        {
+          "code": "2.2.4",
+          "minBrl": 28951.84,
+          "maxBrl": 35845.12,
+          "emolumentsBrl": 343.27,
+          "frjBrl": 78.02
+        },
+        {
+          "code": "2.2.5",
+          "minBrl": 35845.13,
+          "maxBrl": 44117.08,
+          "emolumentsBrl": 428.76,
+          "frjBrl": 97.45
+        },
+        {
+          "code": "2.2.6",
+          "minBrl": 44117.09,
+          "maxBrl": 53767.69,
+          "emolumentsBrl": 516.98,
+          "frjBrl": 117.5
+        },
+        {
+          "code": "2.2.7",
+          "minBrl": 53767.7,
+          "maxBrl": 62039.64,
+          "emolumentsBrl": 607.98,
+          "frjBrl": 138.19
+        },
+        {
+          "code": "2.2.8",
+          "minBrl": 62039.65,
+          "maxBrl": 71690.25,
+          "emolumentsBrl": 703.11,
+          "frjBrl": 159.81
+        },
+        {
+          "code": "2.2.9",
+          "minBrl": 71690.26,
+          "maxBrl": 79962.21,
+          "emolumentsBrl": 802.37,
+          "frjBrl": 182.37
+        },
+        {
+          "code": "2.2.10",
+          "minBrl": 79962.22,
+          "maxBrl": 90991.48,
+          "emolumentsBrl": 904.39,
+          "frjBrl": 205.56
+        },
+        {
+          "code": "2.2.11",
+          "minBrl": 90991.49,
+          "maxBrl": 100642.09,
+          "emolumentsBrl": 1010.55,
+          "frjBrl": 229.69
+        },
+        {
+          "code": "2.2.12",
+          "minBrl": 100642.1,
+          "maxBrl": 111671.36,
+          "emolumentsBrl": 1122.22,
+          "frjBrl": 255.08
+        },
+        {
+          "code": "2.2.13",
+          "minBrl": 111671.37,
+          "maxBrl": 122700.64,
+          "emolumentsBrl": 1222.85,
+          "frjBrl": 277.95
+        },
+        {
+          "code": "2.2.14",
+          "minBrl": 122700.65,
+          "maxBrl": 133729.9,
+          "emolumentsBrl": 1324.88,
+          "frjBrl": 301.14
+        },
+        {
+          "code": "2.2.15",
+          "minBrl": 133729.91,
+          "maxBrl": 146137.83,
+          "emolumentsBrl": 1429.66,
+          "frjBrl": 324.96
+        },
+        {
+          "code": "2.2.16",
+          "minBrl": 146137.84,
+          "maxBrl": 158545.76,
+          "emolumentsBrl": 1535.82,
+          "frjBrl": 349.09
+        },
+        {
+          "code": "2.2.17",
+          "minBrl": 158545.77,
+          "maxBrl": 170953.69,
+          "emolumentsBrl": 1643.35,
+          "frjBrl": 373.53
+        },
+        {
+          "code": "2.2.18",
+          "minBrl": 170953.7,
+          "maxBrl": 184740.27,
+          "emolumentsBrl": 1752.26,
+          "frjBrl": 398.28
+        },
+        {
+          "code": "2.2.19",
+          "minBrl": 184740.28,
+          "maxBrl": 198526.88,
+          "emolumentsBrl": 1863.93,
+          "frjBrl": 423.67
+        },
+        {
+          "code": "2.2.20",
+          "minBrl": 198526.89,
+          "maxBrl": 212313.47,
+          "emolumentsBrl": 1976.99,
+          "frjBrl": 449.36
+        },
+        {
+          "code": "2.2.21",
+          "minBrl": 212313.48,
+          "maxBrl": 226100.05,
+          "emolumentsBrl": 2091.41,
+          "frjBrl": 475.37
+        }
+      ]
+    },
+    "tail": {
+      "stepBrl": 50000,
+      "stepFeeBrl": 50,
+      "maxReferenceBrl": 226100.05,
+      "capPctOfTsj": 80,
+      "tsjMaximumBrl": 7080.89,
+      "tsjSourceId": "sc-teto-2026",
+      "frjPct": 22.73
+    },
+    "seals": {
+      "escritura": 19.3,
+      "registro": 3.86
+    }
+  },
+  "sources": [
+    {
+      "id": "itajai-itbi",
+      "title": "1º Tabelionato de Itajaí · compra e venda",
+      "url": "https://www.tabelionatoitajai.com.br/compra-e-venda/",
+      "sha256": "792792bae44c21b0292255b6b89d6753f485b7364f53944922f7008f673be14a",
+      "checkedAt": "2026-09-30T20:23:16.188Z"
+    },
+    {
+      "id": "itajai-iss-frj",
+      "title": "1º Tabelionato de Itajaí · ISS, FRJ e tabela 2026",
+      "url": "https://www.tabelionatoitajai.com.br/tabela-de-emolumentos/",
+      "sha256": "fb5e92a049edb4757b6c3b9bdd56c263ca40311f4d9d3cb3c95a8f69634bf0ab",
+      "checkedAt": "2026-09-30T20:23:16.189Z"
+    },
+    {
+      "id": "sc-emolumentos-2026",
+      "title": "TJSC · Circular 643/2025 · valores 2026",
+      "url": "https://www.tjsc.jus.br/documents/d/corregedoria-geral-da-justica/circularcgj643-2025-pdf",
+      "sha256": "05a84167429107da3c3e2376551fb01ca74a2f8b6c3518138a1a2a14d2e00918",
+      "checkedAt": "2026-09-30T20:23:16.189Z"
+    },
+    {
+      "id": "sc-teto-2026",
+      "title": "TJSC · Resolução GP 71/2025 · TSJ 2026",
+      "url": "https://busca.tjsc.jus.br/dje-consulta/rest/diario/caderno?cdCaderno=4&edicao=4592",
+      "sha256": "3badb4d349f70ad9f1f858b7bb547695331fcf3c89b04343cde11df6f5c9b473",
+      "checkedAt": "2026-09-30T20:23:16.815Z"
+    },
+    {
+      "id": "sp-itbi",
+      "title": "Fazenda PMSP · ITBI 2026",
+      "url": "https://smartsampa.prefeitura.sp.gov.br/web/fazenda/w/servicos/itbi/2513",
+      "sha256": "51c5c894a185c198946f1bd3ce7f62d5fe453d567e19faae44c558a5d3c29661",
+      "checkedAt": "2026-09-30T20:23:16.816Z"
+    },
+    {
+      "id": "brumadinho-itbi",
+      "title": "Prefeitura de Brumadinho · Código Tributário · Art. 170",
+      "url": "https://s3-apps-01.mgdata.com.br/portalbrumadinho/brumadinho/importacao/licitacoes/dlm_uploads/2019/01/2019-01-25_629108-lei-940-de-1997-codigo-tributario-lc-25-de-1997-ii.pdf",
+      "sha256": "500d8b41b44adef1adb7a97f4b8a315d9b4628c4af17542d08fb1b10b8b8def5",
+      "checkedAt": "2026-09-30T20:24:00.330Z"
+    },
+    {
+      "id": "rfb-ganho-capital",
+      "title": "Receita Federal · alíquotas de ganho de capital",
+      "url": "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/pagamento/ganhos-de-capital/aliquotas",
+      "sha256": "69ec91ceb194871d7e6d02e8f4bbe9323a2073c625523c74bceda6ed089ad4ab",
+      "checkedAt": "2026-09-30T20:23:18.755Z"
+    }
+  ],
+  "profiles": {
+    "salseiros-itajai-matricula-77931": {
+      "assetClass": "urban_industrial_land",
+      "valuationLabel": "Imóvel industrial · referência por área bruta",
+      "areaBasis": "Área reproduzida da matrícula/laudo, a conciliar com cadastro municipal",
+      "comparablesClass": "urban_industrial_land",
+      "conditions": [
+        "Acesso, área utilizável, cheias históricas, APP indicada e solução de esgoto influenciam preço e ocupação.",
+        "Ofertas incluem benfeitorias e frentes distintas; valor isolado de terra nua não está segregado."
+      ]
+    },
+    "talma-tatuape-lote-0003": {
+      "assetClass": "urban_land",
+      "valuationLabel": "Imóvel urbano · referência por área fiscal",
+      "areaBasis": "Área fiscal de 7.338 m², sem adoção de perímetro registral",
+      "comparablesClass": "urban_land",
+      "builtAreaM2": 4684,
+      "conditions": [
+        "Única oferta de porte compatível inclui 900 m² edificados; sujeito possui área construída fiscal de 4.684 m².",
+        "Preparo/demolição é orçamento de ensaio, exige levantamento e cotação; ocupação condicionada a perímetro e regras ambientais."
+      ]
+    },
+    "terras-do-palhano-brumadinho": {
+      "assetClass": "rural_bulk_land",
+      "valuationLabel": "Gleba em escala rural · referência do ativo físico",
+      "areaBasis": "Área bruta do projeto de 1.375.087,71 m², não estoque de lotes ou valor de ações da SPE",
+      "comparablesClass": "rural_bulk_land",
+      "maintenanceMonthlyBrl": 3000,
+      "conditions": [
+        "Ofertas rurais de porte próximo têm benfeitorias; não quantificam valor de aprovação do loteamento, infraestrutura, lagoa, clube ou participações societárias.",
+        "Direitos aprovados e custos de execução exigem avaliação própria, sem multiplicar preços de lotes de varejo pela área bruta."
+      ]
+    }
+  },
+  "additionalRows": [
+    {
+      "id": "palhano-aps7592",
+      "label": "APS 7592 · fazenda 118,70 ha · Interior de Brumadinho",
+      "areaM2": 1187000,
+      "priceBrl": 5000000,
+      "reason": "Inclui casa-sede de 300 m², casa de caseiro e curral. Localização/polígono e regularidade não comprovados; sem ajuste de benfeitorias.",
+      "areaBasis": "Área total anunciada: 118,70 hectares",
+      "studySlug": "terras-do-palhano-brumadinho",
+      "kind": "asking_price",
+      "assetClass": "rural_bulk_land",
+      "excluded": false,
+      "date": "2026-10-01",
+      "observedOn": null,
+      "sourceUrl": "https://www.apsimobiliaria.com.br/imovel-lp/3272473/fazenda-venda-brumadinho-mg-interior",
+      "sourceSha256": "56033ac8e2e9be79a654520203eae71cfe6495cfb9b69f7c2a2775e1f3df9837",
+      "sourceId": "palhano-aps7592",
+      "capture": {
+        "id": "palhano-aps7592",
+        "url": "https://www.apsimobiliaria.com.br/imovel-lp/3272473/fazenda-venda-brumadinho-mg-interior",
+        "checkedAt": "2026-10-01T19:45:02.024Z",
+        "status": "captured",
+        "httpStatus": 200,
+        "sha256": "56033ac8e2e9be79a654520203eae71cfe6495cfb9b69f7c2a2775e1f3df9837",
+        "bytes": 77345,
+        "file": "bases-sistemicas/valor-terreno-oportunidade-v1/preliminary-sources/56033ac8e2e9be79a654520203eae71cfe6495cfb9b69f7c2a2775e1f3df9837.html",
+        "contentType": "text/html; charset=iso-8859-1"
+      },
+      "availability": "primary_http_200",
+      "eligibleForFormalValuation": false
+    },
+    {
+      "id": "palhano-ceville1732",
+      "label": "Ceville 1732 · fazenda 147 ha · Casa Branca",
+      "areaM2": 1470000,
+      "priceBrl": 25000000,
+      "reason": "Inclui edificações, curral e máquinas. APP/reserva, CAR, CCIR, ITR e regularidade são declarações do anunciante, não validação cadastral.",
+      "areaBasis": "Área total anunciada: 147 hectares",
+      "studySlug": "terras-do-palhano-brumadinho",
+      "kind": "asking_price",
+      "assetClass": "rural_bulk_land",
+      "excluded": false,
+      "date": "2026-10-01",
+      "observedOn": null,
+      "sourceUrl": "https://cevilleimoveis.com.br/imovel/fazenda-casa-brancabrumadinho-brumadinho-mg-5-quartos-1732",
+      "sourceSha256": "283d6b7f579b30383a7e002065b24fab50f2c2e95b7527038406a5e0326d4166",
+      "sourceId": "palhano-ceville1732",
+      "capture": {
+        "id": "palhano-ceville1732",
+        "url": "https://cevilleimoveis.com.br/imovel/fazenda-casa-brancabrumadinho-brumadinho-mg-5-quartos-1732",
+        "checkedAt": "2026-10-01T19:45:03.130Z",
+        "status": "captured",
+        "httpStatus": 200,
+        "sha256": "283d6b7f579b30383a7e002065b24fab50f2c2e95b7527038406a5e0326d4166",
+        "bytes": 329866,
+        "file": "bases-sistemicas/valor-terreno-oportunidade-v1/preliminary-sources/283d6b7f579b30383a7e002065b24fab50f2c2e95b7527038406a5e0326d4166.html",
+        "contentType": "text/html; charset=utf-8"
+      },
+      "availability": "primary_http_200",
+      "eligibleForFormalValuation": false
+    }
+  ],
+  "quarantinedRows": [
+    {
+      "id": "palhano-walim-ha0002",
+      "sourceUrl": "https://www.walimimoveis.com.br/imovel/haras-brumadinho-3-quartos/HA0002-WANR",
+      "status": "quarantined",
+      "reason": "Acesso primário 403; réplica informada indisponível. Sem confirmação atual da oferta, não participa da faixa."
+    }
+  ],
+  "capitalUpdatedAt": "2026-10-01T19:54:48.657Z"
+}

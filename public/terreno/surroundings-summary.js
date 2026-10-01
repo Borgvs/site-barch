@@ -1,5 +1,5 @@
 /** Latest recorded statement per criterion; counts describe records, never risk or approval. */
-import {STREETVIEW_REVIEW_CRITERIA,STREETVIEW_REVIEW_STATUSES,STREETVIEW_REVIEW_BASES} from './surroundings-schema.js?v=cfd4bbc9ea1d';
+import {STREETVIEW_REVIEW_CRITERIA,STREETVIEW_REVIEW_STATUSES,STREETVIEW_REVIEW_BASES} from './surroundings-schema.js?v=e584574d56dd';
 const compare=(a,b)=>a<b?-1:a>b?1:0;
 function validDay(value){return typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&Number.isFinite(Date.parse(value+'T12:00:00Z'))&&new Date(value+'T12:00:00Z').toISOString().slice(0,10)===value;}
 function instant(value){return typeof value==='string'&&/^\d{4}-\d{2}-\d{2}T.*(?:Z|[+-]\d{2}:\d{2})$/.test(value)&&validDay(value.slice(0,10))?Date.parse(value):NaN;}
