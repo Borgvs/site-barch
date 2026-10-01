@@ -1,5 +1,5 @@
-import {escapeHtml as esc,fmtMoney,fmtNumber} from './analysis-packet.mjs?v=f8a4d03d0cf4';
-const stateLabel=s=>({unseparated:'Contribuição a separar',supported:'Conferido',verified:'Verificado',pass:'Conferido',passed:'Conferido',current:'Atual',declared:'Declarado na fonte',partial:'Parcial',pending:'A verificar',unverified:'A verificar',unknown:'A verificar',blocked:'Impedimento',fail:'Rever',failed:'Rever',not_applicable:'Não aplicável',context:'Contexto',warning:'Qualificar',consistent:'Consistente',limited:'Base limitada'}[s]??s??'A verificar');
+import {escapeHtml as esc,fmtMoney,fmtNumber} from './analysis-packet.mjs?v=fe0a812ef54f';
+const stateLabel=s=>({unseparated:'Contribuição a separar',cross_regime:'Transição urbano/rural',supported:'Conferido',verified:'Verificado',pass:'Conferido',passed:'Conferido',current:'Atual',declared:'Declarado na fonte',partial:'Parcial',pending:'A verificar',unverified:'A verificar',unknown:'A verificar',blocked:'Impedimento',fail:'Rever',failed:'Rever',not_applicable:'Não aplicável',context:'Contexto',warning:'Qualificar',consistent:'Consistente',limited:'Base limitada'}[s]??s??'A verificar');
 const landStateLabel=v=>({vacant:'Terreno vago declarado',improved:'Com benfeitorias',unknown:'Benfeitorias a qualificar'}[v]??v??'Referência física');
 const finite=v=>typeof v==='number'&&Number.isFinite(v);
 const metric=(label,value,note)=>`<div class="advice-metric"><span>${esc(label)}</span><strong>${esc(value)}</strong><small>${esc(note)}</small></div>`;
