@@ -4,11 +4,12 @@
  * No private offer, appraisal adoption or investment approval is read/written. */
 import {createRequire} from 'node:module';
 import {createHash} from 'node:crypto';
-import {acquisitionLedger,normalizeAcquisitionRequest,evaluateAcquisition,landEvidenceRows} from './acquisition-economics.mjs';
+import {acquisitionLedger,normalizeAcquisitionRequest,evaluateAcquisition} from './acquisition-economics.mjs';
+import {evaluateLandMarket,DEFAULT_LAND_VALUATION_POLICY} from './land-market-valuation.mjs';
 const require=createRequire(import.meta.url);
 export const DEFAULT_PRELIMINARY_POLICY=require('./preliminary-policy.json');
 const {vpl}=require('./engine/dist/canonical/viab/financeiro.js');
-export const PRELIMINARY_ADVISORY_VERSION='preliminary-advisory-1.0.0';
+export const PRELIMINARY_ADVISORY_VERSION='preliminary-advisory-1.1.0';
 const finite=v=>typeof v==='number'&&Number.isFinite(v);
 const object=v=>v!==null&&typeof v==='object'&&!Array.isArray(v);
 const cents=v=>Math.round((v+Number.EPSILON)*100)/100;
@@ -17,10 +18,9 @@ const bounded=(v,name,min=0,max=1e12)=>{if(!finite(v)||v<min||v>max)fail(`${name
 const validDate=v=>typeof v==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v)&&Number.isFinite(Date.parse(v))&&new Date(v).toISOString().slice(0,10)===v;
 const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
 const ageDays=(date,asOf)=>date&&Number.isFinite(Date.parse(date))?Math.floor((Date.parse(asOf+'T23:59:59Z')-Date.parse(date))/86400000):null;
-const host=url=>{try{return new URL(url).hostname.replace(/^www\./,'');}catch{return null;}};
 const stable=v=>Array.isArray(v)?v.map(stable):object(v)?Object.fromEntries(Object.keys(v).sort().map(k=>[k,stable(v[k])])):v;
 const hash=v=>createHash('sha256').update(JSON.stringify(stable(v))).digest('hex');
-const INPUT_KEYS=['baseDate','offeredPriceBrl','exitMonth','benchmarkAnnualPct','riskPremiumPp','growthAnnualPct','safetyMarginPct','itbiPct','notaryBudgetBrl','diligenceBudgetBrl','preparationBudgetBrl','carryingMonthlyBrl','commissionPct','taxReservePct','debtPct','debtAnnualPct','availableEquityBrl'];
+const INPUT_KEYS=['baseDate','offeredPriceBrl','exitMonth','benchmarkAnnualPct','riskPremiumPp','growthAnnualPct','safetyMarginPct','itbiPct','notaryBudgetBrl','diligenceBudgetBrl','preparationBudgetBrl','carryingMonthlyBrl','commissionPct','taxReservePct','debtPct','debtAnnualPct','availableEquityBrl','valuationBasis'];
 const criticalAxes=new Set(['identity_geometry','zoning_regime','public_constraints','environmental_water','rural_transition','licensing_execution','geotechnical','infrastructure']);
 
 function validatePolicy(p){
@@ -30,57 +30,22 @@ function validatePolicy(p){
  return p;
 }
 
-/** Distinct assets can share a publisher. Weight is capped by publisher to
- * avoid mistaking three syndicated advertisements for three price sources.
- * Area similarity changes selection/weight only, never a price coefficient. */
-function selectEvidence(study,policy,baseDate){
- const areaM2=bounded(study.areaM2,'Área de referência do imóvel',.01,1e10);
- const profile=policy.profiles[study.slug]??{assetClass:study.assetClass,comparablesClass:study.assetClass,valuationLabel:'Imóvel · referência preliminar por área bruta',areaBasis:study.areaLabel??'Área declarada, pendente de conciliação',conditions:[]};
- const raw=Array.isArray(study.landEconomics?.value?.rows)?study.landEconomics.value.rows:landEvidenceRows(study);
- if(raw.length>500)fail('Amostra excede 500 ativos.');
- const extra=policy.additionalRows.filter(x=>x.studySlug===study.slug);
- const contextRows=[],selectedRows=[],seen=new Set();
- for(const original of [...raw,...extra]){
-  if(!object(original))continue;
-  const row={...original},url=typeof row.sourceUrl==='string'?row.sourceUrl:null,publisher=host(url),date=row.capture?.checkedAt??row.date??row.retrievedAt;
-  const ratio=finite(row.areaM2)&&row.areaM2>0?Math.max(areaM2/row.areaM2,row.areaM2/areaM2):null;
-  const key=row.assetKey??row.duplicateAssetId??url??row.id;
-  let exclusionReason=null;
-  if(row.excluded===true||row.status==='quarantined')exclusionReason='Referência excluída ou em quarentena.';
-  else if(row.subject===true||row.role==='subject'||row.id===study.slug)exclusionReason='Preço do próprio imóvel não é referência independente de saída.';
-  else if(row.kind!=='asking_price')exclusionReason='Transferência ou outra natureza exige conciliação própria; não agregada às ofertas.';
-  else if(!finite(row.priceBrl)||row.priceBrl<=0||!finite(row.areaM2)||row.areaM2<=0)exclusionReason='Preço ou área inválidos.';
-  else if(!publisher||!/^https?:\/\//.test(url))exclusionReason='Origem pública da referência ausente.';
-  else if(!profile.comparablesClass)exclusionReason='Classe do imóvel deve ser qualificada antes de selecionar comparáveis.';
-  else if(row.assetClass&&row.assetClass!==profile.comparablesClass)exclusionReason='Classe de ativo incompatível; produto/lote de varejo não precifica gleba bruta.';
-  else if(ratio>policy.evidence.maxAreaRatio)exclusionReason=`Porte fora do filtro: razão de áreas ${ratio.toFixed(1)}×, limite ${policy.evidence.maxAreaRatio}×.`;
-  else if(ageDays(date,baseDate)===null||ageDays(date,baseDate)<0||ageDays(date,baseDate)>policy.evidence.maxOfferAgeDays)exclusionReason='Captura inválida, futura ou desatualizada; renovar referência.';
-  else if(seen.has(key))exclusionReason='Réplica do mesmo ativo; não conta como amostra adicional.';
-  if(!exclusionReason)seen.add(key);
-  const normalized={id:row.id??key,label:row.label??row.title??row.id,kind:row.kind,priceBrl:row.priceBrl,areaM2:row.areaM2,
-   unitPriceBrl:finite(row.priceBrl)&&finite(row.areaM2)&&row.areaM2>0?row.priceBrl/row.areaM2:null,
-   sourceUrl:url,sourceId:row.sourceId??publisher,sourceSha256:row.sourceSha256??row.capture?.sha256??null,publisher,date:date?.slice(0,10)??null,
-   publisherDate:row.observedOn??null,ageDays:ageDays(date,baseDate),areaRatio:ratio,assetClass:row.assetClass??profile.comparablesClass,
-   reason:row.reason??'',areaBasis:row.areaBasis??'Área anunciada',formalValuationEligible:false,
-   exclusionReason,selected:exclusionReason===null,weight:exclusionReason?0:1/(1+Math.abs(Math.log(row.areaM2/areaM2)))};
-  (exclusionReason?contextRows:selectedRows).push(normalized);
- }
- if(policy.evidence.publisherWeightCap){const totals=new Map();for(const row of selectedRows)totals.set(row.publisher,(totals.get(row.publisher)??0)+row.weight);for(const row of selectedRows)row.weight/=totals.get(row.publisher);}
- selectedRows.sort((a,b)=>a.unitPriceBrl-b.unitPriceBrl);
- const weights=selectedRows.reduce((s,r)=>s+r.weight,0);let cumulative=0;
- const points=selectedRows.map(row=>{const midpoint=(cumulative+row.weight/2)/weights;cumulative+=row.weight;return {x:midpoint,y:row.unitPriceBrl};});
- let central=points[0]?.y??null;
- if(points.length>1){const upper=points.findIndex(p=>p.x>=.5);if(upper===-1)central=points.at(-1).y;else if(upper===0)central=points[0].y;else{const a=points[upper-1],b=points[upper];central=a.y+(.5-a.x)/(b.x-a.x)*(b.y-a.y);}}
- const margin=(selectedRows.length===1?policy.evidence.singleRowRangePct:policy.evidence.minimumRangePct)/100;
- const unitLowBrl=central===null?null:Math.min(selectedRows[0].unitPriceBrl,central*(1-margin));
- const unitHighBrl=central===null?null:Math.max(selectedRows.at(-1).unitPriceBrl,central*(1+margin));
- const sourceCount=new Set(selectedRows.map(r=>r.publisher)).size;
- return {areaM2,areaBasis:profile.areaBasis,label:profile.valuationLabel,assetClass:profile.assetClass,
-  lowBrl:unitLowBrl===null?null:cents(unitLowBrl*areaM2),centralBrl:central===null?null:cents(central*areaM2),highBrl:unitHighBrl===null?null:cents(unitHighBrl*areaM2),
-  unitLowBrl,unitCentralBrl:central,unitHighBrl,selectedRows,contextRows,independentPublisherCount:sourceCount,
-  confidence:sourceCount>=3&&selectedRows.length>=5?'moderate_exploratory':'low_exploratory',authority:'preliminary_asking_proxy',adoptedMarketValueBrl:null,
-  method:'Mediana ponderada de ofertas de imóveis por área bruta, com filtro de porte e peso limitado por anunciante. Faixa de ensaio com extremos observados e margem de política; não é laudo, transação confirmada ou intervalo de confiança.',
-  conditions:profile.conditions??[]};
+/** Compatibility projection: land-market owns all price selection. This
+ * adapter only selects the explicit external basis for the acquisition model.
+ * Legacy valuation unit fields remain BRL/m²; landValuation declares m²/ha. */
+function selectBusinessValue(study,financialPolicy,land,basis){
+ const estimate=({land:land.landOnlyEstimate,bare_land:land.bareLandEstimate,physical_property_proxy:land.physicalProxy})[basis]??null;
+ const selectedIds=new Set(estimate?.sourceIds??[]),selectedRows=(land.comparables??[]).filter(r=>selectedIds.has(r.id)).map(r=>({...r}));
+ const totals=new Map();for(const r of selectedRows)totals.set(r.publisher,(totals.get(r.publisher)??0)+r.weight);for(const r of selectedRows)r.weight/=totals.get(r.publisher);
+ const contextRows=[...(land.rejected??[]),...(land.comparables??[]).filter(r=>!selectedIds.has(r.id)).map(r=>({...r,selected:false,exclusionReason:'Referência em outro estrato físico; não compõe a base econômica escolhida.'}))];
+ const factor=estimate?.displayUnit==='BRL_ha'?10000:1;
+ return {areaM2:land.subject?.areaM2??study.areaM2,areaBasis:land.subject?.areaBasis??study.areaLabel,label:estimate?.label??'Base externa não identificada',assetClass:land.subject?.assetClass,
+  lowBrl:estimate?.lowBrl??null,centralBrl:estimate?.centralBrl??null,highBrl:estimate?.highBrl??null,
+  unitLowBrl:estimate?estimate.unitLowBrl/factor:null,unitCentralBrl:estimate?.unitPerM2Brl??null,unitHighBrl:estimate?estimate.unitHighBrl/factor:null,
+  selectedRows,contextRows,independentPublisherCount:estimate?.independentPublisherCount??0,confidence:'low_exploratory',authority:'preliminary_asking_proxy',adoptedMarketValueBrl:null,
+  basis:estimate?.basis??basis,displayUnit:'BRL_m2',rangeKind:estimate?.rangeKind??null,bandIdentified:estimate?.bandIdentified??false,
+  method:land.method+' Faixa de ofertas observadas; não é laudo, transação confirmada ou intervalo de confiança.',
+  conditions:[...(financialPolicy.profiles[study.slug]?.conditions??[]),...(land.notes??[])]};
 }
 
 function municipalPolicy(study,policy){return policy.municipalities?.[`${study.municipality}/${study.uf}`]??{itbiPct:policy.defaults.itbiFallbackBudgetPct,notaryMode:'editable_budget',notaryBudgetBrl:policy.defaults.notaryFallbackBudgetBrl,status:'generic_budget_no_local_rule_verified'};}
@@ -93,7 +58,9 @@ function resolveAssumptions(study,input,policy,valuation){
  if(benchmarkAnnualPct+riskPremiumPp<=0)fail('Taxa de atratividade positiva obrigatória.');
  const exitMonth=pick('exitMonth',d.exitMonth,1,240);if(!Number.isSafeInteger(exitMonth))fail('Prazo de saída deve ser inteiro.');
  const notaryAuto=input.notaryBudgetBrl==null&&m.notaryMode==='sc_2026'&&baseDate>=policy.scNotaryTable.effectiveFrom&&baseDate<=policy.scNotaryTable.effectiveTo;
- const resolved={baseDate,offeredPriceBrl:input.offeredPriceBrl==null?null:bounded(input.offeredPriceBrl,'Preço informado',.01),exitMonth,
+ const valuationBasis=input.valuationBasis??valuation.selectedBusinessBasis;
+ if(!['land','bare_land','physical_property_proxy'].includes(valuationBasis)&&valuationBasis!==null)fail('Base de valor deve ser land, bare_land ou physical_property_proxy.');
+ const resolved={baseDate,valuationBasis,offeredPriceBrl:input.offeredPriceBrl==null?null:bounded(input.offeredPriceBrl,'Preço informado',.01),exitMonth,
   benchmarkAnnualPct,riskPremiumPp,projectAnnualPct:benchmarkAnnualPct+riskPremiumPp,equityAnnualPct:benchmarkAnnualPct+riskPremiumPp,
   growthAnnualPct:pick('growthAnnualPct',d.growthAnnualPct,-30,50),safetyMarginPct:pick('safetyMarginPct',d.safetyMarginPct,0,80),
   itbiPct:pick('itbiPct',m.itbiPct,0,10),notaryBudgetBrl:notaryAuto?null:pick('notaryBudgetBrl',m.notaryBudgetBrl??d.notaryFallbackBudgetBrl),notaryMode:notaryAuto?'sc_2026':'editable_budget',
@@ -154,19 +121,25 @@ function collectGates(study,a,policy,valuation){
  if(municipality.status==='historical_rule_current_consolidation_pending'||municipality.status==='generic_budget_no_local_rule_verified')gates.push({id:'local_tax_rule',label:'Consolidar regra municipal de aquisição',state:'pending',critical:false,action:'Confirmar ITBI e base aplicável na legislação e guia municipal atual; percentual usado é orçamento editável.'});
  if(source&&ageDays(source.checkedAt,a.baseDate)>30)gates.push({id:'cost_source_currency',label:'Atualizar fonte fiscal',state:'pending',critical:false,action:'Renovar captura oficial e conferir alterações antes de fechar orçamento de aquisição.'});
  if(valuation.selectedRows.length===0)gates.push({id:'land_market_evidence',label:'Coletar referências de terra compatíveis',state:'pending',critical:true,action:'Curar ofertas/transações por classe, porte, direitos e posição; valor e compra não calculáveis com evidência inexistente.'});
- else gates.push({id:'valuation_qualification',label:'Qualificar valor do imóvel e direito adquirido',state:'pending',critical:true,action:'Confirmar amostras, condição de negociação, área, benfeitorias e direitos. Faixa é proxy de oferta do imóvel, não valor de terra nua adotado.'});
+ else gates.push({id:'valuation_qualification',label:'Qualificar valor do imóvel e direito adquirido',state:'pending',critical:true,action:'Confirmar amostras, condição de negociação, área, benfeitorias e direitos. Confirmar o estrato de terra ou imóvel explicitamente escolhido. Faixa de oferta não é valor de mercado adotado.'});
  return gates;
 }
 
-export function evaluatePreliminaryAdvisory(study,assumptions={}, {policy=DEFAULT_PRELIMINARY_POLICY}={}){
+export function evaluatePreliminaryAdvisory(study,assumptions={}, {policy=DEFAULT_PRELIMINARY_POLICY,landPolicy=DEFAULT_LAND_VALUATION_POLICY}={}){
  try{
   if(!object(study)||typeof study.slug!=='string'||!study.slug)fail('Estudo e slug do terreno obrigatórios.');
   validatePolicy(policy);if(!object(assumptions))fail('Premissas devem ser objeto.');
   const baseDate=assumptions.baseDate??today();if(!validDate(baseDate))fail('Data-base inválida.');
-  const valuation=selectEvidence(study,policy,baseDate),a=resolveAssumptions(study,assumptions,policy,valuation),gates=collectGates(study,a,policy,valuation);
+  const landValuation=evaluateLandMarket(study,{policy:landPolicy,baseDate});
+  if(landValuation.status==='invalid')fail(landValuation.diagnostics?.[0]?.message??'Curadoria da terra inválida.');
+  const selectedBusinessBasis=assumptions.valuationBasis??landValuation.defaultBusinessValuationBasis;
+  if(selectedBusinessBasis!==null&&!['land','bare_land','physical_property_proxy'].includes(selectedBusinessBasis))fail('Base de valor deve ser land, bare_land ou physical_property_proxy.');
+  const valuation={...selectBusinessValue(study,policy,landValuation,selectedBusinessBasis),selectedBusinessBasis},a=resolveAssumptions(study,assumptions,policy,valuation),gates=collectGates(study,a,policy,valuation);
+  const businessValuation={basis:a.valuationBasis,selectedBy:Object.hasOwn(assumptions,'valuationBasis')?'user_override':'public_valuation_policy',selectionExplicit:true,
+   centralBrl:valuation.centralBrl,label:valuation.label,sourceIds:valuation.selectedRows.map(r=>r.id),available:valuation.centralBrl!==null,adoptedMarketValueBrl:null};
   const sources=[{title:policy.capital.label,url:policy.capital.metadataUrl,effectiveOn:policy.capital.effectiveDate,capturedAt:policy.capital.checkedAt,sha256:policy.capital.snapshotSha256},
    ...policy.sources.map(s=>({title:s.title,url:s.url,effectiveOn:s.id==='sc-emolumentos-2026'?'2026-01-01':null,capturedAt:s.checkedAt,sha256:s.sha256})),
-   ...valuation.selectedRows.map(r=>({title:r.label,url:r.sourceUrl,effectiveOn:null,capturedAt:r.date,sha256:r.sourceSha256}))];
+   ...landValuation.sources];
   const capitalFresh=ageDays(policy.capital.effectiveDate,a.baseDate)<=policy.capital.maxAgeDays&&ageDays(policy.capital.checkedAt,a.baseDate)<=policy.capital.maxAgeDays&&ageDays(policy.capital.effectiveDate,a.baseDate)>=0;
   const capitalOverride=Object.hasOwn(assumptions,'benchmarkAnnualPct');
   const rateConstruction={benchmarkAnnualPct:a.benchmarkAnnualPct,riskPremiumPp:a.riskPremiumPp,projectAnnualPct:a.projectAnnualPct,equityAnnualPct:a.equityAnnualPct,
@@ -180,9 +153,9 @@ export function evaluatePreliminaryAdvisory(study,assumptions={}, {policy=DEFAUL
    'Teto é da aquisição, manutenção e revenda do imóvel. Direitos de desenvolvimento e retorno de um empreendimento exigem o wizard de produto e análise própria.'];
   if(!capitalFresh&&!capitalOverride)notes.push('A captura do benchmark venceu o protocolo de sete dias; atualizar capital antes de usar a taxa como referência contemporânea.');
   const envelope={schemaVersion:1,version:PRELIMINARY_ADVISORY_VERSION,policyVersion:policy.version,policySha256:hash(policy),studySlug:study.slug,baseDate:a.baseDate,
-   authority:'public_preliminary_working_hypothesis',adoptedMarketValueBrl:null,investmentApproved:false,valuation,assumptions:a,rateConstruction,sources,notes};
+   authority:'public_preliminary_working_hypothesis',adoptedMarketValueBrl:null,investmentApproved:false,landValuation,businessValuation,valuation,assumptions:a,rateConstruction,sources,notes};
   if(valuation.centralBrl===null)return {...envelope,status:'insufficient_evidence',ceilings:{projectBrl:null,equityBrl:null,effectiveBrl:null},recommendedPriceBrl:null,base:null,referenceCase:null,
-   decision:{state:'collect_evidence',label:'Coletar referências antes de precificar',reason:'Sem referências externas compatíveis não há saída independente para avaliar a compra.',gates},charts:{marketRows:[],rates:[],costs:[],heatmap:[],horizons:[],stresses:[]}};
+   decision:{state:'collect_evidence',label:'Coletar referências antes de precificar',reason:'A base externa selecionada não foi isolada/qualificada. Escolher conscientemente outra base disponível ou completar as referências antes de simular compra.',gates},charts:{marketRows:[],rates:[],costs:[],heatmap:[],horizons:[],stresses:[]}};
   const ceilings=solveCeilings(a,valuation,policy),recommendedPriceBrl=cents(ceilings.effectiveBrl*(1-a.safetyMarginPct/100));
   const scenarioPrice=a.offeredPriceBrl??(recommendedPriceBrl>0?recommendedPriceBrl:.01),q=quote(scenarioPrice,a,valuation,policy);
   const base=evaluateAcquisition(q.request,{sensitivity:false,ceilings:false}),referenceQuote=quote(valuation.centralBrl,a,valuation,policy),referenceCase=evaluateAcquisition(referenceQuote.request,{sensitivity:false,ceilings:false});
@@ -213,6 +186,6 @@ export function evaluatePreliminaryAdvisory(study,assumptions={}, {policy=DEFAUL
   const costs=[['Compra',scenarioPrice],['ITBI',q.costBreakdown.itbiBrl],['Cartório',q.costBreakdown.notaryBrl],['Diligência',a.diligenceBudgetBrl],['Preparação',a.preparationBudgetBrl],['Carregamento',q.costBreakdown.carryingBrl],['Comissão de saída',q.costBreakdown.commissionBrl],['Reserva sobre ganho',q.costBreakdown.exitTaxReserveBrl],['Juros da dívida',base.costs.interest]].map(([label,brl])=>({label,brl}));
   return {...envelope,status:'exploratory',ceilings,recommendedPriceBrl,base,referenceCase,costBreakdown:q.costBreakdown,referenceCostBreakdown:referenceQuote.costBreakdown,decision,
    charts:{marketRows:valuation.selectedRows,rates:[{label:capitalOverride?'Benchmark editado':capitalFresh?'Selic · referência':'Benchmark capturado · atualizar',pct:a.benchmarkAnnualPct},{label:'Prêmio de risco proposto',pct:a.riskPremiumPp}],costs,heatmap,heatmapUnit:'purchase_ceiling_BRL_millions',horizons,stresses},
-   inputSha256:hash({studySlug:study.slug,valuation,assumptions:a,policyVersion:policy.version}),calculationScope:'Acquisition and resale of the physical asset; no automatic real estate development or SPE valuation.'};
+   inputSha256:hash({studySlug:study.slug,valuation,assumptions:a,policyVersion:policy.version}),calculationScope:'Acquisition and resale using the explicitly selected external land/property basis; no automatic real estate development or SPE valuation.'};
  }catch(error){return {schemaVersion:1,version:PRELIMINARY_ADVISORY_VERSION,status:'invalid',authority:'missing',adoptedMarketValueBrl:null,investmentApproved:false,valuation:null,assumptions:null,base:null,referenceCase:null,diagnostics:[{code:error.code??'PRELIMINARY_ERROR',message:error.message}]};}
 }
