@@ -94,9 +94,9 @@ export function buildDiligenceProtocol({study,assessment=study?.assessment,verif
 /** Validate a provided artifact, never fabricate weights or train from the three
  * illustrative parcels. Approval metadata is checked structurally; signature and
  * dataset/weight byte verification are explicit callbacks at the execution gate. */
-export function validateDiligenceModelArtifact(artifact,{policy=DEFAULT_DILIGENCE_POLICY,now=new Date().toISOString()}={}){
+export function validateDiligenceModelArtifact(artifact,{policy=DEFAULT_DILIGENCE_POLICY,now=new Date().toISOString(),phase='adopted'}={}){
  const errors=[],m=policy.ml,a=artifact??{},assert=(condition,error)=>{if(!condition)errors.push(error);};
- assert(evidenceTimestamp(now)!==null,'clock-invalid');
+ assert(evidenceTimestamp(now)!==null,'clock-invalid');assert(['adopted','shadow'].includes(phase),'phase-invalid');
  assert(a.schemaVersion===1&&id(a.id)&&typeof a.version==='string','identity-invalid');
  assert(m.allowedFamilies.includes(a.family),'family-unsupported');assert(m.allowedOutputKinds.includes(a.outputKind),'output-unsupported');
  assert(a.authority==='auxiliary-only'&&a.canReplaceCanonicalPrice===false&&a.canApproveInvestment===false,'authority-invalid');
@@ -115,7 +115,7 @@ export function validateDiligenceModelArtifact(artifact,{policy=DEFAULT_DILIGENC
  assert(a.outputKind==='unit_price_diagnostic'?a.label?.kind==='verified_transaction_price'&&a.label.unit==='BRL_m2'&&a.label.notFiscal===true:a.label?.kind==='dual_reviewed_comparability','labels-unverified');
  const metric=a.outputKind==='unit_price_diagnostic'?a.validation?.mape:a.validation?.calibrationError;
  assert(Number.isFinite(metric)&&metric>=0&&metric<=(a.outputKind==='unit_price_diagnostic'?m.maxUnitPriceMape:m.maxCalibrationError),'out-of-sample-performance-insufficient');
- assert(a.validation?.baselineCompared===true&&a.validation?.shadowReviewed===true,'baseline-or-shadow-unverified');
+ assert(a.validation?.baselineCompared===true&&(phase==='shadow'||a.validation?.shadowReviewed===true),'baseline-or-shadow-unverified');
  const features=list(a.features),known=new Map(m.allowedFeatures.map(f=>[f.id,f]));
  assert(features.length>0&&features.length<=m.maxFeatures&&new Set(features.map(f=>f?.id)).size===features.length,'feature-count-invalid');
  assert(features.every(f=>f&&known.has(f.id)&&f.unit===known.get(f.id).unit&&Number.isFinite(f.mean)&&Number.isFinite(f.scale)&&f.scale>0),'feature-or-unit-invalid');
@@ -134,8 +134,8 @@ export function validateDiligenceModelArtifact(artifact,{policy=DEFAULT_DILIGENC
  return {valid:errors.length===0,state:errors.length?'rejected':'structurally-valid',errors:[...new Set(errors)],cryptographicApprovalVerified:false,datasetBytesVerified:false,canonicalPriceOverride:false};
 }
 
-export async function runDiligenceModelInference({artifact,input,verifyApproval,verifyDataset,policy=DEFAULT_DILIGENCE_POLICY,now=new Date().toISOString()}={}){
- const validation=validateDiligenceModelArtifact(artifact,{policy,now}),abstain=reason=>({state:'abstained',reason,validation,canReplaceCanonicalPrice:false,canApproveInvestment:false});
+export async function runDiligenceModelInference({artifact,input,verifyApproval,verifyDataset,policy=DEFAULT_DILIGENCE_POLICY,now=new Date().toISOString(),phase='adopted'}={}){
+ const validation=validateDiligenceModelArtifact(artifact,{policy,now,phase}),abstain=reason=>({state:'abstained',reason,validation,canReplaceCanonicalPrice:false,canApproveInvestment:false});
  if(!validation.valid)return abstain('Artefato não satisfaz o contrato de treino, validação e autoridade.');
  if(typeof verifyApproval!=='function'||typeof verifyDataset!=='function')return abstain('Verificadores de aprovação e dataset não foram fornecidos.');
  try{if(await verifyApproval(artifact)!==true||await verifyDataset(artifact.dataset)!==true)return abstain('Aprovação ou bytes do dataset não puderam ser comprovados.');}catch{return abstain('Falha na verificação independente do artefato.');}
@@ -150,5 +150,5 @@ export async function runDiligenceModelInference({artifact,input,verifyApproval,
   for(const [i,layer] of artifact.layers.entries())if(artifact.family==='ANN'||i>0)x=forward(x,layer);
  }catch{return abstain('Atributo ausente, unidade ou domínio incompatível; nenhum preenchimento inventado.');}
  if(!Number.isFinite(x[0])||artifact.outputKind==='unit_price_diagnostic'&&x[0]<=0)return abstain('Saída numérica fora do contrato.');
- return {state:'auxiliary-inference',modelId:artifact.id,modelVersion:artifact.version,artifactSha256:artifact.artifactSha256,outputKind:artifact.outputKind,value:x[0],unit:artifact.outputKind==='unit_price_diagnostic'?'BRL_m2':'ratio',canonicalPriceOverride:false,canApproveInvestment:false,inputHash:diligenceHash(input),checkedAt:now};
+ return {state:'auxiliary-inference',mode:phase,modelId:artifact.id,modelVersion:artifact.version,artifactSha256:artifact.artifactSha256,outputKind:artifact.outputKind,value:x[0],unit:artifact.outputKind==='unit_price_diagnostic'?'BRL_m2':'ratio',canonicalPriceOverride:false,canApproveInvestment:false,inputHash:diligenceHash(input),checkedAt:now};
 }

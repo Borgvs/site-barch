@@ -1,6 +1,7 @@
+import {projectCrossAudit} from './cross-audit-view.mjs?v=29ef5f348bf3';
 /** Download boundary: a new DTO, never a serialization of the study or internal dossier. */
-import {reportSourceUrl,reportHash,reportId,reportPublicText} from './report-safety.mjs?v=de24f7145749';
-import {buildAnalysisReport} from './analysis-report.mjs?v=de24f7145749';
+import {reportSourceUrl,reportHash,reportId,reportPublicText} from './report-safety.mjs?v=29ef5f348bf3';
+import {buildAnalysisReport} from './analysis-report.mjs?v=29ef5f348bf3';
 const finite=v=>typeof v==='number'&&Number.isFinite(v);
 const text=reportPublicText;
 const number=v=>finite(v)?v:null;
@@ -61,7 +62,7 @@ export function buildAnalysisPacket(study,result,{generatedAt=new Date().toISOSt
    ledger:(result.base.rows??[]).map(x=>pick(x,['month','projectBrl','equityBrl','contributionsBrl','distributionsBrl','interestBrl','cumulativeProjectBrl','cumulativeEquityBrl'])),costs:(result.charts?.costs??[]).map(x=>({label:text(x.label),brl:number(x.brl)})),horizons:(result.charts?.horizons??[]).map(x=>pick(x,['months','ceilingBrl'])),stresses:(result.charts?.stresses??[]).map(x=>({label:text(x.label),npvBrl:number(x.npvBrl)})),heatmap:(result.charts?.heatmap??[]).map(x=>({label:text(x.label),values:(x.values??[]).map(v=>({x:text(v.x),y:number(v.y)}))}))},
   qualification:{state:text(context?.state??study.assessment?.state),verificationState:text(context?.verificationState??study.verification?.freshness?.status),stateSource:context?'calculation_response':'loaded_study',axesSource:'loaded_study',axesCheckedAt:text(study.assessment?.checkedAt),axes:axes.map(x=>({id:text(x.id),label:text(x.label??x.title),status:text(x.status??x.state),finding:text(x.finding??x.summary)}))},
   decision:{state:text(result.decision?.state),label:text(result.decision?.label),reason:text(result.decision?.reason),investmentApproved:false,formalMarketValueAdopted:false,gates:(result.decision?.gates??[]).map(x=>({id:text(x.id),label:text(x.label??x.reason),critical:x.critical===true,status:text(x.status??x.state)}))},
-  property:projectProperty(study),possibilities:projectPossibilities(study),diligence:projectProtocol(protocol,study.slug),
+  crossAudit:projectCrossAudit(result.crossAudit,study.slug),property:projectProperty(study),possibilities:projectPossibilities(study),diligence:projectProtocol(protocol,study.slug),
   methods:{policyVersion:text(result.policyVersion),policySha256:/^[a-f0-9]{64}$/.test(result.policySha256??'')?result.policySha256:null,landValuePurpose:'Comparação do imóvel e da terra, independente de produto, financiamento e TMA.',investmentPurpose:'Capacidade de pagar pela aquisição a partir de saída externa, despesas, prazo e retorno exigido.',notes:(result.notes??[]).map(text)},sources:uniqueSources};
  return packet;
 }

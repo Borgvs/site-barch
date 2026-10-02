@@ -41,18 +41,18 @@
     },
     {
       "path": "/terreno/analysis-packet.mjs",
-      "bytes": 23913,
-      "sha256": "d8e0304d899480b9758919e5c9b90904da20cb948761b3f6519a66005d3d86a1"
+      "bytes": 24045,
+      "sha256": "b58ed1a7fdfe0aa4a16356f9ac3825791344f37d8d4dff30f4393f3e206527d6"
     },
     {
       "path": "/terreno/analysis-report.mjs",
-      "bytes": 19386,
-      "sha256": "c23be81555992d23b828b0af13771a700b063dcad13c5aeaf255bfa4282856d1"
+      "bytes": 20134,
+      "sha256": "a38c233e3d436cbfb981302e631221ba47c91627ac25e500364bbaaa054cd6a9"
     },
     {
       "path": "/terreno/app.js",
-      "bytes": 108754,
-      "sha256": "064d826b8c97309a9dc1469ab327036c70e39d9b358dbfb18a315375265cc7cb"
+      "bytes": 110788,
+      "sha256": "ff07c47ca62b3e3d9268ad10226a336842c97e81e6321c418bbe772ea95f0a04"
     },
     {
       "path": "/terreno/assessment.js",
@@ -250,9 +250,14 @@
       "sha256": "0c1e0e5a58763b58246593b8149a4169ab7533931cdcbba323f081f0c3107e9a"
     },
     {
+      "path": "/terreno/cross-audit-view.mjs",
+      "bytes": 5626,
+      "sha256": "065c1775a621b7d6d7b88d6f2f1341e2fbb8024b260c994987db5ebb69896da9"
+    },
+    {
       "path": "/terreno/dashboard-pdf.js",
       "bytes": 12755,
-      "sha256": "cc07f68dfcf13195a334dfd5496245ab2e6b51dadd67aed9cbdd589f18d4dddc"
+      "sha256": "bc06c53eea5d9599b817460e864b4539fad47ec9bfe20eec81157d8b57212366"
     },
     {
       "path": "/terreno/dashboard-summary.css",
@@ -261,18 +266,18 @@
     },
     {
       "path": "/terreno/dashboard-summary.js",
-      "bytes": 11755,
-      "sha256": "1e22ec30e68f69add033b23a9970592a40dc2bdac20111783ad9b6b1d380a6ab"
+      "bytes": 11919,
+      "sha256": "f28cd6b4925de1cebc95e240747833ea8b3b364c235a8bea37d6119a4b61e8ff"
     },
     {
       "path": "/terreno/diagnosis.js",
-      "bytes": 4384,
-      "sha256": "dd6e2a5fd394a0bc68cf046eaa9eeff52334199013cb561660e600189d49264c"
+      "bytes": 4561,
+      "sha256": "17043b0d76249b8988e28b361ebe498d77810d172d8d83222a4f825ae4cff1d5"
     },
     {
       "path": "/terreno/dossier-protocol.js",
-      "bytes": 5230,
-      "sha256": "72109926f056cdce2d2dce2d038e923bcf6bcbc01c3703351a97660bb994a825"
+      "bytes": 9044,
+      "sha256": "49da5f0b787c03b26c8c5eafa4506c278333649143ecaa748e3937fe40cce245"
     },
     {
       "path": "/terreno/economics.css",
@@ -282,7 +287,7 @@
     {
       "path": "/terreno/economics.js",
       "bytes": 32762,
-      "sha256": "25ffe11f23b23857830c0477e7bbe0979bcb4b373aadcd204d1d47c005863766"
+      "sha256": "5239ac1dd788f320d7c721d483fa38a19ac14639c4b9881fe801ff3521f5ee9f"
     },
     {
       "path": "/terreno/exploratory-proposal.js",
@@ -292,7 +297,7 @@
     {
       "path": "/terreno/field-pdf.js",
       "bytes": 4701,
-      "sha256": "3cc387b3b2a1bfa01d69a7ef78e06c1bba99a93463dec0012e475bd4a5b8e0e7"
+      "sha256": "7e6baa664f9c6345ab1d43591d7ac71fdfe91139195b162225ac0c1cb15c8d27"
     },
     {
       "path": "/terreno/field-plan.js",
@@ -302,7 +307,7 @@
     {
       "path": "/terreno/field-workbench.js",
       "bytes": 18455,
-      "sha256": "a12070ec6d832c03f0c4b76e721f1a521921a014c9d43e876faeafe7f6e28555"
+      "sha256": "ab6e73130df48fb5bb0c6d79b010fbe7755a4e1628f3d7cd83ef755d9623f03f"
     },
     {
       "path": "/terreno/field.css",
@@ -702,12 +707,12 @@
     {
       "path": "/terreno/google-scene.js",
       "bytes": 17704,
-      "sha256": "72758b99b55f2e32eb345140f6456bf38009a211837157e34b3df1ac0a1f59f4"
+      "sha256": "e5808979e503f428bc2e99fa36d428076e920a7ca1f4989a8190418718a4c40a"
     },
     {
       "path": "/terreno/index.html",
       "bytes": 1617,
-      "sha256": "79100d71e2620e814be1de8fe399f4bfb350617326185232fdc0886bc86260af"
+      "sha256": "7aa2456e639211e300aebd21967e7b5e03aaf541212e7f7b840a3bdf4ee44f10"
     },
     {
       "path": "/terreno/investor-ui.js",
@@ -722,7 +727,7 @@
     {
       "path": "/terreno/land-value.js",
       "bytes": 9866,
-      "sha256": "008a4295564872e76fc4974bb5b3f30e15f3fb014a4b319b13eb28258f11b3c6"
+      "sha256": "8e63aaeb6e871d7dcf9070d33dc53112906db2ef265099e86dce48b0240611fd"
     },
     {
       "path": "/terreno/layers.js",
@@ -732,7 +737,7 @@
     {
       "path": "/terreno/map.js",
       "bytes": 32593,
-      "sha256": "1bbdf43a8ce207c88816b3a68789bdc678eb642970c2b6c0994ec69f5198e177"
+      "sha256": "5e0402bcd2796013a43c8fc93fb22d558c09d40b045463e0e291b9152ec55059"
     },
     {
       "path": "/terreno/market.css",
@@ -765,9 +770,14 @@
       "sha256": "85a278fc6b951596b4236114679ce8f1fe800678a02229bcaaaeda736ee3e241"
     },
     {
+      "path": "/terreno/navigation-model.mjs",
+      "bytes": 790,
+      "sha256": "1f09b1474f6c4a23ba7d0c847b5b8652ad3f4950ed691956cc382094e1fe8541"
+    },
+    {
       "path": "/terreno/panorama.js",
       "bytes": 2873,
-      "sha256": "36dceb4445fc32fae1e14cc91d5237c205e5251bdc410250ef760757d8dab35f"
+      "sha256": "1866d386744626e17ecf2155a31166d8ce670bc01d3a4fbaa2eb392bed70ce71"
     },
     {
       "path": "/terreno/presentation-model.mjs",
@@ -776,13 +786,13 @@
     },
     {
       "path": "/terreno/presentation.css",
-      "bytes": 4456,
-      "sha256": "28b7e3c0fce2427032bdeecd97cc84e4ab767f093a2336b4fa1849a908b9d1d7"
+      "bytes": 9341,
+      "sha256": "e447015273bc3dcb87c4cbfd43a0daed21bb300fc3443e5f4febb102b644fc40"
     },
     {
       "path": "/terreno/qualification.js",
       "bytes": 18552,
-      "sha256": "167e9157c00c20df8a4ec07764cdef903133e5db53efdcd187d63fe5fbad6e75"
+      "sha256": "4bdd1e7699e7c50138f04ce5f2abced63fc117ea9bf5e55c9a6f7a8c8fa164af"
     },
     {
       "path": "/terreno/report-safety.mjs",
@@ -817,7 +827,7 @@
     {
       "path": "/terreno/streetview.js",
       "bytes": 20773,
-      "sha256": "9c84153e7557c907f0eb322e3668e27f505d01791c8da68bd254f2dc4d47aa61"
+      "sha256": "392062d10ec9f9eeeffa26dddd892511425d1764d583aabb8a3713ebe861cdd6"
     },
     {
       "path": "/terreno/style.css",
@@ -842,7 +852,7 @@
     {
       "path": "/terreno/surroundings-summary.js",
       "bytes": 2652,
-      "sha256": "7f09a3ccf26227991af1131d840ee9d196e9105543a742ab60c38c09dcd5c5dc"
+      "sha256": "a97845879740f4c4152e9f2b74d376b2c4bb98c73713bedc4130843f3644e9d4"
     },
     {
       "path": "/terreno/surroundings.css",
@@ -852,7 +862,7 @@
     {
       "path": "/terreno/surroundings.js",
       "bytes": 27449,
-      "sha256": "4d3c0dac08bf38230d746613fc40053929925fc521ece72e944cfae5f96c0773"
+      "sha256": "1c80098e46934de39404634f3bd546c9e7eb26760a80b4c4a1d57eba63c3e06a"
     },
     {
       "path": "/terreno/terrain-anchor.js",
@@ -862,7 +872,7 @@
     {
       "path": "/terreno/volume.js",
       "bytes": 23904,
-      "sha256": "815f3937a328545f1acbd518ed9fa83ed448d59c3d0053323863261fb3ab1e60"
+      "sha256": "376532ffb1c7e2cd54a77a581b0bf65981769e9fab75b3ce41c228da2907baff"
     }
   ],
   "excludedDocuments": [
@@ -1012,9 +1022,9 @@
       "reason": "not-public-approved"
     }
   ],
-  "clientVersion": "de24f7145749",
+  "clientVersion": "29ef5f348bf3",
   "snapshotSha256": "ec29eb7ccbcf68f8425c9e035ed97331a30743106673e4848c24f83dcee07c5d",
-  "clientUpdatedAt": "2026-10-02T15:29:24.038Z",
+  "clientUpdatedAt": "2026-10-02T16:48:02.291Z",
   "concept": {
     "label": "Concept · uso e testes",
     "independentOfPanel": true,
@@ -1034,8 +1044,8 @@
     "studyDataReexported": false
   },
   "dashboardExport": {
-    "version": "2.0.0",
-    "template": "barch-land-report-2.0.0",
+    "version": "2.1.0",
+    "template": "barch-land-report-2.1.0",
     "chapters": [
       "diagnosis",
       "dashboard",
@@ -1055,7 +1065,9 @@
     "privateDossierIncluded": false
   },
   "presentation": {
-    "version": "2.0.0",
+    "version": "2.1.0",
+    "crossAuditVersion": "areas-cross-audit-1.0.0",
+    "exporterLoading": "on_demand",
     "sections": [
       "diagnosis",
       "dashboard",

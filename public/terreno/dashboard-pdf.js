@@ -1,6 +1,6 @@
-import {PDFDocument,PDFName,PDFString,rgb} from './assets/vendor/pdf-lib.esm.min.js?v=de24f7145749';
-import fontkit from './assets/vendor/fontkit.esm.min.js?v=de24f7145749';
-import {buildAnalysisReport,REPORT_VERSION} from './analysis-report.mjs?v=de24f7145749';
+import {PDFDocument,PDFName,PDFString,rgb} from './assets/vendor/pdf-lib.esm.min.js?v=29ef5f348bf3';
+import fontkit from './assets/vendor/fontkit.esm.min.js?v=29ef5f348bf3';
+import {buildAnalysisReport,REPORT_VERSION} from './analysis-report.mjs?v=29ef5f348bf3';
 
 export const PDF_TEMPLATE_VERSION='barch-land-report-2.0.0';
 const A4=[595.28,841.89],M=43,W=A4[0]-M*2,BOTTOM=60;

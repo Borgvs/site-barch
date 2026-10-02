@@ -1,7 +1,7 @@
 /** Editorial owner only. Canonical price, area, tax, envelope and decision owners
  * are supplied in the export packet; this module neither computes nor adopts them. */
-import {reportSourceUrl,reportHash,reportPublicText} from './report-safety.mjs?v=de24f7145749';
-export const REPORT_VERSION='barch-land-report-2.0.0';
+import {reportSourceUrl,reportHash,reportPublicText} from './report-safety.mjs?v=29ef5f348bf3';
+export const REPORT_VERSION='barch-land-report-2.1.0';
 export const REPORT_CHAPTERS=Object.freeze([
  {id:'diagnosis',number:'01',title:'Diagnóstico e recomendação'},
  {id:'dashboard',number:'02',title:'Dashboard · investimento e retorno'},
@@ -103,12 +103,12 @@ export function buildAnalysisReport(packet,images=[]){
  const e=packet.economics,a=e.assumptions??{},m=e.metrics??{},l=packet.landValuation,p=packet.property??{},o=packet.possibilities??{},d=packet.decision??{},chosen=selectReportImages(packet,images),sources=sourceRegister(packet);
  const chapter=(id,content)=>({...REPORT_CHAPTERS.find(c=>c.id===id),lead:'',indicators:[],rows:[],bullets:[],actions:[],images:chosen.filter(x=>x.chapter===id),...content});
  const primary=l?.landOnlyEstimate??l?.bareLandEstimate??l?.estimate;
- const condition=list(d.gates).filter(g=>g.label);
+ const condition=list(d.gates).filter(g=>g.label),audit=packet.crossAudit;
  const remote=list(packet.diligence?.actions).filter(x=>x.owner==='remote').sort(priority);
  const diagnosis=chapter('diagnosis',{lead:txt(d.label)+(d.reason?' · '+txt(d.reason):''),
   indicators:[kpi('Aquisição sugerida',money(e.recommendedPriceBrl,true),'Hipótese condicionada às verificações'),kpi('Limite econômico de compra',money(e.ceilings?.effectiveBrl,true),'Capacidade do ativo e do capital próprio'),kpi(primary?.label||'Referência física de mercado',money(primary?.centralBrl??e.reference?.centralBrl,true),'Base física independente do preço de compra'),kpi('VPL do ativo',money(m.projectNpvBrl,true),'Valor criado à taxa de atratividade'),kpi('Capital próprio necessário',money(m.peakEquityBrl,true),'Exposição máxima no cenário analisado'),kpi('Prazo do cenário',finite(a.exitMonth)?num(a.exitMonth,0)+' meses':'A qualificar','Horizonte de saída do investimento')],
-  rows:[row('Orientação',state(d.state)),row('Estado das bases',state(packet.qualification?.state)),row('Referência do estudo',txt(packet.study.studyDate)),row('Cenário exportado',txt(packet.generatedAt))],
-  bullets:condition.slice(0,4).map(g=>`${g.label}${g.critical?' · crítica':''}${g.status==='blocked'?' · impedimento de validação':g.status==='pending'?' · pendente':''}`)
+  rows:[row('Orientação',state(d.state)),row('Estado das bases',state(packet.qualification?.state)),row('Referência do estudo',txt(packet.study.studyDate)),row('Cenário exportado',txt(packet.generatedAt)),...(audit?[row('Cruzamentos conferidos',`${audit.coverage.supported??0} de ${audit.coverage.eligible??'—'} elegíveis · ${audit.coverage.criticalOpen??'—'} críticos a concluir`),row('Atualidade das evidências',audit.provenance?.currency?.status==='current'?'Vigentes no escopo da consulta':'Revalidar bases antes da decisão')]:[])],
+  bullets:[...(audit?[`Auditoria de consistência: ${audit.coverage.supported??0}/${audit.coverage.eligible??'—'} cruzamentos conferidos; ${audit.coverage.criticalOpen??'—'} críticos a concluir. Bases ${audit.provenance?.currency?.status==='current'?'vigentes no escopo da consulta':'a revalidar'}.`]:[]),...list(audit?.actions).slice(0,1).map(x=>`${x.priority} · ${x.label}`),...condition.slice(0,audit?2:4).map(g=>`${g.label}${g.critical?' · crítica':''}${g.status==='blocked'?' · impedimento de validação':g.status==='pending'?' · pendente':''}`)]
  });
  const dashboard=chapter('dashboard',{lead:'Indicadores, composição do investimento e sensibilidade usam o mesmo cenário de aquisição.',
   indicators:[kpi('TIR / TMA do ativo',`${rate(m.projectIrrAnnualPct)} / ${rate(m.projectTmaAnnualPct)}`,finite(m.projectSpreadPp)?`Spread ${num(m.projectSpreadPp)} p.p.`:'Retorno versus exigência de capital'),a.debtPct>0?kpi('TIR do capital próprio',rate(m.equityIrrAnnualPct),`VPL do equity ${money(m.equityNpvBrl,true)}`):kpi('Spread do ativo',finite(m.projectSpreadPp)?num(m.projectSpreadPp)+' p.p.':'A qualificar','TIR menos TMA'),kpi('Custo de oportunidade',rate(a.benchmarkAnnualPct),finite(a.riskPremiumPp)?`Prêmio de risco ${num(a.riskPremiumPp)} p.p.`:'Alternativa de referência para o capital'),kpi('MOIC',finite(m.moic)?num(m.moic)+'×':'A qualificar','Distribuições / aportes'),kpi('Payback',m.paybackMonth==null?'Não recupera':num(m.paybackMonth,0)+' meses',m.discountedPaybackMonth==null?'Descontado: não recupera':`Descontado: ${num(m.discountedPaybackMonth,0)} meses`),kpi('Margem do ativo',finite(m.marginProjectPct)?num(m.marginProjectPct)+'%':'A qualificar','Resultado nominal / receita bruta de saída')],
