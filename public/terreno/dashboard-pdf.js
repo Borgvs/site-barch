@@ -1,5 +1,5 @@
-import {PDFDocument,StandardFonts,rgb} from './assets/vendor/pdf-lib.esm.min.js?v=4b5483bc8c6b';
-import {summaryIndicators,fmtMoney,fmtNumber,fmtRate} from './analysis-packet.mjs?v=4b5483bc8c6b';
+import {PDFDocument,StandardFonts,rgb} from './assets/vendor/pdf-lib.esm.min.js?v=3ab52c3388b1';
+import {summaryIndicators,fmtMoney,fmtNumber,fmtRate} from './analysis-packet.mjs?v=3ab52c3388b1';
 const clean=v=>String(v??'').normalize('NFC').replace(/[^\x20-\x7e\xa0-\xff\n]/g,' ');
 /** PDF is created from the calculated packet and the rendered ApexCharts, without map/API credentials. */
 export async function createDashboardPdf(packet,images=[]){

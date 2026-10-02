@@ -16,7 +16,10 @@ const safeState=v=>knownStates.includes(v)?v:'sem_base';
 const officialHost=h=>h==='gov.br'||h.endsWith('.gov.br')||h.endsWith('.jus.br')||h==='aga.decea.mil.br';
 export function diligenceSourceUrl(value,{allowProvider=false}={}){
  try{const u=new URL(value);if(u.protocol!=='https:'||u.username||u.password||u.hash||!officialHost(u.hostname)&&!(allowProvider&&u.hostname==='api.escavador.com'))return null;
-  if([...u.searchParams.keys()].some(k=>/token|key|auth|secret|cpf|cnpj|nome|owner|signature/i.test(k)))return null;return u.href;
+  if([...u.searchParams.keys()].some(k=>/token|key|auth|secret|cpf|cnpj|nome|owner|signature/i.test(k)))return null;
+  // Official origin alone does not make a personal query public evidence.
+  if([...u.searchParams.values(),decodeURIComponent(u.pathname)].some(v=>/(?:cpf|cnpj|titular|owner)\b/i.test(v)||/(?:^|[^\d])(?:\d{11}|\d{14}|\d{3}\.\d{3}\.\d{3}-\d{2}|\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2})(?:$|[^\d])/.test(v)))return null;
+  return u.href;
  }catch{return null;}
 }
 function validatePolicy(p){

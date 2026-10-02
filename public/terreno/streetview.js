@@ -72,7 +72,7 @@ export async function mountStreetView(host,study,options={}){
   function clearGraphics(){observer?.disconnect();observer=null;texture?.dispose();if(texture?.image){texture.image.width=0;texture.image.height=0;}texture=null;sphere?.geometry?.dispose();sphere?.material?.dispose();sphere=null;const previous=renderer;renderer=null;previous?.dispose();previous?.forceContextLoss?.();scene=null;camera=null;viewport.replaceChildren();}
   function paint(){if(!renderer||!camera||disposed)return;const width=stage.clientWidth||800,height=stage.clientHeight||400;renderer.setSize(width,height,false);camera.aspect=width/height;camera.fov=2*Math.atan(Math.tan(radians(fov/2))/camera.aspect)*180/Math.PI;camera.updateProjectionMatrix();const a=radians(heading),p=radians(pitch);camera.lookAt(Math.sin(a)*Math.cos(p),Math.sin(p),-Math.cos(a)*Math.cos(p));renderer.render(scene,camera);}
   async function renderSphere(m,token){
-    T=options.three||await import('./assets/vendor/three.module.js?v=4b5483bc8c6b');if(disposed||token!==sequence)return;
+    T=options.three||await import('./assets/vendor/three.module.js?v=3ab52c3388b1');if(disposed||token!==sequence)return;
     renderer=new T.WebGLRenderer({antialias:false,alpha:false,powerPreference:'low-power',preserveDrawingBuffer:false});renderer.setPixelRatio(Math.min(globalThis.devicePixelRatio||1,1.5));renderer.outputColorSpace=T.SRGBColorSpace;
     const layout=panoramaLayout(m),mosaic=document.createElement('canvas');mosaic.width=layout.width;mosaic.height=layout.height;const ctx=mosaic.getContext('2d');if(!ctx)throw new Error('image_failed');
     if(imageRequests+layout.tiles.length>maxImageRequests)throw new Error('image_budget');

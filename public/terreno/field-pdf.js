@@ -1,4 +1,4 @@
-import {PDFDocument,StandardFonts,rgb} from './assets/vendor/pdf-lib.esm.min.js?v=4b5483bc8c6b';
+import {PDFDocument,StandardFonts,rgb} from './assets/vendor/pdf-lib.esm.min.js?v=3ab52c3388b1';
 const clean=s=>String(s??'').normalize('NFC').replace(/[^\x20-\x7e\xa0-\xff\n]/g,' ');
 const state={not_checked:'Não verificado',observed:'Observação registrada',indication:'Indício a investigar',not_accessible:'Sem acesso',not_applicable:'Não aplicável (declarado)'};
 export async function createFieldPdf(packet,{actionsOnly=false}={}){

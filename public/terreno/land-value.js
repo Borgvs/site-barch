@@ -1,4 +1,4 @@
-import {escapeHtml as esc,fmtMoney,fmtNumber} from './analysis-packet.mjs?v=4b5483bc8c6b';
+import {escapeHtml as esc,fmtMoney,fmtNumber} from './analysis-packet.mjs?v=3ab52c3388b1';
 const stateLabel=s=>({conditional:'Condicionado',sem_base:'Pesquisar evidência',unverifiable:'Revalidar',refresh_required:'Revalidar fontes',unseparated:'Contribuição a separar',cross_regime:'Transição urbano/rural',supported:'Conferido',verified:'Verificado',pass:'Conferido',passed:'Conferido',current:'Atual',declared:'Declarado na fonte',partial:'Parcial',pending:'A verificar',unverified:'A verificar',unknown:'A verificar',blocked:'Impedimento',fail:'Rever',failed:'Rever',not_applicable:'Não aplicável',context:'Contexto',warning:'Qualificar',consistent:'Consistente',limited:'Base limitada'}[s]??s??'A verificar');
 const landStateLabel=v=>({vacant:'Terreno vago declarado',improved:'Com benfeitorias',unknown:'Benfeitorias a qualificar'}[v]??v??'Referência física');
 const finite=v=>typeof v==='number'&&Number.isFinite(v);

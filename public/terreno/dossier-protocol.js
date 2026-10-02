@@ -1,4 +1,4 @@
-import {escapeHtml as esc} from './analysis-packet.mjs?v=4b5483bc8c6b';
+import {escapeHtml as esc} from './analysis-packet.mjs?v=3ab52c3388b1';
 const stateLabel=s=>({supported:'Conferido',partial:'Em qualificação',blocked:'Impedimento a resolver',sem_base:'Pesquisar evidência',not_applicable:'Não aplicável',refresh_required:'Revalidar bases'}[s]??'Em qualificação');
 const ownerLabel=s=>({remote:'Pesquisa automatizada',field:'Verificação em campo',specialist:'Análise técnica competente'}[s]??'Responsável a qualificar');
 const channels={usable_area:'Área utilizável',remediation_cost:'Preparação e mitigação',delay:'Prazo',marketability:'Liquidez e comercialização',price:'Valor da terra',legal_clearance:'Direitos e segurança jurídica',construction_capacity:'Capacidade de ocupação'};
