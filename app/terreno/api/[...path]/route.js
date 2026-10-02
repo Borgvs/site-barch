@@ -7,7 +7,7 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 15;
 const root = path.join(process.cwd(), '.barch-terreno');
-let snapshotPromise, enginePromise, currencyPromise, economicsPromise, preliminaryPromise, publicationPromise;
+let snapshotPromise, enginePromise, currencyPromise, economicsPromise, preliminaryPromise, publicationPromise, protocolPromise, landMarketPromise;
 const snapshot = () => snapshotPromise ??= readFile(path.join(root, 'snapshot.json'), 'utf8').then(JSON.parse);
 // Recibo servido da publicação: o SHA do snapshot no ar, sem a lista de documentos excluídos.
 const publication = () => publicationPromise ??= readFile(path.join(root, 'publication-manifest.json'), 'utf8').then(JSON.parse).then(m => ({schemaVersion:m.schemaVersion, mode:m.mode, generatedAt:m.generatedAt, defaultSlug:m.defaultSlug, clientVersion:m.clientVersion, snapshotSha256:m.snapshotSha256 ?? null, studies:(m.studies ?? []).map(({slug, publicDocuments, presets, gisFiles}) => ({slug, publicDocuments, presets, gisFiles})), publicFiles:(m.files ?? []).length}));
@@ -37,6 +37,13 @@ export async function GET(request, context) {
       const studyKey='studies/'+parts[1];if(!Object.hasOwn(data.routes,studyKey))return problem('Estudo não encontrado.',404);
       const current=await currentProjection(data.routes[studyKey]);if(!current.landEconomics)return problem('Economia da área indisponível.',404);
       return json(current.landEconomics);
+    }
+    if(parts.length===3&&parts[0]==='studies'&&parts[2]==='protocol'){
+      const studyKey='studies/'+parts[1];if(!Object.hasOwn(data.routes,studyKey))return problem('Estudo não encontrado.',404);
+      const study=await currentProjection(data.routes[studyKey]);
+      const protocol=await (protocolPromise??=import(/* webpackIgnore: true */ pathToFileURL(path.join(root,'protocol-diligence.mjs')).href));
+      const market=await (landMarketPromise??=import(/* webpackIgnore: true */ pathToFileURL(path.join(root,'land-market-valuation.mjs')).href));
+      return json(protocol.buildDiligenceProtocol({study,assessment:study.assessment,verification:study.verification,landValuation:market.evaluateLandMarket(study)}));
     }
     const redirect=data.downloads[key];
     if(redirect) return Response.redirect(new URL(redirect,request.url),307);

@@ -1,0 +1,1696 @@
+{
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "protocolVersion": "areas-diligence-multimodal-1.0.0",
+  "asOf": "2026-10-02",
+  "authority": "candidate-operational-protocol-not-normative-release",
+  "normativePublicationAllowed": false,
+  "investmentApprovalAllowed": false,
+  "sourceOrder": [
+    "barch_catalog",
+    "case_dossier",
+    "governed_municipal_release",
+    "revalidated_official_source",
+    "field",
+    "qualified_specialist"
+  ],
+  "owners": {
+    "assessment": "integracoes/assessment.mjs",
+    "verification": "integracoes/verification/index.mjs",
+    "regulatory": "integracoes/regulatory-readiness.mjs",
+    "municipal": "integracoes/municipal-source-pack.mjs",
+    "legal": "integracoes/legal/index.mjs",
+    "landPrice": "integracoes/land-market-valuation.mjs",
+    "economics": "integracoes/acquisition-economics.mjs"
+  },
+  "sources": [
+    {
+      "id": "estatuto-eiv",
+      "label": "Estatuto da Cidade · EIV",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10257.htm",
+      "jurisdiction": "BR",
+      "reuseSourceId": null,
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Arts. 36–38: exigência definida por lei municipal; sete dimensões mínimas, com mobilidade urbana; EIV não substitui EIA.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "conama-eia",
+      "label": "CONAMA 1/1986 · EIA/RIMA",
+      "url": "https://conama.mma.gov.br/?option=com_sisconama&task=arquivo.download&id=745",
+      "jurisdiction": "BR",
+      "reuseSourceId": null,
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Arts. 2, 5, 6 e 9: enquadramento, alternativas incluindo não executar, bacia, meios físico/biótico/socioeconômico e mitigação; conferir correlações e regime vigente.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "licenciamento",
+      "label": "Licenciamento ambiental · texto consolidado",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15190.htm",
+      "jurisdiction": "BR",
+      "reuseSourceId": "lei15190-licenciamento",
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Orienta consulta primária delimitada; requer metadados e vínculo específico ao lote.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "competencias",
+      "label": "LC140 · competências",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp140.htm",
+      "jurisdiction": "BR",
+      "reuseSourceId": "lc140-competencias",
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Orienta consulta primária delimitada; requer metadados e vínculo específico ao lote.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "florestal",
+      "label": "Código Florestal · APP/RL/CAR",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12651.htm",
+      "jurisdiction": "BR",
+      "reuseSourceId": "lei12651-florestal",
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Orienta consulta primária delimitada; requer metadados e vínculo específico ao lote.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "parcelamento",
+      "label": "Parcelamento do solo urbano",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l6766compilado.htm",
+      "jurisdiction": "BR",
+      "reuseSourceId": "lei6766-parcelamento",
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Orienta consulta primária delimitada; requer metadados e vínculo específico ao lote.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "ana-snirh",
+      "label": "ANA · SNIRH e bacias",
+      "url": "https://www.gov.br/ana/pt-br/assuntos/gestao-das-aguas/politica-nacional-de-recursos-hidricos/sistema-de-informacoes-sobre-recursos-hidricos",
+      "jurisdiction": "BR",
+      "reuseSourceId": null,
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Base hidrográfica, quantidade/qualidade, usos, balanço e eventos; época, escala e domínio distinguem camada regional de levantamento do lote.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "sgb-suscetibilidade",
+      "label": "SGB · suscetibilidade, geologia e relevo",
+      "url": "https://www.sgb.gov.br/saiba-mais-cartas-de-suscetibilidade",
+      "jurisdiction": "BR",
+      "reuseSourceId": null,
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Mapas regionais de suscetibilidade orientam aprofundamento; não representam sondagem local, fundação ou mapa parcelar de risco.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "anm-processos",
+      "label": "ANM · processos minerários",
+      "url": "https://dadosabertos.anm.gov.br/SIGMINE/PROCESSOS_MINERARIOS/",
+      "jurisdiction": "BR",
+      "reuseSourceId": null,
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Poligonal minerária e situação administrativa não são propriedade da superfície nem prova de cavidades/estabilidade.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "decea-aga",
+      "label": "DECEA · planos de proteção e OPEA",
+      "url": "https://aga.decea.mil.br/",
+      "jurisdiction": "BR",
+      "reuseSourceId": null,
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Planos aprovados e procedimento AGA; altitude de terreno, topo e datum necessários; altura municipal não encerra a análise aeronáutica.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "cetesb-contaminacao",
+      "label": "CETESB · relação de áreas contaminadas",
+      "url": "https://cetesb.sp.gov.br/areas-contaminadas/relacao-de-areas-contaminadas/",
+      "jurisdiction": "SP",
+      "reuseSourceId": null,
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "restricted-http-403-observed",
+      "supports": "Consultar cadastro, estágio e uso declarado; ausência de registro não encerra investigação de histórico e fontes potenciais.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "cetesb-manual",
+      "label": "CETESB · manual GAC 2025",
+      "url": "https://cetesb.sp.gov.br/areascontaminadas/Manual-GAC-3-ed-rev-ampl-2025.pdf",
+      "jurisdiction": "SP",
+      "reuseSourceId": null,
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Manual técnico de avaliação preliminar, investigação e gerenciamento; não adotar custo ou status ambiental sem evidência específica.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "feam-contaminacao",
+      "label": "FEAM · áreas contaminadas",
+      "url": "https://conselhos.meioambiente.mg.gov.br/pt/web/feam/area-contaminada",
+      "jurisdiction": "MG",
+      "reuseSourceId": null,
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "search-primary-index-open-failed",
+      "supports": "Inventário e etapas de gerenciamento; cruzar titular, localização, estágio, uso e medidas de controle.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "sisema-ide",
+      "label": "IDE-Sisema · camadas e metadados",
+      "url": "https://idesisema.meioambiente.mg.gov.br/",
+      "jurisdiction": "MG",
+      "reuseSourceId": null,
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Catálogo de geosserviços OGC; contaminação, bacias, geologia e barragens requerem camada, data e escala específicas.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "ima-contaminacao",
+      "label": "IMA · IN74 áreas contaminadas",
+      "url": "https://in.ima.sc.gov.br/instrucaoNormativa/visualizar/93",
+      "jurisdiction": "SC",
+      "reuseSourceId": null,
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Avaliação preliminar e investigação por etapas; histórico e redes subterrâneas desconhecidos geram incertezas; reabilitação é para uso declarado.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "ima-atos",
+      "label": "IMA · portarias e alterações atuais",
+      "url": "https://consultas.ima.sc.gov.br/portarias",
+      "jurisdiction": "SC",
+      "reuseSourceId": null,
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Índice para identificar alteradoras; existência de grupo de trabalho não revoga automaticamente a instrução corrente.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "incra-certificacao",
+      "label": "INCRA · certificação",
+      "url": "https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/certificacao-imoveis",
+      "jurisdiction": "BR",
+      "reuseSourceId": "incra-certificacao",
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Orienta consulta primária delimitada; requer metadados e vínculo específico ao lote.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "incra-cadastro",
+      "label": "INCRA · SNCR/CCIR",
+      "url": "https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/cadastro-imovel-rural",
+      "jurisdiction": "BR",
+      "reuseSourceId": "incra-ccir",
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Orienta consulta primária delimitada; requer metadados e vínculo específico ao lote.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "car",
+      "label": "CAR · inscrição e situação",
+      "url": "https://www.gov.br/car/pt-br/assuntos/etapas-do-car-e-regularizacao-ambiental/inscricao-no-car",
+      "jurisdiction": "BR",
+      "reuseSourceId": "car-inscricao",
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Recibo de declaração não prova domínio, posse, licença ou autorização; situação e validação são provas separadas.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "incra-ramt",
+      "label": "INCRA · RAMT e mercados regionais",
+      "url": "https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/relatorio-de-analise-de-mercados-de-terras/introducao-ramt",
+      "jurisdiction": "BR",
+      "reuseSourceId": null,
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "PPR descreve mercados homogêneos/aptidões; referência regional, sem adoção como índice absoluto de imóvel específico.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "ibge-setores",
+      "label": "IBGE · setores censitários",
+      "url": "https://www.ibge.gov.br/geociencias/organizacao-do-territorio/estrutura-territorial/26565-malhas-de-setores-censitarios-divisoes-intramunicipais.html?=&t=o-que-e",
+      "jurisdiction": "BR",
+      "reuseSourceId": null,
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Malha e agregados compatíveis, ano e códigos; população recortada não se estima por proporção de área sem método.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "datajud",
+      "label": "CNJ · API pública DataJud",
+      "url": "https://www.cnj.jus.br/sistemas/datajud/api-publica/",
+      "jurisdiction": "BR",
+      "reuseSourceId": null,
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "consulted-primary-reference",
+      "supports": "Metadados públicos delimitados; não fornece certidão negativa nem pesquisa dominial; conector existente consulta CNJ conhecido.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    },
+    {
+      "id": "escavador",
+      "label": "Escavador · documentação V2",
+      "url": "https://api.escavador.com/v2/docs/",
+      "jurisdiction": "BR",
+      "reuseSourceId": null,
+      "checkedAt": "2026-10-02",
+      "authority": "official-reference-for-curation",
+      "availability": "provider-docs-only",
+      "supports": "Fonte do fornecedor, não órgão oficial; conector existente exige credencial privada e custo autorizado; nenhum retorno autenticado executado.",
+      "maxAgeDays": 30,
+      "legalEffectVerified": false
+    }
+  ],
+  "fronts": [
+    {
+      "id": "identity_title",
+      "label": "Identidade, matrícula e cadeia dominial",
+      "axisIds": [
+        "identity_geometry"
+      ],
+      "sourceIds": [
+        "parcelamento",
+        "incra-certificacao"
+      ],
+      "role": "identity",
+      "applicability": "all",
+      "gates": [
+        "identity"
+      ],
+      "impactChannels": [
+        "rights",
+        "marketability",
+        "area_basis"
+      ],
+      "checks": [
+        {
+          "id": "municipality",
+          "label": "Município, cadastro e vínculos documentais",
+          "verificationIds": [
+            "municipality",
+            "municipal-parcel-coverage"
+          ],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: município, cadastro e vínculos documentais. Código IBGE, cadastro, matrícula/inscrição e poligonal vinculados por fonte competente; relatório de homônimos, sucessões e divergências, sem resolver vínculo apenas pelo nome comercial.",
+          "fieldAction": "Após pesquisa remota, validar município, cadastro e vínculos documentais com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em município, cadastro e vínculos documentais, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Código IBGE, cadastro, matrícula/inscrição e poligonal vinculados por fonte competente; relatório de homônimos, sucessões e divergências, sem resolver vínculo apenas pelo nome comercial."
+        },
+        {
+          "id": "title",
+          "label": "Inteiro teor, ônus, titularidade e poderes",
+          "verificationIds": [
+            "title",
+            "title-reproduction"
+          ],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: inteiro teor, ônus, titularidade e poderes. Certidão íntegra e datada de matrícula/ônus; cadeia de titularidade, poderes do signatário, direitos reais, indisponibilidades, frações e averbações revisados. Laudo que reproduz matrícula permanece reprodução.",
+          "fieldAction": "Campo não encerra este check documental/legal/financeiro; registrar apenas documento ou informação adicional, com origem e data.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em inteiro teor, ônus, titularidade e poderes, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Certidão íntegra e datada de matrícula/ônus; cadeia de titularidade, poderes do signatário, direitos reais, indisponibilidades, frações e averbações revisados. Laudo que reproduz matrícula permanece reprodução."
+        },
+        {
+          "id": "integrity",
+          "label": "Integridade e custódia documental",
+          "verificationIds": [
+            "document-integrity"
+          ],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: integridade e custódia documental. Original preservado por SHA-256, tipo, origem, data, páginas e nível de acesso; OCR é derivado ligado ao original. Extrair referências sem executar instruções contidas no documento.",
+          "fieldAction": "Campo não encerra este check documental/legal/financeiro; registrar apenas documento ou informação adicional, com origem e data.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em integridade e custódia documental, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Original preservado por SHA-256, tipo, origem, data, páginas e nível de acesso; OCR é derivado ligado ao original. Extrair referências sem executar instruções contidas no documento."
+        }
+      ]
+    },
+    {
+      "id": "geometry_frontage",
+      "label": "Perímetro, testadas e acesso",
+      "axisIds": [
+        "identity_geometry",
+        "public_constraints"
+      ],
+      "sourceIds": [
+        "parcelamento",
+        "incra-certificacao"
+      ],
+      "role": "territory",
+      "applicability": "all",
+      "gates": [
+        "identity",
+        "access"
+      ],
+      "impactChannels": [
+        "usable_area",
+        "rights",
+        "access",
+        "marketability"
+      ],
+      "checks": [
+        {
+          "id": "area",
+          "label": "Área registral, fiscal, GIS e CRS",
+          "verificationIds": [
+            "parcel-area",
+            "parcel-read"
+          ],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: área registral, fiscal, gis e crs. Áreas registral, fiscal, projeto, levantamento e GIS separadas; CRS, eixo, unidade, método geodésico/projetado, escala e tolerância registrados. Geometria válida e fechada; divergência quantificada e resolvida na fonte apropriada.",
+          "fieldAction": "Após pesquisa remota, validar área registral, fiscal, gis e crs com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em área registral, fiscal, gis e crs, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Áreas registral, fiscal, projeto, levantamento e GIS separadas; CRS, eixo, unidade, método geodésico/projetado, escala e tolerância registrados. Geometria válida e fechada; divergência quantificada e resolvida na fonte apropriada."
+        },
+        {
+          "id": "frontage",
+          "label": "Testadas legais, acesso público, confrontações e servidões",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: testadas legais, acesso público, confrontações e servidões. Cada segmento de testada associado a via pública/servidão, largura, cota, acesso autorizado e barreiras; confrontações e faixas não confundidas com limites de imagem.",
+          "fieldAction": "Após pesquisa remota, validar testadas legais, acesso público, confrontações e servidões com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em testadas legais, acesso público, confrontações e servidões, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Cada segmento de testada associado a via pública/servidão, largura, cota, acesso autorizado e barreiras; confrontações e faixas não confundidas com limites de imagem."
+        },
+        {
+          "id": "occupation",
+          "label": "Ocupações, benfeitorias e interferências de vizinhos",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: ocupações, benfeitorias e interferências de vizinhos. Ocupações, benfeitorias, muros, invasões e acessos localizados, com época e fonte; contribuição de benfeitorias separada do preço de terra e posse física separada do direito registral.",
+          "fieldAction": "Após pesquisa remota, validar ocupações, benfeitorias e interferências de vizinhos com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em ocupações, benfeitorias e interferências de vizinhos, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Ocupações, benfeitorias, muros, invasões e acessos localizados, com época e fonte; contribuição de benfeitorias separada do preço de terra e posse física separada do direito registral."
+        }
+      ]
+    },
+    {
+      "id": "zoning_value",
+      "label": "Zoneamento e efeito sobre a terra",
+      "axisIds": [
+        "zoning_regime"
+      ],
+      "sourceIds": [
+        "estatuto-eiv",
+        "parcelamento"
+      ],
+      "role": "regulatory",
+      "applicability": "all",
+      "gates": [
+        "zoning"
+      ],
+      "impactChannels": [
+        "permitted_use",
+        "marketability",
+        "rights",
+        "delay"
+      ],
+      "checks": [
+        {
+          "id": "legal_chain",
+          "label": "Lei vigente, anexos, alteradoras e decisões judiciais",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: lei vigente, anexos, alteradoras e decisões judiciais. Plano diretor, uso/ocupação, parcelamento, anexos cartográficos, alteradoras, decretos e efeitos judiciais reconciliados por vigência, publicação, competência e jurisdição; pacote municipal existente reusado, novo apenas candidato.",
+          "fieldAction": "Campo não encerra este check documental/legal/financeiro; registrar apenas documento ou informação adicional, com origem e data.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em lei vigente, anexos, alteradoras e decisões judiciais, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Plano diretor, uso/ocupação, parcelamento, anexos cartográficos, alteradoras, decretos e efeitos judiciais reconciliados por vigência, publicação, competência e jurisdição; pacote municipal existente reusado, novo apenas candidato."
+        },
+        {
+          "id": "whole_parcel",
+          "label": "Todas as zonas e sobreposições da poligonal",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: todas as zonas e sobreposições da poligonal. Interseção de toda a poligonal com zonas e sobreposições; áreas por zona, fonte/versão/CRS e bordas incertas; consulta por ponto não encerra lote atravessado por zonas.",
+          "fieldAction": "Após pesquisa remota, validar todas as zonas e sobreposições da poligonal com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em todas as zonas e sobreposições da poligonal, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Interseção de toda a poligonal com zonas e sobreposições; áreas por zona, fonte/versão/CRS e bordas incertas; consulta por ponto não encerra lote atravessado por zonas."
+        },
+        {
+          "id": "regime",
+          "label": "Perímetro urbano, destinação efetiva e transição",
+          "verificationIds": [
+            "land-context"
+          ],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: perímetro urbano, destinação efetiva e transição. Perímetro urbano, destinação efetiva, situação tributária e cadastro rural confrontados; transição registrada explicitamente, sem inferir regime só de IPTU/ITR, CEP ou localização.",
+          "fieldAction": "Após pesquisa remota, validar perímetro urbano, destinação efetiva e transição com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em perímetro urbano, destinação efetiva e transição, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Perímetro urbano, destinação efetiva, situação tributária e cadastro rural confrontados; transição registrada explicitamente, sem inferir regime só de IPTU/ITR, CEP ou localização."
+        }
+      ]
+    },
+    {
+      "id": "land_market",
+      "label": "Preço de terra e qualidade dos comparáveis",
+      "axisIds": [],
+      "sourceIds": [
+        "incra-ramt"
+      ],
+      "role": "market",
+      "applicability": "all",
+      "gates": [],
+      "impactChannels": [
+        "market_reference",
+        "liquidity",
+        "price_uncertainty"
+      ],
+      "checks": [
+        {
+          "id": "sample",
+          "label": "Micromercado, porte, tipologia e fontes independentes",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "tabular"
+          ],
+          "priority": "P1",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: micromercado, porte, tipologia e fontes independentes. Amostra independente de terras do mesmo micromercado, porte, acesso, regime e restrições; distância/data/área/fonte deduplicadas, exclusões explicadas e preço por unidade reconciliado no estimador canônico.",
+          "fieldAction": "Após pesquisa remota, validar micromercado, porte, tipologia e fontes independentes com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em micromercado, porte, tipologia e fontes independentes, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Amostra independente de terras do mesmo micromercado, porte, acesso, regime e restrições; distância/data/área/fonte deduplicadas, exclusões explicadas e preço por unidade reconciliado no estimador canônico."
+        },
+        {
+          "id": "improvements",
+          "label": "Terra, benfeitorias, direitos e estratos comparáveis",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "tabular"
+          ],
+          "priority": "P1",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: terra, benfeitorias, direitos e estratos comparáveis. Terra nua, imóvel com benfeitorias, lote aprovado, fração e empreendimento distinguidos; benfeitoria/direito só descontados com base separada. Comparável incompatível permanece estrato auxiliar.",
+          "fieldAction": "Após pesquisa remota, validar terra, benfeitorias, direitos e estratos comparáveis com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em terra, benfeitorias, direitos e estratos comparáveis, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Terra nua, imóvel com benfeitorias, lote aprovado, fração e empreendimento distinguidos; benfeitoria/direito só descontados com base separada. Comparável incompatível permanece estrato auxiliar."
+        },
+        {
+          "id": "transaction",
+          "label": "Oferta versus transação, data, exclusões e consistência de unidade",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "tabular"
+          ],
+          "priority": "P1",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: oferta versus transação, data, exclusões e consistência de unidade. Oferta identificada como oferta, negociação/transação comprovada como tal; atualização temporal e ajustes rastreáveis; R$/m² e R$/ha convertidos explicitamente. VTN, laudo histórico e teto residual não viram preço atual de transação.",
+          "fieldAction": "Campo não encerra este check documental/legal/financeiro; registrar apenas documento ou informação adicional, com origem e data.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em oferta versus transação, data, exclusões e consistência de unidade, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Oferta identificada como oferta, negociação/transação comprovada como tal; atualização temporal e ajustes rastreáveis; R$/m² e R$/ha convertidos explicitamente. VTN, laudo histórico e teto residual não viram preço atual de transação."
+        }
+      ]
+    },
+    {
+      "id": "water_app",
+      "label": "Água, APP, bacia e drenagem",
+      "axisIds": [
+        "environmental_water"
+      ],
+      "sourceIds": [
+        "florestal",
+        "ana-snirh"
+      ],
+      "role": "environmental",
+      "applicability": "all",
+      "gates": [
+        "environmental_screening"
+      ],
+      "impactChannels": [
+        "usable_area",
+        "remediation_cost",
+        "delay",
+        "marketability"
+      ],
+      "checks": [
+        {
+          "id": "app",
+          "label": "Causas de APP, natureza do curso e borda da calha",
+          "verificationIds": [
+            "app-cause-screening"
+          ],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: causas de app, natureza do curso e borda da calha. Identificar a causa de APP: curso natural perene/intermitente e borda da calha, nascente, lago, mangue/restinga, encosta ou outra hipótese aplicável; distinguir canal artificial/curso efêmero. Regra federal/local vigente e ato competente confrontados com mapa e campo.",
+          "fieldAction": "Após pesquisa remota, validar causas de app, natureza do curso e borda da calha com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em causas de app, natureza do curso e borda da calha, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Identificar a causa de APP: curso natural perene/intermitente e borda da calha, nascente, lago, mangue/restinga, encosta ou outra hipótese aplicável; distinguir canal artificial/curso efêmero. Regra federal/local vigente e ato competente confrontados com mapa e campo."
+        },
+        {
+          "id": "basin",
+          "label": "Bacia, conectividade hídrica, nascentes e lençol",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: bacia, conectividade hídrica, nascentes e lençol. Bacia/sub-bacia, conectividade, drenagem superficial, nascentes e registros de nível subterrâneo vinculados por escala/época; polígono de bacia regional não determina sozinho cheia, APP ou lençol do lote.",
+          "fieldAction": "Após pesquisa remota, validar bacia, conectividade hídrica, nascentes e lençol com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em bacia, conectividade hídrica, nascentes e lençol, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Bacia/sub-bacia, conectividade, drenagem superficial, nascentes e registros de nível subterrâneo vinculados por escala/época; polígono de bacia regional não determina sozinho cheia, APP ou lençol do lote."
+        },
+        {
+          "id": "flood",
+          "label": "Cheias, marés, mancha, cotas e eventos históricos",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: cheias, marés, mancha, cotas e eventos históricos. Manchas oficiais/modelos, eventos históricos, retorno, maré quando costeiro, cotas e datum vertical reconciliados; declive/elevação regional não prova imunidade a inundação. Exposição e mitigação estimadas com escopo definido.",
+          "fieldAction": "Após pesquisa remota, validar cheias, marés, mancha, cotas e eventos históricos com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em cheias, marés, mancha, cotas e eventos históricos, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Manchas oficiais/modelos, eventos históricos, retorno, maré quando costeiro, cotas e datum vertical reconciliados; declive/elevação regional não prova imunidade a inundação. Exposição e mitigação estimadas com escopo definido."
+        },
+        {
+          "id": "drainage",
+          "label": "Galerias, canalizações, drenagem e possíveis redes subterrâneas",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: galerias, canalizações, drenagem e possíveis redes subterrâneas. Cadastro de galerias/canalizações e redes das concessionárias confrontado com servidões, inspeções, caixas e relatos georreferenciados; falta de desenho vira pendência específica. Ensaios/GPR/inspeção apenas após hipótese e escopo técnico.",
+          "fieldAction": "Após pesquisa remota, validar galerias, canalizações, drenagem e possíveis redes subterrâneas com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em galerias, canalizações, drenagem e possíveis redes subterrâneas, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Cadastro de galerias/canalizações e redes das concessionárias confrontado com servidões, inspeções, caixas e relatos georreferenciados; falta de desenho vira pendência específica. Ensaios/GPR/inspeção apenas após hipótese e escopo técnico."
+        }
+      ]
+    },
+    {
+      "id": "ecology",
+      "label": "Vegetação, proteção e patrimônio natural",
+      "axisIds": [
+        "environmental_water",
+        "public_constraints"
+      ],
+      "sourceIds": [
+        "florestal",
+        "licenciamento"
+      ],
+      "role": "environmental",
+      "applicability": "all",
+      "gates": [
+        "environmental_screening"
+      ],
+      "impactChannels": [
+        "usable_area",
+        "mitigation_cost",
+        "delay"
+      ],
+      "checks": [
+        {
+          "id": "vegetation",
+          "label": "Vegetação nativa, bioma, supressão e compensações",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: vegetação nativa, bioma, supressão e compensações. Bioma, cobertura e estágio sucessional quando aplicável, histórico de supressão e autorizações identificados; satélite/Street View orientam inventário, sem declarar espécie ou licença.",
+          "fieldAction": "Após pesquisa remota, validar vegetação nativa, bioma, supressão e compensações com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em vegetação nativa, bioma, supressão e compensações, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Bioma, cobertura e estágio sucessional quando aplicável, histórico de supressão e autorizações identificados; satélite/Street View orientam inventário, sem declarar espécie ou licença."
+        },
+        {
+          "id": "protected",
+          "label": "UC, zona de amortecimento, RL e áreas protegidas",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: uc, zona de amortecimento, rl e áreas protegidas. UC e categoria, plano de manejo, amortecimento aplicável, RL/servidão e demais proteções interceptadas na poligonal com fonte vigente; não aplicar buffer universal a toda unidade de conservação.",
+          "fieldAction": "Após pesquisa remota, validar uc, zona de amortecimento, rl e áreas protegidas com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em uc, zona de amortecimento, rl e áreas protegidas, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "UC e categoria, plano de manejo, amortecimento aplicável, RL/servidão e demais proteções interceptadas na poligonal com fonte vigente; não aplicar buffer universal a toda unidade de conservação."
+        },
+        {
+          "id": "ecological",
+          "label": "Hábitats, fauna, corredores e sensibilidade ambiental",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: hábitats, fauna, corredores e sensibilidade ambiental. Hábitats, fauna, corredores, cursos e conectividade triados por bases oficiais e sazonalidade; necessidade de inventário, compensação e estudo especializado associada ao uso e ao impacto.",
+          "fieldAction": "Após pesquisa remota, validar hábitats, fauna, corredores e sensibilidade ambiental com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em hábitats, fauna, corredores e sensibilidade ambiental, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Hábitats, fauna, corredores, cursos e conectividade triados por bases oficiais e sazonalidade; necessidade de inventário, compensação e estudo especializado associada ao uso e ao impacto."
+        }
+      ]
+    },
+    {
+      "id": "contamination",
+      "label": "Histórico de uso e contaminação",
+      "axisIds": [
+        "environmental_water"
+      ],
+      "sourceIds": [
+        "cetesb-contaminacao",
+        "cetesb-manual",
+        "feam-contaminacao",
+        "sisema-ide",
+        "ima-contaminacao",
+        "ima-atos"
+      ],
+      "role": "environmental",
+      "applicability": "all",
+      "gates": [
+        "environmental_screening"
+      ],
+      "impactChannels": [
+        "remediation_cost",
+        "liability",
+        "usable_area",
+        "delay",
+        "marketability"
+      ],
+      "checks": [
+        {
+          "id": "history",
+          "label": "Usos anteriores, aterros, postos, indústria e resíduos",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: usos anteriores, aterros, postos, indústria e resíduos. Linha do tempo de usos, fotos aéreas, cadastros/atividades, aterros, combustíveis e resíduos com localização e época; identificar fontes potenciais e receptores, incluindo vizinhança hidráulica.",
+          "fieldAction": "Após pesquisa remota, validar usos anteriores, aterros, postos, indústria e resíduos com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em usos anteriores, aterros, postos, indústria e resíduos, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Linha do tempo de usos, fotos aéreas, cadastros/atividades, aterros, combustíveis e resíduos com localização e época; identificar fontes potenciais e receptores, incluindo vizinhança hidráulica."
+        },
+        {
+          "id": "registry",
+          "label": "Cadastros ambientais e estágio de gerenciamento",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: cadastros ambientais e estágio de gerenciamento. Consulta delimitada ao cadastro ambiental estadual competente e estágio de gerenciamento, restrições de uso e reabilitação; ausência no cadastro não encerra histórico nem confirma ausência de contaminação.",
+          "fieldAction": "Após pesquisa remota, validar cadastros ambientais e estágio de gerenciamento com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em cadastros ambientais e estágio de gerenciamento, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Consulta delimitada ao cadastro ambiental estadual competente e estágio de gerenciamento, restrições de uso e reabilitação; ausência no cadastro não encerra histórico nem confirma ausência de contaminação."
+        },
+        {
+          "id": "subsurface",
+          "label": "Tanques, tubulações, plumas, água subterrânea e receptores",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: tanques, tubulações, plumas, água subterrânea e receptores. Modelo conceitual preliminar fonte–via–receptor; indícios de tanque/tubulação/pluma/água subterrânea separados de confirmação analítica. Investigações preliminar/confirmatória/detalhada e custo de remediação somente com escopo e atribuição.",
+          "fieldAction": "Após pesquisa remota, validar tanques, tubulações, plumas, água subterrânea e receptores com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em tanques, tubulações, plumas, água subterrânea e receptores, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Modelo conceitual preliminar fonte–via–receptor; indícios de tanque/tubulação/pluma/água subterrânea separados de confirmação analítica. Investigações preliminar/confirmatória/detalhada e custo de remediação somente com escopo e atribuição."
+        }
+      ]
+    },
+    {
+      "id": "relief_geology",
+      "label": "Relevo, solo, subsolo e risco geológico",
+      "axisIds": [
+        "geotechnical"
+      ],
+      "sourceIds": [
+        "sgb-suscetibilidade",
+        "sisema-ide"
+      ],
+      "role": "territory",
+      "applicability": "all",
+      "gates": [
+        "geotechnical"
+      ],
+      "impactChannels": [
+        "foundations_cost",
+        "earthworks_cost",
+        "usable_area",
+        "delay"
+      ],
+      "checks": [
+        {
+          "id": "dem",
+          "label": "DTM/DSM, resolução, datum e distribuição de declividades",
+          "verificationIds": [
+            "coverage-relevo"
+          ],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: dtm/dsm, resolução, datum e distribuição de declividades. DTM/DSM distinguidos; resolução, datum vertical, época, cobertura, máscara/no-data e distribuição de declividades informados. Mesh Google/DSM com edifícios não é terreno topográfico de engenharia.",
+          "fieldAction": "Após pesquisa remota, validar dtm/dsm, resolução, datum e distribuição de declividades com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em dtm/dsm, resolução, datum e distribuição de declividades, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "DTM/DSM distinguidos; resolução, datum vertical, época, cobertura, máscara/no-data e distribuição de declividades informados. Mesh Google/DSM com edifícios não é terreno topográfico de engenharia."
+        },
+        {
+          "id": "soil",
+          "label": "Geologia, pedologia, aterros e registros de sondagem",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: geologia, pedologia, aterros e registros de sondagem. Geologia/pedologia regional, aterros e logs de sondagem existentes por coordenada/profundidade/data confrontados; nenhuma capacidade de fundação ou custo fechado inferido só da classe regional de solo.",
+          "fieldAction": "Após pesquisa remota, validar geologia, pedologia, aterros e registros de sondagem com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em geologia, pedologia, aterros e registros de sondagem, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Geologia/pedologia regional, aterros e logs de sondagem existentes por coordenada/profundidade/data confrontados; nenhuma capacidade de fundação ou custo fechado inferido só da classe regional de solo."
+        },
+        {
+          "id": "risk",
+          "label": "Erosão, movimentos de massa, subsidência e cavidades",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: erosão, movimentos de massa, subsidência e cavidades. Suscetibilidade, risco oficial quando existente, erosão, deslizamento, subsidência/cavidades e evidência histórica triados; escala compatível e necessidade de estudo geotécnico indicadas separadamente.",
+          "fieldAction": "Após pesquisa remota, validar erosão, movimentos de massa, subsidência e cavidades com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em erosão, movimentos de massa, subsidência e cavidades, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Suscetibilidade, risco oficial quando existente, erosão, deslizamento, subsidência/cavidades e evidência histórica triados; escala compatível e necessidade de estudo geotécnico indicadas separadamente."
+        }
+      ]
+    },
+    {
+      "id": "mineral_public",
+      "label": "Mineração, barragens e restrições públicas",
+      "axisIds": [
+        "public_constraints",
+        "geotechnical"
+      ],
+      "sourceIds": [
+        "anm-processos",
+        "sisema-ide",
+        "sgb-suscetibilidade"
+      ],
+      "role": "territory",
+      "applicability": "all",
+      "gates": [
+        "public_constraints"
+      ],
+      "impactChannels": [
+        "rights",
+        "usable_area",
+        "marketability",
+        "liability"
+      ],
+      "checks": [
+        {
+          "id": "mineral",
+          "label": "Processos ANM, direitos da superfície e lavra",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: processos anm, direitos da superfície e lavra. Processos ANM e seus estágios/interseções datados, direitos de superfície e servidões confrontados; título minerário não é domínio da superfície nem autorização de ocupação do imóvel.",
+          "fieldAction": "Após pesquisa remota, validar processos anm, direitos da superfície e lavra com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em processos anm, direitos da superfície e lavra, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Processos ANM e seus estágios/interseções datados, direitos de superfície e servidões confrontados; título minerário não é domínio da superfície nem autorização de ocupação do imóvel."
+        },
+        {
+          "id": "dams",
+          "label": "Barragens, ZAS, inundação de ruptura e PAEs",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: barragens, zas, inundação de ruptura e paes. Cadastro de barragens, classificação, mapas de ruptura/ZAS e PAE vigentes consultados por poligonal e cota; exposição potencial e rotas de emergência distinguidas de inundação ordinária.",
+          "fieldAction": "Após pesquisa remota, validar barragens, zas, inundação de ruptura e paes com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em barragens, zas, inundação de ruptura e paes, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Cadastro de barragens, classificação, mapas de ruptura/ZAS e PAE vigentes consultados por poligonal e cota; exposição potencial e rotas de emergência distinguidas de inundação ordinária."
+        },
+        {
+          "id": "public",
+          "label": "DUP, viário, faixa de domínio, SPU e patrimônio",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: dup, viário, faixa de domínio, spu e patrimônio. DUP/desapropriação, melhoramento viário, faixas de domínio, rodovia/ferrovia/linhas, SPU e patrimônio consultados nas autoridades competentes; medida/área afetada e direitos separados de hipótese de imagem.",
+          "fieldAction": "Após pesquisa remota, validar dup, viário, faixa de domínio, spu e patrimônio com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em dup, viário, faixa de domínio, spu e patrimônio, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "DUP/desapropriação, melhoramento viário, faixas de domínio, rodovia/ferrovia/linhas, SPU e patrimônio consultados nas autoridades competentes; medida/área afetada e direitos separados de hipótese de imagem."
+        }
+      ]
+    },
+    {
+      "id": "rural",
+      "label": "Cadastros rurais e aptidão",
+      "axisIds": [
+        "rural_transition"
+      ],
+      "sourceIds": [
+        "incra-certificacao",
+        "incra-cadastro",
+        "car",
+        "incra-ramt",
+        "florestal"
+      ],
+      "role": "regulatory",
+      "applicability": "rural_or_transition",
+      "gates": [
+        "rural_regime"
+      ],
+      "impactChannels": [
+        "rights",
+        "marketability",
+        "usable_area",
+        "permitted_use"
+      ],
+      "checks": [
+        {
+          "id": "cadastre",
+          "label": "SNCR/CCIR, CIB/CAFIR, ITR e classificação territorial",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: sncr/ccir, cib/cafir, itr e classificação territorial. SNCR/CCIR, CIB/CAFIR, ITR e cadastro municipal vinculados à matrícula/poligonal; datas, titulares e divergências preservados. Documento cadastral não prova domínio nem regularidade ambiental.",
+          "fieldAction": "Campo não encerra este check documental/legal/financeiro; registrar apenas documento ou informação adicional, com origem e data.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em sncr/ccir, cib/cafir, itr e classificação territorial, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "SNCR/CCIR, CIB/CAFIR, ITR e cadastro municipal vinculados à matrícula/poligonal; datas, titulares e divergências preservados. Documento cadastral não prova domínio nem regularidade ambiental."
+        },
+        {
+          "id": "certification",
+          "label": "SIGEF/SNCI, certificação vigente e sobreposições",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: sigef/snci, certificação vigente e sobreposições. SIGEF/SNCI, situação da certificação, memorial, profissional e sobreposições conferidos; certificação técnica e cadeia dominial permanecem conclusões distintas.",
+          "fieldAction": "Campo não encerra este check documental/legal/financeiro; registrar apenas documento ou informação adicional, com origem e data.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em sigef/snci, certificação vigente e sobreposições, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "SIGEF/SNCI, situação da certificação, memorial, profissional e sobreposições conferidos; certificação técnica e cadeia dominial permanecem conclusões distintas."
+        },
+        {
+          "id": "rl",
+          "label": "CAR, RL, APP, remanescente e validação cadastral",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: car, rl, app, remanescente e validação cadastral. Recibo e estágio de análise do CAR, RL/APP/remanescente, passivos e regularização confrontados por poligonal; declaração CAR não é título, licença, análise concluída ou autorização de supressão.",
+          "fieldAction": "Campo não encerra este check documental/legal/financeiro; registrar apenas documento ou informação adicional, com origem e data.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em car, rl, app, remanescente e validação cadastral, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Recibo e estágio de análise do CAR, RL/APP/remanescente, passivos e regularização confrontados por poligonal; declaração CAR não é título, licença, análise concluída ou autorização de supressão."
+        },
+        {
+          "id": "aptitude",
+          "label": "Aptidão, água, acesso, módulo/fração mínima e conversão",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: aptidão, água, acesso, módulo/fração mínima e conversão. Acesso, aptidão/uso atual, água/outorga, módulo/fração mínima e requisitos de desmembramento/conversão pesquisados na jurisdição. RAMT/PPR é referência regional estratificada, sem adoção automática no lote.",
+          "fieldAction": "Após pesquisa remota, validar aptidão, água, acesso, módulo/fração mínima e conversão com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em aptidão, água, acesso, módulo/fração mínima e conversão, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Acesso, aptidão/uso atual, água/outorga, módulo/fração mínima e requisitos de desmembramento/conversão pesquisados na jurisdição. RAMT/PPR é referência regional estratificada, sem adoção automática no lote."
+        }
+      ]
+    },
+    {
+      "id": "infrastructure",
+      "label": "Redes, saneamento e capacidade",
+      "axisIds": [
+        "infrastructure"
+      ],
+      "sourceIds": [
+        "parcelamento",
+        "licenciamento",
+        "ana-snirh"
+      ],
+      "role": "territory",
+      "applicability": "all",
+      "gates": [
+        "infrastructure"
+      ],
+      "impactChannels": [
+        "connection_cost",
+        "delay",
+        "usable_area",
+        "marketability"
+      ],
+      "checks": [
+        {
+          "id": "networks",
+          "label": "Água, esgoto, energia, telecom e acesso de implantação",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: água, esgoto, energia, telecom e acesso de implantação. Redes existentes, cotas, pontos de conexão, faixas/servidões e acesso operacional mapeados; rede visível na rua não demonstra disponibilidade contratável para o porte pretendido.",
+          "fieldAction": "Após pesquisa remota, validar água, esgoto, energia, telecom e acesso de implantação com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em água, esgoto, energia, telecom e acesso de implantação, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Redes existentes, cotas, pontos de conexão, faixas/servidões e acesso operacional mapeados; rede visível na rua não demonstra disponibilidade contratável para o porte pretendido."
+        },
+        {
+          "id": "capacity",
+          "label": "Capacidade, reforços, efluentes e pareceres de conexão",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: capacidade, reforços, efluentes e pareceres de conexão. Pareceres de viabilidade/ligação, capacidade, reforços, tratamento e efluentes por concessionária/órgão; custo, responsável, condicionantes e validade vinculados à hipótese de uso.",
+          "fieldAction": "Após pesquisa remota, validar capacidade, reforços, efluentes e pareceres de conexão com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em capacidade, reforços, efluentes e pareceres de conexão, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Pareceres de viabilidade/ligação, capacidade, reforços, tratamento e efluentes por concessionária/órgão; custo, responsável, condicionantes e validade vinculados à hipótese de uso."
+        }
+      ]
+    },
+    {
+      "id": "neighborhood",
+      "label": "Localização e vizinhança · triagem EIV",
+      "axisIds": [
+        "infrastructure",
+        "public_constraints"
+      ],
+      "sourceIds": [
+        "estatuto-eiv",
+        "ibge-setores"
+      ],
+      "role": "regulatory",
+      "applicability": "urban_or_transition",
+      "gates": [],
+      "impactChannels": [
+        "marketability",
+        "mitigation_cost",
+        "delay",
+        "liquidity"
+      ],
+      "checks": [
+        {
+          "id": "density",
+          "label": "População, densidade, ocupação e equipamentos",
+          "verificationIds": [
+            "ibge-indicators",
+            "ibge-local"
+          ],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P1",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: população, densidade, ocupação e equipamentos. Malha e agregados censitários compatíveis no ano/código; população/domicílios, área, unidade e método de agregação registrados. Interseção proporcional de setor não equivale a população observada no raio.",
+          "fieldAction": "Após pesquisa remota, validar população, densidade, ocupação e equipamentos com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em população, densidade, ocupação e equipamentos, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Malha e agregados censitários compatíveis no ano/código; população/domicílios, área, unidade e método de agregação registrados. Interseção proporcional de setor não equivale a população observada no raio."
+        },
+        {
+          "id": "mobility",
+          "label": "Mobilidade, tráfego, transporte público e acessibilidade",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P1",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: mobilidade, tráfego, transporte público e acessibilidade. Oferta de transporte, hierarquia viária, acessibilidade, fluxo disponível e polos geradores confrontados; incremento de tráfego depende de hipótese de uso e metodologia, não só distância à via.",
+          "fieldAction": "Após pesquisa remota, validar mobilidade, tráfego, transporte público e acessibilidade com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em mobilidade, tráfego, transporte público e acessibilidade, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Oferta de transporte, hierarquia viária, acessibilidade, fluxo disponível e polos geradores confrontados; incremento de tráfego depende de hipótese de uso e metodologia, não só distância à via."
+        },
+        {
+          "id": "amenity",
+          "label": "Ventilação, iluminação, ruído, paisagem e patrimônio",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P1",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: ventilação, iluminação, ruído, paisagem e patrimônio. Ruído, ventilação/iluminação, paisagem, equipamentos e patrimônio por base/observação verificável; imagem de rua tem data/ponto/câmera e julgamento pessoal separado de fato.",
+          "fieldAction": "Após pesquisa remota, validar ventilação, iluminação, ruído, paisagem e patrimônio com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em ventilação, iluminação, ruído, paisagem e patrimônio, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Ruído, ventilação/iluminação, paisagem, equipamentos e patrimônio por base/observação verificável; imagem de rua tem data/ponto/câmera e julgamento pessoal separado de fato."
+        },
+        {
+          "id": "eiv_trigger",
+          "label": "Exigência municipal de EIV para uso e porte",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P1",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: exigência municipal de eiv para uso e porte. Lei municipal vigente determina exigência e escopo por uso/porte; registrar sete dimensões do art.37 do Estatuto e exigências locais. Triagem de vizinhança não é EIV aprovado nem substitui EIA.",
+          "fieldAction": "Após pesquisa remota, validar exigência municipal de eiv para uso e porte com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em exigência municipal de eiv para uso e porte, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Lei municipal vigente determina exigência e escopo por uso/porte; registrar sete dimensões do art.37 do Estatuto e exigências locais. Triagem de vizinhança não é EIV aprovado nem substitui EIA."
+        }
+      ]
+    },
+    {
+      "id": "environmental_impact",
+      "label": "Impactos ambientais · enquadramento EIA/RIMA",
+      "axisIds": [
+        "environmental_water",
+        "licensing_execution"
+      ],
+      "sourceIds": [
+        "conama-eia",
+        "licenciamento",
+        "competencias"
+      ],
+      "role": "environmental",
+      "applicability": "all",
+      "gates": [
+        "environmental_screening",
+        "licensing"
+      ],
+      "impactChannels": [
+        "mitigation_cost",
+        "delay",
+        "permitted_use"
+      ],
+      "checks": [
+        {
+          "id": "baseline",
+          "label": "Meios físico, biótico e socioeconômico e bacia",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: meios físico, biótico e socioeconômico e bacia. Inventário preliminar físico, biótico e socioeconômico, bacia e área de influência com cobertura/escala/lacunas; receptores e impactos potenciais descritos sem afirmar estudo formal concluído.",
+          "fieldAction": "Após pesquisa remota, validar meios físico, biótico e socioeconômico e bacia com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em meios físico, biótico e socioeconômico e bacia, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Inventário preliminar físico, biótico e socioeconômico, bacia e área de influência com cobertura/escala/lacunas; receptores e impactos potenciais descritos sem afirmar estudo formal concluído."
+        },
+        {
+          "id": "alternatives",
+          "label": "Alternativas, hipótese de não executar e efeitos cumulativos",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: alternativas, hipótese de não executar e efeitos cumulativos. Alternativas de localização/ocupação/tecnologia, cenário sem executar e impactos cumulativos comparados com premissas; seleção permanece condicionada a competência e estudo exigido.",
+          "fieldAction": "Após pesquisa remota, validar alternativas, hipótese de não executar e efeitos cumulativos com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em alternativas, hipótese de não executar e efeitos cumulativos, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Alternativas de localização/ocupação/tecnologia, cenário sem executar e impactos cumulativos comparados com premissas; seleção permanece condicionada a competência e estudo exigido."
+        },
+        {
+          "id": "licensing",
+          "label": "Competência, enquadramento, estudos e condicionantes",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: competência, enquadramento, estudos e condicionantes. Autoridade e enquadramento atual por atividade/porte/localização, estudos, etapas, autorizações e condicionantes identificados; área abaixo de 100 ha não gera dispensa automática de EIA/RIMA ou licenciamento.",
+          "fieldAction": "Após pesquisa remota, validar competência, enquadramento, estudos e condicionantes com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em competência, enquadramento, estudos e condicionantes, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Autoridade e enquadramento atual por atividade/porte/localização, estudos, etapas, autorizações e condicionantes identificados; área abaixo de 100 ha não gera dispensa automática de EIA/RIMA ou licenciamento."
+        }
+      ]
+    },
+    {
+      "id": "litigation",
+      "label": "Litígios, certidões e vínculo jurídico",
+      "axisIds": [
+        "identity_geometry"
+      ],
+      "sourceIds": [
+        "datajud",
+        "escavador"
+      ],
+      "role": "legal",
+      "applicability": "all",
+      "gates": [
+        "legal"
+      ],
+      "impactChannels": [
+        "rights",
+        "liability",
+        "marketability",
+        "delay"
+      ],
+      "checks": [
+        {
+          "id": "entity_link",
+          "label": "Vínculo entre imóvel, titulares, SPE, processo e direitos",
+          "verificationIds": [
+            "judicial-input"
+          ],
+          "modalities": [
+            "document",
+            "tabular"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: vínculo entre imóvel, titulares, spe, processo e direitos. Grafo privado imóvel–matrícula–titular/SPE–processo–objeto com prova de identidade e escopo; homônimos e participação indireta não transformados em litígio do imóvel.",
+          "fieldAction": "Após pesquisa remota, validar vínculo entre imóvel, titulares, spe, processo e direitos com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em vínculo entre imóvel, titulares, spe, processo e direitos, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Grafo privado imóvel–matrícula–titular/SPE–processo–objeto com prova de identidade e escopo; homônimos e participação indireta não transformados em litígio do imóvel."
+        },
+        {
+          "id": "court",
+          "label": "Tribunais, DataJud, processos e objeto da demanda",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "tabular"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: tribunais, datajud, processos e objeto da demanda. Números CNJ conhecidos conferidos no tribunal/DataJud, objeto, fase, tutela/ônus e efeitos no imóvel revisados; busca pública limitada e certidões pertinentes registradas com data.",
+          "fieldAction": "Campo não encerra este check documental/legal/financeiro; registrar apenas documento ou informação adicional, com origem e data.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em tribunais, datajud, processos e objeto da demanda, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Números CNJ conhecidos conferidos no tribunal/DataJud, objeto, fase, tutela/ônus e efeitos no imóvel revisados; busca pública limitada e certidões pertinentes registradas com data."
+        },
+        {
+          "id": "provider",
+          "label": "Escavador/Jusbrasil como descoberta, íntegra e homônimos",
+          "verificationIds": [
+            "escavador-access"
+          ],
+          "modalities": [
+            "document",
+            "tabular"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: escavador/jusbrasil como descoberta, íntegra e homônimos. Escavador/Jusbrasil servem à descoberta licenciada, com custo/credencial privados quando exigidos; confirmar íntegra e identidade no órgão/tribunal. Falha, segredo ou ausência de resultado jamais é nada consta.",
+          "fieldAction": "Campo não encerra este check documental/legal/financeiro; registrar apenas documento ou informação adicional, com origem e data.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em escavador/jusbrasil como descoberta, íntegra e homônimos, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Escavador/Jusbrasil servem à descoberta licenciada, com custo/credencial privados quando exigidos; confirmar íntegra e identidade no órgão/tribunal. Falha, segredo ou ausência de resultado jamais é nada consta."
+        }
+      ]
+    },
+    {
+      "id": "business_envelope",
+      "label": "Possibilidades e envelope preliminar",
+      "axisIds": [
+        "zoning_regime",
+        "public_constraints",
+        "environmental_water"
+      ],
+      "sourceIds": [
+        "parcelamento",
+        "florestal",
+        "decea-aga"
+      ],
+      "role": "regulatory",
+      "applicability": "all",
+      "gates": [
+        "zoning",
+        "public_constraints"
+      ],
+      "impactChannels": [
+        "usable_area",
+        "permitted_use",
+        "development_cost"
+      ],
+      "checks": [
+        {
+          "id": "parameters",
+          "label": "CA, TO, permeabilidade, recuos, altura e não computáveis",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: ca, to, permeabilidade, recuos, altura e não computáveis. CA/TO/permeabilidade/recuos/altura/não computáveis/outorga e exigências por uso extraídos de regra local vigente com artigo/tabela; medidas, área-base e unidades explícitas.",
+          "fieldAction": "Após pesquisa remota, validar ca, to, permeabilidade, recuos, altura e não computáveis com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em ca, to, permeabilidade, recuos, altura e não computáveis, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "CA/TO/permeabilidade/recuos/altura/não computáveis/outorga e exigências por uso extraídos de regra local vigente com artigo/tabela; medidas, área-base e unidades explícitas."
+        },
+        {
+          "id": "airspace",
+          "label": "Planos DECEA, cota absoluta, topo e guindastes",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: planos decea, cota absoluta, topo e guindastes. Planos de proteção DECEA pertinentes por localização, datum e cota absoluta do topo/guindaste; licença/limite municipal e teto aeronáutico cruzados. Não usar altura relativa genérica como liberação.",
+          "fieldAction": "Após pesquisa remota, validar planos decea, cota absoluta, topo e guindastes com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em planos decea, cota absoluta, topo e guindastes, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Planos de proteção DECEA pertinentes por localização, datum e cota absoluta do topo/guindaste; licença/limite municipal e teto aeronáutico cruzados. Não usar altura relativa genérica como liberação."
+        },
+        {
+          "id": "envelope",
+          "label": "União de restrições, envelope por uso e programa comparável",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "gis"
+          ],
+          "priority": "P0",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: união de restrições, envelope por uso e programa comparável. União geométrica de exclusões para não contar APP/faixas/recuos duas vezes; footprint, área computável, altura e acessos derivados da mesma base. Ensaio 3D mantém hipóteses e não passa a parâmetro adotado.",
+          "fieldAction": "Após pesquisa remota, validar união de restrições, envelope por uso e programa comparável com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em união de restrições, envelope por uso e programa comparável, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "União geométrica de exclusões para não contar APP/faixas/recuos duas vezes; footprint, área computável, altura e acessos derivados da mesma base. Ensaio 3D mantém hipóteses e não passa a parâmetro adotado."
+        }
+      ]
+    },
+    {
+      "id": "business_economics",
+      "label": "Economia do negócio e custo de oportunidade",
+      "axisIds": [],
+      "sourceIds": [
+        "incra-ramt"
+      ],
+      "role": "market",
+      "applicability": "all",
+      "gates": [],
+      "impactChannels": [
+        "investment_ceiling",
+        "capital_required",
+        "liquidity"
+      ],
+      "checks": [
+        {
+          "id": "economics",
+          "label": "Saída independente, aquisição, despesas, fluxos e prazos",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "tabular"
+          ],
+          "priority": "P1",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: saída independente, aquisição, despesas, fluxos e prazos. Aquisição, impostos/emolumentos/despesas e saída independente no fluxo datado; preço de terra e teto de compra separados. Apenas motores canônicos calculam resultado e premissa editável conserva fonte/época.",
+          "fieldAction": "Após pesquisa remota, validar saída independente, aquisição, despesas, fluxos e prazos com GPS/precisão, data, fotos/pontos/360 e divergências; impressão pessoal separada de fato.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em saída independente, aquisição, despesas, fluxos e prazos, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Aquisição, impostos/emolumentos/despesas e saída independente no fluxo datado; preço de terra e teto de compra separados. Apenas motores canônicos calculam resultado e premissa editável conserva fonte/época."
+        },
+        {
+          "id": "capital",
+          "label": "TMA, capital próprio, dívida, VPL e TIR",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "tabular"
+          ],
+          "priority": "P1",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: tma, capital próprio, dívida, vpl e tir. Capital próprio/dívida e fluxo apropriado cruzados com TMA/custo de oportunidade de mesma moeda, regime nominal/real e período; TIR projeto/equity, VPL, MOIC e spread apresentados sem contar risco duas vezes.",
+          "fieldAction": "Campo não encerra este check documental/legal/financeiro; registrar apenas documento ou informação adicional, com origem e data.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em tma, capital próprio, dívida, vpl e tir, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Capital próprio/dívida e fluxo apropriado cruzados com TMA/custo de oportunidade de mesma moeda, regime nominal/real e período; TIR projeto/equity, VPL, MOIC e spread apresentados sem contar risco duas vezes."
+        },
+        {
+          "id": "sensitivity",
+          "label": "Liquidez, absorção, prazo e estresses adversos",
+          "verificationIds": [],
+          "modalities": [
+            "document",
+            "tabular"
+          ],
+          "priority": "P1",
+          "remoteAction": "Conferir no acervo Barch, dossiê e fonte competente: liquidez, absorção, prazo e estresses adversos. Preço de saída, custos, prazo, absorção e juros sensibilizados com correlações e intervalos justificados; Monte Carlo só com distribuições explícitas. Percentual de score não é probabilidade de aprovação ou retorno garantido.",
+          "fieldAction": "Campo não encerra este check documental/legal/financeiro; registrar apenas documento ou informação adicional, com origem e data.",
+          "specialistAction": "Resolver o que exige documento inacessível, interpretação ou ato técnico em liquidez, absorção, prazo e estresses adversos, com certidão/parecer/ART/RRT e autoridade competente conforme o escopo.",
+          "exitEvidence": "Preço de saída, custos, prazo, absorção e juros sensibilizados com correlações e intervalos justificados; Monte Carlo só com distribuições explícitas. Percentual de score não é probabilidade de aprovação ou retorno garantido."
+        }
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": "identity",
+      "label": "Identidade e custódia",
+      "dependsOn": [],
+      "frontIds": [
+        "identity_title"
+      ],
+      "allowedClaims": [
+        "identity",
+        "integrity"
+      ],
+      "reviewer": false
+    },
+    {
+      "id": "territory",
+      "label": "Território e infraestrutura",
+      "dependsOn": [
+        "identity"
+      ],
+      "frontIds": [
+        "geometry_frontage",
+        "relief_geology",
+        "mineral_public",
+        "infrastructure"
+      ],
+      "allowedClaims": [
+        "geometry",
+        "regional_screening",
+        "infrastructure"
+      ],
+      "reviewer": false
+    },
+    {
+      "id": "regulatory",
+      "label": "Urbanismo e rural",
+      "dependsOn": [
+        "identity"
+      ],
+      "frontIds": [
+        "zoning_value",
+        "rural",
+        "neighborhood",
+        "business_envelope"
+      ],
+      "allowedClaims": [
+        "legal_source_discovery",
+        "applicability_screening"
+      ],
+      "reviewer": false
+    },
+    {
+      "id": "environmental",
+      "label": "Água e ambiente",
+      "dependsOn": [
+        "identity"
+      ],
+      "frontIds": [
+        "water_app",
+        "ecology",
+        "contamination",
+        "environmental_impact"
+      ],
+      "allowedClaims": [
+        "environmental_screening"
+      ],
+      "reviewer": false
+    },
+    {
+      "id": "legal",
+      "label": "Direitos e contencioso",
+      "dependsOn": [
+        "identity"
+      ],
+      "frontIds": [
+        "litigation"
+      ],
+      "allowedClaims": [
+        "bounded_legal_discovery"
+      ],
+      "reviewer": false
+    },
+    {
+      "id": "market",
+      "label": "Mercado e reconciliação financeira",
+      "dependsOn": [
+        "identity",
+        "regulatory"
+      ],
+      "frontIds": [
+        "land_market",
+        "business_economics"
+      ],
+      "allowedClaims": [
+        "comparable_curation",
+        "canonical_economic_input"
+      ],
+      "reviewer": false
+    },
+    {
+      "id": "adversarial",
+      "label": "Revisão independente",
+      "dependsOn": [
+        "territory",
+        "regulatory",
+        "environmental",
+        "legal",
+        "market"
+      ],
+      "frontIds": [],
+      "allowedClaims": [
+        "cross_audit"
+      ],
+      "reviewer": true
+    }
+  ],
+  "views": {
+    "diagnosis": [
+      "identity_title",
+      "land_market",
+      "business_economics"
+    ],
+    "dashboard": [
+      "land_market",
+      "water_app",
+      "business_economics"
+    ],
+    "land": [
+      "identity_title",
+      "geometry_frontage",
+      "zoning_value",
+      "land_market",
+      "water_app",
+      "ecology",
+      "contamination",
+      "relief_geology",
+      "mineral_public",
+      "rural",
+      "infrastructure",
+      "neighborhood",
+      "environmental_impact",
+      "litigation"
+    ],
+    "business": [
+      "business_envelope",
+      "business_economics",
+      "environmental_impact",
+      "neighborhood",
+      "infrastructure"
+    ]
+  },
+  "audit": {
+    "criticalMissingNeverZero": true,
+    "geometryAdoptionTolerancePct": 2,
+    "pointCannotMeasureIntersection": true,
+    "negativeSearchNotClearance": true,
+    "maxReceiptAgeDays": 1,
+    "legalEffectNeedsLocalReview": true,
+    "priceAdjustmentMode": "evidence-only-no-universal-coefficients"
+  },
+  "ml": {
+    "status": "prepared-not-trained",
+    "authority": "auxiliary-only",
+    "allowedFamilies": [
+      "ANN",
+      "RNN"
+    ],
+    "allowedOutputKinds": [
+      "comparability_score",
+      "unit_price_diagnostic"
+    ],
+    "minUniqueAssets": 500,
+    "minHoldoutAssets": 100,
+    "minRegionHoldoutAssets": 50,
+    "minRnnTimesteps": 6,
+    "maxModelLayers": 6,
+    "maxHiddenUnits": 64,
+    "maxFeatures": 32,
+    "maxArtifactBytes": 1000000,
+    "maxModelAgeDays": 90,
+    "maxUnitPriceMape": 0.25,
+    "maxCalibrationError": 0.1,
+    "allowedFeatures": [
+      {
+        "id": "area_m2",
+        "unit": "m2",
+        "min": 1,
+        "max": 1000000000
+      },
+      {
+        "id": "frontage_m",
+        "unit": "m",
+        "min": 0,
+        "max": 100000
+      },
+      {
+        "id": "road_distance_m",
+        "unit": "m",
+        "min": 0,
+        "max": 1000000
+      },
+      {
+        "id": "slope_pct",
+        "unit": "pct",
+        "min": 0,
+        "max": 100
+      },
+      {
+        "id": "usable_fraction",
+        "unit": "ratio",
+        "min": 0,
+        "max": 1
+      },
+      {
+        "id": "density_people_km2",
+        "unit": "people/km2",
+        "min": 0,
+        "max": 1000000
+      },
+      {
+        "id": "access_score",
+        "unit": "ratio",
+        "min": 0,
+        "max": 1
+      }
+    ],
+    "forbiddenFeatures": [
+      "subject_asking_price",
+      "seller_private_price",
+      "investor_ceiling",
+      "future_product_revenue",
+      "cpf",
+      "race",
+      "religion"
+    ],
+    "labelRules": [
+      "Preço efetivo verificado e estrato m²/ha reconciliado; não usar VTN, preço de oferta ou teto do investidor como preço de transação.",
+      "Comparabilidade: decisão revisada por dois curadores, conflitos preservados e sem etiqueta gerada pelo próprio modelo."
+    ],
+    "splitRules": [
+      "Grupo por imóvel/titular/duplicata; treino/validação/teste sem interseção de imóveis.",
+      "Teste temporal posterior ao treino e validação, com ao menos uma região inteira reservada.",
+      "RNN: observações seriadas reais em sequência temporal; réplicas sintéticas do mesmo caso não contam como novos imóveis."
+    ],
+    "promotion": [
+      "Artefato, dados e métricas por SHA, versão, licença e bases temporais.",
+      "Revisão independente aprovada, comparada com baseline determinística e desempenho fora da amostra.",
+      "Modo sombra antes de qualquer consumo; sem substituir preço canônico, gate normativo ou ato profissional."
+    ],
+    "abstention": [
+      "Sem artefato aprovado ou dataset suficiente.",
+      "Região/regime/unidade fora da validação ou atributo crítico desconhecido.",
+      "Deriva, vazamento de alvo, dados futuros, TTL vencido, hash divergente."
+    ]
+  }
+}

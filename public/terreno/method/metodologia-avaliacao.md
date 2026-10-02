@@ -2,6 +2,24 @@
 
 Barch · Referência metodológica · 29/09/2026
 
+Organização e protocolo ampliados em 02/10/2026. A data dos documentos e dos recibos permanece a da coleta original.
+
+## Organização da apresentação
+
+A leitura pública começa pelo **Diagnóstico**: conclusão, valor físico de referência, preço sugerido de aquisição, teto econômico e condições de avanço. O **Dashboard** mostra indicadores, oito gráficos e exportação do cenário em PDF, HTML e JSON. A seção **Terreno** concentra caracterização, preço da terra, diligências e documentos. **Potencial de uso e negócio** separa possibilidades, envelope, mercado do produto e economia da aquisição. Vistoria, parecer pessoal e metodologia permanecem acessíveis como ferramentas de apoio.
+
+O contexto físico do terreno mostra perímetro, relevo e ocupação atual. A proposta de implantação, pavimentos e programa fica na exploração de uso. O valor da terra usa comparação física independente do negócio; o teto econômico vem dos fluxos e da taxa exigida pelo investidor.
+
+## Protocolo de investigação e revisão
+
+Dezesseis frentes organizam cinquenta verificações específicas: identidade e cadeia dominial; perímetro, testadas e acesso; zoneamento e efeito no valor; mercado de terra; água, APP, bacia e drenagem; vegetação e proteção; histórico e contaminação; relevo, solo e subsolo; mineração e barragens; cadastros rurais; redes; vizinhança e EIV; impactos e EIA/RIMA; litígios; envelope; economia e oportunidade. A aplicação considera município, UF, regime do imóvel e cobertura da fonte.
+
+Cada verificação conserva estado, modalidade documental/GIS/campo, identificadores de evidência e efeitos a quantificar. Pesquisa remota consulta primeiro as bases Barch; a falta de elemento direciona a fonte primária e a captura com integridade, jurisdição, data, escala e unidades. Fontes de referência orientam a pesquisa e não comprovam por si a incidência no lote. A vistoria recebe a pauta resultante; decisão técnica ou ato inacessível exige responsável competente. Identificação, análise especializada, confronto e revisão adversarial são etapas separadas, com impedimentos prevalecendo sobre agregações positivas.
+
+EIV e EIA/RIMA seguem triagens independentes para identificar gatilhos, escopo e dados necessários. Essa triagem não emite estudos formais aprovados. Cartografia, risco hídrico, APP jurídica, vegetação e drenagem também conservam naturezas próprias. A pesquisa jurídica requer vínculo verificável entre imóvel, titular, processo e objeto; indisponibilidade ou resultado incompleto nunca afirma ausência de litígios.
+
+O executor de agentes usa contratos de entrada/saída, dependências, limite de concorrência, revisão independente e bloqueio de publicação normativa ou aprovação automática. A camada multimodal cruza documentos, geometrias, séries e evidências de campo com proveniência comum. A infraestrutura ANN/RNN aceita apenas artefatos auxiliares com dados, pesos, unidades e domínio conferidos, separação por ativo, validação temporal e regional e aprovação independente verificável. Sem artefato validado, abstém-se de inferência; não substitui valor canônico, legislação ou decisão de investimento.
+
 A análise organiza a decisão de investimento: identifica o imóvel, demonstra os condicionantes, confronta produtos possíveis e define quais evidências permitem avançar. A conclusão é proporcional ao que foi comprovado na data do estudo. Cada número conserva sua unidade, finalidade, fonte e condição de uso.
 
 ## Avaliação da área antes do empreendimento
