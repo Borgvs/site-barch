@@ -1,0 +1,15 @@
+{
+  "schema": "barch.site-concept-inventory/1",
+  "studies": [
+    "salseiros-itajai-matricula-77931",
+    "talma-tatuape-lote-0003",
+    "terras-do-palhano-brumadinho",
+    "penha-paisagem-conectada"
+  ],
+  "roots": ["terreno", "viabilidade", "tatuape"],
+  "entries": {
+    "terreno": "public/terreno/index.html",
+    "viabilidade": "public/viabilidade/index.html",
+    "tatuape": "public/estudos/tatuape/v3/index.html"
+  }
+}

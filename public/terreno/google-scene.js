@@ -2,8 +2,8 @@
  * Google mesh is render-only. No geometry/elevation extraction, persistence or analytical use.
  * Vertical display anchors use independent CWT or public Mapzen Terrarium; never Google mesh.
  */
-import {resolveVisualTerrainAnchors} from './terrain-anchor.js?v=f034d95b69f3';
-import {exploratorySummary,exploratoryProposalMetadata,assertExploratoryStudy,assertLandUseStudy,assertOccupationPair} from './exploratory-proposal.js?v=f034d95b69f3';
+import {resolveVisualTerrainAnchors} from './terrain-anchor.js?v=73077e076bf2';
+import {exploratorySummary,exploratoryProposalMetadata,assertExploratoryStudy,assertLandUseStudy,assertOccupationPair} from './exploratory-proposal.js?v=73077e076bf2';
 export const GOOGLE_SCENE_POLICY=Object.freeze({provider:'google-photorealistic-3d-tiles',role:'visual_context_only',cadastralAuthority:false,terrainModelDerivationAllowed:false,buildingGeometryExtractionAllowed:false,machineInterpretationAllowed:false,attributionRequired:true});
 const CESIUM_BASE='https://cesium.com/downloads/cesiumjs/releases/1.136/Build/Cesium/';
 const sourceFeatures=data=>data?.type==='FeatureCollection'?data.features:data?.type==='Feature'?[data]:[];

@@ -1,0 +1,5340 @@
+{
+  "schema": "atlas-cad-library/1",
+  "version": "1.0.0",
+  "generatedAt": "2026-10-01T01:22:25.303882+00:00",
+  "source": {
+    "fileName": "Template CAD(v2018_metros)_V7.0.dwg",
+    "sha256": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+    "byteLength": 14719160,
+    "signature": "AC1032",
+    "drawingInsunits": 6,
+    "license": "USER_PROVIDED_ASSET_RIGHTS_NOT_INDEPENDENTLY_VERIFIED",
+    "modifiedOriginal": false
+  },
+  "conversion": {
+    "tool": "GNU LibreDWG",
+    "version": "0.14",
+    "to": "DXF AC1032",
+    "exitCode": 0,
+    "advancedClassWarnings": true,
+    "parser": "ezdxf 1.4.4",
+    "parserReadMode": "readfile; no recovery needed"
+  },
+  "coordinateConvention": "Normalized x-right/y-down; local meters from declared BLOCK_RECORD units, fallback drawing INSUNITS only when block units are zero.",
+  "coverage": {
+    "sourceBlockCount": 2699,
+    "selectedBlockCount": 87,
+    "exportedBlockCount": 87,
+    "rejectedBlockCount": 0,
+    "stairsNamedBlocks": 0
+  },
+  "limitations": [
+    "Static geometry only; dynamic block actions, constraints and parameters were not recovered.",
+    "Curves flattened to polylines with 1 mm nominal tolerance after unit conversion.",
+    "Hatches, text, attributes and unsupported entities are omitted and counted per symbol.",
+    "Classification and view are inferred from block names; silhouettes need review before placement.",
+    "Door blocks in this extraction are categorized as elevation, not certified floor-plan door symbols.",
+    "No named stair blocks were found; no invented stair symbol is presented as extracted.",
+    "Declared block units can differ from drawing units; review dimensions before use.",
+    "No clearance, accessibility, performance or manufacturer specification is certified."
+  ],
+  "items": [
+    {
+      "id": "esquadria-porta-1-folha-de-correr-branca-f72b29f",
+      "name": "ESQUADRIA - porta 1 folha de correr branca",
+      "category": "door",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "elevation",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "ESQUADRIA - porta 1 folha de correr branca",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.4599999999999453,
+        2.255000086439543
+      ],
+      "width": 1.4599999999999453,
+      "height": 2.255000086439543,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.7299999999999818,
+        2.180000086439584
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.7299999999999818,
+          2.180000086439584
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/esquadria-porta-1-folha-de-correr-branca-f72b29f.json",
+      "thumbnailUrl": "/library/thumbnails/esquadria-porta-1-folha-de-correr-branca-f72b29f.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 12,
+          "LWPOLYLINE": 29,
+          "LINE": 14
+        },
+        "omittedEntityTypes": {
+          "HATCH": 12
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 330
+      }
+    },
+    {
+      "id": "esquadria-porta-de-abrir-com-moldura-branca-1064612",
+      "name": "ESQUADRIA - porta de abrir com moldura branca",
+      "category": "door",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "elevation",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "ESQUADRIA - porta de abrir com moldura branca",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.8000000000004548,
+        2.37
+      ],
+      "width": 0.8000000000004548,
+      "height": 2.37,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.04000000000001819,
+        2.199999999999859
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.04000000000001819,
+          2.199999999999859
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/esquadria-porta-de-abrir-com-moldura-branca-1064612.json",
+      "thumbnailUrl": "/library/thumbnails/esquadria-porta-de-abrir-com-moldura-branca-1064612.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 27,
+          "ARC": 7,
+          "LWPOLYLINE": 43,
+          "LINE": 42,
+          "CIRCLE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 27
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 623
+      }
+    },
+    {
+      "id": "esquadria-porta-de-abrir-com-veneziana-branca-0dfe389",
+      "name": "ESQUADRIA - porta de abrir com veneziana branca",
+      "category": "door",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "elevation",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "ESQUADRIA - porta de abrir com veneziana branca",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.8000000000004547,
+        2.3699999999999997
+      ],
+      "width": 0.8000000000004547,
+      "height": 2.3699999999999997,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.04000000000002118,
+        2.200000000000002
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.04000000000002118,
+          2.200000000000002
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/esquadria-porta-de-abrir-com-veneziana-branca-0dfe389.json",
+      "thumbnailUrl": "/library/thumbnails/esquadria-porta-de-abrir-com-veneziana-branca-0dfe389.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 28,
+          "ARC": 7,
+          "LWPOLYLINE": 40,
+          "LINE": 42,
+          "CIRCLE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 28
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 609
+      }
+    },
+    {
+      "id": "esquadria-porta-4-folhas-2-de-correr-branca-3dbef78",
+      "name": "ESQUADRIA - porta 4 folhas 2 de correr branca",
+      "category": "door",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "elevation",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "ESQUADRIA - porta 4 folhas 2 de correr branca",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        2.1000000000008727,
+        2.2250000864401414
+      ],
+      "width": 2.1000000000008727,
+      "height": 2.2250000864401414,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.05000000000087311,
+        2.2000000864395592
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.05000000000087311,
+          2.2000000864395592
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/esquadria-porta-4-folhas-2-de-correr-branca-3dbef78.json",
+      "thumbnailUrl": "/library/thumbnails/esquadria-porta-4-folhas-2-de-correr-branca-3dbef78.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 63,
+          "LWPOLYLINE": 72
+        },
+        "omittedEntityTypes": {
+          "HATCH": 63
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 636
+      }
+    },
+    {
+      "id": "esquadria-porta-2-folhas-de-correr-vidro-branca-d46c019",
+      "name": "ESQUADRIA - porta 2 folhas de correr vidro branca",
+      "category": "door",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "elevation",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "ESQUADRIA - porta 2 folhas de correr vidro branca",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.900000000000891,
+        2.225000086439559
+      ],
+      "width": 1.900000000000891,
+      "height": 2.225000086439559,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.05000000000087311,
+        2.2000000864395592
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.05000000000087311,
+          2.2000000864395592
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/esquadria-porta-2-folhas-de-correr-vidro-branca-d46c019.json",
+      "thumbnailUrl": "/library/thumbnails/esquadria-porta-2-folhas-de-correr-vidro-branca-d46c019.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 38,
+          "LWPOLYLINE": 53
+        },
+        "omittedEntityTypes": {
+          "HATCH": 38
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 519
+      }
+    },
+    {
+      "id": "esquadria-porta-2-folhas-de-correr-persiana-branca-748dd6f",
+      "name": "ESQUADRIA - porta 2 folhas de correr persiana branca",
+      "category": "door",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "elevation",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "ESQUADRIA - porta 2 folhas de correr persiana branca",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.9000000000008732,
+        2.425000003352816
+      ],
+      "width": 1.9000000000008732,
+      "height": 2.425000003352816,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.05000000000087311,
+        2.400000003352816
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.05000000000087311,
+          2.400000003352816
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/esquadria-porta-2-folhas-de-correr-persiana-branca-748dd6f.json",
+      "thumbnailUrl": "/library/thumbnails/esquadria-porta-2-folhas-de-correr-persiana-branca-748dd6f.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 29,
+          "LWPOLYLINE": 51,
+          "CIRCLE": 5
+        },
+        "omittedEntityTypes": {
+          "HATCH": 29
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 687
+      }
+    },
+    {
+      "id": "esquadria-porta-3-folhas-de-correr-branca-480fbd7",
+      "name": "ESQUADRIA - porta 3 folhas de correr branca",
+      "category": "door",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "elevation",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "ESQUADRIA - porta 3 folhas de correr branca",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.7000000000018103,
+        2.225000086440366
+      ],
+      "width": 1.7000000000018103,
+      "height": 2.225000086440366,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.05000000000087311,
+        2.200000086440141
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.05000000000087311,
+          2.200000086440141
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/esquadria-porta-3-folhas-de-correr-branca-480fbd7.json",
+      "thumbnailUrl": "/library/thumbnails/esquadria-porta-3-folhas-de-correr-branca-480fbd7.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 34,
+          "LWPOLYLINE": 55
+        },
+        "omittedEntityTypes": {
+          "HATCH": 34
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 506
+      }
+    },
+    {
+      "id": "esquadria-porta-de-abrir-lisa-branca-f24e01c",
+      "name": "ESQUADRIA - porta de abrir lisa branca",
+      "category": "door",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "elevation",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "ESQUADRIA - porta de abrir lisa branca",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.8000000000004547,
+        2.37
+      ],
+      "width": 0.8000000000004547,
+      "height": 2.37,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.04000000000002118,
+        2.2
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.04000000000002118,
+          2.2
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/esquadria-porta-de-abrir-lisa-branca-f24e01c.json",
+      "thumbnailUrl": "/library/thumbnails/esquadria-porta-de-abrir-lisa-branca-f24e01c.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 27,
+          "ARC": 7,
+          "LWPOLYLINE": 39,
+          "LINE": 42,
+          "CIRCLE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 27
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 603
+      }
+    },
+    {
+      "id": "eletro-geladeira-62x75x185-planta-fef38b4",
+      "name": "ELETRO - geladeira 62x75x185 planta",
+      "category": "appliance",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "ELETRO - geladeira 62x75x185 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.9299999999999999,
+        1.3300000000000045
+      ],
+      "width": 0.9299999999999999,
+      "height": 1.3300000000000045,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.62,
+        -0.04
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.62,
+          -0.04
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/eletro-geladeira-62x75x185-planta-fef38b4.json",
+      "thumbnailUrl": "/library/thumbnails/eletro-geladeira-62x75x185-planta-fef38b4.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "LWPOLYLINE": 3,
+          "LINE": 3,
+          "ARC": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 54
+      }
+    },
+    {
+      "id": "eletro-lavalouca-14-serv-60x60x85-planta-958af55",
+      "name": "ELETRO - lavalouça 14 serv 60x60x85 planta",
+      "category": "appliance",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "ELETRO - lavalouça 14 serv 60x60x85 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.6,
+        0.5999999999999985
+      ],
+      "width": 0.6,
+      "height": 0.5999999999999985,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.6,
+        0.07309361213409687
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.6,
+          0.07309361213409687
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/eletro-lavalouca-14-serv-60x60x85-planta-958af55.json",
+      "thumbnailUrl": "/library/thumbnails/eletro-lavalouca-14-serv-60x60x85-planta-958af55.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 2,
+          "ARC": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 17
+      }
+    },
+    {
+      "id": "eletro-lavalouca-10-serv-45x60x85-planta-cfcfae8",
+      "name": "ELETRO - lavalouça 10 serv 45x60x85 planta",
+      "category": "appliance",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "ELETRO - lavalouça 10 serv 45x60x85 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.45,
+        0.5999999999999986
+      ],
+      "width": 0.45,
+      "height": 0.5999999999999986,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.45,
+        0.07309361213409696
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.45,
+          0.07309361213409696
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/eletro-lavalouca-10-serv-45x60x85-planta-cfcfae8.json",
+      "thumbnailUrl": "/library/thumbnails/eletro-lavalouca-10-serv-45x60x85-planta-cfcfae8.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 2,
+          "ARC": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 17
+      }
+    },
+    {
+      "id": "metal-cuba-cozinha-84x34-planta-373cf14",
+      "name": "METAL - cuba cozinha 84x34 planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "METAL - cuba cozinha 84x34 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.84,
+        0.34
+      ],
+      "width": 0.84,
+      "height": 0.34,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.42,
+        4.440892098500626e-18
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.42,
+          4.440892098500626e-18
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/metal-cuba-cozinha-84x34-planta-373cf14.json",
+      "thumbnailUrl": "/library/thumbnails/metal-cuba-cozinha-84x34-planta-373cf14.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "LWPOLYLINE": 2,
+          "LINE": 2,
+          "CIRCLE": 4,
+          "HATCH": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 210
+      }
+    },
+    {
+      "id": "metal-cuba-cozinha-30cm-planta-0d274d2",
+      "name": "METAL - cuba cozinha 30cm planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "METAL - cuba cozinha 30cm planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.3,
+        0.3
+      ],
+      "width": 0.3,
+      "height": 0.3,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.15,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.15,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/metal-cuba-cozinha-30cm-planta-0d274d2.json",
+      "thumbnailUrl": "/library/thumbnails/metal-cuba-cozinha-30cm-planta-0d274d2.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "CIRCLE": 3
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 99
+      }
+    },
+    {
+      "id": "metal-cuba-70x40-tramontina-quadrum-planta-2916c36",
+      "name": "METAL - cuba 70x40 tramontina quadrum planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "METAL - cuba 70x40 tramontina quadrum planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.7000000000000001,
+        0.4
+      ],
+      "width": 0.7000000000000001,
+      "height": 0.4,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.35000000000000003,
+        2.220446049250313e-18
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.35000000000000003,
+          2.220446049250313e-18
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/metal-cuba-70x40-tramontina-quadrum-planta-2916c36.json",
+      "thumbnailUrl": "/library/thumbnails/metal-cuba-70x40-tramontina-quadrum-planta-2916c36.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 1,
+          "CIRCLE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 103
+      }
+    },
+    {
+      "id": "metal-cuba-69x49-tramontina-margana-planta-24fbfd4",
+      "name": "METAL - cuba 69x49 tramontina margana planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "METAL - cuba 69x49 tramontina margana planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.685,
+        0.485
+      ],
+      "width": 0.685,
+      "height": 0.485,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.3425,
+        3.3306690738754695e-18
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.3425,
+          3.3306690738754695e-18
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/metal-cuba-69x49-tramontina-margana-planta-24fbfd4.json",
+      "thumbnailUrl": "/library/thumbnails/metal-cuba-69x49-tramontina-margana-planta-24fbfd4.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 23,
+          "CIRCLE": 4
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 339
+      }
+    },
+    {
+      "id": "eletro-fogao-4-bocas-planta-35de85c",
+      "name": "ELETRO - fogão 4 bocas planta",
+      "category": "appliance",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "ELETRO - fogão 4 bocas planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.51,
+        0.6518702698105062
+      ],
+      "width": 0.51,
+      "height": 0.6518702698105062,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.255,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.255,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/eletro-fogao-4-bocas-planta-35de85c.json",
+      "thumbnailUrl": "/library/thumbnails/eletro-fogao-4-bocas-planta-35de85c.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 3,
+          "LWPOLYLINE": 22,
+          "CIRCLE": 5,
+          "ARC": 32
+        },
+        "omittedEntityTypes": {
+          "HATCH": 3
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 1663
+      }
+    },
+    {
+      "id": "eletro-fogao-5-bocas-planta-c9a2c51",
+      "name": "ELETRO - fogão 5 bocas planta",
+      "category": "appliance",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "ELETRO - fogão 5 bocas planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.7700000000000364,
+        0.6518702698105062
+      ],
+      "width": 0.7700000000000364,
+      "height": 0.6518702698105062,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.3850000000000182,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.3850000000000182,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/eletro-fogao-5-bocas-planta-c9a2c51.json",
+      "thumbnailUrl": "/library/thumbnails/eletro-fogao-5-bocas-planta-c9a2c51.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 3,
+          "LWPOLYLINE": 30,
+          "CIRCLE": 6,
+          "ARC": 40
+        },
+        "omittedEntityTypes": {
+          "HATCH": 3
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 2288
+      }
+    },
+    {
+      "id": "eletro-geladeira-85x75x188-planta-905cf1a",
+      "name": "ELETRO - geladeira 85x75x188 planta",
+      "category": "appliance",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "ELETRO - geladeira 85x75x188 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.267500000000001,
+        1.5250000000000001
+      ],
+      "width": 1.267500000000001,
+      "height": 1.5250000000000001,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.4225000000000011,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.4225000000000011,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/eletro-geladeira-85x75x188-planta-905cf1a.json",
+      "thumbnailUrl": "/library/thumbnails/eletro-geladeira-85x75x188-planta-905cf1a.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "LWPOLYLINE": 5,
+          "ARC": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 62
+      }
+    },
+    {
+      "id": "eletro-geladeira-70x75x194-planta-e277b17",
+      "name": "ELETRO - geladeira 70x75x194 planta",
+      "category": "appliance",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "ELETRO - geladeira 70x75x194 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.0500000000000012,
+        1.3800001839504241
+      ],
+      "width": 1.0500000000000012,
+      "height": 1.3800001839504241,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.35000000000000114,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.35000000000000114,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/eletro-geladeira-70x75x194-planta-e277b17.json",
+      "thumbnailUrl": "/library/thumbnails/eletro-geladeira-70x75x194-planta-e277b17.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "LWPOLYLINE": 5
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 61
+      }
+    },
+    {
+      "id": "eletro-geladeira-91x61x176-planta-fdd33f9",
+      "name": "ELETRO - geladeira 91x61x176 planta",
+      "category": "appliance",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "ELETRO - geladeira 91x61x176 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.3587656799354955,
+        1.123949898417445
+      ],
+      "width": 1.3587656799354955,
+      "height": 1.123949898417445,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.6467907307267887,
+        4.547473508864641e-15
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.6467907307267887,
+          4.547473508864641e-15
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/eletro-geladeira-91x61x176-planta-fdd33f9.json",
+      "thumbnailUrl": "/library/thumbnails/eletro-geladeira-91x61x176-planta-fdd33f9.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "LWPOLYLINE": 8,
+          "LINE": 3,
+          "ARC": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 90
+      }
+    },
+    {
+      "id": "louca-vaso-deca-vogue-planta-a71ecf1",
+      "name": "LOUÇA - vaso deca vogue planta",
+      "category": "toilet",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - vaso deca vogue planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.4043081066479499,
+        0.6212413228381624
+      ],
+      "width": 0.4043081066479499,
+      "height": 0.6212413228381624,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.2013260020142479,
+        9.094947017729283e-15
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.2013260020142479,
+          9.094947017729283e-15
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-vaso-deca-vogue-planta-a71ecf1.json",
+      "thumbnailUrl": "/library/thumbnails/louca-vaso-deca-vogue-planta-a71ecf1.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 4,
+          "LWPOLYLINE": 14
+        },
+        "omittedEntityTypes": {
+          "HATCH": 4
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 469
+      }
+    },
+    {
+      "id": "louca-cuba-semiencaixe-deca-l873-planta-3dd21be",
+      "name": "LOUÇA - cuba semiencaixe deca L873 planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - cuba semiencaixe deca L873 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.56,
+        0.46
+      ],
+      "width": 0.56,
+      "height": 0.46,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.28,
+        2.220446049250313e-18
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.28,
+          2.220446049250313e-18
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-cuba-semiencaixe-deca-l873-planta-3dd21be.json",
+      "thumbnailUrl": "/library/thumbnails/louca-cuba-semiencaixe-deca-l873-planta-3dd21be.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 4,
+          "CIRCLE": 3
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 180
+      }
+    },
+    {
+      "id": "metal-chuveiro-deca-dream-acqua-plus-reto-planta-a80da5c",
+      "name": "METAL - chuveiro deca dream acqua plus reto planta",
+      "category": "shower",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "METAL - chuveiro deca dream acqua plus reto planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.3418241915064937,
+        0.123629572408651
+      ],
+      "width": 0.3418241915064937,
+      "height": 0.123629572408651,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.0,
+        0.06182017166895398
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          -0.0,
+          0.06182017166895398
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/metal-chuveiro-deca-dream-acqua-plus-reto-planta-a80da5c.json",
+      "thumbnailUrl": "/library/thumbnails/metal-chuveiro-deca-dream-acqua-plus-reto-planta-a80da5c.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "ARC": 2,
+          "LWPOLYLINE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 151
+      }
+    },
+    {
+      "id": "louca-cuba-deca-semi-42x42-planta-8473750",
+      "name": "LOUÇA - cuba deca semi 42x42 planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - cuba deca semi 42x42 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.46,
+        0.46
+      ],
+      "width": 0.46,
+      "height": 0.46,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.23,
+        2.220446049250313e-18
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.23,
+          2.220446049250313e-18
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-cuba-deca-semi-42x42-planta-8473750.json",
+      "thumbnailUrl": "/library/thumbnails/louca-cuba-deca-semi-42x42-planta-8473750.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 4,
+          "CIRCLE": 3
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 180
+      }
+    },
+    {
+      "id": "louca-tanque-40l-planta-e4bde26",
+      "name": "LOUÇA - tanque 40L planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - tanque 40L planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.5919075612396774,
+        0.49306555540526825
+      ],
+      "width": 0.5919075612396774,
+      "height": 0.49306555540526825,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.2959537806198387,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.2959537806198387,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-tanque-40l-planta-e4bde26.json",
+      "thumbnailUrl": "/library/thumbnails/louca-tanque-40l-planta-e4bde26.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LINE": 24,
+          "SPLINE": 4,
+          "ARC": 6,
+          "CIRCLE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 556
+      }
+    },
+    {
+      "id": "louca-tanque-30l-planta-d1c1da6",
+      "name": "LOUÇA - tanque 30L planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - tanque 30L planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.53,
+        0.49306555540526825
+      ],
+      "width": 0.53,
+      "height": 0.49306555540526825,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.265,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.265,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-tanque-30l-planta-d1c1da6.json",
+      "thumbnailUrl": "/library/thumbnails/louca-tanque-30l-planta-d1c1da6.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LINE": 24,
+          "SPLINE": 4,
+          "ARC": 6,
+          "CIRCLE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 556
+      }
+    },
+    {
+      "id": "louca-cuba-deca-planta-lc26-037abfc",
+      "name": "LOUÇA - Cuba Deca Planta LC26",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - Cuba Deca Planta LC26",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.4,
+        0.4
+      ],
+      "width": 0.4,
+      "height": 0.4,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.2,
+        0.4
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.2,
+          0.4
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-cuba-deca-planta-lc26-037abfc.json",
+      "thumbnailUrl": "/library/thumbnails/louca-cuba-deca-planta-lc26-037abfc.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 2,
+          "CIRCLE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 140
+      }
+    },
+    {
+      "id": "louca-vaso-deca-carrara-planta-a52c790",
+      "name": "LOUÇA - vaso deca carrara planta",
+      "category": "toilet",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - vaso deca carrara planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.369999999999909,
+        0.6550004789491912
+      ],
+      "width": 0.369999999999909,
+      "height": 0.6550004789491912,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.1849999999999272,
+        0.1
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.1849999999999272,
+          0.1
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-vaso-deca-carrara-planta-a52c790.json",
+      "thumbnailUrl": "/library/thumbnails/louca-vaso-deca-carrara-planta-a52c790.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 10,
+          "CIRCLE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 521
+      }
+    },
+    {
+      "id": "louca-banheira-auster-pretty-jet-planta-898838d",
+      "name": "LOUÇA - banheira auster pretty jet planta",
+      "category": "bathtub",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - banheira auster pretty jet planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.807722507123526,
+        0.8000872484570574
+      ],
+      "width": 1.807722507123526,
+      "height": 0.8000872484570574,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.0,
+        0.40000004406032996
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          -0.0,
+          0.40000004406032996
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-banheira-auster-pretty-jet-planta-898838d.json",
+      "thumbnailUrl": "/library/thumbnails/louca-banheira-auster-pretty-jet-planta-898838d.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 16,
+          "LINE": 104,
+          "CIRCLE": 5,
+          "ARC": 64,
+          "ELLIPSE": 12,
+          "SPLINE": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 2238
+      }
+    },
+    {
+      "id": "louca-banheira-auster-prettyjet-dupla-planta-0baa451",
+      "name": "LOUÇA - banheira auster prettyjet dupla planta",
+      "category": "bathtub",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - banheira auster prettyjet dupla planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.807722507123526,
+        1.210087336577717
+      ],
+      "width": 1.807722507123526,
+      "height": 1.210087336577717,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.0,
+        0.6050000881206598
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          -0.0,
+          0.6050000881206598
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-banheira-auster-prettyjet-dupla-planta-0baa451.json",
+      "thumbnailUrl": "/library/thumbnails/louca-banheira-auster-prettyjet-dupla-planta-0baa451.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 28,
+          "LINE": 107,
+          "ARC": 58,
+          "CIRCLE": 5,
+          "ELLIPSE": 24,
+          "SPLINE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 3280
+      }
+    },
+    {
+      "id": "metal-chuveiro-parede-deca-unic-planta-5108b37",
+      "name": "METAL - chuveiro parede deca unic planta",
+      "category": "shower",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "METAL - chuveiro parede deca unic planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.4,
+        0.55
+      ],
+      "width": 0.4,
+      "height": 0.55,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.2,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.2,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/metal-chuveiro-parede-deca-unic-planta-5108b37.json",
+      "thumbnailUrl": "/library/thumbnails/metal-chuveiro-parede-deca-unic-planta-5108b37.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 5,
+          "ARC": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 59
+      }
+    },
+    {
+      "id": "metal-chuveiro-deca-acqua-plus-curvo-planta-f3e9c57",
+      "name": "METAL - chuveiro deca acqua plus curvo planta",
+      "category": "shower",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "METAL - chuveiro deca acqua plus curvo planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.12362957240866468,
+        0.2850000000000136
+      ],
+      "width": 0.12362957240866468,
+      "height": 0.2850000000000136,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.06181478620433055,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.06181478620433055,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/metal-chuveiro-deca-acqua-plus-curvo-planta-f3e9c57.json",
+      "thumbnailUrl": "/library/thumbnails/metal-chuveiro-deca-acqua-plus-curvo-planta-f3e9c57.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 5,
+          "ARC": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 167
+      }
+    },
+    {
+      "id": "louca-bacia-deca-unic-planta-4a233a9",
+      "name": "LOUÇA - bacia deca unic planta",
+      "category": "toilet",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - bacia deca unic planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.36,
+        0.62
+      ],
+      "width": 0.36,
+      "height": 0.62,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.18,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.18,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-bacia-deca-unic-planta-4a233a9.json",
+      "thumbnailUrl": "/library/thumbnails/louca-bacia-deca-unic-planta-4a233a9.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 11,
+          "CIRCLE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 229
+      }
+    },
+    {
+      "id": "louca-bacia-com-caixa-deca-unic-planta-811e2b1",
+      "name": "LOUÇA - bacia com caixa deca unic planta",
+      "category": "toilet",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - bacia com caixa deca unic planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.37,
+        0.655
+      ],
+      "width": 0.37,
+      "height": 0.655,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.185,
+        4.440892098500626e-18
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.185,
+          4.440892098500626e-18
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-bacia-com-caixa-deca-unic-planta-811e2b1.json",
+      "thumbnailUrl": "/library/thumbnails/louca-bacia-com-caixa-deca-unic-planta-811e2b1.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "CIRCLE": 4,
+          "LWPOLYLINE": 8,
+          "ARC": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 307
+      }
+    },
+    {
+      "id": "louca-cuba-semiencaixe-deca-l863-planta-0af5028",
+      "name": "LOUÇA - cuba semiencaixe deca L863 planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - cuba semiencaixe deca L863 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.46,
+        0.46
+      ],
+      "width": 0.46,
+      "height": 0.46,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.23,
+        2.220446049250313e-18
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.23,
+          2.220446049250313e-18
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-cuba-semiencaixe-deca-l863-planta-0af5028.json",
+      "thumbnailUrl": "/library/thumbnails/louca-cuba-semiencaixe-deca-l863-planta-0af5028.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 4,
+          "CIRCLE": 3
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 180
+      }
+    },
+    {
+      "id": "louca-cuba-semiencaixe-deca-l843-planta-059839c",
+      "name": "LOUÇA - cuba semiencaixe deca L843 planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - cuba semiencaixe deca L843 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.56,
+        0.43
+      ],
+      "width": 0.56,
+      "height": 0.43,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.28,
+        2.220446049250313e-18
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.28,
+          2.220446049250313e-18
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-cuba-semiencaixe-deca-l843-planta-059839c.json",
+      "thumbnailUrl": "/library/thumbnails/louca-cuba-semiencaixe-deca-l843-planta-059839c.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "LWPOLYLINE": 2,
+          "CIRCLE": 5
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 239
+      }
+    },
+    {
+      "id": "louca-cuba-semiencaixe-deca-l830-planta-26b33dd",
+      "name": "LOUÇA - cuba semiencaixe deca L830 planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - cuba semiencaixe deca L830 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.42,
+        0.42
+      ],
+      "width": 0.42,
+      "height": 0.42,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.21,
+        2.220446049250313e-18
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.21,
+          2.220446049250313e-18
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-cuba-semiencaixe-deca-l830-planta-26b33dd.json",
+      "thumbnailUrl": "/library/thumbnails/louca-cuba-semiencaixe-deca-l830-planta-26b33dd.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "LWPOLYLINE": 2,
+          "CIRCLE": 5
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 239
+      }
+    },
+    {
+      "id": "louca-cuba-apoio-deca-l311-planta-6440737",
+      "name": "LOUÇA - cuba apoio deca L311 planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - cuba apoio deca L311 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.5,
+        0.5
+      ],
+      "width": 0.5,
+      "height": 0.5,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.25,
+        0.25
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.25,
+          0.25
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-cuba-apoio-deca-l311-planta-6440737.json",
+      "thumbnailUrl": "/library/thumbnails/louca-cuba-apoio-deca-l311-planta-6440737.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "CIRCLE": 5
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 237
+      }
+    },
+    {
+      "id": "louca-cuba-apoio-deca-l7400-planta-56027e5",
+      "name": "LOUÇA - cuba apoio deca L7400 planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - cuba apoio deca L7400 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.365,
+        0.32
+      ],
+      "width": 0.365,
+      "height": 0.32,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.1825,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.1825,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-cuba-apoio-deca-l7400-planta-56027e5.json",
+      "thumbnailUrl": "/library/thumbnails/louca-cuba-apoio-deca-l7400-planta-56027e5.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "LWPOLYLINE": 2,
+          "CIRCLE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 140
+      }
+    },
+    {
+      "id": "louca-cuba-apoio-deca-l310-planta-48d30af",
+      "name": "LOUÇA - cuba apoio deca L310 planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - cuba apoio deca L310 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.6700268312123081,
+        0.4950000000000023
+      ],
+      "width": 0.6700268312123081,
+      "height": 0.4950000000000023,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.3439449331409196,
+        0.24754435713192152
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.3439449331409196,
+          0.24754435713192152
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-cuba-apoio-deca-l310-planta-48d30af.json",
+      "thumbnailUrl": "/library/thumbnails/louca-cuba-apoio-deca-l310-planta-48d30af.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "CIRCLE": 2,
+          "LWPOLYLINE": 4
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 942
+      }
+    },
+    {
+      "id": "louca-cuba-sobrepor-deca-l1044-planta-8f0343f",
+      "name": "LOUÇA - cuba sobrepor deca L1044 planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - cuba sobrepor deca L1044 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.8,
+        0.47500000000000003
+      ],
+      "width": 0.8,
+      "height": 0.47500000000000003,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.485,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.485,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-cuba-sobrepor-deca-l1044-planta-8f0343f.json",
+      "thumbnailUrl": "/library/thumbnails/louca-cuba-sobrepor-deca-l1044-planta-8f0343f.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 5,
+          "CIRCLE": 6
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 313
+      }
+    },
+    {
+      "id": "louca-cuba-sobrepor-deca-l1044-metais-planta-e8eec20",
+      "name": "LOUÇA - cuba sobrepor deca L1044 metais planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - cuba sobrepor deca L1044 metais planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.4642558472304881,
+        0.35
+      ],
+      "width": 0.4642558472304881,
+      "height": 0.35,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.4317558472304881,
+        0.2086161792351754
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.4317558472304881,
+          0.2086161792351754
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-cuba-sobrepor-deca-l1044-metais-planta-e8eec20.json",
+      "thumbnailUrl": "/library/thumbnails/louca-cuba-sobrepor-deca-l1044-metais-planta-e8eec20.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 26,
+          "CIRCLE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 136
+      }
+    },
+    {
+      "id": "louca-cuba-sobrepor-deca-l129-planta-1f46d0e",
+      "name": "LOUÇA - cuba sobrepor deca L129 planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - cuba sobrepor deca L129 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.4,
+        0.4
+      ],
+      "width": 0.4,
+      "height": 0.4,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.2,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.2,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-cuba-sobrepor-deca-l129-planta-1f46d0e.json",
+      "thumbnailUrl": "/library/thumbnails/louca-cuba-sobrepor-deca-l129-planta-1f46d0e.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "LWPOLYLINE": 2,
+          "CIRCLE": 5
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 239
+      }
+    },
+    {
+      "id": "louca-cuba-embutir-deca-l375-planta-26cb92c",
+      "name": "LOUÇA - cuba embutir deca L375 planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - cuba embutir deca L375 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.48,
+        0.355
+      ],
+      "width": 0.48,
+      "height": 0.355,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.24,
+        0.1774999999999989
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.24,
+          0.1774999999999989
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-cuba-embutir-deca-l375-planta-26cb92c.json",
+      "thumbnailUrl": "/library/thumbnails/louca-cuba-embutir-deca-l375-planta-26cb92c.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "LWPOLYLINE": 4,
+          "CIRCLE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 158
+      }
+    },
+    {
+      "id": "louca-cuba-piso-deca-lc26-planta-f1b3140",
+      "name": "LOUÇA - cuba piso deca Lc26 planta",
+      "category": "sink",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "LOUÇA - cuba piso deca Lc26 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.4,
+        0.4
+      ],
+      "width": 0.4,
+      "height": 0.4,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.2,
+        0.19999999999999774
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.2,
+          0.19999999999999774
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/louca-cuba-piso-deca-lc26-planta-f1b3140.json",
+      "thumbnailUrl": "/library/thumbnails/louca-cuba-piso-deca-lc26-planta-f1b3140.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "LWPOLYLINE": 2,
+          "CIRCLE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 140
+      }
+    },
+    {
+      "id": "movel-cama-queen-1841bc4",
+      "name": "MÓVEL - cama queen",
+      "category": "bed",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - cama queen",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.7709035469864283,
+        1.9799999999999267
+      ],
+      "width": 1.7709035469864283,
+      "height": 1.9799999999999267,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.07670210791959108,
+        1.9799999999998539
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.07670210791959108,
+          1.9799999999998539
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-cama-queen-1841bc4.json",
+      "thumbnailUrl": "/library/thumbnails/movel-cama-queen-1841bc4.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "LWPOLYLINE": 5,
+          "HATCH": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 154
+      }
+    },
+    {
+      "id": "movel-mesa-100x100-4-lugares-60a8cb5",
+      "name": "MÓVEL - mesa 100x100 4 lugares",
+      "category": "table",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - mesa 100x100 4 lugares",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.6,
+        1.600000000000001
+      ],
+      "width": 1.6,
+      "height": 1.600000000000001,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.8,
+        0.8000000000000003
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.8,
+          0.8000000000000003
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-mesa-100x100-4-lugares-60a8cb5.json",
+      "thumbnailUrl": "/library/thumbnails/movel-mesa-100x100-4-lugares-60a8cb5.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 9
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 41
+      }
+    },
+    {
+      "id": "movel-mesa-120-4-lugares-8bdbd0f",
+      "name": "MÓVEL - mesa 120 4 lugares",
+      "category": "table",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - mesa 120 4 lugares",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.732411613907139,
+        1.7324116139071482
+      ],
+      "width": 1.732411613907139,
+      "height": 1.7324116139071482,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.8662058069535786,
+        0.8662058069535695
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.8662058069535786,
+          0.8662058069535695
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-mesa-120-4-lugares-8bdbd0f.json",
+      "thumbnailUrl": "/library/thumbnails/movel-mesa-120-4-lugares-8bdbd0f.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "CIRCLE": 1,
+          "LWPOLYLINE": 8
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 101
+      }
+    },
+    {
+      "id": "movel-mesa-180x100-6-lugares-7dc0cc5",
+      "name": "MÓVEL - mesa 180x100 6 lugares",
+      "category": "table",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - mesa 180x100 6 lugares",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.6,
+        2.4000000000000012
+      ],
+      "width": 1.6,
+      "height": 2.4000000000000012,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.8,
+        1.2
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.8,
+          1.2
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-mesa-180x100-6-lugares-7dc0cc5.json",
+      "thumbnailUrl": "/library/thumbnails/movel-mesa-180x100-6-lugares-7dc0cc5.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 13
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 59
+      }
+    },
+    {
+      "id": "movel-mesa-150-6-lugares-2e80b03",
+      "name": "MÓVEL - mesa 150 6 lugares",
+      "category": "table",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - mesa 150 6 lugares",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        2.205363803622202,
+        2.2289921233103493
+      ],
+      "width": 2.205363803622202,
+      "height": 2.2289921233103493,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        1.10268190181111,
+        1.1144960616551745
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          1.10268190181111,
+          1.1144960616551745
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-mesa-150-6-lugares-2e80b03.json",
+      "thumbnailUrl": "/library/thumbnails/movel-mesa-150-6-lugares-2e80b03.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "CIRCLE": 1,
+          "LWPOLYLINE": 12
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 119
+      }
+    },
+    {
+      "id": "movel-mesa-240x110-8-lugares-76e9f1d",
+      "name": "MÓVEL - mesa 240x110 8 lugares",
+      "category": "table",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - mesa 240x110 8 lugares",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.7000000000002182,
+        3.000000000000001
+      ],
+      "width": 1.7000000000002182,
+      "height": 3.000000000000001,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.8500000000001182,
+        1.500000000000001
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.8500000000001182,
+          1.500000000000001
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-mesa-240x110-8-lugares-76e9f1d.json",
+      "thumbnailUrl": "/library/thumbnails/movel-mesa-240x110-8-lugares-76e9f1d.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 17
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 77
+      }
+    },
+    {
+      "id": "movel-mesa-150x150-8-lugares-f7ab2c5",
+      "name": "MÓVEL - mesa 150x150  8 lugares",
+      "category": "table",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - mesa 150x150  8 lugares",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        2.100000000000009,
+        2.0999999999999996
+      ],
+      "width": 2.100000000000009,
+      "height": 2.0999999999999996,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        1.050000000000009,
+        1.049999999999999
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          1.050000000000009,
+          1.049999999999999
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-mesa-150x150-8-lugares-f7ab2c5.json",
+      "thumbnailUrl": "/library/thumbnails/movel-mesa-150x150-8-lugares-f7ab2c5.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 17
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 77
+      }
+    },
+    {
+      "id": "movel-cadeira-55x55-planta-e8a833b",
+      "name": "MÓVEL - cadeira 55x55 planta",
+      "category": "chair",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - cadeira 55x55 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.5500000000000183,
+        0.55
+      ],
+      "width": 0.5500000000000183,
+      "height": 0.55,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.2750000000000182,
+        3.637978807091713e-14
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.2750000000000182,
+          3.637978807091713e-14
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-cadeira-55x55-planta-e8a833b.json",
+      "thumbnailUrl": "/library/thumbnails/movel-cadeira-55x55-planta-e8a833b.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 3
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 13
+      }
+    },
+    {
+      "id": "moveis-mesa-ares-planta-56233fd",
+      "name": "MÓVEIS - mesa ares planta",
+      "category": "table",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEIS - mesa ares planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.9000000000000004,
+        1.8
+      ],
+      "width": 0.9000000000000004,
+      "height": 1.8,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.4500000000000003,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.4500000000000003,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/moveis-mesa-ares-planta-56233fd.json",
+      "thumbnailUrl": "/library/thumbnails/moveis-mesa-ares-planta-56233fd.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 5
+      }
+    },
+    {
+      "id": "moveis-cadeira-dinna-planta-1ed91cd",
+      "name": "MÓVEIS - cadeira dinna planta",
+      "category": "chair",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEIS - cadeira dinna planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.5643170110916276,
+        0.5998076564139313
+      ],
+      "width": 0.5643170110916276,
+      "height": 0.5998076564139313,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.2821589323235639,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.2821589323235639,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/moveis-cadeira-dinna-planta-1ed91cd.json",
+      "thumbnailUrl": "/library/thumbnails/moveis-cadeira-dinna-planta-1ed91cd.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 3,
+          "LWPOLYLINE": 10
+        },
+        "omittedEntityTypes": {
+          "HATCH": 3
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 228
+      }
+    },
+    {
+      "id": "moveis-cadeira-milla-planta-733184c",
+      "name": "MÓVEIS - cadeira milla planta",
+      "category": "chair",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEIS - cadeira milla planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.49269775390625004,
+        0.5420760921395412
+      ],
+      "width": 0.49269775390625004,
+      "height": 0.5420760921395412,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.24634887695312502,
+        0.029236932057671652
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.24634887695312502,
+          0.029236932057671652
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/moveis-cadeira-milla-planta-733184c.json",
+      "thumbnailUrl": "/library/thumbnails/moveis-cadeira-milla-planta-733184c.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 3,
+          "LWPOLYLINE": 5
+        },
+        "omittedEntityTypes": {
+          "HATCH": 3
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 121
+      }
+    },
+    {
+      "id": "movel-cadeira-milla-planta-2-b85acfa",
+      "name": "MÓVEL - cadeira milla planta 2",
+      "category": "chair",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - cadeira milla planta 2",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.49269775390625004,
+        0.5420760921395412
+      ],
+      "width": 0.49269775390625004,
+      "height": 0.5420760921395412,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.24634887695312502,
+        0.029236932057671652
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.24634887695312502,
+          0.029236932057671652
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-cadeira-milla-planta-2-b85acfa.json",
+      "thumbnailUrl": "/library/thumbnails/movel-cadeira-milla-planta-2-b85acfa.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 3,
+          "LWPOLYLINE": 5
+        },
+        "omittedEntityTypes": {
+          "HATCH": 3
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 121
+      }
+    },
+    {
+      "id": "movel-cadeira-dinna-planta-2-2276952",
+      "name": "MÓVEL - cadeira dinna planta 2",
+      "category": "chair",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - cadeira dinna planta 2",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.5643170110916276,
+        0.5998076564139313
+      ],
+      "width": 0.5643170110916276,
+      "height": 0.5998076564139313,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.2821580787680637,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.2821580787680637,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-cadeira-dinna-planta-2-2276952.json",
+      "thumbnailUrl": "/library/thumbnails/movel-cadeira-dinna-planta-2-2276952.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "LWPOLYLINE": 11
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 203
+      }
+    },
+    {
+      "id": "movel-cadeira-daniella-planta-ec06b4c",
+      "name": "MÓVEL - cadeira daniella planta",
+      "category": "chair",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - cadeira daniella planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.5689678687001924,
+        0.5350299491649275
+      ],
+      "width": 0.5689678687001924,
+      "height": 0.5350299491649275,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.2844839343500962,
+        0.008228623936815893
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.2844839343500962,
+          0.008228623936815893
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-cadeira-daniella-planta-ec06b4c.json",
+      "thumbnailUrl": "/library/thumbnails/movel-cadeira-daniella-planta-ec06b4c.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "LWPOLYLINE": 6
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 136
+      }
+    },
+    {
+      "id": "movel-mesa-onix-planta-e966598",
+      "name": "MÓVEL - mesa onix planta",
+      "category": "table",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - mesa onix planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.5,
+        1.5
+      ],
+      "width": 1.5,
+      "height": 1.5,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.75,
+        1.5
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.75,
+          1.5
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-mesa-onix-planta-e966598.json",
+      "thumbnailUrl": "/library/thumbnails/movel-mesa-onix-planta-e966598.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 5
+      }
+    },
+    {
+      "id": "movel-mesa-onix-110x240-planta-88a96f4",
+      "name": "MÓVEL - mesa onix 110x240 planta",
+      "category": "table",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - mesa onix 110x240 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        2.4,
+        1.1
+      ],
+      "width": 2.4,
+      "height": 1.1,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        1.2,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          1.2,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-mesa-onix-110x240-planta-88a96f4.json",
+      "thumbnailUrl": "/library/thumbnails/movel-mesa-onix-110x240-planta-88a96f4.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 5
+      }
+    },
+    {
+      "id": "movel-mesa-zx-120-planta-a494966",
+      "name": "MÓVEL - mesa zx 120 planta",
+      "category": "table",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - mesa zx 120 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.2,
+        1.2
+      ],
+      "width": 1.2,
+      "height": 1.2,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.6,
+        0.6
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.6,
+          0.6
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-mesa-zx-120-planta-a494966.json",
+      "thumbnailUrl": "/library/thumbnails/movel-mesa-zx-120-planta-a494966.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "CIRCLE": 1,
+          "LWPOLYLINE": 8
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 81
+      }
+    },
+    {
+      "id": "movel-mesa-zx-160-planta-69bc60c",
+      "name": "MÓVEL - mesa zx 160 planta",
+      "category": "table",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - mesa zx 160 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.6,
+        1.6
+      ],
+      "width": 1.6,
+      "height": 1.6,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.8,
+        0.8
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.8,
+          0.8
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-mesa-zx-160-planta-69bc60c.json",
+      "thumbnailUrl": "/library/thumbnails/movel-mesa-zx-160-planta-69bc60c.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "LWPOLYLINE": 8,
+          "CIRCLE": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 97
+      }
+    },
+    {
+      "id": "movel-mesa-de-jantar-legg-340x110-planta-d41a01b",
+      "name": "MÓVEL - mesa de jantar legg 340x110 planta",
+      "category": "table",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - mesa de jantar legg 340x110 planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        3.3999999999999995,
+        1.1
+      ],
+      "width": 3.3999999999999995,
+      "height": 1.1,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        1.6999999999999997,
+        0.5499999999814531
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          1.6999999999999997,
+          0.5499999999814531
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-mesa-de-jantar-legg-340x110-planta-d41a01b.json",
+      "thumbnailUrl": "/library/thumbnails/movel-mesa-de-jantar-legg-340x110-planta-d41a01b.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 4,
+          "ELLIPSE": 2,
+          "SPLINE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 300
+      }
+    },
+    {
+      "id": "movel-sofa-2-lugares-planta-f55eaad",
+      "name": "MÓVEL - sofá 2 lugares planta",
+      "category": "sofa",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - sofá 2 lugares planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.9000000000000001,
+        1.0859582581171208
+      ],
+      "width": 1.9000000000000001,
+      "height": 1.0859582581171208,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.9500000000000001,
+        0.03783933686081582
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.9500000000000001,
+          0.03783933686081582
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-sofa-2-lugares-planta-f55eaad.json",
+      "thumbnailUrl": "/library/thumbnails/movel-sofa-2-lugares-planta-f55eaad.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 10
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 117
+      }
+    },
+    {
+      "id": "movel-sofa-atupis-planta-f8ad941",
+      "name": "MÓVEL - sofa atupis planta",
+      "category": "sofa",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - sofa atupis planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        2.1082072707972843,
+        0.87
+      ],
+      "width": 2.1082072707972843,
+      "height": 0.87,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        1.0541036353986422,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          1.0541036353986422,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-sofa-atupis-planta-f8ad941.json",
+      "thumbnailUrl": "/library/thumbnails/movel-sofa-atupis-planta-f8ad941.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "LWPOLYLINE": 8
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 272
+      }
+    },
+    {
+      "id": "movel-mesa-cabeceira-30x45-630a6e6",
+      "name": "MÓVEL - mesa cabeceira 30x45",
+      "category": "table",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - mesa cabeceira 30x45",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.45,
+        0.3
+      ],
+      "width": 0.45,
+      "height": 0.3,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.225,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.225,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-mesa-cabeceira-30x45-630a6e6.json",
+      "thumbnailUrl": "/library/thumbnails/movel-mesa-cabeceira-30x45-630a6e6.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 5
+      }
+    },
+    {
+      "id": "movel-cadeira-shell-planta-81090bb",
+      "name": "MÓVEL - cadeira shell planta",
+      "category": "chair",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - cadeira shell planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.5715397213723554,
+        0.5657482552639113
+      ],
+      "width": 0.5715397213723554,
+      "height": 0.5657482552639113,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.2857695914525175,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.2857695914525175,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-cadeira-shell-planta-81090bb.json",
+      "thumbnailUrl": "/library/thumbnails/movel-cadeira-shell-planta-81090bb.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 2,
+          "LWPOLYLINE": 18
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 362
+      }
+    },
+    {
+      "id": "movel-cadeira-lcw-planta-55338a5",
+      "name": "MÓVEL - cadeira lcw planta",
+      "category": "chair",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - cadeira lcw planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.6450583690626991,
+        0.6836179839673605
+      ],
+      "width": 0.6450583690626991,
+      "height": 0.6836179839673605,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.32252918453134044,
+        0.6836179839673605
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.32252918453134044,
+          0.6836179839673605
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-cadeira-lcw-planta-55338a5.json",
+      "thumbnailUrl": "/library/thumbnails/movel-cadeira-lcw-planta-55338a5.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 6
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 136
+      }
+    },
+    {
+      "id": "movel-cadeira-diz-planta-0368247",
+      "name": "MÓVEL - cadeira diz planta",
+      "category": "chair",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - cadeira diz planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.794799961342469,
+        0.8199574300141285
+      ],
+      "width": 0.794799961342469,
+      "height": 0.8199574300141285,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.3973999806712345,
+        0.8199574300141285
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.3973999806712345,
+          0.8199574300141285
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-cadeira-diz-planta-0368247.json",
+      "thumbnailUrl": "/library/thumbnails/movel-cadeira-diz-planta-0368247.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 8
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 210
+      }
+    },
+    {
+      "id": "movel-cadeira-barcelona-planta-9b8d1d0",
+      "name": "MÓVEL - cadeira barcelona planta",
+      "category": "chair",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - cadeira barcelona planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.7002152526237478,
+        0.8137200089819089
+      ],
+      "width": 0.7002152526237478,
+      "height": 0.8137200089819089,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.3500000000742148,
+        0.006721370565719554
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.3500000000742148,
+          0.006721370565719554
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-cadeira-barcelona-planta-9b8d1d0.json",
+      "thumbnailUrl": "/library/thumbnails/movel-cadeira-barcelona-planta-9b8d1d0.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 3,
+          "LWPOLYLINE": 38,
+          "ARC": 35,
+          "CIRCLE": 12,
+          "ELLIPSE": 12
+        },
+        "omittedEntityTypes": {
+          "HATCH": 3
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 1246
+      }
+    },
+    {
+      "id": "movel-cadeira-marelli-planta-acc419d",
+      "name": "MÓVEL - cadeira marelli planta",
+      "category": "chair",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - cadeira marelli planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.6369979999999986,
+        0.5552697960402339
+      ],
+      "width": 0.6369979999999986,
+      "height": 0.5552697960402339,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.3184989999999993,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.3184989999999993,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-cadeira-marelli-planta-acc419d.json",
+      "thumbnailUrl": "/library/thumbnails/movel-cadeira-marelli-planta-acc419d.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 3,
+          "LWPOLYLINE": 10
+        },
+        "omittedEntityTypes": {
+          "HATCH": 3
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 102
+      }
+    },
+    {
+      "id": "movel-sofa-180x90-7f21646",
+      "name": "MÓVEL - sofa 180x90",
+      "category": "sofa",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - sofa 180x90",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.8,
+        0.9
+      ],
+      "width": 1.8,
+      "height": 0.9,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.9,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.9,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-sofa-180x90-7f21646.json",
+      "thumbnailUrl": "/library/thumbnails/movel-sofa-180x90-7f21646.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LINE": 3,
+          "LWPOLYLINE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 17
+      }
+    },
+    {
+      "id": "movel-sofa-240x90-61a3d04",
+      "name": "MÓVEL - sofa 240x90",
+      "category": "sofa",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - sofa 240x90",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        2.4,
+        0.9
+      ],
+      "width": 2.4,
+      "height": 0.9,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        1.2,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          1.2,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-sofa-240x90-61a3d04.json",
+      "thumbnailUrl": "/library/thumbnails/movel-sofa-240x90-61a3d04.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LINE": 4,
+          "LWPOLYLINE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 19
+      }
+    },
+    {
+      "id": "movel-sofa-280x100-c06da10",
+      "name": "MÓVEL - sofa 280x100",
+      "category": "sofa",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - sofa 280x100",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        2.8000000000000003,
+        1.0
+      ],
+      "width": 2.8000000000000003,
+      "height": 1.0,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        1.4000000000000001,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          1.4000000000000001,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-sofa-280x100-c06da10.json",
+      "thumbnailUrl": "/library/thumbnails/movel-sofa-280x100-c06da10.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LINE": 4,
+          "LWPOLYLINE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 19
+      }
+    },
+    {
+      "id": "movel-sofa-280x165-e2e3bfe",
+      "name": "MÓVEL - sofa 280x165",
+      "category": "sofa",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - sofa 280x165",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        2.8000000000000003,
+        1.815
+      ],
+      "width": 2.8000000000000003,
+      "height": 1.815,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        1.4000000000000001,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          1.4000000000000001,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-sofa-280x165-e2e3bfe.json",
+      "thumbnailUrl": "/library/thumbnails/movel-sofa-280x165-e2e3bfe.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LINE": 4,
+          "LWPOLYLINE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 23
+      }
+    },
+    {
+      "id": "movel-sofa-300x100-ac91fb1",
+      "name": "MÓVEL - sofa 300x100",
+      "category": "sofa",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - sofa 300x100",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        3.0,
+        1.0
+      ],
+      "width": 3.0,
+      "height": 1.0,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        1.5,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          1.5,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-sofa-300x100-ac91fb1.json",
+      "thumbnailUrl": "/library/thumbnails/movel-sofa-300x100-ac91fb1.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LINE": 4,
+          "LWPOLYLINE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 19
+      }
+    },
+    {
+      "id": "movel-sofa-300x165-9cf40e4",
+      "name": "MÓVEL - sofa 300x165",
+      "category": "sofa",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - sofa 300x165",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        3.0,
+        1.815
+      ],
+      "width": 3.0,
+      "height": 1.815,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        1.5,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          1.5,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-sofa-300x165-9cf40e4.json",
+      "thumbnailUrl": "/library/thumbnails/movel-sofa-300x165-9cf40e4.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LINE": 4,
+          "LWPOLYLINE": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 23
+      }
+    },
+    {
+      "id": "movel-sofa-1-lugar-planta-1157c81",
+      "name": "MÓVEL - sofá 1 lugar planta",
+      "category": "sofa",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - sofá 1 lugar planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.0,
+        1.084452982181747
+      ],
+      "width": 1.0,
+      "height": 1.084452982181747,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.5,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.5,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-sofa-1-lugar-planta-1157c81.json",
+      "thumbnailUrl": "/library/thumbnails/movel-sofa-1-lugar-planta-1157c81.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 3
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 81
+      }
+    },
+    {
+      "id": "movel-sofa-3-lugares-planta-28dd470",
+      "name": "MÓVEL - sofá 3 lugares planta",
+      "category": "sofa",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - sofá 3 lugares planta",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        2.6,
+        1.0859582581171252
+      ],
+      "width": 2.6,
+      "height": 1.0859582581171252,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        1.3,
+        2.273736754432321e-15
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          1.3,
+          2.273736754432321e-15
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-sofa-3-lugares-planta-28dd470.json",
+      "thumbnailUrl": "/library/thumbnails/movel-sofa-3-lugares-planta-28dd470.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 7
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 139
+      }
+    },
+    {
+      "id": "movel-sofa-3-lugares-planta-2-85cec77",
+      "name": "MÓVEL - sofá 3 lugares planta 2",
+      "category": "sofa",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - sofá 3 lugares planta 2",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        2.6,
+        1.6500000000000024
+      ],
+      "width": 2.6,
+      "height": 1.6500000000000024,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        1.3,
+        2.273736754432321e-15
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          1.3,
+          2.273736754432321e-15
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-sofa-3-lugares-planta-2-85cec77.json",
+      "thumbnailUrl": "/library/thumbnails/movel-sofa-3-lugares-planta-2-85cec77.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 7
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 140
+      }
+    },
+    {
+      "id": "movel-cama-king-3693e38",
+      "name": "MÓVEL - cama king",
+      "category": "bed",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - cama king",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        2.1200298524688512,
+        2.0299999999999265
+      ],
+      "width": 2.1200298524688512,
+      "height": 2.0299999999999265,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.06283012076761224,
+        1.999999999999854
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.06283012076761224,
+          1.999999999999854
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-cama-king-3693e38.json",
+      "thumbnailUrl": "/library/thumbnails/movel-cama-king-3693e38.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "LWPOLYLINE": 5,
+          "HATCH": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 154
+      }
+    },
+    {
+      "id": "movel-cama-casal-ba0faf2",
+      "name": "MÓVEL - cama casal",
+      "category": "bed",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - cama casal",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.5660205268093523,
+        1.879999999999854
+      ],
+      "width": 1.5660205268093523,
+      "height": 1.879999999999854,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.07826647083256831,
+        1.879999999999854
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.07826647083256831,
+          1.879999999999854
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-cama-casal-ba0faf2.json",
+      "thumbnailUrl": "/library/thumbnails/movel-cama-casal-ba0faf2.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "LWPOLYLINE": 5,
+          "HATCH": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 154
+      }
+    },
+    {
+      "id": "movel-cama-solteiro-81d6c3c",
+      "name": "MÓVEL - cama solteiro",
+      "category": "bed",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - cama solteiro",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        1.0958858207479898,
+        1.8800000000000001
+      ],
+      "width": 1.0958858207479898,
+      "height": 1.8800000000000001,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.08983460339764861,
+        1.8800000000000001
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.08983460339764861,
+          1.8800000000000001
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-cama-solteiro-81d6c3c.json",
+      "thumbnailUrl": "/library/thumbnails/movel-cama-solteiro-81d6c3c.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "LWPOLYLINE": 4,
+          "HATCH": 2
+        },
+        "omittedEntityTypes": {
+          "HATCH": 2
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 101
+      }
+    },
+    {
+      "id": "movel-criado-35x50-3a7a162",
+      "name": "MÓVEL - criado 35x50",
+      "category": "side-table",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - criado 35x50",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.5,
+        0.35000000000000003
+      ],
+      "width": 0.5,
+      "height": 0.35000000000000003,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.25,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.25,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-criado-35x50-3a7a162.json",
+      "thumbnailUrl": "/library/thumbnails/movel-criado-35x50-3a7a162.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 5
+      }
+    },
+    {
+      "id": "movel-mesa-cabeceira-35x50-7588156",
+      "name": "MÓVEL - mesa cabeceira 35x50",
+      "category": "table",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - mesa cabeceira 35x50",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.5,
+        0.35000000000000003
+      ],
+      "width": 0.5,
+      "height": 0.35000000000000003,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.25,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.25,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-mesa-cabeceira-35x50-7588156.json",
+      "thumbnailUrl": "/library/thumbnails/movel-mesa-cabeceira-35x50-7588156.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 5
+      }
+    },
+    {
+      "id": "movel-criado-30x45-134295a",
+      "name": "MÓVEL - criado 30x45",
+      "category": "side-table",
+      "categoryBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME",
+      "view": "plan",
+      "viewBasis": "INFERRED_FROM_SOURCE_BLOCK_NAME_NOT_CERTIFIED",
+      "sourceBlock": "MÓVEL - criado 30x45",
+      "sourceHash": "a9b66fd654e5b1e8abb440f887c65efe795847de96798e9bb980149f6ff0a76a",
+      "units": "m",
+      "sourceBlockUnitsCode": 5,
+      "effectiveSourceUnitsCode": 5,
+      "scaleToMeters": 0.01,
+      "viewBox": [
+        0,
+        0,
+        0.45,
+        0.3
+      ],
+      "width": 0.45,
+      "height": 0.3,
+      "originalBasePoint": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "insertionPoint": [
+        0.225,
+        0.0
+      ],
+      "transform": {
+        "input": "source block coordinates",
+        "scale": 0.01,
+        "translationAfterScale": [
+          0.225,
+          0.0
+        ],
+        "flipY": true,
+        "output": "x-right-y-down-meters"
+      },
+      "geometryUrl": "/library/symbols/movel-criado-30x45-134295a.json",
+      "thumbnailUrl": "/library/thumbnails/movel-criado-30x45-134295a.svg",
+      "version": "1.0.0",
+      "quality": {
+        "status": "EXTRACTED_STATIC_GEOMETRY",
+        "flatteningToleranceM": 0.001,
+        "sourceEntityTypes": {
+          "HATCH": 1,
+          "LWPOLYLINE": 1
+        },
+        "omittedEntityTypes": {
+          "HATCH": 1
+        },
+        "errors": [],
+        "dynamicBehavior": "NOT_PRESERVED",
+        "scaleVerification": "DECLARED_BLOCK_UNITS_NOT_SURVEYED",
+        "originalColors": "DISCARDED",
+        "estimatedPointCount": 5
+      }
+    }
+  ]
+}

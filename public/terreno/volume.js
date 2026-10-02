@@ -2,7 +2,7 @@
  * X=east, Y=relative height, Z=-north. No area adoption, parcel scaling or capacity inference.
  * Exact metric scenes preserve their CRS/origin. Geographic fallback is visual-only.
  */
-import {exploratorySummary,exploratoryProposalMetadata,assertExploratoryStudy,assertLandUseStudy,assertOccupationPair} from './exploratory-proposal.js?v=f034d95b69f3';
+import {exploratorySummary,exploratoryProposalMetadata,assertExploratoryStudy,assertLandUseStudy,assertOccupationPair} from './exploratory-proposal.js?v=73077e076bf2';
 const FLOOR_HEIGHT_M = 3;
 const COLORS = { background:'#f2f3ef', lot:'#dddcd0', clay:'#905e4b', mass:'#b5826b', alternate:'#aa7660', envelope:'#b48770', line:'#835640', white:'#fbfbf6', ink:'#343d36', grid:'#d5d9ce' };
 const fmt = n => new Intl.NumberFormat('pt-BR',{maximumFractionDigits:1}).format(n);
@@ -94,7 +94,7 @@ export async function mountVolume(host,study,options={}) {
     svg.addEventListener('pointerdown',e=>{dragStart={x:e.clientX,yaw};root.setPointerCapture?.(e.pointerId);});svg.addEventListener('keydown',e=>{if(e.key==='+'||e.key==='='){zoom=Math.min(2.5,zoom*1.15);e.preventDefault();svgRender();}else if(e.key==='-'){zoom=Math.max(.5,zoom/1.15);e.preventDefault();svgRender();}else if(e.key==='ArrowLeft'||e.key==='ArrowRight'){yaw+=(e.key==='ArrowLeft'?-1:1)*.15;e.preventDefault();svgRender();}});stage.append(svg);if(hadFocus)svg.focus?.({preventScroll:true});describe();
   }
   async function initThree(){
-    const THREE=await import('./assets/vendor/three.module.js?v=f034d95b69f3');const {OrbitControls}=await import('./assets/vendor/OrbitControls.js?v=f034d95b69f3');if(destroyed)return;
+    const THREE=await import('./assets/vendor/three.module.js?v=73077e076bf2');const {OrbitControls}=await import('./assets/vendor/OrbitControls.js?v=73077e076bf2');if(destroyed)return;
     const canvas=document.createElement('canvas');canvas.setAttribute('role','img');canvas.setAttribute('aria-label','Modelo 3D do terreno. Arraste para girar; roda para aproximar.');canvas.tabIndex=0;canvas.style.cssText='display:block;width:100%;height:100%;touch-action:none';
     renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'low-power'});renderer.setPixelRatio(Math.min(globalThis.devicePixelRatio||1,2));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.08;
     scene=new THREE.Scene();scene.background=new THREE.Color(COLORS.background);camera=new THREE.OrthographicCamera(-100,100,100,-100,.1,50000);controls=new OrbitControls(camera,canvas);controls.enableDamping=false;controls.screenSpacePanning=true;controls.minZoom=.35;controls.maxZoom=8;controls.maxPolarAngle=Math.PI/2-.012;controls.rotateSpeed=.62;

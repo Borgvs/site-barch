@@ -1,4 +1,4 @@
-import {validSection} from './presentation-model.mjs?v=f034d95b69f3';
+import {validSection} from './presentation-model.mjs?v=73077e076bf2';
 export function resolveStudyRoute(href,studies,defaultSlug){
  const url=new URL(href),known=Array.isArray(studies)?studies:[],requested=url.searchParams.get('terreno'),section=url.hash.slice(1);
  const slug=known.find(s=>s.slug===requested)?.slug||known.find(s=>s.slug===defaultSlug)?.slug||known.find(s=>s.slug==='talma-tatuape-lote-0003')?.slug||known[0]?.slug;

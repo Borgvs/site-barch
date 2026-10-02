@@ -17,7 +17,8 @@
     "gerar-frames": "node scripts/fal-kling-frames.mjs",
     "gerar-frames:resume": "node scripts/fal-kling-frames.mjs --resume",
     "gerar-fases": "node scripts/fal-construction-pipeline.mjs",
-    "gerar-fases:resume": "node scripts/fal-construction-pipeline.mjs --resume"
+    "gerar-fases:resume": "node scripts/fal-construction-pipeline.mjs --resume",
+    "concept:preflight": "node scripts/concept/site-inventory-preflight.mjs --site . --origin https://barch.com.br"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

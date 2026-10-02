@@ -48,17 +48,17 @@
     {
       "path": "/terreno/analysis-packet.mjs",
       "bytes": 24340,
-      "sha256": "ffc51b928c6e42f9708b630fdb370e65251c726a5977e4f6b9e57a269e16291a"
+      "sha256": "ea0ee4778c0c29aa15ae6146a5598b9a6fdbf17c2bfc7121011b936ac047059d"
     },
     {
       "path": "/terreno/analysis-report.mjs",
       "bytes": 20134,
-      "sha256": "3d2440a6491f9c6dc27c46c9efe5d97235b1350793b68cc983338ea3f5672e47"
+      "sha256": "61c7147d92e9748853168ee98bfed2006b5aa63af3b04c0592818d0267ea5380"
     },
     {
       "path": "/terreno/app.js",
-      "bytes": 118030,
-      "sha256": "bab24a3327e70ad3085513d227e2b3da47c3614d79becdbf531b8d5575caf65a"
+      "bytes": 124015,
+      "sha256": "801ba32193f8da370fdcce6ac0038ae6afb1bfbeb4f161c41bbc72f6d1b65c6d"
     },
     {
       "path": "/terreno/assessment.js",
@@ -251,6 +251,26 @@
       "sha256": "7271b68e76bba40f30a05fb7d184b2ee36d9fe30f34302951e30e9a74a1ec5b9"
     },
     {
+      "path": "/terreno/concept-intake-catalog.json",
+      "bytes": 31026,
+      "sha256": "e030c6e3625be1179d37b81a839075e9336812e9e98cb114ed85bb37e6275869"
+    },
+    {
+      "path": "/terreno/concept-intake-catalog.mjs",
+      "bytes": 31150,
+      "sha256": "43cd73efa5f37ee4537046f3e7acb2934b937e0de1d353724f9bdc097db04b85"
+    },
+    {
+      "path": "/terreno/concept-intake-model.mjs",
+      "bytes": 27187,
+      "sha256": "d9486fa55fc4995639423c09a09f44737cc9436ab4b06fceabf0f18018cdd92b"
+    },
+    {
+      "path": "/terreno/concept-intake.js",
+      "bytes": 39469,
+      "sha256": "c58eb6e0cfad9c4b0c2464e54cfcb071f3a9e27430af1d625df7b7b7b06f9cc1"
+    },
+    {
       "path": "/terreno/context.js",
       "bytes": 914,
       "sha256": "0c1e0e5a58763b58246593b8149a4169ab7533931cdcbba323f081f0c3107e9a"
@@ -258,12 +278,12 @@
     {
       "path": "/terreno/cross-audit-view.mjs",
       "bytes": 5626,
-      "sha256": "72992b0f651593e9d9a9e9eb676f0af06a1d86cefcfe5583563a239d7f7a6bd7"
+      "sha256": "b5c517f60f4247151e5691ce3a7a04d7bb23440b9dbf0885f1634b4c47f45451"
     },
     {
       "path": "/terreno/dashboard-pdf.js",
       "bytes": 12755,
-      "sha256": "e93caded0e636f812c531771d9b767d9474021bce7068418b594e7b5f9ebeb8e"
+      "sha256": "e39b0ba967d54db455df671921d6ac4c3c9ba126550d6627e01633d83ae8c3d5"
     },
     {
       "path": "/terreno/dashboard-summary.css",
@@ -273,17 +293,17 @@
     {
       "path": "/terreno/dashboard-summary.js",
       "bytes": 11942,
-      "sha256": "699221a6b5189811d9c0c58593f1345a5f1d84c255a9a8c304af1ff16cee29e3"
+      "sha256": "bcec1cd737aabea915003874eff075e78fa8a10c07e7ae0ddecb796b75acc890"
     },
     {
       "path": "/terreno/diagnosis.js",
       "bytes": 4561,
-      "sha256": "ce6cd6f469984ce73a5d09a82ca82d0af3ece292759d0ef9e675d8b0d4bfb09e"
+      "sha256": "74b85fb93d0db7a94211bae42d5366377c2c260f9f022a1567caf6b98193c488"
     },
     {
       "path": "/terreno/dossier-protocol.js",
       "bytes": 9044,
-      "sha256": "58f5bf6d313ced1815904fcf876be0a32992c89aa409556997684b1b056b6d5b"
+      "sha256": "aecb073cf06724e753a0500a4a9d3de151fd301127daeb8d110d233ba311506b"
     },
     {
       "path": "/terreno/economics.css",
@@ -293,7 +313,7 @@
     {
       "path": "/terreno/economics.js",
       "bytes": 32762,
-      "sha256": "43f28d9a645567272e24203238642354f2ddbad15f7c2221496928bef7a92b03"
+      "sha256": "38e62acd2826c677929ac0966ff794801a3266c995bd8ca2c5e67d4bdc9884e7"
     },
     {
       "path": "/terreno/exploratory-proposal.js",
@@ -303,7 +323,7 @@
     {
       "path": "/terreno/field-pdf.js",
       "bytes": 4701,
-      "sha256": "dc5de294f0b608ede870f2a2e95ff2668e3c6c01c99ec25cf77a0414fb800ea7"
+      "sha256": "7bc7c123b2e8795709466ab4a4e6addbaf4a25e89d33dc0e5bae78c7937fb0c5"
     },
     {
       "path": "/terreno/field-plan.js",
@@ -313,12 +333,87 @@
     {
       "path": "/terreno/field-workbench.js",
       "bytes": 18455,
-      "sha256": "04578332ced3e5429e77208a6063ac779f486512b544d7b9b044de7513f78b52"
+      "sha256": "a9af6837254a1b03938aecb0d59941788538166b51491fdc6c88178bf551c377"
     },
     {
       "path": "/terreno/field.css",
       "bytes": 2196,
       "sha256": "2cc906444ed4252caded743b707ce037459d7569ab91cfe7e3cd9ee2bf7bbe3e"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/documentos/2023-12-21-penha-lc167-itbi-extrato-dom-4413.pdf",
+      "bytes": 159630,
+      "sha256": "1e9a9f5b482c0d50e364ec0d071da6e1f22ab6e46a0af71ba707fd44f00c7c9e"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/documentos/2026-10-02-lc146-2021-foco.pdf",
+      "bytes": 462566,
+      "sha256": "49725714fa60ed4c30df56ff19dd9d04fb5359738810dc127e8ef64dadf281d9"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/documentos/2026-10-02-lc172-2024-foco.pdf",
+      "bytes": 7264019,
+      "sha256": "38809220af331ea37a82bf2399907d9bff3c4119dad7945996c7cf4993f758ea"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/app-cartografica.geojson",
+      "bytes": 304742,
+      "sha256": "e2423a834476ff0658b9015cd9865bf85bd82872fa88c4e40742e074b56c95aa"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/atlas-base.geojson",
+      "bytes": 2017,
+      "sha256": "1903779022d4aa91bf047db294e0223c5fceb807f65a92b092f5b9da0f7bccae"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/hidrografia-eixo-legado.geojson",
+      "bytes": 790,
+      "sha256": "9311c1c5a8065ebcf62cd44e9613b93dd9f977c75043b708a48817396456c14c"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/ibge-municipio.geojson",
+      "bytes": 2982,
+      "sha256": "80a286d54e9aa3cf1b3c7e1d440766b1a03603f951b1d3b95647d13717dc0ee1"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/inundacao.geojson",
+      "bytes": 32574,
+      "sha256": "6ae8b5ce16aa712c6bbfa41ada9ffe0fb1cb32c3a18ff5244d0db07672660a43"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/mineracao.geojson",
+      "bytes": 2304,
+      "sha256": "dfaeb600cbf63354fe2e546c21812bd62e374ed4291c01d504d964b00b7ab643"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/movimentos.geojson",
+      "bytes": 10378,
+      "sha256": "7a9bbb7be3cd44b1809bcf394d5a6343d444708d63abbdacd639b5d0f814f1b9"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/parcel.geojson",
+      "bytes": 1882,
+      "sha256": "7fe3e0b695e529d97dafe4ac280ff68d57ba3156a350c992766e8b412ce2fa13"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/solos-restinga.geojson",
+      "bytes": 1347,
+      "sha256": "2688b30c40d342541e5f1027c24d7a7283fd394f5e4f0a77c85f274eb6600355"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/study-intersection.geojson",
+      "bytes": 1857,
+      "sha256": "aaf470c808ecec12d1429895d2dc4b0e1ee1c7ae37f80e642cc789a157ba39df"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/study-r04.geojson",
+      "bytes": 1381,
+      "sha256": "1869a5d8c6259c99c91be48940ab1854276789d00ee94dc0aaffc5c46da86a48"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/zoneamento.geojson",
+      "bytes": 173997,
+      "sha256": "3d0634815f6316ccfe35c559fc4aaa983dd2f664a7c11b04f15bae49c5a43d5d"
     },
     {
       "path": "/terreno/files/salseiros-itajai-matricula-77931/documentos/2007-03-07-lei4720-2007-jose-montagna-recorte-3cc12206.pdf",
@@ -713,12 +808,12 @@
     {
       "path": "/terreno/google-scene.js",
       "bytes": 17704,
-      "sha256": "d4a7a780e92c603c14364162b6c705e93653df0ae698bec08cf12fb284685334"
+      "sha256": "49a428d671d36f930568dad963bf3040744f348d885f8ecedccf3e987a242c09"
     },
     {
       "path": "/terreno/index.html",
       "bytes": 1617,
-      "sha256": "15fc5d2811e686d7483438798705946af08747e222264f635cddea8cb4287742"
+      "sha256": "a646880cc916359053571ddf577801ea283244b6ae51a18a2bf5d75d39f7d49b"
     },
     {
       "path": "/terreno/investor-ui.js",
@@ -733,7 +828,7 @@
     {
       "path": "/terreno/land-value.js",
       "bytes": 11142,
-      "sha256": "166c30adfd4d12bdc3fabf9b23e96a2efa9a01bbbb8c05966ee7ddc789fec10e"
+      "sha256": "74f5dd93f25f456d299f268c47f5d3e8e83d702aa9912f9dc2a3475a10cf68b3"
     },
     {
       "path": "/terreno/layers.js",
@@ -741,9 +836,14 @@
       "sha256": "7f330beda6b7b796fba02d87cfb65905d32b422d480645a6adff9b562768ae06"
     },
     {
+      "path": "/terreno/legal-workbench-view.mjs",
+      "bytes": 5615,
+      "sha256": "61f8614465d860314292e81b587317e0260dca7102bef8882df649c7a7579cce"
+    },
+    {
       "path": "/terreno/map.js",
       "bytes": 32593,
-      "sha256": "18c3d8ddc1cde86485d6da30ed5309b3cfa0d6b9e71d5818ba49fb777e6824ec"
+      "sha256": "d636e20243eb9019feabc46d3cc51a7702aa487d02460814fab10dc85f6f6551"
     },
     {
       "path": "/terreno/market.css",
@@ -778,12 +878,12 @@
     {
       "path": "/terreno/navigation-model.mjs",
       "bytes": 790,
-      "sha256": "7819445681d7792125c64c7183e9fe8b45d885ae7556ed51c2d11bb58d071fc3"
+      "sha256": "fa8b2c495a001dff7136f6ad098ae12652b300d194cb8d246a28a4aba023b628"
     },
     {
       "path": "/terreno/panorama.js",
       "bytes": 2873,
-      "sha256": "8cc3a16c484df4b50a00628fe29e287e2f13879d66d3d40b07aaab409e9f394a"
+      "sha256": "7a90a05ae1a829d2f68df1c259f0c52a483e602a8e761796c66cd1a42c1840a8"
     },
     {
       "path": "/terreno/presentation-model.mjs",
@@ -798,7 +898,7 @@
     {
       "path": "/terreno/qualification.js",
       "bytes": 18552,
-      "sha256": "abb499380cd77573307c948046d8274d1449c61457fec2d522db4cc0224f9091"
+      "sha256": "0c3e73be6cfb09ef4e391bcf51891763e3aa84b8aacddf05d30a4ecc7358f75d"
     },
     {
       "path": "/terreno/report-safety.mjs",
@@ -833,12 +933,12 @@
     {
       "path": "/terreno/streetview.js",
       "bytes": 20773,
-      "sha256": "64752200e40c8376f5098b22c553cae9ca7c8c0eba700f09a9a8eaa3a11f704e"
+      "sha256": "53a288c9856b9469eb744f0fc65678e4f43049d9cca0f6596990be8a3ce9c428"
     },
     {
       "path": "/terreno/style.css",
-      "bytes": 30046,
-      "sha256": "8641adbea73a6c81acbd8e7f3540c8a67d8076e2db4e2f077fa997a5119b5f0a"
+      "bytes": 31674,
+      "sha256": "24f05685930178139c6b3ac382e42c253cbc7e944d9a6edb4ab3f781e218057f"
     },
     {
       "path": "/terreno/subdivision-review.css",
@@ -858,7 +958,7 @@
     {
       "path": "/terreno/surroundings-summary.js",
       "bytes": 2652,
-      "sha256": "60a193dea86b97162fd811e505e187b8d954ec1a9e3db6106098de621e52a652"
+      "sha256": "4dbfd801272f39c16290265b39a8898640823dab0c2461ab940ac98e952cbbec"
     },
     {
       "path": "/terreno/surroundings.css",
@@ -868,7 +968,7 @@
     {
       "path": "/terreno/surroundings.js",
       "bytes": 27449,
-      "sha256": "49d7f530f189e6771b0503bddd0abf7a8f1cbe505a8748aee05b9599243b290e"
+      "sha256": "d58a25bfe52006d577432d83f6b5c79cfbea0a07429f4183dae91b919175c21a"
     },
     {
       "path": "/terreno/terrain-anchor.js",
@@ -878,87 +978,7 @@
     {
       "path": "/terreno/volume.js",
       "bytes": 23904,
-      "sha256": "86fa5b24a1684ff292ea5bdb6b5065ee3222c491e940de39a814f0e20ae81dfe"
-    },
-    {
-      "path": "/terreno/files/penha-paisagem-conectada/documentos/2023-12-21-penha-lc167-itbi-extrato-dom-4413.pdf",
-      "bytes": 159630,
-      "sha256": "1e9a9f5b482c0d50e364ec0d071da6e1f22ab6e46a0af71ba707fd44f00c7c9e"
-    },
-    {
-      "path": "/terreno/files/penha-paisagem-conectada/documentos/2026-10-02-lc146-2021-foco.pdf",
-      "bytes": 462566,
-      "sha256": "49725714fa60ed4c30df56ff19dd9d04fb5359738810dc127e8ef64dadf281d9"
-    },
-    {
-      "path": "/terreno/files/penha-paisagem-conectada/documentos/2026-10-02-lc172-2024-foco.pdf",
-      "bytes": 7264019,
-      "sha256": "38809220af331ea37a82bf2399907d9bff3c4119dad7945996c7cf4993f758ea"
-    },
-    {
-      "path": "/terreno/files/penha-paisagem-conectada/gis/parcel.geojson",
-      "bytes": 1882,
-      "sha256": "7fe3e0b695e529d97dafe4ac280ff68d57ba3156a350c992766e8b412ce2fa13"
-    },
-    {
-      "path": "/terreno/files/penha-paisagem-conectada/gis/inundacao.geojson",
-      "bytes": 32574,
-      "sha256": "6ae8b5ce16aa712c6bbfa41ada9ffe0fb1cb32c3a18ff5244d0db07672660a43"
-    },
-    {
-      "path": "/terreno/files/penha-paisagem-conectada/gis/zoneamento.geojson",
-      "bytes": 173997,
-      "sha256": "3d0634815f6316ccfe35c559fc4aaa983dd2f664a7c11b04f15bae49c5a43d5d"
-    },
-    {
-      "path": "/terreno/files/penha-paisagem-conectada/gis/study-intersection.geojson",
-      "bytes": 1857,
-      "sha256": "aaf470c808ecec12d1429895d2dc4b0e1ee1c7ae37f80e642cc789a157ba39df"
-    },
-    {
-      "path": "/terreno/files/penha-paisagem-conectada/gis/hidrografia-eixo-legado.geojson",
-      "bytes": 790,
-      "sha256": "9311c1c5a8065ebcf62cd44e9613b93dd9f977c75043b708a48817396456c14c"
-    },
-    {
-      "path": "/terreno/files/penha-paisagem-conectada/gis/atlas-base.geojson",
-      "bytes": 2017,
-      "sha256": "1903779022d4aa91bf047db294e0223c5fceb807f65a92b092f5b9da0f7bccae"
-    },
-    {
-      "path": "/terreno/files/penha-paisagem-conectada/gis/app-cartografica.geojson",
-      "bytes": 304742,
-      "sha256": "e2423a834476ff0658b9015cd9865bf85bd82872fa88c4e40742e074b56c95aa"
-    },
-    {
-      "path": "/terreno/files/penha-paisagem-conectada/gis/solos-restinga.geojson",
-      "bytes": 1347,
-      "sha256": "2688b30c40d342541e5f1027c24d7a7283fd394f5e4f0a77c85f274eb6600355"
-    },
-    {
-      "path": "/terreno/files/penha-paisagem-conectada/gis/movimentos.geojson",
-      "bytes": 10378,
-      "sha256": "7a9bbb7be3cd44b1809bcf394d5a6343d444708d63abbdacd639b5d0f814f1b9"
-    },
-    {
-      "path": "/terreno/files/penha-paisagem-conectada/gis/mineracao.geojson",
-      "bytes": 2304,
-      "sha256": "dfaeb600cbf63354fe2e546c21812bd62e374ed4291c01d504d964b00b7ab643"
-    },
-    {
-      "path": "/terreno/files/penha-paisagem-conectada/gis/study-r04.geojson",
-      "bytes": 1381,
-      "sha256": "1869a5d8c6259c99c91be48940ab1854276789d00ee94dc0aaffc5c46da86a48"
-    },
-    {
-      "path": "/terreno/files/penha-paisagem-conectada/gis/ibge-municipio.geojson",
-      "bytes": 2982,
-      "sha256": "80a286d54e9aa3cf1b3c7e1d440766b1a03603f951b1d3b95647d13717dc0ee1"
-    },
-    {
-      "path": "/terreno/legal-workbench-view.mjs",
-      "bytes": 5615,
-      "sha256": "61f8614465d860314292e81b587317e0260dca7102bef8882df649c7a7579cce"
+      "sha256": "29cc1073e655e25ffe44f17cb9953a23c3a7a1fde2d95c6c187a5c498fe31857"
     }
   ],
   "excludedDocuments": [
@@ -1118,9 +1138,9 @@
       "reason": "not-public-approved"
     }
   ],
-  "clientVersion": "f034d95b69f3",
+  "clientVersion": "73077e076bf2",
   "snapshotSha256": "c53f8131b443dd810f9ca23f7bb0413b2e6b9ce4ec05e3eb8824d6fe3d597866",
-  "clientUpdatedAt": "2026-10-02T16:48:02.291Z",
+  "clientUpdatedAt": "2026-10-02T21:09:30.030Z",
   "concept": {
     "label": "Concept · uso e testes",
     "independentOfPanel": true
@@ -1129,11 +1149,11 @@
     "version": "1.1.0",
     "scope": "public_reference_hypothesis",
     "studyDataReexported": false,
-    "policySha256": "25e73409fb0e333ea3a13771e0cf7013cb9fff23d59c6affcf1a1731a2007a73"
+    "policySha256": "932f4ddbc2f3e93b27f7deb973d7b0a568f7265a17035d34ecb1070dd6468ff4"
   },
   "landValuation": {
     "version": "1.0.0",
-    "policySha256": "3006e3b3c77a11e4ea07141451841925c83464663b88cd9d2fb2bad001514064",
+    "policySha256": "8dc509a9104ccbf21bac4c74c2c97aa8cbf4536da57edf020f45a590925156ef",
     "scope": "physical_land_value_before_business",
     "studyDataReexported": false
   },

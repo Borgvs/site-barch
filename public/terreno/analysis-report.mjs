@@ -1,6 +1,6 @@
 /** Editorial owner only. Canonical price, area, tax, envelope and decision owners
  * are supplied in the export packet; this module neither computes nor adopts them. */
-import {reportSourceUrl,reportHash,reportPublicText} from './report-safety.mjs?v=f034d95b69f3';
+import {reportSourceUrl,reportHash,reportPublicText} from './report-safety.mjs?v=73077e076bf2';
 export const REPORT_VERSION='barch-land-report-2.1.0';
 export const REPORT_CHAPTERS=Object.freeze([
  {id:'diagnosis',number:'01',title:'Diagnóstico e recomendação'},
