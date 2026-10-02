@@ -1,7 +1,7 @@
-import {projectCrossAudit} from './cross-audit-view.mjs?v=2e8617481274';
+import {projectCrossAudit} from './cross-audit-view.mjs?v=f034d95b69f3';
 /** Download boundary: a new DTO, never a serialization of the study or internal dossier. */
-import {reportSourceUrl,reportHash,reportId,reportPublicText} from './report-safety.mjs?v=2e8617481274';
-import {buildAnalysisReport} from './analysis-report.mjs?v=2e8617481274';
+import {reportSourceUrl,reportHash,reportId,reportPublicText} from './report-safety.mjs?v=f034d95b69f3';
+import {buildAnalysisReport} from './analysis-report.mjs?v=f034d95b69f3';
 const finite=v=>typeof v==='number'&&Number.isFinite(v);
 const text=reportPublicText;
 const number=v=>finite(v)?v:null;

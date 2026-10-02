@@ -1,5 +1,5 @@
 /** Professional, independent surroundings notes. Never processes Google imagery. */
-import {STREETVIEW_REVIEW_CRITERIA,STREETVIEW_REVIEW_STATUSES,STREETVIEW_REVIEW_BASES} from './surroundings-schema.js?v=2e8617481274';
+import {STREETVIEW_REVIEW_CRITERIA,STREETVIEW_REVIEW_STATUSES,STREETVIEW_REVIEW_BASES} from './surroundings-schema.js?v=f034d95b69f3';
 
 const escapeDefault = value => String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const numDefault = value => Number(value).toLocaleString('pt-BR');
