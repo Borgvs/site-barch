@@ -1,6 +1,6 @@
 /** Own equirectangular evidence, using the already vendored Three runtime. */
 export async function mountPanorama(host,url){
- const THREE=await import('./assets/vendor/three.module.js?v=29ef5f348bf3');let destroyed=false,frame,texture,yaw=0,pitch=0,drag=null;
+ const THREE=await import('./assets/vendor/three.module.js?v=2e8617481274');let destroyed=false,frame,texture,yaw=0,pitch=0,drag=null;
  const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));host.replaceChildren(renderer.domElement);host.tabIndex=0;host.setAttribute('aria-label','Foto 360 própria. Arraste para olhar; setas também movem a vista.');
  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(70,1,.1,1000),geometry=new THREE.SphereGeometry(100,48,32);geometry.scale(-1,1,1);const material=new THREE.MeshBasicMaterial({color:0x777777});scene.add(new THREE.Mesh(geometry,material));
  const observer=new ResizeObserver(()=>{const w=Math.max(1,host.clientWidth),h=Math.max(1,host.clientHeight);renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();});observer.observe(host);

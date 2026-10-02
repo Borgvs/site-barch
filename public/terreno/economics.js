@@ -1,5 +1,5 @@
-import {renderAdvisoryPanel} from './advisory.js?v=29ef5f348bf3';
-import {renderInvestorBase,renderInvestorControls,renderInvestorResult,bindInvestorInputs,bindInvestorCharts} from './investor-ui.js?v=29ef5f348bf3';
+import {renderAdvisoryPanel} from './advisory.js?v=2e8617481274';
+import {renderInvestorBase,renderInvestorControls,renderInvestorResult,bindInvestorInputs,bindInvestorCharts} from './investor-ui.js?v=2e8617481274';
 /** Land first. This panel never writes a product or adopts an appraisal. */
 const finite=v=>typeof v==='number'&&Number.isFinite(v);
 const safeUrl=v=>{try{const u=new URL(v);return /^https:$/.test(u.protocol)?u.href:null;}catch{return null;}};

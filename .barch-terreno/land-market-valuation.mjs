@@ -57,7 +57,7 @@ function projection(raw,subject,profile,p,baseDate){
   landStateAuthority:row.landStateAuthority??'unverified',vacancyVerified:row.vacancyVerified===true,eligibleUrbanLand:exclusion===null&&vacant,eligibleBareLand:exclusion===null&&bare,
   improvementContributionBrl:contributionVerified?contribution:null,improvementContributionSource:contributionVerified?row.improvementContributionSource:null,
   adjustedLandBrl:contributionVerified?row.priceBrl-contribution:null,improvements:row.improvements??row.reason??'',distanceKm:null,areaRatio:ratio,
-  selected:exclusion===null,reason:exclusion??row.reason??row.improvements??'Referência de anúncio externo; confirmar objeto e condição.',exclusionReason:exclusion,
+  selected:exclusion===null,reason:(exclusion&&row.forceExcluded===true&&row.reason?row.reason:exclusion)??row.reason??row.improvements??'Referência de anúncio externo; confirmar objeto e condição.',exclusionReason:exclusion,
   areaBasis:row.areaBasis??'Área total anunciada, não área útil licenciada',assetKey:row.assetKey??row.duplicateAssetId??row.sourceUrl??row.id,
   weight:exclusion?0:1/(1+Math.abs(Math.log(row.areaM2/subject.areaM2))),formalValuationEligible:false};
 }
@@ -98,7 +98,7 @@ export function evaluateLandMarket(study,{policy=DEFAULT_LAND_VALUATION_POLICY,b
    if(r.selected&&seen.has(r.assetKey)){r.selected=false;r.eligibleUrbanLand=false;r.eligibleBareLand=false;r.reason='Réplica do mesmo ativo; origem única.';r.exclusionReason=r.reason;}
    if(r.selected)seen.add(r.assetKey);(r.selected?comparables:rejected).push(r);
   }
-  const physicalProxy=descriptive(comparables,subject,'physical_property_proxy',subject.comparisonRegime==='rural'?'Gleba física · proxy rural com benfeitorias':'Imóvel físico · referência com benfeitorias não segregadas');
+  const physicalProxy=descriptive(comparables,subject,'physical_property_proxy',p?.physicalProxyLabel??(subject.comparisonRegime==='rural'?'Gleba física · proxy rural com benfeitorias':'Imóvel físico · referência com benfeitorias não segregadas'));
   const urbanRows=comparables.filter(r=>r.eligibleUrbanLand),bareRows=comparables.filter(r=>r.eligibleBareLand);
   const bareLandEstimate=descriptive(bareRows,subject,'bare_land_reference',subject.comparisonRegime==='rural'?'Terra nua rural · referência isolada':'Terra · contribuição isolada das benfeitorias');
   const landOnlyEstimate=subject.comparisonRegime==='urban'?descriptive(urbanRows,subject,'urban_vacant_land_offer','Terreno urbano · ofertas sem edificação descrita'):bareLandEstimate;

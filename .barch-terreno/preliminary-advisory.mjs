@@ -135,6 +135,7 @@ export function evaluatePreliminaryAdvisory(study,assumptions={}, {policy=DEFAUL
   const selectedBusinessBasis=assumptions.valuationBasis??landValuation.defaultBusinessValuationBasis;
   if(selectedBusinessBasis!==null&&!['land','bare_land','physical_property_proxy'].includes(selectedBusinessBasis))fail('Base de valor deve ser land, bare_land ou physical_property_proxy.');
   const valuation={...selectBusinessValue(study,policy,landValuation,selectedBusinessBasis),selectedBusinessBasis},a=resolveAssumptions(study,assumptions,policy,valuation),gates=collectGates(study,a,policy,valuation);
+  if(landPolicy.subjectProfiles[study.slug]?.comparisonScope==='regional_proxy')gates.push({id:'regional_proxy_scope',label:'Homologar microlocalização e direitos da gleba de Penha',state:'pending',critical:true,action:'A referência de glebas no corredor ampliado não é avaliação da frente Beto Carrero. Resolver endereço/perímetro dos comparáveis e diferença frente/litoral antes de adotar preço; não usar permuta ou VGV como substituto.'});
   const businessValuation={basis:a.valuationBasis,selectedBy:Object.hasOwn(assumptions,'valuationBasis')?'user_override':'public_valuation_policy',selectionExplicit:true,
    centralBrl:valuation.centralBrl,label:valuation.label,sourceIds:valuation.selectedRows.map(r=>r.id),available:valuation.centralBrl!==null,adoptedMarketValueBrl:null};
   const sources=[{title:policy.capital.label,url:policy.capital.metadataUrl,effectiveOn:policy.capital.effectiveDate,capturedAt:policy.capital.checkedAt,sha256:policy.capital.snapshotSha256},

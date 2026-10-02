@@ -1,4 +1,4 @@
-import {escapeHtml as esc} from './analysis-packet.mjs?v=29ef5f348bf3';
+import {escapeHtml as esc} from './analysis-packet.mjs?v=2e8617481274';
 const stateLabel=s=>({supported:'Conferido',partial:'Em qualificação',blocked:'Impedimento a resolver',sem_base:'Pesquisar evidência',not_applicable:'Não aplicável',refresh_required:'Revalidar bases'}[s]??'Em qualificação');
 const ownerLabel=s=>({remote:'Pesquisa automatizada',field:'Verificação em campo',specialist:'Análise técnica competente'}[s]??'Responsável a qualificar');
 const modalityLabel=s=>({document:'Documental',gis:'Cartografia',market:'Mercado',financial:'Financeira',image:'Imagem',field:'Campo',legal:'Jurídica',api:'Consulta'}[s]??s);

@@ -1,7 +1,7 @@
-import {projectCrossAudit} from './cross-audit-view.mjs?v=29ef5f348bf3';
+import {projectCrossAudit} from './cross-audit-view.mjs?v=2e8617481274';
 /** Download boundary: a new DTO, never a serialization of the study or internal dossier. */
-import {reportSourceUrl,reportHash,reportId,reportPublicText} from './report-safety.mjs?v=29ef5f348bf3';
-import {buildAnalysisReport} from './analysis-report.mjs?v=29ef5f348bf3';
+import {reportSourceUrl,reportHash,reportId,reportPublicText} from './report-safety.mjs?v=2e8617481274';
+import {buildAnalysisReport} from './analysis-report.mjs?v=2e8617481274';
 const finite=v=>typeof v==='number'&&Number.isFinite(v);
 const text=reportPublicText;
 const number=v=>finite(v)?v:null;
@@ -29,6 +29,7 @@ function projectProperty(study){
   ...(finite(sr?.areas?.registryM2)?[{label:'Área registral',value:sr.areas.registryM2,unit:'m²',basis:'Reprodução documental histórica',origin:'Dossiê registral',asOf:text(sr.asOf)}]:[]),
   ...(finite(sr?.areas?.taxableM2)?[{label:'Área tributável',value:sr.areas.taxableM2,unit:'m²',basis:'Cadastro fiscal municipal',origin:'Leitura municipal registrada',asOf:text(sr.asOf)}]:[]),
   ...(finite(study.gisAreaM2??sr?.geometry?.municipalAreaM2)?[{label:'Área cartográfica',value:study.gisAreaM2??sr.geometry.municipalAreaM2,unit:'m²',basis:reportPublicText(sr?.geometry?.projection??'Cartografia do estudo'),origin:'GIS',asOf:text(asOf)}]:[])];
+ for(const row of list(study.areaReconciliation).slice(0,16)){if(finite(row.areaM2))areaReferences.push({label:reportPublicText(row.label),value:row.areaM2,unit:'m²',basis:reportPublicText(row.role),origin:reportPublicText(row.source),asOf:text(study.revisedAsOf??study.asOf)});}
  const base=sr?'Leitura municipal registrada':'Parâmetros do ensaio registrado',status=sr?'reading_not_adopted':'working_assumption';
  const index=(label,value,unit='')=>({label,value:typeof value==='string'?reportPublicText(value):number(value),unit,basis:base,status,asOf:text(asOf)});
  const indices=[index('Zoneamento',u.zone),index('CA básico/comum',u.caBasic??u.caCommon),index('CA total/condicional',u.caTotal??u.caConditional),index('Taxa de ocupação',u.coveragePct??u.occupancyPct,'%'),index('Permeabilidade',u.permeabilityPct,'%'),index('Recuo frontal',u.frontSetback??u.setbackFrontM,u.frontSetback?'':'m'),index('Recuos laterais/fundos',u.sideSetback??u.setbackOtherM,u.sideSetback?'':'m'),index('Altura',u.height??u.maxHeightM,u.height?'':'m')].filter(x=>x.value!==null&&x.value!=='');
@@ -71,7 +72,7 @@ export const fmtNumber=(v,d=2)=>finite(v)?v.toLocaleString('pt-BR',{maximumFract
 export const fmtMoney=(v,compact=false)=>finite(v)?`R$ ${fmtNumber(compact?v/1e6:v,compact?2:0)}${compact?' mi':''}`:'A qualificar';
 export const fmtRate=v=>finite(v)?`${fmtNumber(v)}% a.a.`:'Não identificada';
 export function summaryIndicators(packet){const e=packet.economics,m=e.metrics,l=packet.landValuation;return [
- {label:l?.estimate?.label||'Referência física de mercado',value:fmtMoney(l?.estimate?.centralBrl??e.reference.centralBrl,true),hint:l?.estimate?.basis==='bare_land_reference'?'Terra sem contribuição de benfeitorias':l?.estimate?.basis==='urban_vacant_land_offer'?'Terreno urbano vago declarado; atributos físicos identificados':'Comparação física; benfeitorias indicadas nas referências'},
+ {label:l?.estimate?.label||'Referência física de mercado',value:fmtMoney(l?.estimate?.centralBrl??e.reference.centralBrl,true),hint:l?.estimate?.basis==='bare_land_reference'?'Terra sem contribuição de benfeitorias':l?.estimate?.basis==='urban_vacant_land_offer'?'Terreno urbano vago declarado; atributos físicos identificados':'Comparação física; verificar condição e contribuição de benfeitorias'},
  {label:'Teto econômico de aquisição',value:fmtMoney(e.ceilings.effectiveBrl,true),hint:'Menor capacidade entre ativo e capital próprio'},
  {label:'Preço sugerido no ensaio',value:fmtMoney(e.recommendedPriceBrl,true),hint:`Reserva para negociar: ${fmtNumber(e.assumptions.safetyMarginPct)}%`},
  {label:'Capital próprio necessário',value:fmtMoney(m.peakEquityBrl,true),hint:`Prazo da saída: ${fmtNumber(e.assumptions.exitMonth,0)} meses`},

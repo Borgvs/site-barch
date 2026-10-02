@@ -91,6 +91,13 @@
       "status": "historical_rule_current_consolidation_pending",
       "notaryMode": "editable_budget",
       "notaryBudgetBrl": 35000
+    },
+    "Penha/SC": {
+      "itbiPct": 3,
+      "sourceId": "penha-itbi",
+      "status": "captured_official_amending_act_current_chain_to_confirm",
+      "notaryMode": "sc_2026",
+      "notaryBudgetBrl": null
     }
   },
   "scNotaryTable": {
@@ -463,6 +470,13 @@
       "url": "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/pagamento/ganhos-de-capital/aliquotas",
       "sha256": "69ec91ceb194871d7e6d02e8f4bbe9323a2073c625523c74bceda6ed089ad4ab",
       "checkedAt": "2026-09-30T20:23:18.755Z"
+    },
+    {
+      "id": "penha-itbi",
+      "title": "Penha · LC 167/2023 · art.3 · ITBI 3%",
+      "url": "https://static.dom.sc.gov.br/?id=5447900&r=site%2FatoView",
+      "sha256": "e5bcefb478c7498b19129f81e0bbdba4982914f6f3e8af607d0cbba656c077ef",
+      "checkedAt": "2026-10-02T19:00:00Z"
     }
   ],
   "profiles": {
@@ -496,6 +510,11 @@
       "conditions": [
         "Ofertas rurais de porte próximo têm benfeitorias; não quantificam valor de aprovação do loteamento, infraestrutura, lagoa, clube ou participações societárias.",
         "Direitos aprovados e custos de execução exigem avaliação própria, sem multiplicar preços de lotes de varejo pela área bruta."
+      ]
+    },
+    "penha-paisagem-conectada": {
+      "conditions": [
+        "Gleba com área registral e área útil por conciliar; orçamento para aquisição cash; não precifica permuta."
       ]
     }
   },

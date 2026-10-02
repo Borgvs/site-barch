@@ -1,5 +1,5 @@
 /** Public presentation boundary. Never copy an internal audit or recompute a price. */
-import {reportPublicText as text,reportId,reportHash} from './report-safety.mjs?v=29ef5f348bf3';
+import {reportPublicText as text,reportId,reportHash} from './report-safety.mjs?v=2e8617481274';
 const list=v=>Array.isArray(v)?v:[],count=v=>Number.isInteger(v)&&v>=0?v:null;
 const states=new Set(['supported','partial','sem_base','conflict','error','negative','not_applicable','blocked','refresh_required','abstained']);
 const state=v=>states.has(v)?v:'sem_base';
