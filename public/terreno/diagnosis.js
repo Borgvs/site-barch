@@ -1,5 +1,5 @@
-import {diagnosisModel} from './presentation-model.mjs?v=3ab52c3388b1';
-import {escapeHtml as esc,fmtMoney,fmtNumber,fmtRate} from './analysis-packet.mjs?v=3ab52c3388b1';
+import {diagnosisModel} from './presentation-model.mjs?v=de24f7145749';
+import {escapeHtml as esc,fmtMoney,fmtNumber,fmtRate} from './analysis-packet.mjs?v=de24f7145749';
 export function renderDiagnosis(){return `<div id="diagnosis-body" aria-live="polite"><section class="card card-body"><div class="eyebrow">Diagnóstico · resultado da análise</div><h2>Consolidando a recomendação de aquisição…</h2><p class="small muted">Valor da área, capital, prazo e condições para avançar.</p><p id="diagnosis-state" role="status">Calculando as referências deste terreno.</p></section></div>`;}
 export function paintDiagnosis(study,result,{onNavigate}){
  const host=document.querySelector('#diagnosis-body');if(!host)return;const d=diagnosisModel(study,result);

@@ -1,28 +1,28 @@
-import {mainSections,sectionPages,supportPages,parentSection,validSection} from './presentation-model.mjs?v=3ab52c3388b1';
-import {renderDiagnosis,paintDiagnosis,pendingDiagnosis} from './diagnosis.js?v=3ab52c3388b1';
-import {renderDiligenceProtocol,bindDiligenceProtocol} from './dossier-protocol.js?v=3ab52c3388b1';
-import {renderFieldWorkbench,bindFieldWorkbench,renderFieldActions} from './field-workbench.js?v=3ab52c3388b1';
-import {renderEconomicOverview,renderEconomics,bindEconomics} from './economics.js?v=3ab52c3388b1';
-import {renderDashboardSummary,bindDashboardSummary} from './dashboard-summary.js?v=3ab52c3388b1';
-import {renderLandValue,paintLandValue} from './land-value.js?v=3ab52c3388b1';
-import {renderAdvisoryStrip,renderAdvisoryOverview,renderAdvisoryMarket,bindAdvisory} from './advisory.js?v=3ab52c3388b1';
-import {renderSitePotential,bindSitePotential,occupationSelector,occupationChoices,selectOccupation} from './site-potential.js?v=3ab52c3388b1';
-import {getIntakeCatalog,qualificationFields,bindQualificationFields,collectQualification,editQualification,bindFieldWorkflow} from './qualification.js?v=3ab52c3388b1';
-import {renderAssessment,bindAssessment} from './assessment.js?v=3ab52c3388b1';
-import {renderAnalysisSteps,renderBasisCoherence,renderVerificationFreshness} from './analysis-basis.js?v=3ab52c3388b1';
-import {renderSubdivisionOverview,renderSubdivisionTerritory,renderSubdivisionMarket,renderSubdivisionScenarios,bindSubdivisionCharts,destroySubdivisionCharts} from './subdivision-review.js?v=3ab52c3388b1';
-import { mountStreetView } from './streetview.js?v=3ab52c3388b1';
-import { renderSurroundings, bindSurroundings } from './surroundings.js?v=3ab52c3388b1';
-import { summarizeSurroundings } from './surroundings-summary.js?v=3ab52c3388b1';
-import { climatePanel, bindClimate } from './climate.js?v=3ab52c3388b1';
-import {mountMap} from './map.js?v=3ab52c3388b1';
-import {mountVolume} from './volume.js?v=3ab52c3388b1';
-import {mountGoogleScene} from './google-scene.js?v=3ab52c3388b1';
-import {baseLayers} from './layers.js?v=3ab52c3388b1';
-import {densityHistogram} from './context.js?v=3ab52c3388b1';
-import {renderQualifiedMarket,bindQualifiedMarket} from './market.js?v=3ab52c3388b1';
-import {renderLandReview,bindLandReview} from './land-review.js?v=3ab52c3388b1';
-import {renderOperationalMarket,renderOperationalMarketPreview,bindOperationalMarketCharts,destroyOperationalMarketCharts} from './site-review.js?v=3ab52c3388b1';
+import {mainSections,sectionPages,supportPages,parentSection,validSection} from './presentation-model.mjs?v=de24f7145749';
+import {renderDiagnosis,paintDiagnosis,pendingDiagnosis} from './diagnosis.js?v=de24f7145749';
+import {renderDiligenceProtocol,bindDiligenceProtocol} from './dossier-protocol.js?v=de24f7145749';
+import {renderFieldWorkbench,bindFieldWorkbench,renderFieldActions} from './field-workbench.js?v=de24f7145749';
+import {renderEconomicOverview,renderEconomics,bindEconomics} from './economics.js?v=de24f7145749';
+import {renderDashboardSummary,bindDashboardSummary} from './dashboard-summary.js?v=de24f7145749';
+import {renderLandValue,paintLandValue} from './land-value.js?v=de24f7145749';
+import {renderAdvisoryStrip,renderAdvisoryOverview,renderAdvisoryMarket,bindAdvisory} from './advisory.js?v=de24f7145749';
+import {renderSitePotential,bindSitePotential,occupationSelector,occupationChoices,selectOccupation} from './site-potential.js?v=de24f7145749';
+import {getIntakeCatalog,qualificationFields,bindQualificationFields,collectQualification,editQualification,bindFieldWorkflow} from './qualification.js?v=de24f7145749';
+import {renderAssessment,bindAssessment} from './assessment.js?v=de24f7145749';
+import {renderAnalysisSteps,renderBasisCoherence,renderVerificationFreshness} from './analysis-basis.js?v=de24f7145749';
+import {renderSubdivisionOverview,renderSubdivisionTerritory,renderSubdivisionMarket,renderSubdivisionScenarios,bindSubdivisionCharts,destroySubdivisionCharts} from './subdivision-review.js?v=de24f7145749';
+import { mountStreetView } from './streetview.js?v=de24f7145749';
+import { renderSurroundings, bindSurroundings } from './surroundings.js?v=de24f7145749';
+import { summarizeSurroundings } from './surroundings-summary.js?v=de24f7145749';
+import { climatePanel, bindClimate } from './climate.js?v=de24f7145749';
+import {mountMap} from './map.js?v=de24f7145749';
+import {mountVolume} from './volume.js?v=de24f7145749';
+import {mountGoogleScene} from './google-scene.js?v=de24f7145749';
+import {baseLayers} from './layers.js?v=de24f7145749';
+import {densityHistogram} from './context.js?v=de24f7145749';
+import {renderQualifiedMarket,bindQualifiedMarket} from './market.js?v=de24f7145749';
+import {renderLandReview,bindLandReview} from './land-review.js?v=de24f7145749';
+import {renderOperationalMarket,renderOperationalMarketPreview,bindOperationalMarketCharts,destroyOperationalMarketCharts} from './site-review.js?v=de24f7145749';
 const published=window.BARCH_PUBLIC_STUDY===true;
 const concept=window.BARCH_CONCEPT===true;
 document.documentElement.classList.toggle('published-study',published);
@@ -64,7 +64,7 @@ function render(){const edition=++renderSequence;shell();const host=$('#content'
 
 function navigate(id){tab=id;render();}
 function landvalue(){$('#content').innerHTML=renderLandValue();}
-function summary(){$('#content').innerHTML=renderDashboardSummary();summaryController=bindDashboardSummary(study,{chart,onNavigate:navigate,toast});}
+function summary(){$('#content').innerHTML=renderDashboardSummary();summaryController=bindDashboardSummary(study,{chart,onNavigate:navigate,toast,getProtocol:slug=>api(`/terreno/api/studies/${slug}/protocol`)});}
 function marketPreview(){const m=study.qualifiedMarket;if(!m)return renderOperationalMarketPreview(study);return `<section class="card card-body section-gap market-overview"><div class="row between wrap"><div><div class="eyebrow">Referências do produto e do terreno</div><h2 class="section-title">${num(m.products.length)} benchmarks para confrontar a tese</h2></div><button id="go-market">Conferir referências de mercado</button></div><div class="grid three section-gap">${m.products.filter(p=>['condessa','oasis','orbita'].includes(p.id)).map(p=>`<div><strong>${esc(p.name)}</strong><p class="small">${esc(p.segment)}</p><p class="small">${num(p.areaMin,2)}${p.areaMin!==p.areaMax?'–'+num(p.areaMax,2):''} m² · ${p.ticket?money(p.ticket):'Referência de implantação'}</p><span class="tiny muted">${esc(p.fit)}</span></div>`).join('')}</div><p class="small muted">Terrenos: ${num(m.landOffers.filter(x=>x.status!=='excluido').length)} ofertas de contexto e ${num(m.landTransactions.length)} transações fiscais selecionadas. A diferença de porte e benfeitorias exige avaliação própria.</p></section>`;}
 function potentialNavigation(){bindSitePotential(study,{chart,onSelect:id=>{study=selectOccupation(study,id);tab='territory';render();},onTerritory:()=>{tab='territory';render();}});}
 function economicNavigation(){document.querySelectorAll('[data-economic-open]').forEach(b=>b.onclick=()=>{tab='economics';render();});}
