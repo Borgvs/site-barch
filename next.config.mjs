@@ -3,10 +3,15 @@ const nextConfig = {
   reactStrictMode: true,
   // Talma study: isolated static document, preserving the institutional app shell.
   async rewrites() {
-    return [{ source: "/viabilidade", destination: "/viabilidade/index.html" }, { source: "/tatuape", destination: "/estudos/tatuape/v3/index.html" }, { source: "/terreno", destination: "/terreno/index.html" }];
+    return [{ source: "/viabilidade", destination: "/viabilidade/index.html" }, { source: "/tatuape", destination: "/estudos/tatuape/v3/index.html" }, { source: "/concepts/terreno", destination: "/concepts/terreno/index.html" }];
   },
   async redirects() {
-    return [{ source: "/tatuap%C3%A9", destination: "/tatuape", permanent: true }, { source: "/terrenos", destination: "/terreno", permanent: true }];
+    return [
+      { source: "/tatuap%C3%A9", destination: "/tatuape", permanent: true },
+      { source: "/terrenos", destination: "/concepts/terreno", permanent: true },
+      { source: "/terreno", destination: "/concepts/terreno", permanent: true },
+      { source: "/terreno/:path*", destination: "/concepts/terreno/:path*", permanent: true },
+    ];
   },
   async headers() {
     return [
@@ -18,13 +23,13 @@ const nextConfig = {
         { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
         { key: "Cache-Control", value: "no-cache" },
       ] },
-      { source: "/terreno/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }, { key: "X-Content-Type-Options", value: "nosniff" }] },
+      { source: "/concepts/terreno/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }, { key: "X-Content-Type-Options", value: "nosniff" }] },
       { source: "/tatuape", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] },
       { source: "/estudos/tatuape/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] },
     ];
   },
   typedRoutes: false,
-  outputFileTracingIncludes: { "/terreno/api/*": ["./.barch-terreno/**/*"] },
+  outputFileTracingIncludes: { "/concepts/terreno/api/*": ["./.barch-terreno/**/*"] },
   images: { remotePatterns: [] },
   turbopack: {
     root: process.cwd(),

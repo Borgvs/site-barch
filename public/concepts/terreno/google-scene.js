@@ -41,7 +41,7 @@ export async function mountGoogleScene(host,study,options={}){
   publish();message.textContent=options.physicalOnly?'Preparando o terreno e o entorno Google3D…':'Preparando o terreno, a proposta e o contexto Google3D…';
   try{
     if(!finitePosition(study.geography?.center))throw new Error('location_missing');
-    const config=options.config||await read('/terreno/api/integrations/google-maps');const gate=validateGoogleConfig(config);if(!gate.ok)throw new Error(gate.code);
+    const config=options.config||await read('/concepts/terreno/api/integrations/google-maps');const gate=validateGoogleConfig(config);if(!gate.ok)throw new Error(gate.code);
     C=options.cesium||await loadCesium();if(disposed)return;
     const g=study.geography,find=id=>g.layers?.find(l=>l.id===id&&l.status==='available')?.url;
     try{[parcelData,envelopeData,volumeData,landUseData]=await Promise.all([g.parcelUrl?read(g.parcelUrl):null,!options.physicalOnly&&find('envelope')?read(find('envelope')):null,!options.physicalOnly&&find('volumes')?read(find('volumes')):null,!options.physicalOnly&&g.exploratoryProposal?.useUrl?read(g.exploratoryProposal.useUrl):null]);if(!options.physicalOnly)assertOccupationPair(volumeData,landUseData,study);normalizedPolygons(parcelData);normalizedPolygons(envelopeData);normalizedPolygons(volumeData);exploratoryProposalMetadata(volumeData);if(!options.physicalOnly)assertExploratoryStudy(volumeData,study);}catch{parcelData=null;envelopeData=null;volumeData=null;throw new Error('geometry_failed');}
