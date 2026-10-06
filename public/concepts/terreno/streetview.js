@@ -111,7 +111,7 @@ export async function mountStreetView(host,study,options={}){
     if(disposed||state==='loading')return getState();if(!inputPoint){fail('location_missing');return getState();}if(panoramaCount>=maxPanoramas){fail('session_budget');return getState();}
     state='loading';reason=null;const token=++sequence;openButton.disabled=true;status.textContent='Consultando panorama…';updateReadout();
     try{
-      if(!config){config=options.config||await request(new URL('/terreno/api/integrations/google-maps',location.href));if(!config?.configured||typeof config.apiKey!=='string'||!/^AIza[0-9A-Za-z_-]{20,}$/.test(config.apiKey))throw new Error('not_configured');}
+      if(!config){config=options.config||await request(new URL('/concepts/terreno/api/integrations/google-maps',location.href));if(!config?.configured||typeof config.apiKey!=='string'||!/^AIza[0-9A-Za-z_-]{20,}$/.test(config.apiKey))throw new Error('not_configured');}
       if(!session||Number(session.expiry)*1000<Date.now()+60000){session=await request(url('createSession'),{body:{mapType:'streetview',language:'pt-BR',region:'BR'}});if(!session?.session)throw new Error('request_failed');}
       const next=checkedMetadata(await request(url('streetview/metadata',panoId?{panoId}:{lat:inputPoint[1],lng:inputPoint[0],radius:clamp(settings.radiusM||150,10,500)})));
       if(disposed||token!==sequence)return getState();clearThumbnail();clearGraphics();metadata=next;panoramaCount++;panoramaThumbnails=0;
