@@ -44,14 +44,17 @@ export default function ConceptsPage() {
       <Nav />
       <main
         data-nav-light="true"
-        className="min-h-screen bg-paper px-6 pt-32 pb-section"
+        className="min-h-screen bg-paper pt-32 pb-section overflow-x-hidden"
       >
         <div className="container-page">
           <header className="max-w-3xl mb-16 sm:mb-20">
             <p className="font-mono text-[11px] tracking-[0.32em] uppercase text-muted2 font-medium mb-8">
               Concepts · Experimentos
             </p>
-            <h1 className="font-display text-display-2xl sm:text-display-3xl text-ink mb-8 leading-[0.94] tracking-[-0.03em]">
+            <h1
+              className="font-display text-ink mb-8 leading-[0.94] tracking-[-0.03em]"
+              style={{ fontSize: "clamp(44px, 9vw, 96px)" }}
+            >
               O que está
               <br />
               <span className="text-muted2">em experimento.</span>
