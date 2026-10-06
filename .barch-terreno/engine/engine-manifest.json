@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "provenance": "compiled_from_canonical_sources",
+  "source_root": "/Users/gustavo/Documents/Claude/Projects/Barch-system/painel-barch",
+  "built_at": "2026-09-29T18:05:19.150Z",
+  "node_version": "v22.22.1",
+  "compiler_version": "5.9.3",
+  "modules": [
+    {
+      "source": "lib/obra/slug.ts",
+      "source_sha256": "d0f4ae4fc3c2373ee2ebcef8a407bc274d36e4d64a807e17cee915ef7f1e13fb",
+      "artifact": "dist/canonical/obra/slug.js",
+      "artifact_sha256": "f1c35a33a4cfaec0d13c5f549fd58f8f4c1e81e8484897d029f1c069d00b1447"
+    },
+    {
+      "source": "lib/viab/curvas.ts",
+      "source_sha256": "7c5b05a7c555e158c6ad9e7853b394b38e704698438de974058b67cea7d153d2",
+      "artifact": "dist/canonical/viab/curvas.js",
+      "artifact_sha256": "76bf4d7a12155e31b39915d0048a4c0a9a08a54f3f1a8dc3195254d3c5325d45"
+    },
+    {
+      "source": "lib/viab/decisao.ts",
+      "source_sha256": "5edcb8e132680ea71039df1606de4555274970f047316761c40291f4055e88e6",
+      "artifact": "dist/canonical/viab/decisao.js",
+      "artifact_sha256": "adbb5edb778efacab6ef0500e55266208536ec4a2c2bbc00e00017066cf17571"
+    },
+    {
+      "source": "lib/viab/financeiro.ts",
+      "source_sha256": "009b70a05eb031779d2bda10022d59c52da0f60adca6a67a89745f1bb756da6f",
+      "artifact": "dist/canonical/viab/financeiro.js",
+      "artifact_sha256": "a66368a04cf98a631268266776390ae8df6b18ee70e79a1dd46c0275cf12a031"
+    },
+    {
+      "source": "lib/viab/motor.ts",
+      "source_sha256": "8ddb07d797dd9872170e5fa1c7231958f60f85860d4854d8269a66e28f8266b9",
+      "artifact": "dist/canonical/viab/motor.js",
+      "artifact_sha256": "0ebd6e11a0a1f6c3dfb09120e065c8ddda1e2a29add01197d32dd045e7b20fd5"
+    },
+    {
+      "source": "lib/viab/tipos.ts",
+      "source_sha256": "51d86ec8928222d1e161c5b3b3401b8b3fd830c6fc36090a8203069137fd8694",
+      "artifact": "dist/canonical/viab/tipos.js",
+      "artifact_sha256": "3cdd71b374663243cc8ec20a25433887f859be462ea32b420c94b1855b2f7996"
+    },
+    {
+      "source": "lib/wizard-2-0/terrain-feasibility/canonical-sha256.ts",
+      "source_sha256": "bb574ef009d40ddeba4f91315856c83845c8a27d98dceb403b9e7e5932d46b4a",
+      "artifact": "dist/canonical/wizard-2-0/terrain-feasibility/canonical-sha256.js",
+      "artifact_sha256": "88ae4de34866b0bdf6262ba08a4f8842e2a9b546b483c4e90890409559271a01"
+    },
+    {
+      "source": "lib/wizard-2-0/terrain-feasibility/decimal.ts",
+      "source_sha256": "51b2587bdb1754430d6c88142c7e7eac1129f529a57f8d7376f0757bc493170a",
+      "artifact": "dist/canonical/wizard-2-0/terrain-feasibility/decimal.js",
+      "artifact_sha256": "541878eaa65e0bba28c03227ce74e984c87d9f864b6a71cc8b1b59978c481a8c"
+    },
+    {
+      "source": "lib/wizard-2-0/terrain-feasibility/market-valuation.ts",
+      "source_sha256": "a2ae37f18d95c93b60d294652bb117d2c61a1cd82d13d87cac8c2df1e0e130ec",
+      "artifact": "dist/canonical/wizard-2-0/terrain-feasibility/market-valuation.js",
+      "artifact_sha256": "a775f2971d8a8441724352d57a3b34259cadc912a1f040676b751563c665a428"
+    },
+    {
+      "source": "lib/wizard-2-0/terrain-feasibility/types.ts",
+      "source_sha256": "e53e83b64c89a88875a4ec418d40d9016abdd10bca2e4704bf74fd64a9df5e33",
+      "artifact": "dist/canonical/wizard-2-0/terrain-feasibility/types.js",
+      "artifact_sha256": "e0707df80e82880b9ca0bdb1af3f336321f5d88b92ad8c6c6b7a49dc738b0fb7"
+    },
+    {
+      "source": "lib/wizard-2-0/terrain-feasibility/validation.ts",
+      "source_sha256": "5ed5db1bc8c0f5f5fb7e88d734409069b7508fe0ba720d524c3466cbf6e682d7",
+      "artifact": "dist/canonical/wizard-2-0/terrain-feasibility/validation.js",
+      "artifact_sha256": "5704ba53a63964310038f795776d820c85d40690cd24136d2843faedb1249cff"
+    }
+  ],
+  "network": false,
+  "database": false,
+  "production_modified": false,
+  "manifest_sha256": "b15315ca767a25c2172296551085137f8daa6c317536e8902c93781a360b7140"
+}

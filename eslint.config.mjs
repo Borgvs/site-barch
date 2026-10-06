@@ -12,6 +12,7 @@ export default [
   {
     ignores: [
       ".next/**",
+      ".barch-terreno/engine/dist/**", // canonical generated artifacts checked by SHA-256
       "node_modules/**",
       "public/**",
       "coverage/**",

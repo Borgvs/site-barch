@@ -1,0 +1,921 @@
+{
+  "schema": "barch-concept-publication/1",
+  "version": "0.12.0",
+  "conceptOnly": true,
+  "readOnlyBarch": true,
+  "defaultCase": "official-cadastral-sp-08015200377-empty-progressive-study",
+  "neuralRuntime": "local_only_unavailable_here",
+  "internalBarchDataIncluded": false,
+  "files": [
+    {
+      "path": "brand/barch-wordmark-dark-bgoff.svg",
+      "bytes": 7132,
+      "sha256": "a3a3558fbb985a30501974b915c8edf8e18b0187fe824b1df501bb0b9786a8e2"
+    },
+    {
+      "path": "data/biblioteca-brasileira-v07.json",
+      "bytes": 2353931,
+      "sha256": "06405b4b53324259ec387ff86df7e6dd21f3868bf02ad757b4872e8d314266fd"
+    },
+    {
+      "path": "data/curadoria-modelos-v07.json",
+      "bytes": 104542,
+      "sha256": "58c552c89169b3c9435d10ab61ba0b22d3864c1e6092e73fbbdf5935570c1bac"
+    },
+    {
+      "path": "data/site-sp.json",
+      "bytes": 2423489,
+      "sha256": "3483e53a0f0b4efbe7dd4c3e63a6347ba6e0675f0a5885bc5c8d9ba46ef96a8c"
+    },
+    {
+      "path": "data/sp-parcel-catalog.geojson",
+      "bytes": 308822,
+      "sha256": "da7540537c98a70395c56cca35d695a868d4b7dcc7eceb3a9d0790d22ff5c301"
+    },
+    {
+      "path": "data/sp-parcel-qualification.json",
+      "bytes": 1032039,
+      "sha256": "29b0bae3dfa7a8ccd16050134430d4bf2ccc392c10bb49e3b32a84138e23b2ef"
+    },
+    {
+      "path": "library/index.json",
+      "bytes": 159307,
+      "sha256": "b0988545eacccdf7e317cd4510e4c0b348212f0543eed6fcdaf681e3128d6f90"
+    },
+    {
+      "path": "library/plans/index.json",
+      "bytes": 522543,
+      "sha256": "2a8fa9a07740d2acef22ab875bf591f8b9a04fdd3ef9b9e83b2eec2e96035deb"
+    },
+    {
+      "path": "library/symbols/eletro-fogao-4-bocas-planta-35de85c.json",
+      "bytes": 40045,
+      "sha256": "4d48d3862b8a5ab5874e6b61ee67e0107ffe145e1f9e0d8a741bca892f0becdd"
+    },
+    {
+      "path": "library/symbols/eletro-fogao-5-bocas-planta-c9a2c51.json",
+      "bytes": 54428,
+      "sha256": "a69b09dc6fedb2dce91668b4981808911a70eb42f20032064f42e3c6c39d38d7"
+    },
+    {
+      "path": "library/symbols/eletro-geladeira-62x75x185-planta-fef38b4.json",
+      "bytes": 2654,
+      "sha256": "8cdd9a5acdaf1562fb0723b4832f67c319b048618c2c58890c8ea4ee5d13e7b2"
+    },
+    {
+      "path": "library/symbols/eletro-geladeira-70x75x194-planta-e277b17.json",
+      "bytes": 2719,
+      "sha256": "507babdf8aa5d52e6842028061da971c7d3067f943fe4eeb04165a20ddf12025"
+    },
+    {
+      "path": "library/symbols/eletro-geladeira-85x75x188-planta-905cf1a.json",
+      "bytes": 2801,
+      "sha256": "8df32bcba20e004c76954197fbf2ae806717dfe8287c68aaace4441fa0283353"
+    },
+    {
+      "path": "library/symbols/eletro-geladeira-91x61x176-planta-fdd33f9.json",
+      "bytes": 3831,
+      "sha256": "c83203138e9be22b349cd3743c8ac83b9c932fde3b7d656fbdaeb735ffd8fbd1"
+    },
+    {
+      "path": "library/symbols/eletro-lavalouca-10-serv-45x60x85-planta-cfcfae8.json",
+      "bytes": 1868,
+      "sha256": "8b25db130374c7c4491e48bdf7c06574293f337edc4076f7e0b884ef754e71a5"
+    },
+    {
+      "path": "library/symbols/eletro-lavalouca-14-serv-60x60x85-planta-958af55.json",
+      "bytes": 1857,
+      "sha256": "7460971e04a6bc768ce8438bcacf9dc4b77940b504df1832f4e4bcba4556bcab"
+    },
+    {
+      "path": "library/symbols/esquadria-porta-1-folha-de-correr-branca-f72b29f.json",
+      "bytes": 9709,
+      "sha256": "31055f5f6ef1b902dbaa64ecf289ec7285a3c292a49f4ffe9eda4231ee9caccd"
+    },
+    {
+      "path": "library/symbols/esquadria-porta-2-folhas-de-correr-persiana-branca-748dd6f.json",
+      "bytes": 15513,
+      "sha256": "53e9f0f7409ef588eaee4553a308d0aa19e47638ddad45d8de2a75920971c4d6"
+    },
+    {
+      "path": "library/symbols/esquadria-porta-2-folhas-de-correr-vidro-branca-d46c019.json",
+      "bytes": 13120,
+      "sha256": "77e7b8f8a219283acc91d215a2e1d80e81b9a7cd4aec5ef7195007b1d0165c83"
+    },
+    {
+      "path": "library/symbols/esquadria-porta-3-folhas-de-correr-branca-480fbd7.json",
+      "bytes": 12566,
+      "sha256": "3d219e346c34d6f0765e32205a7fd2c094af2de55c5939e09919b113902ffbb9"
+    },
+    {
+      "path": "library/symbols/esquadria-porta-4-folhas-2-de-correr-branca-3dbef78.json",
+      "bytes": 15466,
+      "sha256": "8ed90e93bbe36de81788b71b18d8ea44bafde978c03eba5233280259b54c27c0"
+    },
+    {
+      "path": "library/symbols/esquadria-porta-de-abrir-com-moldura-branca-1064612.json",
+      "bytes": 16573,
+      "sha256": "fcb120cf810cdff4d5db943da4e51baceec8f15dabba432386fb961b59066ea1"
+    },
+    {
+      "path": "library/symbols/esquadria-porta-de-abrir-com-veneziana-branca-0dfe389.json",
+      "bytes": 16113,
+      "sha256": "08b67cb09b70945e954c3abcefb5cc87f230e2594ac1f595cd4966c468003d77"
+    },
+    {
+      "path": "library/symbols/esquadria-porta-de-abrir-lisa-branca-f24e01c.json",
+      "bytes": 15895,
+      "sha256": "8621b70928ce1a8106982874ca8d084c1e47efdea934a6a6c43a20585addad30"
+    },
+    {
+      "path": "library/symbols/louca-bacia-com-caixa-deca-unic-planta-811e2b1.json",
+      "bytes": 8417,
+      "sha256": "391914d8854944f8e3bd2ba5f852bcef3eecc95d11499036e9c6218c01a2e8ad"
+    },
+    {
+      "path": "library/symbols/louca-bacia-deca-unic-planta-4a233a9.json",
+      "bytes": 6786,
+      "sha256": "543ff78c8adf5986e5b67368b24b50abf9af64cafe48b5b1bf605fb0aa3bd5d9"
+    },
+    {
+      "path": "library/symbols/louca-banheira-auster-pretty-jet-planta-898838d.json",
+      "bytes": 59560,
+      "sha256": "f2793a888d5ea80814cc4bbf777b180a32640624339dae9c47ff403f4eab7f3b"
+    },
+    {
+      "path": "library/symbols/louca-banheira-auster-prettyjet-dupla-planta-0baa451.json",
+      "bytes": 83332,
+      "sha256": "94cfba1aae065b88ff9a8fdcd0bca6428d4e21bb3043aff4a8f232a7a6eea1b0"
+    },
+    {
+      "path": "library/symbols/louca-cuba-apoio-deca-l310-planta-48d30af.json",
+      "bytes": 22206,
+      "sha256": "656bc7a334df1c1c85a5e6c21ef06c5774dcb660a5026d85b903d4d0a20fd957"
+    },
+    {
+      "path": "library/symbols/louca-cuba-apoio-deca-l311-planta-6440737.json",
+      "bytes": 6463,
+      "sha256": "81c69f601463ed17f88b6e2c27cb650dd273c6d8bf867734847242b88a1f8b12"
+    },
+    {
+      "path": "library/symbols/louca-cuba-apoio-deca-l7400-planta-56027e5.json",
+      "bytes": 4349,
+      "sha256": "4573227ed97fbfdd02ec94f642d54b90804e07e8beaf3209daf85dc9bae938a3"
+    },
+    {
+      "path": "library/symbols/louca-cuba-deca-planta-lc26-037abfc.json",
+      "bytes": 4242,
+      "sha256": "94026020dac6947e31badcc0d4c3f21a6d344759dcba97c35442bc9f1f345e06"
+    },
+    {
+      "path": "library/symbols/louca-cuba-deca-semi-42x42-planta-8473750.json",
+      "bytes": 5249,
+      "sha256": "65e2fbdc232255ac89337e1f9b34b06f6059288f4ed548ac0556f91dc9db9619"
+    },
+    {
+      "path": "library/symbols/louca-cuba-embutir-deca-l375-planta-26cb92c.json",
+      "bytes": 4790,
+      "sha256": "537fd2447cb0a940873f92459c14518e4c02f361c47dcd8f382f2807a0fe1ae1"
+    },
+    {
+      "path": "library/symbols/louca-cuba-piso-deca-lc26-planta-f1b3140.json",
+      "bytes": 4316,
+      "sha256": "a6ac1c15367eb437e63c397a11b1c5abf2a265496505b117e8cf5e46ee502032"
+    },
+    {
+      "path": "library/symbols/louca-cuba-semiencaixe-deca-l830-planta-26b33dd.json",
+      "bytes": 6537,
+      "sha256": "13453bfaeb9edd0b2c06c605d37fb8f2d2dff9d9910740c79032a1b132d09ae3"
+    },
+    {
+      "path": "library/symbols/louca-cuba-semiencaixe-deca-l843-planta-059839c.json",
+      "bytes": 6529,
+      "sha256": "43ef782cedb937d83980a3c6c55b7f0d43b67502ce4df0d4bbcd5981b62c059a"
+    },
+    {
+      "path": "library/symbols/louca-cuba-semiencaixe-deca-l863-planta-0af5028.json",
+      "bytes": 5279,
+      "sha256": "a5849f41b0efada8a6ab541980658c1143aa8ba4c009d0adb6ef75bdbc7209c5"
+    },
+    {
+      "path": "library/symbols/louca-cuba-semiencaixe-deca-l873-planta-3dd21be.json",
+      "bytes": 5273,
+      "sha256": "ad0adce48c7006674de7460f57b288e4f9bf2adabccc48c11ef3c9950c0053db"
+    },
+    {
+      "path": "library/symbols/louca-cuba-sobrepor-deca-l1044-metais-planta-e8eec20.json",
+      "bytes": 5073,
+      "sha256": "f8cd5a5c726df550f8ea7aeeb15985f2d7515eb62161337ab3d9aea068eff6e2"
+    },
+    {
+      "path": "library/symbols/louca-cuba-sobrepor-deca-l1044-planta-8f0343f.json",
+      "bytes": 8420,
+      "sha256": "cabcf6f117d8fc7c592b8d7c9ea5a9858bb37f6a147ba9771b25f812dc80f020"
+    },
+    {
+      "path": "library/symbols/louca-cuba-sobrepor-deca-l129-planta-1f46d0e.json",
+      "bytes": 6497,
+      "sha256": "bd88f7d4c9fe59e7d2a96720f9a9444f15b5a892f0e4eac0f2993f1bebeb724d"
+    },
+    {
+      "path": "library/symbols/louca-tanque-30l-planta-d1c1da6.json",
+      "bytes": 14883,
+      "sha256": "b7422e8a50cc3ac7253601ec7930e4d16a946142980f9ab2fa4d118250f83c6c"
+    },
+    {
+      "path": "library/symbols/louca-tanque-40l-planta-e4bde26.json",
+      "bytes": 15073,
+      "sha256": "806c3ba03e0a6cd7204086d7a46eb546aeb1551eec5f90684b8bb01c37f94f3e"
+    },
+    {
+      "path": "library/symbols/louca-vaso-deca-carrara-planta-a52c790.json",
+      "bytes": 13069,
+      "sha256": "3d0e94ce4929fdd891ffc404cc3525d8a7be8a69925246c41321ac8ada04a2a1"
+    },
+    {
+      "path": "library/symbols/louca-vaso-deca-vogue-planta-a71ecf1.json",
+      "bytes": 12249,
+      "sha256": "ada98eea9f267b6c259fef80479e48f912065d81c9f68affbe0055d5f6f02f28"
+    },
+    {
+      "path": "library/symbols/metal-chuveiro-deca-acqua-plus-curvo-planta-f3e9c57.json",
+      "bytes": 5366,
+      "sha256": "8cfba6138d92831ff9707ef2cb54d088286295037468a882f5cae3cad6986954"
+    },
+    {
+      "path": "library/symbols/metal-chuveiro-deca-dream-acqua-plus-reto-planta-a80da5c.json",
+      "bytes": 4953,
+      "sha256": "774d6bfdd3fbec3d27396dce676e6ec3bb4ce503e486f9baa24023c8a6029520"
+    },
+    {
+      "path": "library/symbols/metal-chuveiro-parede-deca-unic-planta-5108b37.json",
+      "bytes": 2760,
+      "sha256": "0b68ec8dd60d68d08d0a020fc9c7b9142dd6e97160e63b22d8feb03829a40731"
+    },
+    {
+      "path": "library/symbols/metal-cuba-69x49-tramontina-margana-planta-24fbfd4.json",
+      "bytes": 9791,
+      "sha256": "a5e230e13d1e3359b85aad0d2f711cf80bf48dff2664b09ca9df6193070c527c"
+    },
+    {
+      "path": "library/symbols/metal-cuba-70x40-tramontina-quadrum-planta-2916c36.json",
+      "bytes": 3777,
+      "sha256": "2ec7e3f241ce2cb999d443acd95c8e5b0b5f35489907e909be3bef4eb7b33646"
+    },
+    {
+      "path": "library/symbols/metal-cuba-cozinha-30cm-planta-0d274d2.json",
+      "bytes": 3449,
+      "sha256": "41d7c94741ed5cdf88179e7e188c6bf26ab68884b8c006efd4e3663f34d5b454"
+    },
+    {
+      "path": "library/symbols/metal-cuba-cozinha-84x34-planta-373cf14.json",
+      "bytes": 5908,
+      "sha256": "f5d6af68c5cd42b6102c9baa0e1486c961844ea2daa6eb3271bbcfb9f32d7dee"
+    },
+    {
+      "path": "library/symbols/moveis-cadeira-dinna-planta-1ed91cd.json",
+      "bytes": 6794,
+      "sha256": "dd75909bf10cfe837d063488e9f79773e6f894befe79811008ccaa7c824e743b"
+    },
+    {
+      "path": "library/symbols/moveis-cadeira-milla-planta-733184c.json",
+      "bytes": 4268,
+      "sha256": "54f17792949d80a2bfde2189519a5b805c2187e1beeb4ac893cdceb3e0b67e4c"
+    },
+    {
+      "path": "library/symbols/moveis-mesa-ares-planta-56233fd.json",
+      "bytes": 1424,
+      "sha256": "132b838e76edb282535c177af092b51856b00dbd98fa33434e27a52ba8a9e99c"
+    },
+    {
+      "path": "library/symbols/movel-cadeira-55x55-planta-e8a833b.json",
+      "bytes": 1665,
+      "sha256": "7b524514896ab164cee8be9251e339f5a46a0261d1dd58d70efade32038a650d"
+    },
+    {
+      "path": "library/symbols/movel-cadeira-barcelona-planta-9b8d1d0.json",
+      "bytes": 32839,
+      "sha256": "95d9692751151c823efa392db2b388701ba41a73fa2239d4e9eebda4ab6633f7"
+    },
+    {
+      "path": "library/symbols/movel-cadeira-daniella-planta-ec06b4c.json",
+      "bytes": 4636,
+      "sha256": "225a5bf3614b169ace8bb1a102ffcc198283c6280d58d3027481c673dce267c5"
+    },
+    {
+      "path": "library/symbols/movel-cadeira-dinna-planta-2-2276952.json",
+      "bytes": 6304,
+      "sha256": "ea5c99955d44dfde43b5123ceda4842d405c34419ba8c001085b21f22e7c22cc"
+    },
+    {
+      "path": "library/symbols/movel-cadeira-diz-planta-0368247.json",
+      "bytes": 6315,
+      "sha256": "e2f6d2682f8bdc42890e09797f7a719f0808cce69a72ef3178c6432d45e03448"
+    },
+    {
+      "path": "library/symbols/movel-cadeira-lcw-planta-55338a5.json",
+      "bytes": 4622,
+      "sha256": "dbe6c64125fbdb7f2156db00dac4aaee0663a51fb81d1412e4557f42647bf1de"
+    },
+    {
+      "path": "library/symbols/movel-cadeira-marelli-planta-acc419d.json",
+      "bytes": 3904,
+      "sha256": "c84d4bd3bdc29c38e211810b022da2de6eb83fc2786be808d08f58e966fc8c06"
+    },
+    {
+      "path": "library/symbols/movel-cadeira-milla-planta-2-b85acfa.json",
+      "bytes": 4273,
+      "sha256": "87182032a0d53ec9c69dcc12123f112b93fed649398109c5c945b06fc5e3297c"
+    },
+    {
+      "path": "library/symbols/movel-cadeira-shell-planta-81090bb.json",
+      "bytes": 10062,
+      "sha256": "686da556b310310d9b51fa80ffe3111980f8d05b5c1289ef8210561235bcd168"
+    },
+    {
+      "path": "library/symbols/movel-cama-casal-ba0faf2.json",
+      "bytes": 4917,
+      "sha256": "55d37006ace8cace4c3e925b2fc658808f10a309cdb768f268fe44160fb6e337"
+    },
+    {
+      "path": "library/symbols/movel-cama-king-3693e38.json",
+      "bytes": 4908,
+      "sha256": "de858b82b53007dece80fe619a49a08345cf1c358c7744fcaa89ef08ca62c52a"
+    },
+    {
+      "path": "library/symbols/movel-cama-queen-1841bc4.json",
+      "bytes": 4901,
+      "sha256": "2258131e95379ee6eb499643f662f9a7e7d573d85869e76f1214de1415a9cc91"
+    },
+    {
+      "path": "library/symbols/movel-cama-solteiro-81d6c3c.json",
+      "bytes": 3727,
+      "sha256": "bdd3efcd745e0e586abd275f3304e3a9173ee44ae6aeb3af4dec24983bfbb71b"
+    },
+    {
+      "path": "library/symbols/movel-criado-30x45-134295a.json",
+      "bytes": 1352,
+      "sha256": "23319aad315eee151bfbc2ca0217957b9b5e1a7a2b68bdbc722e201678177ce9"
+    },
+    {
+      "path": "library/symbols/movel-criado-35x50-3a7a162.json",
+      "bytes": 1380,
+      "sha256": "dc967bcbd1c2a03c09aa0d718ef9db8547753250de7138b79f9ce11898bedba8"
+    },
+    {
+      "path": "library/symbols/movel-mesa-100x100-4-lugares-60a8cb5.json",
+      "bytes": 2272,
+      "sha256": "d7da3210ab14dd26a963c06eaa2cf6e04827d60c63235893f733cd5445584fc2"
+    },
+    {
+      "path": "library/symbols/movel-mesa-120-4-lugares-8bdbd0f.json",
+      "bytes": 3992,
+      "sha256": "431f8e6f01ea9cf5d25fc973f12a9e724bf032f7b75f594251c2042ee0c828ed"
+    },
+    {
+      "path": "library/symbols/movel-mesa-150-6-lugares-2e80b03.json",
+      "bytes": 4526,
+      "sha256": "03e53d74d566a4c6d83c3e18785606a697819f8123aa66c678c25a051a1f2cb7"
+    },
+    {
+      "path": "library/symbols/movel-mesa-150x150-8-lugares-f7ab2c5.json",
+      "bytes": 3047,
+      "sha256": "89a4a9e7e88e669fd7a4311422eb9b9b15f4877cc36cc984a506b11b8878ad90"
+    },
+    {
+      "path": "library/symbols/movel-mesa-180x100-6-lugares-7dc0cc5.json",
+      "bytes": 2657,
+      "sha256": "82c07a181c98f1c633fed78186242ad35ee28d388f25de5830c913552d60ed54"
+    },
+    {
+      "path": "library/symbols/movel-mesa-240x110-8-lugares-76e9f1d.json",
+      "bytes": 3155,
+      "sha256": "bce95ee73b6fff39fa53e0d82344c61ea59531ad2768c92583b9e6c7285cfb24"
+    },
+    {
+      "path": "library/symbols/movel-mesa-cabeceira-30x45-630a6e6.json",
+      "bytes": 1387,
+      "sha256": "fdd66b06bbba7af643ec732030b869d22da722e64ee176df608128cb40b23a24"
+    },
+    {
+      "path": "library/symbols/movel-mesa-cabeceira-35x50-7588156.json",
+      "bytes": 1415,
+      "sha256": "3ae1d1f81cfff66b1f549087d832c587492b49371b0c5dedee3e99cd0e984549"
+    },
+    {
+      "path": "library/symbols/movel-mesa-de-jantar-legg-340x110-planta-d41a01b.json",
+      "bytes": 8253,
+      "sha256": "eef5b84441606894b9f257341f1736df49ace201f94a3fffdf53c9a2cdc14229"
+    },
+    {
+      "path": "library/symbols/movel-mesa-onix-110x240-planta-88a96f4.json",
+      "bytes": 1399,
+      "sha256": "5d83aa3c7d81cbebc36fbe63f53f7af2de2c811baf5587b4f496785e454206c0"
+    },
+    {
+      "path": "library/symbols/movel-mesa-onix-planta-e966598.json",
+      "bytes": 1361,
+      "sha256": "af5db37e92829649936ccedca98681347f49d49d6cf441fd0af17af875db361b"
+    },
+    {
+      "path": "library/symbols/movel-mesa-zx-120-planta-a494966.json",
+      "bytes": 3413,
+      "sha256": "a163f110f0c2551429e15dd61c56cdfcdc3edc63b632f6d8deb231c1be03b5b1"
+    },
+    {
+      "path": "library/symbols/movel-mesa-zx-160-planta-69bc60c.json",
+      "bytes": 3757,
+      "sha256": "cce44fb06f58eaa81c15f9067ca22c2ba1da4f3325c5426c9b7d0ed43910ae65"
+    },
+    {
+      "path": "library/symbols/movel-sofa-1-lugar-planta-1157c81.json",
+      "bytes": 3136,
+      "sha256": "2beeacac8526c4aa50a2a8c6baf3e0909061293138b671f745fee2397adeecab"
+    },
+    {
+      "path": "library/symbols/movel-sofa-180x90-7f21646.json",
+      "bytes": 1696,
+      "sha256": "c1b64b9d4ee56462a3850c03de5a0185853a0fb27704cd58d39310c8d78c4721"
+    },
+    {
+      "path": "library/symbols/movel-sofa-2-lugares-planta-f55eaad.json",
+      "bytes": 4294,
+      "sha256": "dcc2e96e31bc9abf873dbcb220c5415b69dbe7451b97f133562cb07d7c808e47"
+    },
+    {
+      "path": "library/symbols/movel-sofa-240x90-61a3d04.json",
+      "bytes": 1772,
+      "sha256": "8866bd84d4933ffec968ffba392520798331accc305ec1b8422c86f4a840f649"
+    },
+    {
+      "path": "library/symbols/movel-sofa-280x100-c06da10.json",
+      "bytes": 1837,
+      "sha256": "df99425999c386485341f1e6dd877f58b3b6b9108233eafee6789d2e129ce6ff"
+    },
+    {
+      "path": "library/symbols/movel-sofa-280x165-e2e3bfe.json",
+      "bytes": 1893,
+      "sha256": "58ff18cdb0050f6d04f45100a80fed5131b995811c83b9adf70e076de66c460c"
+    },
+    {
+      "path": "library/symbols/movel-sofa-3-lugares-planta-2-85cec77.json",
+      "bytes": 4564,
+      "sha256": "489abbdf472f2d6384988a82d48d66dffc952fe8d8c3385e9cb438b4d91dd373"
+    },
+    {
+      "path": "library/symbols/movel-sofa-3-lugares-planta-28dd470.json",
+      "bytes": 4546,
+      "sha256": "ce4419bb7d27c3bcf09f5f8ffeff8e1d427907e8569c00cb80b4beb3315b63ec"
+    },
+    {
+      "path": "library/symbols/movel-sofa-300x100-ac91fb1.json",
+      "bytes": 1777,
+      "sha256": "7f6b31e7503f01ac841d973142aab30285efccdc02d04c9a3b114d7d1627c644"
+    },
+    {
+      "path": "library/symbols/movel-sofa-300x165-9cf40e4.json",
+      "bytes": 1833,
+      "sha256": "87684745ef70891029af3c4542ed772de58c374202c4ee717f7d45fa412bad6a"
+    },
+    {
+      "path": "library/symbols/movel-sofa-atupis-planta-f8ad941.json",
+      "bytes": 7501,
+      "sha256": "08522c199d142e3ed9cdbefea9b2f838bf8d49e2b58fecb3b5afb333f25f5654"
+    },
+    {
+      "path": "library/thumbnails/eletro-fogao-4-bocas-planta-35de85c.svg",
+      "bytes": 34322,
+      "sha256": "433dbf65b6793f86257be9fb24d87a08c6379a1d71e4ea9c05c64fc93363b00d"
+    },
+    {
+      "path": "library/thumbnails/eletro-fogao-5-bocas-planta-c9a2c51.svg",
+      "bytes": 46967,
+      "sha256": "063f5a84fcba8c7867ef6799aa535a508c0345611c39f1edd7458f94d52f802f"
+    },
+    {
+      "path": "library/thumbnails/eletro-geladeira-62x75x185-planta-fef38b4.svg",
+      "bytes": 1435,
+      "sha256": "43bfcddcb0c633588f7007f65ebcf446f73f0d91ee7ff7290a03fbbddc2f2877"
+    },
+    {
+      "path": "library/thumbnails/eletro-geladeira-70x75x194-planta-e277b17.svg",
+      "bytes": 1530,
+      "sha256": "840961e14026bf1587eabf4f2f75cd79574696874e2d7f878d2c1f4e88fc1e85"
+    },
+    {
+      "path": "library/thumbnails/eletro-geladeira-85x75x188-planta-905cf1a.svg",
+      "bytes": 1579,
+      "sha256": "a8b1935c1e614ac1d955afbd807a0554363243cc13d8d2a79e7e0167dbe3cdb8"
+    },
+    {
+      "path": "library/thumbnails/eletro-geladeira-91x61x176-planta-fdd33f9.svg",
+      "bytes": 2326,
+      "sha256": "c5a486392214960a63112fd04420112ca96302d65b353f01b05a3f3b90d13407"
+    },
+    {
+      "path": "library/thumbnails/eletro-lavalouca-10-serv-45x60x85-planta-cfcfae8.svg",
+      "bytes": 804,
+      "sha256": "ec193dacc275fc433aeef618821ed7d5914abfc505c337f3517c3a8d5334e0ba"
+    },
+    {
+      "path": "library/thumbnails/eletro-lavalouca-14-serv-60x60x85-planta-958af55.svg",
+      "bytes": 739,
+      "sha256": "328ec1d45c3596c9bb34c178afbe75a3384ce934edaace398334b2db0a9e0d53"
+    },
+    {
+      "path": "library/thumbnails/esquadria-porta-1-folha-de-correr-branca-f72b29f.svg",
+      "bytes": 6930,
+      "sha256": "343060cd4959be67bb738371a4487ce0bd245cee2d2f5b768e4c80c41a694910"
+    },
+    {
+      "path": "library/thumbnails/esquadria-porta-2-folhas-de-correr-persiana-branca-748dd6f.svg",
+      "bytes": 11676,
+      "sha256": "9c1b5a0581b590c4094c5810b0139a9eac2d55ce95ccdd2ebdca95e8cf90258a"
+    },
+    {
+      "path": "library/thumbnails/esquadria-porta-2-folhas-de-correr-vidro-branca-d46c019.svg",
+      "bytes": 9720,
+      "sha256": "b4c9005ce1b30ba10295734c9bee70164b8598d983c1fd72eacbe86e748c0150"
+    },
+    {
+      "path": "library/thumbnails/esquadria-porta-3-folhas-de-correr-branca-480fbd7.svg",
+      "bytes": 9166,
+      "sha256": "eb88cc7ae0b663447065eb2809bf0b07a0996de381184ecafc1f2a4651d1e792"
+    },
+    {
+      "path": "library/thumbnails/esquadria-porta-4-folhas-2-de-correr-branca-3dbef78.svg",
+      "bytes": 11362,
+      "sha256": "9cf3dc27153ebe4e8039462f342d42b7dee92e19459c0170dc5b17954d8406d1"
+    },
+    {
+      "path": "library/thumbnails/esquadria-porta-de-abrir-com-moldura-branca-1064612.svg",
+      "bytes": 11889,
+      "sha256": "b1c1fbc66767d09306418fb7b963fd18fcbbcd07ee5eedbd38b5a53d50927814"
+    },
+    {
+      "path": "library/thumbnails/esquadria-porta-de-abrir-com-veneziana-branca-0dfe389.svg",
+      "bytes": 11468,
+      "sha256": "3b11b27b739874f07d6c3953eed91957948fde700711fed5ee963dde8ab9bcff"
+    },
+    {
+      "path": "library/thumbnails/esquadria-porta-de-abrir-lisa-branca-f24e01c.svg",
+      "bytes": 11407,
+      "sha256": "2a9388d36dd6d2dc692bba87fd999a5b9aadd53d65eab00d943c21f189f28a83"
+    },
+    {
+      "path": "library/thumbnails/louca-bacia-com-caixa-deca-unic-planta-811e2b1.svg",
+      "bytes": 6475,
+      "sha256": "62b0220f148016562d5c32c29ba85e2bb302e5440a03ae1d44d3a3e7bc908f94"
+    },
+    {
+      "path": "library/thumbnails/louca-bacia-deca-unic-planta-4a233a9.svg",
+      "bytes": 5096,
+      "sha256": "5e6ce1e4e88776ac742a7dfcc73867eb2d97c4850dc477e6af023cbfb22ff8c2"
+    },
+    {
+      "path": "library/thumbnails/louca-banheira-auster-pretty-jet-planta-898838d.svg",
+      "bytes": 48830,
+      "sha256": "ea0cd518c2cb340b8589c77c8c6ee123cd85f6bbb2e2a00445694c5082020296"
+    },
+    {
+      "path": "library/thumbnails/louca-banheira-auster-prettyjet-dupla-planta-0baa451.svg",
+      "bytes": 69944,
+      "sha256": "cdb2605d74887d4d8b752ca8f1f4961b158e82642eaab93f49d6688cf18502df"
+    },
+    {
+      "path": "library/thumbnails/louca-cuba-apoio-deca-l310-planta-48d30af.svg",
+      "bytes": 19193,
+      "sha256": "9f0f9d92c68a3b9472ae4acce75b043fb359b98c14be65a35f190fd84becc54a"
+    },
+    {
+      "path": "library/thumbnails/louca-cuba-apoio-deca-l311-planta-6440737.svg",
+      "bytes": 4944,
+      "sha256": "92de1b88f7552ae376fad226b5e8845ab3c6e607bbe08646a0e4cc8c29c2fb08"
+    },
+    {
+      "path": "library/thumbnails/louca-cuba-apoio-deca-l7400-planta-56027e5.svg",
+      "bytes": 3032,
+      "sha256": "6d98d3f5175b791bebb082dd1bc7b1fbed1be4e75c4628bfad32ae5769527ccc"
+    },
+    {
+      "path": "library/thumbnails/louca-cuba-deca-planta-lc26-037abfc.svg",
+      "bytes": 2986,
+      "sha256": "205541521321d2084e870eb0c22d5a06698f91ea16391c15e2e1da6747c1b9c4"
+    },
+    {
+      "path": "library/thumbnails/louca-cuba-deca-semi-42x42-planta-8473750.svg",
+      "bytes": 3746,
+      "sha256": "4ca171d8c02fe61a3e9d3b248df58bc1bc0b2054d73d122c17beefe346df00f4"
+    },
+    {
+      "path": "library/thumbnails/louca-cuba-embutir-deca-l375-planta-26cb92c.svg",
+      "bytes": 3366,
+      "sha256": "59b58c7d3fdebc29fb30ec9da05c97b111bb20f15b17ab94767a575552670bbf"
+    },
+    {
+      "path": "library/thumbnails/louca-cuba-piso-deca-lc26-planta-f1b3140.svg",
+      "bytes": 3008,
+      "sha256": "3a02915ef390d58d7777f88d1b709d929003a4a3ee9bdc0a4575fab149bbb958"
+    },
+    {
+      "path": "library/thumbnails/louca-cuba-semiencaixe-deca-l830-planta-26b33dd.svg",
+      "bytes": 4895,
+      "sha256": "63a84a6e316ad715ca1457058f68282341c0153a3db32ec53df3e6d22d873860"
+    },
+    {
+      "path": "library/thumbnails/louca-cuba-semiencaixe-deca-l843-planta-059839c.svg",
+      "bytes": 4930,
+      "sha256": "9ec1bbd4e0175600a7436ad9d0b770b621ae6dff8a27481b952205905de9cd91"
+    },
+    {
+      "path": "library/thumbnails/louca-cuba-semiencaixe-deca-l863-planta-0af5028.svg",
+      "bytes": 3752,
+      "sha256": "5976093666f3a32f09d10e010598011b979f6e776fe078e900cb80d2b67c4b47"
+    },
+    {
+      "path": "library/thumbnails/louca-cuba-semiencaixe-deca-l873-planta-3dd21be.svg",
+      "bytes": 3789,
+      "sha256": "d69fcde60b13897823c51ccc49a72b58f4fd9b5d7356f28a6d70082173df5984"
+    },
+    {
+      "path": "library/thumbnails/louca-cuba-sobrepor-deca-l1044-metais-planta-e8eec20.svg",
+      "bytes": 3087,
+      "sha256": "0946be0c87c1c4e3f5f64911a77621fcaeee97cf5db5da80068f022b91cec16e"
+    },
+    {
+      "path": "library/thumbnails/louca-cuba-sobrepor-deca-l1044-planta-8f0343f.svg",
+      "bytes": 6550,
+      "sha256": "c4745e673cba08a0f4997515f63aa3158250325235098029b92ab3777dc473ed"
+    },
+    {
+      "path": "library/thumbnails/louca-cuba-sobrepor-deca-l129-planta-1f46d0e.svg",
+      "bytes": 4932,
+      "sha256": "5cd508c8962ac06192834c65f676b1750222e564be4270ad3581d8ea723b8a24"
+    },
+    {
+      "path": "library/thumbnails/louca-tanque-30l-planta-d1c1da6.svg",
+      "bytes": 11915,
+      "sha256": "41fd294b928316db9bdee0e8585fb0c1b543e6f181baf37fb095d1fae2e7487e"
+    },
+    {
+      "path": "library/thumbnails/louca-tanque-40l-planta-e4bde26.svg",
+      "bytes": 12104,
+      "sha256": "7ba6c9cc3dbc822884a333affb7e27eb8757ad3be96cdc28799ac92c141e1d07"
+    },
+    {
+      "path": "library/thumbnails/louca-vaso-deca-carrara-planta-a52c790.svg",
+      "bytes": 10783,
+      "sha256": "12f9186fb5d5fbf1720145c71540cbce1aa75b1d6c5df324279463d6114a0b80"
+    },
+    {
+      "path": "library/thumbnails/louca-vaso-deca-vogue-planta-a71ecf1.svg",
+      "bytes": 9998,
+      "sha256": "4a57d56e6ed48c57aba0325b413e8437353aec16d07434e79bddbcaa0bbfdc3b"
+    },
+    {
+      "path": "library/thumbnails/metal-chuveiro-deca-acqua-plus-curvo-planta-f3e9c57.svg",
+      "bytes": 3889,
+      "sha256": "0cd36d3af832f786b3a2c357078cfaec694fff6b88d7e79dd2d1940eaca95a51"
+    },
+    {
+      "path": "library/thumbnails/metal-chuveiro-deca-dream-acqua-plus-reto-planta-a80da5c.svg",
+      "bytes": 3546,
+      "sha256": "32a2872ab14732931b703f7663c284cb95af36d086d76600af6d277731d46f75"
+    },
+    {
+      "path": "library/thumbnails/metal-chuveiro-parede-deca-unic-planta-5108b37.svg",
+      "bytes": 1602,
+      "sha256": "18afe53e48df054765d15364f4da2bd00f47b47852b3d39c613993c3aaae9f8f"
+    },
+    {
+      "path": "library/thumbnails/metal-cuba-69x49-tramontina-margana-planta-24fbfd4.svg",
+      "bytes": 7448,
+      "sha256": "e4cc1df9b52fff423dde75402123458439f4b54fca88da0eda93f18e7cd0e062"
+    },
+    {
+      "path": "library/thumbnails/metal-cuba-70x40-tramontina-quadrum-planta-2916c36.svg",
+      "bytes": 2494,
+      "sha256": "a563217dee7a8d0ce43bcd4976ffa02d53962fe03f979dc59f663de09dd41f3a"
+    },
+    {
+      "path": "library/thumbnails/metal-cuba-cozinha-30cm-planta-0d274d2.svg",
+      "bytes": 2276,
+      "sha256": "81dc14b420a40cc93dba4872a3f1b70d4bbaae9624c4d73db0a32e70577b8eb2"
+    },
+    {
+      "path": "library/thumbnails/metal-cuba-cozinha-84x34-planta-373cf14.svg",
+      "bytes": 4321,
+      "sha256": "5a6755955888261c47cf73cb8102d991878f591a4f7a56a191e3b46899a2198c"
+    },
+    {
+      "path": "library/thumbnails/moveis-cadeira-dinna-planta-1ed91cd.svg",
+      "bytes": 5166,
+      "sha256": "1dd74cc0ca0c8bdb1ff8a1ccb49417fd439b4ad546f042c0c86b8665fcee2b52"
+    },
+    {
+      "path": "library/thumbnails/moveis-cadeira-milla-planta-733184c.svg",
+      "bytes": 2944,
+      "sha256": "ca042f8e8253d191ddda059e84766d49a167c079290c78c1f930cf5870985bf8"
+    },
+    {
+      "path": "library/thumbnails/moveis-mesa-ares-planta-56233fd.svg",
+      "bytes": 509,
+      "sha256": "9170c242643e8f1ba73ee7484e4c7a36a92bd9cb0830b7e503df0ddb6de934d7"
+    },
+    {
+      "path": "library/thumbnails/movel-cadeira-55x55-planta-e8a833b.svg",
+      "bytes": 645,
+      "sha256": "29ae38d9c370bd459b614c4aef5b135822b363e412b659210f202f7a419485d6"
+    },
+    {
+      "path": "library/thumbnails/movel-cadeira-barcelona-planta-9b8d1d0.svg",
+      "bytes": 26854,
+      "sha256": "d7fa4bb6df8ed6bee6f8731eced96033b8bfa7035020322bb5fd522e6d4a3cb0"
+    },
+    {
+      "path": "library/thumbnails/movel-cadeira-daniella-planta-ec06b4c.svg",
+      "bytes": 3253,
+      "sha256": "80c12edc44142b9ebe7201ee248de49727726f42a4721b840c5246bfe8ff0413"
+    },
+    {
+      "path": "library/thumbnails/movel-cadeira-dinna-planta-2-2276952.svg",
+      "bytes": 4695,
+      "sha256": "13a0680b29c8eea4531a6128ccb4af94cd8d084a3efe0e4419a601ef03f7eb2a"
+    },
+    {
+      "path": "library/thumbnails/movel-cadeira-diz-planta-0368247.svg",
+      "bytes": 4756,
+      "sha256": "257e1dbb3ba8ecf497c767bcca7006d353cb3f6db7223dcc16b57363858c5d6f"
+    },
+    {
+      "path": "library/thumbnails/movel-cadeira-lcw-planta-55338a5.svg",
+      "bytes": 3261,
+      "sha256": "f9b16eac4a3b682cf54a69435ffb9601f395f82ea6ca0d0558f7ff6623bbc94b"
+    },
+    {
+      "path": "library/thumbnails/movel-cadeira-marelli-planta-acc419d.svg",
+      "bytes": 2524,
+      "sha256": "16f94fa07678420278ba451fbad1a2cac96003801768765da694abaf77c57e1c"
+    },
+    {
+      "path": "library/thumbnails/movel-cadeira-milla-planta-2-b85acfa.svg",
+      "bytes": 2945,
+      "sha256": "715f30accc9c221351e41f879ad45ff8c6b0688cfc03a0913ff6b10650aea0ff"
+    },
+    {
+      "path": "library/thumbnails/movel-cadeira-shell-planta-81090bb.svg",
+      "bytes": 7960,
+      "sha256": "a747294556ce960e7c69c5d1951590c15d4b08bf9f39eb2dd9f952f67556bd86"
+    },
+    {
+      "path": "library/thumbnails/movel-cama-casal-ba0faf2.svg",
+      "bytes": 3583,
+      "sha256": "1f14549a172cdfb5d3ea7b6c0142869b8a60bf6345a1e14fdd798dc7c42d295a"
+    },
+    {
+      "path": "library/thumbnails/movel-cama-king-3693e38.svg",
+      "bytes": 3578,
+      "sha256": "0004d3e58f00726ef039f306f7e26454084231509ea121d06b66a7baba220b6f"
+    },
+    {
+      "path": "library/thumbnails/movel-cama-queen-1841bc4.svg",
+      "bytes": 3564,
+      "sha256": "69d615751ff2d31bc34e41b4f05a48223e0df5cc00faba197336e34f57161432"
+    },
+    {
+      "path": "library/thumbnails/movel-cama-solteiro-81d6c3c.svg",
+      "bytes": 2458,
+      "sha256": "5796f60e43aa30de1b6206e8c040b24298b96e78833b875a327764d283e49a8d"
+    },
+    {
+      "path": "library/thumbnails/movel-criado-30x45-134295a.svg",
+      "bytes": 510,
+      "sha256": "31d63ca573172da0e3b367a339e6a8fb042a8d2ede0c0bd21b38334ddbf04944"
+    },
+    {
+      "path": "library/thumbnails/movel-criado-35x50-3a7a162.svg",
+      "bytes": 447,
+      "sha256": "a608282461a853814c17b10f74f1ed24848ec23319612f7baf9b47a345716c6b"
+    },
+    {
+      "path": "library/thumbnails/movel-mesa-100x100-4-lugares-60a8cb5.svg",
+      "bytes": 1074,
+      "sha256": "ae757a0932f1fdea80af5340b618128b52f46e38e12bf5a695ecd6dfa81d5332"
+    },
+    {
+      "path": "library/thumbnails/movel-mesa-120-4-lugares-8bdbd0f.svg",
+      "bytes": 2616,
+      "sha256": "a0e62166db989842ab1af6ae5079f90e3735ad5563959a9a09bb275d35082666"
+    },
+    {
+      "path": "library/thumbnails/movel-mesa-150-6-lugares-2e80b03.svg",
+      "bytes": 3017,
+      "sha256": "cf7888574ae444b09dbfda60ac6a86dd7373c8787cfee9194b443a1286ab22c1"
+    },
+    {
+      "path": "library/thumbnails/movel-mesa-150x150-8-lugares-f7ab2c5.svg",
+      "bytes": 1516,
+      "sha256": "dd57ec4ad87a8fcbe7fe6f636193a147999bbcf4ba032c51ba1e17514fa248c0"
+    },
+    {
+      "path": "library/thumbnails/movel-mesa-180x100-6-lugares-7dc0cc5.svg",
+      "bytes": 1349,
+      "sha256": "33430608c07d5f53b40ad0fab0ffc2dceff26e90f058adf97346524938a93bbe"
+    },
+    {
+      "path": "library/thumbnails/movel-mesa-240x110-8-lugares-76e9f1d.svg",
+      "bytes": 1622,
+      "sha256": "5f89c2c94a1960d8dc67d18a4f4cf27781095e2c2fad8ac3539d57cebb511b62"
+    },
+    {
+      "path": "library/thumbnails/movel-mesa-cabeceira-30x45-630a6e6.svg",
+      "bytes": 518,
+      "sha256": "5b5688ed476e113d1fb9c81d4e62907111214b6fcd9ab15bccc7a9c01cf0e576"
+    },
+    {
+      "path": "library/thumbnails/movel-mesa-cabeceira-35x50-7588156.svg",
+      "bytes": 455,
+      "sha256": "4ba9fc482a6bf92ab9706519de0b87e465fc7ed0eb327d19ee6bbe7b002d612d"
+    },
+    {
+      "path": "library/thumbnails/movel-mesa-de-jantar-legg-340x110-planta-d41a01b.svg",
+      "bytes": 6442,
+      "sha256": "3a309b7fcacc7062f6c9e808898d04a9736d84479c976ecfdfb54454931fa0a0"
+    },
+    {
+      "path": "library/thumbnails/movel-mesa-onix-110x240-planta-88a96f4.svg",
+      "bytes": 460,
+      "sha256": "7b2e53868e74e93328a28d5e62837445cf5386d5488b06e7141d5d3a3e655337"
+    },
+    {
+      "path": "library/thumbnails/movel-mesa-onix-planta-e966598.svg",
+      "bytes": 449,
+      "sha256": "4d0d9f62e60a7f86a396cb1a9969e741ee438c8c728a8004cb53085b899f44a2"
+    },
+    {
+      "path": "library/thumbnails/movel-mesa-zx-120-planta-a494966.svg",
+      "bytes": 2126,
+      "sha256": "a321cb4cb997a4f4bf7374adf3ee1a4583698e7f13c40127f31235a28ee34caf"
+    },
+    {
+      "path": "library/thumbnails/movel-mesa-zx-160-planta-69bc60c.svg",
+      "bytes": 2464,
+      "sha256": "74f4504931938c00203034167a71d5a25c025a48b5d779801d0f3ca54a32fa31"
+    },
+    {
+      "path": "library/thumbnails/movel-sofa-1-lugar-planta-1157c81.svg",
+      "bytes": 2052,
+      "sha256": "40444992097271d3f3f1af8f0fe41de4c4a2866b5563ed95e0be44cee012df33"
+    },
+    {
+      "path": "library/thumbnails/movel-sofa-180x90-7f21646.svg",
+      "bytes": 715,
+      "sha256": "f34336a602dd602b9c3a69c4876d7ddaec67d40108edca4a56543fa9bed1768c"
+    },
+    {
+      "path": "library/thumbnails/movel-sofa-2-lugares-planta-f55eaad.svg",
+      "bytes": 2838,
+      "sha256": "24ab49995455323309d51361a4928692ee6df38fd1ee952731ad072f5d96a4ee"
+    },
+    {
+      "path": "library/thumbnails/movel-sofa-240x90-61a3d04.svg",
+      "bytes": 718,
+      "sha256": "59b670b3b02c8dc60e08948834a1c2425658aceb22b9d14facec6ee774f560af"
+    },
+    {
+      "path": "library/thumbnails/movel-sofa-280x100-c06da10.svg",
+      "bytes": 775,
+      "sha256": "8e6ce635f38e3ec1b4935ef3f87756aa4eba034d40c22d5de0918c21ed381c02"
+    },
+    {
+      "path": "library/thumbnails/movel-sofa-280x165-e2e3bfe.svg",
+      "bytes": 819,
+      "sha256": "8cd84be96b1d2ef4c6428162dd984440ed0cd6cffd07e2e221a58a955962cdfb"
+    },
+    {
+      "path": "library/thumbnails/movel-sofa-3-lugares-planta-2-85cec77.svg",
+      "bytes": 3203,
+      "sha256": "234f22706f3398c61614995b50b5ac2033753a3fd945da430c2030404097b1a3"
+    },
+    {
+      "path": "library/thumbnails/movel-sofa-3-lugares-planta-28dd470.svg",
+      "bytes": 3195,
+      "sha256": "2f4faf72ddfc403b94d14705a1450e2b093c47e950a773dc8f8ab21f31357e3d"
+    },
+    {
+      "path": "library/thumbnails/movel-sofa-300x100-ac91fb1.svg",
+      "bytes": 715,
+      "sha256": "1c0d27b4a451ef91ec7dabaed4bc96a4962571efc683b90e20d9808c4c7f6eb8"
+    },
+    {
+      "path": "library/thumbnails/movel-sofa-300x165-9cf40e4.svg",
+      "bytes": 773,
+      "sha256": "8bb62f36021c8e460eecf24317ea695e25ad38cb7dd4fdf38cfd6046399d9360"
+    },
+    {
+      "path": "library/thumbnails/movel-sofa-atupis-planta-f8ad941.svg",
+      "bytes": 5876,
+      "sha256": "9207e297e2df15a3ae8df3bb71e2497a5e91d1880450acd00f36112c16a3f2e4"
+    }
+  ]
+}

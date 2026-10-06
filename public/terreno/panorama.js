@@ -1,0 +1,14 @@
+/** Own equirectangular evidence, using the already vendored Three runtime. */
+export async function mountPanorama(host,url){
+ const THREE=await import('./assets/vendor/three.module.js?v=73077e076bf2');let destroyed=false,frame,texture,yaw=0,pitch=0,drag=null;
+ const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));host.replaceChildren(renderer.domElement);host.tabIndex=0;host.setAttribute('aria-label','Foto 360 própria. Arraste para olhar; setas também movem a vista.');
+ const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(70,1,.1,1000),geometry=new THREE.SphereGeometry(100,48,32);geometry.scale(-1,1,1);const material=new THREE.MeshBasicMaterial({color:0x777777});scene.add(new THREE.Mesh(geometry,material));
+ const observer=new ResizeObserver(()=>{const w=Math.max(1,host.clientWidth),h=Math.max(1,host.clientHeight);renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();});observer.observe(host);
+ function move(e){if(!drag)return;yaw-=(e.clientX-drag.x)*.18;pitch=Math.max(-85,Math.min(85,pitch+(e.clientY-drag.y)*.18));drag={x:e.clientX,y:e.clientY};}
+ function down(e){drag={x:e.clientX,y:e.clientY};host.setPointerCapture(e.pointerId);}function up(){drag=null;}function wheel(e){e.preventDefault();camera.fov=Math.max(35,Math.min(95,camera.fov+e.deltaY*.025));camera.updateProjectionMatrix();}
+ function key(e){if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;e.preventDefault();yaw+=e.key==='ArrowLeft'?-5:e.key==='ArrowRight'?5:0;pitch=Math.max(-85,Math.min(85,pitch+(e.key==='ArrowUp'?5:e.key==='ArrowDown'?-5:0)));}
+ host.addEventListener('pointerdown',down);host.addEventListener('pointermove',move);host.addEventListener('pointerup',up);host.addEventListener('pointercancel',up);host.addEventListener('wheel',wheel,{passive:false});host.addEventListener('keydown',key);
+ function animate(){if(destroyed)return;const phi=THREE.MathUtils.degToRad(90-pitch),theta=THREE.MathUtils.degToRad(yaw);camera.lookAt(Math.sin(phi)*Math.cos(theta),Math.cos(phi),Math.sin(phi)*Math.sin(theta));renderer.render(scene,camera);frame=requestAnimationFrame(animate);}animate();
+ new THREE.TextureLoader().load(url,t=>{if(destroyed){t.dispose();return;}texture=t;t.colorSpace=THREE.SRGBColorSpace;material.color.set(0xffffff);material.map=t;material.needsUpdate=true;},undefined,()=>{if(!destroyed)host.setAttribute('aria-label','Imagem não carregada; verifique a integridade no acervo.');});
+ return {destroy(){destroyed=true;cancelAnimationFrame(frame);observer.disconnect();for(const [name,fn] of [['pointerdown',down],['pointermove',move],['pointerup',up],['pointercancel',up],['wheel',wheel],['keydown',key]])host.removeEventListener(name,fn);geometry.dispose();material.dispose();texture?.dispose();renderer.dispose();host.replaceChildren();}};
+}

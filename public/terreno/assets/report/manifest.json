@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "version": "barch-report-2.0.0",
+  "logoSource": "assets/logo/barch/png/barch-wordmark-dark-bgoff.png",
+  "fontSource": "analise-areas/app/assets/inter.woff2",
+  "fontFamily": "Inter",
+  "weights": [
+    400,
+    600
+  ],
+  "iconSource": "painel-barch/components/ds/DsIcon.tsx",
+  "icons": [
+    "tarefa",
+    "graficobarra",
+    "local",
+    "obra",
+    "capacete",
+    "documento"
+  ],
+  "tokensSource": "painel-barch/app/globals.css",
+  "tokens": {
+    "ink": "#0E0E10",
+    "clay": "#905E4B",
+    "clayText": "#7E4A33",
+    "paper": "#FCFBF7",
+    "ok": "#2D5A3D",
+    "danger": "#9E2B22",
+    "hairlineOpacity": 0.1
+  },
+  "fontkit": {
+    "version": "1.1.1",
+    "url": "https://registry.npmjs.org/@pdf-lib/fontkit/-/fontkit-1.1.1.tgz",
+    "license": "MIT",
+    "wrapperTransformation": "UMD factory exposed as isolated ESM, no globals or bare imports",
+    "bundleSha256": "119344ef3666fb051852053b29bc7cbd3f51f17a2ea616346bc12c04c4255f83"
+  },
+  "files": [
+    {
+      "file": "barch-wordmark.png",
+      "bytes": 31914,
+      "sha256": "387817c44e198264f0b3f6e73d761dc30924d08a7e4e4c3940525e3488f59756"
+    },
+    {
+      "file": "capacete.png",
+      "bytes": 1528,
+      "sha256": "249cf510124cf147fa0e100ff1e1c4fe822110195a8ca95f2b10f256b1a5b33e"
+    },
+    {
+      "file": "capacete.svg",
+      "bytes": 277,
+      "sha256": "2fa152e2ee7d15d997e6e852b0b500bdc945152ec0176ee493e57870ee0997ac"
+    },
+    {
+      "file": "documento.png",
+      "bytes": 737,
+      "sha256": "527b800b6e934d337dc19549ecd5e92f2f49d2f89d0acdadd8b8c80253e3e31c"
+    },
+    {
+      "file": "documento.svg",
+      "bytes": 283,
+      "sha256": "9cc60d8f45d1af55a28bd19bc2645bbe74522981eb335382b7459a869f8cb738"
+    },
+    {
+      "file": "graficobarra.png",
+      "bytes": 506,
+      "sha256": "30e66e8ea9708acec46507205d2f5b5bf229aac875f3a0f2c71be58ce751efcc"
+    },
+    {
+      "file": "graficobarra.svg",
+      "bytes": 232,
+      "sha256": "a91251936d39a7135b3c4afd70e026e17920cb5f90f8c9ae333dd817fd6b9a86"
+    },
+    {
+      "file": "inter-LICENSE.txt",
+      "bytes": 4380,
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a"
+    },
+    {
+      "file": "inter-regular.ttf",
+      "bytes": 66392,
+      "sha256": "2e0f9f822aeaff76a47552a8b7677b03d1d50dab0f8db3f259b6fc99638de864"
+    },
+    {
+      "file": "inter-semibold.ttf",
+      "bytes": 66560,
+      "sha256": "38c5d937790364178a67b6aa2fae55f82a41570df34123fe30f6a226fa04b141"
+    },
+    {
+      "file": "local.png",
+      "bytes": 2280,
+      "sha256": "61f059ac82a330c840ddc5e95e3ceadcacc299fe8d5ba7d2eb798746edc099bc"
+    },
+    {
+      "file": "local.svg",
+      "bytes": 278,
+      "sha256": "5edaa927e682246428479eb14567422362654a3d960587fb562091764cd29bdc"
+    },
+    {
+      "file": "obra.png",
+      "bytes": 921,
+      "sha256": "d2af85e97299f449d50b5b5e8c1d72de0d22f89f282753175d51e120352d92d5"
+    },
+    {
+      "file": "obra.svg",
+      "bytes": 273,
+      "sha256": "a43970ba5914e364fc93242c50c304ba6c2484f7259d6bdb5b122123264582f2"
+    },
+    {
+      "file": "tarefa.png",
+      "bytes": 1509,
+      "sha256": "180955688967ce1e26801be018f35aa38b0aa894e8491ed72d8603abd884004e"
+    },
+    {
+      "file": "tarefa.svg",
+      "bytes": 247,
+      "sha256": "403a55cb864e9c94c0e4787e072ac609d612ec1191f710167013a98b949c636d"
+    }
+  ]
+}

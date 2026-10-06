@@ -1,0 +1,2532 @@
+{
+  "schema": "barch-curated-model-registry/1",
+  "asOfDate": "2026-10-01",
+  "purpose": "PERSONAL_RESEARCH",
+  "items": [
+    {
+      "id": "housediffusion",
+      "name": "HouseDiffusion",
+      "requestedSpellings": [
+        "HouseDiffusion"
+      ],
+      "title": "HouseDiffusion: Vector Floorplan Generation via a Diffusion Model with Discrete and Continuous Denoising",
+      "family": "plans",
+      "verification": "VERIFIED",
+      "summary": "Proposição de polígonos de ambientes e portas por difusão vetorial",
+      "decision": "RESEARCH",
+      "action": "Criar adaptador experimental de polígonos em processo separado; submeter propostas a contenção, passagem, tolerâncias e locks determinísticos.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2211.13287",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://github.com/aminshabani/house_diffusion",
+          "title": "Fonte primária 2"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-planos-bim.json",
+        "sha256": "aa082f40b0d501fbded70fef7d0f331b0430476593f0adbd31539ac67e4afd05"
+      },
+      "researchRecord": {
+        "requestedName": "HouseDiffusion",
+        "title": "HouseDiffusion: Vector Floorplan Generation via a Diffusion Model with Discrete and Continuous Denoising",
+        "matchStatus": "VERIFIED",
+        "year": 2023,
+        "role": "Proposição de polígonos de ambientes e portas por difusão vetorial",
+        "inputs": [
+          "Grafo de relações e classes de componentes",
+          "Ruído e coordenadas durante denoising"
+        ],
+        "outputs": [
+          "Laços poligonais vetoriais de ambientes e portas"
+        ],
+        "urls": [
+          "https://arxiv.org/abs/2211.13287",
+          "https://github.com/aminshabani/house_diffusion"
+        ],
+        "artifactAvailability": {
+          "code": {
+            "url": "https://github.com/aminshabani/house_diffusion",
+            "commit": "083c9c5f7815e36e2685bd58bce7ea68946e2c4b",
+            "evidenceFiles": [
+              "fontes-planos-bim/aminshabani--house_diffusion-LICENSE",
+              "fontes-planos-bim/aminshabani--house_diffusion-LICENSE_GPL",
+              "fontes-planos-bim/aminshabani--house_diffusion-README.md"
+            ],
+            "licenseApi": {
+              "key": "other",
+              "name": "Other",
+              "spdx_id": "NOASSERTION",
+              "url": null,
+              "node_id": "MDc6TGljZW5zZTA="
+            }
+          },
+          "weights": {
+            "status": "LINK_PUBLISHED_NOT_DOWNLOADED",
+            "urls": [
+              "https://drive.google.com/file/d/16zKmtxwY5lF6JE-CJGkRf3-OFoD1TrdR/view?usp=share_link"
+            ]
+          },
+          "data": {
+            "name": "RPLAN",
+            "status": "REQUEST_REQUIRED_NOT_ACQUIRED",
+            "urls": [
+              "http://staff.ustc.edu.cn/~fuxm/projects/DeepLayout/index.html"
+            ]
+          },
+          "licenses": {
+            "codeAndWeights": "Restrição de uso comercial declarada; GPLv3 para pesquisa em arquivo separado",
+            "data": "Condições próprias de RPLAN",
+            "weights": "Cabeçalho LICENSE inclui código e pesos para pesquisa; GPLv3 em arquivo separado."
+          },
+          "runtime": "PyTorch legado; portabilidade CPU/MPS ainda não demonstrada; README reconhece funções herdadas não limpas",
+          "downloadedWeights": false,
+          "inferenceExecuted": false,
+          "trainingExecuted": false
+        },
+        "limitations": [
+          "Condicionamento original por grafo, sem gate métrico de perímetro arbitrário",
+          "Não certifica espessuras, acesso, BIM ou normas brasileiras"
+        ],
+        "decision": "RESEARCH",
+        "action": "Criar adaptador experimental de polígonos em processo separado; submeter propostas a contenção, passagem, tolerâncias e locks determinísticos.",
+        "publication": {
+          "preprintYear": 2022,
+          "venue": "CVPR 2023"
+        },
+        "mechanism": "Denoising contínuo de coordenadas combinado a passos discretos para incidência/alinhamento; atenção condicionada por grafo."
+      }
+    },
+    {
+      "id": "graph2plan",
+      "name": "Graph2Plan",
+      "requestedSpellings": [
+        "Graph2Plan"
+      ],
+      "title": "Graph2Plan: Learning Floorplan Generation from Layout Graphs",
+      "family": "plans",
+      "verification": "VERIFIED",
+      "summary": "Recuperação de precedentes, edição de grafo e ajuste ao contorno",
+      "decision": "ADOPT_INTERFACE",
+      "action": "Adotar busca por contorno/programa e grafo editável como padrão próprio; não conectar cegamente o pipeline MATLAB ao editor.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2004.13204",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://vcc.tech/research/2020/Graph2Plan",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://vcc.tech/research/link/2020/Graph2Plan",
+          "title": "Fonte primária 3"
+        },
+        {
+          "url": "https://github.com/HanHan55/Graph2plan",
+          "title": "Fonte primária 4"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-planos-bim.json",
+        "sha256": "aa082f40b0d501fbded70fef7d0f331b0430476593f0adbd31539ac67e4afd05"
+      },
+      "researchRecord": {
+        "requestedName": "Graph2Plan",
+        "title": "Graph2Plan: Learning Floorplan Generation from Layout Graphs",
+        "matchStatus": "VERIFIED",
+        "year": 2020,
+        "role": "Recuperação de precedentes, edição de grafo e ajuste ao contorno",
+        "inputs": [
+          "Contorno",
+          "Programa e grafo editável"
+        ],
+        "outputs": [
+          "Raster de planta",
+          "Caixas refinadas e pós-processamento vetorial"
+        ],
+        "urls": [
+          "https://arxiv.org/abs/2004.13204",
+          "https://vcc.tech/research/2020/Graph2Plan",
+          "https://vcc.tech/research/link/2020/Graph2Plan",
+          "https://github.com/HanHan55/Graph2plan"
+        ],
+        "artifactAvailability": {
+          "code": {
+            "url": "https://github.com/HanHan55/Graph2plan",
+            "commit": "3e53c474c770535c45eadea980a0e032fbcd6e11",
+            "evidenceFiles": [
+              "fontes-planos-bim/HanHan55--Graph2plan-README.md"
+            ],
+            "licenseApi": null
+          },
+          "weights": {
+            "status": "REPOSITORY_CHECKPOINT_LISTED_NOT_DOWNLOADED",
+            "path": "Interface/model/model.pth",
+            "bytes": 30613537,
+            "url": "https://github.com/HanHan55/Graph2plan/blob/3e53c474c770535c45eadea980a0e032fbcd6e11/Interface/model/model.pth"
+          },
+          "data": {
+            "name": "RPLAN ~80K",
+            "status": "REQUEST_OR_AUTHORS_PREPROCESSED_RELEASE_NOT_DOWNLOADED"
+          },
+          "licenses": {
+            "codeAndData": "Página dos autores: pesquisa e educação; ausência de licença permissiva geral presumida",
+            "data": "RPLAN mantém condições próprias",
+            "weights": "Licença específica de pesos não localizada; ficha dos autores limita código/dados à pesquisa/educação."
+          },
+          "runtime": "Interface Django/PyTorch, pós-processamento MATLAB; instruções legadas/misturam Python 3.7 e 3.9",
+          "downloadedWeights": false,
+          "inferenceExecuted": false,
+          "trainingExecuted": false
+        },
+        "limitations": [
+          "Caixas e raster demandam reconstrução métrica",
+          "Grafo espacial não prova abertura navegável ou atendimento normativo"
+        ],
+        "decision": "ADOPT_INTERFACE",
+        "action": "Adotar busca por contorno/programa e grafo editável como padrão próprio; não conectar cegamente o pipeline MATLAB ao editor.",
+        "mechanism": "GNN para grafo, convoluções para contorno/raster, refinamento de caixas e alinhamento."
+      }
+    },
+    {
+      "id": "text2bim",
+      "name": "Text2BIM",
+      "requestedSpellings": [
+        "Text2BIM"
+      ],
+      "title": "Text2BIM: Generating Building Models Using a Large Language Model-based Multi-Agent Framework",
+      "family": "plans",
+      "verification": "VERIFIED",
+      "summary": "Tradução de intenção em operações BIM com verificação iterativa",
+      "decision": "ADOPT_INTERFACE",
+      "action": "Adotar plano de comandos declarativos permitido, transações e verificador independente; construir adaptador IFC próprio antes de integrar autores BIM opcionais.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2408.08054",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://github.com/dcy0577/Text2BIM",
+          "title": "Fonte primária 2"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-planos-bim.json",
+        "sha256": "aa082f40b0d501fbded70fef7d0f331b0430476593f0adbd31539ac67e4afd05"
+      },
+      "researchRecord": {
+        "requestedName": "Text2BIM",
+        "title": "Text2BIM: Generating Building Models Using a Large Language Model-based Multi-Agent Framework",
+        "matchStatus": "VERIFIED",
+        "year": 2024,
+        "role": "Tradução de intenção em operações BIM com verificação iterativa",
+        "inputs": [
+          "Instruções textuais",
+          "API de autoria e regras do verificador"
+        ],
+        "outputs": [
+          "Modelo editável no Vectorworks",
+          "IFC e relatórios de verificação"
+        ],
+        "urls": [
+          "https://arxiv.org/abs/2408.08054",
+          "https://github.com/dcy0577/Text2BIM"
+        ],
+        "artifactAvailability": {
+          "code": {
+            "url": "https://github.com/dcy0577/Text2BIM",
+            "commit": "b71b83d0d6640e7dfe7af3fda17b40fb3cfd70dc",
+            "evidenceFiles": [
+              "fontes-planos-bim/dcy0577--Text2BIM-LICENSE",
+              "fontes-planos-bim/dcy0577--Text2BIM-README.md"
+            ],
+            "licenseApi": {
+              "key": "mit",
+              "name": "MIT License",
+              "spdx_id": "MIT",
+              "url": "https://api.github.com/licenses/mit",
+              "node_id": "MDc6TGljZW5zZTEz"
+            }
+          },
+          "weights": {
+            "status": "NOT_A_CUSTOM_FLOORPLAN_CHECKPOINT",
+            "dependency": "Serviços LLM externos configuráveis"
+          },
+          "data": {
+            "status": "REPOSITORY_TEST_PROMPTS_AND_ENVIRONMENTS",
+            "name": "Experimentos e ambientes Vectorworks, sem corpus residencial treinado próprio"
+          },
+          "licenses": {
+            "agentCode": "MIT",
+            "webPalette": "Acordo SDK Vectorworks distinto, lido em web_palette/LICENSE",
+            "tools": "Vectorworks e Solibri exigem licenças válidas",
+            "weights": "N/A checkpoint próprio; condições do provedor/modelo LLM externo são separadas."
+          },
+          "runtime": "Experimentos Windows, Vectorworks 2024/2025, Solibri Office e chaves API; não reproduzido neste Mac",
+          "downloadedWeights": false,
+          "inferenceExecuted": false,
+          "trainingExecuted": false
+        },
+        "limitations": [
+          "Código gerado não garante geometria nem normas",
+          "Dependência de autoria/checker proprietário e versão do LLM"
+        ],
+        "decision": "ADOPT_INTERFACE",
+        "action": "Adotar plano de comandos declarativos permitido, transações e verificador independente; construir adaptador IFC próprio antes de integrar autores BIM opcionais.",
+        "mechanism": "Agentes produzem código imperativo que chama API de autoria; checker por regras fornece retorno para reparos.",
+        "identityNote": "Correspondência específica Du, Esser, Nousias e Borrmann; não toda ferramenta homônima text-to-BIM."
+      }
+    },
+    {
+      "id": "planfinder",
+      "name": "PlanFinder",
+      "requestedSpellings": [
+        "PlanFinder"
+      ],
+      "title": "PlanFinder — produto para automação de plantas",
+      "family": "plans",
+      "verification": "VERIFIED",
+      "summary": "Referência de experiência Fit/Furnish/geração e biblioteca",
+      "decision": "ADOPT_INTERFACE",
+      "action": "Separar recuperar/ajustar/mobiliar/gerar na interface e avaliar desempenho com casos nossos; não afirmar que se reproduziu o motor fechado.",
+      "sources": [
+        {
+          "url": "https://www.planfinder.xyz/",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://blog.de.rhino3d.com/2022/05/in-diesem-webinar-lernen-sie-die.html",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://www.rhino3d.com/en/e-news/0322p/",
+          "title": "Fonte primária 3"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-planos-bim.json",
+        "sha256": "aa082f40b0d501fbded70fef7d0f331b0430476593f0adbd31539ac67e4afd05"
+      },
+      "researchRecord": {
+        "requestedName": "PlanFinder",
+        "title": "PlanFinder — produto para automação de plantas",
+        "matchStatus": "VERIFIED",
+        "year": 2022,
+        "role": "Referência de experiência Fit/Furnish/geração e biblioteca",
+        "inputs": [
+          "Contorno e entrada/condicionantes da operação",
+          "Planta existente para mobiliário"
+        ],
+        "outputs": [
+          "Alternativas ajustadas e mobiliário no ambiente de autoria"
+        ],
+        "urls": [
+          "https://www.planfinder.xyz/",
+          "https://blog.de.rhino3d.com/2022/05/in-diesem-webinar-lernen-sie-die.html",
+          "https://www.rhino3d.com/en/e-news/0322p/"
+        ],
+        "artifactAvailability": {
+          "code": {
+            "status": "PROPRIETARY_NO_PUBLIC_ENGINE_VERIFIED"
+          },
+          "weights": {
+            "status": "NO_PUBLIC_WEIGHTS_VERIFIED"
+          },
+          "data": {
+            "status": "NO_PUBLIC_TRAINING_CORPUS_VERIFIED"
+          },
+          "licenses": {
+            "product": "Produto proprietário; acesso público não concede direitos sobre motor/dados",
+            "weights": "Nenhum peso público verificado; produto proprietário."
+          },
+          "runtime": "Plugins de autoria; funcionalidades variam pela versão; não executados nesta pesquisa",
+          "downloadedWeights": false,
+          "inferenceExecuted": false,
+          "trainingExecuted": false
+        },
+        "limitations": [
+          "Algoritmo interno e corpus não são verificáveis nas fontes públicas consultadas",
+          "Página dinâmica atual não expõe especificação científica completa"
+        ],
+        "decision": "ADOPT_INTERFACE",
+        "action": "Separar recuperar/ajustar/mobiliar/gerar na interface e avaliar desempenho com casos nossos; não afirmar que se reproduziu o motor fechado.",
+        "publication": {
+          "type": "PRODUCT",
+          "yearMeaning": "Referência pública oficial Rhino de 2022, não ano de um artigo"
+        },
+        "evidenceNote": "HTML oficial atual publica níveis de geração/custom plans; fonte Rhino confirma Fit/Furnish; números de oferta não foram tratados como desempenho de engenharia."
+      }
+    },
+    {
+      "id": "house-gan",
+      "name": "House-GAN++",
+      "requestedSpellings": [
+        "House-GAN++"
+      ],
+      "title": "House-GAN++: Generative Adversarial Layout Refinement Network towards Intelligent Computational Agent for Professional Architects",
+      "family": "plans",
+      "verification": "VERIFIED",
+      "summary": "Refinamento condicionado por componentes e conectividade",
+      "decision": "RESEARCH",
+      "action": "Estudar infill/refino local; preservar componentes congelados por igualdade geométrica no gate, não apenas por perda neural.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2103.02574",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://github.com/ennauata/houseganpp",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://ennauata.github.io/houseganpp/page.html",
+          "title": "Fonte primária 3"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-planos-bim.json",
+        "sha256": "aa082f40b0d501fbded70fef7d0f331b0430476593f0adbd31539ac67e4afd05"
+      },
+      "researchRecord": {
+        "requestedName": "House-GAN++",
+        "title": "House-GAN++: Generative Adversarial Layout Refinement Network towards Intelligent Computational Agent for Professional Architects",
+        "matchStatus": "VERIFIED",
+        "year": 2021,
+        "role": "Refinamento condicionado por componentes e conectividade",
+        "inputs": [
+          "Grafo funcional de ambientes/portas",
+          "Máscaras de componentes preservados e ruído"
+        ],
+        "outputs": [
+          "Máscaras de ambientes/portas de 64×64 com refinamento iterativo"
+        ],
+        "urls": [
+          "https://arxiv.org/abs/2103.02574",
+          "https://github.com/ennauata/houseganpp",
+          "https://ennauata.github.io/houseganpp/page.html"
+        ],
+        "artifactAvailability": {
+          "code": {
+            "url": "https://github.com/ennauata/houseganpp",
+            "commit": "1bc6e22f7987067e49388af7f38aac21f65b6614",
+            "status": "SOURCE_READ_IN_PRIOR_FROZEN_RESEARCH"
+          },
+          "weights": {
+            "status": "REPOSITORY_CHECKPOINT_LISTED_NOT_EXECUTED",
+            "path": "checkpoints/pretrained.pth",
+            "bytes": 2561009
+          },
+          "data": {
+            "name": "RPLAN subset",
+            "status": "REQUEST_REQUIRED_NOT_ACQUIRED"
+          },
+          "licenses": {
+            "codeAndWeights": "Cabeçalho de licença restringe a pesquisa; texto GPLv3 incluído, não presumir GPL pura",
+            "data": "RPLAN separado",
+            "weights": "Licença do repositório com cabeçalho restrito à pesquisa; não presumir licença permissiva."
+          },
+          "runtime": "PyTorch legado; caminho de teste chama CUDA explicitamente, CPU exigiria portabilidade",
+          "downloadedWeights": false,
+          "inferenceExecuted": false,
+          "trainingExecuted": false
+        },
+        "limitations": [
+          "Preservação por condicionamento e perda aprendida não equivale a lock geométrico",
+          "Raster não fornece parede, porta métrica ou BIM pronto"
+        ],
+        "decision": "RESEARCH",
+        "action": "Estudar infill/refino local; preservar componentes congelados por igualdade geométrica no gate, não apenas por perda neural.",
+        "mechanism": "Conv-MPN e máscaras parciais; sequência de quais componentes condicionar é otimizada offline.",
+        "identityNote": "Distinto House-GAN original ECCV2020: LIFULL, 32×32 e grafo de adjacência espacial.",
+        "detailedStudy": "housegan-architext-curadoria.md"
+      }
+    },
+    {
+      "id": "architext",
+      "name": "ArchiText",
+      "requestedSpellings": [
+        "ArchiText"
+      ],
+      "title": "Architext: Language-Driven Generative Architecture Design",
+      "family": "plans",
+      "verification": "VERIFIED",
+      "summary": "Programa/linguagem para sequência de polígonos",
+      "decision": "RESEARCH",
+      "action": "Converter texto em programa estruturado revisável; estudar saída vetorial somente após declarar escala e aplicar gate.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2303.07519",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://huggingface.co/architext/gptj-162M",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://huggingface.co/datasets/THEODOROS/Architext_v1",
+          "title": "Fonte primária 3"
+        },
+        {
+          "url": "https://huggingface.co/THEODOROS/Architext-gptj-6B",
+          "title": "Fonte primária 4"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-planos-bim.json",
+        "sha256": "aa082f40b0d501fbded70fef7d0f331b0430476593f0adbd31539ac67e4afd05"
+      },
+      "researchRecord": {
+        "requestedName": "ArchiText",
+        "title": "Architext: Language-Driven Generative Architecture Design",
+        "matchStatus": "VERIFIED",
+        "year": 2023,
+        "role": "Programa/linguagem para sequência de polígonos",
+        "inputs": [
+          "Solicitação textual de programa, relações e orientação"
+        ],
+        "outputs": [
+          "Labels de ambientes e tuplas de coordenadas normalizadas"
+        ],
+        "urls": [
+          "https://arxiv.org/abs/2303.07519",
+          "https://huggingface.co/architext/gptj-162M",
+          "https://huggingface.co/datasets/THEODOROS/Architext_v1",
+          "https://huggingface.co/THEODOROS/Architext-gptj-6B"
+        ],
+        "artifactAvailability": {
+          "code": {
+            "status": "MODEL_CARD_AND_DATA_REPOSITORIES",
+            "note": "Não atribuir repositórios homônimos não relacionados"
+          },
+          "weights": {
+            "status": "162M_WEIGHTS_LISTED_NOT_DOWNLOADED",
+            "published162MRevision": "ca22411908b582eeeacdb6fb337ffd6b4bde9dda",
+            "sixBStatus": "CARD_ONLY_IN_INSPECTED_TREE_NO_WEIGHTS_FOUND"
+          },
+          "data": {
+            "name": "Architext_v1",
+            "revision": "c1c124ba6da774db9f83a25fc3f2ee70aa4400d1",
+            "status": "ONE_SHARD_ACQUIRED_40_LINES_ANALYSED_IN_PRIOR_TASK",
+            "metricScale": "UNKNOWN"
+          },
+          "licenses": {
+            "modelAndDatasetCards": "Apache-2.0 declarado; procedência dos desenhos permanece registrada",
+            "weights": "Apache-2.0 declarado nas fichas de modelos; 162M listado, 6B sem pesos localizados."
+          },
+          "runtime": "Modelo 162M requer smoke test de compatibilidade; 6B não reproduzido; não executado",
+          "downloadedWeights": false,
+          "inferenceExecuted": false,
+          "trainingExecuted": false
+        },
+        "limitations": [
+          "Formato parseável não garante programa, acesso, perímetro ou conformidade",
+          "Sem entrada/portas métricas no formato inspecionado; 40 linhas não representam o corpus"
+        ],
+        "decision": "RESEARCH",
+        "action": "Converter texto em programa estruturado revisável; estudar saída vetorial somente após declarar escala e aplicar gate.",
+        "identityNote": "Galanos, Liapis e Yannakakis (2023); exclui homônimos de context engineering.",
+        "detailedStudy": "housegan-architext-curadoria.md"
+      }
+    },
+    {
+      "id": "dstruct2design",
+      "name": "DStruct2Design",
+      "requestedSpellings": [
+        "DStruct2Design"
+      ],
+      "title": "DStruct2Design: Data and Benchmarks for Data Structure Driven Generative Floor Plan Design",
+      "family": "plans",
+      "verification": "VERIFIED",
+      "summary": "Geração condicionada por estruturas numéricas/grafo e benchmark",
+      "decision": "ADOPT_INTERFACE",
+      "action": "Adotar contrato JSON, condicionamento parcial e métricas recalculadas; manter LoRA como experimento separado, sem importar área declarada como verdade.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2407.15723",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://github.com/plstory/DS2D",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://huggingface.co/datasets/ludolara/DStruct2Design",
+          "title": "Fonte primária 3"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-planos-bim.json",
+        "sha256": "aa082f40b0d501fbded70fef7d0f331b0430476593f0adbd31539ac67e4afd05"
+      },
+      "researchRecord": {
+        "requestedName": "DStruct2Design",
+        "title": "DStruct2Design: Data and Benchmarks for Data Structure Driven Generative Floor Plan Design",
+        "matchStatus": "VERIFIED",
+        "year": 2024,
+        "role": "Geração condicionada por estruturas numéricas/grafo e benchmark",
+        "inputs": [
+          "JSON de restrições completo ou parcial",
+          "Bubble diagram opcional"
+        ],
+        "outputs": [
+          "JSON com polígonos, ids, classes, áreas e dimensões"
+        ],
+        "urls": [
+          "https://arxiv.org/abs/2407.15723",
+          "https://github.com/plstory/DS2D",
+          "https://huggingface.co/datasets/ludolara/DStruct2Design"
+        ],
+        "artifactAvailability": {
+          "code": {
+            "url": "https://github.com/plstory/DS2D",
+            "commit": "d3f734bd465d6239100b50bb11b3903741a2be08",
+            "evidenceFiles": [
+              "fontes-planos-bim/plstory--DS2D-LICENSE",
+              "fontes-planos-bim/plstory--DS2D-README.md"
+            ],
+            "licenseApi": {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "spdx_id": "Apache-2.0",
+              "url": "https://api.github.com/licenses/apache-2.0",
+              "node_id": "MDc6TGljZW5zZTI="
+            }
+          },
+          "weights": {
+            "status": "LORA_LINKS_PUBLISHED_NOT_DOWNLOADED",
+            "urls": [
+              "https://drive.google.com/file/d/1cAYlEupNUGJefNdwkNaaq7fD3X3_P46D/view?usp=sharing",
+              "https://drive.google.com/file/d/16cYPK6g_Ho4VbvjvBZIGHMzNTBWzcAZT/view?usp=drive_link",
+              "https://drive.google.com/file/d/13k-pBmhGhYthm4WbHzrRH7WjaSKNkTpq/view?usp=drive_link"
+            ],
+            "base": "Meta-Llama-3-8B-Instruct"
+          },
+          "data": {
+            "name": "ProcTHOR convertido no HF; RPLAN conversor separado",
+            "revision": "6d714c6c45565846c57dddad2ba180d9f2d3554c",
+            "status": "METADATA_READ_NOT_DOWNLOADED"
+          },
+          "licenses": {
+            "code": "Apache-2.0",
+            "HFConvertedProcTHOR": "Apache-2.0 declarado na ficha",
+            "RPLAN": "Solicitação e condições próprias, não herda Apache do código",
+            "baseModel": "Llama3 Community License separada",
+            "weights": "UNKNOWN: links LoRA publicados não demonstram licença dos pesos; base Llama3 tem termos próprios."
+          },
+          "runtime": "Python/llama-recipes/PEFT/LoRA; sem demonstração CPU/MPS deste artefato",
+          "downloadedWeights": false,
+          "inferenceExecuted": false,
+          "trainingExecuted": false
+        },
+        "limitations": [
+          "Áreas/dimensões declaradas podem discordar dos polígonos",
+          "Compatibilidade de grafo e consistência numérica não são conformidade brasileira"
+        ],
+        "decision": "ADOPT_INTERFACE",
+        "action": "Adotar contrato JSON, condicionamento parcial e métricas recalculadas; manter LoRA como experimento separado, sem importar área declarada como verdade.",
+        "mechanism": "Fine-tuning Llama3-8B-Instruct com estruturas e variantes de mascaramento de restrições; self-consistency e prompt-consistency."
+      }
+    },
+    {
+      "id": "sceneformer",
+      "name": "SceneFormer",
+      "requestedSpellings": [
+        "SceneFormer"
+      ],
+      "title": "SceneFormer: Indoor Scene Generation with Transformers",
+      "family": "plans",
+      "verification": "VERIFIED",
+      "summary": "Mobiliário condicionado ao ambiente existente",
+      "decision": "PARK",
+      "action": "Preservar ideia de sequência de mobiliário; usar biblioteca autoral e clearance métrico agora, sem depender de SUNCG.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2012.09793",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://xinpeng-wang.github.io/sceneformer/",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://github.com/cy94/sceneformer",
+          "title": "Fonte primária 3"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-planos-bim.json",
+        "sha256": "aa082f40b0d501fbded70fef7d0f331b0430476593f0adbd31539ac67e4afd05"
+      },
+      "researchRecord": {
+        "requestedName": "SceneFormer",
+        "title": "SceneFormer: Indoor Scene Generation with Transformers",
+        "matchStatus": "VERIFIED",
+        "year": 2021,
+        "role": "Mobiliário condicionado ao ambiente existente",
+        "inputs": [
+          "Layout de um ambiente",
+          "Texto no artigo, versão textual pública não confirmada"
+        ],
+        "outputs": [
+          "Sequência de objetos: categoria, dimensões, posição e orientação"
+        ],
+        "urls": [
+          "https://arxiv.org/abs/2012.09793",
+          "https://xinpeng-wang.github.io/sceneformer/",
+          "https://github.com/cy94/sceneformer"
+        ],
+        "artifactAvailability": {
+          "code": {
+            "url": "https://github.com/cy94/sceneformer",
+            "commit": "6203932a26bde6c95b9aae961ee47b0ee17f6921",
+            "evidenceFiles": [
+              "fontes-planos-bim/cy94--sceneformer-README.md"
+            ],
+            "licenseApi": null
+          },
+          "weights": {
+            "status": "NO_CHECKPOINT_FOUND_IN_INSPECTED_README"
+          },
+          "data": {
+            "name": "SUNCG",
+            "status": "UNAVAILABLE_AS_REPORTED_BY_AUTHORS_README"
+          },
+          "licenses": {
+            "code": "Licença não localizada na árvore inspecionada",
+            "data": "Disponibilidade histórica não estabelece direito atual",
+            "weights": "UNKNOWN: nenhum checkpoint localizado na fonte inspecionada."
+          },
+          "runtime": "Repositório libera shape-conditioned; text-conditioned consta como coming soon",
+          "downloadedWeights": false,
+          "inferenceExecuted": false,
+          "trainingExecuted": false
+        },
+        "limitations": [
+          "Não gera partições, circulação vertical ou planta de edifício",
+          "Reprodução publicada depende de corpus indisponível"
+        ],
+        "decision": "PARK",
+        "action": "Preservar ideia de sequência de mobiliário; usar biblioteca autoral e clearance métrico agora, sem depender de SUNCG.",
+        "publication": {
+          "preprintYear": 2020,
+          "venue": "3DV 2021 Oral"
+        }
+      }
+    },
+    {
+      "id": "planner3d",
+      "name": "Planner3D",
+      "requestedSpellings": [
+        "Planner3D"
+      ],
+      "title": "Planner3D: LLM-enhanced Graph Prior Meets 3D Indoor Scene Explicit Regularization",
+      "family": "plans",
+      "verification": "VERIFIED",
+      "summary": "Humanização por cena 3D com relações e regularização",
+      "decision": "RESEARCH",
+      "action": "Investigar apenas na etapa de mobiliário/humanização após validação da planta; qualquer objeto deve respeitar volumes de acesso e parâmetros BIM.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2403.12848",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://sites.google.com/view/planner3d/",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://github.com/weiyao1996/Planner3D",
+          "title": "Fonte primária 3"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-planos-bim.json",
+        "sha256": "aa082f40b0d501fbded70fef7d0f331b0430476593f0adbd31539ac67e4afd05"
+      },
+      "researchRecord": {
+        "requestedName": "Planner3D",
+        "title": "Planner3D: LLM-enhanced Graph Prior Meets 3D Indoor Scene Explicit Regularization",
+        "matchStatus": "VERIFIED",
+        "year": 2025,
+        "role": "Humanização por cena 3D com relações e regularização",
+        "inputs": [
+          "Grafo de objetos e relações",
+          "Priors textuais/CLIP"
+        ],
+        "outputs": [
+          "Poses 3D e formas de objetos de uma cena"
+        ],
+        "urls": [
+          "https://arxiv.org/abs/2403.12848",
+          "https://sites.google.com/view/planner3d/",
+          "https://github.com/weiyao1996/Planner3D"
+        ],
+        "artifactAvailability": {
+          "code": {
+            "url": "https://github.com/weiyao1996/Planner3D",
+            "commit": "625a99c2210438730c66294a4ef83438b91be635",
+            "evidenceFiles": [
+              "fontes-planos-bim/weiyao1996--Planner3D-README.md"
+            ],
+            "licenseApi": null
+          },
+          "weights": {
+            "status": "LINK_PUBLISHED_NOT_DOWNLOADED",
+            "urls": [
+              "https://drive.google.com/file/d/19TC_F6BVZluVJQ0C_JVr81-XpZtkbvu_/view?usp=sharing"
+            ]
+          },
+          "data": {
+            "name": "3D-FRONT, 3D-FUTURE-SDF e SG-FRONT",
+            "status": "LINKED_EXTERNAL_NOT_ACQUIRED"
+          },
+          "licenses": {
+            "ownCode": "Licença raiz não localizada; ATISS-master/LICENSE não licencia todo o projeto",
+            "dependenciesAndData": "Revisão individual necessária",
+            "weights": "UNKNOWN: link de pesos publicado, termos específicos não verificados."
+          },
+          "runtime": "PyTorch, SDFs e modelos auxiliares; dependências externas não instaladas",
+          "downloadedWeights": false,
+          "inferenceExecuted": false,
+          "trainingExecuted": false
+        },
+        "limitations": [
+          "Regularização de colisão não equivale a garantia de clearance",
+          "Objetos/cenas não são paredes/IFC sem reconstrução semântica"
+        ],
+        "decision": "RESEARCH",
+        "action": "Investigar apenas na etapa de mobiliário/humanização após validação da planta; qualquer objeto deve respeitar volumes de acesso e parâmetros BIM.",
+        "publication": {
+          "preprintYear": 2024,
+          "venue": "TPAMI 2025, conforme projeto/autores"
+        },
+        "mechanism": "Grafo enriquecido, encoder unificado e geração conjunta layout/forma com regularização explícita."
+      }
+    },
+    {
+      "id": "cons2plan",
+      "name": "Cons2Plan",
+      "requestedSpellings": [
+        "Cons2Plan"
+      ],
+      "title": "Cons2Plan: Vector Floorplan Generation from Various Conditions via a Learning Framework based on Conditional Diffusion Models",
+      "family": "plans",
+      "verification": "VERIFIED",
+      "summary": "Condicionamento conjunto de contorno e grafo para difusão vetorial",
+      "decision": "RESEARCH",
+      "action": "Implementar primeiro contrato boundary+graph próprio; só reproduzir modelo quando artefatos primários e benchmark estiverem acessíveis.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.1145/3664647.3680681",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://dl.acm.org/doi/10.1145/3664647.3680681",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://openreview.net/pdf?id=xnpEpIqjUU",
+          "title": "Fonte primária 3"
+        },
+        {
+          "url": "https://api.crossref.org/works/10.1145/3664647.3680681",
+          "title": "Fonte primária 4"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-planos-bim.json",
+        "sha256": "aa082f40b0d501fbded70fef7d0f331b0430476593f0adbd31539ac67e4afd05"
+      },
+      "researchRecord": {
+        "requestedName": "Cons2Plan",
+        "title": "Cons2Plan: Vector Floorplan Generation from Various Conditions via a Learning Framework based on Conditional Diffusion Models",
+        "matchStatus": "VERIFIED",
+        "year": 2024,
+        "role": "Condicionamento conjunto de contorno e grafo para difusão vetorial",
+        "inputs": [
+          "Grafo, contorno ou ambos"
+        ],
+        "outputs": [
+          "Planta vetorial",
+          "Grafo estimado a partir do contorno no caminho boundary-only"
+        ],
+        "urls": [
+          "https://doi.org/10.1145/3664647.3680681",
+          "https://dl.acm.org/doi/10.1145/3664647.3680681",
+          "https://openreview.net/pdf?id=xnpEpIqjUU",
+          "https://api.crossref.org/works/10.1145/3664647.3680681"
+        ],
+        "artifactAvailability": {
+          "code": {
+            "status": "NO_OFFICIAL_REPOSITORY_LOCATED"
+          },
+          "weights": {
+            "status": "NO_OFFICIAL_CHECKPOINT_LOCATED"
+          },
+          "data": {
+            "status": "NOT_VERIFIED_IN_ACCESSIBLE_PRIMARY_ARTIFACTS"
+          },
+          "licenses": {
+            "article": "Metadados ACM Copyright Policy; não licencia código/pesos ausentes",
+            "codeWeightsData": "UNKNOWN",
+            "weights": "UNKNOWN: nenhum checkpoint oficial localizado."
+          },
+          "runtime": "Artigo identificado por DOI/Crossref; acesso integral OpenReview devolveu challenge; resumo indexado primário foi lido, sem executar código",
+          "downloadedWeights": false,
+          "inferenceExecuted": false,
+          "trainingExecuted": false
+        },
+        "limitations": [
+          "Disponibilidade de implementação/dados/pesos não demonstrada",
+          "Não há evidência suficiente para prometer encaixe universal ou ganho normativo"
+        ],
+        "decision": "RESEARCH",
+        "action": "Implementar primeiro contrato boundary+graph próprio; só reproduzir modelo quando artefatos primários e benchmark estiverem acessíveis.",
+        "mechanism": "Resumo primário descreve conditional embedding na difusão; boundary-only estima nós por regressão e arestas com CEDM.",
+        "publication": {
+          "venue": "ACM Multimedia 2024",
+          "publishedDate": "2024-10-28"
+        },
+        "evidenceScope": "Título/autores/DOI verificados via Crossref; mecanismo baseado no resumo primário OpenReview indexado, não leitura integral."
+      }
+    },
+    {
+      "id": "stylegan2",
+      "name": "StyleGAN2",
+      "requestedSpellings": [
+        "StyleGAN2"
+      ],
+      "title": "Analyzing and Improving the Image Quality of StyleGAN",
+      "family": "plans",
+      "verification": "VERIFIED",
+      "summary": "GAN de imagens; inadequado como representação principal da planta",
+      "decision": "REJECT_FOR_TASK",
+      "action": "Não usar na geração métrica de plantas; render/humanização pode ter outro motor com geometria preservada.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/1912.04958",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://github.com/NVlabs/stylegan2",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://nvlabs.github.io/stylegan2/license.html",
+          "title": "Fonte primária 3"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-planos-bim.json",
+        "sha256": "aa082f40b0d501fbded70fef7d0f331b0430476593f0adbd31539ac67e4afd05"
+      },
+      "researchRecord": {
+        "requestedName": "StyleGAN2",
+        "title": "Analyzing and Improving the Image Quality of StyleGAN",
+        "matchStatus": "VERIFIED",
+        "year": 2020,
+        "role": "GAN de imagens; inadequado como representação principal da planta",
+        "inputs": [
+          "Latente e estilos"
+        ],
+        "outputs": [
+          "Imagem raster"
+        ],
+        "urls": [
+          "https://arxiv.org/abs/1912.04958",
+          "https://github.com/NVlabs/stylegan2",
+          "https://nvlabs.github.io/stylegan2/license.html"
+        ],
+        "artifactAvailability": {
+          "code": {
+            "url": "https://github.com/NVlabs/stylegan2",
+            "commit": "bf0fe0baba9fc7039eae0cac575c1778be1ce3e3",
+            "evidenceFiles": [
+              "fontes-planos-bim/NVlabs--stylegan2-LICENSE.txt",
+              "fontes-planos-bim/NVlabs--stylegan2-README.md"
+            ],
+            "licenseApi": {
+              "key": "other",
+              "name": "Other",
+              "spdx_id": "NOASSERTION",
+              "url": null,
+              "node_id": "MDc6TGljZW5zZTA="
+            }
+          },
+          "weights": {
+            "status": "IMAGE_CHECKPOINT_LINKS_PUBLISHED_NOT_DOWNLOADED",
+            "urls": [
+              "https://nvlabs-fi-cdn.nvidia.com/stylegan2/networks/"
+            ],
+            "examples": "FFHQ e LSUN; nenhuma planta métrica verificada"
+          },
+          "data": {
+            "name": "FFHQ/LSUN no baseline",
+            "status": "NO_ARCHITECTURE_TRAINING_CORPUS_VERIFIED"
+          },
+          "licenses": {
+            "code": "Nvidia Source Code License-NC",
+            "dataAndWeights": "Condições individuais não presumidas",
+            "weights": "Condições dos checkpoints/datasets separados não presumidas da licença do código."
+          },
+          "runtime": "Original TensorFlow 1.14/1.15, CUDA10/cuDNN7.5 e GPU NVIDIA; TF2 não suportado por esse repo",
+          "downloadedWeights": false,
+          "inferenceExecuted": false,
+          "trainingExecuted": false
+        },
+        "limitations": [
+          "Sem ids, grafo, medidas, portas ou condicionamento normativo",
+          "Imagem bonita não constitui geometria editável ou IFC"
+        ],
+        "decision": "REJECT_FOR_TASK",
+        "action": "Não usar na geração métrica de plantas; render/humanização pode ter outro motor com geometria preservada.",
+        "publication": {
+          "preprintYear": 2019,
+          "venue": "CVPR 2020"
+        },
+        "identityNote": "StyleGAN2 original; StyleGAN2-ADA/PyTorch é outra versão e outro artigo, não substituição silenciosa."
+      }
+    },
+    {
+      "id": "framgan",
+      "name": "FramGAN",
+      "requestedSpellings": [
+        "FramGAN"
+      ],
+      "title": "Possible match: FrameGAN — Dual generative adversarial networks for automated component layout design of steel frame-brace structures",
+      "family": "structure",
+      "verification": "AMBIGUOUS",
+      "summary": "Possível proposta de pilares e contraventamentos metálicos; correspondência com FrameGAN ainda ambígua.",
+      "decision": "RESEARCH",
+      "action": "Pesquisar geração em etapas sobre eixos métricos, mantendo cálculo estrutural independente.",
+      "sources": [
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/S0926580522005313",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S2352710224005114",
+          "title": "Fonte primária 2"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-estrutura-desempenho.json",
+        "sha256": "6bf8b1dc516f5f29284848d794ea7bfa209d449847d0aee157419c8e675ed663"
+      },
+      "researchRecord": {
+        "requestedName": "FramGAN",
+        "title": "Possible match: FrameGAN — Dual generative adversarial networks for automated component layout design of steel frame-brace structures",
+        "matchStatus": "AMBIGUOUS",
+        "urls": [
+          "https://www.sciencedirect.com/science/article/pii/S0926580522005313",
+          "https://www.sciencedirect.com/science/article/abs/pii/S2352710224005114"
+        ],
+        "year": 2023,
+        "role": "Possible architectural-drawing-to-steel-column/brace proposal; exact requested spelling unresolved.",
+        "inputs": [
+          "Architectural and structural reference drawings"
+        ],
+        "outputs": [
+          "Proposed column layout",
+          "Proposed brace layout"
+        ],
+        "artifactAvailability": {
+          "paper": "Publisher-indexed primary article verified",
+          "code": "Not confirmed for structural paper; belaalb/frameGAN is a different video project",
+          "weights": "Not confirmed",
+          "data": "Training drawings described; complete public package not confirmed",
+          "license": "Code/data/weight licenses not confirmed"
+        },
+        "limitations": [
+          "Do not silently equate FramGAN and FrameGAN",
+          "Drawing plausibility is not FEM or connection design",
+          "Steel-frame/brace domain does not certify Brazilian reinforced-concrete towers"
+        ],
+        "decision": "RESEARCH",
+        "action": "Preserve ambiguity; reproduce proposed staged-generation idea only as candidates on metric axes, followed by structural analysis.",
+        "relatedModels": [
+          {
+            "name": "FrameGAN v2",
+            "year": 2024,
+            "role": "Physical drawing-rule guidance and attention, not blanket structural certification"
+          }
+        ]
+      }
+    },
+    {
+      "id": "structgan",
+      "name": "StructGAN",
+      "requestedSpellings": [
+        "StrructGAN"
+      ],
+      "title": "Automated structural design of shear wall residential buildings using generative adversarial networks",
+      "family": "structure",
+      "verification": "VERIFIED",
+      "summary": "Proposição de paredes estruturais a partir de desenhos arquitetônicos semânticos.",
+      "decision": "RESEARCH",
+      "action": "Estudar vetorização e seleção assistida por cálculo, conservando o verificador de engenharia.",
+      "sources": [
+        {
+          "url": "https://www.luxinzheng.net/AI-Papers/2021-Liao-AIC.htm",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/S0926580521003824",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://github.com/wenjie-liao/StructGAN_v1",
+          "title": "Fonte primária 3"
+        },
+        {
+          "url": "https://github.com/wenjie-liao/StructGAN-PHY",
+          "title": "Fonte primária 4"
+        },
+        {
+          "url": "https://www.luxinzheng.net/AI-Papers/2022-Liao-EESD.htm",
+          "title": "Fonte primária 5"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-estrutura-desempenho.json",
+        "sha256": "6bf8b1dc516f5f29284848d794ea7bfa209d449847d0aee157419c8e675ed663"
+      },
+      "researchRecord": {
+        "requestedName": "StructGAN",
+        "title": "Automated structural design of shear wall residential buildings using generative adversarial networks",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://www.luxinzheng.net/AI-Papers/2021-Liao-AIC.htm",
+          "https://www.sciencedirect.com/science/article/pii/S0926580521003824",
+          "https://github.com/wenjie-liao/StructGAN_v1",
+          "https://github.com/wenjie-liao/StructGAN-PHY",
+          "https://www.luxinzheng.net/AI-Papers/2022-Liao-EESD.htm"
+        ],
+        "year": 2021,
+        "role": "Shear-wall schematic structural proposal from semantic architectural drawing.",
+        "inputs": [
+          "Semantic architectural drawing",
+          "Structural design conditions"
+        ],
+        "outputs": [
+          "Raster shear-wall proposal; requires component conversion for analysis"
+        ],
+        "artifactAvailability": {
+          "paper": "Primary author page and paper verified",
+          "code": "Author repository with data preparation/adapted pix2pix and pix2pixHD/evaluation; PHY variant also exposes vectorization",
+          "weights": "Not exercised or checksum-verified",
+          "data": "Repository dataset directory visible; full usable data/terms not audited",
+          "license": "General license not identified in root listing; audit component licenses"
+        },
+        "limitations": [
+          "Raster drawing is not a complete analytical model",
+          "Chinese shear-wall design domain cannot be automatically certified for Brazil",
+          "PHY uses learned physical estimator, with terminal independent analysis still required"
+        ],
+        "decision": "RESEARCH",
+        "action": "Study generation/vectorization and physics-assisted ranking; build own labeled structural candidates and retain engineering gate."
+      }
+    },
+    {
+      "id": "typologygan",
+      "name": "TypologyGAN",
+      "requestedSpellings": [
+        "TypologyGAN"
+      ],
+      "title": "Identidade não confirmada",
+      "family": "structure",
+      "verification": "UNVERIFIED",
+      "summary": "Identidade não confirmada em fonte primária sob esse nome.",
+      "decision": "PARK",
+      "action": "Manter o nome pendente; TopologyGAN é uma hipótese de outro trabalho, sem equivalência demonstrada.",
+      "sources": [],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-estrutura-desempenho.json",
+        "sha256": "6bf8b1dc516f5f29284848d794ea7bfa209d449847d0aee157419c8e675ed663"
+      },
+      "researchRecord": {
+        "requestedName": "TypologyGAN",
+        "title": null,
+        "matchStatus": "UNVERIFIED",
+        "urls": [],
+        "year": null,
+        "role": "Requested identity unresolved; no primary publication found under exact name.",
+        "inputs": [],
+        "outputs": [],
+        "artifactAvailability": {
+          "paper": "Unverified under requested name",
+          "code": "Unverified",
+          "weights": "Unverified",
+          "data": "Unverified",
+          "license": "Unverified"
+        },
+        "limitations": [
+          "TopologyGAN is a plausible typo hypothesis, not confirmed alias",
+          "Topology optimization is not apartment typology generation"
+        ],
+        "decision": "PARK",
+        "action": "Keep exact requested name unresolved; optional separate research on verified TopologyGAN, without relabeling it as TypologyGAN.",
+        "relatedModels": [
+          {
+            "name": "TopologyGAN",
+            "title": "TopologyGAN: Topology Optimization Using Generative Adversarial Networks Based on Physical Fields Over the Initial Domain",
+            "matchStatus": "VERIFIED",
+            "year": 2020,
+            "urls": [
+              "https://arxiv.org/abs/2003.04685",
+              "https://github.com/zhenguonie/2020_TopologyGAN"
+            ],
+            "role": "Conditional topology optimization from initial-domain physical fields",
+            "artifactAvailability": "Author code/data links visible; trained network announced by article, not exercised; licenses not confirmed"
+          }
+        ],
+        "searchEvidence": [
+          "Exact TypologyGAN",
+          "TypologyGAN architecture neural",
+          "Typology GAN structural"
+        ]
+      }
+    },
+    {
+      "id": "structdiffusion",
+      "name": "StructDiffusion",
+      "requestedSpellings": [
+        "StructDiffusion"
+      ],
+      "title": "StructDiffusion: Language-Guided Creation of Physically-Valid Structures using Unseen Objects",
+      "family": "structure",
+      "verification": "VERIFIED",
+      "summary": "Rearranjo de objetos em robótica; não é cálculo estrutural de edifícios.",
+      "decision": "REJECT_FOR_TASK",
+      "action": "Excluir do motor estrutural. A ideia de amostragem e rejeição de objetos pode orientar pesquisa de mobiliário.",
+      "sources": [
+        {
+          "url": "https://structdiffusion.github.io/",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://github.com/StructDiffusion/StructDiffusion",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://arxiv.org/abs/2211.04604",
+          "title": "Fonte primária 3"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-estrutura-desempenho.json",
+        "sha256": "6bf8b1dc516f5f29284848d794ea7bfa209d449847d0aee157419c8e675ed663"
+      },
+      "researchRecord": {
+        "requestedName": "StructDiffusion",
+        "title": "StructDiffusion: Language-Guided Creation of Physically-Valid Structures using Unseen Objects",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://structdiffusion.github.io/",
+          "https://github.com/StructDiffusion/StructDiffusion",
+          "https://arxiv.org/abs/2211.04604"
+        ],
+        "year": 2023,
+        "role": "Robotics object rearrangement, not building structural engineering.",
+        "inputs": [
+          "Partial point clouds of objects",
+          "High-level language task"
+        ],
+        "outputs": [
+          "Object 6DoF goal poses"
+        ],
+        "artifactAvailability": {
+          "paper": "RSS2023 primary project verified; arXiv preprint2022",
+          "code": "Official PyTorch implementation, MIT",
+          "weights": "Pretrained model links announced; not downloaded",
+          "data": "Rearrangement sequences/scenes and pairwise collision data announced",
+          "license": "MIT code verified in repository; external assets require own term audit"
+        },
+        "limitations": [
+          "No reinforced-concrete/steel building FEM or Brazilian code design",
+          "Learned collision discriminator cannot replace exact Barch intersections"
+        ],
+        "decision": "REJECT_FOR_TASK",
+        "action": "Reject as structural solver; optionally research object-centric sampling/rejection for furniture arrangement."
+      }
+    },
+    {
+      "id": "transframenet",
+      "name": "TransFrameNet",
+      "requestedSpellings": [
+        "TransFrameNet"
+      ],
+      "title": "TransFrameNet: A transformer-based approach for generalized seismic performance prediction of building structures",
+      "family": "structure",
+      "verification": "VERIFIED",
+      "summary": "Previsão aprendida de deslocamentos de pavimentos sob ação sísmica.",
+      "decision": "RESEARCH",
+      "action": "Construir dados calculados e validar domínio antes de estudar a integração dessa previsão.",
+      "sources": [
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/S235271022402196X",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://doi.org/10.1016/j.jobe.2024.110628",
+          "title": "Fonte primária 2"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-estrutura-desempenho.json",
+        "sha256": "6bf8b1dc516f5f29284848d794ea7bfa209d449847d0aee157419c8e675ed663"
+      },
+      "researchRecord": {
+        "requestedName": "TransFrameNet",
+        "title": "TransFrameNet: A transformer-based approach for generalized seismic performance prediction of building structures",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://www.sciencedirect.com/science/article/pii/S235271022402196X",
+          "https://doi.org/10.1016/j.jobe.2024.110628"
+        ],
+        "year": 2024,
+        "role": "Transformer surrogate of seismic floor-displacement response.",
+        "inputs": [
+          "Building archetype/geometric and component features",
+          "Ground-motion time histories"
+        ],
+        "outputs": [
+          "Predicted floor displacement response"
+        ],
+        "artifactAvailability": {
+          "paper": "Publisher primary indexed abstract/method verified; full page open returned403",
+          "code": "Associated author implementation not confirmed",
+          "weights": "Not confirmed",
+          "data": "Study100 steel moment-resisting frames and40 motions described; public package not confirmed",
+          "license": "No code/data/weight license confirmed"
+        },
+        "limitations": [
+          "Response predictor, not floorplan/structure generator",
+          "Benchmark cannot certify concrete, wind, arbitrary height or seismic regime",
+          "Compared with OpenSees reference, not replacing analytical checks"
+        ],
+        "decision": "RESEARCH",
+        "action": "Defer initial São Paulo residential implementation; build validated analysis datasets before investigating surrogate integration."
+      }
+    },
+    {
+      "id": "comfortgan",
+      "name": "ComfortGAN",
+      "requestedSpellings": [
+        "ComfortGAN"
+      ],
+      "title": "Balancing thermal comfort datasets: We GAN, but should we?",
+      "family": "structure",
+      "verification": "VERIFIED",
+      "summary": "Ampliação e balanceamento de dados de sensação térmica.",
+      "decision": "RESEARCH",
+      "action": "Usar apenas com dados reais de conforto e avaliação por grupos de edifícios e ocupantes.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2009.13154",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://matiasquintana.com/projects/comfortGAN/",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://github.com/buds-lab/comfortGAN",
+          "title": "Fonte primária 3"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-estrutura-desempenho.json",
+        "sha256": "6bf8b1dc516f5f29284848d794ea7bfa209d449847d0aee157419c8e675ed663"
+      },
+      "researchRecord": {
+        "requestedName": "ComfortGAN",
+        "title": "Balancing thermal comfort datasets: We GAN, but should we?",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://arxiv.org/abs/2009.13154",
+          "https://matiasquintana.com/projects/comfortGAN/",
+          "https://github.com/buds-lab/comfortGAN"
+        ],
+        "year": 2020,
+        "role": "Conditional GAN augmentation/class balancing for thermal-sensation classification data.",
+        "inputs": [
+          "Tabular comfort observations",
+          "Conditioned comfort class"
+        ],
+        "outputs": [
+          "Synthetic tabular samples for downstream classifier training"
+        ],
+        "artifactAvailability": {
+          "paper": "BuildSys2020/arXiv primary verified",
+          "code": "Official code/notebooks/configurations, MIT",
+          "weights": "Models directory and pretrained models announced; not executed",
+          "data": "Controlled/field/ASHRAE datasets linked; distinct data rights",
+          "license": "MIT repository code; external dataset terms separately auditable"
+        },
+        "limitations": [
+          "Does not directly compute thermal zones or energy of floorplan",
+          "Synthetic data is not measurement or compliance proof",
+          "Improvement is task-dependent and needs real held-out evaluation"
+        ],
+        "decision": "RESEARCH",
+        "action": "Use only after acquiring valid personal thermal feedback; keep synthetic origin separate and evaluate on real building/occupant groups."
+      }
+    },
+    {
+      "id": "airvox",
+      "name": "Airvox",
+      "requestedSpellings": [
+        "Airvox"
+      ],
+      "title": "Airvox: efficient computational fluid dynamics prediction using 3D convolutional neural networks for building design",
+      "family": "structure",
+      "verification": "VERIFIED",
+      "summary": "Previsão de campos de escoamento por CNN 3D em domínio específico.",
+      "decision": "RESEARCH",
+      "action": "Preparar casos OpenFOAM próprios e indicar domínio desconhecido quando a geometria sair do conjunto validado.",
+      "sources": [
+        {
+          "url": "https://yonsei.elsevierpure.com/en/publications/airvox-efficient-computational-fluid-dynamics-prediction-using-3d/",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://www.tandfonline.com/doi/abs/10.1080/19401493.2024.2410744",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://www.tandfonline.com/doi/pdf/10.1080/19401493.2024.2410744",
+          "title": "Fonte primária 3"
+        },
+        {
+          "url": "https://doi.org/10.7910/DVN/XN97F2",
+          "title": "Fonte primária 4"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-estrutura-desempenho.json",
+        "sha256": "6bf8b1dc516f5f29284848d794ea7bfa209d449847d0aee157419c8e675ed663"
+      },
+      "researchRecord": {
+        "requestedName": "Airvox",
+        "title": "Airvox: efficient computational fluid dynamics prediction using 3D convolutional neural networks for building design",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://yonsei.elsevierpure.com/en/publications/airvox-efficient-computational-fluid-dynamics-prediction-using-3d/",
+          "https://www.tandfonline.com/doi/abs/10.1080/19401493.2024.2410744",
+          "https://www.tandfonline.com/doi/pdf/10.1080/19401493.2024.2410744",
+          "https://doi.org/10.7910/DVN/XN97F2"
+        ],
+        "year": 2025,
+        "publicationTiming": {
+          "online": "2024-10-08",
+          "journalVolume": 2025
+        },
+        "role": "3D CNN CFD surrogate for airflow, not authoritative arbitrary-geometry wind assessment.",
+        "inputs": [
+          "Volumetric geometry/opening encoding",
+          "Wind conditions"
+        ],
+        "outputs": [
+          "Predicted airflow fields"
+        ],
+        "artifactAvailability": {
+          "paper": "Primary institutional record/publisher search indexed methodology; direct publisher fetch403",
+          "code": "Not confirmed",
+          "weights": "Not confirmed",
+          "data": "Harvard Dataverse DOI declared by publisher; link fetch failed in this session, no files inspected",
+          "license": "Article CC BY-NC-ND declared in publisher PDF; dataset/code/weights terms unverified"
+        },
+        "limitations": [
+          "Study fixed geometry with3750 OpenFOAM scenarios; openings and restricted winds varied",
+          "Wind3/5m/s and0–90deg15deg steps do not establish generalization to Penha/curved towers",
+          "Prediction must be domain-scoped and compared to physical CFD"
+        ],
+        "decision": "RESEARCH",
+        "action": "Build own OpenFOAM cases and declare out-of-domain UNKNOWN; inventory Dataverse contents/terms before reuse."
+      }
+    },
+    {
+      "id": "daylightgan",
+      "name": "DaylightGAN",
+      "requestedSpellings": [
+        "DaylightGAN"
+      ],
+      "title": "DaylightGAN — Real-time daylight prediction pipeline",
+      "family": "structure",
+      "verification": "VERIFIED",
+      "summary": "Pares geometria–simulação e previsão de mapas de iluminação natural.",
+      "decision": "ADOPT_INTERFACE",
+      "action": "Adotar o contrato de mapas e métricas; priorizar Radiance como referência para conferir as previsões.",
+      "sources": [
+        {
+          "url": "https://github.com/TheodoreGalanos/DaylightGAN",
+          "title": "Fonte primária 1"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-estrutura-desempenho.json",
+        "sha256": "6bf8b1dc516f5f29284848d794ea7bfa209d449847d0aee157419c8e675ed663"
+      },
+      "researchRecord": {
+        "requestedName": "DaylightGAN",
+        "title": "DaylightGAN — Real-time daylight prediction pipeline",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://github.com/TheodoreGalanos/DaylightGAN"
+        ],
+        "year": null,
+        "role": "Repository pipeline for geometry/annual daylight simulation pairs and neural map preview.",
+        "inputs": [
+          "Parametric geometry heightmaps",
+          "Simulation-derived paired data"
+        ],
+        "outputs": [
+          "Daylight-autonomy map preview"
+        ],
+        "artifactAvailability": {
+          "paper": "Project identity verified; distinct scientific publication/year not established here",
+          "code": "Rhino/GH assets, simulation notebooks, PyTorch CycleGAN/pix2pix distribution",
+          "weights": "Copenhagen/Sydney checkpoint links announced; not downloaded",
+          "data": "Daylight Autonomy dataset links for same cities announced; availability/terms not independently exercised",
+          "license": "No general root license identified; upstream code/dataset/weights need separate inventory"
+        },
+        "limitations": [
+          "README sample uses paired pix2pix training; do not call whole pipeline exclusively unpaired",
+          "Foreign-city checkpoints do not certify São Paulo daylight",
+          "Map plausibility is not annual physical validation"
+        ],
+        "decision": "ADOPT_INTERFACE",
+        "action": "Adopt simulation-pair/metric-map interface strategy, not unchecked foreign weights; prioritize Honeybee/Radiance reference calculations."
+      }
+    },
+    {
+      "id": "urban-gan",
+      "name": "Urban-GAN",
+      "requestedSpellings": [
+        "Urban-GAN"
+      ],
+      "title": "Urban-GAN: An artificial intelligence-aided computation system for plural urban design",
+      "family": "urban",
+      "verification": "VERIFIED",
+      "summary": "Recuperação de precedentes e exploração de alternativas urbanas.",
+      "decision": "ADOPT_INTERFACE",
+      "action": "Incorporar precedentes, intenção explícita e comparação de alternativas; manter a geração aprendida em pesquisa.",
+      "sources": [
+        {
+          "url": "https://journals.sagepub.com/doi/10.1177/23998083221100550",
+          "title": "Fonte primária 1"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-urbano-3d.json",
+        "sha256": "12320f3a6b317262933a424b6a57240d7a5c4b7a34f756f97b70c6b7a98fd8f1"
+      },
+      "researchRecord": {
+        "requestedName": "Urban-GAN",
+        "title": "Urban-GAN: An artificial intelligence-aided computation system for plural urban design",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://journals.sagepub.com/doi/10.1177/23998083221100550"
+        ],
+        "year": 2022,
+        "role": "Case retrieval and urban design exploration",
+        "inputs": [
+          "Urban form precedents",
+          "Design intent"
+        ],
+        "outputs": [
+          "Urban design schemes; exact artifact format not independently verified"
+        ],
+        "mechanism": "Case-based reasoning combined with deep convolutional/generative networks",
+        "artifactAvailability": {
+          "code": "NOT_VERIFIED",
+          "data": "NOT_VERIFIED",
+          "weights": "NOT_VERIFIED",
+          "licenses": "UNKNOWN",
+          "fullText": "RESTRICTED_ACCESS; abstract and metadata inspected"
+        },
+        "hardware": "UNKNOWN",
+        "limitations": [
+          "Hypothetical case studies are not engineering validation",
+          "No verified reproducible package"
+        ],
+        "decision": "ADOPT_INTERFACE",
+        "action": "Implement precedent retrieval, explicit design intent and comparison; keep learned generation in research"
+      }
+    },
+    {
+      "id": "ganmapper",
+      "name": "GANmapper",
+      "requestedSpellings": [
+        "GANmapper"
+      ],
+      "title": "GANmapper: geographical data translation",
+      "family": "urban",
+      "verification": "VERIFIED",
+      "summary": "Tradução de dados geográficos para morfologia urbana sintética.",
+      "decision": "RESEARCH",
+      "action": "Avaliar como proposta de contexto, com origem declarada e validação da conversão raster para vetor.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2108.04232",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://github.com/ualsg/GANmapper",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://github.com/ualsg/GANmapper/blob/main/LICENSE",
+          "title": "Fonte primária 3"
+        },
+        {
+          "url": "https://doi.org/10.6084/m9.figshare.15103128.v1",
+          "title": "Fonte primária 4"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-urbano-3d.json",
+        "sha256": "12320f3a6b317262933a424b6a57240d7a5c4b7a34f756f97b70c6b7a98fd8f1"
+      },
+      "researchRecord": {
+        "requestedName": "GANmapper",
+        "title": "GANmapper: geographical data translation",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://arxiv.org/abs/2108.04232",
+          "https://github.com/ualsg/GANmapper",
+          "https://github.com/ualsg/GANmapper/blob/main/LICENSE",
+          "https://doi.org/10.6084/m9.figshare.15103128.v1"
+        ],
+        "year": 2022,
+        "yearNote": "Preprint 2021; journal 2022",
+        "role": "Synthetic urban morphology",
+        "inputs": [
+          "Road network tiles",
+          "Land-use tiles"
+        ],
+        "outputs": [
+          "Building footprint raster",
+          "Extracted GeoJSON"
+        ],
+        "mechanism": "Conditional image translation based on pix2pix; raster vectorization",
+        "artifactAvailability": {
+          "code": "PRESENT; repository archived 2024-05-11",
+          "data": "DECLARED_FIGSHARE_LINK_NOT_FETCH_VERIFIED",
+          "weights": "DECLARED_FIGSHARE_LINK_NOT_FETCH_VERIFIED",
+          "licenses": {
+            "code": "README says MIT; actual LICENSE has BSD conditions and CycleGAN/pix2pix notices",
+            "data": "UNKNOWN",
+            "weights": "UNKNOWN"
+          }
+        },
+        "hardware": "Python/PyTorch/geospatial environment declared; VRAM UNKNOWN",
+        "limitations": [
+          "Generated footprints are hypothetical, not cadastral GIS",
+          "Vectorization does not certify metric accuracy",
+          "License documentation differs"
+        ],
+        "decision": "RESEARCH",
+        "action": "Evaluate synthetic context layer with strict provenance and raster-to-vector validation"
+      }
+    },
+    {
+      "id": "masterplangan",
+      "name": "MasterPlanGAN",
+      "requestedSpellings": [
+        "MasdterPlanGAN"
+      ],
+      "title": "MasterplanGAN: Facilitating the smart rendering of urban master plans via generative adversarial networks",
+      "family": "urban",
+      "verification": "VERIFIED",
+      "summary": "Renderização de apresentação de planos urbanos já desenhados.",
+      "decision": "PARK",
+      "action": "Reservar à apresentação visual, separada da geometria medida e dos quantitativos.",
+      "sources": [
+        {
+          "url": "https://www.researchwithnj.com/en/publications/masterplangan-facilitating-the-smart-rendering-of-urban-master-pl/",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://doi.org/10.1177/23998083211023516",
+          "title": "Fonte primária 2"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-urbano-3d.json",
+        "sha256": "12320f3a6b317262933a424b6a57240d7a5c4b7a34f756f97b70c6b7a98fd8f1"
+      },
+      "researchRecord": {
+        "requestedName": "MasterPlanGAN",
+        "title": "MasterplanGAN: Facilitating the smart rendering of urban master plans via generative adversarial networks",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://www.researchwithnj.com/en/publications/masterplangan-facilitating-the-smart-rendering-of-urban-master-pl/",
+          "https://doi.org/10.1177/23998083211023516"
+        ],
+        "year": 2022,
+        "role": "Masterplan presentation rendering",
+        "inputs": [
+          "Uncolored CAD-derived design imagery"
+        ],
+        "outputs": [
+          "Colorized plan rendering"
+        ],
+        "mechanism": "CycleGAN image translation",
+        "artifactAvailability": {
+          "code": "NOT_VERIFIED",
+          "data": "Paper dataset declared; redistribution license UNKNOWN",
+          "weights": "NOT_VERIFIED",
+          "licenses": "UNKNOWN"
+        },
+        "hardware": "UNKNOWN",
+        "limitations": [
+          "Does not generate subdivision/streets",
+          "Public Pinterest imagery is not automatically licensed for training"
+        ],
+        "decision": "PARK",
+        "action": "Consider presentation styling separately from measured geometry and quantities"
+      }
+    },
+    {
+      "id": "instantcity",
+      "name": "INstantCity",
+      "requestedSpellings": [
+        "INstantCity"
+      ],
+      "title": "InstantCITY: Synthesising morphologically accurate geospatial data for urban form analysis, transfer, and quality control",
+      "family": "urban",
+      "verification": "VERIFIED",
+      "summary": "Síntese e transferência de morfologias urbanas.",
+      "decision": "RESEARCH",
+      "action": "Comparar a transferência em um corpus territorial separado para teste, registrando origem e reparos geométricos.",
+      "sources": [
+        {
+          "url": "https://github.com/ualsg/InstantCITY",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://github.com/ualsg/InstantCITY/blob/main/LICENSE.txt",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://doi.org/10.1016/j.isprsjprs.2022.11.005",
+          "title": "Fonte primária 3"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-urbano-3d.json",
+        "sha256": "12320f3a6b317262933a424b6a57240d7a5c4b7a34f756f97b70c6b7a98fd8f1"
+      },
+      "researchRecord": {
+        "requestedName": "INstantCity",
+        "title": "InstantCITY: Synthesising morphologically accurate geospatial data for urban form analysis, transfer, and quality control",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://github.com/ualsg/InstantCITY",
+          "https://github.com/ualsg/InstantCITY/blob/main/LICENSE.txt",
+          "https://doi.org/10.1016/j.isprsjprs.2022.11.005"
+        ],
+        "year": 2023,
+        "yearNote": "Article DOI/online date 2022; issue 2023",
+        "role": "Urban morphology synthesis and transfer",
+        "inputs": [
+          "Street-network tiles"
+        ],
+        "outputs": [
+          "Building footprint raster; vectorization/metrics workflow"
+        ],
+        "mechanism": "pix2pixHD-derived conditional image translation",
+        "artifactAvailability": {
+          "code": "PRESENT; archived 2024-05-11",
+          "data": "DECLARED_LINK_UNVERIFIED_MATCH; same Figshare DOI as GANmapper",
+          "weights": "DECLARED_LINK_UNVERIFIED_MATCH",
+          "licenses": {
+            "code": "README says MIT; LICENSE.txt contains BSD/NVIDIA/pix2pixHD notices",
+            "data": "UNKNOWN",
+            "weights": "UNKNOWN"
+          }
+        },
+        "hardware": "Python/PyTorch/geospatial environment declared; VRAM UNKNOWN",
+        "limitations": [
+          "Synthetic morphology cannot replace surveyed context",
+          "Specific checkpoint correspondence unverified"
+        ],
+        "decision": "RESEARCH",
+        "action": "Benchmark style transfer on a held-out São Paulo corpus with provenance and geometric repair records"
+      }
+    },
+    {
+      "id": "udgan",
+      "name": "UDGAN",
+      "requestedSpellings": [
+        "UDGAN"
+      ],
+      "title": "UDGAN: A new urban design inspiration approach driven by using generative adversarial networks",
+      "family": "urban",
+      "verification": "VERIFIED",
+      "summary": "Inspiração de desenho urbano por estilo e otimização morfológica.",
+      "decision": "RESEARCH",
+      "action": "Estudar métricas de morfologia e fronteira de Pareto; estilo não constitui obrigação legal.",
+      "sources": [
+        {
+          "url": "https://academic.oup.com/jcde/article/11/1/305/7603372",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://doi.org/10.1093/jcde/qwae014",
+          "title": "Fonte primária 2"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-urbano-3d.json",
+        "sha256": "12320f3a6b317262933a424b6a57240d7a5c4b7a34f756f97b70c6b7a98fd8f1"
+      },
+      "researchRecord": {
+        "requestedName": "UDGAN",
+        "title": "UDGAN: A new urban design inspiration approach driven by using generative adversarial networks",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://academic.oup.com/jcde/article/11/1/305/7603372",
+          "https://doi.org/10.1093/jcde/qwae014"
+        ],
+        "year": 2024,
+        "role": "Style-specific urban design inspiration and optimization",
+        "inputs": [
+          "Existing site mapping",
+          "Preferred designer urban scheme images"
+        ],
+        "outputs": [
+          "Semantic urban scheme raster",
+          "Morphological indicator comparisons"
+        ],
+        "mechanism": "Conditional GAN with multiobjective morphological optimization",
+        "artifactAvailability": {
+          "code": "NOT_VERIFIED",
+          "data": "20 design projects reported; reuse license UNKNOWN",
+          "weights": "NOT_VERIFIED",
+          "licenses": "UNKNOWN"
+        },
+        "hardware": "Paper reports RTX 3070 Ti and Azure D64ds_v4; production VRAM/latency UNKNOWN",
+        "limitations": [
+          "Single-designer style experiment",
+          "800 x 800 m territorial samples are not parcel-scale certification"
+        ],
+        "decision": "RESEARCH",
+        "action": "Adopt independent morphology scoring and Pareto comparison; do not adopt style bias as a legal constraint"
+      }
+    },
+    {
+      "id": "cain-gan",
+      "name": "CAIN-GAN",
+      "requestedSpellings": [
+        "CAIN-GAN"
+      ],
+      "title": "Automated site planning using CAIN-GAN model",
+      "family": "urban",
+      "verification": "VERIFIED",
+      "summary": "Implantação condicionada por contexto e orientação do usuário.",
+      "decision": "ADOPT_INTERFACE",
+      "action": "Criar contexto tipado, travas e avaliação separada, sem presumir detalhes internos não publicados.",
+      "sources": [
+        {
+          "url": "https://researchportal.hkust.edu.hk/en/publications/automated-site-planning-using-cain-gan-model/",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://doi.org/10.1016/j.autcon.2024.105286",
+          "title": "Fonte primária 2"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-urbano-3d.json",
+        "sha256": "12320f3a6b317262933a424b6a57240d7a5c4b7a34f756f97b70c6b7a98fd8f1"
+      },
+      "researchRecord": {
+        "requestedName": "CAIN-GAN",
+        "title": "Automated site planning using CAIN-GAN model",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://researchportal.hkust.edu.hk/en/publications/automated-site-planning-using-cain-gan-model/",
+          "https://doi.org/10.1016/j.autcon.2024.105286"
+        ],
+        "year": 2024,
+        "role": "Context-aware and user-guided site planning",
+        "inputs": [
+          "Urban context",
+          "User design guidance"
+        ],
+        "outputs": [
+          "Site planning proposals and urban sustainability assessment; exact format not inspected"
+        ],
+        "mechanism": "Context-aware generative adversarial framework; attention keyword verified",
+        "artifactAvailability": {
+          "code": "NOT_VERIFIED",
+          "data": "NOT_VERIFIED",
+          "weights": "NOT_VERIFIED",
+          "licenses": "UNKNOWN",
+          "fullText": "Institutional abstract inspected; detailed architecture not verified"
+        },
+        "hardware": "UNKNOWN",
+        "limitations": [
+          "NYC case is not São Paulo transfer evidence",
+          "Abstract does not disclose a reproducible BIM/geometry interface"
+        ],
+        "decision": "ADOPT_INTERFACE",
+        "action": "Create typed context, user locks and separate evaluation layers without inventing undisclosed architecture"
+      }
+    },
+    {
+      "id": "blockplanner",
+      "name": "BlockPlanner",
+      "requestedSpellings": [
+        "Block Planner"
+      ],
+      "title": "BlockPlanner: City Block Generation with Vectorized Graph Representation",
+      "family": "urban",
+      "verification": "VERIFIED",
+      "summary": "Representação vetorial hierárquica de quadras e lotes.",
+      "decision": "ADOPT_INTERFACE",
+      "action": "Adotar nós, fronteiras compartilhadas, usos e relações de união; conferir as partições com o solver autoral.",
+      "sources": [
+        {
+          "url": "https://city-super.github.io/blockplanner/",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Xu_BlockPlanner_City_Block_Generation_With_Vectorized_Graph_Representation_ICCV_2021_paper.pdf",
+          "title": "Fonte primária 2"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-urbano-3d.json",
+        "sha256": "12320f3a6b317262933a424b6a57240d7a5c4b7a34f756f97b70c6b7a98fd8f1"
+      },
+      "researchRecord": {
+        "requestedName": "BlockPlanner",
+        "title": "BlockPlanner: City Block Generation with Vectorized Graph Representation",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://city-super.github.io/blockplanner/",
+          "https://openaccess.thecvf.com/content/ICCV2021/papers/Xu_BlockPlanner_City_Block_Generation_With_Vectorized_Graph_Representation_ICCV_2021_paper.pdf"
+        ],
+        "year": 2021,
+        "role": "Vectorized block and land-lot generation",
+        "inputs": [
+          "Latent block representation"
+        ],
+        "outputs": [
+          "Land-lot geometry",
+          "Use and adjacency attributes"
+        ],
+        "mechanism": "VAE, two-tier graph/ring topology and iterative message passing",
+        "artifactAvailability": {
+          "code": "NOT_LINKED_ON_INSPECTED_PROJECT_PAGE",
+          "data": "Pilot dataset described; download NOT_VERIFIED",
+          "weights": "NOT_VERIFIED",
+          "licenses": "UNKNOWN"
+        },
+        "hardware": "UNKNOWN",
+        "limitations": [
+          "Training constraints are not a geometric validity certificate",
+          "Complex domains with holes need explicit adaptation"
+        ],
+        "decision": "ADOPT_INTERFACE",
+        "action": "Use hierarchical vector nodes, shared borders, uses and merge relations; validate resulting partitions with BARCH solver"
+      }
+    },
+    {
+      "id": "text-tocity",
+      "name": "Text-toCity",
+      "requestedSpellings": [
+        "Text-toCity"
+      ],
+      "title": "Text2City: One-Stage Text-Driven Urban Layout Regeneration",
+      "family": "urban",
+      "verification": "AMBIGUOUS",
+      "summary": "Provável correspondência com Text2City: regeneração conjunta de ruas e edifícios condicionada por texto.",
+      "decision": "ADOPT_INTERFACE",
+      "action": "Converter linguagem em programa e condições revisáveis; a correspondência entre os nomes permanece ambígua.",
+      "sources": [
+        {
+          "url": "https://ojs.aaai.org/index.php/AAAI/article/view/28257",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://github.com/LittleQBerry/Text2City",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://www.cs.cityu.edu.hk/~rynson/publications.html",
+          "title": "Fonte primária 3"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-urbano-3d.json",
+        "sha256": "12320f3a6b317262933a424b6a57240d7a5c4b7a34f756f97b70c6b7a98fd8f1"
+      },
+      "researchRecord": {
+        "requestedName": "Text-toCity",
+        "title": "Text2City: One-Stage Text-Driven Urban Layout Regeneration",
+        "matchStatus": "AMBIGUOUS",
+        "identityNote": "Probable requested alias; no separate exact Text-toCity publication verified",
+        "urls": [
+          "https://ojs.aaai.org/index.php/AAAI/article/view/28257",
+          "https://github.com/LittleQBerry/Text2City",
+          "https://www.cs.cityu.edu.hk/~rynson/publications.html"
+        ],
+        "year": 2024,
+        "role": "Text-conditioned joint road/building layout regeneration",
+        "inputs": [
+          "Textual urban layout description",
+          "Target region",
+          "Surrounding layout/function"
+        ],
+        "outputs": [
+          "Road/building layout rasters"
+        ],
+        "mechanism": "Text attribute extraction and joint conditioned DDPM with prior exchange",
+        "artifactAvailability": {
+          "code": "PRESENT",
+          "data": "Google Drive link declared; archive not inspected",
+          "weights": "Base Guided Diffusion checkpoint linked; trained urban checkpoint NOT_VERIFIED",
+          "licenses": "No project LICENSE visible in inspected root; data/weights UNKNOWN"
+        },
+        "hardware": "Python 3.8, PyTorch 1.12, OpenCV 4.6 declared; GPU/VRAM UNKNOWN",
+        "limitations": [
+          "Instructions reference train.py not listed in inspected root",
+          "Raster constraints do not certify constructible roads",
+          "Exact requested identity remains ambiguous"
+        ],
+        "decision": "ADOPT_INTERFACE",
+        "action": "Convert language into user-reviewable program/locks/access conditions; evaluate joint generation separately"
+      }
+    },
+    {
+      "id": "controlcity",
+      "name": "ControlCity",
+      "requestedSpellings": [
+        "ControlCity"
+      ],
+      "title": "ControlCity: A Multimodal Diffusion Model Based Approach for Accurate Geospatial Data Generation and Urban Morphology Analysis",
+      "family": "urban",
+      "verification": "VERIFIED",
+      "summary": "Síntese multimodal de morfologia urbana com condicionamento geográfico.",
+      "decision": "RESEARCH",
+      "action": "Estudar adaptador de propostas com origem rastreável e avaliar geometria local antes da adoção.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2409.17049",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://github.com/fangshuoz/ControlCity",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://github.com/fangshuoz/ControlCity/blob/main/LICENSE",
+          "title": "Fonte primária 3"
+        },
+        {
+          "url": "https://doi.org/10.1080/13658816.2026.2639026",
+          "title": "Fonte primária 4"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-urbano-3d.json",
+        "sha256": "12320f3a6b317262933a424b6a57240d7a5c4b7a34f756f97b70c6b7a98fd8f1"
+      },
+      "researchRecord": {
+        "requestedName": "ControlCity",
+        "title": "ControlCity: A Multimodal Diffusion Model Based Approach for Accurate Geospatial Data Generation and Urban Morphology Analysis",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://arxiv.org/abs/2409.17049",
+          "https://github.com/fangshuoz/ControlCity",
+          "https://github.com/fangshuoz/ControlCity/blob/main/LICENSE",
+          "https://doi.org/10.1080/13658816.2026.2639026"
+        ],
+        "year": 2024,
+        "yearNote": "2026 accepted article renamed From geometric mimicry to comprehensive generation: a context-informed multimodal diffusion model for urban morphology synthesis",
+        "role": "Multimodal urban morphology synthesis",
+        "inputs": [
+          "Road and land-use RGB tiles",
+          "Text",
+          "Geographic metadata"
+        ],
+        "outputs": [
+          "Building footprint raster",
+          "Thresholded binary raster"
+        ],
+        "mechanism": "SDXL, LoRA and modified OSM ControlNet",
+        "artifactAvailability": {
+          "code": "PRESENT; archived 2026-03-26",
+          "data": "Example files present; complete dataset NOT_VERIFIED",
+          "weights": "Figshare link declared in 2026; artifact not fetched",
+          "licenses": {
+            "code": "Apache-2.0 identified by repository metadata; LICENSE body fetch unavailable",
+            "baseModel": "Separate SDXL terms require inspection",
+            "data": "UNKNOWN",
+            "weights": "UNKNOWN"
+          }
+        },
+        "hardware": "CUDA float16 example; 25 inference steps; VRAM/latency UNKNOWN",
+        "limitations": [
+          "README requirements.txt absent from inspected root listing",
+          "Coordinate conditioning does not prove local GIS accuracy",
+          "No São Paulo validation performed"
+        ],
+        "decision": "RESEARCH",
+        "action": "Implement provenance-aware multimodal proposal adapter; benchmark local morphology before any geometric adoption"
+      }
+    },
+    {
+      "id": "buildiff",
+      "name": "BuilDiff",
+      "requestedSpellings": [
+        "BuilDiff"
+      ],
+      "title": "BuilDiff: 3D Building Shape Generation using Single-Image Conditional Point Cloud Diffusion Models",
+      "family": "urban",
+      "verification": "VERIFIED",
+      "summary": "Reconstrução de forma 3D de edifícios condicionada por imagem.",
+      "decision": "RESEARCH",
+      "action": "Pesquisar coberturas e contexto com registro métrico e incerteza; não alimentar quantitativos com forma presumida.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2309.00158",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://github.com/weiyao1996/BuilDiff",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://weiyao1996.github.io/files/publications/Poster_ICCVW_AI3DCC_18.pdf",
+          "title": "Fonte primária 3"
+        },
+        {
+          "url": "https://doi.org/10.17026/PT/CES73J",
+          "title": "Fonte primária 4"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-urbano-3d.json",
+        "sha256": "12320f3a6b317262933a424b6a57240d7a5c4b7a34f756f97b70c6b7a98fd8f1"
+      },
+      "researchRecord": {
+        "requestedName": "BuilDiff",
+        "title": "BuilDiff: 3D Building Shape Generation using Single-Image Conditional Point Cloud Diffusion Models",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://arxiv.org/abs/2309.00158",
+          "https://github.com/weiyao1996/BuilDiff",
+          "https://weiyao1996.github.io/files/publications/Poster_ICCVW_AI3DCC_18.pdf",
+          "https://doi.org/10.17026/PT/CES73J"
+        ],
+        "year": 2023,
+        "role": "Image-conditioned 3D building reconstruction",
+        "inputs": [
+          "Single general-view building image"
+        ],
+        "outputs": [
+          "Point clouds with building roof structure; CityGML-style LoD2 intent"
+        ],
+        "mechanism": "Base diffusion, upsampling diffusion and footprint regularization",
+        "artifactAvailability": {
+          "code": "Official GitHub only README/LICENSE; thesis DANS code files indexed 2025 but not inspected",
+          "data": "Paper datasets reported; DANS package content NOT_VERIFIED",
+          "weights": "NOT_VERIFIED",
+          "licenses": {
+            "gitHub": "MIT shown in repository metadata; sparse repository does not contain runnable implementation",
+            "deposit": "UNKNOWN"
+          }
+        },
+        "hardware": "UNKNOWN",
+        "limitations": [
+          "Point cloud is not BIM or parametric CAD",
+          "DANS code presence indexed but archive access failed",
+          "Single image cannot establish cadastral truth"
+        ],
+        "decision": "RESEARCH",
+        "action": "Investigate synthetic/contextual roof reconstruction with registration and uncertainty; exclude from quantities"
+      }
+    },
+    {
+      "id": "sketch-a-shape",
+      "name": "Sketch-a-shape",
+      "requestedSpellings": [
+        "Sketch-a-shape"
+      ],
+      "title": "Sketch-A-Shape: Zero-Shot Sketch-to-3D Shape Generation",
+      "family": "urban",
+      "verification": "VERIFIED",
+      "summary": "Geração conceitual de formas condicionada por esboços.",
+      "decision": "PARK",
+      "action": "Estudar interpretação em operações explícitas de massa, com confirmação da intenção do desenho.",
+      "sources": [
+        {
+          "url": "https://www.research.autodesk.com/publications/sketch-a-shape/",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://arxiv.org/abs/2307.03869",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://damassets.autodesk.net/content/dam/autodesk/www/pdfs/sketch-a-shape.pdf",
+          "title": "Fonte primária 3"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-urbano-3d.json",
+        "sha256": "12320f3a6b317262933a424b6a57240d7a5c4b7a34f756f97b70c6b7a98fd8f1"
+      },
+      "researchRecord": {
+        "requestedName": "Sketch-a-shape",
+        "title": "Sketch-A-Shape: Zero-Shot Sketch-to-3D Shape Generation",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://www.research.autodesk.com/publications/sketch-a-shape/",
+          "https://arxiv.org/abs/2307.03869",
+          "https://damassets.autodesk.net/content/dam/autodesk/www/pdfs/sketch-a-shape.pdf"
+        ],
+        "year": 2023,
+        "role": "Conceptual sketch-conditioned shape generation",
+        "inputs": [
+          "Sketch at inference",
+          "Rendered shape images at training"
+        ],
+        "outputs": [
+          "Voxel, implicit and CAD representation experiments"
+        ],
+        "mechanism": "Frozen visual features condition a shape generative model without paired sketch-shape training",
+        "artifactAvailability": {
+          "code": "NOT_VERIFIED",
+          "data": "NOT_VERIFIED",
+          "weights": "NOT_VERIFIED",
+          "licenses": "UNKNOWN"
+        },
+        "hardware": "UNKNOWN",
+        "limitations": [
+          "CAD representation experiments do not prove BIM semantics",
+          "PDF direct fetch exceeded browsing size; official abstract inspected"
+        ],
+        "decision": "PARK",
+        "action": "Prototype sketch-to-explicit-mass interpretation with human confirmation rather than integrate an unavailable model"
+      }
+    },
+    {
+      "id": "brepgen",
+      "name": "BrepGen",
+      "requestedSpellings": [
+        "BrepGen"
+      ],
+      "title": "BrepGen: A B-rep Generative Diffusion Model with Structured Latent Geometry",
+      "family": "urban",
+      "verification": "VERIFIED",
+      "summary": "Geração de sólidos CAD em representação de faces, arestas e vértices.",
+      "decision": "RESEARCH",
+      "action": "Manter laboratório geométrico pessoal separado, com validade do sólido, unidades e classificação semântica.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2401.15563",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://github.com/samxuxiang/BrepGen",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://github.com/samxuxiang/BrepGen/blob/main/LICENSE",
+          "title": "Fonte primária 3"
+        },
+        {
+          "url": "https://github.com/samxuxiang/BrepGen/blob/main/LICENSE_GPL",
+          "title": "Fonte primária 4"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-urbano-3d.json",
+        "sha256": "12320f3a6b317262933a424b6a57240d7a5c4b7a34f756f97b70c6b7a98fd8f1"
+      },
+      "researchRecord": {
+        "requestedName": "BrepGen",
+        "title": "BrepGen: A B-rep Generative Diffusion Model with Structured Latent Geometry",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://arxiv.org/abs/2401.15563",
+          "https://github.com/samxuxiang/BrepGen",
+          "https://github.com/samxuxiang/BrepGen/blob/main/LICENSE",
+          "https://github.com/samxuxiang/BrepGen/blob/main/LICENSE_GPL"
+        ],
+        "year": 2024,
+        "role": "CAD boundary-representation solid generation",
+        "inputs": [
+          "Hierarchical latent geometry; dataset-specific training"
+        ],
+        "outputs": [
+          "B-rep solids",
+          "STEP",
+          "STL"
+        ],
+        "mechanism": "Top-down diffusion over solid faces/edges/vertices and topology merging",
+        "artifactAvailability": {
+          "code": "PRESENT",
+          "data": "ABC/DeepCAD/Furniture links declared; archives not inspected",
+          "weights": "VAE/LDM Google Drive links declared; checkpoints not inspected",
+          "licenses": "Explicit non-commercial restriction on code/data/weights; research refers to GPLv3"
+        },
+        "hardware": "Tested Linux, Python 3.9, CUDA 11.8, PyTorch 2.2; pythonOCC/OCCWL; VRAM UNKNOWN",
+        "limitations": [
+          "No automatic IFC semantics/history",
+          "No complete building or Brazilian code compliance evidence",
+          "External corpus/checkpoint licenses need per-artifact verification"
+        ],
+        "decision": "RESEARCH",
+        "action": "Isolated personal CAD experiment with solid validity, units and semantic mapping gates"
+      }
+    },
+    {
+      "id": "cat3d",
+      "name": "CAT3D",
+      "requestedSpellings": [
+        "CAT3D"
+      ],
+      "title": "CAT3D: Create Anything in 3D with Multi-View Diffusion Models",
+      "family": "urban",
+      "verification": "VERIFIED",
+      "summary": "Reconstrução visual 3D com vistas geradas por difusão.",
+      "decision": "PARK",
+      "action": "Reservar à visualização; não promover aparência reconstruída a geometria de projeto ou BIM automaticamente.",
+      "sources": [
+        {
+          "url": "https://cat3d.github.io/",
+          "title": "Fonte primária 1"
+        },
+        {
+          "url": "https://arxiv.org/abs/2405.10314",
+          "title": "Fonte primária 2"
+        },
+        {
+          "url": "https://github.com/cat3d",
+          "title": "Fonte primária 3"
+        }
+      ],
+      "modelExecution": "NOT_INSTALLED",
+      "weightsExecuted": false,
+      "trainingExecuted": false,
+      "automaticDesignAdoption": false,
+      "researchSource": {
+        "file": "curadoria-urbano-3d.json",
+        "sha256": "12320f3a6b317262933a424b6a57240d7a5c4b7a34f756f97b70c6b7a98fd8f1"
+      },
+      "researchRecord": {
+        "requestedName": "CAT3D",
+        "title": "CAT3D: Create Anything in 3D with Multi-View Diffusion Models",
+        "matchStatus": "VERIFIED",
+        "urls": [
+          "https://cat3d.github.io/",
+          "https://arxiv.org/abs/2405.10314",
+          "https://github.com/cat3d"
+        ],
+        "year": 2024,
+        "role": "Multiview visual 3D reconstruction",
+        "inputs": [
+          "One or more images",
+          "Camera conditions"
+        ],
+        "outputs": [
+          "Generated multiview images",
+          "Neural reconstruction/Gaussian splat demonstrations"
+        ],
+        "mechanism": "Multiview diffusion coupled to 3D reconstruction",
+        "artifactAvailability": {
+          "code": "Only website repository verified, not model code",
+          "data": "NOT_VERIFIED",
+          "weights": "NOT_VERIFIED",
+          "licenses": "Model/data UNKNOWN; website is not a model release"
+        },
+        "hardware": "Author timing claims not reproduced; VRAM UNKNOWN",
+        "limitations": [
+          "Visual reconstruction is not a closed engineering solid",
+          "No BIM semantic or measured accuracy certificate"
+        ],
+        "decision": "PARK",
+        "action": "Keep optional visualization separated from design geometry; reject automatic quantity/BIM adoption"
+      }
+    }
+  ],
+  "counts": {
+    "total": 32,
+    "verification": {
+      "VERIFIED": 29,
+      "AMBIGUOUS": 2,
+      "UNVERIFIED": 1
+    },
+    "decisions": {
+      "RESEARCH": 16,
+      "ADOPT_INTERFACE": 9,
+      "PARK": 5,
+      "REJECT_FOR_TASK": 2
+    }
+  },
+  "sources": [
+    {
+      "file": "curadoria-planos-bim.json",
+      "sha256": "aa082f40b0d501fbded70fef7d0f331b0430476593f0adbd31539ac67e4afd05",
+      "records": 11
+    },
+    {
+      "file": "curadoria-estrutura-desempenho.json",
+      "sha256": "6bf8b1dc516f5f29284848d794ea7bfa209d449847d0aee157419c8e675ed663",
+      "records": 8
+    },
+    {
+      "file": "curadoria-urbano-3d.json",
+      "sha256": "12320f3a6b317262933a424b6a57240d7a5c4b7a34f756f97b70c6b7a98fd8f1",
+      "records": 13
+    }
+  ],
+  "integrationStatus": "AUTHORIAL_CONTRACTS_IMPLEMENTED_MODELS_NOT_EXECUTED",
+  "notDone": [
+    "Neural inference and training",
+    "Physical/structural solver execution",
+    "Finch/TestFit performance parity validation",
+    "Universal regulatory approval"
+  ],
+  "currentContracts": [
+    "barch-generative-condition/1",
+    "barch-human-design-feedback/1",
+    "barch-technical-study-package/1",
+    "barch-feasible-pareto/1"
+  ]
+}

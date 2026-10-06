@@ -1,0 +1,1207 @@
+{
+  "schemaVersion": 1,
+  "mode": "public-readonly",
+  "generatedAt": "2026-10-02T20:07:38.748Z",
+  "defaultSlug": "salseiros-itajai-matricula-77931",
+  "studies": [
+    {
+      "slug": "salseiros-itajai-matricula-77931",
+      "publicDocuments": 14,
+      "presets": 0,
+      "gisFiles": 27
+    },
+    {
+      "slug": "talma-tatuape-lote-0003",
+      "publicDocuments": 0,
+      "presets": 3,
+      "gisFiles": 9
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "publicDocuments": 11,
+      "presets": 0,
+      "gisFiles": 17
+    },
+    {
+      "slug": "penha-paisagem-conectada",
+      "publicDocuments": 3,
+      "presets": 0,
+      "gisFiles": 12
+    }
+  ],
+  "files": [
+    {
+      "path": "/terreno/advisory.css",
+      "bytes": 6385,
+      "sha256": "762a5cd9772e3b8abbac66262059b44b0280e0c6e30ef1b6cce0d7907cb646f3"
+    },
+    {
+      "path": "/terreno/advisory.js",
+      "bytes": 24938,
+      "sha256": "41c5d097ad9271b7ef5f3fefb0e68fa6d1af7bce06a8a2e27fe794f586d29673"
+    },
+    {
+      "path": "/terreno/analysis-basis.js",
+      "bytes": 3576,
+      "sha256": "25d4c21ee200df3df20a458f079a26b04d6c929c96fecf6d71cfbe2a712e8fab"
+    },
+    {
+      "path": "/terreno/analysis-packet.mjs",
+      "bytes": 24340,
+      "sha256": "ea0ee4778c0c29aa15ae6146a5598b9a6fdbf17c2bfc7121011b936ac047059d"
+    },
+    {
+      "path": "/terreno/analysis-report.mjs",
+      "bytes": 20134,
+      "sha256": "61c7147d92e9748853168ee98bfed2006b5aa63af3b04c0592818d0267ea5380"
+    },
+    {
+      "path": "/terreno/app.js",
+      "bytes": 124015,
+      "sha256": "801ba32193f8da370fdcce6ac0038ae6afb1bfbeb4f161c41bbc72f6d1b65c6d"
+    },
+    {
+      "path": "/terreno/assessment.js",
+      "bytes": 4400,
+      "sha256": "d5cf0a530823e61bb6faf1c984a10437e68537324c497a88e64cc731264d138a"
+    },
+    {
+      "path": "/terreno/assets/barch.svg",
+      "bytes": 7132,
+      "sha256": "a3a3558fbb985a30501974b915c8edf8e18b0187fe824b1df501bb0b9786a8e2"
+    },
+    {
+      "path": "/terreno/assets/inter.woff2",
+      "bytes": 48432,
+      "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4"
+    },
+    {
+      "path": "/terreno/assets/report/barch-wordmark.png",
+      "bytes": 31914,
+      "sha256": "387817c44e198264f0b3f6e73d761dc30924d08a7e4e4c3940525e3488f59756"
+    },
+    {
+      "path": "/terreno/assets/report/capacete.png",
+      "bytes": 1528,
+      "sha256": "249cf510124cf147fa0e100ff1e1c4fe822110195a8ca95f2b10f256b1a5b33e"
+    },
+    {
+      "path": "/terreno/assets/report/capacete.svg",
+      "bytes": 277,
+      "sha256": "2fa152e2ee7d15d997e6e852b0b500bdc945152ec0176ee493e57870ee0997ac"
+    },
+    {
+      "path": "/terreno/assets/report/documento.png",
+      "bytes": 737,
+      "sha256": "527b800b6e934d337dc19549ecd5e92f2f49d2f89d0acdadd8b8c80253e3e31c"
+    },
+    {
+      "path": "/terreno/assets/report/documento.svg",
+      "bytes": 283,
+      "sha256": "9cc60d8f45d1af55a28bd19bc2645bbe74522981eb335382b7459a869f8cb738"
+    },
+    {
+      "path": "/terreno/assets/report/graficobarra.png",
+      "bytes": 506,
+      "sha256": "30e66e8ea9708acec46507205d2f5b5bf229aac875f3a0f2c71be58ce751efcc"
+    },
+    {
+      "path": "/terreno/assets/report/graficobarra.svg",
+      "bytes": 232,
+      "sha256": "a91251936d39a7135b3c4afd70e026e17920cb5f90f8c9ae333dd817fd6b9a86"
+    },
+    {
+      "path": "/terreno/assets/report/inter-LICENSE.txt",
+      "bytes": 4380,
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a"
+    },
+    {
+      "path": "/terreno/assets/report/inter-regular.ttf",
+      "bytes": 66392,
+      "sha256": "2e0f9f822aeaff76a47552a8b7677b03d1d50dab0f8db3f259b6fc99638de864"
+    },
+    {
+      "path": "/terreno/assets/report/inter-semibold.ttf",
+      "bytes": 66560,
+      "sha256": "38c5d937790364178a67b6aa2fae55f82a41570df34123fe30f6a226fa04b141"
+    },
+    {
+      "path": "/terreno/assets/report/local.png",
+      "bytes": 2280,
+      "sha256": "61f059ac82a330c840ddc5e95e3ceadcacc299fe8d5ba7d2eb798746edc099bc"
+    },
+    {
+      "path": "/terreno/assets/report/local.svg",
+      "bytes": 278,
+      "sha256": "5edaa927e682246428479eb14567422362654a3d960587fb562091764cd29bdc"
+    },
+    {
+      "path": "/terreno/assets/report/manifest.json",
+      "bytes": 3357,
+      "sha256": "f368cc45d4cbdf9a4ca8102ccf10d146516d246cb14b4dab748d0a792db52304"
+    },
+    {
+      "path": "/terreno/assets/report/obra.png",
+      "bytes": 921,
+      "sha256": "d2af85e97299f449d50b5b5e8c1d72de0d22f89f282753175d51e120352d92d5"
+    },
+    {
+      "path": "/terreno/assets/report/obra.svg",
+      "bytes": 273,
+      "sha256": "a43970ba5914e364fc93242c50c304ba6c2484f7259d6bdb5b122123264582f2"
+    },
+    {
+      "path": "/terreno/assets/report/tarefa.png",
+      "bytes": 1509,
+      "sha256": "180955688967ce1e26801be018f35aa38b0aa894e8491ed72d8603abd884004e"
+    },
+    {
+      "path": "/terreno/assets/report/tarefa.svg",
+      "bytes": 247,
+      "sha256": "403a55cb864e9c94c0e4787e072ac609d612ec1191f710167013a98b949c636d"
+    },
+    {
+      "path": "/terreno/assets/talma-geometry-scene.json",
+      "bytes": 66598,
+      "sha256": "9ef617f37460c65b8972e20e3053ef399a45c0df127d3060e15e750f9aad9f50"
+    },
+    {
+      "path": "/terreno/assets/talma-ortofoto-2020.jpg",
+      "bytes": 851658,
+      "sha256": "c5c2070b8255cb485390a7444adb6e13ae362a27cfc2684fb8bef0181623c125"
+    },
+    {
+      "path": "/terreno/assets/vendor/apexcharts-3.54.1.min.js",
+      "bytes": 539664,
+      "sha256": "56fb1229fe77c8cc66f31ea125bea9ed37a3840c97b66a23e44c851cff717b2b"
+    },
+    {
+      "path": "/terreno/assets/vendor/fontkit-LICENSE.txt",
+      "bytes": 1380,
+      "sha256": "71e24b8135af7ce9327ce1742133641dc21634b176196e801b3e07e4a5e82fd7"
+    },
+    {
+      "path": "/terreno/assets/vendor/fontkit.esm.min.js",
+      "bytes": 758394,
+      "sha256": "119344ef3666fb051852053b29bc7cbd3f51f17a2ea616346bc12c04c4255f83"
+    },
+    {
+      "path": "/terreno/assets/vendor/LICENSE-apexcharts.txt",
+      "bytes": 1076,
+      "sha256": "4db98d106f5a157d60b24d49a4852156542ef58e08f1034e8a3b6d63e53e2241"
+    },
+    {
+      "path": "/terreno/assets/vendor/LICENSE-maplibre.txt",
+      "bytes": 5984,
+      "sha256": "ee5fc05a0677eaf69601d2c7db0d9ecd6cc27c3abc1d0733bc9ed34707cf8ef2"
+    },
+    {
+      "path": "/terreno/assets/vendor/LICENSE-three.txt",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    {
+      "path": "/terreno/assets/vendor/maplibre-gl-shared.mjs",
+      "bytes": 493279,
+      "sha256": "81231fac872ad05c40613d6ea07e866f6d8f818a9a5922c810bf0364d461e301"
+    },
+    {
+      "path": "/terreno/assets/vendor/maplibre-gl-worker.mjs",
+      "bytes": 19002,
+      "sha256": "49989cc5f1e0b8521463d735c38a294b9f70c2f959d6a092da422de9a4e23eba"
+    },
+    {
+      "path": "/terreno/assets/vendor/maplibre-gl.css",
+      "bytes": 83195,
+      "sha256": "8e2dbbab312dc57656fbb76e9fa5308c75c9d7c7ba5808a7d55bcdb64cc813fa"
+    },
+    {
+      "path": "/terreno/assets/vendor/maplibre-gl.mjs",
+      "bytes": 584162,
+      "sha256": "b003592a7634644e0b6c4f2ea2a58ac5eb600e3af1bc13f986de5421b54c9e7e"
+    },
+    {
+      "path": "/terreno/assets/vendor/OrbitControls.js",
+      "bytes": 40767,
+      "sha256": "30386f7141d5ce5d5e0a3ab643e4eb16265f4564466108105ce449857f62fdda"
+    },
+    {
+      "path": "/terreno/assets/vendor/pdf-lib-LICENSE.txt",
+      "bytes": 1070,
+      "sha256": "f2c9fc00fdb66eb99ac156ba52d734af66d8d309f65753ae809ad34ee2883bcb"
+    },
+    {
+      "path": "/terreno/assets/vendor/pdf-lib.esm.min.js",
+      "bytes": 523417,
+      "sha256": "72c052d97b4d5d9fa6cdbdcb7ad709f03d4ddb1122390cb3afeba4d88651d969"
+    },
+    {
+      "path": "/terreno/assets/vendor/three.core.js",
+      "bytes": 1458113,
+      "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6"
+    },
+    {
+      "path": "/terreno/assets/vendor/three.module.js",
+      "bytes": 662772,
+      "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea"
+    },
+    {
+      "path": "/terreno/climate.js",
+      "bytes": 5753,
+      "sha256": "7271b68e76bba40f30a05fb7d184b2ee36d9fe30f34302951e30e9a74a1ec5b9"
+    },
+    {
+      "path": "/terreno/concept-intake-catalog.json",
+      "bytes": 31026,
+      "sha256": "e030c6e3625be1179d37b81a839075e9336812e9e98cb114ed85bb37e6275869"
+    },
+    {
+      "path": "/terreno/concept-intake-catalog.mjs",
+      "bytes": 31150,
+      "sha256": "43cd73efa5f37ee4537046f3e7acb2934b937e0de1d353724f9bdc097db04b85"
+    },
+    {
+      "path": "/terreno/concept-intake-model.mjs",
+      "bytes": 27187,
+      "sha256": "d9486fa55fc4995639423c09a09f44737cc9436ab4b06fceabf0f18018cdd92b"
+    },
+    {
+      "path": "/terreno/concept-intake.js",
+      "bytes": 39469,
+      "sha256": "c58eb6e0cfad9c4b0c2464e54cfcb071f3a9e27430af1d625df7b7b7b06f9cc1"
+    },
+    {
+      "path": "/terreno/context.js",
+      "bytes": 914,
+      "sha256": "0c1e0e5a58763b58246593b8149a4169ab7533931cdcbba323f081f0c3107e9a"
+    },
+    {
+      "path": "/terreno/cross-audit-view.mjs",
+      "bytes": 5626,
+      "sha256": "b5c517f60f4247151e5691ce3a7a04d7bb23440b9dbf0885f1634b4c47f45451"
+    },
+    {
+      "path": "/terreno/dashboard-pdf.js",
+      "bytes": 12755,
+      "sha256": "e39b0ba967d54db455df671921d6ac4c3c9ba126550d6627e01633d83ae8c3d5"
+    },
+    {
+      "path": "/terreno/dashboard-summary.css",
+      "bytes": 3680,
+      "sha256": "82e802aeb138ecfb0e361cbd5a01cee1269b5f8085c4bc20f8885589b0f8fe9c"
+    },
+    {
+      "path": "/terreno/dashboard-summary.js",
+      "bytes": 11942,
+      "sha256": "bcec1cd737aabea915003874eff075e78fa8a10c07e7ae0ddecb796b75acc890"
+    },
+    {
+      "path": "/terreno/diagnosis.js",
+      "bytes": 4561,
+      "sha256": "74b85fb93d0db7a94211bae42d5366377c2c260f9f022a1567caf6b98193c488"
+    },
+    {
+      "path": "/terreno/dossier-protocol.js",
+      "bytes": 9044,
+      "sha256": "aecb073cf06724e753a0500a4a9d3de151fd301127daeb8d110d233ba311506b"
+    },
+    {
+      "path": "/terreno/economics.css",
+      "bytes": 5232,
+      "sha256": "51e4a080b6e74b587caafe42efd758a4738cdfd7b189ef69de483079f1b93f97"
+    },
+    {
+      "path": "/terreno/economics.js",
+      "bytes": 32762,
+      "sha256": "38e62acd2826c677929ac0966ff794801a3266c995bd8ca2c5e67d4bdc9884e7"
+    },
+    {
+      "path": "/terreno/exploratory-proposal.js",
+      "bytes": 3851,
+      "sha256": "2a436be4fc4bc0e5d2558c2369168d7fb0d50145ae86c32f662f5e45c9032070"
+    },
+    {
+      "path": "/terreno/field-pdf.js",
+      "bytes": 4701,
+      "sha256": "7bc7c123b2e8795709466ab4a4e6addbaf4a25e89d33dc0e5bae78c7937fb0c5"
+    },
+    {
+      "path": "/terreno/field-plan.js",
+      "bytes": 5189,
+      "sha256": "d4fcda1c8c2aa01d11631a14063204891ce25d9a33a543b43e0f4e781ed315d4"
+    },
+    {
+      "path": "/terreno/field-workbench.js",
+      "bytes": 18455,
+      "sha256": "a9af6837254a1b03938aecb0d59941788538166b51491fdc6c88178bf551c377"
+    },
+    {
+      "path": "/terreno/field.css",
+      "bytes": 2196,
+      "sha256": "2cc906444ed4252caded743b707ce037459d7569ab91cfe7e3cd9ee2bf7bbe3e"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/documentos/2023-12-21-penha-lc167-itbi-extrato-dom-4413.pdf",
+      "bytes": 159630,
+      "sha256": "1e9a9f5b482c0d50e364ec0d071da6e1f22ab6e46a0af71ba707fd44f00c7c9e"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/documentos/2026-10-02-lc146-2021-foco.pdf",
+      "bytes": 462566,
+      "sha256": "49725714fa60ed4c30df56ff19dd9d04fb5359738810dc127e8ef64dadf281d9"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/documentos/2026-10-02-lc172-2024-foco.pdf",
+      "bytes": 7264019,
+      "sha256": "38809220af331ea37a82bf2399907d9bff3c4119dad7945996c7cf4993f758ea"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/app-cartografica.geojson",
+      "bytes": 304742,
+      "sha256": "e2423a834476ff0658b9015cd9865bf85bd82872fa88c4e40742e074b56c95aa"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/atlas-base.geojson",
+      "bytes": 2017,
+      "sha256": "1903779022d4aa91bf047db294e0223c5fceb807f65a92b092f5b9da0f7bccae"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/hidrografia-eixo-legado.geojson",
+      "bytes": 790,
+      "sha256": "9311c1c5a8065ebcf62cd44e9613b93dd9f977c75043b708a48817396456c14c"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/ibge-municipio.geojson",
+      "bytes": 2982,
+      "sha256": "80a286d54e9aa3cf1b3c7e1d440766b1a03603f951b1d3b95647d13717dc0ee1"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/inundacao.geojson",
+      "bytes": 32574,
+      "sha256": "6ae8b5ce16aa712c6bbfa41ada9ffe0fb1cb32c3a18ff5244d0db07672660a43"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/mineracao.geojson",
+      "bytes": 2304,
+      "sha256": "dfaeb600cbf63354fe2e546c21812bd62e374ed4291c01d504d964b00b7ab643"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/movimentos.geojson",
+      "bytes": 10378,
+      "sha256": "7a9bbb7be3cd44b1809bcf394d5a6343d444708d63abbdacd639b5d0f814f1b9"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/parcel.geojson",
+      "bytes": 1882,
+      "sha256": "7fe3e0b695e529d97dafe4ac280ff68d57ba3156a350c992766e8b412ce2fa13"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/solos-restinga.geojson",
+      "bytes": 1347,
+      "sha256": "2688b30c40d342541e5f1027c24d7a7283fd394f5e4f0a77c85f274eb6600355"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/study-intersection.geojson",
+      "bytes": 1857,
+      "sha256": "aaf470c808ecec12d1429895d2dc4b0e1ee1c7ae37f80e642cc789a157ba39df"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/study-r04.geojson",
+      "bytes": 1381,
+      "sha256": "1869a5d8c6259c99c91be48940ab1854276789d00ee94dc0aaffc5c46da86a48"
+    },
+    {
+      "path": "/terreno/files/penha-paisagem-conectada/gis/zoneamento.geojson",
+      "bytes": 173997,
+      "sha256": "3d0634815f6316ccfe35c559fc4aaa983dd2f664a7c11b04f15bae49c5a43d5d"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/documentos/2007-03-07-lei4720-2007-jose-montagna-recorte-3cc12206.pdf",
+      "bytes": 221104,
+      "sha256": "3cc12206a71274f44d5bc45f304f2e83ab6c43a48e25a123592dd9e5092613ec"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/documentos/2015-01-01-sgb-carta-itajai-2015-e1272bf9.pdf",
+      "bytes": 13971656,
+      "sha256": "e1272bf9071caae40f3ebfb4cb80a604126a30ceae6a941b830bd2d2d171b4c1"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/documentos/2024-03-15-lc449-2024-recorte-normativo-d9fb8ab9.pdf",
+      "bytes": 15973381,
+      "sha256": "d9fb8ab9d75bcd1aaa58e45094ccf8289fc784cd21bdbec968daaf69cfd49d42"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/documentos/2024-08-21-lc462-2024-recorte-pagina156-92d281a6.pdf",
+      "bytes": 145879,
+      "sha256": "92d281a6e50437b1972f96bce7a04082504a1263a18affeafe8eb3c364abc627"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/documentos/2024-09-16-in-72-2024-f48b8351.pdf",
+      "bytes": 493279,
+      "sha256": "f48b8351415dcc531f31b49296c2ca74f44b3177959c60e488705d7a2c2aceac"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/documentos/2026-01-06-lc497-recorte-ef1aa642f3cd.pdf",
+      "bytes": 6927959,
+      "sha256": "ef1aa642f3cda41d59b890994d2fa7f28ee9c1b1528393f3eadf46b7b713ef7a"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/documentos/2026-05-20-lc513-recorte-a3013c1d0ea6.pdf",
+      "bytes": 674591,
+      "sha256": "a3013c1d0ea6c89d061bdc3de4e0aa07a142cf9f98865b93ce2660c2b5d80675"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/documentos/2026-09-29-extrato-barch-consulta-publica-cadastral-urbanistica-7ee04249.pdf",
+      "bytes": 137094,
+      "sha256": "7ee04249ec9f58db1bd498ba92c92ab089d1d0ca188d2c77cfa46d79d71699a4"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/documentos/2026-09-29-in-94-2026-c956523e.pdf",
+      "bytes": 410679,
+      "sha256": "c956523eb4fd515b26e293d4394880507c8dc518bcdfb830a35f39c7c36dabde"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/documentos/2026-09-29-in-97-2026-59f3d40e.pdf",
+      "bytes": 416624,
+      "sha256": "59f3d40e46981e22e78866ddf2c13070792c6d9e830af2f7a45c6512c21a760b"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/documentos/2026-09-29-spu-consulta-dominio-2cb423d9.pdf",
+      "bytes": 728293,
+      "sha256": "2cb423d9bde539e50bbc62923b3c093d8db0b90b7a9a8b450514f6101f69cb00"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/documentos/2026-09-30-ima-dt03-original-6e53f7f89802.pdf",
+      "bytes": 143407,
+      "sha256": "6e53f7f89802c897446dec61a9dd42455ae35020dfcad3ee3fd09449e6e9feaa"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/documentos/2026-09-30-inis117-original-bdfdf0e67f04.pdf",
+      "bytes": 684464,
+      "sha256": "bdfdf0e67f041964c540cd9f8d2ab860d20333ba79c159faf711ce44205f2181"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/documentos/2026-09-30-inis119-original-6a51838fbf03.pdf",
+      "bytes": 4928335,
+      "sha256": "6a51838fbf037826cffa317c288b20b7ad4454a255b1b333b1e7cc54668bd035"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/app-hidrografia-ima.geojson",
+      "bytes": 59098,
+      "sha256": "d33bb030a4b6b323e1cdf8579a823cb355a325ade65ec5eda6caed0d941e995e"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/app-municipal-ocupacao-contexto.geojson",
+      "bytes": 6966,
+      "sha256": "35098ef76200b565e0f9bcde8dbda9b702dcf3a772dfe3791c672ea22e232120"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/censo2010.geojson",
+      "bytes": 79457,
+      "sha256": "480e8be174a9c9190d51b1343b7c2927c5f21683c291a5bc8409c00b43e47989"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/cheia-1983.geojson",
+      "bytes": 2115,
+      "sha256": "733a33b190a2c65193bc3a5fe9e7089a608703c933376d0db3ae0d606bcc9cf1"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/cheia-1984.geojson",
+      "bytes": 5115,
+      "sha256": "ba23339acd55ad17c240b048276b7438e34b2ed7a3c7d77adcf0cb91a1f8dd92"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/cheia-2008.geojson",
+      "bytes": 8534,
+      "sha256": "f6957d71f6a0fc9c00d4f844650a710bd032cc01e4fd1cb0c992a7208431c2e6"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/cheia-2011.geojson",
+      "bytes": 5403,
+      "sha256": "13433d0189b8ed6a6df0cdde78ed9555e98b12d22b14f55419225a7d5fff9a87"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/curvas-nivel.geojson",
+      "bytes": 800757,
+      "sha256": "a8d09ce54fbd5cae0d4fbfc73a1d45df2416d6f819346b26b93f590821ea176d"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/drenagem.geojson",
+      "bytes": 40727,
+      "sha256": "8438f59e2d6571c17306006c9f0c56f83eaf22384d268aa95aae15d051c87ee8"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/ibge-municipio.geojson",
+      "bytes": 6234,
+      "sha256": "ccf1584f98b14ee9942682aa3063f5cef10464743f8bdfdb7c3090a2740f37b7"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/ibge-setores-2022.geojson",
+      "bytes": 31116,
+      "sha256": "87ce3795f2fc476baff614f66615bfcaed039f913f664f38249dd14a46f4a8f9"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/massas-agua.geojson",
+      "bytes": 31102,
+      "sha256": "99faf4a475715e4926c8ad70727d9291236f0e53cdaf239f86f00a2e2555bb64"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/ocupacao-config.json",
+      "bytes": 6735,
+      "sha256": "a390d20f054a0c0e6b097203350cab7b6ac3a4f5917ef169739eda64c3615aa1"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/ocupacao-galpao-integrado-solo.geojson",
+      "bytes": 25938,
+      "sha256": "9da48c195cfbaf88150b625010a9da090a9993066f227e6a6ac4451897c00bce"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/ocupacao-galpao-integrado.geojson",
+      "bytes": 4147,
+      "sha256": "d8e277ede8a65905f846dc385ff86ddd14881dfbbdceadaa888ac7e72a18baa6"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/ocupacao-modulos-em-etapas-solo.geojson",
+      "bytes": 28402,
+      "sha256": "baa00377a38b843e9d865c0cea000a0805a549100423f646a05874b6d4d8170e"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/ocupacao-modulos-em-etapas.geojson",
+      "bytes": 6257,
+      "sha256": "bcc6e2e467abb7471ab670a018db2193fab7164ef57ffb9c887c847c0b0ad674"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/ocupacao-patio-operacional-solo.geojson",
+      "bytes": 25951,
+      "sha256": "e40b924faaffa255f179841bc1bfc54551f14e49320f929ba41f649b55620c32"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/ocupacao-patio-operacional.geojson",
+      "bytes": 4156,
+      "sha256": "b3dede60cba7a43a4c510c102a3f10aa6d5e8cfc5ac16d9ba3b72a8fdafea912"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/ocupacao-recibo.json",
+      "bytes": 10062,
+      "sha256": "6749f81de0043ba5502466a4ef15e992ef2f7ba86ff658973c020a18b1c529e7"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/parcela-municipal.geojson",
+      "bytes": 831,
+      "sha256": "46ae8311b9028094ab80eeadb8e4595fd38d0a792eca24473d5868c53c937d11"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/suscetibilidade-inundacao.geojson",
+      "bytes": 453537,
+      "sha256": "6de20daea3e19958a3672ff4c99f16b57a7eb851c3d847bd0dc7a298cdb7e189"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/valas.geojson",
+      "bytes": 150624,
+      "sha256": "801553cbdb245a4956d0a02e13b4a5498221e517359819b8614a2867855ba716"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/vegetacao.geojson",
+      "bytes": 1791099,
+      "sha256": "f7130bdc555bf402f7bbe1ec3f0b568d8c25cb9bbd4b295c9c05a1b5f9d02354"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/viario.geojson",
+      "bytes": 898,
+      "sha256": "251f2294c84ef962f16b01c559598681142f461897219d07713e08ee7bdbfd2d"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/vias-estruturantes.geojson",
+      "bytes": 3985,
+      "sha256": "b0c0c93a4cd337c2d241a59649e35a9e073e4882adfa3a0ad8c741b18d703c58"
+    },
+    {
+      "path": "/terreno/files/salseiros-itajai-matricula-77931/gis/zoneamento.geojson",
+      "bytes": 35795,
+      "sha256": "a40b31de9eabdc07932cfb373026e2c0bc754cd018a6ea16c4382265a3dc42a0"
+    },
+    {
+      "path": "/terreno/files/talma-tatuape-lote-0003/gis/drenagem.geojson",
+      "bytes": 24433,
+      "sha256": "13db0ce5c288d248680a6ef6bf015f9282b6d3d9f3ee6a319e0490d5804268b6"
+    },
+    {
+      "path": "/terreno/files/talma-tatuape-lote-0003/gis/envelope.geojson",
+      "bytes": 5539,
+      "sha256": "9155f24f1b7ccfcc5867ffbee19c5c0b644cd322b0d6c35702b50b4cf9df1a31"
+    },
+    {
+      "path": "/terreno/files/talma-tatuape-lote-0003/gis/geotecnia.geojson",
+      "bytes": 173722,
+      "sha256": "fcc031f6dedb20d65a95925069e60e190e47d750de8ddbb8432e22e378a0e594"
+    },
+    {
+      "path": "/terreno/files/talma-tatuape-lote-0003/gis/ibge-setores-2022.geojson",
+      "bytes": 137370,
+      "sha256": "829767d477310a9dc888b461dd1a1f0fd09b5482c34f9306e1cdb2e0c8c765aa"
+    },
+    {
+      "path": "/terreno/files/talma-tatuape-lote-0003/gis/inundacao-pdmat.geojson",
+      "bytes": 143352,
+      "sha256": "9fc27514f0dc399665be519d60efd5465619fd04a0a7846ec185cab38c68ec6f"
+    },
+    {
+      "path": "/terreno/files/talma-tatuape-lote-0003/gis/parcel.geojson",
+      "bytes": 4306,
+      "sha256": "610816b47b7ca0c329073fc0e75cc205c23e7258a95d7bd61b83c5bdbac5b802"
+    },
+    {
+      "path": "/terreno/files/talma-tatuape-lote-0003/gis/viario.geojson",
+      "bytes": 48564,
+      "sha256": "f0188e990c789d5a3ef3f52f69949b0300e1dd224eec82205a84f3bccee5a6d9"
+    },
+    {
+      "path": "/terreno/files/talma-tatuape-lote-0003/gis/volumes.geojson",
+      "bytes": 2623,
+      "sha256": "78ac188b41ab4033751b3ed9215e3414ce38fc9ced329078d3c80595f775a201"
+    },
+    {
+      "path": "/terreno/files/talma-tatuape-lote-0003/gis/zoneamento.geojson",
+      "bytes": 262919,
+      "sha256": "c97443626d39d6a983c691360391fd2ea7bfedbc702a4942d2c8f137c80ac7ee"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-dec157-2023-pedra-historica-c7042903.pdf",
+      "bytes": 235799,
+      "sha256": "c70429036af9fb78c52026dd66560a0f1ec15e8d53dcfabdee7f861ed7555161"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-dec170-2024-pedra-historica-1038af01.pdf",
+      "bytes": 221440,
+      "sha256": "1038af014837c9070a5f127d7cf353409b52efc9664d2e9d7b874acdbd725508"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-dec182-2024-e3b486f0.pdf",
+      "bytes": 142190,
+      "sha256": "e3b486f05037257fb19240640467eb9247ce478a437c6bd2d0ba4404f33b5abe"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-lc128-00-69dfd7ff.pdf",
+      "bytes": 1157029,
+      "sha256": "69dfd7ff2d1e0604f31966adc83a9699052f7fef0ca769f32568621586aa453a"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-lc128-10-51dbc5a0.pdf",
+      "bytes": 9270364,
+      "sha256": "51dbc5a0b6a0d3290bdb3e9c44c7c191da3ef8b324d048f9340dd6d6d29de3c8"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-lc130-2023-146481e2.pdf",
+      "bytes": 137662,
+      "sha256": "146481e2e45e5db6b202250724f39fb315c0c2c443fa30aebaf899105c312b5f"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-lc133-00-8d63ce13.pdf",
+      "bytes": 10699465,
+      "sha256": "8d63ce134fea27819df5a49882c5b9d7a03e22aeff5a109d4700ab5a1757616a"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-lc134-2024-8f1aa8a3.pdf",
+      "bytes": 531681,
+      "sha256": "8f1aa8a325f0cdb7a66845fa40bc6204725babd9b51be2ab7e274c70ab370302"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-lc135-2024-7625553d.pdf",
+      "bytes": 231665,
+      "sha256": "7625553dd45af8877d827d691d574d4de78f61bc7803d541b5de52c8db6645c8"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-mapa-zoneamento-palhano-p14-0054c720.pdf",
+      "bytes": 836169,
+      "sha256": "0054c720ec477e4044f86e13be5c4df68b43d477578f8d4a0974133eb8889ae2"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/documentos/2026-09-29-sgb-brumadinho-2023-ba2da632.pdf",
+      "bytes": 54119984,
+      "sha256": "ba2da632bb1b26b660eb4c6455f9cf6242fc905bd3f8fa763b30bf74177d1a40"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/ambiente.geojson",
+      "bytes": 61675,
+      "sha256": "0a4949d2768bd6dd19434480b54e596fc2212f5beaa293a9299af2fd74c643dc"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/censo2022.geojson",
+      "bytes": 213818,
+      "sha256": "c1ae5b89def3ad351795dd0506f6d29e01275234c7d48d09d7ee7593fc1e51ae"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/curvas-nivel.geojson",
+      "bytes": 27745,
+      "sha256": "eead8af5d59722f7c907e4439eafadc4d8809cce6929b90fdf721724462aa68b"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/drenagem.geojson",
+      "bytes": 23348,
+      "sha256": "1d46e871b18d8e0ac7e04a338a315065aae0b94a799fdd51a62776ee18a87904"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/geologia.geojson",
+      "bytes": 7579,
+      "sha256": "13fd9c78681f0b7c645abb8d5b613f1f88d85f8ad555616c1bbd9c05edf6b606"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/geotecnia.geojson",
+      "bytes": 318218,
+      "sha256": "ba3207986977de526e4a1cafbdc68b9452abdf4cfe410302afd3a44f37f20016"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/implantacao-planta.geojson",
+      "bytes": 1863534,
+      "sha256": "0355f8ee6695682f5ce36564274546e0826ab6c3e89bdba6cdbf1037a0f37d80"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/macrozoneamento.geojson",
+      "bytes": 566334,
+      "sha256": "b00bcd8da209a70eaac492cfb53a7da4b6b3e4846bd7cd5c51e1837237f04895"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/mineracao.geojson",
+      "bytes": 7369,
+      "sha256": "4c0513253ebaabc492d46d3b30a4e27384ec18631481a27392c29cd840cca2dc"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/parcel.geojson",
+      "bytes": 10993,
+      "sha256": "97f641d8775f9cacf0acefe9a44ce6668437360ce918e9464fa5d7487ab0dafc"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/patrimonio.geojson",
+      "bytes": 3497,
+      "sha256": "a420d8235f36e827a482bc9a9314c490a99f648f6abbeff7200bc72460514a01"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/perimetro-urbano.geojson",
+      "bytes": 41848,
+      "sha256": "c4b945d11e532d0e5bee4cfec0dccba832370aa517c5da8b1426aa702950e7c5"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/suscetibilidade-inundacao.geojson",
+      "bytes": 17465,
+      "sha256": "0f8d690d27c3569e0b0a2b2e4862d626ec913fe2d5681c9c6ca160dad7e36545"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/unidades-conservacao.geojson",
+      "bytes": 7118,
+      "sha256": "8271d2d5c04793c8140a8f7dd70aa4f4ab83dc517d51dcc5e3ca591a93307bfd"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/vegetacao.geojson",
+      "bytes": 330815,
+      "sha256": "cf5e68a3fa49c493d527d775782875f006e15d20b600771aa6b491d5b438eb88"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/viario.geojson",
+      "bytes": 519070,
+      "sha256": "1f36b1594021af63793a28be9d7f1bc9b2b91d1f385e42853bdef3dafdaff6cf"
+    },
+    {
+      "path": "/terreno/files/terras-do-palhano-brumadinho/gis/zoneamento.geojson",
+      "bytes": 29086,
+      "sha256": "0645bd8db79932f55ca4e695a67ef7eb7ba5225b38c3f46b358358605ef446c0"
+    },
+    {
+      "path": "/terreno/google-scene.js",
+      "bytes": 17704,
+      "sha256": "49a428d671d36f930568dad963bf3040744f348d885f8ecedccf3e987a242c09"
+    },
+    {
+      "path": "/terreno/index.html",
+      "bytes": 1617,
+      "sha256": "a646880cc916359053571ddf577801ea283244b6ae51a18a2bf5d75d39f7d49b"
+    },
+    {
+      "path": "/terreno/investor-ui.js",
+      "bytes": 15359,
+      "sha256": "9f25d6a3cb1adc0d279e2161e7c2263e0909ac14ac2e1e9809a789e735cea5f7"
+    },
+    {
+      "path": "/terreno/land-review.js",
+      "bytes": 4211,
+      "sha256": "29e5150c543dde56f4e12096fa54af1ba398cd0f8f9613133f61c02f1adf01e7"
+    },
+    {
+      "path": "/terreno/land-value.js",
+      "bytes": 11142,
+      "sha256": "74f5dd93f25f456d299f268c47f5d3e8e83d702aa9912f9dc2a3475a10cf68b3"
+    },
+    {
+      "path": "/terreno/layers.js",
+      "bytes": 2927,
+      "sha256": "7f330beda6b7b796fba02d87cfb65905d32b422d480645a6adff9b562768ae06"
+    },
+    {
+      "path": "/terreno/legal-workbench-view.mjs",
+      "bytes": 5615,
+      "sha256": "61f8614465d860314292e81b587317e0260dca7102bef8882df649c7a7579cce"
+    },
+    {
+      "path": "/terreno/map.js",
+      "bytes": 32593,
+      "sha256": "d636e20243eb9019feabc46d3cc51a7702aa487d02460814fab10dc85f6f6551"
+    },
+    {
+      "path": "/terreno/market.css",
+      "bytes": 5819,
+      "sha256": "e0986a38b37ea4b0d45e25f672eaefaff211ab93bf1e5c067a9e76bc8ede5cd5"
+    },
+    {
+      "path": "/terreno/market.js",
+      "bytes": 16820,
+      "sha256": "c7e8eba4da76191ead63c8d75b2c34d55c7b59e6330df530fed6defbb052c370"
+    },
+    {
+      "path": "/terreno/method/fluxo-financeiro.md",
+      "bytes": 5023,
+      "sha256": "dfad5141f1d8f18a92913e1373dfb8d767272761d14c1e3878fbd55ce0b36a7e"
+    },
+    {
+      "path": "/terreno/method/mercado.md",
+      "bytes": 4304,
+      "sha256": "3e8210fe8a66a768f112f1db15b2794535f7e22b31ada4399d9cc4907b046290"
+    },
+    {
+      "path": "/terreno/method/metodologia-avaliacao.md",
+      "bytes": 9949,
+      "sha256": "388a35533c34d6ae4389b134bfe94a4738546aa0f2ef516e084699d719455123"
+    },
+    {
+      "path": "/terreno/method/protocolo-publico.md",
+      "bytes": 6927,
+      "sha256": "85a278fc6b951596b4236114679ce8f1fe800678a02229bcaaaeda736ee3e241"
+    },
+    {
+      "path": "/terreno/navigation-model.mjs",
+      "bytes": 790,
+      "sha256": "fa8b2c495a001dff7136f6ad098ae12652b300d194cb8d246a28a4aba023b628"
+    },
+    {
+      "path": "/terreno/panorama.js",
+      "bytes": 2873,
+      "sha256": "7a90a05ae1a829d2f68df1c259f0c52a483e602a8e761796c66cd1a42c1840a8"
+    },
+    {
+      "path": "/terreno/presentation-model.mjs",
+      "bytes": 2457,
+      "sha256": "b6dc69d9c9618c5b7f635b15e91dca6e3ce1c19822bd8508ed9be3cea9685711"
+    },
+    {
+      "path": "/terreno/presentation.css",
+      "bytes": 9341,
+      "sha256": "e447015273bc3dcb87c4cbfd43a0daed21bb300fc3443e5f4febb102b644fc40"
+    },
+    {
+      "path": "/terreno/qualification.js",
+      "bytes": 18552,
+      "sha256": "0c3e73be6cfb09ef4e391bcf51891763e3aa84b8aacddf05d30a4ecc7358f75d"
+    },
+    {
+      "path": "/terreno/report-safety.mjs",
+      "bytes": 1229,
+      "sha256": "4b736ef9cf7008760c38a45c5b58a0c46b5d0cbda07289f9abf8738e87ff456a"
+    },
+    {
+      "path": "/terreno/site-potential.css",
+      "bytes": 2355,
+      "sha256": "af45b32b792ebf94f33b555ec4fe390d98de5153623ae8c4255b3a9e5dcf06b1"
+    },
+    {
+      "path": "/terreno/site-potential.js",
+      "bytes": 8873,
+      "sha256": "b246bb536f7ee33807a9b5926e5c7ddb86173904a249fc69a66f1f7c5c3872cc"
+    },
+    {
+      "path": "/terreno/site-review.css",
+      "bytes": 7630,
+      "sha256": "b61f4b4f9b99f20b0e99e0f41971a05860f93c37d562700ad1f91677c138eaa1"
+    },
+    {
+      "path": "/terreno/site-review.js",
+      "bytes": 18101,
+      "sha256": "a18a03b03d3b22188e83ec2015be76242714d9969200123856e936ecda15bc11"
+    },
+    {
+      "path": "/terreno/streetview.css",
+      "bytes": 3511,
+      "sha256": "2758afdf8a2aea1db8be4146bc40a69a28513ce5cdd9ff2407d363f23465bae9"
+    },
+    {
+      "path": "/terreno/streetview.js",
+      "bytes": 20773,
+      "sha256": "53a288c9856b9469eb744f0fc65678e4f43049d9cca0f6596990be8a3ce9c428"
+    },
+    {
+      "path": "/terreno/style.css",
+      "bytes": 31674,
+      "sha256": "24f05685930178139c6b3ac382e42c253cbc7e944d9a6edb4ab3f781e218057f"
+    },
+    {
+      "path": "/terreno/subdivision-review.css",
+      "bytes": 3503,
+      "sha256": "bb6a80f18a02bf521e6465bec828739eedb1646e190b09ce0bc0725f6b9b3fb4"
+    },
+    {
+      "path": "/terreno/subdivision-review.js",
+      "bytes": 17128,
+      "sha256": "50ceee6480119d75406259166cab39c0cf173ae4ea86f4c08c62546412014a2a"
+    },
+    {
+      "path": "/terreno/surroundings-schema.js",
+      "bytes": 3227,
+      "sha256": "afa654146fa22a7071b7d07bbb399539bfc68fe1ec88d87e7b8693d2a56eb4c8"
+    },
+    {
+      "path": "/terreno/surroundings-summary.js",
+      "bytes": 2652,
+      "sha256": "4dbfd801272f39c16290265b39a8898640823dab0c2461ab940ac98e952cbbec"
+    },
+    {
+      "path": "/terreno/surroundings.css",
+      "bytes": 10469,
+      "sha256": "febf070d18ab5c51de2ab65870d05f6217641df0a632212e5e7df5b372cd267a"
+    },
+    {
+      "path": "/terreno/surroundings.js",
+      "bytes": 27449,
+      "sha256": "d58a25bfe52006d577432d83f6b5c79cfbea0a07429f4183dae91b919175c21a"
+    },
+    {
+      "path": "/terreno/terrain-anchor.js",
+      "bytes": 7427,
+      "sha256": "e8766f01c98ae667674b2140124a486fc84647b69ac0323ac3e4d224f39b2608"
+    },
+    {
+      "path": "/terreno/volume.js",
+      "bytes": 23904,
+      "sha256": "29cc1073e655e25ffe44f17cb9953a23c3a7a1fde2d95c6c187a5c498fe31857"
+    }
+  ],
+  "excludedDocuments": [
+    {
+      "slug": "salseiros-itajai-matricula-77931",
+      "id": "doc-09e2ba4d0ca5",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "salseiros-itajai-matricula-77931",
+      "id": "doc-a835058027a2",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "salseiros-itajai-matricula-77931",
+      "id": "doc-6c97774d06e2",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "salseiros-itajai-matricula-77931",
+      "id": "doc-b5731c11984c",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "salseiros-itajai-matricula-77931",
+      "id": "doc-89b002b12a99",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "salseiros-itajai-matricula-77931",
+      "id": "doc-775c6c8701a5",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "salseiros-itajai-matricula-77931",
+      "id": "doc-9921b542cbb7",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "talma-tatuape-lote-0003",
+      "id": "doc-e14a1c59727a",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "talma-tatuape-lote-0003",
+      "id": "doc-bbd798f0ff96",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-2fd54fc0519a",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-66bcd2ac1fdd",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-0c7260942fea",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-36703c4672d6",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-2cf50ba31d0a",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-1cf3dfc8a49a",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-bf08d11d4672",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-b9c0904f7739",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-fe447dd36aed",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-f8acdcee9ac2",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-8c7616e5167a",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-99f1d2a5932b",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-8c51c44fbd93",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-301ea516ca74",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-3d84d4df1d72",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-72e259081dbe",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-3f7374f831f4",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-9a29a364de67",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-4109e469eb00",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "terras-do-palhano-brumadinho",
+      "id": "doc-1c655741608d",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "penha-paisagem-conectada",
+      "id": "doc-75d49ba24428",
+      "reason": "not-public-approved"
+    },
+    {
+      "slug": "penha-paisagem-conectada",
+      "id": "doc-7afe4487cd7b",
+      "reason": "not-public-approved"
+    }
+  ],
+  "clientVersion": "73077e076bf2",
+  "snapshotSha256": "c53f8131b443dd810f9ca23f7bb0413b2e6b9ce4ec05e3eb8824d6fe3d597866",
+  "clientUpdatedAt": "2026-10-02T21:09:30.030Z",
+  "concept": {
+    "label": "Concept · uso e testes",
+    "independentOfPanel": true
+  },
+  "preliminaryAdvisory": {
+    "version": "1.1.0",
+    "scope": "public_reference_hypothesis",
+    "studyDataReexported": false,
+    "policySha256": "932f4ddbc2f3e93b27f7deb973d7b0a568f7265a17035d34ecb1070dd6468ff4"
+  },
+  "landValuation": {
+    "version": "1.0.0",
+    "policySha256": "8dc509a9104ccbf21bac4c74c2c97aa8cbf4536da57edf020f45a590925156ef",
+    "scope": "physical_land_value_before_business",
+    "studyDataReexported": false
+  },
+  "dashboardExport": {
+    "version": "2.1.0",
+    "template": "barch-land-report-2.1.0",
+    "chapters": [
+      "diagnosis",
+      "dashboard",
+      "land",
+      "business",
+      "field",
+      "sources"
+    ],
+    "monthlyLedgerIncluded": false,
+    "brand": "Barch DS · official logo · Inter · DsIcon",
+    "formats": [
+      "pdf",
+      "html",
+      "json"
+    ],
+    "source": "current_calculated_scenario",
+    "privateDossierIncluded": false
+  },
+  "presentation": {
+    "version": "2.1.0",
+    "crossAuditVersion": "areas-cross-audit-1.0.0",
+    "exporterLoading": "on_demand",
+    "sections": [
+      "diagnosis",
+      "dashboard",
+      "land",
+      "business"
+    ],
+    "protocolVersion": "areas-diligence-multimodal-1.0.0",
+    "policySha256": "1b74972399ba7922b66b25bb8516247a828bddada9e977233dd2e88ba3c89dc9"
+  },
+  "caseAppend": {
+    "at": "2026-10-02T20:07:38.748Z",
+    "slugs": [
+      "penha-paisagem-conectada"
+    ],
+    "previousSnapshotSha256": "ec29eb7ccbcf68f8425c9e035ed97331a30743106673e4848c24f83dcee07c5d",
+    "preservedSlugs": [
+      "salseiros-itajai-matricula-77931",
+      "talma-tatuape-lote-0003",
+      "terras-do-palhano-brumadinho"
+    ],
+    "previousReceiptsRevalidated": false
+  }
+}
