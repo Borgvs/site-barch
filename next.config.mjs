@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   // Talma study: isolated static document, preserving the institutional app shell.
   async rewrites() {
-    return [{ source: "/viabilidade", destination: "/viabilidade/index.html" }, { source: "/tatuape", destination: "/estudos/tatuape/v3/index.html" }, { source: "/concepts/terreno", destination: "/concepts/terreno/index.html" }];
+    return [{ source: "/viabilidade/laboratorio-rhino", destination: "/viabilidade/laboratorio-rhino/index.html" }, { source: "/viabilidade", destination: "/viabilidade/index.html" }, { source: "/tatuape", destination: "/estudos/tatuape/v3/index.html" }, { source: "/concepts/terreno", destination: "/concepts/terreno/index.html" }];
   },
   async redirects() {
     return [

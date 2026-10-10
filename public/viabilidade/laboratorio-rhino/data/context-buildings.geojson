@@ -1,0 +1,1406 @@
+{
+  "type": "FeatureCollection",
+  "name": "penha_context_osm_buildings",
+  "bbox": [
+    -48.6146152,
+    -26.8032979,
+    -48.6110783,
+    -26.7997687
+  ],
+  "metadata": {
+    "schemaVersion": "1.0.0",
+    "label": "Edificações do entorno — OpenStreetMap",
+    "coordinateReferenceSystem": "WGS84 / longitude,latitude (RFC 7946)",
+    "queryBbox": [
+      -48.614,
+      -26.806,
+      -48.606,
+      -26.8
+    ],
+    "queryBboxOrder": "west,south,east,north",
+    "queryCenter": [
+      -48.61000857,
+      -26.803259275
+    ],
+    "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+    "osmBaseTimestamp": "2026-10-01T12:23:35Z",
+    "attribution": "© OpenStreetMap contributors",
+    "attributionUrl": "https://www.openstreetmap.org/copyright",
+    "license": "ODbL-1.0",
+    "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+    "source": "OpenStreetMap via Overpass API",
+    "sourceUrl": "https://overpass-api.de/api/interpreter",
+    "featureCount": 18,
+    "geometryScope": "Complete source ways selected by bbox; boundaries are not clipped to the query bbox.",
+    "coverageStatus": "incomplete_or_unknown",
+    "heightStatus": "all_unknown",
+    "warning": "Contornos colaborativos sem conferência de campo; cobertura não exaustiva. Alturas renderizadas sem tag são estimativas gráficas, não levantamentos. Não usar para quantitativos, sombras certificadas, afastamentos legais ou aprovação.",
+    "provenanceFile": "gis-penha-provenance.json"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "osm/way/156200923",
+      "properties": {
+        "osmType": "way",
+        "osmId": 156200923,
+        "sourceUrl": "https://www.openstreetmap.org/way/156200923",
+        "name": "Castelo das Nações",
+        "buildingType": "yes",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2017-04-02T17:11:45Z",
+        "osmVersion": 5,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "building": "yes",
+          "historic": "castle",
+          "name": "Castelo das Nações"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6139721,
+              -26.7997753
+            ],
+            [
+              -48.6139933,
+              -26.7999077
+            ],
+            [
+              -48.6140703,
+              -26.7998979
+            ],
+            [
+              -48.6140967,
+              -26.8000633
+            ],
+            [
+              -48.6140275,
+              -26.8000721
+            ],
+            [
+              -48.6140628,
+              -26.8002928
+            ],
+            [
+              -48.613669,
+              -26.8003429
+            ],
+            [
+              -48.6132173,
+              -26.8004004
+            ],
+            [
+              -48.6131868,
+              -26.8002099
+            ],
+            [
+              -48.6131175,
+              -26.8002187
+            ],
+            [
+              -48.613092,
+              -26.800059
+            ],
+            [
+              -48.6130341,
+              -26.8000664
+            ],
+            [
+              -48.6130095,
+              -26.7999121
+            ],
+            [
+              -48.6134437,
+              -26.7998568
+            ],
+            [
+              -48.6134351,
+              -26.799803
+            ],
+            [
+              -48.6135801,
+              -26.7997845
+            ],
+            [
+              -48.6137049,
+              -26.7997687
+            ],
+            [
+              -48.6137113,
+              -26.7998085
+            ],
+            [
+              -48.6139721,
+              -26.7997753
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/156200927",
+      "properties": {
+        "osmType": "way",
+        "osmId": 156200927,
+        "sourceUrl": "https://www.openstreetmap.org/way/156200927",
+        "name": "Excalibur",
+        "buildingType": "yes",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2016-05-01T12:14:51Z",
+        "osmVersion": 3,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "amenity": "theatre",
+          "building": "yes",
+          "name": "Excalibur"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6137985,
+              -26.8025081
+            ],
+            [
+              -48.6137533,
+              -26.8025792
+            ],
+            [
+              -48.6136856,
+              -26.8026858
+            ],
+            [
+              -48.6132208,
+              -26.8024504
+            ],
+            [
+              -48.6133338,
+              -26.8022727
+            ],
+            [
+              -48.6133723,
+              -26.8022922
+            ],
+            [
+              -48.6137985,
+              -26.8025081
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/156200935",
+      "properties": {
+        "osmType": "way",
+        "osmId": 156200935,
+        "sourceUrl": "https://www.openstreetmap.org/way/156200935",
+        "name": null,
+        "buildingType": "yes",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2012-04-29T18:41:27Z",
+        "osmVersion": 2,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6137533,
+              -26.8025792
+            ],
+            [
+              -48.6139203,
+              -26.8026638
+            ],
+            [
+              -48.6138435,
+              -26.8027845
+            ],
+            [
+              -48.6136766,
+              -26.8026999
+            ],
+            [
+              -48.6136856,
+              -26.8026858
+            ],
+            [
+              -48.6137533,
+              -26.8025792
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/156200942",
+      "properties": {
+        "osmType": "way",
+        "osmId": 156200942,
+        "sourceUrl": "https://www.openstreetmap.org/way/156200942",
+        "name": null,
+        "buildingType": "yes",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2024-03-29T03:40:44Z",
+        "osmVersion": 4,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6125714,
+              -26.8006377
+            ],
+            [
+              -48.6126768,
+              -26.8005471
+            ],
+            [
+              -48.612787,
+              -26.8006492
+            ],
+            [
+              -48.6127393,
+              -26.8006902
+            ],
+            [
+              -48.6126816,
+              -26.8007399
+            ],
+            [
+              -48.6125714,
+              -26.8006377
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/156200943",
+      "properties": {
+        "osmType": "way",
+        "osmId": 156200943,
+        "sourceUrl": "https://www.openstreetmap.org/way/156200943",
+        "name": null,
+        "buildingType": "yes",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2016-01-12T21:45:24Z",
+        "osmVersion": 3,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "amenity": "food_court",
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6144107,
+              -26.8013632
+            ],
+            [
+              -48.6145092,
+              -26.801425
+            ],
+            [
+              -48.6145799,
+              -26.8015119
+            ],
+            [
+              -48.6146152,
+              -26.8016146
+            ],
+            [
+              -48.6146112,
+              -26.801722
+            ],
+            [
+              -48.6145683,
+              -26.8018224
+            ],
+            [
+              -48.6144912,
+              -26.8019049
+            ],
+            [
+              -48.6143883,
+              -26.8019606
+            ],
+            [
+              -48.6142707,
+              -26.8019835
+            ],
+            [
+              -48.6141511,
+              -26.801971
+            ],
+            [
+              -48.6140426,
+              -26.8019246
+            ],
+            [
+              -48.6139568,
+              -26.8018492
+            ],
+            [
+              -48.6139031,
+              -26.8017531
+            ],
+            [
+              -48.6138873,
+              -26.8016466
+            ],
+            [
+              -48.6139111,
+              -26.8015413
+            ],
+            [
+              -48.6139719,
+              -26.8014486
+            ],
+            [
+              -48.6140631,
+              -26.8013785
+            ],
+            [
+              -48.6141749,
+              -26.8013387
+            ],
+            [
+              -48.6142951,
+              -26.8013334
+            ],
+            [
+              -48.6144107,
+              -26.8013632
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/391094553",
+      "properties": {
+        "osmType": "way",
+        "osmId": 391094553,
+        "sourceUrl": "https://www.openstreetmap.org/way/391094553",
+        "name": "Autopista",
+        "buildingType": "yes",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2016-11-22T01:01:59Z",
+        "osmVersion": 4,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "attraction": "bumper_car",
+          "building": "yes",
+          "name": "Autopista"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.612849,
+              -26.8018631
+            ],
+            [
+              -48.6128842,
+              -26.8019922
+            ],
+            [
+              -48.6126059,
+              -26.8020525
+            ],
+            [
+              -48.6125707,
+              -26.8019234
+            ],
+            [
+              -48.612849,
+              -26.8018631
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/391094558",
+      "properties": {
+        "osmType": "way",
+        "osmId": 391094558,
+        "sourceUrl": "https://www.openstreetmap.org/way/391094558",
+        "name": "Pedalinho",
+        "buildingType": "yes",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2020-04-08T05:11:13Z",
+        "osmVersion": 2,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "building": "yes",
+          "name": "Pedalinho"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6126619,
+              -26.8014625
+            ],
+            [
+              -48.6125534,
+              -26.8016034
+            ],
+            [
+              -48.6124929,
+              -26.8015663
+            ],
+            [
+              -48.6126015,
+              -26.8014253
+            ],
+            [
+              -48.6126619,
+              -26.8014625
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/414740687",
+      "properties": {
+        "osmType": "way",
+        "osmId": 414740687,
+        "sourceUrl": "https://www.openstreetmap.org/way/414740687",
+        "name": "Palácio dos Sorvetes",
+        "buildingType": "yes",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2016-07-04T00:50:44Z",
+        "osmVersion": 3,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "amenity": "ice_cream",
+          "building": "yes",
+          "name": "Palácio dos Sorvetes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6134665,
+              -26.8016702
+            ],
+            [
+              -48.6135049,
+              -26.8018027
+            ],
+            [
+              -48.6133233,
+              -26.8018446
+            ],
+            [
+              -48.613285,
+              -26.801712
+            ],
+            [
+              -48.6134665,
+              -26.8016702
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/414788076",
+      "properties": {
+        "osmType": "way",
+        "osmId": 414788076,
+        "sourceUrl": "https://www.openstreetmap.org/way/414788076",
+        "name": "Mundo dos Cavalos",
+        "buildingType": "stable",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2016-05-01T12:14:51Z",
+        "osmVersion": 1,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "building": "stable",
+          "name": "Mundo dos Cavalos"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6139606,
+              -26.8024524
+            ],
+            [
+              -48.6139052,
+              -26.8024647
+            ],
+            [
+              -48.6137253,
+              -26.802253
+            ],
+            [
+              -48.6133723,
+              -26.8022922
+            ],
+            [
+              -48.6133338,
+              -26.8022727
+            ],
+            [
+              -48.6132861,
+              -26.8022481
+            ],
+            [
+              -48.613755,
+              -26.8021859
+            ],
+            [
+              -48.6139606,
+              -26.8024524
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/414788077",
+      "properties": {
+        "osmType": "way",
+        "osmId": 414788077,
+        "sourceUrl": "https://www.openstreetmap.org/way/414788077",
+        "name": null,
+        "buildingType": "yes",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2016-05-01T12:14:51Z",
+        "osmVersion": 1,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6129068,
+              -26.8020767
+            ],
+            [
+              -48.6129265,
+              -26.8021519
+            ],
+            [
+              -48.6126984,
+              -26.8021996
+            ],
+            [
+              -48.6126787,
+              -26.8021244
+            ],
+            [
+              -48.6129068,
+              -26.8020767
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/414788079",
+      "properties": {
+        "osmType": "way",
+        "osmId": 414788079,
+        "sourceUrl": "https://www.openstreetmap.org/way/414788079",
+        "name": null,
+        "buildingType": "yes",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2016-05-01T12:14:51Z",
+        "osmVersion": 1,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6132861,
+              -26.8022481
+            ],
+            [
+              -48.6133338,
+              -26.8022727
+            ],
+            [
+              -48.6132208,
+              -26.8024504
+            ],
+            [
+              -48.6130911,
+              -26.8024643
+            ],
+            [
+              -48.6130659,
+              -26.8023678
+            ],
+            [
+              -48.6131644,
+              -26.8023496
+            ],
+            [
+              -48.6132004,
+              -26.8022939
+            ],
+            [
+              -48.6132412,
+              -26.8022253
+            ],
+            [
+              -48.6132861,
+              -26.8022481
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/414788080",
+      "properties": {
+        "osmType": "way",
+        "osmId": 414788080,
+        "sourceUrl": "https://www.openstreetmap.org/way/414788080",
+        "name": "Cine Renato Aragão",
+        "buildingType": "yes",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2016-07-04T00:50:43Z",
+        "osmVersion": 2,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "amenity": "cinema",
+          "building": "yes",
+          "name": "Cine Renato Aragão"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6132597,
+              -26.8019514
+            ],
+            [
+              -48.6132995,
+              -26.8020854
+            ],
+            [
+              -48.6130087,
+              -26.802154
+            ],
+            [
+              -48.612969,
+              -26.8020201
+            ],
+            [
+              -48.6132597,
+              -26.8019514
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/414788081",
+      "properties": {
+        "osmType": "way",
+        "osmId": 414788081,
+        "sourceUrl": "https://www.openstreetmap.org/way/414788081",
+        "name": "Kid Play",
+        "buildingType": "roof",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2016-05-01T12:14:51Z",
+        "osmVersion": 1,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "building": "roof",
+          "name": "Kid Play"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6131493,
+              -26.8017626
+            ],
+            [
+              -48.6131927,
+              -26.8019196
+            ],
+            [
+              -48.6129565,
+              -26.8019717
+            ],
+            [
+              -48.6129131,
+              -26.8018147
+            ],
+            [
+              -48.6130218,
+              -26.8017907
+            ],
+            [
+              -48.6131493,
+              -26.8017626
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/414788083",
+      "properties": {
+        "osmType": "way",
+        "osmId": 414788083,
+        "sourceUrl": "https://www.openstreetmap.org/way/414788083",
+        "name": "Xícaras Malucas",
+        "buildingType": "roof",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2016-10-02T20:54:49Z",
+        "osmVersion": 3,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "building": "roof",
+          "name": "Xícaras Malucas",
+          "roof:shape": "pyramidal"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6132483,
+              -26.8014266
+            ],
+            [
+              -48.6132632,
+              -26.8014592
+            ],
+            [
+              -48.6132655,
+              -26.8014944
+            ],
+            [
+              -48.6132548,
+              -26.8015283
+            ],
+            [
+              -48.6132324,
+              -26.8015573
+            ],
+            [
+              -48.6132007,
+              -26.8015782
+            ],
+            [
+              -48.613163,
+              -26.8015888
+            ],
+            [
+              -48.6131236,
+              -26.8015878
+            ],
+            [
+              -48.6130866,
+              -26.8015756
+            ],
+            [
+              -48.6130561,
+              -26.8015532
+            ],
+            [
+              -48.6130354,
+              -26.8015233
+            ],
+            [
+              -48.6130266,
+              -26.8014889
+            ],
+            [
+              -48.6130309,
+              -26.8014539
+            ],
+            [
+              -48.6130477,
+              -26.801422
+            ],
+            [
+              -48.6130751,
+              -26.8013967
+            ],
+            [
+              -48.6131103,
+              -26.8013807
+            ],
+            [
+              -48.6131494,
+              -26.8013758
+            ],
+            [
+              -48.6131881,
+              -26.8013825
+            ],
+            [
+              -48.6132223,
+              -26.8014001
+            ],
+            [
+              -48.6132483,
+              -26.8014266
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/429003072",
+      "properties": {
+        "osmType": "way",
+        "osmId": 429003072,
+        "sourceUrl": "https://www.openstreetmap.org/way/429003072",
+        "name": "Triplikland",
+        "buildingType": "roof",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2016-10-02T20:54:50Z",
+        "osmVersion": 2,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "building": "roof",
+          "name": "Triplikland",
+          "roof:shape": "pyramidal"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6134256,
+              -26.8014879
+            ],
+            [
+              -48.6134037,
+              -26.8014943
+            ],
+            [
+              -48.6133806,
+              -26.801494
+            ],
+            [
+              -48.6133589,
+              -26.8014871
+            ],
+            [
+              -48.6133409,
+              -26.8014742
+            ],
+            [
+              -48.6133286,
+              -26.8014568
+            ],
+            [
+              -48.6133232,
+              -26.8014367
+            ],
+            [
+              -48.6133255,
+              -26.8014162
+            ],
+            [
+              -48.6133351,
+              -26.8013975
+            ],
+            [
+              -48.6133509,
+              -26.8013826
+            ],
+            [
+              -48.6133714,
+              -26.801373
+            ],
+            [
+              -48.6133942,
+              -26.8013699
+            ],
+            [
+              -48.6134169,
+              -26.8013736
+            ],
+            [
+              -48.613437,
+              -26.8013837
+            ],
+            [
+              -48.6134524,
+              -26.801399
+            ],
+            [
+              -48.6134614,
+              -26.801418
+            ],
+            [
+              -48.6134629,
+              -26.8014385
+            ],
+            [
+              -48.6134569,
+              -26.8014584
+            ],
+            [
+              -48.613444,
+              -26.8014755
+            ],
+            [
+              -48.6134256,
+              -26.8014879
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/429003073",
+      "properties": {
+        "osmType": "way",
+        "osmId": 429003073,
+        "sourceUrl": "https://www.openstreetmap.org/way/429003073",
+        "name": null,
+        "buildingType": "roof",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2016-10-02T20:54:50Z",
+        "osmVersion": 2,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "attraction": "carousel",
+          "building": "roof",
+          "roof:shape": "pyramidal"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6138342,
+              -26.8019458
+            ],
+            [
+              -48.6138201,
+              -26.8019662
+            ],
+            [
+              -48.6137993,
+              -26.8019813
+            ],
+            [
+              -48.6137741,
+              -26.8019897
+            ],
+            [
+              -48.6137473,
+              -26.8019902
+            ],
+            [
+              -48.6137217,
+              -26.801983
+            ],
+            [
+              -48.6137002,
+              -26.8019687
+            ],
+            [
+              -48.613685,
+              -26.801949
+            ],
+            [
+              -48.6136778,
+              -26.8019259
+            ],
+            [
+              -48.6136794,
+              -26.801902
+            ],
+            [
+              -48.6136895,
+              -26.8018799
+            ],
+            [
+              -48.6137072,
+              -26.8018619
+            ],
+            [
+              -48.6137305,
+              -26.80185
+            ],
+            [
+              -48.6137569,
+              -26.8018455
+            ],
+            [
+              -48.6137835,
+              -26.8018488
+            ],
+            [
+              -48.6138074,
+              -26.8018597
+            ],
+            [
+              -48.613826,
+              -26.801877
+            ],
+            [
+              -48.6138374,
+              -26.8018987
+            ],
+            [
+              -48.6138402,
+              -26.8019225
+            ],
+            [
+              -48.6138342,
+              -26.8019458
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/1096703141",
+      "properties": {
+        "osmType": "way",
+        "osmId": 1096703141,
+        "sourceUrl": "https://www.openstreetmap.org/way/1096703141",
+        "name": "Corpo de Bombeiros Militar",
+        "buildingType": "yes",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2022-09-22T14:46:08Z",
+        "osmVersion": 2,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "amenity": "fire_station",
+          "building": "yes",
+          "name": "Corpo de Bombeiros Militar"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6118425,
+              -26.8024462
+            ],
+            [
+              -48.6116964,
+              -26.8024821
+            ],
+            [
+              -48.6116674,
+              -26.8023881
+            ],
+            [
+              -48.6118136,
+              -26.8023522
+            ],
+            [
+              -48.6118425,
+              -26.8024462
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm/way/1139290249",
+      "properties": {
+        "osmType": "way",
+        "osmId": 1139290249,
+        "sourceUrl": "https://www.openstreetmap.org/way/1139290249",
+        "name": null,
+        "buildingType": "yes",
+        "geometryStatus": "osm_mapped_unverified",
+        "heightM": null,
+        "heightStatus": "unknown",
+        "heightMeasured": false,
+        "heightSource": null,
+        "levels": null,
+        "renderHeightM": 6.0,
+        "renderHeightStatus": "estimated",
+        "renderHeightBasis": "Uniform 6 m display-only fallback; no observed height",
+        "baseElevationM": null,
+        "baseElevationStatus": "unknown",
+        "osmTimestamp": "2023-02-08T12:38:33Z",
+        "osmVersion": 1,
+        "fetchedAt": "2026-10-01T12:25:12.610567+00:00",
+        "sourceOsmTags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -48.6113993,
+              -26.8030633
+            ],
+            [
+              -48.611434,
+              -26.803177
+            ],
+            [
+              -48.611202,
+              -26.8032334
+            ],
+            [
+              -48.6112151,
+              -26.8032763
+            ],
+            [
+              -48.6111261,
+              -26.8032979
+            ],
+            [
+              -48.6110783,
+              -26.8031412
+            ],
+            [
+              -48.6113993,
+              -26.8030633
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

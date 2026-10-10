@@ -1,0 +1,29 @@
+{
+  "scope": "isolated_test_page",
+  "base": "/viabilidade/laboratorio-rhino/",
+  "motorOrigin": "http://127.0.0.1:5188",
+  "cloudExecution": false,
+  "files": {
+    "app.js": "fb117cf320514651ba5b9e64abd6de8018d1c5d913c82a3320e3f99e601fe1c6",
+    "barch.svg": "a3a3558fbb985a30501974b915c8edf8e18b0187fe824b1df501bb0b9786a8e2",
+    "data/case.json": "76dbc693422bb0ef30522343d1c5e24a3e3e442c45c16a8ae23d54b0b2dc8f9b",
+    "data/context-buildings.geojson": "c4784a6a52b35758f4c51728aa19c10562210dfa6f25d89f4774498f1ced6a15",
+    "index.html": "773bd6ffb26c3adc64c739b67110a916356c7fe900fbdb3b3544fd6bfc03b089",
+    "mass-view.js": "8459478b918e6e4fa79081cdf93645d0428ff6be3ba0b7cc039a2480bc5c0699",
+    "style.css": "3406392e4389a4a65ac582c84f4909f974436ad43332dcf9eb89fd4cdc993959",
+    "vendor/OrbitControls.js": "3d79d07ecb686b4e5d93232eedab255331c1beef711e13164eaa1f68655a5f2b",
+    "vendor/images/layers-2x.png": "066daca850d8ffbef007af00b06eac0015728dee279c51f3cb6c716df7c42edf",
+    "vendor/images/layers.png": "1dbbe9d028e292f36fcba8f8b3a28d5e8932754fc2215b9ac69e4cdecf5107c6",
+    "vendor/images/marker-icon-2x.png": "00179c4c1ee830d3a108412ae0d294f55776cfeb085c60129a39aa6fc4ae2528",
+    "vendor/images/marker-icon.png": "574c3a5cca85f4114085b6841596d62f00d7c892c7b03f28cbfa301deb1dc437",
+    "vendor/images/marker-shadow.png": "264f5c640339f042dd729062cfc04c17f8ea0f29882b538e3848ed8f10edb4da",
+    "vendor/leaflet.css": "a7837102824184820dfa198d1ebcd109ff6d0ff9a2672a074b9a1b4d147d04c6",
+    "vendor/leaflet.js": "db49d009c841f5ca34a888c96511ae936fd9f5533e90d8b2c4d57596f4e5641a",
+    "vendor/licenses/leaflet.txt": "53e8dc25862014e4324741ca18fbe3611e11d42ef69f59f86ea8c5389647d4cb",
+    "vendor/licenses/proj4.txt": "d514fd8b286fc00a5c97a29f8a99b73f1a4053bbdd00c400aee5f24a1b6b301e",
+    "vendor/licenses/three.txt": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+    "vendor/proj4.js": "af7df653d91ea591f33d26fb958990bbd3071b2db644a4edaba441cc9861a474",
+    "vendor/three.core.js": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+    "vendor/three.js": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea"
+  }
+}

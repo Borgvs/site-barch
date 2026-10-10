@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR" data-motor="local-online">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><title>Barch · Penha · laboratório paramétrico</title>
+  <link rel="stylesheet" href="/viabilidade/laboratorio-rhino/vendor/leaflet.css"><link rel="stylesheet" href="/viabilidade/laboratorio-rhino/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <img src="/viabilidade/laboratorio-rhino/barch.svg" alt="Barch" class="logo">
+    <span class="divider"></span><strong id="project-title">Penha · estudo de validação</strong>
+    <span class="local-label">Página de teste · Rhino local</span>
+    <div class="top-actions"><button id="connect-motor">Conectar motor deste computador</button><button id="new">Novo estudo</button><button id="undo" disabled>Desfazer</button><button id="redo" disabled>Refazer</button><button id="save">Salvar estudo</button><button id="open">Abrir estudo</button><input type="file" id="file" accept="application/json" hidden></div>
+  </header>
+  <nav class="steps" aria-label="Etapas do estudo">
+    <button data-stage="terrain" aria-current="step">01 Terreno</button>
+    <button data-stage="qualification">02 Qualificação</button>
+    <button data-stage="site">03 Setorização</button>
+    <button data-stage="mass">04 Massa · Rhino/GH</button>
+    <span>Laboratório de integração paramétrica</span>
+  </nav>
+  <main>
+    <section class="workspace" aria-label="Mapa e editor do terreno">
+      <div id="map"></div>
+      <div id="mass-view" hidden></div>
+      <div id="mass-empty" hidden><strong>Nenhuma massa Rhino calculada</strong><p>Selecione o setor e conecte o Rhino para executar o ensaio. A visualização só aparece após receber e validar a geometria real.</p></div>
+      <div class="map-tools"><button id="fit">Enquadrar terreno</button><button id="basemap" aria-pressed="true">Mapa de fundo</button><button id="context" aria-pressed="false">Edificações do entorno</button></div>
+      <div id="draw-tools" class="draw-tools" hidden><button id="draw">Desenhar rua</button><button id="finish" hidden>Concluir rua</button><button id="cancel" hidden>Cancelar</button></div>
+      <div class="map-caption" id="map-caption">Penha / Santa Catarina · perímetro georreferenciado de estudo</div>
+    </section>
+    <aside class="inspector" aria-label="Propriedades do estudo">
+      <section id="terrain-panel">
+        <h1>Terreno de referência</h1><p class="intro">Penha, Santa Catarina. A geometria vem do acervo Barch e mantém seu vínculo com a localização real.</p>
+        <dl class="metrics"><div><dt>Recorte geométrico</dt><dd id="boundary-area"></dd></div><div><dt>Área documental</dt><dd id="documentary-area"></dd></div><div><dt>Reserva cautelar de estudo</dt><dd id="reserve-area"></dd></div></dl>
+        <p class="notice">As áreas geométrica e documental ainda não estão conciliadas. O perímetro não foi escalado para igualá-las.</p>
+        <p class="small">SIRGAS 2000 / UTM 22S · EPSG:31982. Contorno interpretado do acervo; não equivale a levantamento cadastral certificado.</p>
+        <button class="primary wide" id="to-qualification">Qualificar este terreno</button>
+      </section>
+      <section id="qualification-panel" hidden>
+        <h1>Qualificação do estudo</h1>
+        <label class="field">Nome do estudo<input id="project-name" maxlength="100"></label>
+        <dl class="facts"><div><dt>Jurisdição</dt><dd>Penha / SC</dd></div><div><dt>Perímetro</dt><dd>Recorte georreferenciado E7/E13</dd></div><div><dt>Reservas</dt><dd>Preservadas no cálculo</dd></div><div><dt>Zoneamento vigente</dt><dd>Consolidação pendente</dd></div><div><dt>Topografia de engenharia</dt><dd>Não demonstrada nesta base</dd></div><div><dt>Inventário para demolição</dt><dd>Incompleto; custo não calculado</dd></div></dl>
+        <p class="notice">Esta confirmação define a base do experimento. Não representa aprovação urbanística ou ambiental.</p>
+        <button class="primary wide" id="to-site">Iniciar setorização</button>
+      </section>
+      <section id="site-panel" hidden>
+        <h1>Setorização responsiva</h1><p class="intro">Distribua usos por proporção. Desenhe uma rua e arraste seus vértices para recalcular as áreas.</p>
+        <label class="field">Direção das divisões <span id="angle-value">0°</span><input id="angle" type="range" min="-90" max="90" step="1" value="0"></label>
+        <div class="section-title"><h2>Usos dos setores</h2><button id="add-sector">Adicionar</button></div>
+        <div id="sectors"></div>
+        <p class="small">Os pesos distribuem a área disponível depois das reservas e das ruas. Setores com partes separadas são identificados; não são apartamentos ou lotes aprovados.</p>
+        <div class="section-title"><h2>Ruas de estudo</h2><span id="road-count"></span></div><div id="roads"></div>
+        <p class="small">Largura é parâmetro de experimento. Travessia de reserva cautelar é recusada nesta prova.</p>
+        <button id="export" class="wide" disabled>Exportar geometria e áreas</button>
+        <button id="to-mass" class="primary wide" disabled>Gerar massa com Rhino/GH</button>
+      </section>
+      <section id="mass-panel" hidden>
+        <h1>Massa paramétrica</h1><p class="intro">O Rhino calcula o recuo e a laje; um componente nativo do Grasshopper gera a extrusão. Edite os parâmetros para recalcular.</p>
+        <p id="rhino-connection" class="notice">Conexão ainda não verificada.</p><button id="check-rhino" class="wide">Verificar conexão Rhino</button>
+        <label class="field">Setor de origem<select id="mass-sector" aria-label="Setor da massa"></select></label>
+        <div class="mass-fields">
+          <label>Recuo de estudo (m)<input id="mass-setback" type="number" min="0" max="30" step=".5" value="4"></label>
+          <label>Escala X<input id="mass-scaleX" type="number" min=".1" max="1" step=".05" value="1"></label>
+          <label>Escala Y<input id="mass-scaleY" type="number" min=".1" max="1" step=".05" value="1"></label>
+          <label>Pavimentos<input id="mass-floors" type="number" min="1" max="40" step="1" value="10"></label>
+          <label>Pé-direito (m)<input id="mass-clearHeight" type="number" min="2" max="5" step=".05" value="2.7"></label>
+          <label>Plenum (m)<input id="mass-plenum" type="number" min="0" max=".35" step=".05" value=".15"></label>
+          <label>Laje (m)<input id="mass-slab" type="number" min=".1" max=".6" step=".05" value=".25"></label>
+        </div>
+        <label class="field">Uso térreo<select id="mass-groundUse"><option value="parking">Estacionamento</option><option value="retail">Comércio</option><option value="residential">Residencial</option><option value="leisure">Lazer</option></select></label>
+        <button id="run-rhino" class="primary wide">Calcular no Rhino/Grasshopper</button>
+        <p class="small">Parâmetros de estudo. A massa preserva os vazios do setor; propostas fora do perímetro ou com recuo fragmentado são recusadas.</p>
+        <div id="mass-metrics"></div><div id="mass-artifacts" hidden><a id="download-3dm" download="penha-rhino.3dm">Baixar modelo Rhino (.3dm)</a><a id="download-gh" download="penha-massa.gh">Baixar definição Grasshopper (.gh)</a></div>
+        <p class="small">Geração de apartamentos, corredores, núcleos e estacionamento individualizado ainda não está demonstrada nesta integração.</p>
+      </section>
+      <section class="result-summary" id="result-summary" hidden><h2>Balanço geométrico</h2><div id="results"></div></section>
+    </aside>
+  </main>
+  <footer><span id="status" role="status" aria-live="polite">Carregando base de Penha…</span><span id="timing"></span></footer>
+  <script type="importmap">{"imports":{"three":"/viabilidade/laboratorio-rhino/vendor/three.js"}}</script>
+  <script src="/viabilidade/laboratorio-rhino/vendor/leaflet.js"></script><script src="/viabilidade/laboratorio-rhino/vendor/proj4.js"></script><script type="module" src="/viabilidade/laboratorio-rhino/app.js"></script>
+</body></html>
