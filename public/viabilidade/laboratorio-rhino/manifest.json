@@ -4,7 +4,7 @@
   "motorOrigin": "http://127.0.0.1:5188",
   "cloudExecution": false,
   "files": {
-    "app.js": "fb117cf320514651ba5b9e64abd6de8018d1c5d913c82a3320e3f99e601fe1c6",
+    "app.js": "0402aa2ae0c8b6effe01cdf3ba6a172c027ee3ef139a06bfe169026f1c41a521",
     "barch.svg": "a3a3558fbb985a30501974b915c8edf8e18b0187fe824b1df501bb0b9786a8e2",
     "data/case.json": "76dbc693422bb0ef30522343d1c5e24a3e3e442c45c16a8ae23d54b0b2dc8f9b",
     "data/context-buildings.geojson": "c4784a6a52b35758f4c51728aa19c10562210dfa6f25d89f4774498f1ced6a15",
